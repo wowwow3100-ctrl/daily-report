@@ -190,6 +190,9 @@
     var rows=parseCSV(t);
     for(var i=1;i<rows.length;i++){ // skip header
       var c=rows[i]; if(c.length<4) continue;
+      // 內部工作筆記列不對外顯示（方法論/收件匣/補正紀錄類）
+      if(((c[3]||"")+(c[1]||"")).indexOf("方法論")>=0) continue;
+      if((c[3]||"").indexOf("收件匣")>=0) continue;
       ALL.push({date:c[0]||"",broker:c[1]||"",type:c[2]||"",stock:c[3]||"",industry:c[4]||"",rating:c[5]||"",tp:c[6]||"",note:c[7]||""});
     }
     ALL.reverse(); // newest last in file -> show newest first
