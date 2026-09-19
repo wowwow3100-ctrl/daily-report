@@ -74,6 +74,7 @@
   .lg img{width:40px;height:40px;object-fit:contain;position:relative;z-index:2;}
   .lg .fb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
     font-size:1.5rem;font-weight:900;color:#111;background:linear-gradient(135deg,var(--gold),#b58a2d);z-index:1;}
+  .lg.ok .fb{display:none;}
   .tile .nm{font-weight:800;font-size:.95rem;}
   .tile .cd{color:var(--muted);font-size:.78rem;}
   .tile .ct{color:var(--gold-dim);font-size:.75rem;margin-top:2px;}
@@ -227,15 +228,15 @@
    "6491":"pegavision.com","3363":"foci.com.tw","2049":"hiwin.tw","1560":"kinik.com.tw",
    "8464":"nienmade.com.tw","1476":"eclat.com.tw","2883":"kgifh.com.tw","6805":"fositek.com",
    "8021":"topoint.com.tw","3376":"szs.com.tw","4576":"hiwinmikro.tw","2015":"fenghsin.com.tw",
-   "6672":"venteclaminates.com","4979":"luxnetcorp.com.tw","1519":"fortune.com.tw","6139":"lkeng.com.tw"
+   "6672":"venteclaminates.com","4979":"luxnetcorp.com.tw","1519":"fortune.com.tw","6139":"lkeng.com.tw",
+   "1650":"kinik.com.tw","2762":"worldgymtaiwan.com","1563":"superalloy.com.tw","6472":"boracorpharma.com"
   };
   function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
   function logoHTML(code,name){
     var fb='<div class="fb">'+esc(name.charAt(0))+'</div>';
     var d=DOM[code];
     if(!d) return '<div class="lg">'+fb+'</div>';
-    return '<div class="lg">'+fb+'<img loading="lazy" src="https://unavatar.io/'+d+'?fallback=false" '+
-      'onerror="this.remove();"></div>';
+    return '<div class="lg">'+fb+'<img loading="lazy" data-alt="https://www.google.com/s2/favicons?domain='+d+'&sz=128" src="https://unavatar.io/'+d+'?fallback=false"></div>';
   }
 
   var ALL=[], curQ="";
@@ -260,6 +261,18 @@
     for(var t=0;t<tiles.length;t++){(function(el){
       el.addEventListener("click",function(){ showDetail(parseInt(el.getAttribute("data-i"),10), el); });
     })(tiles[t]);}
+    // LOGO 載入處理：成功→隱藏字母磚；失敗→改抓 Google favicon；再失敗→留字母磚
+    var imgs=grid.querySelectorAll(".lg img");
+    for(var g=0;g<imgs.length;g++){(function(im){
+      function ok(){ var p=im.parentNode; if(p) p.classList.add("ok"); }
+      im.addEventListener("load",function(){ if(im.naturalWidth>0) ok(); });
+      im.addEventListener("error",function(){
+        var alt=im.getAttribute("data-alt");
+        if(alt){ im.removeAttribute("data-alt"); im.src=alt; }
+        else { im.remove(); }
+      });
+      if(im.complete&&im.naturalWidth>0) ok();
+    })(imgs[g]);}
   }
 
   function showDetail(idx, el){
