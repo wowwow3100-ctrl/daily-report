@@ -30,6 +30,7 @@ SHELL = """<!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>%(title)s｜旺來新聞整理</title>
+<!--wl-v3-->
 <link rel="icon" href="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%%3E%%3Ctext y='0.9em' font-size='90'%%3E%%F0%%9F%%8D%%8D%%3C/text%%3E%%3C/svg%%3E">
 <style>
  :root{--bg:#0B0B0D;--card:#16161A;--line:#2A2A32;--gold:#E8C15A;--gold-dim:#A98B3F;--text:#EDEAE0;--muted:#9C9889;}
@@ -48,7 +49,7 @@ SHELL = """<!DOCTYPE html>
  .dl{margin-top:30px;font-size:.82rem;color:var(--muted);}
  .dl a{color:var(--gold-dim);}
 </style></head><body><div class="wrap">
-<a class="back" href="../../stocks.html">← 回個股報告</a>
+<a class="back" href="%(back)s">%(backlabel)s</a>
 <h1>%(title)s</h1>
 <div class="notice">⚠ 本頁為新聞整理摘要<span>依公開新聞整理（來源見文末），非券商原始報告、非投資建議。</span></div>
 %(body)s
@@ -102,7 +103,7 @@ def docx_to_html(path):
     return "\n".join(out), None
 
 
-def convert_tree(folder):
+def convert_tree(folder, back, backlabel):
     made = skipped = failed = 0
     if not os.path.isdir(folder):
         return made, skipped, failed
@@ -118,7 +119,7 @@ def convert_tree(folder):
                         head = fh.read(2048)
                 except Exception:
                     head = ""
-                if 'rel="icon"' in head:  # 已是含 favicon 的新版才略過
+                if "wl-v3" in head:  # 已是最新版型才略過
                     skipped += 1
                     continue
             body, err = docx_to_html(src)
@@ -128,7 +129,8 @@ def convert_tree(folder):
                 continue
             title = os.path.splitext(f)[0].replace("_", "｜")
             page = SHELL % {"title": html_mod.escape(title), "body": body,
-                            "docx": html_mod.escape(f)}
+                            "docx": html_mod.escape(f),
+                            "back": back, "backlabel": backlabel}
             with open(dst, "w", encoding="utf-8") as fh:
                 fh.write(page)
             made += 1
@@ -179,8 +181,10 @@ def main():
     else:
         print("[略過] 找不到 %s" % SRC)
 
-    for label, folder in (("個股", STOCK_DIR), ("日報", DAILY_DIR)):
-        made, skipped, failed = convert_tree(folder)
+    jobs = (("個股", STOCK_DIR, "../../stocks.html", "← 回個股報告"),
+            ("日報", DAILY_DIR, "../reports.html", "← 回研究報告專區"))
+    for label, folder, back, backlabel in jobs:
+        made, skipped, failed = convert_tree(folder, back, backlabel)
         print("[完成] %s docx→html：新轉 %d、已是最新 %d、失敗 %d" % (label, made, skipped, failed))
 
     stocks = build_manifest()

@@ -22,6 +22,7 @@
   html{font-size:17px;}
   html[data-size="lg"]{font-size:19px;}
   html[data-size="xl"]{font-size:22px;}
+  html[data-size="elder"]{font-size:27px;}
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:var(--bg);color:var(--text);font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;line-height:1.7;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px 60px;}
@@ -75,6 +76,16 @@
     border-radius:24px;padding:8px 30px;font-size:.9rem;font-family:inherit;cursor:pointer;}
   footer{margin-top:44px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.8rem;line-height:2;}
   footer b{color:var(--gold);}
+  @media (max-width:720px){
+    .wrap{padding:0 12px 40px;}
+    header{padding-top:16px;gap:8px;}
+    .logo{font-size:1.4rem;}
+    .applink{font-size:.72rem;padding:2px 10px;}
+    .head-right{width:100%;flex-direction:row;justify-content:space-between;align-items:center;}
+    .day{flex-direction:column;align-items:flex-start;gap:8px;padding:12px 14px;}
+    .day .dt{min-width:0;}
+    .setpanel{white-space:normal;min-width:250px;}
+  }
 </style>
 </head>
 <body>
@@ -95,6 +106,7 @@
               <button class="fs-chip" data-s="std">標準</button>
               <button class="fs-chip" data-s="lg">大</button>
               <button class="fs-chip" data-s="xl">特大</button>
+              <button class="fs-chip" data-s="elder">我是長輩</button>
             </div>
             <div class="setrow"><span>主題</span>
               <button class="fs-chip" data-t="gold">黑金</button>
@@ -208,7 +220,7 @@
         btns+='<a class="rep" target="_blank" rel="noopener" href="日報/'+encodeURIComponent(fn.replace(/\.docx$/i,".html"))+'">'+label+'</a>';
       }
       if(!btns) btns='<span class="none">當日無日報</span>';
-      html+='<div class="day"><div class="dt"><span class="d">📅 '+dstr+'</span><span class="w">（週'+weekday(k)+'）</span></div>'
+      html+='<div class="day"><div class="dt"><span class="d">'+dstr+'</span><span class="w">（週'+weekday(k)+'）</span></div>'
         +'<div class="mk">'+mk+'</div><div class="btns">'+btns+'</div></div>';
     }
     list.insertAdjacentHTML("beforeend",html);
@@ -217,7 +229,8 @@
   }
   function done(){
     got++; if(got<2) return;
-    keys=Object.keys(DAYS).sort().reverse();
+    // 從 2026/09/18 開始記錄，更早的不列
+    keys=Object.keys(DAYS).filter(function(k){return k>="260918";}).sort().reverse();
     render(true);
   }
 
