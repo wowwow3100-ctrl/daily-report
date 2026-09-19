@@ -194,7 +194,7 @@
     if(!r.ok) throw new Error(r.status);
     return r.json();
   }).then(function(j){
-    ALL=(j.stocks||[]).sort(function(a,b){return b.files.length-a.files.length;});
+    ALL=(j.stocks||[]).filter(function(s){return s.code;}).sort(function(a,b){return b.files.length-a.files.length;});
     render();
   }).catch(function(e){
     grid.innerHTML='<div id="status">資料檔尚未上傳（stocks.json）。請旺來大大執行「4_首次上傳個股資料.bat」。</div>';
