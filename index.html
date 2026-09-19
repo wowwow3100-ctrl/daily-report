@@ -44,16 +44,22 @@
     border-radius:8px;color:var(--gold);font-size:.95rem;font-weight:700;letter-spacing:.5px;
   }
   .notice span{color:var(--muted);font-weight:400;display:block;font-size:.8rem;margin-top:2px;}
+  nav.pnav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px;}
+  nav.pnav a{color:var(--gold-dim);text-decoration:none;font-size:.9rem;font-weight:700;
+    border:1px solid var(--gold-dim);border-radius:20px;padding:5px 16px;white-space:nowrap;}
+  nav.pnav a.on{background:var(--gold);color:var(--bg);border-color:var(--gold);}
+  nav.pnav a:hover{color:var(--gold);border-color:var(--gold);}
+  nav.pnav a.on:hover{color:var(--bg);}
   nav.toc{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px;position:sticky;top:0;z-index:50;
     background:var(--bgt);padding:10px 0;backdrop-filter:blur(4px);}
   .brand{width:46px;height:46px;border-radius:50%;vertical-align:middle;}
   .oline{color:var(--muted);font-size:.8rem;}
   .oline b{color:var(--down);font-weight:700;}
   .setwrap{position:relative;}
-  .setbtn{cursor:pointer;width:34px;height:34px;border-radius:50%;border:1px solid var(--gold-dim);
-    background:var(--card);color:var(--gold);font-size:1rem;font-family:inherit;}
+  .setbtn{cursor:pointer;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold-dim);
+    background:var(--card);color:var(--gold);font-size:1.4rem;font-family:inherit;}
   .setbtn:hover{border-color:var(--gold);}
-  .setpanel{position:absolute;right:0;top:42px;background:var(--card);border:1px solid var(--gold-dim);
+  .setpanel{position:absolute;right:0;top:54px;background:var(--card);border:1px solid var(--gold-dim);
     border-radius:12px;padding:12px 16px;display:none;z-index:99;box-shadow:0 10px 30px rgba(0,0,0,.45);white-space:nowrap;}
   .setpanel.open{display:block;}
   .setrow{display:flex;gap:6px;align-items:center;margin:6px 0;}
@@ -117,7 +123,6 @@
   <header>
     <img class="brand" src="login-logo.png" alt="旺來">
     <div class="logo">旺來<small>台股情報站</small></div>
-    <a class="applink" href="https://wowwow3100-ctrl.github.io/daily-report/reports.html">📚 研究報告專區 →</a>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
         <div class="stamp" id="updated">2026/09/19（六）盤後場次</div>
@@ -147,12 +152,50 @@
     <span>內容彙整自公開新聞與公開資訊，僅供資訊參考，非投資建議，不提供任何買賣訊號。完整內容以原始報導與原始報告為準。</span>
   </div>
 
-  <nav class="toc">
-    <a href="#broker">報告摘要</a><a href="#mkt">大盤速覽</a><a href="#focus">今日焦點</a><a href="#watch">自選股</a><a href="#sources">新聞連結</a><a href="https://wowwow3100-ctrl.github.io/daily-report/reports.html" style="border-color:var(--gold-dim);color:var(--gold);">📚 研究報告</a><a href="https://wowwow3100-ctrl.github.io/daily-report/stocks.html" style="border-color:var(--gold-dim);color:var(--gold);">🏢 個股報告</a>
+  <nav class="pnav">
+    <a class="on" href="index.html">📰 每日情報站</a><a href="reports.html">📚 研究報告</a><a href="stocks.html">🏢 個股報告</a><a href="records.html">🔎 紀錄庫</a>
   </nav>
 
+  <nav class="toc">
+    <a href="#mkt">大盤速覽</a><a href="#focus">今日焦點</a><a href="#broker">券商報告</a><a href="#watch">自選股</a><a href="#sources">新聞連結</a>
+  </nav>
+
+  <!-- ===== DATA:MARKET ===== -->
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（09/18 收盤）</span></h2>
+  <div class="mkt">
+    <div class="m"><div class="lbl">加權指數</div><div class="val">47,180</div><div class="chg up">+892.75（+1.93%）</div></div>
+    <div class="m"><div class="lbl">成交值</div><div class="val">1.07 兆</div><div class="chg up">較前日明顯放大</div></div>
+    <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">5,940 億</div><div class="chg up">單日 +46.4 億</div></div>
+    <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">11,921</div><div class="chg up">+2.78%（09/18 美股）</div></div>
+  </div>
+  <!-- ===== /DATA:MARKET ===== -->
+
+  <!-- ===== DATA:FOCUS_NEWS ===== -->
+  <h2 id="focus">今日焦點</h2>
+  <div class="card">
+    <div class="news-title"><span class="cat">資金</span>外資期現貨同步做多，單日買超 <span class="up">869.94 億元</span>、史上第 5 大；全週仍賣超 184 億 <a class="ref" href="#src-13">[13]</a></div>
+    <div class="news-body">加碼標的以記憶體族群為主，力積電、華邦電、南亞科、旺宏均在買超名單，其中南亞科單日買超 32,233 張。週線角度外資仍為賣方，單日回補與整週方向不一致。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">國際</span>美股四巫日震盪，費半升近 3%、道瓊週線創半年最大跌幅 <a class="ref" href="#src-12">[12]</a></div>
+    <div class="news-body">選擇權與期貨同步結算日波動放大，晶片股撐盤使費城半導體指數收高近 3%，但道瓊全週收黑並寫下近半年最大週線跌幅，指數之間分歧明顯。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">匯率</span>日銀升息仍未止住日圓貶勢，跌近 158 後傳出詢價、市場緊盯干預 <a class="ref" href="#src-14">[14]</a></div>
+    <div class="news-body">美元兌日圓逼近 158 價位，市場傳出官方詢價動作。日圓走勢為高 Beta 半導體與 AI 類股的外部變數之一，後續官方態度是觀察重點。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">產業</span>仁寶宣布 100% 收購鋐寶、溢價 18.21%，強化 AI 市場版圖 <a class="ref" href="#src-15">[15]</a></div>
+    <div class="news-body">仁寶與鋐寶 9/18 同步召開重訊記者會說明董事會決議，收購價較市價溢價 18.21%，方向指向 AI 相關產品線整合。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">產業</span>宏碁陳俊聖：記憶體已不缺，PC 僅剩 2 類關鍵零件供貨吃緊 <a class="ref" href="#src-16">[16]</a></div>
+    <div class="news-body">品牌端說法與近期記憶體漲價題材出現落差；供給面若確實鬆動，將影響記憶體族群後續的量價假設，值得與上游廠商說法交叉比對。</div>
+  </div>
+  <!-- ===== /DATA:FOCUS_NEWS ===== -->
+
   <!-- ===== DATA:BROKER ===== -->
-  <h2 id="broker">券商報告摘要</h2>
+  <h2 id="broker">09/19 券商報告摘要</h2>
   <div class="card">
     <ul class="sum-list">
       <li>花旗最新報告同步上修散熱雙雄：奇鋐目標價 3,800 → <span class="up">4,350</span> 元、雙鴻 1,550 → <span class="up">1,800</span> 元，均維持買進。理由是水冷板產能與出貨量假設上修、對 ASIC 水冷需求轉趨積極，兩檔 2026–2028 年獲利預測分別最多調升 16%／17%，並預估 2027 年奇鋐 ASIC 佔水冷營收比重可能突破五成；文中另載麥格理給奇鋐 4,600 元為外資圈最高（該筆報告日期待確認）<a class="ref" href="#src-8">[8]</a></li>
@@ -199,40 +242,6 @@
     </tr>
   </table>
   <!-- ===== /DATA:BROKER ===== -->
-
-  <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（09/18 收盤）</span></h2>
-  <div class="mkt">
-    <div class="m"><div class="lbl">加權指數</div><div class="val">47,180</div><div class="chg up">+892.75（+1.93%）</div></div>
-    <div class="m"><div class="lbl">成交值</div><div class="val">1.07 兆</div><div class="chg up">較前日明顯放大</div></div>
-    <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">5,940 億</div><div class="chg up">單日 +46.4 億</div></div>
-    <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">11,921</div><div class="chg up">+2.78%（09/18 美股）</div></div>
-  </div>
-  <!-- ===== /DATA:MARKET ===== -->
-
-  <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點</h2>
-  <div class="card">
-    <div class="news-title"><span class="cat">資金</span>外資期現貨同步做多，單日買超 <span class="up">869.94 億元</span>、史上第 5 大；全週仍賣超 184 億 <a class="ref" href="#src-13">[13]</a></div>
-    <div class="news-body">加碼標的以記憶體族群為主，力積電、華邦電、南亞科、旺宏均在買超名單，其中南亞科單日買超 32,233 張。週線角度外資仍為賣方，單日回補與整週方向不一致。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">國際</span>美股四巫日震盪，費半升近 3%、道瓊週線創半年最大跌幅 <a class="ref" href="#src-12">[12]</a></div>
-    <div class="news-body">選擇權與期貨同步結算日波動放大，晶片股撐盤使費城半導體指數收高近 3%，但道瓊全週收黑並寫下近半年最大週線跌幅，指數之間分歧明顯。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">匯率</span>日銀升息仍未止住日圓貶勢，跌近 158 後傳出詢價、市場緊盯干預 <a class="ref" href="#src-14">[14]</a></div>
-    <div class="news-body">美元兌日圓逼近 158 價位，市場傳出官方詢價動作。日圓走勢為高 Beta 半導體與 AI 類股的外部變數之一，後續官方態度是觀察重點。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">產業</span>仁寶宣布 100% 收購鋐寶、溢價 18.21%，強化 AI 市場版圖 <a class="ref" href="#src-15">[15]</a></div>
-    <div class="news-body">仁寶與鋐寶 9/18 同步召開重訊記者會說明董事會決議，收購價較市價溢價 18.21%，方向指向 AI 相關產品線整合。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">產業</span>宏碁陳俊聖：記憶體已不缺，PC 僅剩 2 類關鍵零件供貨吃緊 <a class="ref" href="#src-16">[16]</a></div>
-    <div class="news-body">品牌端說法與近期記憶體漲價題材出現落差；供給面若確實鬆動，將影響記憶體族群後續的量價假設，值得與上游廠商說法交叉比對。</div>
-  </div>
-  <!-- ===== /DATA:FOCUS_NEWS ===== -->
 
 
   <!-- ===== DATA:WATCHLIST ===== -->

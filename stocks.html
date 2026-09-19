@@ -38,10 +38,16 @@
     border-radius:16px;padding:2px 12px;font-size:.8rem;font-family:inherit;}
   .fs-chip.on{background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:700;}
   .setwrap{position:relative;}
-  .setbtn{cursor:pointer;width:34px;height:34px;border-radius:50%;border:1px solid var(--gold-dim);
-    background:var(--card);color:var(--gold);font-size:1rem;font-family:inherit;}
+  .setbtn{cursor:pointer;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold-dim);
+    background:var(--card);color:var(--gold);font-size:1.4rem;font-family:inherit;}
   .setbtn:hover{border-color:var(--gold);}
-  .setpanel{position:absolute;right:0;top:42px;background:var(--card);border:1px solid var(--gold-dim);
+  nav.pnav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px;}
+  nav.pnav a{color:var(--gold-dim);text-decoration:none;font-size:.9rem;font-weight:700;
+    border:1px solid var(--gold-dim);border-radius:20px;padding:5px 16px;white-space:nowrap;}
+  nav.pnav a.on{background:var(--gold);color:var(--bg);border-color:var(--gold);}
+  nav.pnav a:hover{color:var(--gold);border-color:var(--gold);}
+  nav.pnav a.on:hover{color:var(--bg);}
+  .setpanel{position:absolute;right:0;top:54px;background:var(--card);border:1px solid var(--gold-dim);
     border-radius:12px;padding:12px 16px;display:none;z-index:99;box-shadow:0 10px 30px rgba(0,0,0,.45);white-space:nowrap;}
   .setpanel.open{display:block;}
   .setrow{display:flex;gap:6px;align-items:center;margin:6px 0;}
@@ -103,8 +109,6 @@
 
   <header>
     <div class="logo">旺來<small>個股報告</small></div>
-    <a class="applink" href="https://wowwow3100-ctrl.github.io/daily-report/">← 回每日情報站</a>
-    <a class="applink" href="https://wowwow3100-ctrl.github.io/daily-report/reports.html">📚 研究報告專區</a>
     <div class="head-right">
       <div class="setwrap">
         <button class="setbtn" id="setbtn" title="顯示設定">⚙</button>
@@ -129,6 +133,10 @@
     ⚠ 本站為新聞整理用途
     <span>以下摘要文件依公開新聞整理（標註來源），非券商原始報告、非投資建議。公司名稱與標誌僅供識別，權利屬各公司所有。</span>
   </div>
+
+  <nav class="pnav">
+    <a href="index.html">📰 每日情報站</a><a href="reports.html">📚 研究報告</a><a class="on" href="stocks.html">🏢 個股報告</a><a href="records.html">🔎 紀錄庫</a>
+  </nav>
 
   <div class="searchbar">
     <input id="q" type="search" placeholder="🔍 搜尋個股名稱或代號…">

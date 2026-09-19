@@ -38,10 +38,16 @@
     border-radius:16px;padding:2px 12px;font-size:.8rem;font-family:inherit;}
   .fs-chip.on{background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:700;}
   .setwrap{position:relative;}
-  .setbtn{cursor:pointer;width:34px;height:34px;border-radius:50%;border:1px solid var(--gold-dim);
-    background:var(--card);color:var(--gold);font-size:1rem;font-family:inherit;}
+  .setbtn{cursor:pointer;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold-dim);
+    background:var(--card);color:var(--gold);font-size:1.4rem;font-family:inherit;}
   .setbtn:hover{border-color:var(--gold);}
-  .setpanel{position:absolute;right:0;top:42px;background:var(--card);border:1px solid var(--gold-dim);
+  nav.pnav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px;}
+  nav.pnav a{color:var(--gold-dim);text-decoration:none;font-size:.9rem;font-weight:700;
+    border:1px solid var(--gold-dim);border-radius:20px;padding:5px 16px;white-space:nowrap;}
+  nav.pnav a.on{background:var(--gold);color:var(--bg);border-color:var(--gold);}
+  nav.pnav a:hover{color:var(--gold);border-color:var(--gold);}
+  nav.pnav a.on:hover{color:var(--bg);}
+  .setpanel{position:absolute;right:0;top:54px;background:var(--card);border:1px solid var(--gold-dim);
     border-radius:12px;padding:12px 16px;display:none;z-index:99;box-shadow:0 10px 30px rgba(0,0,0,.45);white-space:nowrap;}
   .setpanel.open{display:block;}
   .setrow{display:flex;gap:6px;align-items:center;margin:6px 0;}
@@ -94,8 +100,6 @@
 
   <header>
     <div class="logo">旺來<small>歷史觀點紀錄</small></div>
-    <a class="applink" href="reports.html">← 回研究報告專區</a>
-    <a class="applink" href="index.html">每日情報站</a>
     <div class="head-right">
       <div class="setwrap">
         <button class="setbtn" id="setbtn" title="顯示設定">⚙</button>
@@ -120,6 +124,10 @@
     ⚠ 本站為新聞整理用途
     <span>以下為工作流自公開新聞逐日收錄的券商觀點紀錄（含來源標註），僅供資訊參考，非投資建議；目標價與評等以各券商原始報告為準，著作權屬原媒體與原券商所有。</span>
   </div>
+
+  <nav class="pnav">
+    <a href="index.html">📰 每日情報站</a><a href="reports.html">📚 研究報告</a><a href="stocks.html">🏢 個股報告</a><a class="on" href="records.html">🔎 紀錄庫</a>
+  </nav>
 
   <div class="searchbar">
     <input id="q" type="search" placeholder="🔍 搜尋個股、代號、券商、產業、關鍵字…">
