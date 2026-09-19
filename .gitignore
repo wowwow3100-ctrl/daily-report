@@ -4,3 +4,7 @@ logs/
 .push_heartbeat
 .push_paused
 *.bak
+# 完整券商報告 PDF 一律不上公開 repo（授權文件，公開=散布盜版）
+*.pdf
+# 收件匣類原始檔
+收件匣/

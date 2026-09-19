@@ -60,7 +60,11 @@
   .up{color:var(--up);font-weight:700;} .down{color:var(--down);font-weight:700;}
   .tag{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;border:1px solid var(--gold-dim);color:var(--gold);margin-right:6px;white-space:nowrap;}
   .muted{color:var(--muted);}
-  ol.srcs{margin:6px 0 0 1.4em;font-size:.88rem;color:var(--muted);}
+  details.srcbox{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px 18px;}
+  details.srcbox summary{cursor:pointer;color:var(--gold-dim);font-size:.9rem;padding:10px 0;list-style-position:inside;}
+  details.srcbox summary:hover{color:var(--gold);}
+  details.srcbox[open] summary{border-bottom:1px solid var(--line);margin-bottom:8px;}
+  ol.srcs{margin:6px 0 12px 1.4em;font-size:.88rem;color:var(--muted);}
   ol.srcs li{margin-bottom:6px;scroll-margin-top:16px;}
   ol.srcs a{color:var(--gold-dim);text-decoration:none;border-bottom:1px dotted var(--gold-dim);word-break:break-all;}
   ol.srcs a:hover{color:var(--gold);}
@@ -91,7 +95,7 @@
   </div>
 
   <nav class="toc">
-    <a href="#mkt">大盤速覽</a><a href="#focus">今日焦點</a><a href="#broker">券商觀點</a><a href="#watch">自選股</a><a href="#sources">新聞連結</a><a href="https://wowwow3100-ctrl.github.io/daily-report/reports.html" style="border-color:var(--gold-dim);color:var(--gold);">📚 研究報告</a>
+    <a href="#mkt">大盤速覽</a><a href="#focus">今日焦點</a><a href="#broker">券商觀點</a><a href="#watch">自選股</a><a href="#sources">新聞連結</a><a href="https://wowwow3100-ctrl.github.io/daily-report/reports.html" style="border-color:var(--gold-dim);color:var(--gold);">📚 研究報告</a><a href="https://wowwow3100-ctrl.github.io/daily-report/stocks.html" style="border-color:var(--gold-dim);color:var(--gold);">🏢 個股報告</a>
   </nav>
 
   <!-- ===== DATA:MARKET ===== -->
@@ -180,6 +184,8 @@
 
   <!-- ===== DATA:SOURCES ===== -->
   <h2 id="sources">新聞與資料來源</h2>
+  <details class="srcbox">
+  <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
     <li id="src-1"><a href="https://money.udn.com/money/story/5607/9759891" target="_blank" rel="noopener">經濟日報｜Fed 升息美股收黑、台股反攻近千點</a></li>
     <li id="src-2"><a href="https://udn.com/news/story/7251/9760284" target="_blank" rel="noopener">聯合新聞網｜Fed 升息利空出盡？台股開高走高 法人：行情震盪偏多</a></li>
@@ -201,6 +207,7 @@
     <li id="src-18"><a href="https://money.udn.com/money/story/5607/9763847" target="_blank" rel="noopener">經濟日報｜就市論勢／ABF 載板、CPO 光通訊 看俏（安聯 蕭惠中）</a></li>
     <li id="src-19"><a href="https://money.udn.com/money/story/5607/9763767" target="_blank" rel="noopener">經濟日報｜金像電、健鼎營運喊衝</a></li>
   </ol>
+  </details>
   <!-- ===== /DATA:SOURCES ===== -->
 
   <footer>
@@ -232,6 +239,14 @@
         apply(s);
       });
     })(chips[i]);
+  }
+  // 點 [N] 來源編號時，自動展開摺疊的來源區再跳過去
+  var refs = document.querySelectorAll("a.ref");
+  for (var r = 0; r < refs.length; r++) {
+    refs[r].addEventListener("click", function(){
+      var box = document.querySelector("details.srcbox");
+      if (box) box.open = true;
+    });
   }
 })();
 </script>

@@ -176,6 +176,11 @@
   }
 
   document.getElementById("q").addEventListener("input",function(e){curQ=e.target.value.trim();render(true);});
+  // 支援 reports.html?q=股名 直接帶入搜尋（個股報告頁跳過來用）
+  try{
+    var pq=new URLSearchParams(location.search).get("q");
+    if(pq){curQ=pq.trim();document.getElementById("q").value=curQ;}
+  }catch(e){}
   var flts=document.querySelectorAll(".flt");
   for(var j=0;j<flts.length;j++){(function(b){b.addEventListener("click",function(){
     for(var k=0;k<flts.length;k++)flts[k].classList.remove("on");
