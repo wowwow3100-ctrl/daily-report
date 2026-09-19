@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>旺來 台股情報站｜新聞整理</title>
+<style>
+  :root{
+    --bg:#0B0B0D; --card:#16161A; --card2:#1D1D23; --line:#2A2A32;
+    --gold:#E8C15A; --gold-dim:#A98B3F; --text:#EDEAE0; --muted:#8F8B7E;
+    --up:#FF5A5A; --down:#3DD68C;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;line-height:1.65;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 60px;}
+  header{padding:34px 0 6px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;}
+  .logo{font-size:30px;font-weight:900;color:var(--gold);letter-spacing:2px;}
+  .logo small{font-size:14px;color:var(--muted);font-weight:400;letter-spacing:1px;margin-left:10px;}
+  .applink{font-size:13px;color:var(--gold-dim);text-decoration:none;border:1px solid var(--gold-dim);border-radius:20px;padding:3px 14px;}
+  .applink:hover{color:var(--gold);border-color:var(--gold);}
+  .stamp{margin-left:auto;color:var(--muted);font-size:13px;}
+  .notice{
+    margin:18px 0 30px;padding:12px 18px;border:1px solid var(--gold-dim);
+    background:linear-gradient(90deg,rgba(232,193,90,.10),rgba(232,193,90,.02));
+    border-radius:8px;color:var(--gold);font-size:14.5px;font-weight:700;letter-spacing:.5px;
+  }
+  .notice span{color:var(--muted);font-weight:400;display:block;font-size:12.5px;margin-top:2px;}
+  h2{font-size:19px;color:var(--gold);letter-spacing:3px;margin:38px 0 16px;font-weight:800;}
+  h2::before{content:"◆ ";color:var(--gold-dim);}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:12px;}
+  .news-title{font-weight:700;font-size:15.5px;}
+  .news-body{color:var(--muted);font-size:13.5px;margin-top:4px;}
+  .news-src{color:var(--gold-dim);font-size:12px;margin-top:6px;}
+  .news-src a{color:var(--gold-dim);text-decoration:none;border-bottom:1px dotted var(--gold-dim);}
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13.5px;}
+  th{background:var(--card2);color:var(--gold);padding:10px 12px;text-align:left;letter-spacing:1px;white-space:nowrap;}
+  td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top;}
+  td.num{white-space:nowrap;}
+  .up{color:var(--up);font-weight:700;} .down{color:var(--down);font-weight:700;}
+  .tag{display:inline-block;padding:1px 8px;border-radius:20px;font-size:11.5px;border:1px solid var(--gold-dim);color:var(--gold);margin-right:6px;white-space:nowrap;}
+  .muted{color:var(--muted);}
+  footer{margin-top:50px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:12.5px;line-height:2;}
+  footer b{color:var(--gold);}
+  @media (max-width:640px){ .stamp{margin-left:0;} th,td{padding:8px 8px;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo">旺來<small>台股情報站</small></div>
+    <a class="applink" href="https://web-production-e1521.up.railway.app/" target="_blank" rel="noopener">旺來生命線 App →</a>
+    <div class="stamp" id="updated">更新：2026/09/19（六）早盤場次</div>
+  </header>
+
+  <div class="notice">
+    ⚠ 本站為新聞整理用途
+    <span>內容彙整自公開新聞與公開資訊，僅供資訊參考，非投資建議，不提供任何買賣訊號。完整內容以原始報導與原始報告為準。</span>
+  </div>
+
+  <!-- ===== DATA:FOCUS_NEWS ===== -->
+  <h2>今日焦點</h2>
+  <div class="card">
+    <div class="news-title">Fed 三年來首度升息 1 碼，利率升至 3.75%–4.00%</div>
+    <div class="news-body">9/17 FOMC 以 12:0 全票通過升息一碼，聲明刪除「供應鏈衝擊」措辭並上修今明兩年 GDP 至 2.3%／2.4%。市場解讀為「保險式升息」，不確定性落地後電子權值股買盤回補。</div>
+    <div class="news-src">來源：<a href="https://money.udn.com/money/story/5607/9759891" target="_blank" rel="noopener">經濟日報</a>・<a href="https://udn.com/news/story/7251/9760284" target="_blank" rel="noopener">聯合新聞網</a></div>
+  </div>
+  <div class="card">
+    <div class="news-title">台股週五大漲 <span class="up">+892 點</span> 收 47,180，重返 47K、成交 1.07 兆</div>
+    <div class="news-body">台積電收 2,460（<span class="up">+35</span>）尾盤爆量貢獻大盤逾 270 點，創意漲停 7,150 擠進高價股第三；週線收紅 995 點。</div>
+    <div class="news-src">來源：<a href="https://money.udn.com/money/story/5607/9763029" target="_blank" rel="noopener">經濟日報</a>・<a href="https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E7%9B%A4%E5%BE%8C-%E9%9B%BB%E5%AD%90%E6%B0%A3%E7%9B%9B%E5%A4%A7%E6%BC%B2892%E9%BB%9E%E7%AB%99%E4%B8%8A47k-%E5%91%A8%E7%B7%9A%E6%94%B6%E7%B4%85%E6%BC%B2995%E9%BB%9E-062539940.html" target="_blank" rel="noopener">鉅亨網</a></div>
+  </div>
+  <div class="card">
+    <div class="news-title">台積電 ADR 週五再漲 1.02%，折合台股約 2,765 元</div>
+    <div class="news-body">ADR 溢價持續擴大，對照台北股 2,460 元，溢價逾一成。</div>
+    <div class="news-src">來源：<a href="https://tw.stock.yahoo.com/news/%E5%8F%B0%E7%A9%8D%E9%9B%BBadr18%E6%97%A5%E4%B8%8A%E6%BC%B24-41%E7%BE%8E%E5%85%83%E6%BC%B2%E5%B9%851-02-%E6%8A%98%E5%8F%B0%E8%82%A12765-2%E5%85%83-215649534.html" target="_blank" rel="noopener">Yahoo 股市</a></div>
+  </div>
+  <div class="card">
+    <div class="news-title">分析師提醒：台股獨強、乖離擴大</div>
+    <div class="news-body">美、日、韓指數均壓在月線與季線之下，台股是唯一強勢站上月季線的市場；資料顯示短線乖離擴大，波動風險升高。</div>
+    <div class="news-src">來源：<a href="https://www.chinatimes.com/realtimenews/20260918002551-260410" target="_blank" rel="noopener">中時新聞網</a></div>
+  </div>
+  <div class="card">
+    <div class="news-title">下週前瞻：9/24「習川會」、季底作帳、外資期貨空單回補</div>
+    <div class="news-body">法人指出留意電子零組件進出口政策變數；外資現貨賣超收斂、台指期淨空單回補中，季底量能與作帳動向為觀察重點。</div>
+    <div class="news-src">來源：工商時報（券商晨訊彙整）</div>
+  </div>
+  <!-- ===== /DATA:FOCUS_NEWS ===== -->
+
+  <!-- ===== DATA:BROKER_VIEWS ===== -->
+  <h2>券商觀點速覽</h2>
+  <table>
+    <tr><th>日期</th><th>券商</th><th>個股</th><th>評等</th><th>目標價</th><th>一句話重點</th></tr>
+    <tr>
+      <td class="num">09/19</td><td><span class="tag">外資</span>花旗</td><td>奇鋐 (3017)</td><td>買進</td>
+      <td class="num">3,800 → <span class="up">4,350</span></td>
+      <td class="muted">水冷板產能出貨上修，2027 年 ASIC 佔水冷營收可能突破五成；另載麥格理 4,600 為外資圈最高（待確認）</td>
+    </tr>
+    <tr>
+      <td class="num">09/19</td><td><span class="tag">外資</span>花旗</td><td>雙鴻 (3324)</td><td>買進</td>
+      <td class="num">1,550 → <span class="up">1,800</span></td>
+      <td class="muted">Q3／Q4 營收估季增 17%／16%，Q4 Vera Rubin 出貨＋ASIC 水冷板量產</td>
+    </tr>
+    <tr>
+      <td class="num">09/18</td><td><span class="tag">外資</span>高盛</td><td>上詮・聯亞・全新</td><td>買進</td>
+      <td class="num muted">見個別摘要</td>
+      <td class="muted">全球光模組市場 2026 年 680 億美元 → 2028 年 1,480 億美元，矽光子供應鏈受惠</td>
+    </tr>
+    <tr>
+      <td class="num">09/15</td><td><span class="tag">外資</span>大摩</td><td>金居 (8358)</td><td>初評・加碼</td>
+      <td class="num"><span class="up">730</span>（初評）</td>
+      <td class="muted">HVLP4 銅箔市場 5 年 CAGR 123%，估金居 EPS 三年 9.34 → 31.63 元</td>
+    </tr>
+    <tr>
+      <td class="num">09/15</td><td><span class="tag">外資</span>大摩</td><td>台光電・台燿</td><td>初評・加碼</td>
+      <td class="num">8,400／2,700</td>
+      <td class="muted">「AI's Hidden Backbone」報告：AI／資料中心將佔全球 CCL 市場三分之二</td>
+    </tr>
+  </table>
+  <!-- ===== /DATA:BROKER_VIEWS ===== -->
+
+  <!-- ===== DATA:WATCHLIST ===== -->
+  <h2>自選股追蹤</h2>
+  <div class="card">
+    <div class="news-title">萬潤 (6187)　<span class="tag">半導體封裝自動化設備</span></div>
+    <div class="news-body">近一週無新增券商觀點。既有紀錄：瑞銀 1,700（08/18）、美銀 1,500、高盛 1,550（07/10）、大摩增持（CPO 題材）；2026Q2 EPS 8.53 元。</div>
+  </div>
+  <!-- ===== /DATA:WATCHLIST ===== -->
+
+  <footer>
+    <b>旺來 @wowwow31001</b>｜本站為新聞整理用途，內容彙整自公開新聞與公開資訊，非投資建議，不構成任何有價證券之買賣要約或訊號。<br>
+    各報導著作權屬原媒體所有，本站僅摘要並附來源連結；目標價與預估值以各券商原始報告為準。<br>
+    自動更新：每日 08:00／19:00（由旺來研究報告工作流產生）
+  </footer>
+
+</div>
+</body>
+</html>
