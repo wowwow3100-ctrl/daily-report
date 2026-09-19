@@ -52,7 +52,7 @@
   .tile .nm{font-weight:800;font-size:.95rem;}
   .tile .cd{color:var(--muted);font-size:.78rem;}
   .tile .ct{color:var(--gold-dim);font-size:.75rem;margin-top:2px;}
-  #detail{margin-top:16px;background:var(--card);border:1px solid var(--gold-dim);border-radius:12px;
+  #detail{margin:14px 0 4px;background:var(--card);border:1px solid var(--gold-dim);border-radius:12px;
     padding:18px 20px;display:none;}
   #detail h3{color:var(--gold);font-size:1.1rem;letter-spacing:2px;margin-bottom:8px;}
   #detail .act{display:inline-block;margin:0 10px 10px 0;font-size:.85rem;color:var(--gold);
@@ -94,8 +94,8 @@
     <span id="count"></span>
   </div>
 
-  <div id="grid" class="grid"><div id="status">資料載入中…</div></div>
   <div id="detail"></div>
+  <div id="grid" class="grid"><div id="status">資料載入中…</div></div>
 
   <footer>
     <b>旺來 @wowwow31001</b>｜本頁文件為公開新聞之整理摘要，非投資建議，不構成任何有價證券之買賣要約或訊號。<br>
@@ -185,7 +185,7 @@
     }
     html+='</ul>';
     detail.innerHTML=html; detail.style.display="block";
-    detail.scrollIntoView({behavior:"smooth",block:"nearest"});
+    detail.scrollIntoView({behavior:"smooth",block:"start"});
   }
 
   document.getElementById("q").addEventListener("input",function(e){curQ=e.target.value.trim();detail.style.display="none";render();});
