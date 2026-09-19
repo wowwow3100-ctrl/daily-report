@@ -181,7 +181,10 @@
       var f=fs[i], m=f.match(/^(\d{6})_(.+)\.docx$/i);
       var d=m?("20"+m[1].slice(0,2)+"/"+m[1].slice(2,4)+"/"+m[1].slice(4,6)):"";
       var label=m?m[2].replace(/_/g,"｜"):f;
-      html+='<li><span class="d">'+esc(d)+'</span><a href="個股/'+encodeURIComponent(s.folder)+'/'+encodeURIComponent(f)+'" download>'+esc(label)+'（下載摘要）</a></li>';
+      var base='個股/'+encodeURIComponent(s.folder)+'/';
+      var page=base+encodeURIComponent(f.replace(/\.docx$/i,".html"));
+      html+='<li><span class="d">'+esc(d)+'</span><a href="'+page+'" target="_blank" rel="noopener">'+esc(label)+'　👁 點開看</a>'
+        +'　<a style="font-size:.75rem;color:var(--muted);" href="'+base+encodeURIComponent(f)+'" download>⬇ Word</a></li>';
     }
     html+='</ul>';
     detail.innerHTML=html; detail.style.display="block";
