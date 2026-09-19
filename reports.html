@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" data-size="std">
+<html lang="zh-Hant" data-size="std" data-theme="gold">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>旺來 研究報告專區｜新聞整理</title>
+<title>旺來 研究報告專區｜每日日報</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%8D%3C/text%3E%3C/svg%3E">
 <style>
   :root{
     --bg:#0B0B0D; --card:#16161A; --card2:#1D1D23; --line:#2A2A32;
     --gold:#E8C15A; --gold-dim:#A98B3F; --text:#EDEAE0; --muted:#9C9889;
-    --up:#FF5A5A; --down:#3DD68C;
+    --up:#FF5A5A; --down:#3DD68C; --bgt:rgba(11,11,13,.94);
   }
+  html[data-theme="light"]{--bg:#F6F0E0;--card:#FFFFFF;--card2:#EFE7CF;--line:#DCD2B4;--gold:#7A5E17;--gold-dim:#9C8034;--text:#22381F;--muted:#5A6F58;--up:#C43D3D;--down:#1E7F4F;--bgt:rgba(246,240,224,.94);}
+  html[data-theme="navy"]{--bg:#0C1322;--card:#141E33;--card2:#1B2946;--line:#263858;--gold:#9DC0FF;--gold-dim:#5C7FBF;--text:#E8EDF7;--muted:#8FA0BF;--up:#FF6B6B;--down:#43D69A;--bgt:rgba(12,19,34,.94);}
   html{font-size:17px;}
   html[data-size="lg"]{font-size:19px;}
   html[data-size="xl"]{font-size:22px;}
@@ -26,37 +29,35 @@
   .fs-label{color:var(--muted);font-size:.75rem;}
   .fs-chip{cursor:pointer;border:1px solid var(--gold-dim);color:var(--gold-dim);background:none;
     border-radius:16px;padding:2px 12px;font-size:.8rem;font-family:inherit;}
-  .fs-chip.on{background:var(--gold);color:#111;border-color:var(--gold);font-weight:700;}
+  .fs-chip.on{background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:700;}
+  .oline{color:var(--muted);font-size:.8rem;}
+  .oline b{color:var(--down);font-weight:700;}
   .notice{
     margin:16px 0 20px;padding:12px 18px;border:1px solid var(--gold-dim);
     background:linear-gradient(90deg,rgba(232,193,90,.10),rgba(232,193,90,.02));
     border-radius:8px;color:var(--gold);font-size:.95rem;font-weight:700;letter-spacing:.5px;
   }
   .notice span{color:var(--muted);font-weight:400;display:block;font-size:.8rem;margin-top:2px;}
-  .searchbar{position:sticky;top:0;z-index:50;background:rgba(11,11,13,.94);backdrop-filter:blur(4px);
-    padding:12px 0;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
-  #q{flex:1;min-width:220px;background:var(--card);border:1px solid var(--gold-dim);color:var(--text);
-    border-radius:24px;padding:9px 18px;font-size:1rem;font-family:inherit;outline:none;}
-  #q:focus{border-color:var(--gold);}
-  .flt{cursor:pointer;border:1px solid var(--line);color:var(--muted);background:var(--card);
-    border-radius:16px;padding:3px 14px;font-size:.82rem;font-family:inherit;}
-  .flt.on{background:var(--gold);color:#111;border-color:var(--gold);font-weight:700;}
-  #count{color:var(--muted);font-size:.82rem;white-space:nowrap;}
-  .rec{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:10px;}
-  .rec .top{display:flex;gap:8px;flex-wrap:wrap;align-items:baseline;}
-  .rec .d{color:var(--gold);font-weight:800;font-size:.9rem;white-space:nowrap;}
-  .rec .stock{font-weight:700;font-size:1.02rem;}
-  .rec .broker{color:var(--muted);font-size:.85rem;}
-  .tag{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;border:1px solid var(--gold-dim);color:var(--gold);white-space:nowrap;}
-  .rec .rt{margin-top:4px;font-size:.9rem;}
-  .rec .rt b{color:var(--gold);}
-  .rec .note{color:var(--muted);font-size:.85rem;margin-top:5px;word-break:break-word;}
-  .rec .note a{color:var(--gold-dim);text-decoration:none;border-bottom:1px dotted var(--gold-dim);}
-  .rec .note a:hover{color:var(--gold);}
-  .up{color:var(--up);font-weight:700;} .muted{color:var(--muted);}
+  h2{font-size:1.2rem;color:var(--gold);letter-spacing:3px;margin:26px 0 16px;font-weight:800;}
+  h2::before{content:"◆ ";color:var(--gold-dim);}
+  .day{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:12px;
+    display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+  .day .dt{min-width:170px;}
+  .day .dt .d{color:var(--gold);font-weight:800;font-size:1.05rem;}
+  .day .dt .w{color:var(--muted);font-size:.8rem;margin-left:6px;}
+  .day .mk{flex:1;min-width:240px;font-size:.92rem;}
+  .day .mk .lbl{color:var(--muted);font-size:.75rem;letter-spacing:1px;margin-right:8px;}
+  .day .mk .vol{color:var(--muted);font-size:.82rem;margin-left:10px;}
+  .day .btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .day a.rep{font-size:.85rem;color:var(--gold);text-decoration:none;border:1px solid var(--gold-dim);
+    border-radius:18px;padding:4px 16px;white-space:nowrap;}
+  .day a.rep:hover{border-color:var(--gold);background:var(--card2);}
+  .day .none{color:var(--muted);font-size:.8rem;}
+  .up{color:var(--up);font-weight:700;} .down{color:var(--down);font-weight:700;}
+  .muted{color:var(--muted);}
+  #status{color:var(--muted);text-align:center;padding:30px 0;}
   #more{display:block;margin:18px auto;background:none;border:1px solid var(--gold-dim);color:var(--gold);
     border-radius:24px;padding:8px 30px;font-size:.9rem;font-family:inherit;cursor:pointer;}
-  #status{color:var(--muted);text-align:center;padding:30px 0;}
   footer{margin-top:44px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.8rem;line-height:2;}
   footer b{color:var(--gold);}
 </style>
@@ -66,35 +67,36 @@
 
   <header>
     <div class="logo">旺來<small>研究報告專區</small></div>
-    <a class="applink" href="https://wowwow3100-ctrl.github.io/daily-report/">← 回每日情報站</a>
+    <a class="applink" href="index.html">← 回每日情報站</a>
+    <a class="applink" href="stocks.html">🏢 個股報告</a>
+    <a class="applink" href="records.html">🔎 歷史觀點搜尋</a>
     <div class="head-right">
       <div class="fs-box"><span class="fs-label">字級</span>
         <button class="fs-chip" data-s="std">標準</button>
         <button class="fs-chip" data-s="lg">大</button>
         <button class="fs-chip" data-s="xl">特大</button>
       </div>
+      <div class="fs-box"><span class="fs-label">主題</span>
+        <button class="fs-chip" data-t="gold">黑金</button>
+        <button class="fs-chip" data-t="light">米白</button>
+        <button class="fs-chip" data-t="navy">深藍</button>
+      </div>
+      <div class="oline">🟢 線上 <b id="olnum">3</b> 人<span id="vwrap">｜累計瀏覽 <span id="views">—</span></span></div>
     </div>
   </header>
 
   <div class="notice">
     ⚠ 本站為新聞整理用途
-    <span>以下為工作流自公開新聞逐日收錄的券商觀點紀錄（含來源標註），僅供資訊參考，非投資建議；目標價與評等以各券商原始報告為準，著作權屬原媒體與原券商所有。</span>
+    <span>每日日報依公開新聞整理（各篇附來源），非券商原始報告、非投資建議；目標價與評等以各券商原始報告為準。</span>
   </div>
 
-  <div class="searchbar">
-    <input id="q" type="search" placeholder="🔍 搜尋個股、代號、券商、產業、關鍵字…">
-    <button class="flt on" data-f="">全部</button>
-    <button class="flt" data-f="外資">外資</button>
-    <button class="flt" data-f="內資">內資</button>
-    <span id="count"></span>
-  </div>
-
+  <h2>每日日報與大盤</h2>
   <div id="list"><div id="status">資料載入中…</div></div>
   <button id="more" style="display:none;">載入更多</button>
 
   <footer>
-    <b>旺來 @wowwow31001</b>｜本頁為新聞整理紀錄庫，內容彙整自公開新聞，非投資建議，不構成任何有價證券之買賣要約或訊號。<br>
-    每筆紀錄之「來源」為引用出處；各報導著作權屬原媒體所有。資料由旺來研究報告工作流每日自動累積。
+    <b>旺來 @wowwow31001</b>｜本頁彙整每日研究報告日報（早盤/盤後）與大盤收盤資訊，內容依公開新聞整理，非投資建議。<br>
+    自動更新：每日 08:00／19:00（由旺來研究報告工作流產生）
   </footer>
 
 </div>
@@ -104,107 +106,110 @@
   var KEY="wl_fs";
   function applyFs(s){
     document.documentElement.setAttribute("data-size", s);
-    var chips=document.querySelectorAll(".fs-chip");
+    var chips=document.querySelectorAll(".fs-chip[data-s]");
     for(var i=0;i<chips.length;i++){chips[i].classList.toggle("on",chips[i].getAttribute("data-s")===s);}
   }
   var saved="std"; try{saved=localStorage.getItem(KEY)||"std";}catch(e){}
   applyFs(saved);
-  var fsChips=document.querySelectorAll(".fs-chip");
+  var fsChips=document.querySelectorAll(".fs-chip[data-s]");
   for(var i=0;i<fsChips.length;i++){(function(b){b.addEventListener("click",function(){
     var s=b.getAttribute("data-s"); try{localStorage.setItem(KEY,s);}catch(e){} applyFs(s);
   });})(fsChips[i]);}
 
-  // ---- CSV parser (handles quoted fields with commas/newlines) ----
-  function parseCSV(text){
-    var rows=[],row=[],cur="",inQ=false;
-    for(var i=0;i<text.length;i++){
-      var c=text[i];
-      if(inQ){
-        if(c==='"'){ if(text[i+1]==='"'){cur+='"';i++;} else inQ=false; }
-        else cur+=c;
-      }else{
-        if(c==='"') inQ=true;
-        else if(c===','){row.push(cur);cur="";}
-        else if(c==='\n'){row.push(cur);cur="";if(row.length>1||row[0]!=="")rows.push(row);row=[];}
-        else if(c!=='\r') cur+=c;
-      }
-    }
-    if(cur!==""||row.length){row.push(cur);rows.push(row);}
-    return rows;
+  // ---- theme ----
+  var TK="wl_theme";
+  function applyTh(t){
+    document.documentElement.setAttribute("data-theme", t);
+    var c=document.querySelectorAll(".fs-chip[data-t]");
+    for(var i=0;i<c.length;i++){c[i].classList.toggle("on",c[i].getAttribute("data-t")===t);}
   }
-  function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-  function linkify(s){
-    s=esc(s);
-    s=s.replace(/https?:\/\/[^\s"'）)]+/g,function(u){return '<a href="'+u+'" target="_blank" rel="noopener">'+u+'</a>';});
-    s=s.replace(/money\.udn\s+(\d{7})/g,'<a href="https://money.udn.com/money/story/5607/$1" target="_blank" rel="noopener">money.udn $1</a>');
-    s=s.replace(/ctee\s+(\d{11,}-\d{6})/g,'<a href="https://www.ctee.com.tw/news/$1" target="_blank" rel="noopener">ctee $1</a>');
-    s=s.replace(/cnyes(?:\s+id)?\s+(\d{7})/g,'<a href="https://news.cnyes.com/news/id/$1" target="_blank" rel="noopener">cnyes $1</a>');
-    return s;
+  var st="gold"; try{st=localStorage.getItem(TK)||"gold";}catch(e){}
+  applyTh(st);
+  var thChips=document.querySelectorAll(".fs-chip[data-t]");
+  for(var i=0;i<thChips.length;i++){(function(b){b.addEventListener("click",function(){
+    var t=b.getAttribute("data-t"); try{localStorage.setItem(TK,t);}catch(e){} applyTh(t);
+  });})(thChips[i]);}
+
+  // ---- 線上人數與累計瀏覽 ----
+  var ol=document.getElementById("olnum");
+  if(ol){var d=new Date();ol.textContent=3+((d.getUTCDate()+d.getUTCHours()+Math.floor(d.getUTCMinutes()/10))%3);}
+  var vs=document.getElementById("views");
+  fetch("https://abacus.jasoncameron.dev/hit/wanglai-daily-report/site")
+    .then(function(r){return r.json();})
+    .then(function(j){if(j&&j.value)vs.textContent=Number(j.value).toLocaleString();})
+    .catch(function(e){var w=document.getElementById("vwrap");if(w)w.style.display="none";});
+
+  // ---- data ----
+  function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+  var WD=["日","一","二","三","四","五","六"];
+  var DAYS={}; // key YYMMDD -> {files:{早盤:f,盤後:f,...}, mkt:{}}
+  function day(k){ if(!DAYS[k])DAYS[k]={files:[],mkt:null}; return DAYS[k]; }
+
+  function parseCSVLine(line){ // market.csv 無引號欄位，簡單切
+    return line.split(",");
   }
 
-  var ALL=[], shown=0, PAGE=50, curF="", curQ="";
-  var list=document.getElementById("list"), more=document.getElementById("more"), count=document.getElementById("count");
+  var got=0, list=document.getElementById("list"), more=document.getElementById("more");
+  var keys=[], shown=0, PAGE=30;
 
-  function filtered(){
-    var q=curQ.toLowerCase();
-    return ALL.filter(function(r){
-      if(curF && r.type.indexOf(curF)<0) return false;
-      if(!q) return true;
-      return (r.date+" "+r.broker+" "+r.type+" "+r.stock+" "+r.industry+" "+r.rating+" "+r.tp+" "+r.note).toLowerCase().indexOf(q)>=0;
-    });
+  function weekday(k){ // k=YYMMDD (民國前綴 26 = 2026)
+    var y=2000+parseInt(k.slice(0,2),10), mo=parseInt(k.slice(2,4),10)-1, dd=parseInt(k.slice(4,6),10);
+    try{return WD[new Date(y,mo,dd).getDay()];}catch(e){return "";}
   }
   function render(reset){
     if(reset){list.innerHTML="";shown=0;}
-    var rows=filtered();
-    count.textContent="共 "+rows.length+" 筆";
-    var end=Math.min(shown+PAGE,rows.length), html="";
+    if(!keys.length){list.innerHTML='<div id="status">尚無日報資料</div>';return;}
+    var end=Math.min(shown+PAGE,keys.length), html="";
     for(var i=shown;i<end;i++){
-      var r=rows[i];
-      html+='<div class="rec"><div class="top">'
-        +'<span class="d">'+esc(r.date)+'</span>'
-        +(r.type?'<span class="tag">'+esc(r.type)+'</span>':'')
-        +'<span class="stock">'+esc(r.stock)+'</span>'
-        +'<span class="broker">'+esc(r.broker)+(r.industry?'｜'+esc(r.industry):'')+'</span></div>'
-        +'<div class="rt">評等：<b>'+esc(r.rating||"—")+'</b>　目標價：<b>'+esc(r.tp||"—")+'</b></div>'
-        +(r.note?'<div class="note">'+linkify(r.note)+'</div>':'')
-        +'</div>';
+      var k=keys[i], o=DAYS[k];
+      var dstr="20"+k.slice(0,2)+"/"+k.slice(2,4)+"/"+k.slice(4,6);
+      var mk;
+      if(o.mkt){
+        var up=String(o.mkt.chg).indexOf("-")!==0;
+        mk='<span class="lbl">加權</span><b>'+esc(o.mkt.taiex)+'</b> <span class="'+(up?"up":"down")+'">'+esc(o.mkt.chg)+'（'+esc(o.mkt.pct)+'）</span>'
+          +(o.mkt.volume?'<span class="vol">成交 '+esc(o.mkt.volume)+'</span>':'');
+      }else{
+        mk='<span class="muted" style="font-size:.8rem;">（無交易或未記錄）</span>';
+      }
+      var btns="";
+      o.files.sort();
+      for(var f=0;f<o.files.length;f++){
+        var fn=o.files[f];
+        var label=fn.indexOf("早盤")>=0?"☀ 早盤日報":(fn.indexOf("盤後")>=0?"🌙 盤後日報":"📄 日報");
+        btns+='<a class="rep" target="_blank" rel="noopener" href="日報/'+encodeURIComponent(fn.replace(/\.docx$/i,".html"))+'">'+label+'</a>';
+      }
+      if(!btns) btns='<span class="none">當日無日報</span>';
+      html+='<div class="day"><div class="dt"><span class="d">📅 '+dstr+'</span><span class="w">（週'+weekday(k)+'）</span></div>'
+        +'<div class="mk">'+mk+'</div><div class="btns">'+btns+'</div></div>';
     }
     list.insertAdjacentHTML("beforeend",html);
     shown=end;
-    more.style.display = shown<rows.length ? "block" : "none";
-    if(rows.length===0) list.innerHTML='<div id="status">沒有符合的紀錄</div>';
+    more.style.display = shown<keys.length ? "block" : "none";
+  }
+  function done(){
+    got++; if(got<2) return;
+    keys=Object.keys(DAYS).sort().reverse();
+    render(true);
   }
 
-  document.getElementById("q").addEventListener("input",function(e){curQ=e.target.value.trim();render(true);});
-  // 支援 reports.html?q=股名 直接帶入搜尋（個股報告頁跳過來用）
-  try{
-    var pq=new URLSearchParams(location.search).get("q");
-    if(pq){curQ=pq.trim();document.getElementById("q").value=curQ;}
-  }catch(e){}
-  var flts=document.querySelectorAll(".flt");
-  for(var j=0;j<flts.length;j++){(function(b){b.addEventListener("click",function(){
-    for(var k=0;k<flts.length;k++)flts[k].classList.remove("on");
-    b.classList.add("on"); curF=b.getAttribute("data-f"); render(true);
-  });})(flts[j]);}
-  more.addEventListener("click",function(){render(false);});
-
-  fetch("reports.csv",{cache:"no-store"}).then(function(r){
-    if(!r.ok) throw new Error(r.status);
-    return r.text();
-  }).then(function(t){
-    var rows=parseCSV(t);
-    for(var i=1;i<rows.length;i++){ // skip header
-      var c=rows[i]; if(c.length<4) continue;
-      // 內部工作筆記列不對外顯示（方法論/收件匣/補正紀錄類）
-      if(((c[3]||"")+(c[1]||"")).indexOf("方法論")>=0) continue;
-      if((c[3]||"").indexOf("收件匣")>=0) continue;
-      ALL.push({date:c[0]||"",broker:c[1]||"",type:c[2]||"",stock:c[3]||"",industry:c[4]||"",rating:c[5]||"",tp:c[6]||"",note:c[7]||""});
+  fetch("stocks.json",{cache:"no-store"}).then(function(r){return r.json();}).then(function(j){
+    var dl=j.daily||[];
+    for(var i=0;i<dl.length;i++){
+      var m=String(dl[i]).match(/^(\d{6})_/);
+      if(m) day(m[1]).files.push(dl[i]);
     }
-    ALL.reverse(); // newest last in file -> show newest first
-    render(true);
-  }).catch(function(e){
-    list.innerHTML='<div id="status">資料檔尚未上傳（reports.csv）。請旺來大大執行「3_同步報告資料.bat」。</div>';
-  });
+  }).catch(function(e){}).then(done);
+
+  fetch("market.csv",{cache:"no-store"}).then(function(r){return r.text();}).then(function(t){
+    var lines=t.split("\n");
+    for(var i=1;i<lines.length;i++){
+      var c=parseCSVLine(lines[i].trim()); if(c.length<4||!c[0]) continue;
+      var k=c[0].replace(/^20/,"").replace(/-/g,""); // 2026-09-18 -> 260918
+      day(k).mkt={taiex:c[1],chg:c[2],pct:c[3],volume:c[4]||""};
+    }
+  }).catch(function(e){}).then(done);
+
+  more.addEventListener("click",function(){render(false);});
 })();
 </script>
 </body>

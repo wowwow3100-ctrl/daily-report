@@ -4,12 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>旺來 個股報告｜新聞整理</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%8D%3C/text%3E%3C/svg%3E">
 <style>
   :root{
     --bg:#0B0B0D; --card:#16161A; --card2:#1D1D23; --line:#2A2A32;
     --gold:#E8C15A; --gold-dim:#A98B3F; --text:#EDEAE0; --muted:#9C9889;
-    --up:#FF5A5A; --down:#3DD68C;
+    --up:#FF5A5A; --down:#3DD68C; --bgt:rgba(11,11,13,.94);
   }
+  html[data-theme="light"]{--bg:#F6F0E0;--card:#FFFFFF;--card2:#EFE7CF;--line:#DCD2B4;--gold:#7A5E17;--gold-dim:#9C8034;--text:#22381F;--muted:#5A6F58;--up:#C43D3D;--down:#1E7F4F;--bgt:rgba(246,240,224,.94);}
+  html[data-theme="navy"]{--bg:#0C1322;--card:#141E33;--card2:#1B2946;--line:#263858;--gold:#9DC0FF;--gold-dim:#5C7FBF;--text:#E8EDF7;--muted:#8FA0BF;--up:#FF6B6B;--down:#43D69A;--bgt:rgba(12,19,34,.94);}
   html{font-size:17px;}
   html[data-size="lg"]{font-size:19px;}
   html[data-size="xl"]{font-size:22px;}
@@ -26,14 +29,14 @@
   .fs-label{color:var(--muted);font-size:.75rem;}
   .fs-chip{cursor:pointer;border:1px solid var(--gold-dim);color:var(--gold-dim);background:none;
     border-radius:16px;padding:2px 12px;font-size:.8rem;font-family:inherit;}
-  .fs-chip.on{background:var(--gold);color:#111;border-color:var(--gold);font-weight:700;}
+  .fs-chip.on{background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:700;}
   .notice{
     margin:16px 0 20px;padding:12px 18px;border:1px solid var(--gold-dim);
     background:linear-gradient(90deg,rgba(232,193,90,.10),rgba(232,193,90,.02));
     border-radius:8px;color:var(--gold);font-size:.95rem;font-weight:700;letter-spacing:.5px;
   }
   .notice span{color:var(--muted);font-weight:400;display:block;font-size:.8rem;margin-top:2px;}
-  .searchbar{position:sticky;top:0;z-index:50;background:rgba(11,11,13,.94);backdrop-filter:blur(4px);
+  .searchbar{position:sticky;top:0;z-index:50;background:var(--bgt);backdrop-filter:blur(4px);
     padding:12px 0;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
   #q{flex:1;min-width:220px;background:var(--card);border:1px solid var(--gold-dim);color:var(--text);
     border-radius:24px;padding:9px 18px;font-size:1rem;font-family:inherit;outline:none;}
@@ -81,6 +84,11 @@
         <button class="fs-chip" data-s="lg">大</button>
         <button class="fs-chip" data-s="xl">特大</button>
       </div>
+      <div class="fs-box"><span class="fs-label">主題</span>
+        <button class="fs-chip" data-t="gold">黑金</button>
+        <button class="fs-chip" data-t="light">米白</button>
+        <button class="fs-chip" data-t="navy">深藍</button>
+      </div>
     </div>
   </header>
 
@@ -108,15 +116,29 @@
   var KEY="wl_fs";
   function applyFs(s){
     document.documentElement.setAttribute("data-size", s);
-    var chips=document.querySelectorAll(".fs-chip");
+    var chips=document.querySelectorAll(".fs-chip[data-s]");
     for(var i=0;i<chips.length;i++){chips[i].classList.toggle("on",chips[i].getAttribute("data-s")===s);}
   }
   var saved="std"; try{saved=localStorage.getItem(KEY)||"std";}catch(e){}
   applyFs(saved);
-  var fsChips=document.querySelectorAll(".fs-chip");
+  var fsChips=document.querySelectorAll(".fs-chip[data-s]");
   for(var i=0;i<fsChips.length;i++){(function(b){b.addEventListener("click",function(){
     var s=b.getAttribute("data-s"); try{localStorage.setItem(KEY,s);}catch(e){} applyFs(s);
   });})(fsChips[i]);}
+
+  // ---- theme ----
+  var TK="wl_theme";
+  function applyTh(t){
+    document.documentElement.setAttribute("data-theme", t);
+    var c=document.querySelectorAll(".fs-chip[data-t]");
+    for(var i=0;i<c.length;i++){c[i].classList.toggle("on",c[i].getAttribute("data-t")===t);}
+  }
+  var st="gold"; try{st=localStorage.getItem(TK)||"gold";}catch(e){}
+  applyTh(st);
+  var thChips=document.querySelectorAll(".fs-chip[data-t]");
+  for(var i=0;i<thChips.length;i++){(function(b){b.addEventListener("click",function(){
+    var t=b.getAttribute("data-t"); try{localStorage.setItem(TK,t);}catch(e){} applyTh(t);
+  });})(thChips[i]);}
 
   // 公司官網網域對照（拿 favicon 當識別小圖；沒對到的用金色字母磚）
   var DOM={
@@ -134,7 +156,29 @@
    "2368":"gce.com.tw","3044":"tripod-tech.com","3293":"igs.com.tw","3005":"getacgroup.com",
    "2360":"chromaate.com","2313":"compeq.com.tw","2382":"quantatw.com","2412":"cht.com.tw",
    "2603":"evergreen-marine.com","2609":"yangming.com","2615":"wanhai.com.tw","2610":"china-airlines.com",
-   "2618":"evaair.com","2881":"fubon.com","2891":"ctbcholding.com","2886":"megaholdings.com.tw"
+   "2618":"evaair.com","2881":"fubon.com","2891":"ctbcholding.com","2886":"megaholdings.com.tw",
+   "5347":"vis.com.tw","3661":"alchip.com","5871":"chailease.com.tw","2002":"csc.com.tw",
+   "1590":"airtac.com","2449":"kyec.com.tw","2324":"compal.com","3023":"sinbon.com",
+   "3653":"jentech.com.tw","8069":"eink.com","2455":"vpec.com.tw","3529":"ememory.com.tw",
+   "8210":"chenbro.com","4967":"teamgroupinc.com","2409":"auo.com","1802":"taiwanglass.com",
+   "4938":"pegatroncorp.com","6285":"wnc.com.tw","3702":"wpgholdings.com","8086":"awsc.com.tw",
+   "5289":"innodisk.com","8454":"momoshop.com.tw","5904":"poya.com.tw","9921":"giant-bicycles.com",
+   "2377":"msi.com","2376":"gigabyte.com","3036":"wtmec.com","4919":"nuvoton.com",
+   "3711":"aseglobal.com","6223":"mpi.com.tw","3042":"txccorp.com","3006":"esmt.com.tw",
+   "3035":"faraday-tech.com","3596":"arcadyan.com","1504":"teco.com.tw","2884":"esunfhc.com",
+   "3406":"gseo.com","2379":"realtek.com","6488":"globalwafers.com","6257":"sigurd.com.tw",
+   "3706":"mitac.com","5269":"asmedia.com.tw","3026":"holystone.com.tw","3105":"winfoundry.com",
+   "6510":"chpt.com.tw","2912":"7-11.com.tw","3481":"innolux.com","2458":"emc.com.tw",
+   "1477":"makalot.com.tw","6213":"iteq.com.tw","3034":"novatek.com.tw","2356":"inventec.com",
+   "1605":"walsin.com","2357":"asus.com","6446":"pharmaessentia.com","2606":"uming.com.tw",
+   "4966":"paradetech.com","9910":"fengtay.com","6526":"airoha.com","1717":"eternal-group.com",
+   "2351":"sdi.com.tw","3211":"dynapack.com.tw","6147":"chipbond.com.tw","1513":"chem.com.tw",
+   "2634":"aidc.com.tw","2006":"tunghosteel.com","1319":"tyg.com.tw","2481":"panjit.com.tw",
+   "2467":"csun.com.tw","6531":"apmemory.com","6409":"voltronicpower.com","3491":"umt.com.tw",
+   "6491":"pegavision.com","3363":"foci.com.tw","2049":"hiwin.tw","1560":"kinik.com.tw",
+   "8464":"nienmade.com.tw","1476":"eclat.com.tw","2883":"kgifh.com.tw","6805":"fositek.com",
+   "8021":"topoint.com.tw","3376":"szs.com.tw","4576":"hiwinmikro.tw","2015":"fenghsin.com.tw",
+   "6672":"venteclaminates.com","4979":"luxnetcorp.com.tw","1519":"fortune.com.tw","6139":"lkeng.com.tw"
   };
   function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
   function logoHTML(code,name){
@@ -174,7 +218,7 @@
     for(var t=0;t<tiles.length;t++)tiles[t].classList.remove("on");
     if(el)el.classList.add("on");
     var html='<h3>'+esc(s.name)+' ('+esc(s.code)+')</h3>'
-      +'<a class="act" href="reports.html?q='+encodeURIComponent(s.name)+'">📚 看這檔的歷史觀點紀錄 →</a>'
+      +'<a class="act" href="records.html?q='+encodeURIComponent(s.name)+'">🔎 看這檔的歷史觀點紀錄 →</a>'
       +'<ul>';
     var fs=s.files.slice().sort(function(a,b){return a<b?1:-1;});
     for(var i=0;i<fs.length;i++){

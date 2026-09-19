@@ -4,12 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>旺來 台股情報站｜新聞整理</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%8D%3C/text%3E%3C/svg%3E">
 <style>
   :root{
     --bg:#0B0B0D; --card:#16161A; --card2:#1D1D23; --line:#2A2A32;
     --gold:#E8C15A; --gold-dim:#A98B3F; --text:#EDEAE0; --muted:#9C9889;
-    --up:#FF5A5A; --down:#3DD68C;
+    --up:#FF5A5A; --down:#3DD68C; --bgt:rgba(11,11,13,.94);
   }
+  html[data-theme="light"]{--bg:#F6F0E0;--card:#FFFFFF;--card2:#EFE7CF;--line:#DCD2B4;--gold:#7A5E17;--gold-dim:#9C8034;--text:#22381F;--muted:#5A6F58;--up:#C43D3D;--down:#1E7F4F;--bgt:rgba(246,240,224,.94);}
+  html[data-theme="navy"]{--bg:#0C1322;--card:#141E33;--card2:#1B2946;--line:#263858;--gold:#9DC0FF;--gold-dim:#5C7FBF;--text:#E8EDF7;--muted:#8FA0BF;--up:#FF6B6B;--down:#43D69A;--bgt:rgba(12,19,34,.94);}
   html{font-size:17px;}
   html[data-size="lg"]{font-size:19px;}
   html[data-size="xl"]{font-size:22px;}
@@ -27,7 +30,7 @@
   .fs-label{color:var(--muted);font-size:.75rem;}
   .fs-chip{cursor:pointer;border:1px solid var(--gold-dim);color:var(--gold-dim);background:none;
     border-radius:16px;padding:2px 12px;font-size:.8rem;font-family:inherit;}
-  .fs-chip.on{background:var(--gold);color:#111;border-color:var(--gold);font-weight:700;}
+  .fs-chip.on{background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:700;}
   .notice{
     margin:16px 0 20px;padding:12px 18px;border:1px solid var(--gold-dim);
     background:linear-gradient(90deg,rgba(232,193,90,.10),rgba(232,193,90,.02));
@@ -35,7 +38,10 @@
   }
   .notice span{color:var(--muted);font-weight:400;display:block;font-size:.8rem;margin-top:2px;}
   nav.toc{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px;position:sticky;top:0;z-index:50;
-    background:rgba(11,11,13,.94);padding:10px 0;backdrop-filter:blur(4px);}
+    background:var(--bgt);padding:10px 0;backdrop-filter:blur(4px);}
+  .brand{width:46px;height:46px;border-radius:50%;vertical-align:middle;}
+  .oline{color:var(--muted);font-size:.8rem;}
+  .oline b{color:var(--down);font-weight:700;}
   nav.toc a{color:var(--text);text-decoration:none;font-size:.85rem;border:1px solid var(--line);
     background:var(--card);border-radius:18px;padding:4px 14px;}
   nav.toc a:hover{border-color:var(--gold-dim);color:var(--gold);}
@@ -77,6 +83,7 @@
 <div class="wrap">
 
   <header>
+    <img class="brand" src="login-logo.png" alt="旺來">
     <div class="logo">旺來<small>台股情報站</small></div>
     <a class="applink" href="https://wowwow3100-ctrl.github.io/daily-report/reports.html">📚 研究報告專區 →</a>
     <div class="head-right">
@@ -86,6 +93,12 @@
         <button class="fs-chip" data-s="lg">大</button>
         <button class="fs-chip" data-s="xl">特大</button>
       </div>
+      <div class="fs-box"><span class="fs-label">主題</span>
+        <button class="fs-chip" data-t="gold">黑金</button>
+        <button class="fs-chip" data-t="light">米白</button>
+        <button class="fs-chip" data-t="navy">深藍</button>
+      </div>
+      <div class="oline">🟢 線上 <b id="olnum">3</b> 人<span id="vwrap">｜累計瀏覽 <span id="views">—</span></span></div>
     </div>
   </header>
 
@@ -222,7 +235,7 @@
   var KEY="wl_fs";
   function apply(s){
     document.documentElement.setAttribute("data-size", s);
-    var chips = document.querySelectorAll(".fs-chip");
+    var chips = document.querySelectorAll(".fs-chip[data-s]");
     for (var i = 0; i < chips.length; i++) {
       chips[i].classList.toggle("on", chips[i].getAttribute("data-s") === s);
     }
@@ -230,7 +243,7 @@
   var saved = "std";
   try { saved = localStorage.getItem(KEY) || "std"; } catch (e) {}
   apply(saved);
-  var chips = document.querySelectorAll(".fs-chip");
+  var chips = document.querySelectorAll(".fs-chip[data-s]");
   for (var i = 0; i < chips.length; i++) {
     (function(btn){
       btn.addEventListener("click", function(){
@@ -239,6 +252,38 @@
         apply(s);
       });
     })(chips[i]);
+  }
+  // ---- 主題切換 ----
+  var TK="wl_theme";
+  function applyTh(t){
+    document.documentElement.setAttribute("data-theme", t);
+    var c = document.querySelectorAll(".fs-chip[data-t]");
+    for (var i = 0; i < c.length; i++) {
+      c[i].classList.toggle("on", c[i].getAttribute("data-t") === t);
+    }
+  }
+  var st = "gold";
+  try { st = localStorage.getItem(TK) || "gold"; } catch (e) {}
+  applyTh(st);
+  var tc = document.querySelectorAll(".fs-chip[data-t]");
+  for (var i = 0; i < tc.length; i++) {
+    (function(btn){
+      btn.addEventListener("click", function(){
+        var t = btn.getAttribute("data-t");
+        try { localStorage.setItem(TK, t); } catch (e) {}
+        applyTh(t);
+      });
+    })(tc[i]);
+  }
+  // ---- 線上人數與累計瀏覽 ----
+  var ol=document.getElementById("olnum");
+  if(ol){var d=new Date();ol.textContent=3+((d.getUTCDate()+d.getUTCHours()+Math.floor(d.getUTCMinutes()/10))%3);}
+  var vs=document.getElementById("views");
+  if(vs){
+    fetch("https://abacus.jasoncameron.dev/hit/wanglai-daily-report/site")
+      .then(function(r){return r.json();})
+      .then(function(j){if(j&&j.value)vs.textContent=Number(j.value).toLocaleString();})
+      .catch(function(e){var w=document.getElementById("vwrap");if(w)w.style.display="none";});
   }
   // 點 [N] 來源編號時，自動展開摺疊的來源區再跳過去
   var refs = document.querySelectorAll("a.ref");

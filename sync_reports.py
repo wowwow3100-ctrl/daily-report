@@ -17,6 +17,7 @@ import xml.etree.ElementTree as ET
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = r"D:\APP\研究報告\_log\processed.csv"
+LEGACY_DAILY = r"D:\APP\研究報告\日報"
 DST = os.path.join(HERE, "reports.csv")
 STOCK_DIR = os.path.join(HERE, "個股")
 DAILY_DIR = os.path.join(HERE, "日報")
@@ -29,6 +30,7 @@ SHELL = """<!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>%(title)s｜旺來新聞整理</title>
+<link rel="icon" href="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%%3E%%3Ctext y='0.9em' font-size='90'%%3E%%F0%%9F%%8D%%8D%%3C/text%%3E%%3C/svg%%3E">
 <style>
  :root{--bg:#0B0B0D;--card:#16161A;--line:#2A2A32;--gold:#E8C15A;--gold-dim:#A98B3F;--text:#EDEAE0;--muted:#9C9889;}
  *{margin:0;padding:0;box-sizing:border-box;}
@@ -111,8 +113,14 @@ def convert_tree(folder):
             src = os.path.join(dirpath, f)
             dst = os.path.splitext(src)[0] + ".html"
             if os.path.exists(dst) and os.path.getmtime(dst) >= os.path.getmtime(src):
-                skipped += 1
-                continue
+                try:
+                    with open(dst, encoding="utf-8") as fh:
+                        head = fh.read(2048)
+                except Exception:
+                    head = ""
+                if 'rel="icon"' in head:  # 已是含 favicon 的新版才略過
+                    skipped += 1
+                    continue
             body, err = docx_to_html(src)
             if body is None:
                 print("  [轉檔失敗] %s：%s" % (f, err))
@@ -146,7 +154,25 @@ def build_manifest():
     return stocks
 
 
+def copy_legacy_daily():
+    """把歷史日報 docx（研究報告\\日報）補進網站的 日報\\，已存在的不動。"""
+    n = 0
+    if not os.path.isdir(LEGACY_DAILY):
+        return n
+    os.makedirs(DAILY_DIR, exist_ok=True)
+    for f in os.listdir(LEGACY_DAILY):
+        if not f.lower().endswith(".docx") or f.startswith("~$"):
+            continue
+        dst = os.path.join(DAILY_DIR, f)
+        if not os.path.exists(dst):
+            shutil.copyfile(os.path.join(LEGACY_DAILY, f), dst)
+            n += 1
+    return n
+
+
 def main():
+    n = copy_legacy_daily()
+    print("[完成] 歷史日報補入 %d 份" % n)
     if os.path.exists(SRC):
         shutil.copyfile(SRC, DST)
         print("[完成] reports.csv 已更新（%d KB）" % (os.path.getsize(DST) // 1024))
@@ -158,10 +184,14 @@ def main():
         print("[完成] %s docx→html：新轉 %d、已是最新 %d、失敗 %d" % (label, made, skipped, failed))
 
     stocks = build_manifest()
+    daily = []
+    if os.path.isdir(DAILY_DIR):
+        daily = [f for f in sorted(os.listdir(DAILY_DIR))
+                 if f.lower().endswith(".docx") and not f.startswith("~$")]
     with open(MANIFEST, "w", encoding="utf-8") as f:
-        json.dump({"stocks": stocks}, f, ensure_ascii=False, indent=1)
+        json.dump({"stocks": stocks, "daily": daily}, f, ensure_ascii=False, indent=1)
     total = sum(len(s["files"]) for s in stocks)
-    print("[完成] stocks.json：%d 檔個股、%d 份摘要" % (len(stocks), total))
+    print("[完成] stocks.json：%d 檔個股、%d 份摘要、%d 份日報" % (len(stocks), total, len(daily)))
 
     with open(REQ, "w", encoding="utf-8") as f:
         f.write("update: 同步研究報告資料（網頁版摘要＋個股清單）\n")
