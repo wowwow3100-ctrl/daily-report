@@ -34,7 +34,8 @@
     border-radius:8px;color:var(--gold);font-size:.95rem;font-weight:700;letter-spacing:.5px;
   }
   .notice span{color:var(--muted);font-weight:400;display:block;font-size:.8rem;margin-top:2px;}
-  nav.toc{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px;}
+  nav.toc{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px;position:sticky;top:0;z-index:50;
+    background:rgba(11,11,13,.94);padding:10px 0;backdrop-filter:blur(4px);}
   nav.toc a{color:var(--text);text-decoration:none;font-size:.85rem;border:1px solid var(--line);
     background:var(--card);border-radius:18px;padding:4px 14px;}
   nav.toc a:hover{border-color:var(--gold-dim);color:var(--gold);}
@@ -73,7 +74,7 @@
 
   <header>
     <div class="logo">旺來<small>台股情報站</small></div>
-    <a class="applink" href="https://web-production-e1521.up.railway.app/" target="_blank" rel="noopener">旺來生命線 App →</a>
+    <a class="applink" href="https://wowwow3100-ctrl.github.io/daily-report/reports.html">📚 研究報告專區 →</a>
     <div class="head-right">
       <div class="stamp" id="updated">📅 2026/09/19（六）盤後場次</div>
       <div class="fs-box"><span class="fs-label">字級</span>
@@ -90,7 +91,7 @@
   </div>
 
   <nav class="toc">
-    <a href="#mkt">大盤速覽</a><a href="#focus">今日焦點</a><a href="#broker">券商觀點</a><a href="#watch">自選股</a><a href="#sources">新聞連結</a>
+    <a href="#mkt">大盤速覽</a><a href="#focus">今日焦點</a><a href="#broker">券商觀點</a><a href="#watch">自選股</a><a href="#sources">新聞連結</a><a href="https://wowwow3100-ctrl.github.io/daily-report/reports.html" style="border-color:var(--gold-dim);color:var(--gold);">📚 研究報告</a>
   </nav>
 
   <!-- ===== DATA:MARKET ===== -->
@@ -124,10 +125,6 @@
   <div class="card">
     <div class="news-title"><span class="cat">產業</span>宏碁陳俊聖：記憶體已不缺，PC 僅剩 2 類關鍵零件供貨吃緊 <a class="ref" href="#src-16">[16]</a></div>
     <div class="news-body">品牌端說法與近期記憶體漲價題材出現落差；供給面若確實鬆動，將影響記憶體族群後續的量價假設，值得與上游廠商說法交叉比對。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">總經</span>96 歲巴菲特宣布卸任波克夏董事長 <a class="ref" href="#src-11">[11]</a></div>
-    <div class="news-body">巴菲特以「歲月不饒人」說明卸任決定，波克夏治理接班進入新階段。此為國際市場指標性人事訊息，對台股無直接連動。</div>
   </div>
   <!-- ===== /DATA:FOCUS_NEWS ===== -->
 
