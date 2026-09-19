@@ -38,8 +38,8 @@
     border-radius:16px;padding:2px 12px;font-size:.8rem;font-family:inherit;}
   .fs-chip.on{background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:700;}
   .setwrap{position:relative;}
-  .setbtn{cursor:pointer;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold-dim);
-    background:var(--card);color:var(--gold);font-size:1.4rem;font-family:inherit;}
+  .setbtn{cursor:pointer;border-radius:22px;border:1px solid var(--gold-dim);padding:8px 16px;
+    background:var(--card);color:var(--gold);font-size:.95rem;font-weight:700;font-family:inherit;white-space:nowrap;}
   .setbtn:hover{border-color:var(--gold);}
   nav.pnav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px;}
   nav.pnav a{color:var(--gold-dim);text-decoration:none;font-size:.9rem;font-weight:700;
@@ -111,7 +111,7 @@
     <div class="logo">旺來<small>個股報告</small></div>
     <div class="head-right">
       <div class="setwrap">
-        <button class="setbtn" id="setbtn" title="顯示設定">⚙</button>
+        <button class="setbtn" id="setbtn" title="顯示設定">⚙ 設定</button>
         <div class="setpanel" id="setpanel">
           <div class="setrow"><span>字級</span>
             <button class="fs-chip" data-s="std">標準</button>
@@ -131,11 +131,11 @@
 
   <div class="notice">
     ⚠ 本站為新聞整理用途
-    <span>以下摘要文件依公開新聞整理（標註來源），非券商原始報告、非投資建議。公司名稱與標誌僅供識別，權利屬各公司所有。</span>
+    <span>為什麼沒有外資報告原檔？完整券商研究報告是付費授權文件、僅發給機構客戶，公開轉載屬侵權行為。本站只提供依「公開新聞報導」整理的摘要（每份都標註來源），非券商原始報告、非投資建議。公司名稱與標誌僅供識別，權利屬各公司所有。</span>
   </div>
 
   <nav class="pnav">
-    <a href="index.html">📰 每日情報站</a><a href="reports.html">📚 研究報告</a><a class="on" href="stocks.html">🏢 個股報告</a><a href="records.html">🔎 紀錄庫</a>
+    <a href="index.html">📰 每日情報站</a><a href="reports.html">📚 每日回顧</a><a class="on" href="stocks.html">🏢 個股報告</a><a href="records.html">🔎 速查</a>
   </nav>
 
   <div class="searchbar">
@@ -250,9 +250,10 @@
     var html="";
     for(var i=0;i<rows.length;i++){
       var s=rows[i];
+      var lt=s.latest?("最新 20"+s.latest.slice(0,2)+"/"+s.latest.slice(2,4)+"/"+s.latest.slice(4,6)):"";
       html+='<div class="tile" data-i="'+ALL.indexOf(s)+'">'+logoHTML(s.code,s.name)
         +'<div class="nm">'+esc(s.name)+'</div><div class="cd">'+esc(s.code)+'</div>'
-        +'<div class="ct">📄 '+s.files.length+' 份摘要</div></div>';
+        +'<div class="ct">📄 '+s.files.length+' 份・'+lt+'</div></div>';
     }
     grid.innerHTML = html || '<div id="status">沒有符合的個股</div>';
     var tiles=grid.querySelectorAll(".tile");
@@ -290,7 +291,20 @@
     if(!r.ok) throw new Error(r.status);
     return r.json();
   }).then(function(j){
-    ALL=(j.stocks||[]).filter(function(s){return s.code;}).sort(function(a,b){return b.files.length-a.files.length;});
+    ALL=(j.stocks||[]).filter(function(s){return s.code;});
+    // 每檔取最新一份摘要的日期，最新更新的排最前面；同日再比摘要數
+    for(var i=0;i<ALL.length;i++){
+      var mx="";
+      for(var f=0;f<ALL[i].files.length;f++){
+        var m=String(ALL[i].files[f]).match(/^(\d{6})_/);
+        if(m&&m[1]>mx)mx=m[1];
+      }
+      ALL[i].latest=mx;
+    }
+    ALL.sort(function(a,b){
+      if(a.latest!==b.latest) return a.latest<b.latest?1:-1;
+      return b.files.length-a.files.length;
+    });
     render();
   }).catch(function(e){
     grid.innerHTML='<div id="status">資料檔尚未上傳（stocks.json）。請旺來大大執行「4_首次上傳個股資料.bat」。</div>';
