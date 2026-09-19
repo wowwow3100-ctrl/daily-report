@@ -103,6 +103,10 @@
   ol.srcs a:hover{color:var(--gold);}
   footer{margin-top:44px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.8rem;line-height:2;}
   footer b{color:var(--gold);}
+  .thbtn{display:inline-flex;align-items:center;gap:8px;margin:2px 0 10px;padding:8px 18px;border:1px solid var(--gold-dim);
+    border-radius:22px;color:var(--gold);text-decoration:none;font-weight:800;font-size:.9rem;background:var(--card);letter-spacing:1px;}
+  .thbtn:hover{border-color:var(--gold);}
+  .thbtn .at{font-size:1.1rem;font-weight:900;}
   @media (max-width:720px){
     .wrap{padding:0 12px 40px;}
     header{padding-top:16px;gap:8px;}
@@ -113,9 +117,27 @@
     .mkt{grid-template-columns:repeat(2,1fr);gap:8px;}
     .mkt .val{font-size:1.15rem;}
     .card{padding:12px 14px;}
-    table{display:block;overflow-x:auto;}
+    table,table tbody{display:block;}
+    table tr{display:block;padding:10px 12px;border-top:1px solid var(--line);}
+    table tr:first-child{display:none;}
+    table td{display:inline-block;border:0;padding:2px 10px 2px 0;vertical-align:middle;}
+    table td:last-child{display:block;border-top:1px dashed var(--line);margin-top:6px;padding:6px 0 0;white-space:normal;}
     .setpanel{white-space:normal;min-width:250px;}
   }
+  /* 強制手機版（設定 > 版面 > 手機版） */
+  html.mob .wrap{padding:0 12px 40px;max-width:540px;}
+  html.mob header{padding-top:16px;gap:8px;}
+  html.mob .logo{font-size:1.4rem;} html.mob .brand{width:36px;height:36px;}
+  html.mob .head-right{width:100%;flex-direction:row;justify-content:space-between;align-items:center;}
+  html.mob .mkt{grid-template-columns:repeat(2,1fr);gap:8px;}
+  html.mob .mkt .val{font-size:1.15rem;}
+  html.mob .card{padding:12px 14px;}
+  html.mob table,html.mob table tbody{display:block;}
+  html.mob table tr{display:block;padding:10px 12px;border-top:1px solid var(--line);}
+  html.mob table tr:first-child{display:none;}
+  html.mob table td{display:inline-block;border:0;padding:2px 10px 2px 0;vertical-align:middle;}
+  html.mob table td:last-child{display:block;border-top:1px dashed var(--line);margin-top:6px;padding:6px 0 0;white-space:normal;}
+  html.mob .setpanel{white-space:normal;min-width:250px;}
 </style>
 </head>
 <body>
@@ -140,6 +162,11 @@
               <button class="fs-chip" data-t="gold">黑金</button>
               <button class="fs-chip" data-t="light">米白</button>
               <button class="fs-chip" data-t="navy">深藍</button>
+            </div>
+            <div class="setrow"><span>版面</span>
+              <button class="fs-chip" data-v="auto">自動</button>
+              <button class="fs-chip" data-v="pc">電腦版</button>
+              <button class="fs-chip" data-v="mb">手機版</button>
             </div>
           </div>
         </div>
@@ -270,6 +297,7 @@
   <!-- ===== /DATA:SOURCES ===== -->
 
   <footer>
+    <a class="thbtn" href="https://www.threads.com/@wowwow31001" target="_blank" rel="noopener"><span class="at">＠</span>追蹤旺來的脆 wowwow31001</a><br>
     <b>旺來 @wowwow31001</b>｜本站為新聞整理用途，內容彙整自公開新聞與公開資訊，非投資建議，不構成任何有價證券之買賣要約或訊號。<br>
     各報導著作權屬原媒體所有，本站僅摘要並附來源連結；目標價與預估值以各券商原始報告為準。<br>
     自動更新：每日 08:00／19:00（由旺來研究報告工作流產生）
@@ -320,6 +348,27 @@
         applyTh(t);
       });
     })(tc[i]);
+  }
+  // ---- 版面切換（自動/電腦/手機） ----
+  var VK="wl_view", vmeta=document.querySelector('meta[name="viewport"]');
+  function applyV(v){
+    if(vmeta) vmeta.setAttribute("content", v==="pc" ? "width=1100" : "width=device-width, initial-scale=1.0");
+    document.documentElement.classList.toggle("mob", v==="mb");
+    var c=document.querySelectorAll(".fs-chip[data-v]");
+    for(var i=0;i<c.length;i++){c[i].classList.toggle("on", c[i].getAttribute("data-v")===v);}
+  }
+  var sv="auto";
+  try{ sv=localStorage.getItem(VK)||"auto"; }catch(e){}
+  applyV(sv);
+  var vc=document.querySelectorAll(".fs-chip[data-v]");
+  for (var i = 0; i < vc.length; i++) {
+    (function(btn){
+      btn.addEventListener("click", function(){
+        var v=btn.getAttribute("data-v");
+        try{ localStorage.setItem(VK, v); }catch(e){}
+        applyV(v);
+      });
+    })(vc[i]);
   }
   // ---- 設定面板開關 ----
   var sb=document.getElementById("setbtn"), sp=document.getElementById("setpanel");

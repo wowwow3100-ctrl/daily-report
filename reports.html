@@ -82,6 +82,10 @@
     border-radius:24px;padding:8px 30px;font-size:.9rem;font-family:inherit;cursor:pointer;}
   footer{margin-top:44px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.8rem;line-height:2;}
   footer b{color:var(--gold);}
+  .thbtn{display:inline-flex;align-items:center;gap:8px;margin:2px 0 10px;padding:8px 18px;border:1px solid var(--gold-dim);
+    border-radius:22px;color:var(--gold);text-decoration:none;font-weight:800;font-size:.9rem;background:var(--card);letter-spacing:1px;}
+  .thbtn:hover{border-color:var(--gold);}
+  .thbtn .at{font-size:1.1rem;font-weight:900;}
   @media (max-width:720px){
     .wrap{padding:0 12px 40px;}
     header{padding-top:16px;gap:8px;}
@@ -92,6 +96,14 @@
     .day .dt{min-width:0;}
     .setpanel{white-space:normal;min-width:250px;}
   }
+  /* 強制手機版（設定 > 版面 > 手機版） */
+  html.mob .wrap{padding:0 12px 40px;max-width:540px;}
+  html.mob header{padding-top:16px;gap:8px;}
+  html.mob .logo{font-size:1.4rem;}
+  html.mob .head-right{width:100%;flex-direction:row;justify-content:space-between;align-items:center;}
+  html.mob .day{flex-direction:column;align-items:flex-start;gap:8px;padding:12px 14px;}
+  html.mob .day .dt{min-width:0;}
+  html.mob .setpanel{white-space:normal;min-width:250px;}
 </style>
 </head>
 <body>
@@ -116,6 +128,11 @@
               <button class="fs-chip" data-t="light">米白</button>
               <button class="fs-chip" data-t="navy">深藍</button>
             </div>
+            <div class="setrow"><span>版面</span>
+              <button class="fs-chip" data-v="auto">自動</button>
+              <button class="fs-chip" data-v="pc">電腦版</button>
+              <button class="fs-chip" data-v="mb">手機版</button>
+            </div>
           </div>
         </div>
       </div>
@@ -136,6 +153,7 @@
   <button id="more" style="display:none;">載入更多</button>
 
   <footer>
+    <a class="thbtn" href="https://www.threads.com/@wowwow31001" target="_blank" rel="noopener"><span class="at">＠</span>追蹤旺來的脆 wowwow31001</a><br>
     <b>旺來 @wowwow31001</b>｜本頁彙整每日研究報告日報（早盤/盤後）與大盤收盤資訊，內容依公開新聞整理，非投資建議。<br>
     自動更新：每日 08:00／19:00（由旺來研究報告工作流產生）
   </footer>
@@ -170,6 +188,21 @@
   for(var i=0;i<thChips.length;i++){(function(b){b.addEventListener("click",function(){
     var t=b.getAttribute("data-t"); try{localStorage.setItem(TK,t);}catch(e){} applyTh(t);
   });})(thChips[i]);}
+
+  // ---- 版面切換（自動/電腦/手機） ----
+  var VK="wl_view", vmeta=document.querySelector('meta[name="viewport"]');
+  function applyV(v){
+    if(vmeta) vmeta.setAttribute("content", v==="pc" ? "width=1100" : "width=device-width, initial-scale=1.0");
+    document.documentElement.classList.toggle("mob", v==="mb");
+    var c=document.querySelectorAll(".fs-chip[data-v]");
+    for(var i=0;i<c.length;i++){c[i].classList.toggle("on", c[i].getAttribute("data-v")===v);}
+  }
+  var sv="auto"; try{sv=localStorage.getItem(VK)||"auto";}catch(e){}
+  applyV(sv);
+  var vwChips=document.querySelectorAll(".fs-chip[data-v]");
+  for(var i=0;i<vwChips.length;i++){(function(b){b.addEventListener("click",function(){
+    var v=b.getAttribute("data-v"); try{localStorage.setItem(VK,v);}catch(e){} applyV(v);
+  });})(vwChips[i]);}
 
   // ---- 設定面板開關 ----
   var sb=document.getElementById("setbtn"), sp=document.getElementById("setpanel");
