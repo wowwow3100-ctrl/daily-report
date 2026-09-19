@@ -232,11 +232,60 @@
    "1650":"kinik.com.tw","2762":"worldgymtaiwan.com","1563":"superalloy.com.tw","6472":"boracorpharma.com"
   };
   function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+  // TradingView 官方公司 logo 圖庫對照（代號 → logoid），2026/09/20 全站盤點建置
+  var TVL={
+   "1301":"formosa-plastic","1303":"nan-ya","1319":"tong-yang-industry","1326":"formosa-chemical",
+   "1476":"eclat-textile-co","1477":"makalot-industrial-co","1504":"teco-electric-and-machinery-co",
+   "1513":"chung-hsin-electric-and-machinery","1514":"allis-electric-co-ltd","1519":"fortune-electric-co-ltd",
+   "1560":"kinik-co","1563":"superalloy-industrial-co-ltd","1590":"airtac-international","1605":"walsin-lihwa",
+   "1717":"eternal-materials-co-ltd","1802":"taiwan-glass-industrial","2002":"china-steel","2006":"tunghost-144a-gdr",
+   "2015":"feng-hsin-steel-co-ltd","2027":"ta-chen-stainless-pipe","2049":"hiwin-technologies","2059":"king-slide-works-co",
+   "2301":"lite-on-technology","2303":"united-micro-electronics","2308":"delta-electronic","2313":"compeq-manufacturing",
+   "2317":"hon-hai","2324":"compal-electronics","2327":"yageo-regs-gdr","2330":"taiwan-semiconductor",
+   "2337":"macronix-international","2344":"winbond-electronic","2345":"accton-technology","2351":"sdi",
+   "2356":"inventec","2357":"asustek-computer","2360":"chroma-ate","2368":"gold-circuit-electronics-co",
+   "2376":"giga-byte-technology-co","2377":"micro-star-international-co","2379":"realteks-gds","2382":"quanta-computer",
+   "2383":"elite-material-co","2408":"nan-ya","2409":"au-optronics","2449":"king-yuan-electronics-co",
+   "2454":"mediatek","2455":"visual-photonics-epitaxy-co-ltd","2458":"elan-microelectronics","2467":"c-sun-manufacturing-co",
+   "2481":"panjit-gds-144a-gd","2486":"i-chiun-precision-industry-co","2603":"evergreen-marine","2606":"u-ming-marine-transport",
+   "2609":"yang-ming-marine-transport","2610":"china-airlines","2615":"wan-hai-lines","2618":"eva-airways",
+   "2634":"aerospace-industrial-devlpmt","2762":"world-fitness-services-ltd","2882":"cathay-financial",
+   "2883":"china-development-financial-hldgs","2884":"e-sun-financial","2886":"mega-financial-holdings",
+   "2891":"ctbc-financial-holdings","2912":"president-chain-store","3006":"elite-semiconductor-microelectronic",
+   "3008":"largan","3017":"asia-vital-components-co-ltd","3023":"sinbon-electronics-co-ltd","3026":"holy-stone-enterprise",
+   "3034":"novatek-microelectronics","3035":"faraday-technology","3036":"wt-microelectronics-co-ltd",
+   "3037":"unimicron-technology","3042":"txc-corpn","3044":"tripod-technology","3081":"land-mark-optoelectronics",
+   "3090":"nichidenbo","3105":"win-semiconductors","3131":"grand-process-technology-co","3189":"kinsus-interconnect-technology",
+   "3211":"dynapack-international-technology","3231":"wistron","3264":"ardentec","3293":"international-games-system-co",
+   "3324":"auras-technology-co","3363":"foci-fiber-optic-communications","3376":"shin-zu-shing-co",
+   "3406":"genius-electronic-optical-coltd","3413":"foxsemicon-integrated-technology-in","3443":"global-unichip",
+   "3481":"innolux","3491":"universal-microwave-technology","3529":"ememory-technology","3533":"lotes-co-ltd",
+   "3596":"arcadyan-technology","3653":"jentech-precision-industrial-co","3661":"alchip-technologies-limitd",
+   "3665":"bizlinkh-gds-regs","3702":"wpg-limited","3706":"mitac","3711":"ase-technology-holding","3715":"dynamic-co-ltd",
+   "4551":"global-pmx-co-ltd","4576":"hiwin-mikrosystem","4749":"advanced-echem-materials-company-lt",
+   "4919":"nuvoton-technology","4938":"pegatron-regs-gds","4958":"zhen-ding-technology-ltd","4966":"paratech-regs-gds",
+   "4967":"team","4979":"luxnet","4991":"gcshol-gds-regs-gd","5269":"asmetech-gds-regs","5274":"aspeed-technology",
+   "5289":"innodisk","5347":"vanguard-international-semiconducto","5434":"topco-scientific-co","5871":"chailease-holding",
+   "5904":"poya-international-co-ltd","6139":"landk-engineering-co","6147":"chipbond-technology","6187":"all-ring-tech-co",
+   "6196":"marketech-international","6213":"iteq","6223":"mpi","6239":"powertech-technology",
+   "6257":"sigurd-microelectronics","6274":"taiwan-union-technology","6285":"wistron-neweb",
+   "6409":"voltronic-power-technology","6414":"ennoconn","6415":"silergy-corp","6442":"ezconn","6446":"pharmaessentia",
+   "6472":"bora-pharmaceuticals-co-ltd","6488":"globalw-regs-gds","6491":"pegavision","6505":"formosa-petrochemical",
+   "6510":"chunghwa-precision-test-tech-co-ltd","6515":"winway-technology-co-ltd","6526":"airoha-technology",
+   "6531":"apmeteco-gds-regs","6584":"nan-juen-international-co-ltd","6588":"east-tender-optoelectronics-tw",
+   "6669":"wiwynn","6672":"ventec-international-co-ltd","6770":"powerchip-semiconductor-manufacturi",
+   "6781":"advanced-energy-solution-co","6805":"fositek","6831":"taiwan-microloops","6890":"lai-yih-footwear-co-ltd",
+   "7751":"horng-terng-automation-co-ltd","7767":"high-performance-information-co-ltd","7769":"hon-precision",
+   "7795":"eternal-precision-mechanics-co-ltd","8021":"topoint-technology-co-ltd","8028":"phoenix-silicon-international",
+   "8046":"nan-ya","8069":"einkhldg-gds","8086":"advanced-wireless-semiconductor-co","8150":"chipmos-technologies",
+   "8155":"allied-circuit-co-ltd","8210":"chenbro-micom-co","8299":"phison-electronics","8358":"co-tech-development",
+   "8454":"momo-com","8464":"nien-made-enterprise-co-ltd","9910":"feng-tay-enterprise-co-ltd","9921":"giant-manufacturing-co"
+  };
   function logoHTML(code,name){
     var fb='<div class="fb">'+esc(name.charAt(0))+'</div>';
-    var d=DOM[code];
-    if(!d) return '<div class="lg">'+fb+'</div>';
-    return '<div class="lg">'+fb+'<img loading="lazy" data-alt="https://www.google.com/s2/favicons?domain='+d+'&sz=128" src="https://unavatar.io/'+d+'?fallback=false"></div>';
+    var id=TVL[code];
+    if(!id) return '<div class="lg">'+fb+'</div>';
+    return '<div class="lg">'+fb+'<img loading="lazy" src="https://s3-symbol-logo.tradingview.com/'+id+'--big.svg"></div>';
   }
 
   var ALL=[], curQ="";
@@ -261,19 +310,13 @@
     for(var t=0;t<tiles.length;t++){(function(el){
       el.addEventListener("click",function(){ showDetail(parseInt(el.getAttribute("data-i"),10), el); });
     })(tiles[t]);}
-    // LOGO 載入處理：只收 32px 以上的真 logo（擋掉預設地球與糊掉的小圖）；
-    // 成功→隱藏字母磚；不合格→換下一個來源；都沒有→金色字母磚
+    // LOGO 載入處理（來源＝TradingView 官方圖庫）：成功→隱藏字母磚；失敗→金色字母磚
     var imgs=grid.querySelectorAll(".lg img");
     for(var g=0;g<imgs.length;g++){(function(im){
       function ok(){ var p=im.parentNode; if(p) p.classList.add("ok"); }
-      function fail(){
-        var alt=im.getAttribute("data-alt");
-        if(alt){ im.removeAttribute("data-alt"); im.src=alt; }
-        else { im.remove(); }
-      }
-      im.addEventListener("load",function(){ if(im.naturalWidth>=32) ok(); else fail(); });
-      im.addEventListener("error",fail);
-      if(im.complete){ if(im.naturalWidth>=32) ok(); else if(im.naturalWidth>0) fail(); }
+      im.addEventListener("load",ok);
+      im.addEventListener("error",function(){ im.remove(); });
+      if(im.complete&&im.naturalWidth>0) ok();
     })(imgs[g]);}
   }
 
