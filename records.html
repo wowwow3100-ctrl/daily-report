@@ -30,6 +30,15 @@
   .fs-chip{cursor:pointer;border:1px solid var(--gold-dim);color:var(--gold-dim);background:none;
     border-radius:16px;padding:2px 12px;font-size:.8rem;font-family:inherit;}
   .fs-chip.on{background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:700;}
+  .setwrap{position:relative;}
+  .setbtn{cursor:pointer;width:34px;height:34px;border-radius:50%;border:1px solid var(--gold-dim);
+    background:var(--card);color:var(--gold);font-size:1rem;font-family:inherit;}
+  .setbtn:hover{border-color:var(--gold);}
+  .setpanel{position:absolute;right:0;top:42px;background:var(--card);border:1px solid var(--gold-dim);
+    border-radius:12px;padding:12px 16px;display:none;z-index:99;box-shadow:0 10px 30px rgba(0,0,0,.45);white-space:nowrap;}
+  .setpanel.open{display:block;}
+  .setrow{display:flex;gap:6px;align-items:center;margin:6px 0;}
+  .setrow>span{color:var(--muted);font-size:.75rem;margin-right:4px;}
   .notice{
     margin:16px 0 20px;padding:12px 18px;border:1px solid var(--gold-dim);
     background:linear-gradient(90deg,rgba(232,193,90,.10),rgba(232,193,90,.02));
@@ -72,15 +81,20 @@
     <a class="applink" href="reports.html">← 回研究報告專區</a>
     <a class="applink" href="index.html">每日情報站</a>
     <div class="head-right">
-      <div class="fs-box"><span class="fs-label">字級</span>
-        <button class="fs-chip" data-s="std">標準</button>
-        <button class="fs-chip" data-s="lg">大</button>
-        <button class="fs-chip" data-s="xl">特大</button>
-      </div>
-      <div class="fs-box"><span class="fs-label">主題</span>
-        <button class="fs-chip" data-t="gold">黑金</button>
-        <button class="fs-chip" data-t="light">米白</button>
-        <button class="fs-chip" data-t="navy">深藍</button>
+      <div class="setwrap">
+        <button class="setbtn" id="setbtn" title="顯示設定">⚙</button>
+        <div class="setpanel" id="setpanel">
+          <div class="setrow"><span>字級</span>
+            <button class="fs-chip" data-s="std">標準</button>
+            <button class="fs-chip" data-s="lg">大</button>
+            <button class="fs-chip" data-s="xl">特大</button>
+          </div>
+          <div class="setrow"><span>主題</span>
+            <button class="fs-chip" data-t="gold">黑金</button>
+            <button class="fs-chip" data-t="light">米白</button>
+            <button class="fs-chip" data-t="navy">深藍</button>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -136,6 +150,14 @@
   for(var i=0;i<thChips.length;i++){(function(b){b.addEventListener("click",function(){
     var t=b.getAttribute("data-t"); try{localStorage.setItem(TK,t);}catch(e){} applyTh(t);
   });})(thChips[i]);}
+
+  // ---- 設定面板開關 ----
+  var sb=document.getElementById("setbtn"), sp=document.getElementById("setpanel");
+  if(sb&&sp){
+    sb.addEventListener("click",function(e){e.stopPropagation();sp.classList.toggle("open");});
+    sp.addEventListener("click",function(e){e.stopPropagation();});
+    document.addEventListener("click",function(){sp.classList.remove("open");});
+  }
 
   // ---- CSV parser (handles quoted fields with commas/newlines) ----
   function parseCSV(text){
