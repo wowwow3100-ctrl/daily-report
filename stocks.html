@@ -261,17 +261,19 @@
     for(var t=0;t<tiles.length;t++){(function(el){
       el.addEventListener("click",function(){ showDetail(parseInt(el.getAttribute("data-i"),10), el); });
     })(tiles[t]);}
-    // LOGO 載入處理：成功→隱藏字母磚；失敗→改抓 Google favicon；再失敗→留字母磚
+    // LOGO 載入處理：只收 32px 以上的真 logo（擋掉預設地球與糊掉的小圖）；
+    // 成功→隱藏字母磚；不合格→換下一個來源；都沒有→金色字母磚
     var imgs=grid.querySelectorAll(".lg img");
     for(var g=0;g<imgs.length;g++){(function(im){
       function ok(){ var p=im.parentNode; if(p) p.classList.add("ok"); }
-      im.addEventListener("load",function(){ if(im.naturalWidth>0) ok(); });
-      im.addEventListener("error",function(){
+      function fail(){
         var alt=im.getAttribute("data-alt");
         if(alt){ im.removeAttribute("data-alt"); im.src=alt; }
         else { im.remove(); }
-      });
-      if(im.complete&&im.naturalWidth>0) ok();
+      }
+      im.addEventListener("load",function(){ if(im.naturalWidth>=32) ok(); else fail(); });
+      im.addEventListener("error",fail);
+      if(im.complete){ if(im.naturalWidth>=32) ok(); else if(im.naturalWidth>0) fail(); }
     })(imgs[g]);}
   }
 
