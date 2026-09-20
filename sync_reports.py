@@ -177,8 +177,23 @@ def main():
     n = copy_legacy_daily()
     print("[完成] 歷史日報補入 %d 份" % n)
     if os.path.exists(SRC):
-        shutil.copyfile(SRC, DST)
-        print("[完成] reports.csv 已更新（%d KB）" % (os.path.getsize(DST) // 1024))
+        # 公開站的 reports.csv 只放「真正的券商觀點列」；
+        # processed.csv 內的方法論／內部工作筆記列不得外流到公開站。
+        import csv as _csv
+        with open(SRC, encoding="utf-8-sig", newline="") as _f:
+            _rows = list(_csv.reader(_f))
+        _kept, _dropped = [], 0
+        for _i, _r in enumerate(_rows):
+            if _i > 0 and len(_r) >= 5 and (
+                "方法論" in _r[3] or "收件匣" in _r[3] or "大盤與方法論" in _r[4]
+            ):
+                _dropped += 1
+                continue
+            _kept.append(_r)
+        with open(DST, "w", encoding="utf-8", newline="") as _f:
+            _csv.writer(_f, lineterminator="\n").writerows(_kept)
+        print("[完成] reports.csv 已更新（%d KB，濾除內部工作筆記 %d 列）"
+              % (os.path.getsize(DST) // 1024, _dropped))
     else:
         print("[略過] 找不到 %s" % SRC)
 
