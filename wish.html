@@ -5,8 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>旺來 許願池｜說出你想要的功能</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%8D%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0B0B0D">
+<link rel="apple-touch-icon" href="icon-192.png">
 <meta property="og:title" content="旺來 許願池｜想看什麼，寫下來">
-<meta property="og:description" content="想多看哪檔個股、想要什麼功能？丟進許願池，旺來聽得到。">
+<meta property="og:description" content="想多看哪檔個股、想要什麼功能？丟進許願池，旺來親自看每一則。">
 <meta property="og:image" content="https://wowwow3100-ctrl.github.io/daily-report/login-logo.png">
 <meta property="og:url" content="https://wowwow3100-ctrl.github.io/daily-report/wish.html">
 <meta property="og:type" content="website">
@@ -24,7 +27,7 @@
   html[data-size="xl"]{font-size:22px;}
   html[data-size="elder"]{font-size:27px;}
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{background:var(--bg);color:var(--text);font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;line-height:1.7;}
+  body{background:var(--bg);color:var(--text);font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;line-height:1.7;padding-bottom:86px;}
   .wrap{max-width:820px;margin:0 auto;padding:0 20px 60px;}
   header{padding:30px 0 8px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
   .logo{font-size:1.8rem;font-weight:900;color:var(--gold);letter-spacing:2px;}
@@ -37,12 +40,6 @@
   .setbtn{cursor:pointer;border-radius:22px;border:1px solid var(--gold-dim);padding:8px 16px;
     background:var(--card);color:var(--gold);font-size:.95rem;font-weight:700;font-family:inherit;white-space:nowrap;}
   .setbtn:hover{border-color:var(--gold);}
-  nav.pnav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px;}
-  nav.pnav a{color:var(--gold-dim);text-decoration:none;font-size:.9rem;font-weight:700;
-    border:1px solid var(--gold-dim);border-radius:20px;padding:5px 16px;white-space:nowrap;}
-  nav.pnav a.on{background:var(--gold);color:var(--bg);border-color:var(--gold);}
-  nav.pnav a:hover{color:var(--gold);border-color:var(--gold);}
-  nav.pnav a.on:hover{color:var(--bg);}
   .setpanel{position:absolute;right:0;top:54px;background:var(--card);border:1px solid var(--gold-dim);
     border-radius:12px;padding:12px 16px;display:none;z-index:99;box-shadow:0 10px 30px rgba(0,0,0,.45);white-space:nowrap;}
   .setpanel.open{display:block;}
@@ -54,12 +51,24 @@
     border-radius:8px;color:var(--gold);font-size:.95rem;font-weight:700;letter-spacing:.5px;
   }
   .notice span{color:var(--muted);font-weight:400;display:block;font-size:.8rem;margin-top:2px;}
+  .nok{cursor:pointer;margin-top:8px;border:1px solid var(--gold-dim);background:none;color:var(--gold);
+    border-radius:16px;padding:3px 16px;font-size:.8rem;font-family:inherit;font-weight:700;display:block;}
+  .nok:hover{border-color:var(--gold);}
+  .notice.mini{padding:6px 14px;font-size:.78rem;cursor:pointer;margin:12px 0 14px;}
+  .notice.mini span,.notice.mini .nok{display:none;}
+  .notice.mini::after{content:"．非投資建議（點我看完整說明）";color:var(--muted);font-weight:400;}
   h2{font-size:1.2rem;color:var(--gold);letter-spacing:3px;margin:26px 0 14px;font-weight:800;}
   h2::before{content:"◆ ";color:var(--gold-dim);}
+  /* --- 說明卡 --- */
+  .intro{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:16px;}
+  .intro .big{font-size:1.05rem;font-weight:800;color:var(--gold);letter-spacing:1px;}
+  .intro p{color:var(--muted);font-size:.9rem;margin-top:6px;}
+  .intro b{color:var(--gold);}
   /* --- 許願表單 --- */
   .wishbox{background:var(--card);border:1px solid var(--gold-dim);border-radius:14px;padding:20px 22px;
     background-image:radial-gradient(ellipse at 50% -20%,rgba(232,193,90,.12),transparent 60%);}
   .wishbox label{display:block;color:var(--muted);font-size:.8rem;margin:10px 0 4px;}
+  .wishbox label b{color:var(--up);font-weight:900;}
   #wname{width:100%;max-width:260px;background:var(--card2);border:1px solid var(--line);color:var(--text);
     border-radius:10px;padding:8px 14px;font-size:.95rem;font-family:inherit;outline:none;}
   #wmsg{width:100%;min-height:110px;background:var(--card2);border:1px solid var(--line);color:var(--text);
@@ -73,26 +82,31 @@
   #wstat{font-size:.85rem;color:var(--gold);}
   #wstat.err{color:var(--up);}
   .hp{position:absolute;left:-9999px;top:-9999px;height:1px;width:1px;overflow:hidden;}
-  /* --- 許願牆 --- */
-  .wish{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin-bottom:10px;}
-  .wish .top{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;}
-  .wish .who{color:var(--gold);font-weight:800;font-size:.92rem;}
-  .wish .when{color:var(--muted);font-size:.75rem;}
-  .wish .msg{margin-top:3px;font-size:.95rem;word-break:break-word;white-space:pre-wrap;}
-  #wstatus{color:var(--muted);text-align:center;padding:26px 0;}
-  .wtotal{color:var(--muted);font-size:.8rem;margin:0 0 12px;}
+  /* --- 送出後的感謝卡 --- */
+  #thanks{display:none;background:var(--card);border:1px solid var(--gold);border-radius:14px;
+    padding:26px 22px;text-align:center;margin-top:16px;}
+  #thanks .t1{font-size:1.15rem;font-weight:900;color:var(--gold);letter-spacing:2px;}
+  #thanks .t2{color:var(--muted);font-size:.88rem;margin-top:8px;}
   footer{margin-top:44px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.8rem;line-height:2;}
   footer b{color:var(--gold);}
   .thbtn{display:inline-flex;align-items:center;gap:8px;margin:2px 0 10px;padding:8px 18px;border:1px solid var(--gold-dim);
     border-radius:22px;color:var(--gold);text-decoration:none;font-weight:800;font-size:.9rem;background:var(--card);letter-spacing:1px;}
   .thbtn:hover{border-color:var(--gold);}
   .thbtn .at{font-size:1.1rem;font-weight:900;}
+  nav.bnav{position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--bgt);backdrop-filter:blur(8px);
+    border-top:1px solid var(--line);display:flex;justify-content:center;gap:2px;
+    padding:6px 6px calc(8px + env(safe-area-inset-bottom));}
+  nav.bnav a{flex:1;max-width:120px;display:flex;flex-direction:column;align-items:center;gap:1px;
+    color:var(--muted);text-decoration:none;font-size:.7rem;letter-spacing:1px;font-weight:700;border-radius:12px;padding:3px 0;white-space:nowrap;}
+  nav.bnav a .ic{font-size:1.3rem;line-height:1.25;}
+  nav.bnav a.on{color:var(--gold);background:rgba(232,193,90,.10);}
   @media (max-width:720px){
     .wrap{padding:0 12px 40px;}
     header{padding-top:16px;gap:8px;}
     .logo{font-size:1.4rem;}
     .head-right{width:100%;flex-direction:row;justify-content:flex-end;align-items:center;}
     .wishbox{padding:16px 14px;}
+    .intro{padding:14px 16px;}
     .setpanel{white-space:normal;min-width:250px;}
   }
   /* 強制手機版（設定 > 版面 > 手機版） */
@@ -101,6 +115,7 @@
   html.mob .logo{font-size:1.4rem;}
   html.mob .head-right{width:100%;flex-direction:row;justify-content:flex-end;align-items:center;}
   html.mob .wishbox{padding:16px 14px;}
+  html.mob .intro{padding:14px 16px;}
   html.mob .setpanel{white-space:normal;min-width:250px;}
 </style>
 </head>
@@ -129,24 +144,31 @@
             <button class="fs-chip" data-v="pc">電腦版</button>
             <button class="fs-chip" data-v="mb">手機版</button>
           </div>
+          <div class="setrow"><span>安裝</span>
+            <button class="fs-chip" id="a2hs">📲 加到主畫面 / 桌面</button>
+          </div>
         </div>
       </div>
     </div>
   </header>
 
-  <div class="notice">
-    🌠 許願池 — 我要聽到使用者的聲音
-    <span>想多看哪檔個股的整理、想要什麼新功能、哪裡看不順眼，都寫下來。願望會公開顯示在下面的許願牆，旺來會親自看每一則。</span>
+  <div class="notice" id="notice">
+    ⚠ 本站為新聞整理用途
+    <span>本站內容彙整自公開新聞，非投資建議；許願池僅收集功能與內容建議，不回覆任何買賣相關問題。</span>
+    <button class="nok" id="nok">知道了 ✓（之後縮成一行）</button>
   </div>
 
-  <nav class="pnav">
-    <a href="index.html">📰 每日情報站</a><a href="reports.html">📚 每日回顧</a><a href="stocks.html">🏢 個股報告</a><a href="records.html">🔎 速查</a><a class="on" href="wish.html">🌠 許願池</a>
-  </nav>
+  <div class="intro">
+    <div class="big">🌠 這裡是許願池</div>
+    <p>想多看哪檔個股的整理？想要什麼新功能？哪裡看不順眼、字太小、顏色太醜？通通寫下來丟進池子。</p>
+    <p>你的願望<b>不會公開顯示</b>，只有旺來本人看得到，放心寫。有用的建議會排進開發清單，之後在
+      <b>Threads @wowwow31001</b> 公佈做了哪些。</p>
+  </div>
 
   <div class="wishbox">
-    <label for="wname">暱稱（可留空，會顯示成「匿名鳳梨」）</label>
-    <input id="wname" maxlength="12" placeholder="匿名鳳梨">
-    <label for="wmsg">你的願望（最多 200 字，不能放網址）</label>
+    <label for="wname">暱稱 <b>*必填</b>（讓旺來知道是誰許的願）</label>
+    <input id="wname" maxlength="12" placeholder="例：鳳梨小弟">
+    <label for="wmsg">你的願望 <b>*必填</b>（最多 200 字，不能放網址）</label>
     <textarea id="wmsg" maxlength="200" placeholder="例：希望多整理 2330 的外資觀點／希望大盤速覽加上櫃買指數…"></textarea>
     <input class="hp" id="website" name="website" tabindex="-1" autocomplete="off">
     <div class="wrow">
@@ -156,17 +178,25 @@
     </div>
   </div>
 
-  <h2>許願牆</h2>
-  <div class="wtotal" id="wtotal"></div>
-  <div id="wall"><div id="wstatus">許願牆載入中…</div></div>
+  <div id="thanks">
+    <div class="t1">✨ 旺來收到你的願望了！</div>
+    <div class="t2">每一則都會親自看。想再許一個？等 60 秒再丟一枚金幣進來。</div>
+  </div>
 
   <footer>
     <a class="thbtn" href="https://www.threads.com/@wowwow31001" target="_blank" rel="noopener"><span class="at">＠</span>追蹤旺來的脆 wowwow31001</a><br>
-    <b>旺來 @wowwow31001</b>｜許願牆內容為訪客留言，僅代表留言者個人意見，與本站立場無關；本站保留下架不當留言的權利。<br>
+    <b>旺來 @wowwow31001</b>｜許願內容僅作為功能與內容建議之參考，不公開顯示；請勿留下個資或投資買賣問題。<br>
     本站為新聞整理用途，非投資建議，不構成任何有價證券之買賣要約或訊號。
   </footer>
 
 </div>
+<nav class="bnav">
+  <a href="index.html"><span class="ic">📰</span>情報站</a>
+  <a href="reports.html"><span class="ic">📚</span>回憶過去</a>
+  <a href="stocks.html"><span class="ic">🏢</span>個股報告</a>
+  <a href="records.html"><span class="ic">🔎</span>速查</a>
+  <a class="on" href="wish.html"><span class="ic">🌠</span>許願池</a>
+</nav>
 <script>
 (function(){
   var KEY="wl_fs";
@@ -211,6 +241,29 @@
     var v=b.getAttribute("data-v"); try{localStorage.setItem(VK,v);}catch(e){} applyV(v);
   });})(vwChips[i]);}
 
+  // ---- 聲明列：知道了 → 縮成一行 ----
+  var nt=document.getElementById("notice"), nok=document.getElementById("nok");
+  if(nt){
+    try{ if(localStorage.getItem("wl_notice")==="1") nt.classList.add("mini"); }catch(e){}
+    if(nok) nok.addEventListener("click",function(e){
+      e.stopPropagation();
+      try{ localStorage.setItem("wl_notice","1"); }catch(err){}
+      nt.classList.add("mini");
+    });
+    nt.addEventListener("click",function(){ if(nt.classList.contains("mini")) nt.classList.remove("mini"); });
+  }
+  // ---- PWA：加到主畫面 ----
+  if("serviceWorker" in navigator){ try{ navigator.serviceWorker.register("sw.js"); }catch(e){} }
+  var dfp=null;
+  window.addEventListener("beforeinstallprompt",function(e){ e.preventDefault(); dfp=e; });
+  var a2=document.getElementById("a2hs");
+  if(a2) a2.addEventListener("click",function(){
+    if(dfp){ dfp.prompt(); dfp=null; }
+    else{
+      alert("iPhone：用 Safari 開本站 → 點下方「分享」→「加入主畫面」\nAndroid：用 Chrome 開本站 → 右上「⋮」→「加到主畫面」\n電腦：網址列右側的安裝圖示");
+    }
+  });
+
   // ---- 設定面板開關 ----
   var sb=document.getElementById("setbtn"), sp=document.getElementById("setpanel");
   if(sb&&sp){
@@ -219,66 +272,40 @@
     document.addEventListener("click",function(){sp.classList.remove("open");});
   }
 
-  // ================= 許願池 =================
+  // ================= 許願池（私密：只送出，不公開） =================
   var API="https://web-production-e1521.up.railway.app";
-  var wall=document.getElementById("wall"), wstatus=document.getElementById("wstatus");
-  var wtotal=document.getElementById("wtotal");
   var wname=document.getElementById("wname"), wmsg=document.getElementById("wmsg");
   var wsend=document.getElementById("wsend"), wstat=document.getElementById("wstat");
-  var wcount=document.getElementById("wcount");
+  var wcount=document.getElementById("wcount"), thanks=document.getElementById("thanks");
 
-  // visitor id
   var vid="";
   try{
     vid=localStorage.getItem("wl_vid")||"";
     if(!vid){vid="v"+Date.now().toString(36)+Math.random().toString(36).slice(2,10);localStorage.setItem("wl_vid",vid);}
   }catch(e){}
 
-  function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-
-  function renderWall(list, total){
-    if(!list||!list.length){
-      wall.innerHTML='<div id="wstatus">還沒有人許願，來當第一個吧。</div>';
-      wtotal.textContent="";
-      return;
-    }
-    var h="";
-    for(var i=0;i<list.length;i++){
-      var w=list[i];
-      h+='<div class="wish"><div class="top"><span class="who">'+esc(w.name)+'</span><span class="when">'+esc(w.ts)+'</span></div>'
-        +'<div class="msg">'+esc(w.message)+'</div></div>';
-    }
-    wall.innerHTML=h;
-    wtotal.textContent=total?("目前累積 "+total+" 個願望"):"";
-  }
-
-  function loadWall(){
-    fetch(API+"/api/wishes?limit=60")
-      .then(function(r){return r.json();})
-      .then(function(j){renderWall(j.wishes||[], j.total);})
-      .catch(function(e){wall.innerHTML='<div id="wstatus">許願牆暫時連不上，稍後再試。</div>';});
-  }
-  loadWall();
-
   wmsg.addEventListener("input",function(){wcount.textContent=wmsg.value.length+" / 200";});
 
   wsend.addEventListener("click",function(){
+    var name=(wname.value||"").trim();
     var msg=(wmsg.value||"").trim();
     wstat.className=""; wstat.textContent="";
-    if(msg.length<2){wstat.className="err";wstat.textContent="願望太短了，多寫一點吧";return;}
+    if(!name){wstat.className="err";wstat.textContent="要留個暱稱喔";wname.focus();return;}
+    if(msg.length<2){wstat.className="err";wstat.textContent="願望太短了，多寫一點吧";wmsg.focus();return;}
     wsend.disabled=true; wstat.textContent="送出中…";
     fetch(API+"/api/wish",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({name:(wname.value||"").trim(),message:msg,visitor_id:vid,
+      body:JSON.stringify({name:name,message:msg,visitor_id:vid,
         website:document.getElementById("website").value||""})
     }).then(function(r){
       if(r.ok){return {ok:true};}
       return r.json().then(function(j){throw new Error((j&&j.detail)||("送出失敗（"+r.status+"）"));});
     }).then(function(){
-      wstat.textContent="✨ 願望已丟進池子！";
+      wstat.textContent="";
       wmsg.value=""; wcount.textContent="0 / 200";
-      loadWall();
+      thanks.style.display="block";
+      thanks.scrollIntoView({behavior:"smooth",block:"center"});
     }).catch(function(e){
       wstat.className="err"; wstat.textContent=e.message||"送出失敗，稍後再試";
     }).finally(function(){ wsend.disabled=false; });

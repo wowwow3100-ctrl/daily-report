@@ -1,0 +1,14 @@
+{
+  "name": "旺來 台股情報站",
+  "short_name": "旺來情報站",
+  "description": "每日台股新聞整理：大盤速覽、焦點新聞、券商報告摘要（新聞整理用途，非投資建議）",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0B0B0D",
+  "theme_color": "#0B0B0D",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

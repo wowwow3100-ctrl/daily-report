@@ -11,6 +11,9 @@
 <meta property="og:url" content="https://wowwow3100-ctrl.github.io/daily-report/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0B0B0D">
+<link rel="apple-touch-icon" href="icon-192.png">
 <style>
   :root{
     --bg:#0B0B0D; --card:#16161A; --card2:#1D1D23; --line:#2A2A32;
@@ -107,6 +110,29 @@
     border-radius:22px;color:var(--gold);text-decoration:none;font-weight:800;font-size:.9rem;background:var(--card);letter-spacing:1px;}
   .thbtn:hover{border-color:var(--gold);}
   .thbtn .at{font-size:1.1rem;font-weight:900;}
+  /* 聲明列：打勾後縮成一行 */
+  .nok{cursor:pointer;margin-top:8px;border:1px solid var(--gold-dim);background:none;color:var(--gold);
+    border-radius:16px;padding:3px 16px;font-size:.8rem;font-family:inherit;font-weight:700;display:block;}
+  .nok:hover{border-color:var(--gold);}
+  .notice.mini{padding:6px 14px;font-size:.78rem;cursor:pointer;margin:12px 0 14px;}
+  .notice.mini span,.notice.mini .nok{display:none;}
+  .notice.mini::after{content:"．非投資建議（點我看完整說明）";color:var(--muted);font-weight:400;}
+  /* 更多焦點摺疊 */
+  details.more{margin:4px 0 8px;}
+  details.more>summary{cursor:pointer;list-style:none;color:var(--gold-dim);font-size:.9rem;font-weight:700;
+    border:1px dashed var(--gold-dim);border-radius:10px;padding:10px 16px;text-align:center;}
+  details.more>summary::-webkit-details-marker{display:none;}
+  details.more>summary:hover{color:var(--gold);border-color:var(--gold);}
+  details.more[open]>summary{margin-bottom:12px;}
+  /* 底部 APP 式導覽列 */
+  body{padding-bottom:86px;}
+  nav.bnav{position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--bgt);backdrop-filter:blur(8px);
+    border-top:1px solid var(--line);display:flex;justify-content:center;gap:2px;
+    padding:6px 6px calc(8px + env(safe-area-inset-bottom));}
+  nav.bnav a{flex:1;max-width:120px;display:flex;flex-direction:column;align-items:center;gap:1px;
+    color:var(--muted);text-decoration:none;font-size:.7rem;letter-spacing:1px;font-weight:700;border-radius:12px;padding:3px 0;white-space:nowrap;}
+  nav.bnav a .ic{font-size:1.3rem;line-height:1.25;}
+  nav.bnav a.on{color:var(--gold);background:rgba(232,193,90,.10);}
   @media (max-width:720px){
     .wrap{padding:0 12px 40px;}
     header{padding-top:16px;gap:8px;}
@@ -168,6 +194,9 @@
               <button class="fs-chip" data-v="pc">電腦版</button>
               <button class="fs-chip" data-v="mb">手機版</button>
             </div>
+            <div class="setrow"><span>安裝</span>
+              <button class="fs-chip" id="a2hs">📲 加到主畫面 / 桌面</button>
+            </div>
           </div>
         </div>
       </div>
@@ -175,14 +204,11 @@
     </div>
   </header>
 
-  <div class="notice">
+  <div class="notice" id="notice">
     ⚠ 本站為新聞整理用途
     <span>內容彙整自公開新聞與公開資訊，僅供資訊參考，非投資建議，不提供任何買賣訊號。完整內容以原始報導與原始報告為準。</span>
+    <button class="nok" id="nok">知道了 ✓（之後縮成一行）</button>
   </div>
-
-  <nav class="pnav">
-    <a class="on" href="index.html">📰 每日情報站</a><a href="reports.html">📚 每日回顧</a><a href="stocks.html">🏢 個股報告</a><a href="records.html">🔎 速查</a><a href="wish.html">🌠 許願池</a>
-  </nav>
 
   <!-- ===== DATA:MARKET ===== -->
   <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（09/18 收盤；09/19–09/20 週末休市，無新交易日）</span></h2>
@@ -216,6 +242,29 @@
     <div class="news-title"><span class="cat">科技</span>英特爾 14A 製程傳有客戶評估，Google、輝達等在列 <a class="ref" href="#src-7">[7]</a></div>
     <div class="news-body">報告指多方科技巨頭正在評估英特爾 14A 製程。若成案將影響先進製程的競爭格局，為晶圓代工族群的中長期觀察點。</div>
   </div>
+  <details class="more">
+    <summary>▾ 更多焦點（再看 5 則）</summary>
+    <div class="card">
+      <div class="news-title"><span class="cat">資金</span>外資期現貨同步做多，單日買超 <span class="up">869.94 億元</span>、史上第 5 大；全週仍賣超 184 億 <a class="ref" href="#src-13">[13]</a></div>
+      <div class="news-body">加碼標的以記憶體族群為主，力積電、華邦電、南亞科、旺宏均在買超名單。週線角度外資仍為賣方，單日回補與整週方向不一致。</div>
+    </div>
+    <div class="card">
+      <div class="news-title"><span class="cat">記憶體</span>FactSet 共識上修南亞科目標價至 <span class="up">637.5</span> 元，EPS 預估 66.98 元 <a class="ref" href="#src-12">[12]</a></div>
+      <div class="news-body">共 14 位分析師、區間 280～850 元，非單一券商出具。搭配外資近日大買記憶體現貨，族群基本面與資金面同步轉強。</div>
+    </div>
+    <div class="card">
+      <div class="news-title"><span class="cat">材料</span>大摩「AI's Hidden Backbone」初評金居 730、台光電 8,400、台燿 2,700 元均加碼 <a class="ref" href="#src-14">[14]</a></div>
+      <div class="news-body">主軸為 AI 上游材料：HVLP4 銅箔市場 5 年 CAGR 估 123%，估金居 EPS 三年自 9.34 成長至 31.63 元。</div>
+    </div>
+    <div class="card">
+      <div class="news-title"><span class="cat">匯率</span>日銀升息仍未止住日圓貶勢，逼近 158 後傳出詢價、市場緊盯干預 <a class="ref" href="#src-15">[15]</a></div>
+      <div class="news-body">日圓走勢為高 Beta 半導體與 AI 類股的外部變數之一，官方是否出手干預是後續觀察重點。</div>
+    </div>
+    <div class="card">
+      <div class="news-title"><span class="cat">產業</span>仁寶宣布 100% 收購鋐寶、溢價 18.21%，強化 AI 市場版圖 <a class="ref" href="#src-16">[16]</a></div>
+      <div class="news-body">兩公司 9/18 同步召開重訊記者會說明董事會決議，方向指向 AI 相關產品線整合。</div>
+    </div>
+  </details>
   <!-- ===== /DATA:FOCUS_NEWS ===== -->
 
   <!-- ===== DATA:BROKER ===== -->
@@ -293,6 +342,8 @@
     <li id="src-12"><a href="https://news.cnyes.com/news/id/6610538" target="_blank" rel="noopener">鉅亨網｜Factset 最新調查：南亞科目標價調升至 637.5 元</a></li>
     <li id="src-13"><a href="https://news.cnyes.com/news/id/6610246" target="_blank" rel="noopener">鉅亨網｜外資期現貨用力做多 買超 869 億元史上第 5 大 全週仍賣超 184 億元</a></li>
     <li id="src-14"><a href="https://www.ctee.com.tw/news/20260915700084-430201" target="_blank" rel="noopener">工商時報｜大摩「AI's Hidden Backbone」初評金居、台光電、台燿</a></li>
+    <li id="src-15"><a href="https://news.cnyes.com/news/id/6610507" target="_blank" rel="noopener">鉅亨網｜日銀升息也救不了日元？跌近 158 後傳出詢價 市場緊盯干預</a></li>
+    <li id="src-16"><a href="https://money.udn.com/money/story/5612/9763709" target="_blank" rel="noopener">經濟日報｜仁寶宣布百分之百收購鋐寶、溢價 18.21%</a></li>
   </ol>
   </details>
   <!-- ===== /DATA:SOURCES ===== -->
@@ -305,6 +356,13 @@
   </footer>
 
 </div>
+<nav class="bnav">
+  <a class="on" href="index.html"><span class="ic">📰</span>情報站</a>
+  <a href="reports.html"><span class="ic">📚</span>回憶過去</a>
+  <a href="stocks.html"><span class="ic">🏢</span>個股報告</a>
+  <a href="records.html"><span class="ic">🔎</span>速查</a>
+  <a href="wish.html"><span class="ic">🌠</span>許願池</a>
+</nav>
 <script>
 (function(){
   var KEY="wl_fs";
@@ -388,6 +446,28 @@
       .then(function(j){if(j&&j.value)vs.textContent=Number(j.value).toLocaleString();})
       .catch(function(e){var w=document.getElementById("vwrap");if(w)w.style.display="none";});
   }
+  // ---- 聲明列：知道了 → 縮成一行 ----
+  var nt=document.getElementById("notice"), nok=document.getElementById("nok");
+  if(nt){
+    try{ if(localStorage.getItem("wl_notice")==="1") nt.classList.add("mini"); }catch(e){}
+    if(nok) nok.addEventListener("click",function(e){
+      e.stopPropagation();
+      try{ localStorage.setItem("wl_notice","1"); }catch(err){}
+      nt.classList.add("mini");
+    });
+    nt.addEventListener("click",function(){ if(nt.classList.contains("mini")) nt.classList.remove("mini"); });
+  }
+  // ---- PWA：加到主畫面 ----
+  if("serviceWorker" in navigator){ try{ navigator.serviceWorker.register("sw.js"); }catch(e){} }
+  var dfp=null;
+  window.addEventListener("beforeinstallprompt",function(e){ e.preventDefault(); dfp=e; });
+  var a2=document.getElementById("a2hs");
+  if(a2) a2.addEventListener("click",function(){
+    if(dfp){ dfp.prompt(); dfp=null; }
+    else{
+      alert("iPhone：用 Safari 開本站 → 點下方「分享」→「加入主畫面」\nAndroid：用 Chrome 開本站 → 右上「⋮」→「加到主畫面」\n電腦：網址列右側的安裝圖示");
+    }
+  });
   // 點 [N] 來源編號時，自動展開摺疊的來源區再跳過去
   var refs = document.querySelectorAll("a.ref");
   for (var r = 0; r < refs.length; r++) {

@@ -11,6 +11,9 @@
 <meta property="og:url" content="https://wowwow3100-ctrl.github.io/daily-report/stocks.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0B0B0D">
+<link rel="apple-touch-icon" href="icon-192.png">
 <style>
   :root{
     --bg:#0B0B0D; --card:#16161A; --card2:#1D1D23; --line:#2A2A32;
@@ -96,6 +99,20 @@
     border-radius:22px;color:var(--gold);text-decoration:none;font-weight:800;font-size:.9rem;background:var(--card);letter-spacing:1px;}
   .thbtn:hover{border-color:var(--gold);}
   .thbtn .at{font-size:1.1rem;font-weight:900;}
+  .nok{cursor:pointer;margin-top:8px;border:1px solid var(--gold-dim);background:none;color:var(--gold);
+    border-radius:16px;padding:3px 16px;font-size:.8rem;font-family:inherit;font-weight:700;display:block;}
+  .nok:hover{border-color:var(--gold);}
+  .notice.mini{padding:6px 14px;font-size:.78rem;cursor:pointer;margin:12px 0 14px;}
+  .notice.mini span,.notice.mini .nok{display:none;}
+  .notice.mini::after{content:"．非投資建議（點我看完整說明）";color:var(--muted);font-weight:400;}
+  body{padding-bottom:86px;}
+  nav.bnav{position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--bgt);backdrop-filter:blur(8px);
+    border-top:1px solid var(--line);display:flex;justify-content:center;gap:2px;
+    padding:6px 6px calc(8px + env(safe-area-inset-bottom));}
+  nav.bnav a{flex:1;max-width:120px;display:flex;flex-direction:column;align-items:center;gap:1px;
+    color:var(--muted);text-decoration:none;font-size:.7rem;letter-spacing:1px;font-weight:700;border-radius:12px;padding:3px 0;white-space:nowrap;}
+  nav.bnav a .ic{font-size:1.3rem;line-height:1.25;}
+  nav.bnav a.on{color:var(--gold);background:rgba(232,193,90,.10);}
   @media (max-width:720px){
     .wrap{padding:0 12px 40px;}
     header{padding-top:16px;gap:8px;}
@@ -143,19 +160,19 @@
             <button class="fs-chip" data-v="pc">電腦版</button>
             <button class="fs-chip" data-v="mb">手機版</button>
           </div>
+          <div class="setrow"><span>安裝</span>
+            <button class="fs-chip" id="a2hs">📲 加到主畫面 / 桌面</button>
+          </div>
         </div>
       </div>
     </div>
   </header>
 
-  <div class="notice">
+  <div class="notice" id="notice">
     ⚠ 本站為新聞整理用途
     <span>為什麼沒有外資報告原檔？完整券商研究報告是付費授權文件、僅發給機構客戶，公開轉載屬侵權行為。本站只提供依「公開新聞報導」整理的摘要（每份都標註來源），非券商原始報告、非投資建議。公司名稱與標誌僅供識別，權利屬各公司所有。</span>
+    <button class="nok" id="nok">知道了 ✓（之後縮成一行）</button>
   </div>
-
-  <nav class="pnav">
-    <a href="index.html">📰 每日情報站</a><a href="reports.html">📚 每日回顧</a><a class="on" href="stocks.html">🏢 個股報告</a><a href="records.html">🔎 速查</a><a href="wish.html">🌠 許願池</a>
-  </nav>
 
   <div class="searchbar">
     <input id="q" type="search" placeholder="🔍 搜尋個股名稱或代號…">
@@ -172,6 +189,13 @@
   </footer>
 
 </div>
+<nav class="bnav">
+  <a href="index.html"><span class="ic">📰</span>情報站</a>
+  <a href="reports.html"><span class="ic">📚</span>回憶過去</a>
+  <a class="on" href="stocks.html"><span class="ic">🏢</span>個股報告</a>
+  <a href="records.html"><span class="ic">🔎</span>速查</a>
+  <a href="wish.html"><span class="ic">🌠</span>許願池</a>
+</nav>
 <script>
 (function(){
   var KEY="wl_fs";
@@ -201,6 +225,28 @@
     var t=b.getAttribute("data-t"); try{localStorage.setItem(TK,t);}catch(e){} applyTh(t);
   });})(thChips[i]);}
 
+  // ---- 聲明列：知道了 → 縮成一行 ----
+  var nt=document.getElementById("notice"), nok=document.getElementById("nok");
+  if(nt){
+    try{ if(localStorage.getItem("wl_notice")==="1") nt.classList.add("mini"); }catch(e){}
+    if(nok) nok.addEventListener("click",function(e){
+      e.stopPropagation();
+      try{ localStorage.setItem("wl_notice","1"); }catch(err){}
+      nt.classList.add("mini");
+    });
+    nt.addEventListener("click",function(){ if(nt.classList.contains("mini")) nt.classList.remove("mini"); });
+  }
+  // ---- PWA：加到主畫面 ----
+  if("serviceWorker" in navigator){ try{ navigator.serviceWorker.register("sw.js"); }catch(e){} }
+  var dfp=null;
+  window.addEventListener("beforeinstallprompt",function(e){ e.preventDefault(); dfp=e; });
+  var a2=document.getElementById("a2hs");
+  if(a2) a2.addEventListener("click",function(){
+    if(dfp){ dfp.prompt(); dfp=null; }
+    else{
+      alert("iPhone：用 Safari 開本站 → 點下方「分享」→「加入主畫面」\nAndroid：用 Chrome 開本站 → 右上「⋮」→「加到主畫面」\n電腦：網址列右側的安裝圖示");
+    }
+  });
   // ---- 版面切換（自動/電腦/手機） ----
   var VK="wl_view", vmeta=document.querySelector('meta[name="viewport"]');
   function applyV(v){
