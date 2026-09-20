@@ -133,6 +133,21 @@
     color:var(--muted);text-decoration:none;font-size:.7rem;letter-spacing:1px;font-weight:700;border-radius:12px;padding:3px 0;white-space:nowrap;}
   nav.bnav a .ic{font-size:1.3rem;line-height:1.25;}
   nav.bnav a.on{color:var(--gold);background:rgba(232,193,90,.10);}
+  /* 外開引導 + 首次導覽 */
+  .ovl{display:none;position:fixed;inset:0;background:rgba(0,0,0,.74);align-items:center;justify-content:center;padding:20px;}
+  #iab{z-index:200;}
+  #tour{z-index:80;}
+  .obox{background:var(--card);border:1px solid var(--gold);border-radius:16px;padding:24px 22px;max-width:340px;width:100%;text-align:center;}
+  .ot{color:var(--gold);font-weight:900;font-size:1.1rem;letter-spacing:1px;}
+  .od{color:var(--muted);font-size:.85rem;margin:10px 0 14px;text-align:left;}
+  .od b{color:var(--gold);}
+  .obtn{display:block;width:100%;margin:8px 0;cursor:pointer;border:none;border-radius:24px;padding:10px 0;
+    font-size:.95rem;font-weight:900;font-family:inherit;background:var(--gold);color:var(--bg);}
+  .obtn.o2{background:none;border:1px solid var(--gold-dim);color:var(--gold);}
+  .ohint{color:var(--muted);font-size:.75rem;min-height:1.2em;}
+  .olink{background:none;border:none;color:var(--muted);font-size:.8rem;cursor:pointer;margin-top:6px;font-family:inherit;text-decoration:underline;}
+  .tarrow{position:fixed;bottom:66px;left:50%;font-size:2rem;z-index:85;animation:tb .9s infinite alternate;}
+  @keyframes tb{from{transform:translate(-50%,0);}to{transform:translate(-50%,10px);}}
   @media (max-width:720px){
     .wrap{padding:0 12px 40px;}
     header{padding-top:16px;gap:8px;}
@@ -363,6 +378,24 @@
   <a href="records.html"><span class="ic">🔎</span>速查</a>
   <a href="wish.html"><span class="ic">🌠</span>許願池</a>
 </nav>
+<div id="iab" class="ovl">
+  <div class="obox">
+    <div class="ot">🍍 建議用瀏覽器開啟</div>
+    <div class="od">你正透過 App 內建視窗（FB／IG／Threads／Line）瀏覽，<b>加到主畫面</b>與偏好記憶等功能會失效。用預設瀏覽器體驗最完整。</div>
+    <button class="obtn" onclick="iabGo()">🚀 用預設瀏覽器開啟</button>
+    <button class="obtn o2" onclick="iabCopy()">📋 複製網址</button>
+    <div class="ohint" id="iabHint"></div>
+    <button class="olink" onclick="iabClose()">先繼續看就好</button>
+  </div>
+</div>
+<div id="tour" class="ovl">
+  <div class="obox">
+    <div class="ot">👇 功能都在下面</div>
+    <div class="od">底部五顆按鈕切換頁面：<b>情報站</b>（每日焦點）、<b>回憶過去</b>（歷史日報）、<b>個股報告</b>、<b>速查</b>、<b>許願池</b>。<br><br>右上 <b>⚙ 設定</b> 可調字級、換主題，還能把本站加到手機主畫面變成 APP。</div>
+    <button class="obtn" onclick="tourClose()">知道了，開始看 🍍</button>
+  </div>
+  <div class="tarrow">⬇</div>
+</div>
 <script>
 (function(){
   var KEY="wl_fs";
@@ -429,6 +462,42 @@
       });
     })(vc[i]);
   }
+  // ---- PWA 啟動導向：從主畫面開啟一律先到情報站 ----
+  try{
+    var sa=(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches)||window.navigator.standalone;
+    if(sa && !sessionStorage.getItem("wl_nav") && !/index\.html$|\/daily-report\/?$/.test(location.pathname)){
+      sessionStorage.setItem("wl_nav","1"); location.replace("index.html");
+    }
+    sessionStorage.setItem("wl_nav","1");
+  }catch(e){}
+  // ---- App 內建瀏覽器偵測 + 引導外開 ----
+  function iabDetect(){var ua=navigator.userAgent||"";return /FBAN|FBAV|FB_IAB|FBIOS|MESSENGER|Instagram|Threads|Barcelona|\bLine\/|\bLINE\b|MicroMessenger/i.test(ua);}
+  window.iabGo=function(){
+    var ua=navigator.userAgent||"";
+    if(/iPhone|iPad|iPod/i.test(ua)){ location.href="x-safari-"+location.href; }
+    else{
+      var fb=encodeURIComponent(location.href);
+      location.href="intent://"+location.host+location.pathname+location.search+"#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url="+fb+";end";
+    }
+    setTimeout(function(){var h=document.getElementById("iabHint");if(h)h.textContent="若沒自動跳轉，點右上「⋯」選「用外部瀏覽器開啟」，或用「複製網址」";},1300);
+  };
+  window.iabCopy=function(){
+    var url=location.href, h=document.getElementById("iabHint");
+    function done(){if(h)h.textContent="✅ 已複製！貼到 Chrome / Safari 網址列即可";}
+    function fb(){var t=document.createElement("textarea");t.value=url;t.setAttribute("readonly","");t.style.position="fixed";t.style.opacity="0";
+      document.body.appendChild(t);t.select();try{document.execCommand("copy");done();}catch(e){}document.body.removeChild(t);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(fb);}else{fb();}
+  };
+  window.iabClose=function(){document.getElementById("iab").style.display="none";try{sessionStorage.setItem("wl_iab","1");}catch(e){}};
+  var iabShown=false;
+  try{
+    if(iabDetect()&&!sessionStorage.getItem("wl_iab")){document.getElementById("iab").style.display="flex";iabShown=true;}
+  }catch(e){}
+  // ---- 首次進站導覽（一次性） ----
+  window.tourClose=function(){document.getElementById("tour").style.display="none";try{localStorage.setItem("wl_tour","1");}catch(e){}};
+  try{
+    if(!iabShown&&!localStorage.getItem("wl_tour")){document.getElementById("tour").style.display="flex";}
+  }catch(e){}
   // ---- 設定面板開關 ----
   var sb=document.getElementById("setbtn"), sp=document.getElementById("setpanel");
   if(sb&&sp){
