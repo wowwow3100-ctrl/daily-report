@@ -136,7 +136,7 @@
     .grid{grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:8px;}
     .tile{padding:12px 6px 10px;}
     .lg{width:46px;height:46px;}
-    .setpanel{white-space:normal;min-width:250px;}
+    .setpanel{position:fixed;left:12px;right:12px;top:70px;white-space:normal;min-width:0;}
   }
   /* 強制手機版（設定 > 版面 > 手機版） */
   html.mob .wrap{padding:0 12px 40px;max-width:540px;}
@@ -146,7 +146,7 @@
   html.mob .grid{grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:8px;}
   html.mob .tile{padding:12px 6px 10px;}
   html.mob .lg{width:46px;height:46px;}
-  html.mob .setpanel{white-space:normal;min-width:250px;}
+  html.mob .setpanel{position:fixed;left:12px;right:12px;top:70px;white-space:normal;min-width:0;}
 </style>
 </head>
 <body>
@@ -223,7 +223,7 @@
 <div id="tour" class="ovl">
   <div class="obox">
     <div class="ot">👇 功能都在下面</div>
-    <div class="od">底部五顆按鈕切換頁面：<b>情報站</b>（每日焦點）、<b>回憶過去</b>（歷史日報）、<b>個股報告</b>、<b>速查</b>、<b>許願池</b>。<br><br>右上 <b>⚙ 設定</b> 可調字級、換主題，還能把本站加到手機主畫面變成 APP。</div>
+    <div class="od">底部五顆按鈕切換頁面：<b>情報站</b>（每日焦點）、<b>回憶過去</b>（歷史日報）、<b>個股報告</b>、<b>速查</b>、<b>許願池</b>。<br><br>右上 <b>⚙ 設定</b> 可調字級、換主題，還能把本站加到手機主畫面變成 APP。<br><br>這個網站是為了幫大家把每天的台股資訊收斂在一起，有問題或想要的功能，歡迎到 <b>🌠 許願池</b> 留言。</div>
     <button class="obtn" onclick="tourClose()">知道了，開始看 🍍</button>
   </div>
   <div class="tarrow">⬇</div>

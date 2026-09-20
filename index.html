@@ -111,6 +111,10 @@
   .thbtn:hover{border-color:var(--gold);}
   .thbtn .at{font-size:1.1rem;font-weight:900;}
   /* 聲明列：打勾後縮成一行 */
+  /* 站長的話（announce.txt，只有情報站有） */
+  .annc{display:none;margin:14px 0 0;padding:10px 16px;background:var(--card);border:1px solid var(--gold-dim);
+    border-left:4px solid var(--gold);border-radius:8px;font-size:.92rem;line-height:1.7;word-break:break-word;}
+  .annc b{color:var(--gold);}
   .nok{cursor:pointer;margin-top:8px;border:1px solid var(--gold-dim);background:none;color:var(--gold);
     border-radius:16px;padding:3px 16px;font-size:.8rem;font-family:inherit;font-weight:700;display:block;}
   .nok:hover{border-color:var(--gold);}
@@ -163,7 +167,7 @@
     table tr:first-child{display:none;}
     table td{display:inline-block;border:0;padding:2px 10px 2px 0;vertical-align:middle;}
     table td:last-child{display:block;border-top:1px dashed var(--line);margin-top:6px;padding:6px 0 0;white-space:normal;}
-    .setpanel{white-space:normal;min-width:250px;}
+    .setpanel{position:fixed;left:12px;right:12px;top:70px;white-space:normal;min-width:0;}
   }
   /* 強制手機版（設定 > 版面 > 手機版） */
   html.mob .wrap{padding:0 12px 40px;max-width:540px;}
@@ -178,7 +182,7 @@
   html.mob table tr:first-child{display:none;}
   html.mob table td{display:inline-block;border:0;padding:2px 10px 2px 0;vertical-align:middle;}
   html.mob table td:last-child{display:block;border-top:1px dashed var(--line);margin-top:6px;padding:6px 0 0;white-space:normal;}
-  html.mob .setpanel{white-space:normal;min-width:250px;}
+  html.mob .setpanel{position:fixed;left:12px;right:12px;top:70px;white-space:normal;min-width:0;}
 </style>
 </head>
 <body>
@@ -218,6 +222,8 @@
       <div class="oline">🟢 線上 <b id="olnum">3</b> 人<span id="vwrap">｜累計瀏覽 <span id="views">—</span></span></div>
     </div>
   </header>
+
+  <div class="annc" id="annc">🍍 <b>旺來想說</b>：<span id="anncTxt"></span></div>
 
   <div class="notice" id="notice">
     ⚠ 本站為新聞整理用途
@@ -391,7 +397,7 @@
 <div id="tour" class="ovl">
   <div class="obox">
     <div class="ot">👇 功能都在下面</div>
-    <div class="od">底部五顆按鈕切換頁面：<b>情報站</b>（每日焦點）、<b>回憶過去</b>（歷史日報）、<b>個股報告</b>、<b>速查</b>、<b>許願池</b>。<br><br>右上 <b>⚙ 設定</b> 可調字級、換主題，還能把本站加到手機主畫面變成 APP。</div>
+    <div class="od">底部五顆按鈕切換頁面：<b>情報站</b>（每日焦點）、<b>回憶過去</b>（歷史日報）、<b>個股報告</b>、<b>速查</b>、<b>許願池</b>。<br><br>右上 <b>⚙ 設定</b> 可調字級、換主題，還能把本站加到手機主畫面變成 APP。<br><br>這個網站是為了幫大家把每天的台股資訊收斂在一起，有問題或想要的功能，歡迎到 <b>🌠 許願池</b> 留言。</div>
     <button class="obtn" onclick="tourClose()">知道了，開始看 🍍</button>
   </div>
   <div class="tarrow">⬇</div>
@@ -462,6 +468,13 @@
       });
     })(vc[i]);
   }
+  // ---- 站長的話（讀 announce.txt，空的就不顯示） ----
+  fetch("announce.txt?v="+Date.now())
+    .then(function(r){return r.ok?r.text():"";})
+    .then(function(t){
+      t=(t||"").trim();
+      if(t){document.getElementById("anncTxt").textContent=t;document.getElementById("annc").style.display="block";}
+    }).catch(function(e){});
   // ---- PWA 啟動導向：從主畫面開啟一律先到情報站 ----
   try{
     var sa=(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches)||window.navigator.standalone;
