@@ -109,7 +109,7 @@ def convert_tree(folder, back, backlabel):
         return made, skipped, failed
     for dirpath, _dirs, files in os.walk(folder):
         for f in files:
-            if not f.lower().endswith(".docx") or f.startswith("~$"):
+            if not f.lower().endswith(".docx") or f.startswith("~$") or ".tmp." in f.lower():
                 continue
             src = os.path.join(dirpath, f)
             dst = os.path.splitext(src)[0] + ".html"
@@ -150,7 +150,8 @@ def build_manifest():
             continue  # 非個股資料夾（如 _策略清單）不列
         name, code = m.group(1), m.group(2)
         files = [f for f in sorted(os.listdir(full))
-                 if f.lower().endswith(".docx") and not f.startswith("~$")]
+                 if f.lower().endswith(".docx") and not f.startswith("~$")
+                 and ".tmp." not in f.lower()]
         if files:
             stocks.append({"folder": folder, "name": name, "code": code, "files": files})
     return stocks
@@ -191,7 +192,8 @@ def main():
     daily = []
     if os.path.isdir(DAILY_DIR):
         daily = [f for f in sorted(os.listdir(DAILY_DIR))
-                 if f.lower().endswith(".docx") and not f.startswith("~$")]
+                 if f.lower().endswith(".docx") and not f.startswith("~$")
+                 and ".tmp." not in f.lower()]
     with open(MANIFEST, "w", encoding="utf-8") as f:
         json.dump({"stocks": stocks, "daily": daily}, f, ensure_ascii=False, indent=1)
     total = sum(len(s["files"]) for s in stocks)
