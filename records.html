@@ -296,12 +296,28 @@
     });
     nt.addEventListener("click",function(){ if(nt.classList.contains("mini")) nt.classList.remove("mini"); });
   }
-  // ---- PWA：加到主畫面 ----
+  // ---- PWA：加到主畫面 + 匿名埋點（給旺來後台看安裝數/瀏覽數） ----
+  var API_T="https://web-production-e1521.up.railway.app";
+  var vid="";
+  try{
+    vid=localStorage.getItem("wl_vid")||"";
+    if(!vid){vid="v"+Date.now().toString(36)+Math.random().toString(36).slice(2,10);localStorage.setItem("wl_vid",vid);}
+  }catch(e){}
+  function wlTrack(n){
+    try{
+      fetch(API_T+"/api/site/track",{method:"POST",keepalive:true,
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({name:n,page:(location.pathname.split("/").pop()||"index.html"),visitor_id:vid})});
+    }catch(e){}
+  }
+  wlTrack("pageview");
   if("serviceWorker" in navigator){ try{ navigator.serviceWorker.register("sw.js"); }catch(e){} }
   var dfp=null;
   window.addEventListener("beforeinstallprompt",function(e){ e.preventDefault(); dfp=e; });
+  window.addEventListener("appinstalled",function(){ wlTrack("install_done"); });
   var a2=document.getElementById("a2hs");
   if(a2) a2.addEventListener("click",function(){
+    wlTrack("install_click");
     if(dfp){ dfp.prompt(); dfp=null; }
     else{
       alert("iPhone：用 Safari 開本站 → 點下方「分享」→「加入主畫面」\nAndroid：用 Chrome 開本站 → 右上「⋮」→「加到主畫面」\n電腦：網址列右側的安裝圖示");
