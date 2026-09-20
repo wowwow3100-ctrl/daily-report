@@ -257,10 +257,10 @@
     var t=b.getAttribute("data-t"); try{localStorage.setItem(TK,t);}catch(e){} applyTh(t);
   });})(thChips[i]);}
 
-  // ---- PWA 啟動導向：從主畫面開啟一律先到情報站 ----
+  // ---- 進站導向：外部直接落在個股頁（舊分享連結/舊主畫面圖示）→ 先帶去情報站 ----
+  // 站內導覽（底部按「個股報告」）不受影響：前一頁已寫 wl_nav。加 ?stay=1 可直開本頁。
   try{
-    var sa=(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches)||window.navigator.standalone;
-    if(sa && !sessionStorage.getItem("wl_nav") && !/index\.html$|\/daily-report\/?$/.test(location.pathname)){
+    if(!sessionStorage.getItem("wl_nav") && !/stay=1/.test(location.search)){
       sessionStorage.setItem("wl_nav","1"); location.replace("index.html");
     }
     sessionStorage.setItem("wl_nav","1");
