@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%8D%3C/text%3E%3C/svg%3E">
 <meta property="og:title" content="旺來 研究報告專區｜每日日報與大盤">
-<meta property="og:description" content="每天早盤/盤後日報網頁版＋每日大盤收盤紀錄。新聞整理用途，非投資建議。">
+<meta property="og:description" content="每天早盤/盤後/夜間日報網頁版＋每日大盤收盤紀錄。新聞整理用途，非投資建議。">
 <meta property="og:image" content="https://wowwow3100-ctrl.github.io/daily-report/login-logo.png">
 <meta property="og:url" content="https://wowwow3100-ctrl.github.io/daily-report/reports.html">
 <meta property="og:type" content="website">
@@ -199,8 +199,8 @@
 
   <footer>
     <a class="thbtn" href="https://www.threads.com/@wowwow31001" target="_blank" rel="noopener"><span class="at">＠</span>追蹤旺來的脆 wowwow31001</a><br>
-    <b>旺來 @wowwow31001</b>｜本頁彙整每日研究報告日報（早盤/盤後）與大盤收盤資訊，內容依公開新聞整理，非投資建議。<br>
-    自動更新：每日 08:00／19:00（由旺來研究報告工作流產生）
+    <b>旺來 @wowwow31001</b>｜本頁彙整每日研究報告日報（早盤/盤後/夜間）與大盤收盤資訊，內容依公開新聞整理，非投資建議。<br>
+    自動更新：每日 08:00／19:00／22:00（交易日 06:40 另有盤前快訊）
   </footer>
 
 </div>
@@ -410,7 +410,7 @@
       o.files.sort();
       for(var f=0;f<o.files.length;f++){
         var fn=o.files[f];
-        var label=fn.indexOf("早盤")>=0?"☀ 早盤日報":(fn.indexOf("盤後")>=0?"🌙 盤後日報":"📄 日報");
+        var label=fn.indexOf("早盤")>=0?"☀ 早盤日報":(fn.indexOf("盤後")>=0?"🌙 盤後日報":(fn.indexOf("夜間")>=0?"🌃 夜間日報":"📄 日報"));
         btns+='<a class="rep" target="_blank" rel="noopener" href="日報/'+encodeURIComponent(fn.replace(/\.docx$/i,".html"))+'">'+label+'</a>';
       }
       if(!btns) btns='<span class="none">當日無日報</span>';
