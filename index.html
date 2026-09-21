@@ -79,9 +79,9 @@
   .mkt .val{font-size:1.35rem;font-weight:800;margin-top:2px;}
   .mkt .chg{font-size:.85rem;margin-top:2px;}
   .sect-head{color:var(--muted);font-size:.82rem;letter-spacing:1px;margin:14px 0 6px;}
-  ol.sectlist{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;}
-  details.stkbox{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:0 14px;height:100%;}
-  details.stkbox summary{cursor:pointer;display:flex;align-items:center;gap:8px;padding:10px 0;font-size:.92rem;list-style:none;}
+  ol.sectlist{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  details.stkbox{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:0 16px;}
+  details.stkbox summary{cursor:pointer;display:flex;align-items:center;gap:10px;padding:10px 0;font-size:.92rem;list-style:none;white-space:nowrap;}
   details.stkbox summary::-webkit-details-marker{display:none;}
   details.stkbox summary::after{content:"▾";color:var(--gold-dim);font-size:.75rem;transition:transform .15s;}
   details.stkbox[open] summary::after{transform:rotate(180deg);}
@@ -89,7 +89,7 @@
   details.stkbox:hover{border-color:var(--gold-dim);}
   .sn{display:inline-flex;align-items:center;justify-content:center;width:21px;height:21px;border-radius:50%;
     background:var(--card2);border:1px solid var(--gold-dim);color:var(--gold);font-size:.72rem;font-weight:800;flex:none;}
-  .snm{flex:1;font-weight:700;}
+  .snm{flex:1;font-weight:700;white-space:nowrap;}
   ul.stklist{list-style:none;margin:4px 0 10px;}
   ul.stklist li{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:.85rem;border-bottom:1px dashed var(--line);}
   ul.stklist li:last-child{border-bottom:none;}
