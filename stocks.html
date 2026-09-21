@@ -31,6 +31,13 @@
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px 60px;}
   header{padding:30px 0 8px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
   .logo{font-size:1.8rem;font-weight:900;color:var(--gold);letter-spacing:2px;}
+  .brand{width:46px;height:46px;border-radius:50%;vertical-align:middle;}
+  .dev{margin-top:26px;border:1px dashed var(--gold-dim);border-radius:12px;padding:16px 20px;text-align:center;}
+  .dev .dt{color:var(--gold);font-weight:900;letter-spacing:2px;}
+  .dev .dd{color:var(--muted);font-size:.85rem;margin-top:6px;line-height:1.8;}
+  .devbtn{margin-top:10px;cursor:pointer;border:1px solid var(--gold);background:none;color:var(--gold);
+    border-radius:22px;padding:8px 22px;font-family:inherit;font-weight:800;font-size:.9rem;}
+  .devbtn:disabled{opacity:.6;cursor:default;}
   .logo small{font-size:.8rem;color:var(--muted);font-weight:400;letter-spacing:1px;margin-left:10px;}
   .applink{font-size:.8rem;color:var(--gold-dim);text-decoration:none;border:1px solid var(--gold-dim);border-radius:20px;padding:3px 14px;white-space:nowrap;}
   .applink:hover{color:var(--gold);border-color:var(--gold);}
@@ -153,6 +160,7 @@
 <div class="wrap">
 
   <header>
+    <img class="brand" src="login-logo.png" alt="旺來">
     <div class="logo">旺來<small>個股報告</small></div>
     <div class="head-right">
       <div class="setwrap">
@@ -195,6 +203,12 @@
 
   <div id="detail"></div>
   <div id="grid" class="grid"><div id="status">資料載入中…</div></div>
+
+  <div class="dev">
+    <div class="dt">⭐ 自選功能 開發中</div>
+    <div class="dd">之後你可以建立自己的自選清單，只看想追的標的相關整理。</div>
+    <button class="devbtn" id="voteWatch">🔥 我想要這功能，加速開發</button>
+  </div>
 
   <footer>
     <a class="thbtn" href="https://www.threads.com/@wowwow31001" target="_blank" rel="noopener"><span class="at">＠</span>追蹤旺來的脆 wowwow31001</a><br>
@@ -346,6 +360,16 @@
     var v=b.getAttribute("data-v"); try{localStorage.setItem(VK,v);}catch(e){} applyV(v);
   });})(vwChips[i]);}
 
+  // ---- 自選功能加速投票（一人一票，票數進旺來後台） ----
+  var vw=document.getElementById("voteWatch");
+  if(vw){
+    try{ if(localStorage.getItem("wl_vote_watch")==="1"){ vw.disabled=true; vw.textContent="✅ 已收到你的一票，感謝！"; } }catch(e){}
+    vw.addEventListener("click",function(){
+      wlTrack("vote_watchlist");
+      try{ localStorage.setItem("wl_vote_watch","1"); }catch(e){}
+      vw.disabled=true; vw.textContent="✅ 已收到你的一票，感謝！";
+    });
+  }
   // ---- 設定面板開關 ----
   var sb=document.getElementById("setbtn"), sp=document.getElementById("setpanel");
   if(sb&&sp){
