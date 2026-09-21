@@ -78,10 +78,17 @@
   .mkt .lbl{color:var(--muted);font-size:.78rem;letter-spacing:1px;}
   .mkt .val{font-size:1.35rem;font-weight:800;margin-top:2px;}
   .mkt .chg{font-size:.85rem;margin-top:2px;}
-  .sect{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px;}
-  .sect-lbl{color:var(--muted);font-size:.8rem;letter-spacing:1px;white-space:nowrap;}
-  .schip{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:4px 14px;font-size:.85rem;white-space:nowrap;}
-  .schip b{font-weight:800;margin-left:4px;}
+  details.sectbox{margin-top:12px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:2px 18px;}
+  details.sectbox summary{cursor:pointer;color:var(--gold);font-size:.92rem;font-weight:700;padding:10px 0;list-style-position:inside;letter-spacing:1px;}
+  details.sectbox summary:hover{color:var(--gold-dim);}
+  details.sectbox[open] summary{border-bottom:1px solid var(--line);margin-bottom:4px;}
+  ol.sectlist{list-style:none;margin:6px 0 12px;}
+  ol.sectlist li{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:.92rem;}
+  ol.sectlist li:last-child{border-bottom:none;}
+  ol.sectlist .sn{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;
+    background:var(--card2);border:1px solid var(--gold-dim);color:var(--gold);font-size:.75rem;font-weight:800;flex:none;}
+  ol.sectlist .snm{flex:1;}
+  ol.sectlist .sv{color:var(--muted);font-size:.8rem;}
   ul.prelist{list-style:none;}
   ul.prelist li{padding:7px 0;border-bottom:1px dashed var(--line);font-size:.92rem;}
   ul.prelist li:last-child{border-bottom:none;}
@@ -233,7 +240,7 @@
     </div>
   </header>
 
-  <div class="annc" id="annc">🍍 <b>旺來想說</b>：<span id="anncTxt"></span></div>
+  <div class="annc" id="annc">🍍 <b>旺來碎念</b>：<span id="anncTxt"></span></div>
 
   <div class="notice" id="notice">
     ⚠ 本站為新聞整理用途
@@ -252,14 +259,16 @@
   <!-- ===== /DATA:MARKET ===== -->
 
   <!-- ===== DATA:SECTORS ===== -->
-  <div class="sect">
-    <span class="sect-lbl">🔥 最強族群（09/21）</span>
-    <span class="schip">電子零組件 <b class="up">+3.27%</b></span>
-    <span class="schip">光電 <b class="up">+1.80%</b></span>
-    <span class="schip">半導體 <b class="up">+1.21%</b></span>
-    <span class="schip">金融保險 <b class="up">+0.81%</b></span>
-    <span class="schip">其他電子 <b class="up">+0.63%</b></span>
-  </div>
+  <details class="sectbox">
+    <summary>🔥 最強族群 TOP 5（09/21 盤中）</summary>
+    <ol class="sectlist">
+      <li><span class="sn">1</span><span class="snm">電子零組件</span><b class="up">+3.27%</b></li>
+      <li><span class="sn">2</span><span class="snm">光電</span><b class="up">+1.80%</b></li>
+      <li><span class="sn">3</span><span class="snm">半導體</span><b class="up">+1.21%</b></li>
+      <li><span class="sn">4</span><span class="snm">金融保險</span><b class="up">+0.81%</b></li>
+      <li><span class="sn">5</span><span class="snm">其他電子</span><b class="up">+0.63%</b></li>
+    </ol>
+  </details>
   <!-- ===== /DATA:SECTORS ===== -->
 
   <!-- ===== DATA:PREOPEN ===== -->
@@ -323,7 +332,7 @@
   <div class="card">
     <ul class="sum-list">
       <li>本場次唯一具名券商加上具體數字的個股報告，是高盛（Goldman Sachs）在 18:33 上修緯穎（6669）目標價至 <span class="up">3,777 元</span>；若還原至配股前來看，這是緯穎目標價首次突破萬元大關。高盛的三條成長線講得很清楚：一是北美 CSP 對通用伺服器的需求仍維持強勁，主要客戶 AWS 的新款氣冷與水冷 ASIC AI 伺服器正在放量；二是代理型 AI（Agentic AI）帶動通用型伺服器的終端需求維持穩健；三是搭載 NVIDIA 與 AMD 平台的全新 GPU AI 伺服器機櫃預計第 4 季進入量產，成為新的成長動能來源。緯穎 8 月營收表現強勁，高盛預計成長趨勢可一路延續到年底 <a class="ref" href="#src-2">[2]</a></li>
-      <li>值得一併看的是緯穎的資本支出：公司公布 2026 下半年預算 9.42 億美元、全年可能高達 13 億美元（近 400 億新台幣），高盛的預估更高、來到 440 億新台幣，而且認為高投資規模將延續至 2028 年，用途是支撐美國、墨西哥與馬來西亞的生產基地多元化布局。高盛預估高於公司自己的財測，後續的折舊與現金流負擔是要留意的一面。★ 本次原文未載制式評等文字與前次目標價 <a class="ref" href="#src-2">[2]</a></li>
+      <li>值得一併看的是緯穎的資本支出：公司公布 2026 下半年預算 9.42 億美元、全年可能高達 13 億美元（近 400 億新台幣），高盛的預估更高、來到 440 億新台幣，而且認為高投資規模將延續至 2028 年，用途是支撐美國、墨西哥與馬來西亞的生產基地多元化配置。高盛預估高於公司自己的財測，後續的折舊與現金流負擔是要留意的一面。★ 本次原文未載制式評等文字與前次目標價 <a class="ref" href="#src-2">[2]</a></li>
       <li>散熱端，亞系外資重申健策（3653）正向並同步調高目標價。理由是亞系產業調研的結果：可拆式均熱片會用於 Vera Rubin 或 Rubin Ultra，ASP 將較目前一體式的高出五至六倍，而且有可能促使其 ASIC 客戶也採用可拆式。券商據此上修健策 2026–2028 年每股稅後盈餘至 68／156.4／236 元，並以今年第 4 季至 2027 年第 3 季 <span class="up">73 倍本益比</span>評價。健策 21 日開高走高、早盤最高 5,885 元、漲幅逾 6.2%。★ 原文未載調升後的目標價數字，本站列為待確認；73 倍屬偏高評價倍數，若新平台時程或採用比例不如預期，評價存在下修空間 <a class="ref" href="#src-3">[3]</a></li>
       <li>產業報告方面，高盛另指 ABF 載板供需缺口擴大之中、明後年缺口尤甚，點名欣興（3037）、南電（8046）與景碩（3189）；欣興盤中最高 1,055 元重返千金、終場 <span class="up">+3.98%</span>，南電卻收 <span class="down">-3.64%</span>，同一份報告下族群內部反應明顯分歧。另有未具名投顧法人調高欣銓（3264）獲利預估值及目標價：欣銓第 2 季毛利率 40.1%，是第一家毛利率突破 40% 的封測廠，龍潭廠第 3 季稼動率估 90% 至 95%、單季毛利率上看 45%，ASIC 訂單毛利率甚至有機會達 56% 以上。★ 這兩則都未載具體目標價數字，依本站規則不另建個股摘要 <a class="ref" href="#src-4">[4]</a><a class="ref" href="#src-6">[6]</a></li>
       <li>★ 本場次仍有四則待確認：健策的目標價數字、法人調高台塑化（6505）目標價的數字、花旗「2028 年後 AI 四大台廠」的完整名單，以及 CCL 高階供給短缺中內外資對台光電與台燿的看法，下一場次優先回補 <a class="ref" href="#src-12">[12]</a></li>
