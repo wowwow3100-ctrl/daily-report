@@ -14,6 +14,8 @@
 
 安全護欄:
   - 改動 > 30 檔 → 拒推
+    (例外: commit subject 以 "bulk:" 開頭 → 上限放寬到 2000 檔,
+     給排程任務/大批量補檔用; 敏感檔檢查照常)
   - *.xlsx / *.xls / *.bak / .env / secrets/ 改動 → 拒推
   - branch 不是 main → 拒推
   - 30 秒內只准推 1 次
@@ -86,9 +88,11 @@ def changed_files():
     return files, ""
 
 
-def safety_check(files):
-    if len(files) > MAX_FILES:
-        return "too many files changed (%d > %d)" % (len(files), MAX_FILES)
+def safety_check(files, bulk=False):
+    limit = 2000 if bulk else MAX_FILES
+    if len(files) > limit:
+        return "too many files changed (%d > %d)%s" % (
+            len(files), limit, "" if bulk else "; prefix subject with 'bulk:' to allow up to 2000")
     for f in files:
         low = f.lower()
         if low.endswith(BAD_SUFFIX) or low.startswith("secrets/") or "/.env" in low or low == ".env":
@@ -122,9 +126,11 @@ def do_push():
     if not files:
         write_result({"status": "noop", "output": "nothing to commit"})
         return
-    reason = safety_check(files)
+    subject_line = (msg.splitlines()[0] if msg else "").strip()
+    bulk = subject_line.lower().startswith("bulk:")
+    reason = safety_check(files, bulk=bulk)
     if reason:
-        write_result({"status": "rejected", "error": reason, "files": files})
+        write_result({"status": "rejected", "error": reason, "files": files[:30]})
         log("REJECTED: %s" % reason)
         return
 

@@ -82,6 +82,12 @@
   .sect-lbl{color:var(--muted);font-size:.8rem;letter-spacing:1px;white-space:nowrap;}
   .schip{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:4px 14px;font-size:.85rem;white-space:nowrap;}
   .schip b{font-weight:800;margin-left:4px;}
+  ul.prelist{list-style:none;}
+  ul.prelist li{padding:7px 0;border-bottom:1px dashed var(--line);font-size:.92rem;}
+  ul.prelist li:last-child{border-bottom:none;}
+  ul.prelist a{color:var(--text);text-decoration:none;}
+  ul.prelist a:hover{color:var(--gold);}
+  .psrc{color:var(--muted);font-size:.75rem;margin-left:8px;white-space:nowrap;}
   .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-bottom:12px;}
   ul.sum-list{list-style:none;}
   ul.sum-list li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem;}
@@ -255,6 +261,15 @@
     <span class="schip">建材營造 <b class="up">+2.45%</b></span>
   </div>
   <!-- ===== /DATA:SECTORS ===== -->
+
+  <!-- ===== DATA:PREOPEN ===== -->
+  <h2 id="preopen">盤前快訊<span class="muted" style="font-size:.75rem;letter-spacing:0;">（每個交易日約 06:40 送達．點標題看原文）</span></h2>
+  <div class="card">
+    <ul class="prelist">
+      <li><span class="cat">說明</span>第一批盤前快訊將於下個交易日早上自動送達 — 早起的你可以在這裡先看原文，08:00 的完整分析照常更新。</li>
+    </ul>
+  </div>
+  <!-- ===== /DATA:PREOPEN ===== -->
 
   <!-- ===== DATA:FOCUS_NEWS ===== -->
   <h2 id="focus">今日焦點</h2>
