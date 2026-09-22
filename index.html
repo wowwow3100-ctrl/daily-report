@@ -73,7 +73,8 @@
   nav.toc a:hover{border-color:var(--gold-dim);color:var(--gold);}
   h2{font-size:1.2rem;color:var(--gold);letter-spacing:3px;margin:36px 0 16px;font-weight:800;scroll-margin-top:12px;}
   h2::before{content:"◆ ";color:var(--gold-dim);}
-  .mkt{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px;}
+  .mkt{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+  .mkt .sub{color:var(--muted);font-size:.72rem;margin-top:3px;letter-spacing:0;}
   .mkt .m{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;}
   .mkt .lbl{color:var(--muted);font-size:.78rem;letter-spacing:1px;}
   .mkt .val{font-size:1.35rem;font-weight:800;margin-top:2px;}
@@ -277,6 +278,8 @@
     <div class="m"><div class="lbl">成交值（上市）</div><div class="val">約 1.02 兆</div><div class="chg up">較前日 +17.7%</div></div>
     <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">6,049 億</div><div class="chg up">單日 +18.2 億</div></div>
     <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">約 12,433</div><div class="chg up">+4.29%（09/21 美股）</div></div>
+    <div class="m"><div class="lbl">全市場擔保維持率</div><div class="val">286.56%</div><div class="chg up">較前日 +1.24</div></div>
+    <div class="m"><div class="lbl">信用風險戶數</div><div class="val">9 戶</div><div class="chg down">較前日 -3 戶</div><div class="sub">維持率不足 7｜追繳 0｜處分 2</div></div>
   </div>
 <!-- ===== /DATA:MARKET ===== -->
 
@@ -335,6 +338,39 @@
     </details></li>
   </ol>
   <!-- ===== /DATA:SECTORS ===== -->
+
+  <!-- ===== DATA:REVENUE ===== -->
+  <div class="sect-head">📈 上市櫃月營收（2026 年 8 月）．點開看產業成長榜</div>
+  <ol class="sectlist">
+    <li><details class="stkbox">
+      <summary><span class="sn">市</span><span class="snm">上市　32 產業：31 成長 / 1 衰退</span><b class="up">最高 +90.6%</b></summary>
+      <ul class="stklist">
+        <li><span class="stn">電腦及週邊設備業</span><span class="stc">1.60 兆</span><b class="up">+90.59%</b></li>
+        <li><span class="stn">電子通路業</span><span class="stc">5,291 億</span><b class="up">+88.92%</b></li>
+        <li><span class="stn">半導體業</span><span class="stc">9,109 億</span><b class="up">+61.30%</b></li>
+        <li><span class="stn">金融保險業（唯一衰退）</span><span class="stc">2,283 億</span><b class="down">-34.88%</b></li>
+      </ul>
+    </details></li>
+    <li><details class="stkbox">
+      <summary><span class="sn">櫃</span><span class="snm">上櫃　28 產業：28 個全數成長</span><b class="up">最高 +140.2%</b></summary>
+      <ul class="stklist">
+        <li><span class="stn">電子通路業</span><span class="stc">156 億</span><b class="up">+140.16%</b></li>
+        <li><span class="stn">金融業</span><span class="stc">53 億</span><b class="up">+109.18%</b></li>
+        <li><span class="stn">半導體業</span><span class="stc">1,038 億</span><b class="up">+96.26%</b></li>
+      </ul>
+    </details></li>
+    <li><details class="stkbox">
+      <summary><span class="sn">比</span><span class="snm">營收占比最高產業</span><b class="up">上市電腦周邊 27.1%</b></summary>
+      <ul class="stklist">
+        <li><span class="stn">上市：電腦及週邊設備業</span><b class="up">27.10%</b></li>
+        <li><span class="stn">上市：其他電子業</span><b class="up">17.35%</b></li>
+        <li><span class="stn">上市：半導體業</span><b class="up">15.46%</b></li>
+        <li><span class="stn">上櫃：半導體業</span><b class="up">28.48%</b></li>
+        <li><span class="stn">上櫃：電腦及週邊設備業</span><b class="up">10.77%</b></li>
+      </ul>
+    </details></li>
+  </ol>
+  <!-- ===== /DATA:REVENUE ===== -->
 
   <!-- ===== DATA:PREOPEN ===== -->
   <h2 id="preopen">盤前快訊<span class="muted" style="font-size:.75rem;letter-spacing:0;">（09/22 06:55 更新．點標題看原文）</span></h2>
