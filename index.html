@@ -114,10 +114,18 @@
   .news-body{color:var(--muted);font-size:.9rem;margin-top:5px;}
   a.ref{color:var(--gold-dim);text-decoration:none;font-size:.75rem;vertical-align:super;}
   a.ref:hover{color:var(--gold);}
-  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:.88rem;}
-  th{background:var(--card2);color:var(--gold);padding:10px 12px;text-align:left;letter-spacing:1px;white-space:nowrap;}
-  td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top;}
-  td.num{white-space:nowrap;}
+  table{width:100%;border-collapse:separate;border-spacing:0;background:var(--card);
+    border:1px solid var(--gold-dim);border-radius:12px;overflow:hidden;font-size:.88rem;}
+  th{background:var(--card2);color:var(--gold);padding:11px 12px;text-align:left;letter-spacing:1px;white-space:nowrap;
+    border-bottom:2px solid var(--gold-dim);border-right:1px solid var(--line);font-size:.82rem;}
+  th:last-child{border-right:none;}
+  td{padding:12px;border-top:1px solid var(--line);border-right:1px solid var(--line);vertical-align:top;}
+  td:last-child{border-right:none;}
+  tr:nth-child(even) td{background:rgba(255,255,255,.022);}
+  tr:hover td{background:rgba(232,193,90,.06);}
+  tr:first-child:hover td{background:var(--card2);}
+  td.num{white-space:nowrap;font-weight:700;}
+  td:nth-child(3){font-weight:700;color:var(--text);}
   .up{color:var(--up);font-weight:700;} .down{color:var(--down);font-weight:700;}
   .tag{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;border:1px solid var(--gold-dim);color:var(--gold);margin-right:6px;white-space:nowrap;}
   .muted{color:var(--muted);}
@@ -187,11 +195,14 @@
     .mkt{grid-template-columns:repeat(2,1fr);gap:8px;}
     .mkt .val{font-size:1.15rem;}
     .card{padding:12px 14px;}
+    table{border:none;background:none;border-radius:0;}
     table,table tbody{display:block;}
-    table tr{display:block;padding:10px 12px;border-top:1px solid var(--line);}
+    table tr{display:block;padding:12px 14px;margin-bottom:8px;background:var(--card);
+      border:1px solid var(--line);border-left:3px solid var(--gold-dim);border-radius:10px;}
     table tr:first-child{display:none;}
+    table tr:nth-child(even) td,table tr:hover td{background:none;}
     table td{display:inline-block;border:0;padding:2px 10px 2px 0;vertical-align:middle;}
-    table td:last-child{display:block;border-top:1px dashed var(--line);margin-top:6px;padding:6px 0 0;white-space:normal;}
+    table td:last-child{display:block;border-top:1px dashed var(--line);margin-top:6px;padding:8px 0 0;white-space:normal;}
     .setpanel{position:fixed;left:12px;right:12px;top:70px;white-space:normal;min-width:0;}
   }
   /* 強制手機版（設定 > 版面 > 手機版） */
@@ -202,11 +213,14 @@
   html.mob .mkt{grid-template-columns:repeat(2,1fr);gap:8px;}
   html.mob .mkt .val{font-size:1.15rem;}
   html.mob .card{padding:12px 14px;}
+  html.mob table{border:none;background:none;border-radius:0;}
   html.mob table,html.mob table tbody{display:block;}
-  html.mob table tr{display:block;padding:10px 12px;border-top:1px solid var(--line);}
+  html.mob table tr{display:block;padding:12px 14px;margin-bottom:8px;background:var(--card);
+    border:1px solid var(--line);border-left:3px solid var(--gold-dim);border-radius:10px;}
   html.mob table tr:first-child{display:none;}
+  html.mob table tr:nth-child(even) td,html.mob table tr:hover td{background:none;}
   html.mob table td{display:inline-block;border:0;padding:2px 10px 2px 0;vertical-align:middle;}
-  html.mob table td:last-child{display:block;border-top:1px dashed var(--line);margin-top:6px;padding:6px 0 0;white-space:normal;}
+  html.mob table td:last-child{display:block;border-top:1px dashed var(--line);margin-top:6px;padding:8px 0 0;white-space:normal;}
   html.mob .setpanel{position:fixed;left:12px;right:12px;top:70px;white-space:normal;min-width:0;}
 </style>
 </head>
@@ -218,7 +232,7 @@
     <div class="logo">旺來<small>台股情報站</small></div>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/09/22（週二）盤後場次</div>
+        <div class="stamp" id="updated">2026/09/22（週二）夜間場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定">⚙ 設定</button>
           <div class="setpanel" id="setpanel">
@@ -261,62 +275,62 @@
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">47,800</div><div class="chg up">+81.33（+0.17%）</div></div>
     <div class="m"><div class="lbl">成交值（上市）</div><div class="val">約 1.02 兆</div><div class="chg up">較前日 +17.7%</div></div>
-    <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">6,030 億</div><div class="chg up">09/21 值．待更新</div></div>
+    <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">6,049 億</div><div class="chg up">單日 +18.2 億</div></div>
     <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">約 12,433</div><div class="chg up">+4.29%（09/21 美股）</div></div>
   </div>
 <!-- ===== /DATA:MARKET ===== -->
 
   <!-- ===== DATA:SECTORS ===== -->
-  <div class="sect-head">🔥 最強族群 TOP 5（09/21 收盤）．點族群看裡面最強的五檔</div>
+  <div class="sect-head">🔥 最強族群 TOP 5（09/22 收盤）．點族群看裡面最強的五檔</div>
   <ol class="sectlist">
     <li><details class="stkbox">
-      <summary><span class="sn">1</span><span class="snm">電子零組件</span><b class="up">+3.27%</b></summary>
+      <summary><span class="sn">1</span><span class="snm">電子零組件</span><b class="up">+2.20%</b></summary>
       <ul class="stklist">
-        <li><span class="stn">三集瑞-KY</span><span class="stc">(6862)</span><b class="up">+9.92%</b></li>
-        <li><span class="stn">詮欣</span><span class="stc">(6205)</span><b class="up">+9.89%</b></li>
-        <li><span class="stn">宏致</span><span class="stc">(3605)</span><b class="up">+9.74%</b></li>
-        <li><span class="stn">台達電</span><span class="stc">(2308)</span><b class="up">+8.07%</b></li>
-        <li><span class="stn">聯茂</span><span class="stc">(6213)</span><b class="up">+7.33%</b></li>
+        <li><span class="stn">南電</span><span class="stc">(8046)</span><b class="up">+9.91%</b></li>
+        <li><span class="stn">欣興</span><span class="stc">(3037)</span><b class="up">+9.80%</b></li>
+        <li><span class="stn">嘉澤</span><span class="stc">(3533)</span><b class="up">+9.75%</b></li>
+        <li><span class="stn">定穎投控</span><span class="stc">(3715)</span><b class="up">+8.44%</b></li>
+        <li><span class="stn">揚博</span><span class="stc">(2493)</span><b class="up">+6.28%</b></li>
       </ul>
     </details></li>
     <li><details class="stkbox">
-      <summary><span class="sn">2</span><span class="snm">光電</span><b class="up">+1.80%</b></summary>
+      <summary><span class="sn">2</span><span class="snm">光電</span><b class="up">+1.18%</b></summary>
       <ul class="stklist">
-        <li><span class="stn">元晶</span><span class="stc">(6443)</span><b class="up">+10.00%</b></li>
-        <li><span class="stn">光鋐</span><span class="stc">(4956)</span><b class="up">+9.98%</b></li>
-        <li><span class="stn">國碩</span><span class="stc">(2406)</span><b class="up">+9.95%</b></li>
-        <li><span class="stn">GIS-KY</span><span class="stc">(6456)</span><b class="up">+9.94%</b></li>
-        <li><span class="stn">宏齊</span><span class="stc">(6168)</span><b class="up">+9.91%</b></li>
+        <li><span class="stn">友達</span><span class="stc">(2409)</span><b class="up">+9.90%</b></li>
+        <li><span class="stn">台表科</span><span class="stc">(6278)</span><b class="up">+9.77%</b></li>
+        <li><span class="stn">牧德</span><span class="stc">(3563)</span><b class="up">+7.73%</b></li>
+        <li><span class="stn">冠西電</span><span class="stc">(2466)</span><b class="up">+5.00%</b></li>
+        <li><span class="stn">彩晶</span><span class="stc">(6116)</span><b class="up">+4.39%</b></li>
       </ul>
     </details></li>
     <li><details class="stkbox">
-      <summary><span class="sn">3</span><span class="snm">半導體</span><b class="up">+1.21%</b></summary>
+      <summary><span class="sn">3</span><span class="snm">電機機械</span><b class="up">+1.04%</b></summary>
       <ul class="stklist">
-        <li><span class="stn">華東</span><span class="stc">(8110)</span><b class="up">+9.92%</b></li>
-        <li><span class="stn">矽統</span><span class="stc">(2363)</span><b class="up">+9.87%</b></li>
-        <li><span class="stn">聯傑</span><span class="stc">(3094)</span><b class="up">+9.86%</b></li>
-        <li><span class="stn">達能</span><span class="stc">(3686)</span><b class="up">+9.79%</b></li>
-        <li><span class="stn">嘉雨思-創</span><span class="stc">(6921)</span><b class="up">+9.75%</b></li>
+        <li><span class="stn">高力</span><span class="stc">(8996)</span><b class="up">+9.97%</b></li>
+        <li><span class="stn">大量</span><span class="stc">(3167)</span><b class="up">+7.20%</b></li>
+        <li><span class="stn">中砂</span><span class="stc">(1560)</span><b class="up">+3.94%</b></li>
+        <li><span class="stn">亞德客-KY</span><span class="stc">(1590)</span><b class="up">+1.61%</b></li>
+        <li><span class="stn">鑽全</span><span class="stc">(1527)</span><b class="up">+0.77%</b></li>
       </ul>
     </details></li>
     <li><details class="stkbox">
-      <summary><span class="sn">4</span><span class="snm">金融保險</span><b class="up">+0.81%</b></summary>
+      <summary><span class="sn">4</span><span class="snm">水泥</span><b class="up">+0.97%</b></summary>
       <ul class="stklist">
-        <li><span class="stn">統一證</span><span class="stc">(2855)</span><b class="up">+7.50%</b></li>
-        <li><span class="stn">凱基金</span><span class="stc">(2883)</span><b class="up">+2.93%</b></li>
-        <li><span class="stn">富邦金</span><span class="stc">(2881)</span><b class="up">+2.66%</b></li>
-        <li><span class="stn">中再保</span><span class="stc">(2851)</span><b class="up">+2.45%</b></li>
-        <li><span class="stn">群益證</span><span class="stc">(6005)</span><b class="up">+2.38%</b></li>
+        <li><span class="stn">台泥</span><span class="stc">(1101)</span><b class="up">+1.66%</b></li>
+        <li><span class="stn">台泥乙特</span><span class="stc">(1101B)</span><b class="up">+0.58%</b></li>
+        <li><span class="stn">亞泥</span><span class="stc">(1102)</span><b class="up">+0.57%</b></li>
+        <li><span class="stn">信大</span><span class="stc">(1109)</span><b class="down">-0.37%</b></li>
+        <li><span class="stn">嘉泥</span><span class="stc">(1103)</span><b class="down">-0.38%</b></li>
       </ul>
     </details></li>
     <li><details class="stkbox">
-      <summary><span class="sn">5</span><span class="snm">其他電子</span><b class="up">+0.63%</b></summary>
+      <summary><span class="sn">5</span><span class="snm">其他電子</span><b class="up">+0.94%</b></summary>
       <ul class="stklist">
-        <li><span class="stn">貿聯-KY</span><span class="stc">(3665)</span><b class="up">+4.07%</b></li>
-        <li><span class="stn">致茂</span><span class="stc">(2360)</span><b class="up">+3.71%</b></li>
-        <li><span class="stn">美隆電</span><span class="stc">(2477)</span><b class="up">+3.36%</b></li>
-        <li><span class="stn">玖鼎電力</span><span class="stc">(4588)</span><b class="up">+3.26%</b></li>
-        <li><span class="stn">聚賢研發-創</span><span class="stc">(7631)</span><b class="up">+2.54%</b></li>
+        <li><span class="stn">連宇</span><span class="stc">(2482)</span><b class="up">+2.82%</b></li>
+        <li><span class="stn">致茂</span><span class="stc">(2360)</span><b class="up">+2.74%</b></li>
+        <li><span class="stn">無敵</span><span class="stc">(8201)</span><b class="up">+2.50%</b></li>
+        <li><span class="stn">尖點</span><span class="stc">(8021)</span><b class="up">+2.36%</b></li>
+        <li><span class="stn">柏騰</span><span class="stc">(3518)</span><b class="up">+1.90%</b></li>
       </ul>
     </details></li>
   </ol>
@@ -345,46 +359,46 @@
   <!-- ===== DATA:FOCUS_NEWS ===== -->
   <h2 id="focus">今日焦點</h2>
   <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">09/22 17:31</span>台股終場收 <span class="up">47,800.17 點</span>，盤中與收盤同創歷史新高 <a class="ref" href="#src-1">[1]</a><a class="ref" href="#src-2">[2]</a></div>
-    <div class="news-body">加權指數 09/22 以 47,981.04 點開高，盤中一度拉升至 48,601.53 點、上漲 882.69 點，改寫盤中歷史新高。惟衝高後攻勢不繼，隨著台積電翻黑漲勢收斂、48,000 點未站穩，終場收在當日最低的 47,800.17 點、上漲 81.33 點（+0.17%），仍創下收盤歷史新高，日線留下長上影線。</div>
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">09/22 16:30</span>股王信驊收 <span class="up">20,905 元</span>，台股史上首檔收盤逾 2 萬元個股 <a class="ref" href="#src-1">[1]</a></div>
+    <div class="news-body">信驊（5274）09/22 大漲 1,085 元、收 20,905 元，創下歷史收盤新高，成為台股史上首檔收盤價超過 2 萬元的個股（盤中曾達 21,800 元）。法人圈普遍看多，其中以大和資本（Daiwa）給出的 26,660 元目標價最高，由原先 19,800 元上調、調幅 34.6%；大和同時上調信驊 2027、2028 年 EPS 預估各達 36%、34%。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">法人</span><span class="ntime">09/22 17:31</span>三大法人同步買超 <span class="up">608.2 億元</span>，外資單日買超 447.26 億 <a class="ref" href="#src-1">[1]</a></div>
-    <div class="news-body">三大法人 09/22 同步站在買方，合計買超 608.2 億元：外資及陸資（不含外資自營商）買超 447.26 億元、投信買超 2.4 億元、自營商合計買超 158.54 億元（自行買賣 +35.08 億、避險 +123.45 億）。連四個交易日累計回補約 2,535 億元。</div>
+    <div class="news-title"><span class="cat">券商</span><span class="ntime">09/22 16:30</span>信驊法人目標價梯度曝光：大和 <span class="up">26,660</span>、花旗 25,000、富邦 24,000、永豐 23,590 <a class="ref" href="#src-1">[1]</a></div>
+    <div class="news-body">同一則報導揭露法人圈對信驊的完整目標價分布：大和資本 26,660 元（最高）、花旗證券 25,000 元、富邦投顧 24,000 元、永豐投顧 23,590 元。★ 此亦回補了本站前兩場次列為待確認的項目——午間場記錄之「日系外資」目標價 26,660 元，經本稿確認即為大和資本。★ 原文僅列數字，未載後三家之報告日期與制式評等。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">09/22 17:31</span>外資買超前十名 <span class="up">7 檔是 ETF</span>，個股以友達 24.5 萬張居冠 <a class="ref" href="#src-1">[1]</a></div>
-    <div class="news-body">統計外資買超前十名個股，竟有 7 檔 ETF 進榜（其中 6 檔為主動式 ETF、1 檔為「PCB ETF」中信台日韓PCB 009828，獲買超 32,399 張）。個股部分買超友達（2409）24 萬 5,313 張最多，其次為聯電（2303）50,545 張、群創（3481）24,829 張。ABF 四雄同步獲外資買超：臻鼎-KY 9,733 張、景碩 8,742 張、南電 5,863 張、欣興 5,131 張。</div>
+    <div class="news-title"><span class="cat">券商</span><span class="ntime">09/22 16:30</span>Aletheia 資本點名旺矽為晶片測試首選，目標價 <span class="up">12,000 元</span> <a class="ref" href="#src-1">[1]</a></div>
+    <div class="news-body">Aletheia 資本將旺矽（6223）列為晶片測試上升趨勢中的首選標的，給予「買進」評等、目標價上看 12,000 元，居法人圈最高。核心論點在於旺矽受惠台系同業競爭對手市占率下滑，因而在輝達（NVIDIA）與 Mellanox 的市占率進一步提升。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">09/22 17:31</span>權王台積電盤中翻黑，終場收 <span class="down">2,460 元</span>下跌 20 元 <a class="ref" href="#src-1">[1]</a></div>
-    <div class="news-body">台積電（2330）以 2,505 元開高、盤中一度拉升至 2,510 元並重返 65 兆市值，但盤中翻黑，終場收 2,460 元、下跌 20 元（-0.81%）。指數改由聯發科、欣興、日月光投控、創意、南電、台達電、景碩等個股接棒支撐。</div>
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">09/22 07:00</span>美股 09/21 四大指數全紅，那指創收盤新高、費半漲 <span class="up">4.29%</span> <a class="ref" href="#src-6">[6]</a></div>
+    <div class="news-body">美股 09/21 收盤（台北時間 09/22 凌晨）四大指數齊揚：道瓊 52,048.83 點上漲 366.19 點（+0.71%）、標普 500 指數 7,764.70 點上漲 114.20 點（+1.49%）逼近歷史新高、那斯達克 27,122.09 點躍升 599.55 點（+2.26%）創收盤新高；費城半導體指數上漲 4.29%，為 8 月 4 日以來最佳單日表現。台積電 ADR 收 445.14 美元、漲 2.44%。★ 09/22 美股於台北時間 21:30 才開盤，收盤數據待次日。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">09/22 19:02</span>面板雙虎爆量 <span class="up">166 萬張</span>、成交值 676 億元 <a class="ref" href="#src-6">[6]</a></div>
-    <div class="news-body">傳英特爾將攜手友達投入先進封裝市場，友達（2409）繼前一日漲停後 09/22 再度高掛漲停 36.65 元；群創（3481）上揚 3.57% 至 52.2 元。雙虎當日合計爆出 166 萬張大量、成交值達 676 億元，外資同步大舉加碼。分析師提醒，面板廠切入 MicroLED 與先進封裝的轉型效益存在時間差。</div>
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">09/22 07:00</span>AMD 市值首破 <span class="up">1 兆美元</span>，ARM 飆逾 17%、英特爾漲逾 12% <a class="ref" href="#src-6">[6]</a></div>
+    <div class="news-body">美股 09/21 半導體與 AI 股全面大漲：AMD 漲約 10% 再創新高、市值首度突破 1 兆美元；ARM 漲逾 17%，創去年 4 月以來最大單日漲幅；英特爾漲逾 12%，創 5 月以來最大漲幅；Meta 漲逾 11%；高通漲逾 9%；輝達收漲 3.93% 並突破新高。油價與美債殖利率同步回落，為科技股解除兩大逆風。</div>
   </div>
   <details class="more">
     <summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
-    <div class="news-title"><span class="cat">券商</span><span class="ntime">09/21 09:39</span>日系外資喊健策目標價 <span class="up">9,420 元</span>，為散熱族群最高 <a class="ref" href="#src-3">[3]</a></div>
-    <div class="news-body">日系外資最新報告認為，健策（3653）用於 Vera Rubin 或 Rubin Ultra 的可拆卸均熱片（Removable Lid）ASP 將是現行一體式的 5 至 6 倍，且 GPU 導入後可能帶動 ASIC 客戶採用。據此將 2026–2028 年 EPS CAGR 預估由 78.8% 上調至 86.1%、EPS 預估上修 6%–15%，維持「買進」評等，目標價由 6,770 元大幅調升至 9,420 元。上週亞系外資已先給予 8,800 元。</div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">09/22 15:33</span>台股終場收 <span class="up">47,800.17 點</span>，盤中與收盤同創歷史新高 <a class="ref" href="#src-2">[2]</a><a class="ref" href="#src-3">[3]</a></div>
+    <div class="news-body">加權指數 09/22 盤中一度飆升 882.69 點、衝上 48,601.53 點，改寫歷史盤中高點；惟隨台積電由紅翻黑、加上記憶體及金融股走弱，漲幅迅速收斂，終場僅上漲 81.33 點、收 47,800.17 點，震盪 801 點，仍創歷史收盤新高，日線留下長上影線。成交值同步放大至 1.02 兆元。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">09/22 11:31</span>高價股多檔漲停：川湖 13,305 元、嘉澤與南電、欣興全亮燈 <a class="ref" href="#src-5">[5]</a><a class="ref" href="#src-8">[8]</a></div>
-    <div class="news-body">高價股族群 09/22 全面表態：萬元股川湖盤中達 13,305 元；千金股嘉澤 1,745 元、南電 1,165 元、欣興 1,120 元均亮燈漲停；股王信驊跳空漲停達 21,800 元，站上 2 萬元大關創台股新紀錄。新掛牌高價股漢測盤中達 4,995 元、勁揚逾 1.22 倍。</div>
+    <div class="news-title"><span class="cat">法人</span><span class="ntime">09/22 15:33</span>三大法人買超 <span class="up">608.2 億元</span>，連四買累計回補 2,535 億 <a class="ref" href="#src-2">[2]</a></div>
+    <div class="news-body">三大法人 09/22 同步站在買方，合計買超 608.2 億元：外資及陸資買超 447.26 億元、投信買超 2.4 億元、自營商合計買超 158.54 億元。連續 4 個交易日累計回補 2,535.43 億元。台積電（2330）收 2,460 元、下跌 20 元（-0.81%）。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">法人</span><span class="ntime">09/22 17:40</span>法人估上市櫃第 3 季獲利年增 <span class="up">72%</span>，看第 4 季衝破 5 萬點 <a class="ref" href="#src-7">[7]</a></div>
-    <div class="news-body">法人統計上市櫃公司第 3 季獲利年增率上看 72%，認為在獲利動能支撐下，指數第 4 季衝破 5 萬點「無懸念」，對 09/22 日線留下的倒錘頭線不以為意。★ 屬法人預估，非本站觀點，亦非任何買賣建議。</div>
+    <div class="news-title"><span class="cat">法人</span><span class="ntime">09/22 16:30</span>投信季底作帳行情啟動，第 3 季買超台股逾 <span class="up">3,000 億元</span> <a class="ref" href="#src-1">[1]</a></div>
+    <div class="news-body">統計第 3 季以來，三大法人中僅有投信呈現買超，買超台股 3,000 餘億元，成為台股抗跌有守、甚至反彈創高的關鍵。隨季底逼近，投信鎖碼買超的個股預期將成為這波季底作帳行情的盤面交投亮點。★ 屬新聞所載市場觀察，非本站觀點，亦非任何買賣建議。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">政策</span><span class="ntime">09/22 18:00</span>證交所「台股儀表板」9/23 上線，違約交割管理新制同日核准 <a class="ref" href="#src-14">[14]</a></div>
-    <div class="news-body">證交所「台股儀表板」將於 9 月 23 日正式上線，整合不限用途借款、違約交割人數等三大類重要資訊；券商與銀行的投資人跨業融資資訊預計 10 月底互通。證期局同日核准證交所所提之違約交割管理新制。背景為聯茂（6213）近日爆出 3.19 億元違約交割、創今年單次最大金額。</div>
+    <div class="news-title"><span class="cat">政策</span><span class="ntime">09/22 16:42</span>金管會宣布「台股儀表板」9/23 上線，整合授信與違約概況 <a class="ref" href="#src-5">[5]</a></div>
+    <div class="news-body">金管會 09/22 正式宣布台股儀表板將於隔日上線，優先整合「授信業務」「違約概況」及「上市櫃公司營收」三大面向資訊，包含信用交易擔保維持率與追繳處分戶數及金額、不限用途款項借貸融通餘額、全市場違約總人數等指標。券商與銀行的投資人跨業融資資訊預計 10 月底互通。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">總經</span><span class="ntime">09/22 17:57</span>8 月失業率 <span class="down">3.41%</span> 創近一年新高；國際油價翻黑 <a class="ref" href="#src-12">[12]</a><a class="ref" href="#src-13">[13]</a></div>
-    <div class="news-body">主計總處公布 8 月失業率 3.41%、創近一年新高，主因畢業季效應延續。另 8 月外銷訂單首度突破千億美元。國際方面，油價於 09/22 翻黑，市場關注伊朗擬於七天內重啟荷莫茲海峽通航（附帶條件）的後續發展。</div>
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">09/22 18:00</span>習近平 23 至 25 日訪美，川習二會為本周最大變數 <a class="ref" href="#src-7">[7]</a></div>
+    <div class="news-body">習近平將於 9 月 23 至 25 日對美國進行國是訪問，川習二會成為本周市場最大不確定性來源。另上周白宮宣布美國企業申請 H-1B 工作簽證須繳納 10 萬美元費用，輝達執行長黃仁勳表示應該讓所有最聰明的人都來美國，並稱移民是美國夢的基礎。國際油價 09/22 翻黑，市場關注伊朗擬於七天內重啟荷莫茲海峽通航的後續發展。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
@@ -393,53 +407,53 @@
   <h2 id="broker">09/22 券商報告摘要</h2>
   <div class="card">
     <ul class="sum-list">
-      <li>本場次最具體的一則，是把先前掛在「待確認」的健策目標價補齊了：<b>日系外資將健策（3653）目標價由 6,770 元大幅調升至 9,420 元</b>（幅度約 <span class="up">+39.1%</span>），並<b>維持「買進」評等</b>。核心論點在產品規格升級——外資預期健策用於 Vera Rubin 或 Rubin Ultra 的<b>可拆卸均熱片（Removable Lid）ASP 將是現行一體式的 5 至 6 倍</b>，且 GPU 導入後可能帶動 ASIC 客戶跟進採用，既有的「加強板」（stiffener）方案也可望帶來 ASP 提升。由於 Vera Rubin 產能爬坡階段出貨優於預期，2026 年 Q3／Q4 營收預估分別<span class="up">上調至 96.5 億元與 106.2 億元</span>，2026–2028 年 EPS CAGR 預估由 78.8% <span class="up">上調至 86.1%</span>、EPS 預估上修 6%–15%。值得對照的是，上週亞系外資才剛給出 8,800 元目標價，日系外資隨即跟進再上調 <a class="ref" href="#src-3">[3]</a></li>
-      <li>另一則具數字的是<b>外資上修研華（2395）目標價至 782 元</b>，理由是 <b>BB Ratio（接單出貨比）逐月走升</b>——新接訂單金額持續高於同期出貨金額，是工業電腦景氣的領先指標之一，通常反映客戶端庫存去化告一段落、拉貨動能回溫。★ 原文未載目標價前值與制式評等，列為待確認 <a class="ref" href="#src-4">[4]</a></li>
-      <li>盤後另有兩則僅取得標題層級的法人動作：<b>高盛預估廣達（2382）2026 下半年營收持平</b>，股價當日小幅震盪；以及<b>法人調升富世達（6805）獲利預估值及目標價</b>，理由是成長動能可延續至 2028 年。★ 兩則內文細節本場次均未取得，未載評等與目標價數字，列為待確認、不建個股摘要 <a class="ref" href="#src-10">[10]</a><a class="ref" href="#src-9">[9]</a></li>
-      <li>★ 本場次仍有數項待確認，下一場次優先回補：健策該則的日系外資券商名稱（原文僅載「日系外資」）、研華目標價前值與評等、高盛廣達與富世達報告細節；承前場次未解者包括台達電（2308）調升後目標價與券商名稱、台塑化（6505）調升後目標價、高盛上詮（3363）833 元／聯亞（4401）、大和金像電（2368）1,380 元報告日；09/16–09/18 三日券商觀點缺口亦尚未回補 <a class="ref" href="#src-3">[3]</a></li>
+      <li>本場次最大進展是把掛了兩場的待確認項目補起來了：午間場記錄的信驊（5274）目標價 26,660 元，原文只寫「日系外資」，經濟日報 09/22 傍晚的稿子確認<b>該家外資即為大和資本（Daiwa）</b>，並補齊了獲利預估細節——大和指信驊受惠<b>代理型 AI（Agentic AI）</b>前景看好，今年遠端伺服器管理晶片（BMC）出貨量將<span class="up">年增約 50%</span>，帶動獲利遠優於預期，據此<b>上調 2027、2028 年 EPS 預估值各達 36%、34%</b>，目標價由 19,800 元調升至 <span class="up">26,660 元</span>、調幅 34.6%，居法人圈最高 <a class="ref" href="#src-1">[1]</a></li>
+      <li>同一則報導難得把<b>法人圈對信驊的目標價梯度完整攤開</b>：大和資本 26,660 元、花旗證券 25,000 元、富邦投顧 24,000 元、永豐投顧 23,590 元。四家區間差距約 13%，代表市場對 BMC 出貨量與評價倍數的假設並未收斂。信驊 09/22 收 20,905 元、大漲 1,085 元，成為台股史上首檔收盤逾 2 萬元的個股。★ 後三家原文僅列數字，未載報告日期與制式評等，列為待確認 <a class="ref" href="#src-1">[1]</a></li>
+      <li>本場次新增一檔個股＝<b>旺矽（6223）</b>：<b>Aletheia 資本給予「買進」評等、目標價 <span class="up">12,000 元</span></b>，並將其列為晶片測試上升趨勢中的<b>首選標的</b>，目標價同樣居法人圈最高。論點值得留意的地方在於它不是靠終端需求擴張，而是<b>份額移轉</b>——Aletheia 指旺矽受惠於台系同業競爭對手市占率下滑，因而在輝達（NVIDIA）與 Mellanox 的市占率進一步提升，與近期「AI 硬體動能由 GPU 延伸至網路晶片」的產業敘事相互呼應 <a class="ref" href="#src-1">[1]</a></li>
+      <li>★ 本場次待確認：信驊之花旗／富邦投顧／永豐投顧三家的報告日期與制式評等、旺矽目標價前值與 EPS 假設；承前場次未解者包括健策（3653）該則之日系外資券商名稱、研華（2395）目標價前值與評等、高盛廣達（2382）與富世達（6805）報告細節、台達電（2308）調升後目標價與券商名稱、台塑化（6505）調升後目標價；09/16–09/18 三日券商觀點缺口亦尚未回補 <a class="ref" href="#src-1">[1]</a></li>
     </ul>
   </div>
   <table>
     <tr><th>日期</th><th>券商</th><th>個股</th><th>評等</th><th>目標價</th><th>一句話重點</th></tr>
     <tr>
+      <td class="num">09/22</td><td><span class="tag">外資</span>大和資本<br><span class="muted">★回補券商名</span></td><td>信驊 (5274)</td><td><span class="up">★未載（大幅調升）</span></td>
+      <td class="num"><span class="up">26,660</span><br><span class="muted">前值 19,800</span></td>
+      <td class="muted">代理型 AI 帶動 BMC 出貨年增約 50%；上調 2027／2028 年 EPS 預估各 36%／34%<a class="ref" href="#src-1">[1]</a></td>
+    </tr>
+    <tr>
+      <td class="num">09/22</td><td><span class="tag">外資</span>花旗證券</td><td>信驊 (5274)</td><td>★同稿揭露</td>
+      <td class="num"><span class="up">25,000</span></td>
+      <td class="muted">法人圈第二高目標價；★原文未載報告日與論點<a class="ref" href="#src-1">[1]</a></td>
+    </tr>
+    <tr>
+      <td class="num">09/22</td><td><span class="tag">內資</span>富邦投顧</td><td>信驊 (5274)</td><td>★同稿揭露</td>
+      <td class="num"><span class="up">24,000</span></td>
+      <td class="muted">★原文未載報告日與論點<a class="ref" href="#src-1">[1]</a></td>
+    </tr>
+    <tr>
+      <td class="num">09/22</td><td><span class="tag">內資</span>永豐投顧</td><td>信驊 (5274)</td><td>★同稿揭露</td>
+      <td class="num"><span class="up">23,590</span></td>
+      <td class="muted">★原文未載報告日與論點<a class="ref" href="#src-1">[1]</a></td>
+    </tr>
+    <tr>
+      <td class="num">09/22</td><td><span class="tag">外資</span>Aletheia 資本</td><td>旺矽 (6223)</td><td><span class="up">買進</span></td>
+      <td class="num"><span class="up">12,000</span></td>
+      <td class="muted">晶片測試趨勢首選標的；台系同業市占率下滑，於 NVIDIA 與 Mellanox 市占率提升<a class="ref" href="#src-1">[1]</a></td>
+    </tr>
+    <tr>
       <td class="num">09/21</td><td><span class="tag">外資</span>日系外資</td><td>健策 (3653)</td><td><span class="up">買進（維持）</span></td>
       <td class="num"><span class="up">9,420</span><br><span class="muted">前值 6,770</span></td>
-      <td class="muted">可拆卸均熱片 ASP 為一體式 5–6 倍；26–28 年 EPS CAGR 上調至 86.1%、EPS 上修 6%–15%<a class="ref" href="#src-3">[3]</a></td>
+      <td class="muted">可拆卸均熱片 ASP 為一體式 5–6 倍；26–28 年 EPS CAGR 上調至 86.1%<a class="ref" href="#src-8">[8]</a></td>
     </tr>
     <tr>
       <td class="num">09/21</td><td><span class="tag">外資</span>亞系外資</td><td>健策 (3653)</td><td><span class="up">看好</span></td>
       <td class="num"><span class="up">8,800</span></td>
-      <td class="muted">上週先看好可拆卸三片式均熱片；日系外資本次跟進再上調<a class="ref" href="#src-3">[3]</a></td>
+      <td class="muted">上週先看好可拆卸三片式均熱片；日系外資本次跟進再上調<a class="ref" href="#src-8">[8]</a></td>
     </tr>
     <tr>
       <td class="num">09/21</td><td><span class="tag">外資</span>★未具名</td><td>研華 (2395)</td><td><span class="up">★未載（上修目標價）</span></td>
       <td class="num"><span class="up">782</span><br><span class="muted">前值★未載</span></td>
-      <td class="muted">BB Ratio 接單出貨比逐月走升，接單動能改善<a class="ref" href="#src-4">[4]</a></td>
-    </tr>
-    <tr>
-      <td class="num">09/22</td><td><span class="tag">外資</span>高盛</td><td>廣達 (2382)</td><td>★未載</td>
-      <td class="num">★未載</td>
-      <td class="muted">預估廣達 2026 下半年營收持平，股價小幅震盪；★內文細節待確認<a class="ref" href="#src-10">[10]</a></td>
-    </tr>
-    <tr>
-      <td class="num">09/22</td><td><span class="tag">內資</span>法人★未具名</td><td>富世達 (6805)</td><td><span class="up">調升</span></td>
-      <td class="num">★未載數字</td>
-      <td class="muted">成長動能延續至 2028 年，調升獲利預估值及目標價<a class="ref" href="#src-9">[9]</a></td>
-    </tr>
-    <tr>
-      <td class="num">09/22</td><td><span class="tag">外資</span>日系外資</td><td>信驊 (5274)</td><td><span class="up">★未載（大幅調升）</span></td>
-      <td class="num"><span class="up">26,660</span><br><span class="muted">前值 19,800</span></td>
-      <td class="muted">Agentic AI 成一般伺服器新催化劑；2026 年 BMC 出貨量年增約 50%、EPS 上修 9%–36%<a class="ref" href="#src-8">[8]</a></td>
-    </tr>
-    <tr>
-      <td class="num">09/21</td><td><span class="tag">外資</span>高盛</td><td>緯穎 (6669)</td><td>★未載（上調目標價）</td>
-      <td class="num"><span class="up">3,777</span></td>
-      <td class="muted">還原配股前首破萬元；AWS 氣冷／水冷 ASIC 伺服器放量，Q4 NVIDIA／AMD 新 GPU 機櫃量產</td>
-    </tr>
-    <tr>
-      <td class="num">09/21</td><td><span class="tag">外資</span>花旗</td><td>台積電 (2330)</td><td><span class="up">買進</span></td>
-      <td class="num">★未載</td>
-      <td class="muted">幾乎處於所有重大 AI 硬體轉型核心；2027 年成長更強，2 奈米全年貢獻＋3 奈米 AI 晶片出貨增</td>
+      <td class="muted">BB Ratio 接單出貨比逐月走升，接單動能改善</td>
     </tr>
   </table>
 <!-- ===== /DATA:BROKER ===== -->
@@ -450,21 +464,19 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
-    <li id="src-1"><a href="https://money.udn.com/money/story/5607/9771079" target="_blank" rel="noopener">經濟日報｜外資買超447億元 ABF四雄全獲青睞 但買氣竟不如這檔「PCB ETF」（09/22 17:31；收盤與法人買賣超來源）</a></li>
-    <li id="src-2"><a href="https://money.udn.com/money/story/5607/9770475" target="_blank" rel="noopener">經濟日報｜台股漲81點收47,800點留長上影線 盤中及收盤指數同創新高（09/22 14:05）</a></li>
-    <li id="src-3"><a href="https://www.chinatimes.com/realtimenews/20260921001410-260410" target="_blank" rel="noopener">時報資訊｜《電零組》健策獲日系外資力挺上調EPS預估 目標價高喊9420元（09/21 09:39；記者張漢綺）</a></li>
-    <li id="src-4"><a href="https://www.chinatimes.com/realtimenews/20260921001898-260410" target="_blank" rel="noopener">時報資訊｜《電週邊》研華BB Ratio逐月走升 外資上修目標價至782元（09/21 11:19）</a></li>
-    <li id="src-5"><a href="https://money.udn.com/money/story/5612/9770048" target="_blank" rel="noopener">經濟日報｜台股創高電子強勢 高價股多檔漲停（09/22 11:31；中央社）</a></li>
-    <li id="src-6"><a href="https://money.udn.com/money/story/5607/9771134" target="_blank" rel="noopener">經濟日報｜外資狂買！面板雙虎爆量166萬張、成交值676億元 分析師提醒轉型時間差（09/22 19:02）</a></li>
-    <li id="src-7"><a href="https://money.udn.com/money/story/5607/9770960" target="_blank" rel="noopener">經濟日報｜倒錘頭線沒在怕！上市櫃獲利喊暴增72% 法人：第4季衝破5萬點無懸念（09/22 17:40）</a></li>
-    <li id="src-8"><a href="https://money.udn.com/money/story/5607/9770936" target="_blank" rel="noopener">經濟日報｜台股史上首檔逾2萬元神股誕生！外資目標價竟看到這裡（09/22 16:30；信驊）</a></li>
-    <li id="src-9"><a href="https://money.udn.com/money/story/5607/9770383" target="_blank" rel="noopener">經濟日報｜成長動能延續至2028年 法人調升富世達獲利預估值及目標價（09/22 13:20）</a></li>
-    <li id="src-10"><a href="https://money.udn.com/money/story/5710/9770503" target="_blank" rel="noopener">經濟日報｜高盛預估廣達下半年營收持平 股價小幅震盪（09/22 14:30）</a></li>
-    <li id="src-11"><a href="https://money.udn.com/money/story/5612/9770736" target="_blank" rel="noopener">經濟日報｜陽明法說會／塞港成貨櫃航運新常態 美國線維持高檔（09/22 18:45）</a></li>
-    <li id="src-12"><a href="https://money.udn.com/money/story/10869/9771091" target="_blank" rel="noopener">經濟日報｜畢業季效應延續 8月失業率3.41%創近一年新高（09/22 17:57）</a></li>
-    <li id="src-13"><a href="https://money.udn.com/money/story/5599/9771066" target="_blank" rel="noopener">經濟日報｜國際油價翻黑 伊朗擬七天內重啟荷莫茲海峽...但前提是這個（09/22 17:23）</a></li>
-    <li id="src-14"><a href="https://money.udn.com/money/story/5607/9771147" target="_blank" rel="noopener">經濟日報｜證交所「台股儀表板」明日上線 涵蓋不限用途借款、違約交割人數等（09/22 18:00）</a></li>
-    <li id="src-15"><a href="https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK" target="_blank" rel="noopener">臺灣證券交易所｜每日市場成交資訊 FMTQIK（加權指數與成交值官方值；最新僅至 09/21，09/22 待更新）</a></li>
+    <li id="src-1"><a href="https://udn.com/news/story/7251/9770936" target="_blank" rel="noopener">經濟日報｜台股史上首檔逾2萬元神股誕生 外資目標價竟看到這裡（09/22 16:30；信驊、旺矽目標價來源）</a></li>
+    <li id="src-2"><a href="https://udn.com/news/story/7251/9770791" target="_blank" rel="noopener">經濟日報｜三大法人買超608億！台股震盪801點創雙高 台積電翻黑、聯發科創天價（09/22 15:33）</a></li>
+    <li id="src-3"><a href="https://money.udn.com/money/story/5607/9770475" target="_blank" rel="noopener">經濟日報｜台股漲81點收47,800點留長上影線 盤中及收盤指數同創新高（09/22 14:05）</a></li>
+    <li id="src-4"><a href="https://udn.com/news/story/7251/9770960" target="_blank" rel="noopener">經濟日報｜倒錘頭線沒在怕！上市櫃獲利喊暴增72% 法人：第4季衝破5萬點無懸念（09/22 16:41）</a></li>
+    <li id="src-5"><a href="https://udn.com/news/story/7251/9770962" target="_blank" rel="noopener">經濟日報｜台股儀表板明天上路 券商銀行投資人的跨業融資資訊10月底互通（09/22 16:42）</a></li>
+    <li id="src-6"><a href="https://money.udn.com/money/story/123398/9769513" target="_blank" rel="noopener">經濟日報｜台積電ADR勁揚2.4% 日月光聯電更猛 台指期夜盤大漲728點（09/21；美股09/21收盤數字來源）</a></li>
+    <li id="src-7"><a href="https://money.udn.com/money/story/5603/9768808" target="_blank" rel="noopener">經濟日報｜兩岸五大聚焦／習近平23至25日對美進行國是訪問（09/21）</a></li>
+    <li id="src-8"><a href="https://www.ctee.com.tw/news/20260921700759-430201" target="_blank" rel="noopener">時報資訊／工商時報｜《電零組》健策獲日系外資力挺上調EPS預估 目標價高喊9420元（09/21 09:29；記者張漢綺）</a></li>
+    <li id="src-9"><a href="https://money.udn.com/money/story/5607/9771079" target="_blank" rel="noopener">經濟日報｜外資買超447億元 ABF四雄全獲青睞 但買氣竟不如這檔「PCB ETF」（09/22 17:31）</a></li>
+    <li id="src-10"><a href="https://money.udn.com/money/story/5607/9771134" target="_blank" rel="noopener">經濟日報｜外資狂買！面板雙虎爆量166萬張、成交值676億元 分析師提醒轉型時間差（09/22 19:02）</a></li>
+    <li id="src-11"><a href="https://money.udn.com/money/story/10869/9771091" target="_blank" rel="noopener">經濟日報｜畢業季效應延續 8月失業率3.41%創近一年新高（09/22 17:57）</a></li>
+    <li id="src-12"><a href="https://money.udn.com/money/story/5599/9771066" target="_blank" rel="noopener">經濟日報｜國際油價翻黑 伊朗擬七天內重啟荷莫茲海峽...但前提是這個（09/22 17:23）</a></li>
+    <li id="src-13"><a href="https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK" target="_blank" rel="noopener">臺灣證券交易所｜每日市場成交資訊 FMTQIK（官方加權指數與成交值；最新僅至 09/21，09/22 待更新）</a></li>
   </ol>
   </details>
 <!-- ===== /DATA:SOURCES ===== -->
@@ -473,7 +485,7 @@
     <a class="thbtn" href="https://www.threads.com/@wowwow31001" target="_blank" rel="noopener"><span class="at">＠</span>追蹤旺來的脆 wowwow31001</a><br>
     <b>旺來 @wowwow31001</b>｜本站為新聞整理用途，內容彙整自公開新聞與公開資訊，非投資建議，不構成任何有價證券之買賣要約或訊號。<br>
     各報導著作權屬原媒體所有，本站僅摘要並附來源連結；目標價與預估值以各券商原始報告為準。<br>
-    自動更新：每日 08:00／13:00／19:00／22:00（交易日 06:40 另有盤前快訊）
+    自動更新：每日 08:00／14:30（收盤）／19:00／22:00（交易日 06:40 另有盤前快訊）
   </footer>
 
 </div>

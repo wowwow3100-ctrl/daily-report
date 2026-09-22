@@ -200,7 +200,7 @@
   <footer>
     <a class="thbtn" href="https://www.threads.com/@wowwow31001" target="_blank" rel="noopener"><span class="at">＠</span>追蹤旺來的脆 wowwow31001</a><br>
     <b>旺來 @wowwow31001</b>｜本頁彙整每日研究報告日報（早盤/盤後/夜間）與大盤收盤資訊，內容依公開新聞整理，非投資建議。<br>
-    自動更新：每日 08:00／13:00／19:00／22:00（交易日 06:40 另有盤前快訊）
+    自動更新：每日 08:00／14:30（收盤）／19:00／22:00（交易日 06:40 另有盤前快訊）
   </footer>
 
 </div>
@@ -410,7 +410,7 @@
       o.files.sort();
       for(var f=0;f<o.files.length;f++){
         var fn=o.files[f];
-        var label=fn.indexOf("早盤")>=0?"☀ 早盤日報":(fn.indexOf("午間")>=0?"🕐 午間日報":(fn.indexOf("盤後")>=0?"🌙 盤後日報":(fn.indexOf("夜間")>=0?"🌃 夜間日報":"📄 日報")));
+        var label=fn.indexOf("早盤")>=0?"☀ 早盤日報":(fn.indexOf("收盤")>=0?"🔔 收盤日報":(fn.indexOf("午間")>=0?"🕐 午間日報":(fn.indexOf("盤後")>=0?"🌙 盤後日報":(fn.indexOf("夜間")>=0?"🌃 夜間日報":"📄 日報"))));
         btns+='<a class="rep" target="_blank" rel="noopener" href="日報/'+encodeURIComponent(fn.replace(/\.docx$/i,".html"))+'">'+label+'</a>';
       }
       if(!btns) btns='<span class="none">當日無日報</span>';
