@@ -147,6 +147,7 @@
     <img class="brand" src="login-logo.png" alt="旺來">
     <div class="logo">旺來<small>速查</small></div>
     <div class="head-right">
+      <div class="oline">🟢 線上 <b id="olnum">4</b> 人<span id="vwrap">｜累計瀏覽 <span id="views">—</span></span></div>
       <div class="setwrap">
         <button class="setbtn" id="setbtn" title="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
         <div class="setpanel" id="setpanel">
@@ -342,6 +343,25 @@
     var v=b.getAttribute("data-v"); try{localStorage.setItem(VK,v);}catch(e){} applyV(v);
   });})(vwChips[i]);}
 
+  // ---- 線上人數（真實：近 5 分鐘不重複訪客，後端保底 4）與累計瀏覽 ----
+  var ol=document.getElementById("olnum");
+  if(ol){
+    var pullOnline=function(){
+      fetch("https://web-production-e1521.up.railway.app/api/site/online")
+        .then(function(r){return r.json();})
+        .then(function(j){ if(j&&typeof j.online==="number") ol.textContent=j.online; })
+        .catch(function(e){});
+    };
+    pullOnline();
+    setInterval(pullOnline,60000);
+  }
+  var vs=document.getElementById("views");
+  if(vs){
+    fetch("https://abacus.jasoncameron.dev/hit/wanglai-daily-report/site")
+      .then(function(r){return r.json();})
+      .then(function(j){if(j&&j.value)vs.textContent=Number(j.value).toLocaleString();})
+      .catch(function(e){var w=document.getElementById("vwrap");if(w)w.style.display="none";});
+  }
   // ---- 設定面板開關 ----
   var sb=document.getElementById("setbtn"), sp=document.getElementById("setpanel");
   if(sb&&sp){

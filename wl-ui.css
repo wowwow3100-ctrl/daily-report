@@ -273,3 +273,8 @@ html[data-theme="light"] .ovl{background:rgba(60,45,10,.35);}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important;}
 }
+
+/* ---------- 17. 線上人數列（五頁共用） ---------- */
+.oline{color:var(--muted);font-size:.8rem;white-space:nowrap;}
+.oline b{color:var(--down);font-weight:700;}
+.head-right{row-gap:6px;}
