@@ -224,6 +224,8 @@
   html.mob table td:last-child{display:block;border-top:1px dashed var(--line);margin-top:6px;padding:8px 0 0;white-space:normal;}
   html.mob .setpanel{position:fixed;left:12px;right:12px;top:70px;white-space:normal;min-width:0;}
 </style>
+<link rel="stylesheet" href="wl-ui.css?v=1">
+<script>(function(){var h=document.documentElement;try{h.setAttribute("data-theme",localStorage.getItem("wl_theme")||"gold");h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");}catch(e){}})();</script>
 </head>
 <body>
 <div class="wrap">
@@ -235,7 +237,7 @@
       <div style="display:flex;gap:10px;align-items:center;">
         <div class="stamp" id="updated">2026/09/23（週三）夜間場次</div>
         <div class="setwrap">
-          <button class="setbtn" id="setbtn" title="顯示設定">⚙ 設定</button>
+          <button class="setbtn" id="setbtn" title="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
             <div class="setrow"><span>字級</span>
               <button class="fs-chip" data-s="std">標準</button>
@@ -537,11 +539,11 @@
 
 </div>
 <nav class="bnav">
-  <a class="on" href="index.html"><span class="ic">📰</span>情報站</a>
-  <a href="reports.html"><span class="ic">📚</span>回憶過去</a>
-  <a href="stocks.html"><span class="ic">🏢</span>個股報告</a>
-  <a href="records.html"><span class="ic">🔎</span>速查</a>
-  <a href="wish.html"><span class="ic">🌠</span>許願池</a>
+  <a class="on" href="index.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="13" height="15" rx="2"/><path d="M16.5 8.5h3v9a2 2 0 0 1-2 2h-1"/><path d="M7 8.5h6M7 12h6M7 15.5h3.5"/></svg></span>情報站</a>
+  <a href="reports.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1"/><path d="M3.5 4.5v4h4"/><path d="M12 7.5V12l3 2"/></svg></span>回憶過去</a>
+  <a href="stocks.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20h17"/><rect x="5" y="12" width="3" height="5" rx=".6"/><rect x="10.5" y="7" width="3" height="10" rx=".6"/><rect x="16" y="9.5" width="3" height="7.5" rx=".6"/></svg></span>個股報告</a>
+  <a href="records.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg></span>速查</a>
+  <a href="wish.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.5 5.2 5.7.8-4.1 4 1 5.6L12 16.4l-5.1 2.7 1-5.6-4.1-4 5.7-.8z"/></svg></span>許願池</a>
 </nav>
 <div id="iab" class="ovl">
   <div class="obox">
