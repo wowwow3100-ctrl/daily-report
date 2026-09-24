@@ -6,7 +6,7 @@
 <title>旺來 台股情報站｜新聞整理</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%8D%3C/text%3E%3C/svg%3E">
 <meta property="og:title" content="旺來 台股情報站｜每日焦點與券商觀點整理">
-<meta property="og:description" content="每日 08:00／13:00／19:00／22:00 自動更新：盤前快訊、大盤速覽、最強族群與成分股、焦點新聞、外資內資券商觀點。新聞整理用途，非投資建議。">
+<meta property="og:description" content="每日 08:00／13:00／19:00／22:00 自動更新：盤前快訊、大盤速覽、資金流向族群與成分股、焦點新聞、外資內資券商觀點。新聞整理用途，非投資建議。">
 <meta property="og:image" content="https://wowwow3100-ctrl.github.io/daily-report/login-logo.png">
 <meta property="og:url" content="https://wowwow3100-ctrl.github.io/daily-report/">
 <meta property="og:type" content="website">
@@ -291,7 +291,7 @@
   <!-- ===== /WL:WATCH ===== -->
 
   <!-- ===== DATA:SECTORS ===== -->
-  <div class="sect-head">🔥 最強族群 TOP 5（09/22 收盤）．點族群看裡面最強的五檔</div>
+  <div class="sect-head">🔥 資金流向 TOP 5（09/22 收盤．依類股漲幅）．點族群看裡面最強的五檔</div>
   <ol class="sectlist">
     <li><details class="stkbox">
       <summary><span class="sn">1</span><span class="snm">電子零組件</span><b class="up">+2.20%</b></summary>
@@ -505,7 +505,7 @@
 <!-- ===== /DATA:BROKER ===== -->
 
   <!-- ===== WL:OVERLAP（版型：前端讀 reports.csv 自動比對；排程不改這段） ===== -->
-  <h2 id="overlap">資料交集<span class="muted" style="font-size:.75rem;letter-spacing:0;">（今日最強族群成分股 × 近 30 天有具名券商上修）</span></h2>
+  <h2 id="overlap">資料交集<span class="muted" style="font-size:.75rem;letter-spacing:0;">（今日資金流向族群成分股 × 近 30 天有具名券商上修）</span></h2>
   <div class="card" id="ovBox"><div class="stkempty">比對中…</div></div>
   <div class="csnote">兩份公開資料剛好同時出現的個股，依代號排列、不做排名。僅為資訊並列，非本站評等、推介或任何買賣建議。</div>
   <!-- ===== /WL:OVERLAP ===== -->
@@ -803,7 +803,7 @@
   // ---- 今日最強族群成分股（讀 DATA:SECTORS） ----
   function sectorMap(){
     var m={}, heads=document.querySelectorAll(".sect-head"), ol=null;
-    for(var i=0;i<heads.length;i++){ if(/最強族群/.test(heads[i].textContent)){ ol=heads[i].nextElementSibling; break; } }
+    for(var i=0;i<heads.length;i++){ if(/最強族群|資金流向/.test(heads[i].textContent)){ ol=heads[i].nextElementSibling; break; } }
     if(!ol) return m;
     ol.querySelectorAll("details.stkbox").forEach(function(box){
       var sec=((box.querySelector(".snm")||{}).textContent||"").trim();
@@ -834,7 +834,7 @@
     var codes=WLW.list();
     if(!codes.length){
       wBox.innerHTML='<div class="card wempty"><div class="wet">還沒有自選股</div>'
-        +'<div class="muted">到「個股報告」點股票右上角的 ☆ 加入，這裡就會整理出它們今天的相關資訊：有沒有被券商報告或焦點新聞提到、是不是今天最強族群的成分股、近期除權息，以及最新一筆券商觀點。不用註冊，清單只存在這台裝置。</div>'
+        +'<div class="muted">到「個股報告」點股票右上角的 ☆ 加入，這裡就會整理出它們今天的相關資訊：有沒有被券商報告或焦點新聞提到、是不是今天資金流向前五族群的成分股、近期除權息，以及最新一筆券商觀點。不用註冊，清單只存在這台裝置。</div>'
         +'<a class="wgo" href="stocks.html">去個股報告挑選 →</a></div>';
       return;
     }
@@ -894,7 +894,7 @@
       ovBox.innerHTML=hits.length?hits.map(function(h){
         return '<div class="ovi"><b>'+esc(h.name)+'</b> <span class="stc">('+esc(h.code)+')</span>：今日屬「'+esc(h.sec)+'」漲幅前五成分股（'
           +esc(h.pct)+'）；近 30 天具名上修：'+h.ups.map(function(u){return esc(u.b)+'（'+WLC.md(u.d)+'）';}).join('、')+'</div>';
-      }).join(''):'<div class="stkempty">今日最強族群的成分股，近 30 天都沒有具名券商上修紀錄，沒有交集。</div>';
+      }).join(''):'<div class="stkempty">今日資金流向族群的成分股，近 30 天都沒有具名券商上修紀錄，沒有交集。</div>';
     }).catch(function(){ ovBox.innerHTML='<div class="stkempty">資料暫時無法載入。</div>'; });
   }
 })();

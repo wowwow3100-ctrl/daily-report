@@ -274,7 +274,8 @@
   // ---- 進站導向：外部直接落在個股頁（舊分享連結/舊主畫面圖示）→ 先帶去情報站 ----
   // 站內導覽（底部按「個股報告」）不受影響：前一頁已寫 wl_nav。加 ?stay=1 可直開本頁。
   try{
-    if(!sessionStorage.getItem("wl_nav") && !/stay=1/.test(location.search)){
+    var fromSite=(document.referrer||"").indexOf(location.origin+"/daily-report/")===0;
+    if(!fromSite && !sessionStorage.getItem("wl_nav") && !/stay=1|code=|view=/.test(location.search)){
       sessionStorage.setItem("wl_nav","1"); location.replace("index.html");
     }
     sessionStorage.setItem("wl_nav","1");
@@ -573,10 +574,11 @@
       if(f==="觀點彙整.html"){ label="券商觀點彙整（所有紀錄，含沒有目標價的報告）"; d=s.rec?s.rec.replace(/-/g,"/"):""; }
       var base='個股/'+encodeURIComponent(s.folder)+'/';
       var page=base+encodeURIComponent(f.replace(/\.docx$/i,".html"));
-      html+='<li><span class="d">'+esc(d)+'</span><a href="'+page+'" target="_blank" rel="noopener">'+esc(label)+'　👁 點開看</a>'
+      html+='<li><span class="d">'+esc(d)+'</span><a href="'+page+'">'+esc(label)+'　👁 點開看</a>'
         +(isDocx?'　<a style="font-size:.75rem;color:var(--muted);" href="'+base+encodeURIComponent(f)+'" download>⬇ Word</a>':'')+'</li>';
     }
     html+='</ul>';
+    try{ sessionStorage.setItem("wl_last_code",s.code); history.replaceState(null,"",location.pathname+"?code="+encodeURIComponent(s.code)+(curV==="watch"?"&view=watch":"")); }catch(e){}
     detail.innerHTML=html; detail.style.display="block";
     detail.scrollIntoView({behavior:"smooth",block:"start"});
     var wb=document.getElementById("wbtn");
@@ -626,6 +628,11 @@
     if(qs.get("view")==="watch"){ var vb=document.querySelector('.vtab[data-v="watch"]'); if(vb) vb.click(); else render(); }
     else render();
     var want=qs.get("code");
+    // 從個股摘要頁按「回個股報告」回來：自動展開剛剛看的那檔，不用重找
+    if(!want){
+      try{ var rf=decodeURIComponent(document.referrer||""); var mm=rf.match(/個股\/[^\/]*?(\d{4}[A-Z]?)\//); if(mm) want=mm[1]; }catch(e){}
+      if(!want){ try{ if((document.referrer||"").indexOf("/個股/")>=0 || /%E5%80%8B%E8%82%A1/.test(document.referrer||"")) want=sessionStorage.getItem("wl_last_code"); }catch(e){} }
+    }
     if(want){
       var idx=-1; for(var k=0;k<ALL.length;k++){ if(ALL[k].code===want){ idx=k; break; } }
       if(idx>=0){ var el=grid.querySelector('.tile[data-i="'+idx+'"]'); showDetail(idx, el); }
