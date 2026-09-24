@@ -224,7 +224,7 @@
   html.mob table td:last-child{display:block;border-top:1px dashed var(--line);margin-top:6px;padding:8px 0 0;white-space:normal;}
   html.mob .setpanel{position:fixed;left:12px;right:12px;top:70px;white-space:normal;min-width:0;}
 </style>
-<link rel="stylesheet" href="wl-ui.css?v=3">
+<link rel="stylesheet" href="wl-ui.css?v=4">
 <script>(function(){var h=document.documentElement;try{h.setAttribute("data-theme",localStorage.getItem("wl_theme")||"gold");h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");}catch(e){}})();</script>
 </head>
 <body>
@@ -868,8 +868,12 @@
           +'<div class="wlast">'+last+'</div></div>'};
       });
       var withNews=cards.filter(function(x){return x.n;}), quiet=cards.filter(function(x){return !x.n;});
-      wBox.innerHTML='<div class="wgrid">'+withNews.concat(quiet).map(function(x){return x.html;}).join('')+'</div>'
-        +'<div class="csnote">共 '+codes.length+' 檔．今天有消息的排前面．依本站當日整理的公開資料自動比對，非本站評等或任何買賣建議。</div>';
+      var ordered=withNews.concat(quiet), head=ordered.slice(0,3), rest=ordered.slice(3);
+      var prevMore=wBox.querySelector("details.wmore"), keepOpen=!!(prevMore&&prevMore.open);
+      function h(x){return x.html;}
+      wBox.innerHTML='<div class="wgrid">'+head.map(h).join('')+'</div>'
+        +(rest.length?'<details class="more wmore"'+(keepOpen?' open':'')+'><summary>▾ 其他自選（再看 '+rest.length+' 檔）</summary><div class="wgrid">'+rest.map(h).join('')+'</div></details>':'')
+        +'<div class="csnote">共 '+codes.length+' 檔．今天有消息的排前面，先顯示 3 檔．依本站當日整理的公開資料自動比對，非本站評等或任何買賣建議。</div>';
       wBox.querySelectorAll(".star").forEach(function(b){
         b.addEventListener("click",function(){ WLW.toggle(b.getAttribute("data-c")); renderWatch(); });
       });
@@ -897,5 +901,6 @@
   }
 })();
 </script>
+<script src="wl-new.js?v=1"></script>
 </body>
 </html>

@@ -349,3 +349,17 @@ a.wgo{display:inline-block;margin-top:12px;padding:8px 22px;border-radius:999px;
   background:var(--btn-grad);color:var(--on-gold);box-shadow:0 8px 22px -8px rgba(var(--gold-rgb),.6);}
 @media (max-width:720px){ .vtabs{width:100%;} .vtab{flex:1;} .wgrid{grid-template-columns:1fr;} }
 html.mob .vtabs{width:100%;} html.mob .vtab{flex:1;} html.mob .wgrid{grid-template-columns:1fr;}
+
+/* ---------- 22. NEW 標記、自選摺疊 ---------- */
+.newb{display:inline-block;vertical-align:middle;margin-left:6px;padding:1px 7px 0;border-radius:999px;
+  font-size:.62rem;font-weight:900;letter-spacing:1px;line-height:1.6;font-style:normal;
+  background:var(--btn-grad);color:var(--on-gold);-webkit-text-fill-color:var(--on-gold);
+  box-shadow:0 0 10px rgba(var(--gold-rgb),.55);animation:newglow 2.4s ease-in-out infinite;}
+h2 .newb{margin-left:0;font-size:.6rem;letter-spacing:1.2px;}
+.vtab .newb{margin-left:5px;}
+.vtab.on .newb{background:var(--on-gold);color:var(--gold);-webkit-text-fill-color:var(--gold);box-shadow:none;}
+nav.bnav a .newdot{position:absolute;top:-2px;right:calc(50% - 26px);margin:0;padding:0 5px;font-size:.52rem;line-height:1.5;}
+@keyframes newglow{0%,100%{box-shadow:0 0 6px rgba(var(--gold-rgb),.35);}50%{box-shadow:0 0 14px rgba(var(--gold-rgb),.8);}}
+details.wmore{margin-top:10px;}
+details.wmore>summary{margin-bottom:0;}
+details.wmore[open]>summary{margin-bottom:10px;}
