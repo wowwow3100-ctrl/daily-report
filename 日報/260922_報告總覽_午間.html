@@ -1,36 +1,91 @@
 <!DOCTYPE html>
-<html lang="zh-Hant"><head><meta charset="UTF-8">
+<html lang="zh-Hant" data-size="std" data-theme="gold"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>260922｜報告總覽｜午間｜旺來新聞整理</title>
-<!--wl-v3-->
+<!--wl-v4-->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%8D%3C/text%3E%3C/svg%3E">
+<script>
+(function(){var h=document.documentElement;try{
+ h.setAttribute("data-theme",localStorage.getItem("wl_theme")||"gold");
+ h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");
+ if((localStorage.getItem("wl_view")||"auto")==="mb")h.classList.add("mob");
+}catch(e){}})();
+</script>
 <style>
- :root{--bg:#0B0B0D;--card:#16161A;--line:#2A2A32;--gold:#E8C15A;--gold-dim:#A98B3F;--text:#EDEAE0;--muted:#9C9889;}
+ :root{--bg:#0B0B0D;--card:#16161A;--card2:#1D1D23;--line:#2A2A32;--gold:#E8C15A;--gold-dim:#A98B3F;--text:#EDEAE0;--muted:#9C9889;}
+ html[data-theme="light"]{--bg:#F6F0E0;--card:#FFFFFF;--card2:#EFE7CF;--line:#DCD2B4;--gold:#7A5E17;--gold-dim:#9C8034;--text:#22381F;--muted:#5A6F58;}
+ html[data-theme="navy"]{--bg:#0C1322;--card:#141E33;--card2:#1B2946;--line:#263858;--gold:#9DC0FF;--gold-dim:#5C7FBF;--text:#E8EDF7;--muted:#8FA0BF;}
+ html{font-size:17px;}
+ html[data-size="lg"]{font-size:19px;}
+ html[data-size="xl"]{font-size:22px;}
+ html[data-size="elder"]{font-size:27px;}
  *{margin:0;padding:0;box-sizing:border-box;}
  body{background:var(--bg);color:var(--text);font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;line-height:1.8;}
  .wrap{max-width:860px;margin:0 auto;padding:28px 20px 60px;}
+ html.mob .wrap{max-width:540px;padding:20px 12px 50px;}
  a.back{color:var(--gold-dim);text-decoration:none;font-size:.85rem;border:1px solid var(--gold-dim);border-radius:18px;padding:3px 14px;}
+ a.back:hover{color:var(--gold);border-color:var(--gold);}
  h1{color:var(--gold);font-size:1.25rem;letter-spacing:2px;margin:18px 0 6px;}
- h2.doc-h1{color:var(--gold);font-size:1.1rem;letter-spacing:1px;margin:18px 0 6px;text-align:center;}
- h3{color:var(--gold);font-size:1rem;margin:22px 0 8px;border-left:3px solid var(--gold-dim);padding-left:10px;}
  .notice{margin:14px 0 22px;padding:10px 16px;border:1px solid var(--gold-dim);border-radius:8px;color:var(--gold);font-size:.85rem;}
  .notice span{color:var(--muted);display:block;font-size:.78rem;}
  p{margin:10px 0;font-size:.95rem;}
- p.li{margin:8px 0 8px 6px;}
- a{color:var(--gold-dim);word-break:break-all;}
- table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);margin:14px 0;font-size:.88rem;}
- td,th{padding:8px 12px;border:1px solid var(--line);text-align:left;vertical-align:top;}
- th{background:#1D1D23;color:var(--gold);font-weight:700;}
+ b{color:var(--gold);}
+ table{width:100%;border-collapse:separate;border-spacing:0;background:var(--card);
+   border:1px solid var(--gold-dim);border-radius:12px;overflow:hidden;margin:16px 0;font-size:.9rem;}
+ td,th{padding:10px 12px;border-top:1px solid var(--line);border-right:1px solid var(--line);}
+ td:last-child,th:last-child{border-right:none;}
+ tr:first-child td{background:var(--card2);color:var(--gold);font-weight:700;border-top:none;border-bottom:2px solid var(--gold-dim);}
+ tr:nth-child(even) td{background:rgba(255,255,255,.022);}
+ html[data-theme="light"] tr:nth-child(even) td{background:rgba(0,0,0,.02);}
  .dl{margin-top:30px;font-size:.82rem;color:var(--muted);}
  .dl a{color:var(--gold-dim);}
-</style></head>
-<body><div class="wrap">
+ @media (max-width:720px){
+   .wrap{padding:20px 12px 50px;}
+   table{display:block;overflow-x:auto;}
+ }
+</style></head><body><div class="wrap">
 <a class="back" href="../reports.html">← 回研究報告專區</a>
 <h1>260922｜報告總覽｜午間</h1>
 <div class="notice">⚠ 本頁為新聞整理摘要<span>依公開新聞整理（來源見文末），非券商原始報告、非投資建議。</span></div>
-<h2 class="doc-h1">台股券商研究報告　日報總覽</h2>
-<p>午間場次｜2026 年 9 月 22 日（星期二）　資料窗口：2026/09/22 08:10 – 12:40（盤中）</p>
-<p>整理：旺來 wowwow31001　｜　本報告依公開新聞整理，非券商完整報告原稿</p>
-<h3>一、本場次重點摘要</h3><p class="li">• ★★ 最重大｜台股 09/22 盤中改寫歷史新高：加權指數開高走高，盤中一度狂飆 882 點、觸及 48,601.53 點，正式越過 6 月 23 日創下的 48,218 點歷史高點。開盤即漲 262.2 點，推升動能來自美股 09/21 四大指數全面揚升、費城半導體指數大漲 4.29%。★ 此為盤中數據，收盤值以盤後場為準。</p><p class="li">• ★★ 本場次唯一具體目標價｜日系外資大幅調升股王信驊（5274）目標價：12 個月目標價由 19,800 元一舉調升至 26,660 元（幅度約 +34.6%），並將 2026 至 2028 年 EPS 預估上修 9% 至 36%。理由為代理式 AI（Agentic AI）可望成為一般伺服器需求的新催化劑，預估 2026 年伺服器 BMC 出貨量年增約 50%，成長動能並可延續至 2027 年。信驊 09/22 盤中亮燈漲停、攻上 21,800 元新天價，創台股個股價格新紀錄。★ 已產出個股摘要。</p><p class="li">• ★★ IC 設計三雄同步刷新天價｜創意（3443）跳空漲停鎖在 8,375 元新天價，市場聚焦其 AI ASIC 布局——繼 Google ASIC 專案後，又陸續切入 Microsoft、Meta 等大型 CSP 專案；聯發科（2454）盤中大漲逾 7.5%、攻上 5,480 元新高，並於 09/22 推出首款 Dimensity CX 旗艦 SoC C10 Max，鎖定高階超便攜 Googlebook。三大高價 IC 股同步創高，帶動世芯-KY（3661）、力旺（3529）、智原（3035）、巨有科技（8227）、新唐（4919）等 IC 設計股走強。</p><p class="li">• ★ 外資名單｜另一份外資報告預估，全球前 14 大 CSP 至 2028 年的 AI 半導體年複合成長率（CAGR）仍高達 30%，看好聯發科、愛普（6531）、信驊、譜瑞-KY（4966）、義隆（2458）、世芯-KY、創意等 IC 設計股。美系外資近期路演後則指出，AI 硬體成長動能正從 GPU 延伸至網路晶片、ASIC、CPO 及先進封裝。</p><p class="li">• ★ 投信觀點（具名）｜安聯投信、安聯亞洲半導體主動式 ETF（00412A）經理人蕭惠中：油價回落與美債殖利率收斂，過去壓抑科技股表現的兩大因素同步緩解。布蘭特原油回落至每桶 100 美元附近、美國 10 年期公債殖利率降至 4.95%。市場修正的是「評價」而非「AI 需求」，半導體設計、晶圓代工、封裝測試及 IC 設計族群有望同步受惠。</p><p class="li">• ★ 投信觀點（具名）｜台新臺灣半導體 30 ETF 投資團隊：技術面重新翻多，但本周面臨中秋長假前夕避險壓力與川習二會等不確定因素，中東戰局訊息混亂（胡賽組織襲擊沙烏地首都、烏克蘭無人機攻入莫斯科周邊煉油廠），地緣政治風險仍高，市場資金可能以靜制動。另須留意科技業供應鏈庫存偏高問題。</p><p class="li">• ★★ 官方數字回補｜證交所 FMTQIK 已更新至 09/21（民國 1150921），上市成交值官方值為 866,817,533,778 元＝8,668.18 億元，較 09/18 的 11,423.22 億元減少 24.1%。此數字與經濟日報 9769177 所記 8,668.1 億元一致；09/21 盤後場與 09/22 早盤場所記之 8,202 億元係不含盤後定價／零股之數字，依「以官方為準」規則本場次予以更正，market.csv 同步修正。</p><p class="li">• ★ 盤面其他｜台積電（2330）盤中一度翻黑壓盤，A14 製程拚 2028 年量產、股價一度重返 2,500 元以上；載板四雄挺身貢獻約 100 點漲點，欣興、南電、景碩全數亮燈。聯茂（6213）爆出 3.19 億元鉅額違約交割，為台股今年來單次最大金額。</p><p class="li">• ★ 自選股｜萬潤（6187）本場次無新的具名券商評等或目標價，仍在大摩 09/20 報告的 23 檔看好名單內。</p><p class="li">• ★ 收件匣｜研究報告＼收件匣＼ 本場次無新 PDF（0 個檔案）。</p><h3>二、依產業分組</h3><table><tr><th>產業／族群</th><th>機構</th><th>評等</th><th>目標價</th><th>重點</th></tr><tr><td>IC 設計－伺服器 BMC</td><td>日系外資（★未具名）</td><td>★原文未載制式評等（大幅調升目標價）</td><td>26,660 元（前值 19,800 元）</td><td>信驊（5274）：Agentic AI 成一般伺服器需求新催化劑，2026 年伺服器 BMC 出貨量年增約 50%、動能延續至 2027；2026–2028 EPS 預估上修 9%–36%。09/22 盤中漲停 21,800 元新天價</td></tr><tr><td>IC 設計－AI ASIC</td><td>外資（★未具名，CSP AI 半導體報告）</td><td>看好（產業名單）</td><td>★未載</td><td>全球前 14 大 CSP 至 2028 年 AI 半導體 CAGR 達 30%；看好聯發科(2454)、愛普(6531)、信驊(5274)、譜瑞-KY(4966)、義隆(2458)、世芯-KY(3661)、創意(3443)</td></tr><tr><td>半導體－亞洲供應鏈</td><td>安聯投信 蕭惠中（★具名）</td><td>正向（中長期）</td><td>無</td><td>油價與美債殖利率雙降解除科技股兩大逆風；市場修正評價而非 AI 需求；設計／晶圓代工／封測／IC 設計同步受惠</td></tr><tr><td>半導體－ETF 與盤勢</td><td>台新臺灣半導體 30 ETF 投資團隊（★具名）</td><td>偏多但短線審慎</td><td>無</td><td>技術面翻多；惟中秋長假避險、川習二會與中東戰局風險仍高，須留意供應鏈庫存偏高</td></tr><tr><td>半導體－封裝自動化設備（自選股）</td><td>－（本場次無新券商觀點）</td><td>無新評等</td><td>無新目標價</td><td>萬潤（6187）仍在大摩 09/20 報告 23 檔看好名單內；既有紀錄不變</td></tr></table><h3>三、市場與大盤</h3><p>★ 午間場次資料一律標「盤中」；大盤速覽數字採 09/21 收盤官方值（FMTQIK 已更新）。</p><table><tr><th>項目</th><th>數值</th><th>變動</th><th>備註</th></tr><tr><td>加權指數（盤中）</td><td>48,601.53（最高）</td><td>+882（盤中）</td><td>09/22 盤中歷史新高，越過 6/23 前高 48,218 點；開盤漲 262.2 點</td></tr><tr><td>加權指數（前一交易日收盤）</td><td>47,718.84</td><td>+538.09（+1.14%）</td><td>09/21 收盤，FMTQIK 官方值</td></tr><tr><td>成交值（上市）</td><td>8,668.18 億元</td><td>較前日 -24.1%</td><td>09/21；★ FMTQIK 官方值 866,817,533,778 元，本場次更正前兩場所記之 8,202 億</td></tr><tr><td>融資餘額（上市）</td><td>6,030.38 億元</td><td>單日 +89.98 億</td><td>09/21；首度站上 6,000 億；來源＝統一證券 09/22 盤前稿</td></tr><tr><td>費城半導體 SOX</td><td>約 12,433（推估）</td><td>+4.29%</td><td>09/21 美股收盤；★漲幅見經濟日報 9769921；點數依 09/18 收盤 11,921.69 推算，官方收盤值待覆核</td></tr><tr><td>布蘭特原油</td><td>約 100 美元／桶</td><td>回落</td><td>09/22 盤中；解除科技股評價壓力之一</td></tr><tr><td>美國 10 年期公債殖利率</td><td>4.95%</td><td>回落</td><td>09/22 盤中</td></tr></table><p>★ 最強族群 TOP 5（09/21 收盤）：① 電子零組件 +3.27%　② 光電 +1.80%　③ 半導體 +1.21%　④ 金融保險 +0.81%　⑤ 其他電子 +0.63%</p><table><tr><th>排名</th><th>族群</th><th>漲跌%</th><th>該族群最強五檔（名稱／代號／漲跌%）</th></tr><tr><td>1</td><td>電子零組件</td><td>+3.27%</td><td>三集瑞-KY(6862) +9.92%｜詮欣(6205) +9.89%｜宏致(3605) +9.74%｜台達電(2308) +8.07%｜聯茂(6213) +7.33%</td></tr><tr><td>2</td><td>光電</td><td>+1.80%</td><td>元晶(6443) +10.00%｜光鋐(4956) +9.98%｜國碩(2406) +9.95%｜GIS-KY(6456) +9.94%｜宏齊(6168) +9.91%</td></tr><tr><td>3</td><td>半導體</td><td>+1.21%</td><td>華東(8110) +9.92%｜南茂(8150) +9.92%｜菱生(2369) +5.43%｜日月光投控(3711) +3.92%｜京元電子(2449) +3.11%</td></tr><tr><td>4</td><td>金融保險</td><td>+0.81%</td><td>（族群漲幅採新聞彙整，成分股明細待官方端點回補）</td></tr><tr><td>5</td><td>其他電子</td><td>+0.63%</td><td>（族群漲幅採新聞彙整，成分股明細待官方端點回補）</td></tr></table><p class="li">★ 註：證交所 MI_INDEX 端點於本執行環境因來源白名單限制無法直接取得，族群漲幅採新聞彙整之類股漲跌幅，非完整 29 類排序；收盤指數欄待回補。</p><h3>四、來源連結</h3><p class="li">• 經濟日報（2026/09/22 10:56）台股攻頂最強神隊友！IC 設計3雄齊創新高 外資還點名哪些看好股？　<a href="https://money.udn.com/money/story/5607/9769921" target="_blank" rel="noopener">https://money.udn.com/money/story/5607/9769921</a></p><p class="li">• 經濟日報（2026/09/22 10:54）雙重逆風解除 亞洲半導體續受惠　<a href="https://money.udn.com/money/story/5607/9769914" target="_blank" rel="noopener">https://money.udn.com/money/story/5607/9769914</a></p><p class="li">• 經濟日報（2026/09/22 00:44）就市論勢／半導體 ETF 分批布局　<a href="https://money.udn.com/money/story/5607/9768887" target="_blank" rel="noopener">https://money.udn.com/money/story/5607/9768887</a></p><p class="li">• 經濟日報（2026/09/22 09:18）台股開高飆882點、創48,601點盤中新高！信驊漲停衝2.18萬天價　<a href="https://money.udn.com/money/story/5607/9769656" target="_blank" rel="noopener">https://money.udn.com/money/story/5607/9769656</a></p><p class="li">• 經濟日報（2026/09/22 10:19）台股創歷史新高！聯發科、日月光領軍衝4萬8 信驊飆破2.1萬元改寫天價　<a href="https://money.udn.com/money/story/5607/9769798" target="_blank" rel="noopener">https://money.udn.com/money/story/5607/9769798</a></p><p class="li">• 經濟日報｜油價、美債雙降！科技股再起、台股盤中改寫48,601點新高　<a href="https://money.udn.com/money/story/5607/9770015" target="_blank" rel="noopener">https://money.udn.com/money/story/5607/9770015</a></p><p class="li">• 經濟日報｜台積電翻黑壓盤！載板四雄挺身貢獻100點漲點 欣興、南電、景碩全亮燈　<a href="https://money.udn.com/money/story/5607/9770226" target="_blank" rel="noopener">https://money.udn.com/money/story/5607/9770226</a></p><p class="li">• 經濟日報｜台積電A14拚2028年量產 股價反彈一度重返2,500元以上　<a href="https://money.udn.com/money/story/5607/9769723" target="_blank" rel="noopener">https://money.udn.com/money/story/5607/9769723</a></p><p class="li">• 經濟日報（2026/09/22 11:47）手上有大把日圓？瑞銀：東京干預也難改日圓走弱趨勢 反成賣出良機　<a href="https://money.udn.com/money/story/5599/9769846" target="_blank" rel="noopener">https://money.udn.com/money/story/5599/9769846</a></p><p class="li">• 經濟日報｜美日同步升息 貝萊德建議加碼兩類債券　<a href="https://money.udn.com/money/story/5607/9770125" target="_blank" rel="noopener">https://money.udn.com/money/story/5607/9770125</a></p><p class="li">• 經濟日報｜PIMCO：美國勞動市場非通膨推手 Fed 後續仍可能進一步緊縮　<a href="https://money.udn.com/money/story/5607/9770091" target="_blank" rel="noopener">https://money.udn.com/money/story/5607/9770091</a></p><p class="li">• 經濟日報｜聯茂爆違約交割3.19億元 台股今年來最大金額　<a href="https://money.udn.com/money/story/5607/9769201" target="_blank" rel="noopener">https://money.udn.com/money/story/5607/9769201</a></p><p class="li">• 經濟日報｜面板漲價卻恐旺季不旺 友達、群創仍勁揚原因在此　<a href="https://money.udn.com/money/story/5710/9769671" target="_blank" rel="noopener">https://money.udn.com/money/story/5710/9769671</a></p><p class="li">• 經濟日報｜近5年第4季全球主要股市平均表現比一比 台股平均漲逾7%冠全球　<a href="https://money.udn.com/money/story/5607/9769702" target="_blank" rel="noopener">https://money.udn.com/money/story/5607/9769702</a></p><p class="li">• 經濟日報｜幸運中籤者樂呵呵！漢測掛牌上櫃大漲 抽中1張賺1張　<a href="https://money.udn.com/money/story/11074/9769673" target="_blank" rel="noopener">https://money.udn.com/money/story/11074/9769673</a></p><p class="li">• 臺灣證券交易所｜每日市場成交資訊 FMTQIK（加權指數與成交值官方值）　<a href="https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK" target="_blank" rel="noopener">https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK</a></p><p>※ 本總覽依公開新聞整理，非完整報告。★ 標示處為原文未載或表述模糊，未自行推定；數字不確定者已標「待確認」。</p>
+<p><b>台股券商研究報告　日報總覽</b></p>
+<p><b>午間場次｜2026 年 9 月 22 日（星期二）　資料窗口：2026/09/22 08:10 – 12:40（盤中）</b></p>
+<p><b>整理：旺來 wowwow31001　｜　本報告依公開新聞整理，非券商完整報告原稿</b></p>
+<p><b>一、本場次重點摘要</b></p>
+<p><b>• ★★ 最重大｜台股 09/22 盤中改寫歷史新高：加權指數開高走高，盤中一度狂飆 882 點、觸及 48,601.53 點，正式越過 6 月 23 日創下的 48,218 點歷史高點。開盤即漲 262.2 點，推升動能來自美股 09/21 四大指數全面揚升、費城半導體指數大漲 4.29%。★ 此為盤中數據，收盤值以盤後場為準。</b></p>
+<p><b>• ★★ 本場次唯一具體目標價｜日系外資大幅調升股王信驊（5274）目標價：12 個月目標價由 19,800 元一舉調升至 26,660 元（幅度約 +34.6%），並將 2026 至 2028 年 EPS 預估上修 9% 至 36%。理由為代理式 AI（Agentic AI）可望成為一般伺服器需求的新催化劑，預估 2026 年伺服器 BMC 出貨量年增約 50%，成長動能並可延續至 2027 年。信驊 09/22 盤中亮燈漲停、攻上 21,800 元新天價，創台股個股價格新紀錄。★ 已產出個股摘要。</b></p>
+<p><b>• ★★ IC 設計三雄同步刷新天價｜創意（3443）跳空漲停鎖在 8,375 元新天價，市場聚焦其 AI ASIC 布局——繼 Google ASIC 專案後，又陸續切入 Microsoft、Meta 等大型 CSP 專案；聯發科（2454）盤中大漲逾 7.5%、攻上 5,480 元新高，並於 09/22 推出首款 Dimensity CX 旗艦 SoC C10 Max，鎖定高階超便攜 Googlebook。三大高價 IC 股同步創高，帶動世芯-KY（3661）、力旺（3529）、智原（3035）、巨有科技（8227）、新唐（4919）等 IC 設計股走強。</b></p>
+<p><b>• ★ 外資名單｜另一份外資報告預估，全球前 14 大 CSP 至 2028 年的 AI 半導體年複合成長率（CAGR）仍高達 30%，看好聯發科、愛普（6531）、信驊、譜瑞-KY（4966）、義隆（2458）、世芯-KY、創意等 IC 設計股。美系外資近期路演後則指出，AI 硬體成長動能正從 GPU 延伸至網路晶片、ASIC、CPO 及先進封裝。</b></p>
+<p><b>• ★ 投信觀點（具名）｜安聯投信、安聯亞洲半導體主動式 ETF（00412A）經理人蕭惠中：油價回落與美債殖利率收斂，過去壓抑科技股表現的兩大因素同步緩解。布蘭特原油回落至每桶 100 美元附近、美國 10 年期公債殖利率降至 4.95%。市場修正的是「評價」而非「AI 需求」，半導體設計、晶圓代工、封裝測試及 IC 設計族群有望同步受惠。</b></p>
+<p><b>• ★ 投信觀點（具名）｜台新臺灣半導體 30 ETF 投資團隊：技術面重新翻多，但本周面臨中秋長假前夕避險壓力與川習二會等不確定因素，中東戰局訊息混亂（胡賽組織襲擊沙烏地首都、烏克蘭無人機攻入莫斯科周邊煉油廠），地緣政治風險仍高，市場資金可能以靜制動。另須留意科技業供應鏈庫存偏高問題。</b></p>
+<p><b>• ★★ 官方數字回補｜證交所 FMTQIK 已更新至 09/21（民國 1150921），上市成交值官方值為 866,817,533,778 元＝8,668.18 億元，較 09/18 的 11,423.22 億元減少 24.1%。此數字與經濟日報 9769177 所記 8,668.1 億元一致；09/21 盤後場與 09/22 早盤場所記之 8,202 億元係不含盤後定價／零股之數字，依「以官方為準」規則本場次予以更正，market.csv 同步修正。</b></p>
+<p><b>• ★ 盤面其他｜台積電（2330）盤中一度翻黑壓盤，A14 製程拚 2028 年量產、股價一度重返 2,500 元以上；載板四雄挺身貢獻約 100 點漲點，欣興、南電、景碩全數亮燈。聯茂（6213）爆出 3.19 億元鉅額違約交割，為台股今年來單次最大金額。</b></p>
+<p><b>• ★ 自選股｜萬潤（6187）本場次無新的具名券商評等或目標價，仍在大摩 09/20 報告的 23 檔看好名單內。</b></p>
+<p><b>• ★ 收件匣｜研究報告＼收件匣＼ 本場次無新 PDF（0 個檔案）。</b></p>
+<p><b>二、依產業分組</b></p>
+<table><tr><td><b>產業／族群</b></td><td><b>機構</b></td><td><b>評等</b></td><td><b>目標價</b></td><td><b>重點</b></td></tr><tr><td>IC 設計－伺服器 BMC</td><td>日系外資（★未具名）</td><td>★原文未載制式評等（大幅調升目標價）</td><td>26,660 元（前值 19,800 元）</td><td>信驊（5274）：Agentic AI 成一般伺服器需求新催化劑，2026 年伺服器 BMC 出貨量年增約 50%、動能延續至 2027；2026–2028 EPS 預估上修 9%–36%。09/22 盤中漲停 21,800 元新天價</td></tr><tr><td>IC 設計－AI ASIC</td><td>外資（★未具名，CSP AI 半導體報告）</td><td>看好（產業名單）</td><td>★未載</td><td>全球前 14 大 CSP 至 2028 年 AI 半導體 CAGR 達 30%；看好聯發科(2454)、愛普(6531)、信驊(5274)、譜瑞-KY(4966)、義隆(2458)、世芯-KY(3661)、創意(3443)</td></tr><tr><td>半導體－亞洲供應鏈</td><td>安聯投信 蕭惠中（★具名）</td><td>正向（中長期）</td><td>無</td><td>油價與美債殖利率雙降解除科技股兩大逆風；市場修正評價而非 AI 需求；設計／晶圓代工／封測／IC 設計同步受惠</td></tr><tr><td>半導體－ETF 與盤勢</td><td>台新臺灣半導體 30 ETF 投資團隊（★具名）</td><td>偏多但短線審慎</td><td>無</td><td>技術面翻多；惟中秋長假避險、川習二會與中東戰局風險仍高，須留意供應鏈庫存偏高</td></tr><tr><td>半導體－封裝自動化設備（自選股）</td><td>－（本場次無新券商觀點）</td><td>無新評等</td><td>無新目標價</td><td>萬潤（6187）仍在大摩 09/20 報告 23 檔看好名單內；既有紀錄不變</td></tr></table>
+<p><b>三、市場與大盤</b></p>
+<p><b>★ 午間場次資料一律標「盤中」；大盤速覽數字採 09/21 收盤官方值（FMTQIK 已更新）。</b></p>
+<table><tr><td><b>項目</b></td><td><b>數值</b></td><td><b>變動</b></td><td><b>備註</b></td></tr><tr><td>加權指數（盤中）</td><td>48,601.53（最高）</td><td>+882（盤中）</td><td>09/22 盤中歷史新高，越過 6/23 前高 48,218 點；開盤漲 262.2 點</td></tr><tr><td>加權指數（前一交易日收盤）</td><td>47,718.84</td><td>+538.09（+1.14%）</td><td>09/21 收盤，FMTQIK 官方值</td></tr><tr><td>成交值（上市）</td><td>8,668.18 億元</td><td>較前日 -24.1%</td><td>09/21；★ FMTQIK 官方值 866,817,533,778 元，本場次更正前兩場所記之 8,202 億</td></tr><tr><td>融資餘額（上市）</td><td>6,030.38 億元</td><td>單日 +89.98 億</td><td>09/21；首度站上 6,000 億；來源＝統一證券 09/22 盤前稿</td></tr><tr><td>費城半導體 SOX</td><td>約 12,433（推估）</td><td>+4.29%</td><td>09/21 美股收盤；★漲幅見經濟日報 9769921；點數依 09/18 收盤 11,921.69 推算，官方收盤值待覆核</td></tr><tr><td>布蘭特原油</td><td>約 100 美元／桶</td><td>回落</td><td>09/22 盤中；解除科技股評價壓力之一</td></tr><tr><td>美國 10 年期公債殖利率</td><td>4.95%</td><td>回落</td><td>09/22 盤中</td></tr></table>
+<p><b>★ 最強族群 TOP 5（09/21 收盤）：① 電子零組件 +3.27%　② 光電 +1.80%　③ 半導體 +1.21%　④ 金融保險 +0.81%　⑤ 其他電子 +0.63%</b></p>
+<table><tr><td><b>排名</b></td><td><b>族群</b></td><td><b>漲跌%</b></td><td><b>該族群最強五檔（名稱／代號／漲跌%）</b></td></tr><tr><td>1</td><td>電子零組件</td><td>+3.27%</td><td>三集瑞-KY(6862) +9.92%｜詮欣(6205) +9.89%｜宏致(3605) +9.74%｜台達電(2308) +8.07%｜聯茂(6213) +7.33%</td></tr><tr><td>2</td><td>光電</td><td>+1.80%</td><td>元晶(6443) +10.00%｜光鋐(4956) +9.98%｜國碩(2406) +9.95%｜GIS-KY(6456) +9.94%｜宏齊(6168) +9.91%</td></tr><tr><td>3</td><td>半導體</td><td>+1.21%</td><td>華東(8110) +9.92%｜南茂(8150) +9.92%｜菱生(2369) +5.43%｜日月光投控(3711) +3.92%｜京元電子(2449) +3.11%</td></tr><tr><td>4</td><td>金融保險</td><td>+0.81%</td><td>（族群漲幅採新聞彙整，成分股明細待官方端點回補）</td></tr><tr><td>5</td><td>其他電子</td><td>+0.63%</td><td>（族群漲幅採新聞彙整，成分股明細待官方端點回補）</td></tr></table>
+<p><b>★ 註：證交所 MI_INDEX 端點於本執行環境因來源白名單限制無法直接取得，族群漲幅採新聞彙整之類股漲跌幅，非完整 29 類排序；收盤指數欄待回補。</b></p>
+<p><b>四、來源連結</b></p>
+<p><b>• 經濟日報（2026/09/22 10:56）台股攻頂最強神隊友！IC 設計3雄齊創新高 外資還點名哪些看好股？　https://money.udn.com/money/story/5607/9769921</b></p>
+<p><b>• 經濟日報（2026/09/22 10:54）雙重逆風解除 亞洲半導體續受惠　https://money.udn.com/money/story/5607/9769914</b></p>
+<p><b>• 經濟日報（2026/09/22 00:44）就市論勢／半導體 ETF 分批布局　https://money.udn.com/money/story/5607/9768887</b></p>
+<p><b>• 經濟日報（2026/09/22 09:18）台股開高飆882點、創48,601點盤中新高！信驊漲停衝2.18萬天價　https://money.udn.com/money/story/5607/9769656</b></p>
+<p><b>• 經濟日報（2026/09/22 10:19）台股創歷史新高！聯發科、日月光領軍衝4萬8 信驊飆破2.1萬元改寫天價　https://money.udn.com/money/story/5607/9769798</b></p>
+<p><b>• 經濟日報｜油價、美債雙降！科技股再起、台股盤中改寫48,601點新高　https://money.udn.com/money/story/5607/9770015</b></p>
+<p><b>• 經濟日報｜台積電翻黑壓盤！載板四雄挺身貢獻100點漲點 欣興、南電、景碩全亮燈　https://money.udn.com/money/story/5607/9770226</b></p>
+<p><b>• 經濟日報｜台積電A14拚2028年量產 股價反彈一度重返2,500元以上　https://money.udn.com/money/story/5607/9769723</b></p>
+<p><b>• 經濟日報（2026/09/22 11:47）手上有大把日圓？瑞銀：東京干預也難改日圓走弱趨勢 反成賣出良機　https://money.udn.com/money/story/5599/9769846</b></p>
+<p><b>• 經濟日報｜美日同步升息 貝萊德建議加碼兩類債券　https://money.udn.com/money/story/5607/9770125</b></p>
+<p><b>• 經濟日報｜PIMCO：美國勞動市場非通膨推手 Fed 後續仍可能進一步緊縮　https://money.udn.com/money/story/5607/9770091</b></p>
+<p><b>• 經濟日報｜聯茂爆違約交割3.19億元 台股今年來最大金額　https://money.udn.com/money/story/5607/9769201</b></p>
+<p><b>• 經濟日報｜面板漲價卻恐旺季不旺 友達、群創仍勁揚原因在此　https://money.udn.com/money/story/5710/9769671</b></p>
+<p><b>• 經濟日報｜近5年第4季全球主要股市平均表現比一比 台股平均漲逾7%冠全球　https://money.udn.com/money/story/5607/9769702</b></p>
+<p><b>• 經濟日報｜幸運中籤者樂呵呵！漢測掛牌上櫃大漲 抽中1張賺1張　https://money.udn.com/money/story/11074/9769673</b></p>
+<p><b>• 臺灣證券交易所｜每日市場成交資訊 FMTQIK（加權指數與成交值官方值）　https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK</b></p>
+<p><b>※ 本總覽依公開新聞整理，非完整報告。★ 標示處為原文未載或表述模糊，未自行推定；數字不確定者已標「待確認」。</b></p>
 <div class="dl">Word 版下載：<a href="260922_報告總覽_午間.docx" download>260922_報告總覽_午間.docx</a>｜旺來 @wowwow31001</div>
 </div></body></html>

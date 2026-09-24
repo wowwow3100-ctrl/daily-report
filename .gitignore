@@ -8,3 +8,4 @@ logs/
 *.pdf
 # 收件匣類原始檔
 收件匣/
+*.tmp.html
