@@ -155,7 +155,7 @@
   html.mob .lg{width:46px;height:46px;}
   html.mob .setpanel{position:fixed;left:12px;right:12px;top:70px;white-space:normal;min-width:0;}
 </style>
-<link rel="stylesheet" href="wl-ui.css?v=1">
+<link rel="stylesheet" href="wl-ui.css?v=2">
 <script>(function(){var h=document.documentElement;try{h.setAttribute("data-theme",localStorage.getItem("wl_theme")||"gold");h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");}catch(e){}})();</script>
 </head>
 <body>
@@ -245,6 +245,7 @@
   </div>
   <div class="tarrow">⬇</div>
 </div>
+<script src="wl-consensus.js?v=1"></script>
 <script>
 (function(){
   var KEY="wl_fs";
@@ -543,21 +544,40 @@
     for(var t=0;t<tiles.length;t++)tiles[t].classList.remove("on");
     if(el)el.classList.add("on");
     var html='<h3>'+esc(s.name)+' ('+esc(s.code)+')</h3>'
+      +'<div id="rgHold"></div>'
       +'<a class="act" href="records.html?q='+encodeURIComponent(s.name)+'">🔎 看這檔的歷史觀點紀錄 →</a>'
       +'<ul>';
     var fs=s.files.slice().sort(function(a,b){return a<b?1:-1;});
     for(var i=0;i<fs.length;i++){
-      var f=fs[i], m=f.match(/^(\d{6})_(.+)\.docx$/i);
+      var f=fs[i], isDocx=/\.docx$/i.test(f), m=f.match(/^(\d{6})_(.+)\.(docx|html)$/i);
       var d=m?("20"+m[1].slice(0,2)+"/"+m[1].slice(2,4)+"/"+m[1].slice(4,6)):"";
-      var label=m?m[2].replace(/_/g,"｜"):f;
+      var label=m?m[2].replace(/_/g,"｜"):f.replace(/\.(docx|html)$/i,"");
       var base='個股/'+encodeURIComponent(s.folder)+'/';
       var page=base+encodeURIComponent(f.replace(/\.docx$/i,".html"));
       html+='<li><span class="d">'+esc(d)+'</span><a href="'+page+'" target="_blank" rel="noopener">'+esc(label)+'　👁 點開看</a>'
-        +'　<a style="font-size:.75rem;color:var(--muted);" href="'+base+encodeURIComponent(f)+'" download>⬇ Word</a></li>';
+        +(isDocx?'　<a style="font-size:.75rem;color:var(--muted);" href="'+base+encodeURIComponent(f)+'" download>⬇ Word</a>':'')+'</li>';
     }
     html+='</ul>';
     detail.innerHTML=html; detail.style.display="block";
     detail.scrollIntoView({behavior:"smooth",block:"start"});
+    // 券商共識：目標價區間＋近 30 天具名上修（由 reports.csv 即時統計）
+    if(window.WLC){
+      var code=s.code;
+      WLC.load().then(function(res){
+        var hold=document.getElementById("rgHold"), d=res.map[code];
+        if(!hold||!d||(!d.range&&!d.upN)) return;
+        var h='';
+        if(d.range){
+          h+='目標價區間（近 60 天各券商最新）：<b>'+(d.range.lo===d.range.hi?WLC.fmt(d.range.lo):WLC.fmt(d.range.lo)+'～'+WLC.fmt(d.range.hi))
+            +' 元</b> <span class="muted">共 '+d.range.n+' 家</span>';
+        }
+        if(d.upN){
+          h+=(h?'<br>':'')+'近 30 天具名上修 <b>'+d.upN+' 家</b>：'
+            +d.upList.map(function(u){return esc(u.b)+'（'+WLC.md(u.d)+'）';}).join('、');
+        }
+        hold.innerHTML='<div class="rgbox">'+h+'<div class="muted">依公開新聞彙整，非本站評等或建議。</div></div>';
+      }).catch(function(){});
+    }
   }
 
   document.getElementById("q").addEventListener("input",function(e){curQ=e.target.value.trim();detail.style.display="none";render();});
