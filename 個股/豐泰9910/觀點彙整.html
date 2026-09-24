@@ -6,7 +6,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%8D%3C/text%3E%3C/svg%3E">
 <script>
 (function(){var h=document.documentElement;try{
- h.setAttribute("data-theme",localStorage.getItem("wl_theme")||"gold");
+ h.setAttribute("data-theme",(localStorage.getItem("wl_theme")||"gold").replace("navy","gold"));
  h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");
  if((localStorage.getItem("wl_view")||"auto")==="mb")h.classList.add("mob");
 }catch(e){}})();
@@ -14,7 +14,8 @@
 <style>
  :root{--bg:#0B0B0D;--card:#16161A;--card2:#1D1D23;--line:#2A2A32;--gold:#E8C15A;--gold-dim:#A98B3F;--text:#EDEAE0;--muted:#9C9889;--up:#FF5A5A;--down:#3DD68C;}
  html[data-theme="light"]{--bg:#F6F0E0;--card:#FFFFFF;--card2:#EFE7CF;--line:#DCD2B4;--gold:#7A5E17;--gold-dim:#9C8034;--text:#22381F;--muted:#5A6F58;--up:#C43D3D;--down:#1E7F4F;}
- html[data-theme="navy"]{--bg:#0C1322;--card:#141E33;--card2:#1B2946;--line:#263858;--gold:#9DC0FF;--gold-dim:#5C7FBF;--text:#E8EDF7;--muted:#8FA0BF;--up:#FF6B6B;--down:#43D69A;}
+ html[data-theme="white"]{--bg:#F4F5F7;--card:#FFFFFF;--card2:#EEF0F3;--line:#DDE1E6;--gold:#222326;--gold-dim:#9A8255;--text:#1B1C1E;--muted:#6A6F76;--up:#D2302C;--down:#16804A;--bgt:rgba(244,245,247,.94);}
+ html[data-theme="red"]{--bg:#1C0709;--card:#2A0D10;--card2:#361216;--line:#4E1D21;--gold:#F2C75C;--gold-dim:#B8903E;--text:#F6ECE4;--muted:#C4A69E;--up:#FF7B6B;--down:#4FD99A;--bgt:rgba(28,7,9,.94);}
  html{font-size:17px;}
  html[data-size="lg"]{font-size:19px;}
  html[data-size="xl"]{font-size:22px;}
@@ -39,7 +40,7 @@
  .dl{margin-top:30px;font-size:.82rem;color:var(--muted);line-height:2;}
  .dl a{color:var(--gold-dim);}
 </style></head><body><div class="wrap">
-<a class="back" href="../../stocks.html">← 回個股報告</a>
+<a class="back" href="../../stocks.html" onclick="if(/stocks\.html/.test(document.referrer)&&history.length>1){history.back();return false;}">← 回個股報告</a>
 <h1>豐泰（9910）券商觀點彙整</h1>
 <div class="notice">⚠ 本頁為新聞整理摘要<span>以下為本站自公開新聞逐日收錄的券商觀點紀錄，非券商原始報告、非投資建議；目標價與評等以各券商原始報告為準。</span></div>
 <div class="rec"><div class="top"><span class="d">2026-09-09</span><span class="tag">外資</span><span class="bk">瑞銀證券 UBS 陳玟瑾（★具名 台股策略暨非科技產業）</span></div><div class="rt">評等 <b>★升評「買進」（明確為升評 ★前次評等未載）</b>　目標價 <b>推測合理股價90（★前值未載）</b></div><div class="note">工商時報09/09 03:00見報(modified 06:57)；★本場次唯一升評 與同篇來億-KY降評構成製鞋族群配對交易(多豐泰 空來億)；論點=(1)豐泰受制Nike庫存去化與產品重整導致訂單縮減 產能利用率偏低＋生產基地移轉拖累營益率 評價已殺至接近谷底 (2)★★評價數據為本場次唯一給出明確倍數與標準差者=目前僅2027年預估本益比14倍 較2015年以來平均值低1.6個標準差 (3)獲利已於今年2月觸底 之後連續五個月逐步改善 但市場對Nike訂單展望信心不足 股價尚未反映 (4)動能=Nike新款訓練鞋與籃球鞋豐泰為主要供應商之一；Salomon訂單估雙位數成長；東南亞工廠員工熟練度提升營益率續回升 (5)★獲利預估=2027年EPS 5.04元 2028年EPS 5.65元(連兩年雙位數百分比增長) 以90元回算隱含2027PE約17.9倍 2028約15.9倍(本系統回算)；記者附註該分析師年中升評自行車雙雄成功帶動法人資金；09/08收71.8(+2.0 +2.87% 開71.0高73.4低70.7 成交3705張/2.67億 來源CMoney)回算+25.3%(本系統回算)；風險=★2026年EPS未載(僅2027/2028) ★90元評價倍數推導未載 ★前次評等與前值未載；論點高度綁定單一客戶Nike 訂單回升取決於Nike自身庫存去化與產品週期 豐泰無法主導 原文未提供Nike庫存水位或訂單能見度量化數字；「較歷史均值低1.6標準差」屬均值回歸論述 若製鞋代工產業結構性利潤率下移則歷史均值不再適用；生產基地移轉拖累何時結束未給時程 員工熟練度提升為定性描述；流動性偏低(3705張/2.67億)；已做個股摘要 260909_瑞銀證券_豐泰9910.docx；來源ctee 20260909700101-430201 + cmoney 9910</div></div>

@@ -6,7 +6,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%8D%3C/text%3E%3C/svg%3E">
 <script>
 (function(){var h=document.documentElement;try{
- h.setAttribute("data-theme",localStorage.getItem("wl_theme")||"gold");
+ h.setAttribute("data-theme",(localStorage.getItem("wl_theme")||"gold").replace("navy","gold"));
  h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");
  if((localStorage.getItem("wl_view")||"auto")==="mb")h.classList.add("mob");
 }catch(e){}})();
@@ -14,7 +14,8 @@
 <style>
  :root{--bg:#0B0B0D;--card:#16161A;--card2:#1D1D23;--line:#2A2A32;--gold:#E8C15A;--gold-dim:#A98B3F;--text:#EDEAE0;--muted:#9C9889;--up:#FF5A5A;--down:#3DD68C;}
  html[data-theme="light"]{--bg:#F6F0E0;--card:#FFFFFF;--card2:#EFE7CF;--line:#DCD2B4;--gold:#7A5E17;--gold-dim:#9C8034;--text:#22381F;--muted:#5A6F58;--up:#C43D3D;--down:#1E7F4F;}
- html[data-theme="navy"]{--bg:#0C1322;--card:#141E33;--card2:#1B2946;--line:#263858;--gold:#9DC0FF;--gold-dim:#5C7FBF;--text:#E8EDF7;--muted:#8FA0BF;--up:#FF6B6B;--down:#43D69A;}
+ html[data-theme="white"]{--bg:#F4F5F7;--card:#FFFFFF;--card2:#EEF0F3;--line:#DDE1E6;--gold:#222326;--gold-dim:#9A8255;--text:#1B1C1E;--muted:#6A6F76;--up:#D2302C;--down:#16804A;--bgt:rgba(244,245,247,.94);}
+ html[data-theme="red"]{--bg:#1C0709;--card:#2A0D10;--card2:#361216;--line:#4E1D21;--gold:#F2C75C;--gold-dim:#B8903E;--text:#F6ECE4;--muted:#C4A69E;--up:#FF7B6B;--down:#4FD99A;--bgt:rgba(28,7,9,.94);}
  html{font-size:17px;}
  html[data-size="lg"]{font-size:19px;}
  html[data-size="xl"]{font-size:22px;}
@@ -39,7 +40,7 @@
  .dl{margin-top:30px;font-size:.82rem;color:var(--muted);line-height:2;}
  .dl a{color:var(--gold-dim);}
 </style></head><body><div class="wrap">
-<a class="back" href="../../stocks.html">← 回個股報告</a>
+<a class="back" href="../../stocks.html" onclick="if(/stocks\.html/.test(document.referrer)&&history.length>1){history.back();return false;}">← 回個股報告</a>
 <h1>英業達（2356）券商觀點彙整</h1>
 <div class="notice">⚠ 本頁為新聞整理摘要<span>以下為本站自公開新聞逐日收錄的券商觀點紀錄，非券商原始報告、非投資建議；目標價與評等以各券商原始報告為準。</span></div>
 <div class="rec"><div class="top"><span class="d">2026-08-24</span><span class="tag">外資</span><span class="bk">花旗環球（★具名）</span></div><div class="rt">評等 <b>★原文未載評等</b>　目標價 <b>★原文未載目標價</b></div><div class="note">★本場次唯一有具名券商 有明確財測修正 但無評等亦無目標價的紀錄 訊號強度僅止於獲利方向；論點=英業達Q2獲利★季增60% 年增78% 遠優於法人預期 受惠三項驅動=新產能開出 通用伺服器與ASIC業務崛起 機櫃級AI伺服器持續成長；★財測修正=花旗上調2026/2027年EPS各★9%與16% 至★3.84元及4.51元 ★2027年上調幅度大於2026年 代表花旗認為成長動能主要落在明年；股價=08/24收66.1元漲0.6% 以上調後2026年EPS 3.84元計本益比約17.2倍 以2027年4.51元計約14.7倍(皆本系統回算 非原文所載)；★同篇並列的反向觀點=摩根士丹利估前五大ODM廠7月筆電出貨較預估少4% 8月約900萬台★年減20% Q3約2730萬台較原預估少6% ★季減10%年減20% 主因記憶體漲價壓抑NB需求；風險=★有財測無評等無目標價是本筆訊號強度上限 EPS上調9%/16%無法直接轉換成股價空間 因原文未提供花旗的目標本益比與評價年度 ★同一篇新聞內同時存在個股上調與產業下修 兩者未被記者調和 ★英業達本身同時具備伺服器與NB兩塊業務 大摩的NB出貨下修理應直接衝擊英業達 但原文未拆解英業達的伺服器與NB營收比重 讀者無法判斷淨影響方向 此為本則最大邏輯缺口 ★記憶體漲價是本則核心矛盾點 對記憶體廠是順風(同場次中國信託證券即以此看多華邦電) 對ODM/NB廠是成本逆風 花旗三項成長驅動皆未觸及記憶體成本上升對毛利率的壓縮 亦未做敏感度試算 ★2027年EPS 4.51元較2026年3.84元僅年增17.4%(本系統回算) 成長率明顯放緩 與遠優於預期的敘事語氣不對稱 ★ASIC業務崛起與機櫃級AI伺服器成長皆未提供客戶名單 專案代號或訂單能見度佐證 ★大摩Q3出貨較原預估少6%是對自身前值的下修 原文未提供原預估數字 下修絕對量體無法還原 ★本則為新聞轉述非報告原文；已做個股摘要 260824_花旗環球_英業達2356.docx；來源money udn 9710993 + ctee 20260824701173</div></div>

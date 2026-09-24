@@ -6,7 +6,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%8D%3C/text%3E%3C/svg%3E">
 <script>
 (function(){var h=document.documentElement;try{
- h.setAttribute("data-theme",localStorage.getItem("wl_theme")||"gold");
+ h.setAttribute("data-theme",(localStorage.getItem("wl_theme")||"gold").replace("navy","gold"));
  h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");
  if((localStorage.getItem("wl_view")||"auto")==="mb")h.classList.add("mob");
 }catch(e){}})();
@@ -14,7 +14,8 @@
 <style>
  :root{--bg:#0B0B0D;--card:#16161A;--card2:#1D1D23;--line:#2A2A32;--gold:#E8C15A;--gold-dim:#A98B3F;--text:#EDEAE0;--muted:#9C9889;--up:#FF5A5A;--down:#3DD68C;}
  html[data-theme="light"]{--bg:#F6F0E0;--card:#FFFFFF;--card2:#EFE7CF;--line:#DCD2B4;--gold:#7A5E17;--gold-dim:#9C8034;--text:#22381F;--muted:#5A6F58;--up:#C43D3D;--down:#1E7F4F;}
- html[data-theme="navy"]{--bg:#0C1322;--card:#141E33;--card2:#1B2946;--line:#263858;--gold:#9DC0FF;--gold-dim:#5C7FBF;--text:#E8EDF7;--muted:#8FA0BF;--up:#FF6B6B;--down:#43D69A;}
+ html[data-theme="white"]{--bg:#F4F5F7;--card:#FFFFFF;--card2:#EEF0F3;--line:#DDE1E6;--gold:#222326;--gold-dim:#9A8255;--text:#1B1C1E;--muted:#6A6F76;--up:#D2302C;--down:#16804A;--bgt:rgba(244,245,247,.94);}
+ html[data-theme="red"]{--bg:#1C0709;--card:#2A0D10;--card2:#361216;--line:#4E1D21;--gold:#F2C75C;--gold-dim:#B8903E;--text:#F6ECE4;--muted:#C4A69E;--up:#FF7B6B;--down:#4FD99A;--bgt:rgba(28,7,9,.94);}
  html{font-size:17px;}
  html[data-size="lg"]{font-size:19px;}
  html[data-size="xl"]{font-size:22px;}
@@ -39,7 +40,7 @@
  .dl{margin-top:30px;font-size:.82rem;color:var(--muted);line-height:2;}
  .dl a{color:var(--gold-dim);}
 </style></head><body><div class="wrap">
-<a class="back" href="../../stocks.html">← 回個股報告</a>
+<a class="back" href="../../stocks.html" onclick="if(/stocks\.html/.test(document.referrer)&&history.length>1){history.back();return false;}">← 回個股報告</a>
 <h1>鴻勁（7769）券商觀點彙整</h1>
 <div class="notice">⚠ 本頁為新聞整理摘要<span>以下為本站自公開新聞逐日收錄的券商觀點紀錄，非券商原始報告、非投資建議；目標價與評等以各券商原始報告為準。</span></div>
 <div class="rec"><div class="top"><span class="d">2026-08-21</span><span class="tag">外資</span><span class="bk">美銀證券（★具名 08/19未具名美系外資之具名化）</span></div><div class="rt">評等 <b>買進（重申）</b>　目標價 <b>★本篇未載目標價數字（本系統既有紀錄7800元）</b></div><div class="note">見報2026/08/21 03:00 工商時報記者簡威瑟；★本則非新評價事件=本篇與本系統08/19已收錄之「美系外資(工商時報未具名)鴻勁買進7800元」內容高度重疊(同為7月營收52億元達美銀預估Q3營收37% 毛利率由今年57%提升至2028年60% 同一組客戶清單) 研判為該筆的來源具名化 即08/19的美系外資＝美銀證券 ★兩者為同一份報告 不應視為兩個獨立支持訊號；近況驗證=7月營收52億元已達美銀預估第三季營收的37% 進度優於預期；訂單=受惠AI／HPC晶片測試需求 在手訂單仍然強勁 除AI GPU／CPU出貨持續外 ★AI ASIC需求進一步增強 訂單能見度已延伸至年底；成長催化劑五項=特斯拉的高階最終測試(FT)與系統級測試(SLT)分選機 美國汽車IDM客戶擴廠 Google TPU出貨穩定放量 輝達與超微CPU／GPU強勁訂單 中國大陸市場對本土高階晶片測試需求增加；預估=2026年營收年增77% 2027年年增43%；毛利率=由今年57%提升至2028年60% 歸因於產品規格升級與產品組合改善而非稼動率；同業對照=花旗環球證券先前已喊出萬金期望 原文未載確切數字與出具日期；風險=★訊號性質即風險 重申買進且未載目標價數字 屬論點重申 本場次對鴻勁的新增資訊實質上只有券商名稱由未具名變為美銀證券一項 ★整套邏輯建立在多個單一客戶專案之上 原文未做客戶集中度情境試算 任一專案遞延即衝擊營收年增77%的假設 ★中國大陸本土高階晶片測試需求屬政策敏感變數 受出口管制與地緣政治直接影響 原文完全未討論 ★毛利率57%→60%與連續大幅擴產同時發生(本系統08/19紀錄 2026上半年產能已增45% 全年年增40% 德勝新廠2027年Q1投產 2027與2028年產能各增50%) 擴產期折舊與稼動率風險未討論 ★僅有成長率無絕對值 無各年度EPS 無目標本益比 無評價年度 本篇連目標價都未載 完全無法回算 ★訂單能見度延伸至年底為定性描述未提供在手訂單金額 花旗環球萬金期望未載確切數字不宜當成第二個具體目標價 美銀雖具名但未揭露分析師姓名與報告出具日期 本則為新聞轉述非報告原文；已做個股摘要 260821_美銀證券_鴻勁7769.docx；來源ctee 20260821700099 + 交叉比對ctee 20260819700925</div></div>

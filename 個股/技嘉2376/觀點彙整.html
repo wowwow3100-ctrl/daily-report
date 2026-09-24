@@ -6,7 +6,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%8D%3C/text%3E%3C/svg%3E">
 <script>
 (function(){var h=document.documentElement;try{
- h.setAttribute("data-theme",localStorage.getItem("wl_theme")||"gold");
+ h.setAttribute("data-theme",(localStorage.getItem("wl_theme")||"gold").replace("navy","gold"));
  h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");
  if((localStorage.getItem("wl_view")||"auto")==="mb")h.classList.add("mob");
 }catch(e){}})();
@@ -14,7 +14,8 @@
 <style>
  :root{--bg:#0B0B0D;--card:#16161A;--card2:#1D1D23;--line:#2A2A32;--gold:#E8C15A;--gold-dim:#A98B3F;--text:#EDEAE0;--muted:#9C9889;--up:#FF5A5A;--down:#3DD68C;}
  html[data-theme="light"]{--bg:#F6F0E0;--card:#FFFFFF;--card2:#EFE7CF;--line:#DCD2B4;--gold:#7A5E17;--gold-dim:#9C8034;--text:#22381F;--muted:#5A6F58;--up:#C43D3D;--down:#1E7F4F;}
- html[data-theme="navy"]{--bg:#0C1322;--card:#141E33;--card2:#1B2946;--line:#263858;--gold:#9DC0FF;--gold-dim:#5C7FBF;--text:#E8EDF7;--muted:#8FA0BF;--up:#FF6B6B;--down:#43D69A;}
+ html[data-theme="white"]{--bg:#F4F5F7;--card:#FFFFFF;--card2:#EEF0F3;--line:#DDE1E6;--gold:#222326;--gold-dim:#9A8255;--text:#1B1C1E;--muted:#6A6F76;--up:#D2302C;--down:#16804A;--bgt:rgba(244,245,247,.94);}
+ html[data-theme="red"]{--bg:#1C0709;--card:#2A0D10;--card2:#361216;--line:#4E1D21;--gold:#F2C75C;--gold-dim:#B8903E;--text:#F6ECE4;--muted:#C4A69E;--up:#FF7B6B;--down:#4FD99A;--bgt:rgba(28,7,9,.94);}
  html{font-size:17px;}
  html[data-size="lg"]{font-size:19px;}
  html[data-size="xl"]{font-size:22px;}
@@ -39,7 +40,7 @@
  .dl{margin-top:30px;font-size:.82rem;color:var(--muted);line-height:2;}
  .dl a{color:var(--gold-dim);}
 </style></head><body><div class="wrap">
-<a class="back" href="../../stocks.html">← 回個股報告</a>
+<a class="back" href="../../stocks.html" onclick="if(/stocks\.html/.test(document.referrer)&&history.length>1){history.back();return false;}">← 回個股報告</a>
 <h1>技嘉（2376）券商觀點彙整</h1>
 <div class="notice">⚠ 本頁為新聞整理摘要<span>以下為本站自公開新聞逐日收錄的券商觀點紀錄，非券商原始報告、非投資建議；目標價與評等以各券商原始報告為準。</span></div>
 <div class="rec"><div class="top"><span class="d">2026-08-18</span><span class="tag">外資</span><span class="bk">美系外資（工商時報未具名）</span></div><div class="rt">評等 <b>中立（維持）</b>　目標價 <b>487(維持不變 無調整)</b></div><div class="note">見報2026/08/18 10:52 工商時報記者張佳琪；★本場次窗口內第一筆新觀點 也是技嘉四個數字中唯一維持中立者；Q2實績=上半年營收2492億元創新高年增48.3% 上半年EPS 17.73元年增92.71% Q2毛利率9.6%季減2.4個百分點年增0.2個百分點低於預期；毛利率不如預期原因=機架式AI伺服器出貨量增加以及記憶體 CPU PCB等關鍵組件成本上升；正面因子=Q2營運支出比率優於預期 反映出貨成長帶來營運效率提升 7月營收年增60%月增3%較該行預期高出18%；★調整幅度=2026-2028年淨利預期上調8%/14%/13% 營收預期上調16%/22%/30% ★營收上調幅度遠大於淨利上調幅度即為毛利率稀釋的量化證據 原文並明言營業利潤預期上調幅度小於毛利預期上調幅度 係AI伺服器研發投入所致；EPS預估上修為2026/2027/2028年30.84/36.2/41.39元；展望=8至9月營收持續成長 Q3與Q4營收保持高位 推動2026下半年營收成長15%；★同一檔同期四個數字=本則487元(中立 維持) 日系490元(買進 由422上調) 另一美系595元(買進 由480上調 08/17) FactSet共識444元(20260818進表) 最高與最低相差34.0%(本系統回算)；以鉅亨表列現價348元計算隱含空間+39.94%(本系統回算 該現價對應08/17跌停當日收盤)；風險=★四家對AI伺服器產品組合稀釋毛利率的事實認定完全一致 卻導出從中立目標價不動到上修23.96%的相反結論 差異來自營運槓桿假設 原文均未提供敏感度分析 不宜將四個數字平均 券商未具名 未載報告出具日期 未揭露目標本益比與評價年度 487元無法回算 技嘉08/17跌停08/18續跌逾1% 股價實際反應與外資正向看法背離；已做個股摘要；來源ctee 20260818700950</div></div>

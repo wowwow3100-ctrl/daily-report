@@ -48,8 +48,25 @@
     });
   }
 
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", apply);
-  else apply();
+  // ---- 營收佈告欄：有「新月份」營收時，導覽列按鈕上出現紅色「8月」小圖示；點進去看過就消失 ----
+  var REV_META = "https://raw.githubusercontent.com/wowwow3100-ctrl/daily-report/data/revenue/meta.json";
+  function revDot() {
+    var a = document.querySelector('nav.bnav a[href="revenue.html"]');
+    if (!a || /revenue\.html$/.test(location.pathname)) return;
+    fetch(REV_META).then(function (r) { return r.json(); }).then(function (m) {
+      if (!m || !m.ym) return;
+      var seen = "";
+      try { seen = localStorage.getItem("wl_rev_seen") || ""; } catch (e) {}
+      if (seen === m.ym || a.querySelector(".revdot")) return;
+      var b = document.createElement("span");
+      b.className = "revdot";
+      b.textContent = parseInt(m.ym.slice(5), 10) + "月";
+      a.appendChild(b);
+    }).catch(function () {});
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", function () { apply(); revDot(); });
+  else { apply(); revDot(); }
   // 有些區塊是資料載入後才畫出來的，稍後再補掛一次
   setTimeout(apply, 1500);
 })();

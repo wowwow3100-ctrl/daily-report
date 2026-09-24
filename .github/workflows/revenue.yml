@@ -1,0 +1,47 @@
+name: revenue-board
+# 營收佈告欄：每天抓證交所／櫃買中心每月營收彙總表，寫到 data 分支（不碰 main，推送守護不受影響）
+on:
+  schedule:
+    - cron: "20 0,6,12 * * *"   # 台北 08:20 / 14:20 / 20:20
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/revenue.yml"
+      - "tools/fetch_revenue.py"
+permissions:
+  contents: write
+concurrency:
+  group: revenue
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: src
+      - name: Prepare data branch
+        env:
+          REPO: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: |
+          if git clone --depth 1 --branch data "$REPO" data; then
+            echo "data branch exists"
+          else
+            mkdir data && cd data && git init -b data && git remote add origin "$REPO"
+          fi
+      - name: Fetch revenue
+        run: python3 src/tools/fetch_revenue.py data/revenue
+      - name: Commit
+        run: |
+          cd data
+          git config user.name "wanglai-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "no change"
+          else
+            git commit -m "revenue $(date -u +%F_%H%M)"
+            git push origin data
+          fi

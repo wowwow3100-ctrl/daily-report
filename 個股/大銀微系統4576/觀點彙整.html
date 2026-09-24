@@ -6,7 +6,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%8D%3C/text%3E%3C/svg%3E">
 <script>
 (function(){var h=document.documentElement;try{
- h.setAttribute("data-theme",localStorage.getItem("wl_theme")||"gold");
+ h.setAttribute("data-theme",(localStorage.getItem("wl_theme")||"gold").replace("navy","gold"));
  h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");
  if((localStorage.getItem("wl_view")||"auto")==="mb")h.classList.add("mob");
 }catch(e){}})();
@@ -14,7 +14,8 @@
 <style>
  :root{--bg:#0B0B0D;--card:#16161A;--card2:#1D1D23;--line:#2A2A32;--gold:#E8C15A;--gold-dim:#A98B3F;--text:#EDEAE0;--muted:#9C9889;--up:#FF5A5A;--down:#3DD68C;}
  html[data-theme="light"]{--bg:#F6F0E0;--card:#FFFFFF;--card2:#EFE7CF;--line:#DCD2B4;--gold:#7A5E17;--gold-dim:#9C8034;--text:#22381F;--muted:#5A6F58;--up:#C43D3D;--down:#1E7F4F;}
- html[data-theme="navy"]{--bg:#0C1322;--card:#141E33;--card2:#1B2946;--line:#263858;--gold:#9DC0FF;--gold-dim:#5C7FBF;--text:#E8EDF7;--muted:#8FA0BF;--up:#FF6B6B;--down:#43D69A;}
+ html[data-theme="white"]{--bg:#F4F5F7;--card:#FFFFFF;--card2:#EEF0F3;--line:#DDE1E6;--gold:#222326;--gold-dim:#9A8255;--text:#1B1C1E;--muted:#6A6F76;--up:#D2302C;--down:#16804A;--bgt:rgba(244,245,247,.94);}
+ html[data-theme="red"]{--bg:#1C0709;--card:#2A0D10;--card2:#361216;--line:#4E1D21;--gold:#F2C75C;--gold-dim:#B8903E;--text:#F6ECE4;--muted:#C4A69E;--up:#FF7B6B;--down:#4FD99A;--bgt:rgba(28,7,9,.94);}
  html{font-size:17px;}
  html[data-size="lg"]{font-size:19px;}
  html[data-size="xl"]{font-size:22px;}
@@ -39,7 +40,7 @@
  .dl{margin-top:30px;font-size:.82rem;color:var(--muted);line-height:2;}
  .dl a{color:var(--gold-dim);}
 </style></head><body><div class="wrap">
-<a class="back" href="../../stocks.html">← 回個股報告</a>
+<a class="back" href="../../stocks.html" onclick="if(/stocks\.html/.test(document.referrer)&&history.length>1){history.back();return false;}">← 回個股報告</a>
 <h1>大銀微系統（4576）券商觀點彙整</h1>
 <div class="notice">⚠ 本頁為新聞整理摘要<span>以下為本站自公開新聞逐日收錄的券商觀點紀錄，非券商原始報告、非投資建議；目標價與評等以各券商原始報告為準。</span></div>
 <div class="rec"><div class="top"><span class="d">2026-09-08</span><span class="tag">★未載</span><span class="bk">★未具名法人（工商時報權證專欄 外資/內資未載）</span></div><div class="rt">評等 <b>買進（★未載新評/調升/維持）</b>　目標價 <b>280／前值★未載</b></div><div class="note">工商時報09/08 03:00見報(權證專欄)；★來源警示=券商完全未具名 權證專欄附免責聲明 280元不宜視為正式券商目標價；★本系統首度為該檔建立個股資料夾(此前僅在09/06凱基/群益投顧營收三增方向性清單中被提及 從未有具體評等紀錄)；論點=8月營收4.27億元創歷史單月新高(月增16.35% 年增98.05% 年增接近翻倍為本則最硬證據)；利多一=半導體設備需求強勁 估今年營收年增56.7% 2027年再年增30.8% 兩年連續高成長；利多二=高精度定位平台交期已拉長至半年以上(交期拉長為設備業定價權先行指標) 後續具漲價空間；產業定位=高精度定位平台與線性馬達為半導體前段檢測與後段先進封裝設備關鍵次系統 直接受惠CoWoS/SoIC擴產與AI資本支出循環；09/07跳空上漲收247.0(+9.0 +3.78% 開250高258低245 盤中最高258創06/02以來新高 成交6096張 來源Goodinfo)回算+13.4%(本系統回算)；風險=★未載EPS與評價基礎 上檔空間僅+13.4% 在無評價依據下更像技術面整數關卡而非估值結論；★未載前值與評等異動方向 本檔「新舊目標價與券商名」已列本系統長期待補項目至今未解；營收基數極小(單月4.27億) 年增98%係自低基期跳升 設備業訂單具批次性 單月創高不等於趨勢確立需連續2-3個月驗證；交期拉長半年以上同時是產能不足訊號 若無法及時擴產訂單可能流向競爭者(THK 上銀集團內其他事業體)；與上銀(2049)同屬卓永財家族集團 關係人交易與集團內資源配置為長期治理議題 本則未觸及；流動性偏低且股價已跳空至波段新高 追價風險偏高；已做個股摘要 260908_未具名法人_大銀微系統4576.docx；來源ctee 20260908700276-439901 + goodinfo 4576</div></div>

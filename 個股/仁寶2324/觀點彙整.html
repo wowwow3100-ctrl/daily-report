@@ -6,7 +6,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%8D%3C/text%3E%3C/svg%3E">
 <script>
 (function(){var h=document.documentElement;try{
- h.setAttribute("data-theme",localStorage.getItem("wl_theme")||"gold");
+ h.setAttribute("data-theme",(localStorage.getItem("wl_theme")||"gold").replace("navy","gold"));
  h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");
  if((localStorage.getItem("wl_view")||"auto")==="mb")h.classList.add("mob");
 }catch(e){}})();
@@ -14,7 +14,8 @@
 <style>
  :root{--bg:#0B0B0D;--card:#16161A;--card2:#1D1D23;--line:#2A2A32;--gold:#E8C15A;--gold-dim:#A98B3F;--text:#EDEAE0;--muted:#9C9889;--up:#FF5A5A;--down:#3DD68C;}
  html[data-theme="light"]{--bg:#F6F0E0;--card:#FFFFFF;--card2:#EFE7CF;--line:#DCD2B4;--gold:#7A5E17;--gold-dim:#9C8034;--text:#22381F;--muted:#5A6F58;--up:#C43D3D;--down:#1E7F4F;}
- html[data-theme="navy"]{--bg:#0C1322;--card:#141E33;--card2:#1B2946;--line:#263858;--gold:#9DC0FF;--gold-dim:#5C7FBF;--text:#E8EDF7;--muted:#8FA0BF;--up:#FF6B6B;--down:#43D69A;}
+ html[data-theme="white"]{--bg:#F4F5F7;--card:#FFFFFF;--card2:#EEF0F3;--line:#DDE1E6;--gold:#222326;--gold-dim:#9A8255;--text:#1B1C1E;--muted:#6A6F76;--up:#D2302C;--down:#16804A;--bgt:rgba(244,245,247,.94);}
+ html[data-theme="red"]{--bg:#1C0709;--card:#2A0D10;--card2:#361216;--line:#4E1D21;--gold:#F2C75C;--gold-dim:#B8903E;--text:#F6ECE4;--muted:#C4A69E;--up:#FF7B6B;--down:#4FD99A;--bgt:rgba(28,7,9,.94);}
  html{font-size:17px;}
  html[data-size="lg"]{font-size:19px;}
  html[data-size="xl"]{font-size:22px;}
@@ -39,7 +40,7 @@
  .dl{margin-top:30px;font-size:.82rem;color:var(--muted);line-height:2;}
  .dl a{color:var(--gold-dim);}
 </style></head><body><div class="wrap">
-<a class="back" href="../../stocks.html">← 回個股報告</a>
+<a class="back" href="../../stocks.html" onclick="if(/stocks\.html/.test(document.referrer)&&history.length>1){history.back();return false;}">← 回個股報告</a>
 <h1>仁寶（2324）券商觀點彙整</h1>
 <div class="notice">⚠ 本頁為新聞整理摘要<span>以下為本站自公開新聞逐日收錄的券商觀點紀錄，非券商原始報告、非投資建議；目標價與評等以各券商原始報告為準。</span></div>
 <div class="rec"><div class="top"><span class="d">2026-08-20</span><span class="tag">內資</span><span class="bk">本土大型券商（工商時報／中時新聞網未具名）</span></div><div class="rt">評等 <b>買進（★由「持有」調升）</b>　目標價 <b>55(前值35 ★上調57%)</b></div><div class="note">見報2026/08/19 21:09 工商時報轉載中時新聞網記者吳美觀；★本場次最重要的一筆 也是本系統近期少見的評等與目標價同步跳升個案；★核心論點是轉型而非當期獲利=該券商認為仁寶正逐步由傳統PC代工廠轉型為AI伺服器成長股；觸發事件=Google新一代TPU供應鏈話題升溫 該券商指出仁寶極具潛力爭取美系CSP的ASIC L11組裝訂單 初期出貨比重預估約10%；Q2實績=營收2383億元季增18%年增32% EPS 0.72元優於預期；7月合併營收810.06億元月減15.49%(季底出貨高峰結束)年增38.26%創歷年同期新高 累計前7月5206.04億元年增18.82%；★伺服器營收預估為整套論述核心=2026年約900億元年增108% 2027年跳升至2888億元年增高達221%；獲利=同步上修2027年獲利預估59% EPS由2026年1.93元提高至2027年3.66元年成長89.1%；資本支出今年提高至180億元 美國及台灣新廠預計年底完工；★以55元對2027年EPS 3.66元約15.0倍(本系統回算 原文未載評價年度與目標本益比)；★對照FactSet外資共識=08/17表列40元 08/14表列35.75元符合市場(前值31元) 本次本土券商55元較08/17共識高37.5%(本系統回算) 內資明顯樂觀於外資共識；風險=★最大風險是論述支點尚未成立 原文明言潛在訂單可能在未來數周進一步確認 代表ASIC L11訂單目前只是極具潛力爭取而非已取得 建議把美系CSP的ASIC L11訂單是否確認列為單一關鍵追蹤指標 ★毛利率方向與目標價方向相反 Q2毛利率降至4.6% 該券商自估Q3仍有進一步下滑壓力可能降至4.4% 主因記憶體等零組件價格上漲壓縮PC與NB獲利空間 這是上調目標價同時下調近期毛利率的組合 ★2027年伺服器營收由900億跳至2888億(+221%)屬極高成長假設 原文未提供訂單能見度 客戶名單或分季路徑 也未做情境試算 ★評價倍數風險 15.0倍對毛利率僅4.4~4.6%的代工廠偏高 55元無法回算 ★記憶體漲價對仁寶是純成本端逆風 與同期記憶體通路商大聯大受惠方向相反 原文未做零組件價格敏感度分析 券商未具名 未載報告出具日期 本則為中時新聞網轉述非報告原文 原文附免責聲明；已做個股摘要 260820_本土大型券商_仁寶2324.docx；來源ctee 20260819701917 + cnyes ratediff</div></div>

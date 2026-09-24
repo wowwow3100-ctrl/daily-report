@@ -21,7 +21,8 @@
     --up:#FF5A5A; --down:#3DD68C; --bgt:rgba(11,11,13,.94);
   }
   html[data-theme="light"]{--bg:#F6F0E0;--card:#FFFFFF;--card2:#EFE7CF;--line:#DCD2B4;--gold:#7A5E17;--gold-dim:#9C8034;--text:#22381F;--muted:#5A6F58;--up:#C43D3D;--down:#1E7F4F;--bgt:rgba(246,240,224,.94);}
-  html[data-theme="navy"]{--bg:#0C1322;--card:#141E33;--card2:#1B2946;--line:#263858;--gold:#9DC0FF;--gold-dim:#5C7FBF;--text:#E8EDF7;--muted:#8FA0BF;--up:#FF6B6B;--down:#43D69A;--bgt:rgba(12,19,34,.94);}
+  html[data-theme="white"]{--bg:#F4F5F7;--card:#FFFFFF;--card2:#EEF0F3;--line:#DDE1E6;--gold:#222326;--gold-dim:#9A8255;--text:#1B1C1E;--muted:#6A6F76;--up:#D2302C;--down:#16804A;--bgt:rgba(244,245,247,.94);}
+ html[data-theme="red"]{--bg:#1C0709;--card:#2A0D10;--card2:#361216;--line:#4E1D21;--gold:#F2C75C;--gold-dim:#B8903E;--text:#F6ECE4;--muted:#C4A69E;--up:#FF7B6B;--down:#4FD99A;--bgt:rgba(28,7,9,.94);}
   html{font-size:17px;}
   html[data-size="lg"]{font-size:19px;}
   html[data-size="xl"]{font-size:22px;}
@@ -155,8 +156,8 @@
   html.mob .lg{width:46px;height:46px;}
   html.mob .setpanel{position:fixed;left:12px;right:12px;top:70px;white-space:normal;min-width:0;}
 </style>
-<link rel="stylesheet" href="wl-ui.css?v=4">
-<script>(function(){var h=document.documentElement;try{h.setAttribute("data-theme",localStorage.getItem("wl_theme")||"gold");h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");}catch(e){}})();</script>
+<link rel="stylesheet" href="wl-ui.css?v=5">
+<script>(function(){var h=document.documentElement;try{h.setAttribute("data-theme",(localStorage.getItem("wl_theme")||"gold").replace("navy","gold"));h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");}catch(e){}})();</script>
 </head>
 <body>
 <div class="wrap">
@@ -178,7 +179,8 @@
           <div class="setrow"><span>主題</span>
             <button class="fs-chip" data-t="gold">黑金</button>
             <button class="fs-chip" data-t="light">米白</button>
-            <button class="fs-chip" data-t="navy">深藍</button>
+            <button class="fs-chip" data-t="white">純白</button>
+              <button class="fs-chip" data-t="red">紅金</button>
           </div>
           <div class="setrow"><span>版面</span>
             <button class="fs-chip" data-v="auto">自動</button>
@@ -218,7 +220,7 @@
 </div>
 <nav class="bnav">
   <a href="index.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="13" height="15" rx="2"/><path d="M16.5 8.5h3v9a2 2 0 0 1-2 2h-1"/><path d="M7 8.5h6M7 12h6M7 15.5h3.5"/></svg></span>情報站</a>
-  <a href="reports.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1"/><path d="M3.5 4.5v4h4"/><path d="M12 7.5V12l3 2"/></svg></span>回憶過去</a>
+  <a href="revenue.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M7 15.5l3-3 2.5 2 4.5-5"/><path d="M14.5 9.5H17V12"/></svg></span>營收佈告欄</a>
   <a class="on" href="stocks.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20h17"/><rect x="5" y="12" width="3" height="5" rx=".6"/><rect x="10.5" y="7" width="3" height="10" rx=".6"/><rect x="16" y="9.5" width="3" height="7.5" rx=".6"/></svg></span>個股報告</a>
   <a href="records.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg></span>速查</a>
   <a href="wish.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.5 5.2 5.7.8-4.1 4 1 5.6L12 16.4l-5.1 2.7 1-5.6-4.1-4 5.7-.8z"/></svg></span>許願池</a>
@@ -236,7 +238,7 @@
 <div id="tour" class="ovl">
   <div class="obox">
     <div class="ot">👇 功能都在下面</div>
-    <div class="od">底部五顆按鈕切換頁面：<b>情報站</b>（每日焦點）、<b>回憶過去</b>（歷史日報）、<b>個股報告</b>、<b>速查</b>、<b>許願池</b>。<br><br>右上 <b>⚙ 設定</b> 可調字級、換主題，還能把本站加到手機主畫面變成 APP。<br><br>這個網站是為了幫大家把每天的台股資訊收斂在一起，有問題或想要的功能，歡迎到 <b>🌠 許願池</b> 留言。</div>
+    <div class="od">底部五顆按鈕切換頁面：<b>情報站</b>（每日焦點）、<b>營收佈告欄</b>（每月營收）、<b>個股報告</b>、<b>速查</b>、<b>許願池</b>（許願＋歷史日報）。<br><br>右上 <b>⚙ 設定</b> 可調字級、換主題，還能把本站加到手機主畫面變成 APP。<br><br>這個網站是為了幫大家把每天的台股資訊收斂在一起，有問題或想要的功能，歡迎到 <b>🌠 許願池</b> 留言。</div>
     <button class="obtn" onclick="tourClose()">知道了，開始看 🍍</button>
   </div>
   <div class="tarrow">⬇</div>
@@ -534,7 +536,7 @@
     grid.innerHTML = html || '<div id="status">沒有符合的個股</div>';
     var tiles=grid.querySelectorAll(".tile");
     for(var t=0;t<tiles.length;t++){(function(el){
-      el.addEventListener("click",function(){ showDetail(parseInt(el.getAttribute("data-i"),10), el); });
+      el.addEventListener("click",function(){ showDetail(parseInt(el.getAttribute("data-i"),10), el, true); });
     })(tiles[t]);}
     grid.querySelectorAll(".star").forEach(function(b){
       b.addEventListener("click",function(ev){
@@ -557,7 +559,7 @@
     })(imgs[g]);}
   }
 
-  function showDetail(idx, el){
+  function showDetail(idx, el, push){
     var s=ALL[idx];
     var tiles=grid.querySelectorAll(".tile");
     for(var t=0;t<tiles.length;t++)tiles[t].classList.remove("on");
@@ -578,7 +580,13 @@
         +(isDocx?'　<a style="font-size:.75rem;color:var(--muted);" href="'+base+encodeURIComponent(f)+'" download>⬇ Word</a>':'')+'</li>';
     }
     html+='</ul>';
-    try{ sessionStorage.setItem("wl_last_code",s.code); history.replaceState(null,"",location.pathname+"?code="+encodeURIComponent(s.code)+(curV==="watch"?"&view=watch":"")); }catch(e){}
+    // 開個股：網址記下代號。使用者點開的 → 新增一筆瀏覽紀錄，手機按「返回」會先收起個股、留在清單；再按一次才回情報站
+    try{
+      sessionStorage.setItem("wl_last_code",s.code);
+      var u=location.pathname+"?code="+encodeURIComponent(s.code)+(curV==="watch"?"&view=watch":"");
+      if(push && !/[?&]code=/.test(location.search)) history.pushState({wlc:s.code},"",u);
+      else history.replaceState({wlc:s.code},"",u);
+    }catch(e){}
     detail.innerHTML=html; detail.style.display="block";
     detail.scrollIntoView({behavior:"smooth",block:"start"});
     var wb=document.getElementById("wbtn");
@@ -635,14 +643,24 @@
     }
     if(want){
       var idx=-1; for(var k=0;k<ALL.length;k++){ if(ALL[k].code===want){ idx=k; break; } }
-      if(idx>=0){ var el=grid.querySelector('.tile[data-i="'+idx+'"]'); showDetail(idx, el); }
+      if(idx>=0){ var el=grid.querySelector('.tile[data-i="'+idx+'"]'); showDetail(idx, el, !qs.get("code")); }
     }
     window.addEventListener("storage",function(e){ if(e.key==="wl_watch") render(); });
+    // 返回鍵：網址沒有 code 了 → 收起個股詳情，捲回剛剛那顆圖磚，清單保持原樣不重畫
+    window.addEventListener("popstate",function(){
+      var c=new URLSearchParams(location.search).get("code");
+      if(c){
+        for(var k=0;k<ALL.length;k++){ if(ALL[k].code===c){ showDetail(k, grid.querySelector('.tile[data-i="'+k+'"]'), false); return; } }
+      }
+      var on=grid.querySelector(".tile.on");
+      detail.style.display="none";
+      if(on){ on.classList.remove("on"); on.scrollIntoView({block:"center"}); }
+    });
   }).catch(function(e){
     grid.innerHTML='<div id="status">資料檔尚未上傳（stocks.json）。請旺來大大執行「4_首次上傳個股資料.bat」。</div>';
   });
 })();
 </script>
-<script src="wl-new.js?v=1"></script>
+<script src="wl-new.js?v=2"></script>
 </body>
 </html>

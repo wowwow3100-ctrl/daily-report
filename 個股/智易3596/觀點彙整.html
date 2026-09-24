@@ -6,7 +6,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%8D%3C/text%3E%3C/svg%3E">
 <script>
 (function(){var h=document.documentElement;try{
- h.setAttribute("data-theme",localStorage.getItem("wl_theme")||"gold");
+ h.setAttribute("data-theme",(localStorage.getItem("wl_theme")||"gold").replace("navy","gold"));
  h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");
  if((localStorage.getItem("wl_view")||"auto")==="mb")h.classList.add("mob");
 }catch(e){}})();
@@ -14,7 +14,8 @@
 <style>
  :root{--bg:#0B0B0D;--card:#16161A;--card2:#1D1D23;--line:#2A2A32;--gold:#E8C15A;--gold-dim:#A98B3F;--text:#EDEAE0;--muted:#9C9889;--up:#FF5A5A;--down:#3DD68C;}
  html[data-theme="light"]{--bg:#F6F0E0;--card:#FFFFFF;--card2:#EFE7CF;--line:#DCD2B4;--gold:#7A5E17;--gold-dim:#9C8034;--text:#22381F;--muted:#5A6F58;--up:#C43D3D;--down:#1E7F4F;}
- html[data-theme="navy"]{--bg:#0C1322;--card:#141E33;--card2:#1B2946;--line:#263858;--gold:#9DC0FF;--gold-dim:#5C7FBF;--text:#E8EDF7;--muted:#8FA0BF;--up:#FF6B6B;--down:#43D69A;}
+ html[data-theme="white"]{--bg:#F4F5F7;--card:#FFFFFF;--card2:#EEF0F3;--line:#DDE1E6;--gold:#222326;--gold-dim:#9A8255;--text:#1B1C1E;--muted:#6A6F76;--up:#D2302C;--down:#16804A;--bgt:rgba(244,245,247,.94);}
+ html[data-theme="red"]{--bg:#1C0709;--card:#2A0D10;--card2:#361216;--line:#4E1D21;--gold:#F2C75C;--gold-dim:#B8903E;--text:#F6ECE4;--muted:#C4A69E;--up:#FF7B6B;--down:#4FD99A;--bgt:rgba(28,7,9,.94);}
  html{font-size:17px;}
  html[data-size="lg"]{font-size:19px;}
  html[data-size="xl"]{font-size:22px;}
@@ -39,7 +40,7 @@
  .dl{margin-top:30px;font-size:.82rem;color:var(--muted);line-height:2;}
  .dl a{color:var(--gold-dim);}
 </style></head><body><div class="wrap">
-<a class="back" href="../../stocks.html">← 回個股報告</a>
+<a class="back" href="../../stocks.html" onclick="if(/stocks\.html/.test(document.referrer)&&history.length>1){history.back();return false;}">← 回個股報告</a>
 <h1>智易（3596）券商觀點彙整</h1>
 <div class="notice">⚠ 本頁為新聞整理摘要<span>以下為本站自公開新聞逐日收錄的券商觀點紀錄，非券商原始報告、非投資建議；目標價與評等以各券商原始報告為準。</span></div>
 <div class="rec"><div class="top"><span class="d">2026-08-19</span><span class="tag">外資</span><span class="bk">FactSet外資共識（鉅亨網外資評等表 評等日20260818 補收錄）</span></div><div class="rt">評等 <b>強力買進</b>　目標價 <b>232.5(前值240 下修3.13%)</b></div><div class="note">★本筆為08/18盤後場次遺漏之補收錄 該場次僅記錄力旺 旺矽 智邦 技嘉 6472五檔 實際該評等日尚有智易與長榮兩筆 已於本場次關閉此缺口；★強力買進搭配目標價下修3.13% 屬幅度輕微的技術性調整而非觀點轉向 建議視為約235±10元區間；強力買進為FactSet共識評等分級中的最高等級 在本系統近期收錄的共識紀錄中出現頻率不高；表列現價160元 隱含+45.31%(本系統回算) 為08/18評等日該批進表個股中的中上水準(旺矽+61.29%最高 6472 +22.00%最低)；風險=★FactSet為共識統計非單一機構報告 無論述 無EPS預估 無目標本益比 無評價年度 無涵蓋分析師家數 完全無法回算驗證 ★共識價會平滑掉離群值 穩定不等於可靠而是分歧被隱藏 ★表列現價對應前一交易日收盤 實際空間須以最新股價重算 ★本系統對智易並無既有的個別券商紀錄 此為首度收錄的共識序列 無序列可供趨勢判斷；已做個股摘要 260819_FactSet外資共識_智易3596.docx；來源cnyes ratediff</div></div>

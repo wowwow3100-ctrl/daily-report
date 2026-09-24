@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-size="std" data-theme="gold">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>旺來 營收佈告欄｜上市櫃每月營收</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%8D%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="旺來 營收佈告欄｜上市櫃每月營收排行">
+<meta property="og:description" content="每月營收公布後自動整理：年增、月增、累計、產業熱度、自選股營收。資料來自證交所與櫃買中心，新聞整理用途，非投資建議。">
+<meta property="og:image" content="https://wowwow3100-ctrl.github.io/daily-report/login-logo.png">
+<meta property="og:url" content="https://wowwow3100-ctrl.github.io/daily-report/revenue.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0B0B0D">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+  :root{
+    --bg:#0B0B0D; --card:#16161A; --card2:#1D1D23; --line:#2A2A32;
+    --gold:#E8C15A; --gold-dim:#A98B3F; --text:#EDEAE0; --muted:#9C9889;
+    --up:#FF5A5A; --down:#3DD68C; --bgt:rgba(11,11,13,.94);
+  }
+  html[data-theme="light"]{--bg:#F6F0E0;--card:#FFFFFF;--card2:#EFE7CF;--line:#DCD2B4;--gold:#7A5E17;--gold-dim:#9C8034;--text:#22381F;--muted:#5A6F58;--up:#C43D3D;--down:#1E7F4F;--bgt:rgba(246,240,224,.94);}
+  html[data-theme="white"]{--bg:#F4F5F7;--card:#FFFFFF;--card2:#EEF0F3;--line:#DDE1E6;--gold:#222326;--gold-dim:#9A8255;--text:#1B1C1E;--muted:#6A6F76;--up:#D2302C;--down:#16804A;--bgt:rgba(244,245,247,.94);}
+ html[data-theme="red"]{--bg:#1C0709;--card:#2A0D10;--card2:#361216;--line:#4E1D21;--gold:#F2C75C;--gold-dim:#B8903E;--text:#F6ECE4;--muted:#C4A69E;--up:#FF7B6B;--down:#4FD99A;--bgt:rgba(28,7,9,.94);}
+  html{font-size:17px;}
+  html[data-size="lg"]{font-size:19px;}
+  html[data-size="xl"]{font-size:22px;}
+  html[data-size="elder"]{font-size:27px;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;line-height:1.7;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 60px;}
+  header{padding:30px 0 8px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .logo{font-size:1.8rem;font-weight:900;color:var(--gold);letter-spacing:2px;}
+  .brand{width:46px;height:46px;border-radius:50%;vertical-align:middle;}
+  .logo small{font-size:.8rem;color:var(--muted);font-weight:400;letter-spacing:1px;margin-left:10px;}
+  .applink{font-size:.8rem;color:var(--gold-dim);text-decoration:none;border:1px solid var(--gold-dim);border-radius:20px;padding:3px 14px;white-space:nowrap;}
+  .applink:hover{color:var(--gold);border-color:var(--gold);}
+  .head-right{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
+  .fs-box{display:flex;gap:6px;align-items:center;}
+  .fs-label{color:var(--muted);font-size:.75rem;}
+  .fs-chip{cursor:pointer;border:1px solid var(--gold-dim);color:var(--gold-dim);background:none;
+    border-radius:16px;padding:2px 12px;font-size:.8rem;font-family:inherit;}
+  .fs-chip.on{background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:700;}
+  .setwrap{position:relative;}
+  .setbtn{cursor:pointer;border-radius:22px;border:1px solid var(--gold-dim);padding:8px 16px;
+    background:var(--card);color:var(--gold);font-size:.95rem;font-weight:700;font-family:inherit;white-space:nowrap;}
+  .setbtn:hover{border-color:var(--gold);}
+  nav.pnav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px;}
+  nav.pnav a{color:var(--gold-dim);text-decoration:none;font-size:.9rem;font-weight:700;
+    border:1px solid var(--gold-dim);border-radius:20px;padding:5px 16px;white-space:nowrap;}
+  nav.pnav a.on{background:var(--gold);color:var(--bg);border-color:var(--gold);}
+  nav.pnav a:hover{color:var(--gold);border-color:var(--gold);}
+  nav.pnav a.on:hover{color:var(--bg);}
+  .setpanel{position:absolute;right:0;top:54px;background:var(--card);border:1px solid var(--gold-dim);
+    border-radius:12px;padding:12px 16px;display:none;z-index:99;box-shadow:0 10px 30px rgba(0,0,0,.45);white-space:nowrap;}
+  .setpanel.open{display:block;}
+  .setrow{display:flex;gap:6px;align-items:center;margin:6px 0;}
+  .setrow>span{color:var(--muted);font-size:.75rem;margin-right:4px;}
+  .notice{
+    margin:16px 0 20px;padding:12px 18px;border:1px solid var(--gold-dim);
+    background:linear-gradient(90deg,rgba(232,193,90,.10),rgba(232,193,90,.02));
+    border-radius:8px;color:var(--gold);font-size:.95rem;font-weight:700;letter-spacing:.5px;
+  }
+  .notice span{color:var(--muted);font-weight:400;display:block;font-size:.8rem;margin-top:2px;}
+  .searchbar{position:sticky;top:0;z-index:50;background:var(--bgt);backdrop-filter:blur(4px);
+    padding:12px 0;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  #q{flex:1;min-width:220px;background:var(--card);border:1px solid var(--gold-dim);color:var(--text);
+    border-radius:24px;padding:9px 18px;font-size:1rem;font-family:inherit;outline:none;}
+  #q:focus{border-color:var(--gold);}
+  .flt{cursor:pointer;border:1px solid var(--line);color:var(--muted);background:var(--card);
+    border-radius:16px;padding:3px 14px;font-size:.82rem;font-family:inherit;}
+  .flt.on{background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:700;}
+  #count{color:var(--muted);font-size:.82rem;white-space:nowrap;}
+  .rec{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:10px;}
+  .rec .top{display:flex;gap:8px;flex-wrap:wrap;align-items:baseline;}
+  .rec .d{color:var(--gold);font-weight:800;font-size:.9rem;white-space:nowrap;}
+  .rec .stock{font-weight:700;font-size:1.02rem;}
+  .rec .broker{color:var(--muted);font-size:.85rem;}
+  .tag{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;border:1px solid var(--gold-dim);color:var(--gold);white-space:nowrap;}
+  .rec .rt{margin-top:4px;font-size:.9rem;}
+  .rec .rt b{color:var(--gold);}
+  .rec .note{color:var(--muted);font-size:.85rem;margin-top:5px;word-break:break-word;}
+  .rec .note a{color:var(--gold-dim);text-decoration:none;border-bottom:1px dotted var(--gold-dim);}
+  .rec .note a:hover{color:var(--gold);}
+  .up{color:var(--up);font-weight:700;} .muted{color:var(--muted);}
+  #more{display:block;margin:18px auto;background:none;border:1px solid var(--gold-dim);color:var(--gold);
+    border-radius:24px;padding:8px 30px;font-size:.9rem;font-family:inherit;cursor:pointer;}
+  #status{color:var(--muted);text-align:center;padding:30px 0;}
+  footer{margin-top:44px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.8rem;line-height:2;}
+  footer b{color:var(--gold);}
+  .thbtn{display:inline-flex;align-items:center;gap:8px;margin:2px 0 10px;padding:8px 18px;border:1px solid var(--gold-dim);
+    border-radius:22px;color:var(--gold);text-decoration:none;font-weight:800;font-size:.9rem;background:var(--card);letter-spacing:1px;}
+  .thbtn:hover{border-color:var(--gold);}
+  .thbtn .at{font-size:1.1rem;font-weight:900;}
+  .nok{cursor:pointer;margin-top:8px;border:1px solid var(--gold-dim);background:none;color:var(--gold);
+    border-radius:16px;padding:3px 16px;font-size:.8rem;font-family:inherit;font-weight:700;display:block;}
+  .nok:hover{border-color:var(--gold);}
+  .notice.mini{padding:6px 14px;font-size:.78rem;cursor:pointer;margin:12px 0 14px;}
+  .notice.mini span,.notice.mini .nok{display:none;}
+  .notice.mini::after{content:"．非投資建議（點我看完整說明）";color:var(--muted);font-weight:400;}
+  body{padding-bottom:86px;}
+  nav.bnav{position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--bgt);backdrop-filter:blur(8px);
+    border-top:1px solid var(--line);display:flex;justify-content:center;gap:2px;
+    padding:6px 6px calc(8px + env(safe-area-inset-bottom));}
+  nav.bnav a{flex:1;max-width:120px;display:flex;flex-direction:column;align-items:center;gap:1px;
+    color:var(--muted);text-decoration:none;font-size:.7rem;letter-spacing:1px;font-weight:700;border-radius:12px;padding:3px 0;white-space:nowrap;}
+  nav.bnav a .ic{font-size:1.3rem;line-height:1.25;}
+  nav.bnav a.on{color:var(--gold);background:rgba(232,193,90,.10);}
+  .ovl{display:none;position:fixed;inset:0;background:rgba(0,0,0,.74);align-items:center;justify-content:center;padding:20px;}
+  #iab{z-index:200;}
+  #tour{z-index:80;}
+  .obox{background:var(--card);border:1px solid var(--gold);border-radius:16px;padding:24px 22px;max-width:340px;width:100%;text-align:center;}
+  .ot{color:var(--gold);font-weight:900;font-size:1.1rem;letter-spacing:1px;}
+  .od{color:var(--muted);font-size:.85rem;margin:10px 0 14px;text-align:left;}
+  .od b{color:var(--gold);}
+  .obtn{display:block;width:100%;margin:8px 0;cursor:pointer;border:none;border-radius:24px;padding:10px 0;
+    font-size:.95rem;font-weight:900;font-family:inherit;background:var(--gold);color:var(--bg);}
+  .obtn.o2{background:none;border:1px solid var(--gold-dim);color:var(--gold);}
+  .ohint{color:var(--muted);font-size:.75rem;min-height:1.2em;}
+  .olink{background:none;border:none;color:var(--muted);font-size:.8rem;cursor:pointer;margin-top:6px;font-family:inherit;text-decoration:underline;}
+  .tarrow{position:fixed;bottom:66px;left:50%;font-size:2rem;z-index:85;animation:tb .9s infinite alternate;}
+  @keyframes tb{from{transform:translate(-50%,0);}to{transform:translate(-50%,10px);}}
+  @media (max-width:720px){
+    .wrap{padding:0 12px 40px;}
+    header{padding-top:16px;gap:8px;}
+    .logo{font-size:1.4rem;}
+    .applink{font-size:.72rem;padding:2px 10px;}
+    .head-right{width:100%;flex-direction:row;justify-content:flex-end;align-items:center;}
+    .rec{padding:12px 14px;}
+    .setpanel{position:fixed;left:12px;right:12px;top:70px;white-space:normal;min-width:0;}
+  }
+  /* 強制手機版（設定 > 版面 > 手機版） */
+  html.mob .wrap{padding:0 12px 40px;max-width:540px;}
+  html.mob header{padding-top:16px;gap:8px;}
+  html.mob .logo{font-size:1.4rem;}
+  html.mob .head-right{width:100%;flex-direction:row;justify-content:flex-end;align-items:center;}
+  html.mob .rec{padding:12px 14px;}
+  html.mob .setpanel{position:fixed;left:12px;right:12px;top:70px;white-space:normal;min-width:0;}
+  /* ===== 營收佈告欄 ===== */
+  .rvhero{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:4px 0 14px;}
+  .rvhero .ym{font-size:1.5rem;font-weight:900;color:var(--gold);letter-spacing:2px;}
+  .rvhero .ym small{font-size:.8rem;color:var(--muted);font-weight:500;letter-spacing:1px;margin-left:8px;}
+  .rvhero .sub{color:var(--muted);font-size:.8rem;margin-top:2px;}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px;}
+  .kpi{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;}
+  .kpi .k{color:var(--muted);font-size:.72rem;letter-spacing:1px;}
+  .kpi .v{font-size:1.25rem;font-weight:900;font-variant-numeric:tabular-nums;}
+  .kpi .v small{font-size:.7rem;color:var(--muted);font-weight:500;margin-left:3px;}
+  .breadth{height:8px;border-radius:99px;background:var(--down);overflow:hidden;margin-top:12px;display:flex;}
+  .breadth i{display:block;height:100%;background:var(--up);}
+  .breadth-l{display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted);margin-top:4px;}
+  .mchips{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;}
+  .indbox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:14px;}
+  .indbox summary{cursor:pointer;font-weight:800;color:var(--gold);letter-spacing:1px;list-style:none;}
+  .indbox summary::-webkit-details-marker{display:none;}
+  .indbox summary .muted{font-weight:400;font-size:.75rem;letter-spacing:0;margin-left:6px;}
+  .indrow{display:grid;grid-template-columns:7.5em 1fr 4.6em;gap:10px;align-items:center;font-size:.85rem;margin:6px 0;cursor:pointer;}
+  .indrow:hover .inm{color:var(--gold);}
+  .indrow .inm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .ibar{height:8px;border-radius:99px;background:var(--card2);position:relative;overflow:hidden;}
+  .ibar i{position:absolute;top:0;bottom:0;border-radius:99px;}
+  .ipct{text-align:right;font-weight:800;font-variant-numeric:tabular-nums;}
+  .rvbar{position:sticky;top:0;z-index:50;background:var(--bgt);backdrop-filter:blur(6px);padding:10px 0 8px;}
+  .rtabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:6px;}
+  .rtabs::-webkit-scrollbar{display:none;}
+  .rtabs .flt{white-space:nowrap;font-size:.86rem;padding:5px 14px;}
+  .rfil{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+  .rfil select,.rfil input{background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:18px;
+    padding:5px 12px;font-size:.82rem;font-family:inherit;outline:none;}
+  .rfil input{flex:1;min-width:150px;}
+  .rfil select:focus,.rfil input:focus{border-color:var(--gold);}
+  .rhint{color:var(--muted);font-size:.75rem;margin:4px 2px 8px;}
+  .rv{display:grid;grid-template-columns:2.2em minmax(0,1.6fr) 1fr 1.25fr .9fr .9fr;gap:10px;align-items:center;
+    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-bottom:8px;cursor:pointer;}
+  .rv:hover{border-color:var(--gold-dim);}
+  .rv.hd{background:none;border:none;cursor:default;padding:0 14px 2px;color:var(--muted);font-size:.72rem;letter-spacing:1px;}
+  .rv .rk{color:var(--gold);font-weight:900;font-variant-numeric:tabular-nums;text-align:center;}
+  .rv .nm{min-width:0;}
+  .rv .nm b{font-size:1rem;}
+  .rv .nm .cd{color:var(--muted);font-size:.78rem;margin-left:4px;font-variant-numeric:tabular-nums;}
+  .rv .nm .in{display:block;color:var(--muted);font-size:.72rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .rv .nm .st{color:var(--gold);margin-left:4px;font-size:.8rem;}
+  .rv .nm .hi{display:inline-block;margin-left:5px;padding:0 6px;border-radius:99px;font-size:.62rem;font-weight:900;
+    border:1px solid var(--up);color:var(--up);vertical-align:1px;}
+  .rv .nm .op{display:inline-block;margin-left:5px;padding:0 6px;border-radius:99px;font-size:.62rem;
+    border:1px solid var(--gold-dim);color:var(--gold);vertical-align:1px;}
+  .rv .amt{font-weight:800;font-variant-numeric:tabular-nums;text-align:right;}
+  .rv .pc{font-weight:800;font-variant-numeric:tabular-nums;text-align:right;}
+  .rv .yo{display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
+  .rv .yo .ibar{width:100%;height:5px;}
+  .rv .lb{display:none;color:var(--muted);font-size:.68rem;font-weight:400;margin-right:3px;}
+  .rv .memo{grid-column:2/-1;color:var(--muted);font-size:.74rem;margin-top:-4px;}
+  .dn{color:var(--down);font-weight:700;} .zero{color:var(--muted);}
+  #more{display:block;margin:18px auto;}
+  @media (max-width:720px){
+    .kpis{grid-template-columns:repeat(2,1fr);}
+    .rv{grid-template-columns:1.8em minmax(0,1fr) auto;row-gap:2px;padding:10px 12px;}
+    .rv.hd{display:none;}
+    .rv .amt{grid-column:3;grid-row:1;}
+    .rv .yo{grid-column:2/-1;grid-row:2;flex-direction:row;align-items:center;justify-content:flex-start;gap:8px;}
+    .rv .yo .ibar{width:70px;}
+    .rv .mo,.rv .cu{grid-row:3;text-align:left;font-size:.82rem;}
+    .rv .mo{grid-column:2;} .rv .cu{grid-column:3;}
+    .rv .lb{display:inline;}
+    .indrow{grid-template-columns:6.2em 1fr 4.2em;}
+  }
+  html.mob .kpis{grid-template-columns:repeat(2,1fr);}
+  html.mob .rv{grid-template-columns:1.8em minmax(0,1fr) auto;row-gap:2px;padding:10px 12px;}
+  html.mob .rv.hd{display:none;}
+  html.mob .rv .amt{grid-column:3;grid-row:1;}
+  html.mob .rv .yo{grid-column:2/-1;grid-row:2;flex-direction:row;align-items:center;justify-content:flex-start;gap:8px;}
+  html.mob .rv .yo .ibar{width:70px;}
+  html.mob .rv .mo,html.mob .rv .cu{grid-row:3;text-align:left;font-size:.82rem;}
+  html.mob .rv .mo{grid-column:2;} html.mob .rv .cu{grid-column:3;}
+  html.mob .rv .lb{display:inline;}
+</style>
+<link rel="stylesheet" href="wl-ui.css?v=5">
+<script>(function(){var h=document.documentElement;try{h.setAttribute("data-theme",(localStorage.getItem("wl_theme")||"gold").replace("navy","gold"));h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");}catch(e){}})();</script>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <img class="brand" src="login-logo.png" alt="旺來">
+    <div class="logo">旺來<small>營收佈告欄</small></div>
+    <div class="head-right">
+      <div class="oline">🟢 線上 <b id="olnum">4</b> 人<span id="vwrap">｜累計瀏覽 <span id="views">—</span></span></div>
+      <div class="setwrap">
+        <button class="setbtn" id="setbtn" title="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
+        <div class="setpanel" id="setpanel">
+          <div class="setrow"><span>字級</span>
+            <button class="fs-chip" data-s="std">標準</button>
+            <button class="fs-chip" data-s="lg">大</button>
+            <button class="fs-chip" data-s="xl">特大</button>
+            <button class="fs-chip" data-s="elder">我是長輩</button>
+          </div>
+          <div class="setrow"><span>主題</span>
+            <button class="fs-chip" data-t="gold">黑金</button>
+            <button class="fs-chip" data-t="light">米白</button>
+            <button class="fs-chip" data-t="white">純白</button>
+              <button class="fs-chip" data-t="red">紅金</button>
+          </div>
+          <div class="setrow"><span>版面</span>
+            <button class="fs-chip" data-v="auto">自動</button>
+            <button class="fs-chip" data-v="pc">電腦版</button>
+            <button class="fs-chip" data-v="mb">手機版</button>
+          </div>
+          <div class="setrow"><span>安裝</span>
+            <button class="fs-chip" id="a2hs">📲 加到主畫面 / 桌面</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="notice" id="notice">
+    ⚠ 本站為新聞整理用途
+    <span>營收數字取自證交所、櫃買中心公開的「上市／上櫃公司每月營業收入彙總表」，每天自動更新；僅整理排序供資訊參考，非投資建議，也不代表任何個股的好壞判斷。實際數字以公開資訊觀測站為準。</span>
+    <button class="nok" id="nok">知道了 ✓（之後縮成一行）</button>
+  </div>
+
+  <div class="rvhero" id="hero"><div id="status">營收資料載入中…</div></div>
+
+  <details class="indbox" id="indbox" open style="display:none">
+    <summary>產業營收熱度<span class="muted">（同產業合計營收的年增率，點產業只看該產業）</span></summary>
+    <div id="indlist"></div>
+  </details>
+
+  <div class="rvbar">
+    <div class="rtabs" id="rtabs">
+      <button class="flt on" data-k="yoy">年增榜</button>
+      <button class="flt" data-k="mom">月增榜</button>
+      <button class="flt" data-k="cum">累計年增榜</button>
+      <button class="flt" data-k="big">營收規模榜</button>
+      <button class="flt" data-k="high" id="tabHigh" style="display:none">近 12 月新高</button>
+      <button class="flt" data-k="drop">年減最多</button>
+      <button class="flt" data-k="watch">我的自選</button>
+    </div>
+    <div class="rfil">
+      <select id="fMkt" aria-label="市場"><option value="">上市＋上櫃</option><option value="L">只看上市</option><option value="O">只看上櫃</option></select>
+      <select id="fSize" aria-label="月營收規模">
+        <option value="100000">月營收 1 億以上</option>
+        <option value="1000000">月營收 10 億以上</option>
+        <option value="10000000">月營收 100 億以上</option>
+        <option value="0">不限規模</option>
+      </select>
+      <select id="fInd" aria-label="產業"><option value="">全部產業</option></select>
+      <input id="q" type="search" placeholder="搜尋股名或代號">
+    </div>
+  </div>
+  <div class="rhint" id="rhint"></div>
+  <div id="list"></div>
+  <button id="more" class="flt" style="display:none;">再看 50 檔</button>
+
+
+  <footer>
+    <a class="thbtn" href="https://www.threads.com/@wowwow31001" target="_blank" rel="noopener"><span class="at">＠</span>追蹤旺來的脆 wowwow31001</a><br>
+    <b>旺來 @wowwow31001</b>｜本頁營收數字取自證交所、櫃買中心公開資料，非投資建議，不構成任何有價證券之買賣要約或訊號。<br>
+    資料每天自動更新，實際數字以公開資訊觀測站為準。
+  </footer>
+
+</div>
+<nav class="bnav">
+  <a href="index.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="13" height="15" rx="2"/><path d="M16.5 8.5h3v9a2 2 0 0 1-2 2h-1"/><path d="M7 8.5h6M7 12h6M7 15.5h3.5"/></svg></span>情報站</a>
+  <a class="on" href="revenue.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M7 15.5l3-3 2.5 2 4.5-5"/><path d="M14.5 9.5H17V12"/></svg></span>營收佈告欄</a>
+  <a href="stocks.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20h17"/><rect x="5" y="12" width="3" height="5" rx=".6"/><rect x="10.5" y="7" width="3" height="10" rx=".6"/><rect x="16" y="9.5" width="3" height="7.5" rx=".6"/></svg></span>個股報告</a>
+  <a href="records.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg></span>速查</a>
+  <a href="wish.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.5 5.2 5.7.8-4.1 4 1 5.6L12 16.4l-5.1 2.7 1-5.6-4.1-4 5.7-.8z"/></svg></span>許願池</a>
+</nav>
+<div id="iab" class="ovl">
+  <div class="obox">
+    <div class="ot">🍍 建議用瀏覽器開啟</div>
+    <div class="od">你正透過 App 內建視窗（FB／IG／Threads／Line）瀏覽，<b>加到主畫面</b>與偏好記憶等功能會失效。用預設瀏覽器體驗最完整。</div>
+    <button class="obtn" onclick="iabGo()">🚀 用預設瀏覽器開啟</button>
+    <button class="obtn o2" onclick="iabCopy()">📋 複製網址</button>
+    <div class="ohint" id="iabHint"></div>
+    <button class="olink" onclick="iabClose()">先繼續看就好</button>
+  </div>
+</div>
+<div id="tour" class="ovl">
+  <div class="obox">
+    <div class="ot">👇 功能都在下面</div>
+    <div class="od">底部五顆按鈕切換頁面：<b>情報站</b>（每日焦點）、<b>營收佈告欄</b>（每月營收）、<b>個股報告</b>、<b>速查</b>、<b>許願池</b>（許願＋歷史日報）。<br><br>右上 <b>⚙ 設定</b> 可調字級、換主題，還能把本站加到手機主畫面變成 APP。<br><br>這個網站是為了幫大家把每天的台股資訊收斂在一起，有問題或想要的功能，歡迎到 <b>🌠 許願池</b> 留言。</div>
+    <button class="obtn" onclick="tourClose()">知道了，開始看 🍍</button>
+  </div>
+  <div class="tarrow">⬇</div>
+</div>
+<script src="wl-watch.js?v=1"></script>
+<script>
+(function(){
+  // ---- font size ----
+  var KEY="wl_fs";
+  function applyFs(s){
+    document.documentElement.setAttribute("data-size", s);
+    var chips=document.querySelectorAll(".fs-chip[data-s]");
+    for(var i=0;i<chips.length;i++){chips[i].classList.toggle("on",chips[i].getAttribute("data-s")===s);}
+  }
+  var saved="std"; try{saved=localStorage.getItem(KEY)||"std";}catch(e){}
+  applyFs(saved);
+  var fsChips=document.querySelectorAll(".fs-chip[data-s]");
+  for(var i=0;i<fsChips.length;i++){(function(b){b.addEventListener("click",function(){
+    var s=b.getAttribute("data-s"); try{localStorage.setItem(KEY,s);}catch(e){} applyFs(s);
+  });})(fsChips[i]);}
+
+  // ---- theme ----
+  var TK="wl_theme";
+  function applyTh(t){
+    document.documentElement.setAttribute("data-theme", t);
+    var c=document.querySelectorAll(".fs-chip[data-t]");
+    for(var i=0;i<c.length;i++){c[i].classList.toggle("on",c[i].getAttribute("data-t")===t);}
+  }
+  var st="gold"; try{st=localStorage.getItem(TK)||"gold";}catch(e){}
+  applyTh(st);
+  var thChips=document.querySelectorAll(".fs-chip[data-t]");
+  for(var i=0;i<thChips.length;i++){(function(b){b.addEventListener("click",function(){
+    var t=b.getAttribute("data-t"); try{localStorage.setItem(TK,t);}catch(e){} applyTh(t);
+  });})(thChips[i]);}
+
+  // ---- PWA 啟動導向：從主畫面開啟一律先到情報站 ----
+  try{
+    var sa=(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches)||window.navigator.standalone;
+    if(sa && !sessionStorage.getItem("wl_nav") && !/index\.html$|\/daily-report\/?$/.test(location.pathname)){
+      sessionStorage.setItem("wl_nav","1"); location.replace("index.html");
+    }
+    sessionStorage.setItem("wl_nav","1");
+  }catch(e){}
+  // ---- App 內建瀏覽器偵測 + 引導外開 ----
+  function iabDetect(){var ua=navigator.userAgent||"";return /FBAN|FBAV|FB_IAB|FBIOS|MESSENGER|Instagram|Threads|Barcelona|\bLine\/|\bLINE\b|MicroMessenger/i.test(ua);}
+  window.iabGo=function(){
+    var ua=navigator.userAgent||"";
+    if(/iPhone|iPad|iPod/i.test(ua)){ location.href="x-safari-"+location.href; }
+    else{
+      var fb=encodeURIComponent(location.href);
+      location.href="intent://"+location.host+location.pathname+location.search+"#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url="+fb+";end";
+    }
+    setTimeout(function(){var h=document.getElementById("iabHint");if(h)h.textContent="若沒自動跳轉，點右上「⋯」選「用外部瀏覽器開啟」，或用「複製網址」";},1300);
+  };
+  window.iabCopy=function(){
+    var url=location.href, h=document.getElementById("iabHint");
+    function done(){if(h)h.textContent="✅ 已複製！貼到 Chrome / Safari 網址列即可";}
+    function fb(){var t=document.createElement("textarea");t.value=url;t.setAttribute("readonly","");t.style.position="fixed";t.style.opacity="0";
+      document.body.appendChild(t);t.select();try{document.execCommand("copy");done();}catch(e){}document.body.removeChild(t);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(fb);}else{fb();}
+  };
+  window.iabClose=function(){document.getElementById("iab").style.display="none";try{sessionStorage.setItem("wl_iab","1");}catch(e){}};
+  var iabShown=false;
+  try{
+    if(iabDetect()&&!sessionStorage.getItem("wl_iab")){document.getElementById("iab").style.display="flex";iabShown=true;}
+  }catch(e){}
+  // ---- 首次進站導覽（一次性） ----
+  window.tourClose=function(){document.getElementById("tour").style.display="none";try{localStorage.setItem("wl_tour","1");}catch(e){}};
+  try{
+    if(!iabShown&&!localStorage.getItem("wl_tour")){document.getElementById("tour").style.display="flex";}
+  }catch(e){}
+  // ---- 聲明列：知道了 → 縮成一行 ----
+  var nt=document.getElementById("notice"), nok=document.getElementById("nok");
+  if(nt){
+    try{ if(localStorage.getItem("wl_notice")==="1") nt.classList.add("mini"); }catch(e){}
+    if(nok) nok.addEventListener("click",function(e){
+      e.stopPropagation();
+      try{ localStorage.setItem("wl_notice","1"); }catch(err){}
+      nt.classList.add("mini");
+    });
+    nt.addEventListener("click",function(){ if(nt.classList.contains("mini")) nt.classList.remove("mini"); });
+  }
+  // ---- PWA：加到主畫面 + 匿名埋點（給旺來後台看安裝數/瀏覽數） ----
+  var API_T="https://web-production-e1521.up.railway.app";
+  var vid="";
+  try{
+    vid=localStorage.getItem("wl_vid")||"";
+    if(!vid){vid="v"+Date.now().toString(36)+Math.random().toString(36).slice(2,10);localStorage.setItem("wl_vid",vid);}
+  }catch(e){}
+  function wlTrack(n){
+    try{
+      fetch(API_T+"/api/site/track",{method:"POST",keepalive:true,
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({name:n,page:(location.pathname.split("/").pop()||"index.html"),visitor_id:vid})});
+    }catch(e){}
+  }
+  wlTrack("pageview");
+  if("serviceWorker" in navigator){ try{ navigator.serviceWorker.register("sw.js"); }catch(e){} }
+  var dfp=null;
+  window.addEventListener("beforeinstallprompt",function(e){ e.preventDefault(); dfp=e; });
+  window.addEventListener("appinstalled",function(){ wlTrack("install_done"); });
+  var a2=document.getElementById("a2hs");
+  if(a2) a2.addEventListener("click",function(){
+    wlTrack("install_click");
+    if(dfp){ dfp.prompt(); dfp=null; }
+    else{
+      alert("iPhone：用 Safari 開本站 → 點下方「分享」→「加入主畫面」\nAndroid：用 Chrome 開本站 → 右上「⋮」→「加到主畫面」\n電腦：網址列右側的安裝圖示");
+    }
+  });
+  // ---- 版面切換（自動/電腦/手機） ----
+  var VK="wl_view", vmeta=document.querySelector('meta[name="viewport"]');
+  function applyV(v){
+    if(vmeta) vmeta.setAttribute("content", v==="pc" ? "width=1100" : "width=device-width, initial-scale=1.0");
+    document.documentElement.classList.toggle("mob", v==="mb");
+    var c=document.querySelectorAll(".fs-chip[data-v]");
+    for(var i=0;i<c.length;i++){c[i].classList.toggle("on", c[i].getAttribute("data-v")===v);}
+  }
+  var sv="auto"; try{sv=localStorage.getItem(VK)||"auto";}catch(e){}
+  applyV(sv);
+  var vwChips=document.querySelectorAll(".fs-chip[data-v]");
+  for(var i=0;i<vwChips.length;i++){(function(b){b.addEventListener("click",function(){
+    var v=b.getAttribute("data-v"); try{localStorage.setItem(VK,v);}catch(e){} applyV(v);
+  });})(vwChips[i]);}
+
+  // ---- 線上人數（真實：近 5 分鐘不重複訪客，後端保底 4）與累計瀏覽 ----
+  var ol=document.getElementById("olnum");
+  if(ol){
+    var pullOnline=function(){
+      fetch("https://web-production-e1521.up.railway.app/api/site/online")
+        .then(function(r){return r.json();})
+        .then(function(j){ if(j&&typeof j.online==="number") ol.textContent=j.online; })
+        .catch(function(e){});
+    };
+    pullOnline();
+    setInterval(pullOnline,60000);
+  }
+  var vs=document.getElementById("views");
+  if(vs){
+    fetch("https://abacus.jasoncameron.dev/hit/wanglai-daily-report/site")
+      .then(function(r){return r.json();})
+      .then(function(j){if(j&&j.value)vs.textContent=Number(j.value).toLocaleString();})
+      .catch(function(e){var w=document.getElementById("vwrap");if(w)w.style.display="none";});
+  }
+  // ---- 設定面板開關 ----
+  var sb=document.getElementById("setbtn"), sp=document.getElementById("setpanel");
+  if(sb&&sp){
+    sb.addEventListener("click",function(e){e.stopPropagation();sp.classList.toggle("open");});
+    sp.addEventListener("click",function(e){e.stopPropagation();});
+    document.addEventListener("click",function(){sp.classList.remove("open");});
+  }
+
+  // ================== 營收佈告欄 ==================
+  var BASE="https://raw.githubusercontent.com/wowwow3100-ctrl/daily-report/data/revenue/";
+  var WL=window.WLW||{list:function(){return [];},has:function(){return false;}};
+  var ROWS=[], META=null, CUR="", OPS={}, HIGH={};
+  var st={k:"yoy",mkt:"",size:"100000",ind:"",q:""};
+  try{ var ss=JSON.parse(sessionStorage.getItem("wl_rv")||"null"); if(ss) for(var kk in st) if(ss[kk]!=null) st[kk]=ss[kk]; }catch(e){}
+  try{ var pk=new URLSearchParams(location.search).get("k"); if(pk) st.k=pk; }catch(e){}
+  var shown=0, PAGE=50;
+  var $=function(id){return document.getElementById(id);};
+  var list=$("list"), more=$("more"), hint=$("rhint");
+
+  function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+  function amt(v){
+    if(v>=1e9) return (v/1e9).toFixed(2)+'<small> 兆</small>';
+    if(v>=1e5) return (v/1e5).toFixed(v>=1e7?0:v>=1e6?1:2)+'<small> 億</small>';
+    return Math.round(v/10).toLocaleString()+'<small> 萬</small>';
+  }
+  function pct(p){
+    if(p==null||!isFinite(p)) return '<span class="zero">—</span>';
+    var a=Math.abs(p), t=a>=100?Math.round(a).toLocaleString():a.toFixed(1);
+    var c=p>0.05?"up":(p<-0.05?"dn":"zero");
+    return '<span class="'+c+'">'+(p>0.05?"+":(p<-0.05?"−":""))+t+'%</span>';
+  }
+  function g(a,b){ return b>0 ? (a-b)/b*100 : null; }
+  function ymText(ym){ return ym ? (ym.slice(0,4)+" 年 "+parseInt(ym.slice(5),10)+" 月") : ""; }
+  function save(){ try{ sessionStorage.setItem("wl_rv",JSON.stringify(st)); }catch(e){} }
+
+  function prep(d){
+    HIGH={}; (d.high12||[]).forEach(function(c){HIGH[c]=1;});
+    ROWS=(d.rows||[]).map(function(r){
+      return {code:r[0],name:r[1],ind:r[2]||"其他",mkt:r[3],rev:r[4],prev:r[5],ly:r[6],cum:r[7],cumly:r[8],memo:r[9]||"",
+        yoy:g(r[4],r[6]), mom:g(r[4],r[5]), cy:g(r[7],r[8])};
+    });
+  }
+
+  function hero(d){
+    var n=ROWS.length, L=0, O=0, up=0, dn=0, mu=0, sr=0, sl=0, sc=0, scl=0;
+    ROWS.forEach(function(r){
+      if(r.mkt==="L")L++; else O++;
+      if(r.yoy!=null){ if(r.yoy>0)up++; else if(r.yoy<0)dn++; sr+=r.rev; sl+=r.ly; }
+      if(r.mom!=null&&r.mom>0) mu++;
+      if(r.cumly>0){ sc+=r.cum; scl+=r.cumly; }
+    });
+    var tot=0; ROWS.forEach(function(r){tot+=r.rev;});
+    var upP=up+dn?Math.round(up/(up+dn)*100):0;
+    var iss=(d.issued&&(d.issued.L||d.issued.O))||"";
+    var issT=iss?("官方出表 "+iss.slice(-4,-2)+"/"+iss.slice(-2)):"";
+    var chips="";
+    if(META&&META.months&&META.months.length>1){
+      chips='<div class="mchips">'+META.months.slice(-12).reverse().map(function(m){
+        return '<button class="flt'+(m===CUR?' on':'')+'" data-m="'+m+'">'+parseInt(m.slice(5),10)+' 月'+(m.slice(0,4)!==CUR.slice(0,4)?'（'+m.slice(2,4)+'）':'')+'</button>';
+      }).join("")+'</div>';
+    }
+    $("hero").innerHTML='<div class="ym">'+ymText(CUR)+' 營收<small>'+(META&&META.ym===CUR?"最新月份":"歷史月份")+'</small></div>'
+      +'<div class="sub">已公布 '+n.toLocaleString()+' 家（上市 '+L+'．上櫃 '+O+'）'+(issT?'．'+issT:'')+(META&&META.updated?'．本站更新 '+esc(META.updated.slice(5)):'')+'</div>'
+      +'<div class="kpis">'
+      +'<div class="kpi"><div class="k">全體合計營收</div><div class="v">'+amt(tot)+'</div></div>'
+      +'<div class="kpi"><div class="k">合計年增率</div><div class="v">'+pct(g(sr,sl))+'</div></div>'
+      +'<div class="kpi"><div class="k">年增家數</div><div class="v">'+up+'<small>家．'+upP+'%</small></div></div>'
+      +'<div class="kpi"><div class="k">累計年增率</div><div class="v">'+pct(g(sc,scl))+'</div></div>'
+      +'</div>'
+      +'<div class="breadth"><i style="width:'+upP+'%"></i></div>'
+      +'<div class="breadth-l"><span class="up">年增 '+up+' 家</span><span>月增 '+mu+' 家</span><span class="dn">年減 '+dn+' 家</span></div>'
+      +chips;
+    $("hero").querySelectorAll("[data-m]").forEach(function(b){
+      b.addEventListener("click",function(){ loadMonth(b.getAttribute("data-m")); });
+    });
+  }
+
+  function industries(){
+    var m={};
+    ROWS.forEach(function(r){
+      if(!(r.ly>0)) return;
+      var x=m[r.ind]||(m[r.ind]={ind:r.ind,rev:0,ly:0,n:0,up:0});
+      x.rev+=r.rev; x.ly+=r.ly; x.n++; if(r.rev>r.ly)x.up++;
+    });
+    var arr=Object.keys(m).map(function(k){var x=m[k]; x.p=g(x.rev,x.ly); return x;})
+      .filter(function(x){return x.n>=3&&x.rev>=2000000;})
+      .sort(function(a,b){return b.p-a.p;});
+    var mx=Math.max.apply(null,arr.map(function(x){return Math.min(Math.abs(x.p),100);}).concat([1]));
+    var row=function(x){
+      var w=Math.min(Math.abs(x.p),100)/mx*100;
+      return '<div class="indrow" data-ind="'+esc(x.ind)+'"><span class="inm">'+esc(x.ind)+' <span class="muted" style="font-size:.7rem">'+x.up+'/'+x.n+'</span></span>'
+        +'<div class="ibar"><i style="left:0;width:'+w.toFixed(1)+'%;background:var('+(x.p>=0?'--up':'--down')+')"></i></div>'
+        +'<span class="ipct">'+pct(x.p)+'</span></div>';
+    };
+    var top=arr.slice(0,8), rest=arr.slice(8);
+    $("indlist").innerHTML=top.map(row).join("")
+      +(rest.length?'<details style="margin-top:4px"><summary class="muted" style="font-size:.8rem;cursor:pointer">▾ 其他 '+rest.length+' 個產業</summary>'+rest.map(row).join("")+'</details>':'');
+    $("indbox").style.display=arr.length?"":"none";
+    $("indlist").querySelectorAll(".indrow").forEach(function(el){
+      el.addEventListener("click",function(){
+        st.ind=el.getAttribute("data-ind"); $("fInd").value=st.ind; save(); render(true);
+        document.querySelector(".rvbar").scrollIntoView({behavior:"smooth",block:"start"});
+      });
+    });
+    var inds=Object.keys(ROWS.reduce(function(o,r){o[r.ind]=1;return o;},{})).sort();
+    $("fInd").innerHTML='<option value="">全部產業</option>'+inds.map(function(i){return '<option>'+esc(i)+'</option>';}).join("");
+    $("fInd").value=inds.indexOf(st.ind)>=0?st.ind:(st.ind="");
+  }
+
+  function filtered(){
+    var q=st.q.toLowerCase(), size=+st.size||0, k=st.k, w={};
+    if(k==="watch") WL.list().forEach(function(c){w[c]=1;});
+    var a=ROWS.filter(function(r){
+      if(k==="watch"&&!w[r.code]) return false;
+      if(st.mkt&&r.mkt!==st.mkt) return false;
+      if(st.ind&&r.ind!==st.ind) return false;
+      if(q) return (r.code+" "+r.name).toLowerCase().indexOf(q)>=0;
+      if(k!=="watch"&&r.rev<size) return false;
+      if(k==="yoy"||k==="drop") return r.yoy!=null;
+      if(k==="mom") return r.mom!=null;
+      if(k==="cum") return r.cy!=null;
+      if(k==="high") return !!HIGH[r.code];
+      return true;
+    });
+    var by={yoy:function(a,b){return b.yoy-a.yoy;},drop:function(a,b){return a.yoy-b.yoy;},mom:function(a,b){return b.mom-a.mom;},
+      cum:function(a,b){return b.cy-a.cy;},big:function(a,b){return b.rev-a.rev;},high:function(a,b){return b.yoy-a.yoy;},
+      watch:function(a,b){return (b.yoy==null?-1e9:b.yoy)-(a.yoy==null?-1e9:a.yoy);}};
+    return a.sort(by[k]||by.yoy);
+  }
+
+  function rowHTML(r,i){
+    var bw=r.yoy==null?0:Math.min(Math.abs(r.yoy),100);
+    return '<div class="rv" data-c="'+esc(r.code)+'" data-n="'+esc(r.name)+'">'
+      +'<span class="rk">'+(i+1)+'</span>'
+      +'<span class="nm"><b>'+esc(r.name)+'</b><span class="cd">'+esc(r.code)+'</span>'
+      +(WL.has(r.code)?'<span class="st">★</span>':'')
+      +(HIGH[r.code]?'<span class="hi">12月新高</span>':'')
+      +(OPS[r.code]?'<span class="op">券商觀點</span>':'')
+      +'<span class="in">'+(r.mkt==="L"?"上市":"上櫃")+'．'+esc(r.ind)+'</span></span>'
+      +'<span class="amt">'+amt(r.rev)+'</span>'
+      +'<span class="yo"><span class="pc"><span class="lb">年增</span>'+pct(r.yoy)+'</span><span class="ibar"><i style="left:0;width:'+bw+'%;background:var('+((r.yoy||0)>=0?'--up':'--down')+')"></i></span></span>'
+      +'<span class="pc mo"><span class="lb">月增</span>'+pct(r.mom)+'</span>'
+      +'<span class="pc cu"><span class="lb">累計</span>'+pct(r.cy)+'</span>'
+      +(r.memo?'<span class="memo">公司說明：'+esc(r.memo.length>70?r.memo.slice(0,70)+"…":r.memo)+'</span>':'')
+      +'</div>';
+  }
+
+  function render(reset){
+    var rows=filtered();
+    if(reset){ shown=0; list.innerHTML='<div class="rv hd"><span></span><span>公司</span><span style="text-align:right">當月營收</span><span style="text-align:right">年增率</span><span style="text-align:right">月增率</span><span style="text-align:right">累計年增</span></div>'; }
+    var end=Math.min(shown+PAGE,rows.length);
+    list.insertAdjacentHTML("beforeend",rows.slice(shown,end).map(function(r,i){return rowHTML(r,shown+i);}).join(""));
+    shown=end;
+    more.style.display=shown<rows.length?"block":"none";
+    var sz={"0":"不限規模","100000":"月營收 1 億以上","1000000":"月營收 10 億以上","10000000":"月營收 100 億以上"}[st.size]||"";
+    hint.textContent=st.k==="watch"
+      ? (WL.list().length?"你的自選股 "+rows.length+" 檔有公布營收（自選在「個股報告」點 ☆ 加入）":"還沒有自選股：到「個股報告」點股票右上角的 ☆ 加入，這裡就會列出它們的營收")
+      : "共 "+rows.length+" 檔"+(st.q?"":"．"+sz)+(st.ind?"．"+st.ind:"")+"．點公司看它的券商觀點";
+    if(!rows.length&&st.k!=="watch") list.insertAdjacentHTML("beforeend",'<div id="status">沒有符合條件的公司，放寬規模或產業看看</div>');
+  }
+
+  function bindUI(){
+    document.querySelectorAll("#rtabs .flt").forEach(function(b){
+      b.classList.toggle("on",b.getAttribute("data-k")===st.k);
+      b.addEventListener("click",function(){
+        st.k=b.getAttribute("data-k"); save();
+        document.querySelectorAll("#rtabs .flt").forEach(function(x){x.classList.toggle("on",x===b);});
+        render(true);
+      });
+    });
+    $("fMkt").value=st.mkt; $("fSize").value=st.size;
+    $("fMkt").addEventListener("change",function(e){st.mkt=e.target.value;save();render(true);});
+    $("fSize").addEventListener("change",function(e){st.size=e.target.value;save();render(true);});
+    $("fInd").addEventListener("change",function(e){st.ind=e.target.value;save();render(true);});
+    $("q").addEventListener("input",function(e){st.q=e.target.value.trim();render(true);});
+    more.addEventListener("click",function(){render(false);});
+    list.addEventListener("click",function(e){
+      var el=e.target.closest(".rv[data-c]"); if(!el) return;
+      var c=el.getAttribute("data-c");
+      location.href=OPS[c]?("stocks.html?code="+encodeURIComponent(c)):("records.html?q="+encodeURIComponent(el.getAttribute("data-n")));
+    });
+    window.addEventListener("wlwatch",function(){render(true);});
+  }
+
+  function show(d){
+    CUR=d.ym; prep(d); hero(d); industries();
+    $("tabHigh").style.display=(d.high12&&d.high12.length)?"":"none";
+    if(st.k==="high"&&!(d.high12&&d.high12.length)) st.k="yoy";
+    document.querySelectorAll("#rtabs .flt").forEach(function(x){x.classList.toggle("on",x.getAttribute("data-k")===st.k);});
+    render(true);
+  }
+  function loadMonth(m){
+    fetch(BASE+m+".json").then(function(r){return r.json();}).then(show).catch(function(){});
+  }
+
+  bindUI();
+  fetch("stocks.json").then(function(r){return r.json();}).then(function(j){
+    (j.stocks||[]).forEach(function(s){ if(s.code) OPS[s.code]=1; });
+    if(ROWS.length) render(true);
+  }).catch(function(){});
+  fetch(BASE+"meta.json").then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(m){
+    META=m;
+    try{ localStorage.setItem("wl_rev_seen",m.ym); }catch(e){}
+    var dot=document.querySelector("nav.bnav .revdot"); if(dot) dot.remove();
+    return fetch(BASE+"latest.json").then(function(r){return r.json();});
+  }).then(show).catch(function(){
+    $("hero").innerHTML='<div id="status">營收資料整理中，請稍後再回來看看（每天 08:20／14:20／20:20 自動更新）</div>';
+  });
+})();
+</script>
+<script src="wl-new.js?v=2"></script>
+</body>
+</html>
