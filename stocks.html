@@ -570,6 +570,7 @@
       var f=fs[i], isDocx=/\.docx$/i.test(f), m=f.match(/^(\d{6})_(.+)\.(docx|html)$/i);
       var d=m?("20"+m[1].slice(0,2)+"/"+m[1].slice(2,4)+"/"+m[1].slice(4,6)):"";
       var label=m?m[2].replace(/_/g,"｜"):f.replace(/\.(docx|html)$/i,"");
+      if(f==="觀點彙整.html"){ label="券商觀點彙整（所有紀錄，含沒有目標價的報告）"; d=s.rec?s.rec.replace(/-/g,"/"):""; }
       var base='個股/'+encodeURIComponent(s.folder)+'/';
       var page=base+encodeURIComponent(f.replace(/\.docx$/i,".html"));
       html+='<li><span class="d">'+esc(d)+'</span><a href="'+page+'" target="_blank" rel="noopener">'+esc(label)+'　👁 點開看</a>'
@@ -606,6 +607,8 @@
         var m=String(ALL[i].files[f]).match(/^(\d{6})_/);
         if(m&&m[1]>mx)mx=m[1];
       }
+      // 速查裡最新一筆觀點的日期也算（沒有目標價、沒另做摘要的報告也會讓這檔排前面）
+      if(ALL[i].rec){ var rc=ALL[i].rec.replace(/-/g,"").slice(2); if(rc>mx) mx=rc; }
       ALL[i].latest=mx;
     }
     ALL.sort(function(a,b){

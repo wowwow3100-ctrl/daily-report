@@ -84,25 +84,27 @@ def esc(s):
     return html_mod.escape(str(s or "").strip())
 
 
+PAIR = re.compile(r"([^/／()（）、,，;；:：\s]+?)\s*[（(]([0-9]{4}[A-Z]?)[)）]")
+
+
 def load_records():
-    """回傳 {code: {"name":..., "rows":[...]}}"""
+    """回傳 {code: {"name":..., "rows":[...]}}
+    stock 欄位裡每一組「名稱(代號)」都算；一則點名 1～3 檔的都收進各檔，
+    超過 3 檔的「名單型」報告不收（那種在速查查得到）。"""
     out = {}
     with open(REPORTS, encoding="utf-8-sig") as f:
         for row in csv.DictReader(f):
-            stock = (row.get("stock") or "").strip()
-            m = re.search(r"([0-9]{4}[A-Z]?)", stock)
-            if not m:
+            if re.search(r"方法論|收件匣", (row.get("broker") or "") + (row.get("stock") or "")):
                 continue
-            code = m.group(1)
-            name = re.sub(r"[（(].*?[)）]", "", stock).replace(code, "")
-            name = name.strip(" ·、,，()（）-")
-            if not name:
+            pairs = PAIR.findall(row.get("stock") or "")
+            if not pairs or len(pairs) > 3:
                 continue
-            if MULTI.search(name):        # 多檔合併列, 不建個股頁
-                continue
-            name = re.sub(BAD_CHARS, "", name)
-            d = out.setdefault(code, {"name": name, "rows": []})
-            d["rows"].append(row)
+            for raw, code in pairs:
+                name = re.sub(BAD_CHARS, "", raw.rstrip("*").strip(" ·、,，-"))
+                if not name or MULTI.search(name):
+                    continue
+                d = out.setdefault(code, {"name": name, "rows": []})
+                d["rows"].append(row)
     return out
 
 
@@ -145,20 +147,28 @@ def main():
             if m:
                 existing[m.group(1)] = f
 
-    created = 0
+    # 每一檔（新的、舊的都算）都重寫一份「觀點彙整.html」，收進速查裡這檔的全部紀錄，
+    # 沒有具體目標價、沒有另做摘要的報告也看得到。
+    created = updated = 0
+    latest = {}
     for code, d in sorted(recs.items()):
+        latest[code] = max((r.get("date") or "") for r in d["rows"])
         if code in existing:
-            continue
-        folder = "%s%s" % (d["name"], code)
+            folder = existing[code]
+            name = folder[: -len(code)] or d["name"]
+            updated += 1
+        else:
+            folder = "%s%s" % (d["name"], code)
+            name = d["name"]
+            created += 1
+            print("  + %s（%d 筆紀錄）" % (folder, len(d["rows"])))
         fdir = os.path.join(STOCK_DIR, folder)
         os.makedirs(fdir, exist_ok=True)
-        title = "%s（%s）券商觀點彙整" % (d["name"], code)
+        title = "%s（%s）券商觀點彙整" % (name, code)
         page = SHELL % {"title": esc(title), "body": build_body(d["rows"]), "code": code}
         with open(os.path.join(fdir, "觀點彙整.html"), "w", encoding="utf-8") as fh:
             fh.write(page)
         existing[code] = folder
-        created += 1
-        print("  + %s（%d 筆紀錄）" % (folder, len(d["rows"])))
 
     # ---- 重建 stocks.json：docx 與 html 都算 ----
     stocks = []
@@ -178,7 +188,10 @@ def main():
                 if x.lower().endswith(".docx") or os.path.splitext(x)[0] not in docx_stems]
         if not keep:
             continue
-        stocks.append({"folder": folder, "name": name, "code": code, "files": keep})
+        item = {"folder": folder, "name": name, "code": code, "files": keep}
+        if latest.get(code):
+            item["rec"] = latest[code]      # 速查裡這檔最新一筆紀錄的日期（個股頁排序用）
+        stocks.append(item)
 
     daily = []
     if os.path.isdir(DAILY_DIR):
@@ -189,7 +202,8 @@ def main():
     with open(STOCKS_JSON, "w", encoding="utf-8") as fh:
         json.dump({"stocks": stocks, "daily": daily}, fh, ensure_ascii=False, indent=1)
 
-    print("\n新增個股頁 %d 檔；stocks.json 共 %d 檔個股、%d 份日報" % (created, len(stocks), len(daily)))
+    print("\n新增個股頁 %d 檔、更新觀點彙整 %d 檔；stocks.json 共 %d 檔個股、%d 份日報"
+          % (created, updated, len(stocks), len(daily)))
 
 
 if __name__ == "__main__":
