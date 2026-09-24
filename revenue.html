@@ -583,9 +583,11 @@
       if(st.ind&&r.ind!==st.ind) return false;
       if(q) return (r.code+" "+r.name).toLowerCase().indexOf(q)>=0;
       if(k!=="watch"&&r.rev<size) return false;
-      if(k==="yoy"||k==="drop") return r.yoy!=null;
-      if(k==="mom") return r.mom!=null;
-      if(k==="cum") return r.cy!=null;
+      // 排除「基期太低」的公司（比較基準不到本期的十分之一，漲幅會是幾百幾千倍，排行失真）
+      if(k==="high") return !!HIGH[r.code];
+      if(k==="yoy"||k==="drop") return r.yoy!=null&&r.ly*10>=r.rev;
+      if(k==="mom") return r.mom!=null&&r.prev*10>=r.rev;
+      if(k==="cum") return r.cy!=null&&r.cumly*10>=r.cum;
       if(k==="high") return !!HIGH[r.code];
       return true;
     });
@@ -622,7 +624,7 @@
     var sz={"0":"不限規模","100000":"月營收 1 億以上","1000000":"月營收 10 億以上","10000000":"月營收 100 億以上"}[st.size]||"";
     hint.textContent=st.k==="watch"
       ? (WL.list().length?"你的自選股 "+rows.length+" 檔有公布營收（自選在「個股報告」點 ☆ 加入）":"還沒有自選股：到「個股報告」點股票右上角的 ☆ 加入，這裡就會列出它們的營收")
-      : "共 "+rows.length+" 檔"+(st.q?"":"．"+sz)+(st.ind?"．"+st.ind:"")+"．點公司看它的券商觀點";
+      : "共 "+rows.length+" 檔"+(st.q?"":"．"+sz)+(st.ind?"．"+st.ind:"")+(/yoy|mom|cum/.test(st.k)&&!st.q?"．已排除基期過低（成長超過 9 倍）的公司":"")+"．點公司看它的券商觀點";
     if(!rows.length&&st.k!=="watch") list.insertAdjacentHTML("beforeend",'<div id="status">沒有符合條件的公司，放寬規模或產業看看</div>');
   }
 
