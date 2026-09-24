@@ -304,3 +304,48 @@ a.cslink:hover{color:var(--gold);}
   border:1px solid rgba(var(--gold-rgb),.22);font-size:.88rem;line-height:1.8;}
 .rgbox b{color:var(--gold);}
 .rgbox .muted{font-size:.78rem;}
+
+/* ---------- 20. 自選股：星號、分頁切換、加入按鈕 ---------- */
+.tile{position:relative;}
+.star{position:absolute;top:6px;right:6px;z-index:3;width:30px;height:30px;border-radius:50%;
+  border:none;background:none;cursor:pointer;color:var(--muted);padding:0;
+  display:flex;align-items:center;justify-content:center;transition:color .18s,background .18s,transform .15s;}
+.star svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linejoin:round;}
+.star:hover{color:var(--gold);background:rgba(var(--gold-rgb),.12);}
+.star:active{transform:scale(.88);}
+.star.on{color:var(--gold);}
+.star.on svg{fill:currentColor;filter:drop-shadow(0 0 5px rgba(var(--gold-rgb),.55));}
+.vtabs{display:flex;gap:6px;flex:none;}
+.vtab{cursor:pointer;border:1px solid rgba(var(--gold-rgb),.38);background:rgba(var(--gold-rgb),.05);color:var(--gold-dim);
+  border-radius:999px;padding:6px 14px;font-size:.85rem;font-weight:700;font-family:inherit;white-space:nowrap;transition:all .18s;}
+.vtab b{font-variant-numeric:tabular-nums;margin-left:2px;}
+.vtab:hover{color:var(--gold);border-color:var(--gold);}
+.vtab.on{background:var(--btn-grad);color:var(--on-gold);border-color:transparent;box-shadow:0 3px 12px -3px rgba(var(--gold-rgb),.55);}
+button.wbtn{display:inline-flex;align-items:center;gap:6px;cursor:pointer;font-family:inherit;background:rgba(var(--gold-rgb),.07);}
+button.wbtn svg{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linejoin:round;}
+button.wbtn.on svg{fill:currentColor;}
+button.wbtn.on{background:rgba(var(--gold-rgb),.16);}
+
+/* ---------- 21. 首頁「我的自選」卡片 ---------- */
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;}
+.wcard{position:relative;background:var(--surface),var(--card);border:1px solid var(--edge);border-radius:14px;
+  padding:12px 14px 12px;box-shadow:var(--shadow);transition:border-color .22s,box-shadow .22s;}
+.wcard.act{border-color:rgba(var(--gold-rgb),.38);}
+.wcard:hover{border-color:var(--edge-hi);box-shadow:var(--shadow-hi);}
+.wcard .star{top:8px;right:8px;}
+.wtop{padding-right:30px;}
+.wname{color:var(--text);text-decoration:none;font-weight:800;font-size:1rem;}
+.wname:hover{color:var(--gold);}
+.wtags{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 6px;font-size:.8rem;}
+.wtag{display:inline-block;padding:2px 10px;border-radius:999px;font-size:.75rem;font-weight:700;
+  background:rgba(var(--gold-rgb),.10);border:1px solid rgba(var(--gold-rgb),.32);color:var(--gold);}
+.wtag.hot{background:rgba(255,90,90,.10);border-color:rgba(255,90,90,.35);color:var(--up);}
+.wtag.cal{background:none;color:var(--muted);border-color:var(--line);}
+.wlast{color:var(--muted);font-size:.8rem;line-height:1.6;border-top:1px solid rgba(var(--gold-rgb),.09);padding-top:6px;}
+.wempty{text-align:center;padding:22px 18px;}
+.wempty .wet{color:var(--gold);font-weight:800;letter-spacing:1px;margin-bottom:6px;}
+.wempty .muted{font-size:.85rem;line-height:1.8;max-width:560px;margin:0 auto;}
+a.wgo{display:inline-block;margin-top:12px;padding:8px 22px;border-radius:999px;text-decoration:none;font-weight:800;font-size:.9rem;
+  background:var(--btn-grad);color:var(--on-gold);box-shadow:0 8px 22px -8px rgba(var(--gold-rgb),.6);}
+@media (max-width:720px){ .vtabs{width:100%;} .vtab{flex:1;} .wgrid{grid-template-columns:1fr;} }
+html.mob .vtabs{width:100%;} html.mob .vtab{flex:1;} html.mob .wgrid{grid-template-columns:1fr;}

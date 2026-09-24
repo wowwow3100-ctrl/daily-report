@@ -82,6 +82,12 @@
           var k = bs[0] || r.broker.slice(0, 12);
           if (!d.tg[k] || r.date >= d.tg[k][0]) d.tg[k] = [r.date, nw];
         }
+        // 最新一筆券商觀點（給「我的自選」顯示用；名單型報告不算）
+        if (st.length <= 3 && (!d.lastRec || r.date >= d.lastRec.date)) {
+          var tidy = function (s) { return String(s || "").replace(/[（(]★[^）)]*[）)]/g, "").replace(/★/g, "").trim(); };
+          d.lastRec = { date: r.date, broker: bs[0] || tidy(r.broker.split(/[（(]/)[0]) || "法人",
+                        rating: tidy(r.rating), tp: nw };
+        }
       });
     });
     Object.keys(S).forEach(function (c) {

@@ -224,7 +224,7 @@
   html.mob table td:last-child{display:block;border-top:1px dashed var(--line);margin-top:6px;padding:8px 0 0;white-space:normal;}
   html.mob .setpanel{position:fixed;left:12px;right:12px;top:70px;white-space:normal;min-width:0;}
 </style>
-<link rel="stylesheet" href="wl-ui.css?v=2">
+<link rel="stylesheet" href="wl-ui.css?v=3">
 <script>(function(){var h=document.documentElement;try{h.setAttribute("data-theme",localStorage.getItem("wl_theme")||"gold");h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");}catch(e){}})();</script>
 </head>
 <body>
@@ -284,6 +284,11 @@
     <div class="m"><div class="lbl">信用風險戶數</div><div class="val">9 戶</div><div class="chg down">較前日 -3 戶</div><div class="sub">維持率不足 7｜追繳 0｜處分 2</div></div>
   </div>
 <!-- ===== /DATA:MARKET ===== -->
+
+  <!-- ===== WL:WATCH（版型：前端讀使用者裝置上的自選清單產生；排程不改這段） ===== -->
+  <h2 id="watch">我的自選<span class="muted" style="font-size:.75rem;letter-spacing:0;">（清單只存在這台裝置．<a class="cslink" href="stocks.html?view=watch">管理自選 →</a>）</span></h2>
+  <div id="wBox"><div class="card"><div class="stkempty">載入中…</div></div></div>
+  <!-- ===== /WL:WATCH ===== -->
 
   <!-- ===== DATA:SECTORS ===== -->
   <div class="sect-head">🔥 最強族群 TOP 5（09/22 收盤）．點族群看裡面最強的五檔</div>
@@ -499,15 +504,11 @@
   </table>
 <!-- ===== /DATA:BROKER ===== -->
 
-  <!-- ===== WL:CONSENSUS（版型：前端讀 reports.csv 自動統計；排程不改這段） ===== -->
-  <h2 id="consensus">券商共識追蹤<span class="muted" style="font-size:.75rem;letter-spacing:0;">（近 30 天具名券商上修家數．點開看是哪幾家）</span></h2>
-  <ol class="sectlist" id="csList"><li class="stkempty">統計中…</li></ol>
-  <div class="csnote">統計方式：只計入新聞中寫出券商名稱、且目標價調高或評等調升的紀錄；未具名「法人」、一次點名多檔的名單型報告不計入。目標價區間為近 60 天各券商最新目標價，已排除明顯異常值。本區為公開新聞之彙整統計，非本站評等或任何買賣建議。</div>
-
+  <!-- ===== WL:OVERLAP（版型：前端讀 reports.csv 自動比對；排程不改這段） ===== -->
   <h2 id="overlap">資料交集<span class="muted" style="font-size:.75rem;letter-spacing:0;">（今日最強族群成分股 × 近 30 天有具名券商上修）</span></h2>
   <div class="card" id="ovBox"><div class="stkempty">比對中…</div></div>
   <div class="csnote">兩份公開資料剛好同時出現的個股，依代號排列、不做排名。僅為資訊並列，非本站評等、推介或任何買賣建議。</div>
-  <!-- ===== /WL:CONSENSUS ===== -->
+  <!-- ===== /WL:OVERLAP ===== -->
 
 
     <!-- ===== DATA:SOURCES ===== -->
@@ -766,18 +767,20 @@
   }
 })();
 </script>
-<script src="wl-consensus.js?v=1"></script>
+<script src="wl-consensus.js?v=2"></script>
+<script src="wl-watch.js?v=1"></script>
 <script>
-/* ===== 行事曆／券商共識／資料交集（前端自動產生，排程不需維護這段） ===== */
+/* ===== 行事曆／我的自選／資料交集（前端自動產生，排程不需維護這段） ===== */
 (function(){
   function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
   function ymd(d){var m=d.getMonth()+1,dd=d.getDate();return d.getFullYear()+"-"+(m<10?"0":"")+m+"-"+(dd<10?"0":"")+dd;}
   var WK="日一二三四五六";
+  var calP=fetch("calendar.json?v="+Date.now()).then(function(r){return r.json();}).catch(function(){return {events:[]};});
 
   // ---- 本週行事曆 ----
   var calBox=document.getElementById("calBox");
   if(calBox){
-    fetch("calendar.json?v="+Date.now()).then(function(r){return r.json();}).then(function(j){
+    calP.then(function(j){
       var now=new Date(), from=ymd(now), to=ymd(new Date(now.getTime()+7*864e5));
       var ev=(j.events||[]).filter(function(e){return e.date>=from&&e.date<=to;})
         .sort(function(a,b){return a.date<b.date?-1:a.date>b.date?1:0;});
@@ -796,53 +799,102 @@
         h+='</div></div>';
       });
       calBox.innerHTML=h;
-    }).catch(function(){calBox.innerHTML='<div class="stkempty">行事曆暫時無法載入。</div>';});
+    });
   }
 
-  // ---- 券商共識追蹤＋資料交集 ----
-  var csList=document.getElementById("csList"), ovBox=document.getElementById("ovBox");
-  if(!window.WLC||!csList) return;
-  WLC.load().then(function(res){
-    var all=Object.keys(res.map).map(function(k){return res.map[k];});
-    var top=all.filter(function(d){return d.upN>0;})
-      .sort(function(a,b){return b.upN-a.upN||(a.last<b.last?1:-1);}).slice(0,10);
-    if(!top.length){csList.innerHTML='<li class="stkempty">近 30 天沒有具名券商上修紀錄。</li>';}
-    else{
-      csList.innerHTML=top.map(function(d){
-        var rg=d.range?(d.range.lo===d.range.hi?WLC.fmt(d.range.lo):WLC.fmt(d.range.lo)+'～'+WLC.fmt(d.range.hi)):'';
-        var body='<ul class="stklist">'+d.upList.map(function(u){
-            return '<li><span class="stn">'+esc(u.b)+'</span><span class="stc">'+WLC.md(u.d)+' 上修</span></li>';}).join('')
-          +(d.range?'<li><span class="stn">目標價區間（近 60 天各券商最新）</span><b>'+rg+' 元</b><span class="stc">'+d.range.n+' 家</span></li>':'')
-          +'<li><a class="cslink" href="records.html?q='+encodeURIComponent(d.code)+'">看這檔全部紀錄 →</a></li></ul>';
-        return '<li><details class="stkbox"><summary><span class="sn">'+d.upN+'</span><span class="snm">'+esc(d.name)
-          +' <span class="stc">('+esc(d.code)+')</span></span><b class="up">'+d.upN+' 家上修</b></summary>'+body+'</details></li>';
-      }).join('');
-    }
-    // 資料交集：今日最強族群的成分股 ∩ 近 30 天有具名券商上修
-    if(!ovBox) return;
-    var heads=document.querySelectorAll(".sect-head"), secOl=null;
-    for(var i=0;i<heads.length;i++){ if(/最強族群/.test(heads[i].textContent)){ secOl=heads[i].nextElementSibling; break; } }
-    var hits=[];
-    if(secOl){
-      secOl.querySelectorAll("details.stkbox").forEach(function(box){
-        var sec=(box.querySelector(".snm")||{}).textContent||"";
-        box.querySelectorAll("ul.stklist li").forEach(function(li){
-          var c=((li.querySelector(".stc")||{}).textContent||"").replace(/[()（）\s]/g,"");
-          var pct=((li.querySelector("b")||{}).textContent||"").trim();
-          var d=res.map[c];
-          if(d&&d.upN>0) hits.push({code:c,name:d.name,sec:sec.trim(),pct:pct,ups:d.upList});
-        });
+  // ---- 今日最強族群成分股（讀 DATA:SECTORS） ----
+  function sectorMap(){
+    var m={}, heads=document.querySelectorAll(".sect-head"), ol=null;
+    for(var i=0;i<heads.length;i++){ if(/最強族群/.test(heads[i].textContent)){ ol=heads[i].nextElementSibling; break; } }
+    if(!ol) return m;
+    ol.querySelectorAll("details.stkbox").forEach(function(box){
+      var sec=((box.querySelector(".snm")||{}).textContent||"").trim();
+      box.querySelectorAll("ul.stklist li").forEach(function(li){
+        var c=((li.querySelector(".stc")||{}).textContent||"").replace(/[()（）\s]/g,"");
+        if(c) m[c]={sec:sec,pct:((li.querySelector("b")||{}).textContent||"").trim()};
       });
+    });
+    return m;
+  }
+  // 文字裡有沒有提到某檔（排除「南亞」誤中「南亞科」這種較長股名）
+  function mentions(text,nm,all){
+    if(!text||!nm||nm.length<2) return false;
+    var i=text.indexOf(nm);
+    while(i>=0){
+      var longer=all.some(function(L){return L.length>nm.length&&L.indexOf(nm)===0&&text.substr(i,L.length)===L;});
+      if(!longer) return true;
+      i=text.indexOf(nm,i+1);
     }
-    hits.sort(function(a,b){return a.code<b.code?-1:1;});
-    ovBox.innerHTML=hits.length?hits.map(function(h){
-      return '<div class="ovi"><b>'+esc(h.name)+'</b> <span class="stc">('+esc(h.code)+')</span>：今日屬「'+esc(h.sec)+'」漲幅前五成分股（'
-        +esc(h.pct)+'）；近 30 天具名上修：'+h.ups.map(function(u){return esc(u.b)+'（'+WLC.md(u.d)+'）';}).join('、')+'</div>';
-    }).join(''):'<div class="stkempty">今日最強族群的成分股，近 30 天都沒有具名券商上修紀錄，沒有交集。</div>';
-  }).catch(function(){
-    csList.innerHTML='<li class="stkempty">統計資料暫時無法載入。</li>';
-    if(ovBox) ovBox.innerHTML='<div class="stkempty">資料暫時無法載入。</div>';
-  });
+    return false;
+  }
+
+  // ---- 我的自選 ----
+  var wBox=document.getElementById("wBox");
+  var stocksP=fetch("stocks.json").then(function(r){return r.json();}).catch(function(){return {stocks:[]};});
+  function renderWatch(){
+    if(!wBox||!window.WLW) return;
+    var codes=WLW.list();
+    if(!codes.length){
+      wBox.innerHTML='<div class="card wempty"><div class="wet">還沒有自選股</div>'
+        +'<div class="muted">到「個股報告」點股票右上角的 ☆ 加入，這裡就會整理出它們今天的相關資訊：有沒有被券商報告或焦點新聞提到、是不是今天最強族群的成分股、近期除權息，以及最新一筆券商觀點。不用註冊，清單只存在這台裝置。</div>'
+        +'<a class="wgo" href="stocks.html">去個股報告挑選 →</a></div>';
+      return;
+    }
+    Promise.all([stocksP, window.WLC?WLC.load().catch(function(){return {map:{}};}):Promise.resolve({map:{}}), calP]).then(function(a){
+      var names={}, all=[];
+      (a[0].stocks||[]).forEach(function(s){names[s.code]=s.name; all.push(s.name);});
+      var cmap=a[1].map||{}, ev=a[2].events||[], sm=sectorMap();
+      var today=ymd(new Date()), to=ymd(new Date(Date.now()+7*864e5));
+      var tbl=document.querySelector("table"), brokerTxt=(tbl?tbl.textContent:"")+((document.querySelector("ul.sum-list")||{}).textContent||"");
+      var focusTxt=[].map.call(document.querySelectorAll(".news-title,.news-body"),function(x){return x.textContent;}).join("\n");
+      var preTxt=(document.querySelector("ul.prelist")||{}).textContent||"";
+      var cards=codes.map(function(c){
+        var nm=names[c]||(cmap[c]&&cmap[c].name)||c, tags=[], codeRe=new RegExp("[(（]"+c+"[)）]");
+        if(sm[c]) tags.push('<span class="wtag hot">今日「'+esc(sm[c].sec)+'」族群前五 '+esc(sm[c].pct)+'</span>');
+        if(codeRe.test(brokerTxt)||mentions(brokerTxt,nm,all)) tags.push('<span class="wtag">今日券商報告提到</span>');
+        if(codeRe.test(focusTxt)||mentions(focusTxt,nm,all)) tags.push('<span class="wtag">今日焦點新聞提到</span>');
+        if(codeRe.test(preTxt)||mentions(preTxt,nm,all)) tags.push('<span class="wtag">盤前快訊提到</span>');
+        ev.forEach(function(e){
+          if(e.date>=today&&e.date<=to&&codeRe.test((e.title||"")+(e.note||"")))
+            tags.push('<span class="wtag cal">'+e.date.slice(5).replace("-","/")+' '+esc(e.cat)+'</span>');
+        });
+        var lr=cmap[c]&&cmap[c].lastRec;
+        var last=lr?('最新券商觀點　'+WLC.md(lr.date)+'　'+esc(lr.broker)+(lr.rating?'：'+esc(lr.rating):'')+(lr.tp?'．目標價 '+WLC.fmt(lr.tp)+' 元':''))
+                   :'近 60 天沒有券商觀點紀錄';
+        return {n:tags.length, html:'<div class="wcard'+(tags.length?' act':'')+'"><div class="wtop">'
+          +'<a class="wname" href="stocks.html?code='+encodeURIComponent(c)+'">'+esc(nm)+' <span class="stc">('+esc(c)+')</span></a>'
+          +'<button class="star on" data-c="'+esc(c)+'" title="移出自選" aria-label="移出自選">'+WLW.STAR+'</button></div>'
+          +'<div class="wtags">'+(tags.length?tags.join(''):'<span class="muted">今天沒有相關消息</span>')+'</div>'
+          +'<div class="wlast">'+last+'</div></div>'};
+      });
+      var withNews=cards.filter(function(x){return x.n;}), quiet=cards.filter(function(x){return !x.n;});
+      wBox.innerHTML='<div class="wgrid">'+withNews.concat(quiet).map(function(x){return x.html;}).join('')+'</div>'
+        +'<div class="csnote">共 '+codes.length+' 檔．今天有消息的排前面．依本站當日整理的公開資料自動比對，非本站評等或任何買賣建議。</div>';
+      wBox.querySelectorAll(".star").forEach(function(b){
+        b.addEventListener("click",function(){ WLW.toggle(b.getAttribute("data-c")); renderWatch(); });
+      });
+    });
+  }
+  renderWatch();
+  window.addEventListener("storage",function(e){ if(e.key==="wl_watch") renderWatch(); });
+  window.addEventListener("pageshow",function(e){ if(e.persisted) renderWatch(); });
+
+  // ---- 資料交集：今日最強族群成分股 ∩ 近 30 天有具名券商上修 ----
+  var ovBox=document.getElementById("ovBox");
+  if(ovBox&&window.WLC){
+    WLC.load().then(function(res){
+      var sm=sectorMap(), hits=[];
+      Object.keys(sm).forEach(function(c){
+        var d=res.map[c];
+        if(d&&d.upN>0) hits.push({code:c,name:d.name,sec:sm[c].sec,pct:sm[c].pct,ups:d.upList});
+      });
+      hits.sort(function(a,b){return a.code<b.code?-1:1;});
+      ovBox.innerHTML=hits.length?hits.map(function(h){
+        return '<div class="ovi"><b>'+esc(h.name)+'</b> <span class="stc">('+esc(h.code)+')</span>：今日屬「'+esc(h.sec)+'」漲幅前五成分股（'
+          +esc(h.pct)+'）；近 30 天具名上修：'+h.ups.map(function(u){return esc(u.b)+'（'+WLC.md(u.d)+'）';}).join('、')+'</div>';
+      }).join(''):'<div class="stkempty">今日最強族群的成分股，近 30 天都沒有具名券商上修紀錄，沒有交集。</div>';
+    }).catch(function(){ ovBox.innerHTML='<div class="stkempty">資料暫時無法載入。</div>'; });
+  }
 })();
 </script>
 </body>

@@ -155,7 +155,7 @@
   html.mob .lg{width:46px;height:46px;}
   html.mob .setpanel{position:fixed;left:12px;right:12px;top:70px;white-space:normal;min-width:0;}
 </style>
-<link rel="stylesheet" href="wl-ui.css?v=2">
+<link rel="stylesheet" href="wl-ui.css?v=3">
 <script>(function(){var h=document.documentElement;try{h.setAttribute("data-theme",localStorage.getItem("wl_theme")||"gold");h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");}catch(e){}})();</script>
 </head>
 <body>
@@ -201,17 +201,13 @@
 
   <div class="searchbar">
     <input id="q" type="search" placeholder="🔍 搜尋個股名稱或代號…">
+    <div class="vtabs"><button class="vtab on" data-v="all">全部</button><button class="vtab" data-v="watch">★ 我的自選 <b id="wcnt">0</b></button></div>
     <span id="count"></span>
   </div>
 
   <div id="detail"></div>
   <div id="grid" class="grid"><div id="status">資料載入中…</div></div>
 
-  <div class="dev">
-    <div class="dt">⭐ 自選功能 開發中</div>
-    <div class="dd">之後你可以建立自己的自選清單，只看想追的標的相關整理。</div>
-    <button class="devbtn" id="voteWatch">🔥 我想要這功能，加速開發</button>
-  </div>
 
   <footer>
     <a class="thbtn" href="https://www.threads.com/@wowwow31001" target="_blank" rel="noopener"><span class="at">＠</span>追蹤旺來的脆 wowwow31001</a><br>
@@ -245,7 +241,7 @@
   </div>
   <div class="tarrow">⬇</div>
 </div>
-<script src="wl-consensus.js?v=1"></script>
+<script src="wl-watch.js?v=1"></script>
 <script>
 (function(){
   var KEY="wl_fs";
@@ -506,20 +502,31 @@
     return '<div class="lg">'+fb+'<img loading="lazy" src="https://s3-symbol-logo.tradingview.com/'+id+'--big.svg"></div>';
   }
 
-  var ALL=[], curQ="";
+  var ALL=[], curQ="", curV="all";
+  var WL=window.WLW||{list:function(){return [];},has:function(){return false;},toggle:function(){return {ok:false};},STAR:""};
+  function syncCnt(){ var w=document.getElementById("wcnt"); if(w) w.textContent=WL.list().length; }
   var grid=document.getElementById("grid"), detail=document.getElementById("detail"), count=document.getElementById("count");
 
   function render(){
     var q=curQ.toLowerCase();
     var rows=ALL.filter(function(s){
+      if(curV==="watch"&&!WL.has(s.code)) return false;
       return !q || (s.name+s.code).toLowerCase().indexOf(q)>=0;
     });
     count.textContent="共 "+rows.length+" 檔";
+    syncCnt();
+    if(curV==="watch"&&!WL.list().length){
+      grid.innerHTML='<div id="status">還沒有自選股。切回「全部」，點股票右上角的 ☆ 就能加入；清單只存在這台裝置，不用註冊。</div>';
+      return;
+    }
     var html="";
     for(var i=0;i<rows.length;i++){
       var s=rows[i];
       var lt=s.latest?("最新 20"+s.latest.slice(0,2)+"/"+s.latest.slice(2,4)+"/"+s.latest.slice(4,6)):"";
-      html+='<div class="tile" data-i="'+ALL.indexOf(s)+'">'+logoHTML(s.code,s.name)
+      var on=WL.has(s.code);
+      html+='<div class="tile" data-i="'+ALL.indexOf(s)+'">'
+        +'<button class="star'+(on?' on':'')+'" data-c="'+esc(s.code)+'" title="'+(on?'移出自選':'加入自選')+'" aria-label="'+(on?'移出自選':'加入自選')+'">'+WL.STAR+'</button>'
+        +logoHTML(s.code,s.name)
         +'<div class="nm">'+esc(s.name)+'</div><div class="cd">'+esc(s.code)+'</div>'
         +'<div class="ct">📄 '+s.files.length+' 份・'+lt+'</div></div>';
     }
@@ -528,6 +535,17 @@
     for(var t=0;t<tiles.length;t++){(function(el){
       el.addEventListener("click",function(){ showDetail(parseInt(el.getAttribute("data-i"),10), el); });
     })(tiles[t]);}
+    grid.querySelectorAll(".star").forEach(function(b){
+      b.addEventListener("click",function(ev){
+        ev.stopPropagation();
+        var r=WL.toggle(b.getAttribute("data-c"));
+        if(!r.ok){ if(r.msg) alert(r.msg); return; }
+        if(curV==="watch"&&!r.on){ render(); return; }
+        b.classList.toggle("on",r.on); b.title=r.on?"移出自選":"加入自選"; syncCnt();
+        var wb=document.getElementById("wbtn");
+        if(wb&&wb.getAttribute("data-c")===b.getAttribute("data-c")) paintW(wb,r.on);
+      });
+    });
     // LOGO 載入處理（來源＝TradingView 官方圖庫）：成功→隱藏字母磚；失敗→金色字母磚
     var imgs=grid.querySelectorAll(".lg img");
     for(var g=0;g<imgs.length;g++){(function(im){
@@ -544,7 +562,7 @@
     for(var t=0;t<tiles.length;t++)tiles[t].classList.remove("on");
     if(el)el.classList.add("on");
     var html='<h3>'+esc(s.name)+' ('+esc(s.code)+')</h3>'
-      +'<div id="rgHold"></div>'
+      +'<button class="act wbtn" id="wbtn" data-c="'+esc(s.code)+'"></button>'
       +'<a class="act" href="records.html?q='+encodeURIComponent(s.name)+'">🔎 看這檔的歷史觀點紀錄 →</a>'
       +'<ul>';
     var fs=s.files.slice().sort(function(a,b){return a<b?1:-1;});
@@ -560,25 +578,19 @@
     html+='</ul>';
     detail.innerHTML=html; detail.style.display="block";
     detail.scrollIntoView({behavior:"smooth",block:"start"});
-    // 券商共識：目標價區間＋近 30 天具名上修（由 reports.csv 即時統計）
-    if(window.WLC){
-      var code=s.code;
-      WLC.load().then(function(res){
-        var hold=document.getElementById("rgHold"), d=res.map[code];
-        if(!hold||!d||(!d.range&&!d.upN)) return;
-        var h='';
-        if(d.range){
-          h+='目標價區間（近 60 天各券商最新）：<b>'+(d.range.lo===d.range.hi?WLC.fmt(d.range.lo):WLC.fmt(d.range.lo)+'～'+WLC.fmt(d.range.hi))
-            +' 元</b> <span class="muted">共 '+d.range.n+' 家</span>';
-        }
-        if(d.upN){
-          h+=(h?'<br>':'')+'近 30 天具名上修 <b>'+d.upN+' 家</b>：'
-            +d.upList.map(function(u){return esc(u.b)+'（'+WLC.md(u.d)+'）';}).join('、');
-        }
-        hold.innerHTML='<div class="rgbox">'+h+'<div class="muted">依公開新聞彙整，非本站評等或建議。</div></div>';
-      }).catch(function(){});
+    var wb=document.getElementById("wbtn");
+    if(wb){
+      paintW(wb,WL.has(s.code));
+      wb.addEventListener("click",function(){
+        var r=WL.toggle(s.code);
+        if(!r.ok){ if(r.msg) alert(r.msg); return; }
+        paintW(wb,r.on); syncCnt();
+        var st=grid.querySelector('.star[data-c="'+s.code+'"]'); if(st) st.classList.toggle("on",r.on);
+        if(curV==="watch"&&!r.on){ detail.style.display="none"; render(); }
+      });
     }
   }
+  function paintW(b,on){ b.classList.toggle("on",on); b.innerHTML=WL.STAR+(on?'已加入自選（點一下移除）':'加入自選'); }
 
   document.getElementById("q").addEventListener("input",function(e){curQ=e.target.value.trim();detail.style.display="none";render();});
 
@@ -600,7 +612,22 @@
       if(a.latest!==b.latest) return a.latest<b.latest?1:-1;
       return b.files.length-a.files.length;
     });
-    render();
+    var qs=new URLSearchParams(location.search);
+    document.querySelectorAll(".vtab").forEach(function(b){
+      b.addEventListener("click",function(){
+        curV=b.getAttribute("data-v");
+        document.querySelectorAll(".vtab").forEach(function(x){x.classList.toggle("on",x===b);});
+        detail.style.display="none"; render();
+      });
+    });
+    if(qs.get("view")==="watch"){ var vb=document.querySelector('.vtab[data-v="watch"]'); if(vb) vb.click(); else render(); }
+    else render();
+    var want=qs.get("code");
+    if(want){
+      var idx=-1; for(var k=0;k<ALL.length;k++){ if(ALL[k].code===want){ idx=k; break; } }
+      if(idx>=0){ var el=grid.querySelector('.tile[data-i="'+idx+'"]'); showDetail(idx, el); }
+    }
+    window.addEventListener("storage",function(e){ if(e.key==="wl_watch") render(); });
   }).catch(function(e){
     grid.innerHTML='<div id="status">資料檔尚未上傳（stocks.json）。請旺來大大執行「4_首次上傳個股資料.bat」。</div>';
   });
