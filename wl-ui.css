@@ -394,3 +394,9 @@ nav.bnav a .revdot{position:absolute;top:-3px;right:calc(50% - 30px);padding:0 5
   background:var(--up);color:#fff;-webkit-text-fill-color:#fff;border:1.5px solid var(--bg);
   box-shadow:0 0 10px rgba(255,80,80,.55);animation:revpop 1.8s ease-in-out infinite;}
 @keyframes revpop{0%,100%{transform:scale(1);}50%{transform:scale(1.12);}}
+
+/* ---------- 25. 子分頁上的外部小站（旺來開運所）：紫色標示，跟站內金色分頁區隔 ---------- */
+.subtabs a.ext{color:#C9A2FF;border:1px solid rgba(185,140,255,.55);margin-left:2px;}
+.subtabs a.ext:hover{color:#E2CCFF;background:rgba(185,140,255,.12);}
+html[data-theme="light"] .subtabs a.ext,html[data-theme="white"] .subtabs a.ext{color:#7B3FC4;border-color:rgba(123,63,196,.45);}
+html[data-theme="light"] .subtabs a.ext:hover,html[data-theme="white"] .subtabs a.ext:hover{background:rgba(123,63,196,.08);color:#5E2A9E;}
