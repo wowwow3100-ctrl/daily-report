@@ -1,7 +1,7 @@
 {
-  "name": "旺來 台股情報站",
+  "name": "旺來台股情報站",
   "short_name": "旺來情報站",
-  "description": "每日台股新聞整理：大盤速覽、焦點新聞、券商報告摘要（新聞整理用途，非投資建議）",
+  "description": "每天自動整理台股重點：大盤、資金流向、月營收、外資觀點（新聞整理用途，非投資建議）",
   "id": "./",
   "start_url": "./index.html",
   "scope": "./",
@@ -20,6 +20,12 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
