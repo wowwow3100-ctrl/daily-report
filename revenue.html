@@ -99,7 +99,7 @@
   .notice.mini{padding:6px 14px;font-size:.78rem;cursor:pointer;margin:12px 0 14px;}
   .notice.mini span,.notice.mini .nok{display:none;}
   .notice.mini::after{content:"．非投資建議（點我看完整說明）";color:var(--muted);font-weight:400;}
-  body{padding-bottom:86px;}
+  body{padding-bottom:86px;overflow-x:hidden;}
   nav.bnav{position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--bgt);backdrop-filter:blur(8px);
     border-top:1px solid var(--line);display:flex;justify-content:center;gap:2px;
     padding:6px 6px calc(8px + env(safe-area-inset-bottom));}
@@ -195,23 +195,23 @@
   #more{display:block;margin:18px auto;}
   @media (max-width:720px){
     .kpis{grid-template-columns:repeat(2,1fr);}
-    .rv{grid-template-columns:1.8em minmax(0,1fr) auto;row-gap:2px;padding:10px 12px;}
+    .rv{grid-template-columns:1.8em minmax(0,1fr) minmax(0,auto);row-gap:2px;padding:10px 12px;}
     .rv.hd{display:none;}
-    .rv .amt{grid-column:3;grid-row:1;}
+    .rv .amt{grid-column:3;grid-row:1;min-width:0;white-space:nowrap;}
     .rv .yo{grid-column:2/-1;grid-row:2;flex-direction:row;align-items:center;justify-content:flex-start;gap:8px;}
     .rv .yo .ibar{width:70px;}
-    .rv .mo,.rv .cu{grid-row:3;text-align:left;font-size:.82rem;}
+    .rv .mo,.rv .cu{grid-row:3;text-align:left;font-size:.82rem;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
     .rv .mo{grid-column:2;} .rv .cu{grid-column:3;}
     .rv .lb{display:inline;}
     .indrow{grid-template-columns:6.2em 1fr 4.2em;}
   }
   html.mob .kpis{grid-template-columns:repeat(2,1fr);}
-  html.mob .rv{grid-template-columns:1.8em minmax(0,1fr) auto;row-gap:2px;padding:10px 12px;}
+  html.mob .rv{grid-template-columns:1.8em minmax(0,1fr) minmax(0,auto);row-gap:2px;padding:10px 12px;}
   html.mob .rv.hd{display:none;}
-  html.mob .rv .amt{grid-column:3;grid-row:1;}
+  html.mob .rv .amt{grid-column:3;grid-row:1;min-width:0;white-space:nowrap;}
   html.mob .rv .yo{grid-column:2/-1;grid-row:2;flex-direction:row;align-items:center;justify-content:flex-start;gap:8px;}
   html.mob .rv .yo .ibar{width:70px;}
-  html.mob .rv .mo,html.mob .rv .cu{grid-row:3;text-align:left;font-size:.82rem;}
+  html.mob .rv .mo,html.mob .rv .cu{grid-row:3;text-align:left;font-size:.82rem;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   html.mob .rv .mo{grid-column:2;} html.mob .rv .cu{grid-column:3;}
   html.mob .rv .lb{display:inline;}
 </style>
