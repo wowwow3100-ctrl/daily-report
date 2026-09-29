@@ -218,6 +218,23 @@
   html.mob .rv .mo,html.mob .rv .cu{grid-row:3;text-align:left;font-size:.82rem;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   html.mob .rv .mo{grid-column:2;} html.mob .rv .cu{grid-column:3;}
   html.mob .rv .lb{display:inline;}
+  /* 上市櫃產業月營收小表（2026/09/29 由情報站移入） */
+  .sect-head{color:var(--muted);font-size:.82rem;letter-spacing:1px;margin:14px 0 6px;}
+  ol.sectlist{list-style:none;display:flex;flex-direction:column;gap:6px;margin:0 0 14px;padding:0;}
+  details.stkbox{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:0 16px;}
+  details.stkbox summary{cursor:pointer;display:flex;align-items:center;gap:10px;padding:10px 0;font-size:.92rem;list-style:none;white-space:nowrap;}
+  details.stkbox summary::-webkit-details-marker{display:none;}
+  details.stkbox summary::after{content:"▾";color:var(--gold-dim);font-size:.75rem;transition:transform .15s;}
+  details.stkbox[open] summary::after{transform:rotate(180deg);}
+  details.stkbox[open] summary{border-bottom:1px solid var(--line);}
+  .sn{display:inline-flex;align-items:center;justify-content:center;width:21px;height:21px;border-radius:50%;background:var(--card2);border:1px solid var(--gold-dim);color:var(--gold);font-size:.72rem;font-weight:800;flex:none;}
+  .snm{flex:1;font-weight:700;white-space:nowrap;}
+  ul.stklist{list-style:none;margin:4px 0 10px;padding:0;}
+  ul.stklist li{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:.85rem;border-bottom:1px dashed var(--line);}
+  ul.stklist li:last-child{border-bottom:none;}
+  ul.stklist .stn{flex:1;color:var(--text);}
+  ul.stklist .stc{color:var(--muted);font-size:.75rem;}
+  .down{color:var(--down);font-weight:700;}
 </style>
 <link rel="stylesheet" href="wl-ui.css?v=6">
 <script>(function(){var h=document.documentElement;try{h.setAttribute("data-theme",(localStorage.getItem("wl_theme")||"gold").replace("navy","gold"));h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");}catch(e){}})();</script>
@@ -265,6 +282,39 @@
   </div>
 
   <div class="rvhero" id="hero"><div id="status">營收資料載入中…</div></div>
+
+  <!-- ===== DATA:REVENUE ===== -->
+  <div class="sect-head">📈 上市櫃月營收（2026 年 8 月）．點開看產業成長榜（資料：櫃買中心產業月營收）</div>
+  <ol class="sectlist">
+    <li><details class="stkbox">
+      <summary><span class="sn">市</span><span class="snm">上市　32 產業：31 成長 / 1 衰退</span><b class="up">最高 +90.6%</b></summary>
+      <ul class="stklist">
+        <li><span class="stn">電腦及週邊設備業</span><span class="stc">1.60 兆</span><b class="up">+90.59%</b></li>
+        <li><span class="stn">電子通路業</span><span class="stc">5,291 億</span><b class="up">+88.92%</b></li>
+        <li><span class="stn">半導體業</span><span class="stc">9,109 億</span><b class="up">+61.30%</b></li>
+        <li><span class="stn">金融保險業（唯一衰退）</span><span class="stc">2,283 億</span><b class="down">-34.88%</b></li>
+      </ul>
+    </details></li>
+    <li><details class="stkbox">
+      <summary><span class="sn">櫃</span><span class="snm">上櫃　28 產業：28 個全數成長</span><b class="up">最高 +140.2%</b></summary>
+      <ul class="stklist">
+        <li><span class="stn">電子通路業</span><span class="stc">156 億</span><b class="up">+140.16%</b></li>
+        <li><span class="stn">金融業</span><span class="stc">53 億</span><b class="up">+109.18%</b></li>
+        <li><span class="stn">半導體業</span><span class="stc">1,038 億</span><b class="up">+96.26%</b></li>
+      </ul>
+    </details></li>
+    <li><details class="stkbox">
+      <summary><span class="sn">比</span><span class="snm">營收占比最高產業</span><b class="up">上市電腦周邊 27.1%</b></summary>
+      <ul class="stklist">
+        <li><span class="stn">上市：電腦及週邊設備業</span><b class="up">27.10%</b></li>
+        <li><span class="stn">上市：其他電子業</span><b class="up">17.35%</b></li>
+        <li><span class="stn">上市：半導體業</span><b class="up">15.46%</b></li>
+        <li><span class="stn">上櫃：半導體業</span><b class="up">28.48%</b></li>
+        <li><span class="stn">上櫃：電腦及週邊設備業</span><b class="up">10.77%</b></li>
+      </ul>
+    </details></li>
+  </ol>
+  <!-- ===== /DATA:REVENUE ===== -->
 
   <details class="indbox" id="indbox" open style="display:none">
     <summary>產業營收熱度<span class="muted">（同產業合計營收的年增率，點產業只看該產業）</span></summary>
