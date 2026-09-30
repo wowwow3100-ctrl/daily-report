@@ -96,6 +96,8 @@
       return '<div class="hm"><span class="hk">' + p[1] + '</span><b>' + c.querySelector(".val").textContent.trim() +
         "</b>" + (ch ? '<i class="' + ch.className.replace("chg", "").trim() + '">' + ch.textContent.trim().replace(/（.*$/, "") + "</i>" : "") + "</div>";
     }).join("");
+    // 已經放進 Masthead 的四張卡，在下方速覽區就不重複顯示
+    [tx, get(/成交值/), get(/融資/), get(/費城|SOX/)].forEach(function (c) { if (c) c.classList.add("in-hero"); });
     var hero = el("section", "hero");
     hero.setAttribute("aria-label", "今日盤勢");
     hero.innerHTML =

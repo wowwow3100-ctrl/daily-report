@@ -488,3 +488,6 @@ body.home .annc{margin:-12px 0 26px;}
   body.home header{padding-top:14px;}
   body.home .notice.mini{margin:8px 0 12px;}
 }
+body.home .mkt .m.in-hero{display:none;}
+body.home .mkt{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+@media (min-width:1360px){ html:not(.mob) nav.bnav{background:rgba(var(--bg-rgb),.86);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);} }
