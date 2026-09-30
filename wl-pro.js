@@ -37,6 +37,22 @@
     }
   });
 
+  // sect-head 是排程寫的一整串字：「資金流向 TOP 5（09/22 收盤．…）．點族群看…」
+  // 拆成「主標」＋下一行的說明，跟其他 h2 的節奏一致
+  doc.querySelectorAll(".sect-head").forEach(function (h) {
+    for (var i = 0; i < h.childNodes.length; i++) {
+      var t = h.childNodes[i];
+      if (t.nodeType !== 3) continue;
+      var v = t.nodeValue, k = v.indexOf("（");
+      if (k > 0) {
+        t.nodeValue = v.slice(0, k).trim();
+        var sub = el("span", "muted sh-sub"); sub.textContent = v.slice(k).replace(/^（/, "").replace(/）/, "・").replace(/．/g, "・").replace(/・$/, "");
+        h.appendChild(sub);
+      }
+      break;
+    }
+  });
+
   /* ---------- 2. 分段：h2 / .sect-head 起頭的內容包成 section ---------- */
   var heads = [];
   Array.prototype.forEach.call(wrap.children, function (c) {
