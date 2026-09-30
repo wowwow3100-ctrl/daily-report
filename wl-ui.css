@@ -467,10 +467,10 @@ html.pro .rvl.in{opacity:1;transform:none;transition:opacity .7s ease,transform 
 /* 桌機：主欄＋側欄、頂部浮動導覽 */
 @media (min-width:1100px){
   html:not(.mob) body.home .wrap{max-width:1240px;}
-  html:not(.mob) .pro-grid{display:grid;grid-template-columns:minmax(0,1fr) 410px;column-gap:44px;align-items:start;}
+  html:not(.mob) .pro-grid{display:grid;grid-template-columns:400px minmax(0,1fr);column-gap:48px;align-items:start;}
   html:not(.mob) .pro-rail .mkt{grid-template-columns:repeat(2,minmax(0,1fr));}
   html:not(.mob) .pro-rail .sec:first-child>h2,html:not(.mob) .pro-main .sec:first-child>h2{margin-top:6px;}
-  html:not(.mob) .pro-rail{padding-left:40px;border-left:1px solid var(--edge);}
+  html:not(.mob) .pro-rail{padding-right:44px;border-right:1px solid var(--edge);}
 }
 @media (min-width:1360px){
   html:not(.mob) nav.bnav{top:16px;bottom:auto;left:50%;right:auto;transform:translateX(-50%);width:auto;gap:2px;padding:6px;
@@ -480,4 +480,11 @@ html.pro .rvl.in{opacity:1;transform:none;transition:opacity .7s ease,transform 
   html:not(.mob) nav.bnav a.on::before{display:none;}
   html:not(.mob) nav.bnav a .newdot{top:-6px;right:-2px;}
   html:not(.mob) body{padding-bottom:40px;}
+}
+body.home header .stamp{display:none;}
+body.home .annc{margin:-12px 0 26px;}
+@media (max-width:720px){
+  .setbtn{padding:8px 11px;font-size:0;gap:0;} .setbtn .wl-ic{width:18px;height:18px;margin:0;}
+  body.home header{padding-top:14px;}
+  body.home .notice.mini{margin:8px 0 12px;}
 }

@@ -70,7 +70,7 @@
     var grid = el("div", "pro-grid"), main = el("div", "pro-main"), rail = el("aside", "pro-rail");
     rail.setAttribute("aria-label", "市場數據");
     wrap.insertBefore(grid, secs[0]);
-    grid.appendChild(main); grid.appendChild(rail);
+    grid.appendChild(rail); grid.appendChild(main);
     secs.forEach(function (s) { (RAIL[s.getAttribute("data-k")] ? rail : main).appendChild(s); });
   }
 
@@ -110,6 +110,8 @@
       '<div class="h-mini">' + mini + "</div>";
     var anchor = doc.querySelector(".pro-grid") || secs[0];
     if (anchor) anchor.parentNode.insertBefore(hero, anchor);
+    var annc = doc.getElementById("annc");
+    if (annc && anchor) anchor.parentNode.insertBefore(annc, anchor);
     // 走勢線：market.csv
     fetch("market.csv", { cache: "no-store" }).then(function (r) { return r.ok ? r.text() : ""; }).then(function (t) {
       var pts = t.split(/\r?\n/).slice(1).map(function (l) { return l.split(","); })
