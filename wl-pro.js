@@ -46,7 +46,7 @@
       var v = t.nodeValue, k = v.indexOf("（");
       if (k > 0) {
         t.nodeValue = v.slice(0, k).trim();
-        var sub = el("span", "muted sh-sub"); sub.textContent = v.slice(k).replace(/^（/, "").replace(/）/, "・").replace(/．/g, "・").replace(/・$/, "");
+        var sub = el("span", "muted sh-sub"); sub.textContent = v.slice(k).replace(/^（/, "").replace(/）/, "・").replace(/．/g, "・").replace(/・{2,}/g, "・").replace(/・\s*$/, "");
         h.appendChild(sub);
       }
       break;
