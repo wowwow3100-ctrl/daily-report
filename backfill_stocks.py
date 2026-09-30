@@ -194,6 +194,21 @@ def main():
             item["rec"] = latest[code]      # 速查裡這檔最新一筆紀錄的日期（個股頁排序用）
         stocks.append(item)
 
+    # ---- 首頁用的輕量版紀錄（拿掉長備註，首頁載入從 450KB 降到約 40KB）----
+    try:
+        with open(REPORTS, encoding="utf-8-sig") as f:
+            rows = list(csv.reader(f))
+        with open(os.path.join(HERE, "reports_lite.csv"), "w", encoding="utf-8", newline="") as f:
+            w = csv.writer(f, lineterminator="\n")
+            w.writerow(rows[0])
+            for r in rows[1:]:
+                r = (r + [""] * 8)[:8]
+                r[4] = ""
+                r[7] = ""
+                w.writerow(r)
+    except Exception as e:
+        print("reports_lite.csv 略過：", e)
+
     daily = []
     if os.path.isdir(DAILY_DIR):
         daily = sorted(x for x in os.listdir(DAILY_DIR) if x.lower().endswith(".docx"))

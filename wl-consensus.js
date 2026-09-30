@@ -108,9 +108,11 @@
   var P = null;
   window.WLC = {
     load: function () {
-      if (!P) P = fetch("reports.csv", { cache: "no-store" })
-        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
-        .then(build);
+      // 先讀輕量版（沒有長備註、小很多），讀不到才退回完整的 reports.csv
+      var get = function (u) {
+        return fetch(u, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); });
+      };
+      if (!P) P = get("reports_lite.csv").catch(function () { return get("reports.csv"); }).then(build);
       return P;
     },
     fmt: function (n) { return Number(n).toLocaleString("zh-TW", { maximumFractionDigits: 1 }); },

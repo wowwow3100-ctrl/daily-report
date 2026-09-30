@@ -229,15 +229,19 @@
   html.mob table td:last-child{display:block;border-top:1px dashed var(--line);margin-top:6px;padding:8px 0 0;white-space:normal;}
   html.mob .setpanel{position:fixed;left:12px;right:12px;top:70px;white-space:normal;min-width:0;}
 </style>
-<link rel="stylesheet" href="wl-ui.css?v=6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="wl-ui.css?v=7">
 <script>(function(){var h=document.documentElement;try{h.setAttribute("data-theme",(localStorage.getItem("wl_theme")||"gold").replace("navy","gold"));h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");}catch(e){}})();</script>
 </head>
-<body>
+<body class="home">
+<a class="skip" href="#focus">跳到今日焦點</a>
 <div class="wrap">
 
   <header>
     <img class="brand" src="login-logo.png" alt="旺來">
-    <div class="logo">旺來<small>台股情報站</small></div>
+    <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
         <div class="stamp" id="updated">2026/09/30（週三）收盤</div>
@@ -262,19 +266,19 @@
               <button class="fs-chip" data-v="mb">手機版</button>
             </div>
             <div class="setrow"><span>安裝</span>
-              <button class="fs-chip" id="a2hs">📲 加到主畫面 / 桌面</button>
+              <button class="fs-chip" id="a2hs">加到主畫面 / 桌面</button>
             </div>
           </div>
         </div>
       </div>
-      <div class="oline">🟢 線上 <b id="olnum">4</b> 人<span id="vwrap">｜累計瀏覽 <span id="views">—</span></span></div>
+      <div class="oline"><span class="live" aria-hidden="true"></span>線上 <b id="olnum">4</b> 人<span id="vwrap">｜累計瀏覽 <span id="views">—</span></span></div>
     </div>
   </header>
 
   <div class="annc" id="annc">🍍 <b>旺來碎念</b>：<span id="anncTxt"></span></div>
 
   <div class="notice" id="notice">
-    ⚠ 本站為新聞整理用途
+    <svg class="ntc-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17.2v.3"/></svg>本站為新聞整理用途
     <span>內容彙整自公開新聞與公開資訊，僅供資訊參考，非投資建議，不提供任何買賣訊號。完整內容以原始報導與原始報告為準。</span>
     <button class="nok" id="nok">知道了 ✓（之後縮成一行）</button>
   </div>
@@ -519,7 +523,7 @@
   </footer>
 
 </div>
-<nav class="bnav">
+<nav class="bnav" aria-label="主選單">
   <a class="on" href="index.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="13" height="15" rx="2"/><path d="M16.5 8.5h3v9a2 2 0 0 1-2 2h-1"/><path d="M7 8.5h6M7 12h6M7 15.5h3.5"/></svg></span>情報站</a>
   <a href="revenue.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M7 15.5l3-3 2.5 2 4.5-5"/><path d="M14.5 9.5H17V12"/></svg></span>營收佈告欄</a>
   <a href="stocks.html"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20h17"/><rect x="5" y="12" width="3" height="5" rx=".6"/><rect x="10.5" y="7" width="3" height="10" rx=".6"/><rect x="16" y="9.5" width="3" height="7.5" rx=".6"/></svg></span>個股報告</a>
@@ -734,7 +738,7 @@
   }
 })();
 </script>
-<script src="wl-consensus.js?v=2"></script>
+<script src="wl-consensus.js?v=3"></script>
 <script src="wl-watch.js?v=1"></script>
 <script>
 /* ===== 行事曆／我的自選／資料交集（前端自動產生，排程不需維護這段） ===== */
@@ -869,5 +873,6 @@
 })();
 </script>
 <script src="wl-new.js?v=2"></script>
+<script src="wl-pro.js?v=1"></script>
 </body>
 </html>

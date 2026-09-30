@@ -400,3 +400,84 @@ nav.bnav a .revdot{position:absolute;top:-3px;right:calc(50% - 30px);padding:0 5
 .subtabs a.ext:hover{color:#E2CCFF;background:rgba(185,140,255,.12);}
 html[data-theme="light"] .subtabs a.ext,html[data-theme="white"] .subtabs a.ext{color:#7B3FC4;border-color:rgba(123,63,196,.45);}
 html[data-theme="light"] .subtabs a.ext:hover,html[data-theme="white"] .subtabs a.ext:hover{background:rgba(123,63,196,.08);color:#5E2A9E;}
+
+/* =====================================================================
+   26. 體驗層（搭配 wl-pro.js）：Masthead、章節節奏、桌機兩欄、動態
+   ===================================================================== */
+:root{--num:"Inter","SF Pro Display",-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;}
+.logo{margin:0;}
+.skip{position:absolute;left:-999px;top:8px;z-index:300;background:var(--gold);color:var(--on-gold);padding:8px 16px;border-radius:999px;font-weight:800;text-decoration:none;}
+.skip:focus{left:12px;}
+.mkt .val,.stamp,.h-num,.h-chg,.hm b,.ntime,.rv .amt,.rv .pc{font-family:var(--num);}
+.live{display:inline-block;width:8px;height:8px;border-radius:50%;background:#35d07f;box-shadow:0 0 0 3px rgba(53,208,127,.18);vertical-align:.08em;margin-right:6px;animation:livep 2.4s ease-in-out infinite;}
+@keyframes livep{0%,100%{box-shadow:0 0 0 3px rgba(53,208,127,.18);}50%{box-shadow:0 0 0 6px rgba(53,208,127,.05);}}
+.ntc-ic{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.14em;margin-right:4px;}
+
+/* Masthead */
+.hero{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr;gap:16px;margin:6px 0 30px;padding:22px 20px 18px;
+  border-radius:22px;border:1px solid var(--edge);background:var(--surface),var(--card);box-shadow:var(--shadow-hi);}
+.hero::before{content:"";position:absolute;right:-18%;top:-55%;width:70%;height:150%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(var(--gold-rgb),.16),transparent 70%);}
+.hero>*{position:relative;}
+.h-eye{display:flex;align-items:center;gap:8px;font-size:.76rem;color:var(--muted);letter-spacing:1.5px;}
+.h-eye .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(var(--gold-rgb),.14);}
+.h-eye .dot.up{background:var(--up);box-shadow:0 0 0 4px rgba(255,90,90,.14);}
+.h-eye .dot.dn{background:var(--down);box-shadow:0 0 0 4px rgba(61,214,140,.14);}
+.h-title{margin-top:14px;color:var(--gold);font-weight:800;font-size:.86rem;letter-spacing:4px;}
+.h-num{margin-top:2px;font-weight:800;font-size:clamp(3.1rem,13vw,5.8rem);line-height:.98;letter-spacing:-.03em;color:var(--text);font-variant-numeric:tabular-nums;}
+.h-chg{margin-top:10px;font-weight:700;font-size:1.02rem;letter-spacing:.3px;}
+.h-chg.up{color:var(--up);} .h-chg.down{color:var(--down);}
+.spark{display:block;width:100%;height:auto;overflow:visible;}
+.sp-line{stroke:rgb(var(--gold-rgb));stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round;}
+.sp-dot{fill:rgb(var(--gold-rgb));filter:drop-shadow(0 0 6px rgba(var(--gold-rgb),.9));}
+.h-cap{margin-top:6px;text-align:right;font-size:.68rem;color:var(--muted);letter-spacing:1px;}
+.h-mini{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding-top:14px;border-top:1px solid var(--edge);}
+.hm{display:flex;flex-direction:column;gap:2px;min-width:0;}
+.hm .hk{font-size:.68rem;color:var(--muted);letter-spacing:1px;}
+.hm b{font-size:1.02rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hm i{font-style:normal;font-size:.72rem;font-family:var(--num);font-weight:700;white-space:nowrap;}
+.hm i.up{color:var(--up);} .hm i.down{color:var(--down);}
+@media (min-width:760px){
+  .hero{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:end;column-gap:40px;padding:34px 38px 26px;}
+  .h-mini{grid-column:1/-1;gap:24px;}
+  .hm b{font-size:1.2rem;}
+}
+html.mob .hero{grid-template-columns:1fr;padding:22px 20px 18px;}
+
+/* 章節節奏 */
+.sec{scroll-margin-top:80px;}
+body.home h2::before{display:none;}
+.sec-no{font-family:var(--num);font-size:.66rem;font-weight:700;letter-spacing:1px;color:var(--gold);padding:3px 8px 2px;border:1px solid var(--edge-hi);border-radius:999px;line-height:1.3;}
+body.home h2 .muted,body.home h2>span.muted{flex-basis:100%;font-size:.72rem !important;letter-spacing:.3px !important;margin-top:-2px;}
+body.home .sect-head{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;color:var(--gold);font-size:1.02rem;letter-spacing:2px;margin:34px 0 12px;}
+.pro-ic{width:1.15em;height:1.15em;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none;}
+body.home .sec>h2{margin-top:38px;}
+
+/* 捲入淡入 */
+html.pro .rvl{opacity:0;transform:translateY(18px);}
+html.pro .rvl.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);}
+@media (prefers-reduced-motion:reduce){html.pro .rvl{opacity:1;transform:none;}*{animation-duration:.001ms !important;transition-duration:.001ms !important;}}
+
+/* 卡片互動 */
+@media (hover:hover){
+  .card,.mkt .m,details.stkbox,.tile,.rec,.rv[data-c]{transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s,border-color .25s;}
+  .mkt .m:hover,.tile:hover,.rec:hover{transform:translateY(-2px);border-color:var(--edge-hi);box-shadow:var(--shadow-hi);}
+}
+
+/* 桌機：主欄＋側欄、頂部浮動導覽 */
+@media (min-width:1100px){
+  html:not(.mob) body.home .wrap{max-width:1240px;}
+  html:not(.mob) .pro-grid{display:grid;grid-template-columns:minmax(0,1fr) 410px;column-gap:44px;align-items:start;}
+  html:not(.mob) .pro-rail .mkt{grid-template-columns:repeat(2,minmax(0,1fr));}
+  html:not(.mob) .pro-rail .sec:first-child>h2,html:not(.mob) .pro-main .sec:first-child>h2{margin-top:6px;}
+  html:not(.mob) .pro-rail{padding-left:40px;border-left:1px solid var(--edge);}
+}
+@media (min-width:1360px){
+  html:not(.mob) nav.bnav{top:16px;bottom:auto;left:50%;right:auto;transform:translateX(-50%);width:auto;gap:2px;padding:6px;
+    border:1px solid var(--edge);border-radius:999px;background:rgba(var(--bg-rgb),.72);box-shadow:var(--shadow);}
+  html:not(.mob) nav.bnav a{flex-direction:row;gap:8px;max-width:none;padding:8px 16px;border-radius:999px;font-size:.78rem;}
+  html:not(.mob) nav.bnav a.on{background:rgba(var(--gold-rgb),.14);}
+  html:not(.mob) nav.bnav a.on::before{display:none;}
+  html:not(.mob) nav.bnav a .newdot{top:-6px;right:-2px;}
+  html:not(.mob) body{padding-bottom:40px;}
+}
