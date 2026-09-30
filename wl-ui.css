@@ -492,3 +492,7 @@ body.home .mkt .m.in-hero{display:none;}
 body.home .mkt{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
 @media (min-width:1360px){ html:not(.mob) nav.bnav{background:rgba(var(--bg-rgb),.86);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);} }
 .sect-head .sh-sub{flex-basis:100%;font-size:.72rem;font-weight:400;letter-spacing:.3px;color:var(--muted);margin-top:-2px;}
+@media (min-width:1360px){ html:not(.mob) .head-right{flex-direction:column !important;align-items:flex-end !important;gap:6px !important;} }
+footer{margin-top:72px;padding:34px 0 20px;font-size:.78rem;line-height:2;color:var(--muted);}
+footer b{color:var(--gold);letter-spacing:1px;}
+footer .thbtn{margin-bottom:16px;}
