@@ -11,7 +11,7 @@
 (function () {
   "use strict";
   var doc = document, root = doc.documentElement;
-  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reduce = (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) || document.visibilityState !== "visible";
   var wrap = doc.querySelector(".wrap");
   if (!wrap) return;
   root.classList.add("pro");
@@ -174,7 +174,7 @@
   buildHero();
 
   /* ---------- 5. 捲入淡入 ---------- */
-  if (!reduce && "IntersectionObserver" in window && doc.visibilityState === "visible") {
+  if (!reduce && "IntersectionObserver" in window) {
     var targets = doc.querySelectorAll(".sec, .hero");
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
