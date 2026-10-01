@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/10/01（週四）收盤場次</div>
+        <div class="stamp" id="updated">2026/10/01（週四）盤後場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -289,10 +289,10 @@
   </div>
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（09/30 收盤．證交所官方值；10/01 官方資料尚未發布；SOX 為 09/30 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/01 收盤．加權與成交值為新聞值，證交所 10/01 官方資料尚未發布；融資、維持率、SOX 為 09/30 值）</span></h2>
   <div class="mkt">
-    <div class="m"><div class="lbl">加權指數</div><div class="val">47,940</div><div class="chg up">+308.17（+0.65%）</div></div>
-    <div class="m"><div class="lbl">成交值（上市）</div><div class="val">9,215 億</div><div class="chg up">較前日 +10.2%</div></div>
+    <div class="m"><div class="lbl">加權指數</div><div class="val">48,353</div><div class="chg up">+413.36（+0.86%）</div></div>
+    <div class="m"><div class="lbl">成交值（上市）</div><div class="val">8,374 億</div><div class="chg down">較前日 -9.1%</div></div>
     <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">6,223 億</div><div class="chg up">單日 +36.0 億</div></div>
     <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">12,628.62</div><div class="chg">持平（09/30 美股）</div></div>
     <div class="m"><div class="lbl">全市場擔保維持率</div><div class="val">285.74%</div><div class="chg up">較前日 +1.72</div></div>
@@ -306,7 +306,7 @@
   <!-- ===== /WL:WATCH ===== -->
 
   <!-- ===== DATA:SECTORS ===== -->
-  <div class="sect-head">🔥 資金流向 TOP 5（09/30 收盤．依類股漲幅）．點族群看裡面最強的五檔</div>
+  <div class="sect-head">🔥 資金流向 TOP 5（09/30 收盤．10/01 官方資料待發布．依類股漲幅）．點族群看裡面最強的五檔</div>
   <ol class="sectlist">
     <li><details class="stkbox">
       <summary><span class="sn">1</span><span class="snm">玻璃陶瓷</span><b class="up">+3.94%</b></summary>
@@ -387,7 +387,15 @@
   <!-- ===== /DATA:PREOPEN ===== -->
 
     <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/01 收盤場．依時間由新到舊）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/01 盤後場．依時間由新到舊）</span></h2>
+  <div class="card">
+    <div class="news-title"><span class="cat">盤勢</span><span class="ntime">10/01 盤後</span>〈台股盤後〉台積電(2330)、聯發科(2454) 尾盤拉抬，大漲 413 點收 48,353 點創收盤新高 <a class="ref" href="#src-16">[16]</a></div>
+    <div class="news-body">加權指數收 48,353.49 點、+413.36 點（+0.86%），成交值約 8,374 億元；台積電漲 30 元收 2,510 元追平最高價，聯發科漲 1.2% 收 4,980 元。電子指數 +1.24%、金融指數 -0.84%，櫃買 +0.42%，三大法人合計買超約 292.5 億元。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">族群</span><span class="ntime">10/01 盤後</span>被動元件、載板族群全面噴出，國巨(2327) 漲停收 602 元；友達(2409)、群創(3481) 回落 <a class="ref" href="#src-17">[17]</a></div>
+    <div class="news-body">被動元件族群多檔漲停，ABF 載板股漲幅約 4~6%，聯電(2303) 漲 4.53% 收 161.5 元；面板雙虎與塑化類股則回檔，塑化約跌 3%。</div>
+  </div>
   <div class="card">
     <div class="news-title"><span class="cat">財經</span><span class="ntime">10/01 12:52</span>美銀上調日月光投控(3711) 目標價至 800 元，海外再買新加坡廠 <a class="ref" href="#src-1">[1]</a></div>
     <div class="news-body">美銀指今年設備採購已達資本支出目標 82%，ATM 營收 2028 年前年複合成長 37%，毛利率 2027 年估升至 33.8%；EPS 估 18／31／45 元。</div>
@@ -415,20 +423,12 @@
     <div class="news-body">營收 542.3 億美元、EPS 33.42 美元，均高於市場預期；下季財測營收 615 億美元、EPS 38.15 美元，並持續擴充 HBM 產能。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">籌碼</span><span class="ntime">10/01 03:00</span>外資第三季整體賣超，仍卡位 22 檔加碼股迎第四季 <a class="ref" href="#src-7">[7]</a></div>
-    <div class="news-body">外資第三季對台股整體賣超，但對 22 檔上市股票逆勢增持，持股規模居前包括南亞科(2408)、欣興(3037)、長榮(2603)。</div>
-  </div>
-  <div class="card">
     <div class="news-title"><span class="cat">個股</span><span class="ntime">10/01 03:00</span>廣發證券：輝達 CPO 進度超前，看好波若威(3163)、貿聯-KY(3665)，不看好大立光(3008) <a class="ref" href="#src-8">[8]</a></div>
     <div class="news-body">廣發證券指輝達 CPO scale-out 交換器進度快於預期並已量產，預估 2027 年全年出貨 10 萬台；對大立光則認為評價並不便宜。</div>
   </div>
   <div class="card">
     <div class="news-title"><span class="cat">個股</span><span class="ntime">10/01 03:00</span>聯茂(6213) 8 月獲利年增逾 8 倍，外資看多 CCL 台燿(6274)、台光電(2383) <a class="ref" href="#src-9">[9]</a></div>
     <div class="news-body">聯茂 8 月稅後純益 9.24 億元、年增 852.58%；高盛給台燿合理股價 3,010 元，摩根士丹利稱台光電為全球高速、低損耗 CCL 領導廠商。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">盤勢</span><span class="ntime">10/01 00:27</span>前三季十大飆股出列：聯友金屬-創意(7610) 漲 1,113.29% 居冠 <a class="ref" href="#src-10">[10]</a></div>
-    <div class="news-body">IC 載板與銅箔基板族群包辦前十大飆股，法人在高評價下仍持續卡位核心持股，看好第四季高階伺服器與先進封裝需求。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
@@ -439,7 +439,7 @@
     <ul class="sum-list">
       <li>收盤場新增 2 筆：<b>美銀</b>重申日月光投控（3711）買進、目標價由 750 元上調至 800 元；未具名國內投顧將<b>台達電</b>（2308）目標價由 2,240 元上修至 2,430 元<a class="ref" href="#src-1">[1]</a><a class="ref" href="#src-2">[2]</a></li>
       <li>早盤場觀點仍有效：廣發證券看好波若威（3163）、貿聯-KY（3665）、相對不看好大立光（3008）；高盛給台燿（6274）合理股價 3,010 元；摩根士丹利看好台光電（2383）<a class="ref" href="#src-8">[8]</a><a class="ref" href="#src-9">[9]</a></li>
-      <li>證交所 10/01 官方收盤資料於 14:30 前尚未發布，大盤速覽與資金流向暫沿用 09/30 官方值，待下一場次更新。</li>
+      <li>盤後場次無新增具名券商報告；證交所 10/01 官方資料至 18:20 仍未發布，加權與成交值採新聞值<a class="ref" href="#src-18">[18]</a>，融資、擔保維持率與資金流向沿用 09/30 官方值，待下一場次更新。</li>
       <li>自選股萬潤（6187）本場次無新具名評等或目標價。</li>
     </ul>
   </div>
@@ -500,16 +500,17 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
+    <li id="src-16"><a href="https://news.cnyes.com/news/id/6619520" target="_blank" rel="noopener">鉅亨網｜〈台股盤後〉台積電、聯發科尾盤拉抬 上漲413點收最高48353點（10/01）</a></li>
+    <li id="src-17"><a href="https://www.storm.mg/article/11168945" target="_blank" rel="noopener">風傳媒｜台股10月開門紅！上漲413點收最高點，被動元件、載板族群全面噴出（10/01）</a></li>
+    <li id="src-18"><a href="https://cna.com.tw/news/afe/202610010169.aspx" target="_blank" rel="noopener">中央社｜台股48353點創收盤新高 台積電收2510元（10/01）</a></li>
     <li id="src-1"><a href="https://news.ebc.net.tw/news/business/573716" target="_blank" rel="noopener">東森新聞｜美銀看好日月光投控 目標價喊上800元（10/01 12:52）</a></li>
     <li id="src-2"><a href="https://wantrich.chinatimes.com/news/20261001900208-420101" target="_blank" rel="noopener">旺得富｜台達電先苦後甜 目標價反升 法人揭第4季3大翻身動能（10/01 10:24）</a></li>
     <li id="src-3"><a href="https://udn.com/news/story/7251/9787381" target="_blank" rel="noopener">聯合新聞網｜台股10月開紅盤 台積電、載板三雄領軍（10/01 09:15）</a></li>
     <li id="src-4"><a href="https://ec.ltn.com.tw/article/breakingnews/5591427" target="_blank" rel="noopener">自由財經｜美股收盤》通膨放緩！道瓊跌443點（10/01 05:50）</a></li>
     <li id="src-5"><a href="https://www.cna.com.tw/news/afe/202610010012.aspx" target="_blank" rel="noopener">中央社｜國際油價上漲 維持100美元上下（10/01 05:16）</a></li>
     <li id="src-6"><a href="https://news.cnyes.com/news/id/6618806" target="_blank" rel="noopener">鉅亨網｜〈財報〉美光Q4優預期財測強勁（10/01）</a></li>
-    <li id="src-7"><a href="https://www.ctee.com.tw/news/20261001700236-430201" target="_blank" rel="noopener">工商時報｜外資大買22檔 卡位Q4行情（10/01 03:00）</a></li>
     <li id="src-8"><a href="https://www.ctee.com.tw/news/20261001700239-430201" target="_blank" rel="noopener">工商時報｜輝達CPO發展超前 外資按讚2台廠（10/01 03:00）</a></li>
     <li id="src-9"><a href="https://www.ctee.com.tw/news/20261001700245-430201" target="_blank" rel="noopener">工商時報｜聯茂夠利 外資看多2檔CCL股（10/01 03:00）</a></li>
-    <li id="src-10"><a href="https://money.udn.com/money/story/5607/9786592" target="_blank" rel="noopener">經濟日報｜前三季十大飆股出列（10/01 00:27）</a></li>
     <li id="src-11"><a href="https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?date=20260930&amp;response=json" target="_blank" rel="noopener">臺灣證券交易所｜每日市場成交資訊 FMTQIK（09/30：47,940.13 點、成交值 9,214.93 億）（09/30）</a></li>
     <li id="src-12"><a href="https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20260930&amp;selectType=MS&amp;response=json" target="_blank" rel="noopener">臺灣證券交易所｜融資融券彙總 MI_MARGN（09/30 融資餘額 6,223 億）（09/30）</a></li>
     <li id="src-13"><a href="https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ4U_TREND?response=json&amp;days=5&amp;date=20260930" target="_blank" rel="noopener">臺灣證券交易所｜信用交易擔保維持率趨勢 BFIJ4U_TREND（09/30）（09/30）</a></li>
