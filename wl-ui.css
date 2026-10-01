@@ -496,3 +496,34 @@ body.home .mkt{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
 footer{margin-top:72px;padding:34px 0 20px;font-size:.78rem;line-height:2;color:var(--muted);}
 footer b{color:var(--gold);letter-spacing:1px;}
 footer .thbtn{margin-bottom:16px;}
+
+/* =====================================================================
+   27. 市場脈動列（取代大數字看板）：六個指標同大小，一眼掃完
+   ===================================================================== */
+.hero{display:none !important;}
+body.home .sec.pulsed{display:none;}
+.pulse{margin:4px 0 26px;}
+.p-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:.78rem;color:var(--muted);letter-spacing:1px;}
+.p-head b{color:var(--text);font-weight:700;font-family:var(--num);letter-spacing:.5px;}
+.p-head .p-lab{margin-left:auto;color:var(--gold);font-weight:800;letter-spacing:3px;font-size:.72rem;}
+.p-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(var(--gold-rgb),.14);}
+.p-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;}
+.pt{position:relative;overflow:hidden;min-width:0;padding:11px 12px 10px;border-radius:14px;border:1px solid var(--edge);
+  background:var(--surface),var(--card);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:2px;}
+.pt::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--edge-hi);opacity:.6;}
+.pt.up::after{background:var(--up);opacity:.85;} .pt.down::after{background:var(--down);opacity:.85;}
+.pk{font-size:.68rem;color:var(--muted);letter-spacing:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.pv{font-family:var(--num);font-size:1.12rem;font-weight:800;color:var(--text);letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.25;}
+.pc{font-family:var(--num);font-size:.72rem;font-weight:700;color:var(--muted);white-space:nowrap;}
+.pt.up .pc{color:var(--up);} .pt.down .pc{color:var(--down);}
+.ps{position:absolute;right:8px;bottom:8px;width:42%;height:22px;opacity:.9;pointer-events:none;}
+.ps .psl{fill:none;stroke:rgb(var(--gold-rgb));stroke-width:1.6;vector-effect:non-scaling-stroke;stroke-linejoin:round;}
+.ps .psa{fill:rgba(var(--gold-rgb),.12);}
+.p-note{display:block;width:100%;margin-top:8px;padding:0;border:0;background:none;text-align:left;cursor:pointer;font-family:inherit;
+  font-size:.68rem;color:var(--muted);line-height:1.6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.p-note.open{white-space:normal;}
+.p-note:hover{color:var(--text);}
+@media (min-width:760px){ .p-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;} .pt{padding:14px 14px 12px;} .pv{font-size:1.25rem;} }
+html.mob .p-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;}
+html.mob .pt{padding:11px 12px 10px;} html.mob .pv{font-size:1.12rem;}
+@media (hover:hover){ .pt{transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s;} .pt:hover{transform:translateY(-2px);border-color:var(--edge-hi);} }

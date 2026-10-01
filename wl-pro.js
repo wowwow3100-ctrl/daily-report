@@ -74,6 +74,7 @@
   var idx = 0, isHome = doc.body.classList.contains("home");
   if (isHome) secs.forEach(function (s) {
     var h = s.firstElementChild;
+    if (s.getAttribute("data-k") === "mkt") return;  // 大盤數字已移到最上方的脈動列
     if (h && (h.tagName === "H2" || h.classList.contains("sect-head"))) {
       idx++;
       h.insertAdjacentHTML("afterbegin", '<span class="sec-no" aria-hidden="true">' + (idx < 10 ? "0" : "") + idx + "</span>");
@@ -90,92 +91,70 @@
     secs.forEach(function (s) { (RAIL[s.getAttribute("data-k")] ? rail : main).appendChild(s); });
   }
 
-  /* ---------- 4. 首頁 Masthead ---------- */
+  /* ---------- 4. 首頁「市場脈動列」：六個指標一排，每個一樣大 ---------- */
   function buildHero() {
     var cards = doc.querySelectorAll(".mkt .m");
     if (!cards.length || !doc.body.classList.contains("home")) return;
-    var get = function (re) {
-      for (var i = 0; i < cards.length; i++) {
-        var l = cards[i].querySelector(".lbl");
-        if (l && re.test(l.textContent)) return cards[i];
-      }
-      return null;
-    };
-    var tx = get(/加權/); if (!tx) return;
-    var val = tx.querySelector(".val").textContent.trim();
-    var chgEl = tx.querySelector(".chg"), chg = chgEl ? chgEl.textContent.trim() : "";
-    var up = chgEl && chgEl.classList.contains("up"), dn = chgEl && chgEl.classList.contains("down");
+    var mktSec = doc.querySelector('.sec[data-k="mkt"]');
+    var noteEl = mktSec && mktSec.querySelector("h2 .muted");
+    var note = noteEl ? noteEl.textContent.replace(/^（|）$/g, "") : "";
     var stamp = (doc.getElementById("updated") || {}).textContent || "";
-    var mini = [[/成交值/, "成交值"], [/融資/, "融資餘額"], [/費城|SOX/, "費半 SOX"]].map(function (p) {
-      var c = get(p[0]); if (!c) return "";
-      var ch = c.querySelector(".chg");
-      return '<div class="hm"><span class="hk">' + p[1] + '</span><b>' + c.querySelector(".val").textContent.trim() +
-        "</b>" + (ch ? '<i class="' + ch.className.replace("chg", "").trim() + '">' + ch.textContent.trim().replace(/（.*$/, "") + "</i>" : "") + "</div>";
+    var SHORT = { "加權指數": "加權指數", "成交值（上市）": "成交值", "融資餘額（上市）": "融資餘額", "費城半導體 SOX": "費半 SOX", "全市場擔保維持率": "擔保維持率", "信用風險戶數": "信用風險戶" };
+    var tiles = Array.prototype.map.call(cards, function (c, i) {
+      var lbl = (c.querySelector(".lbl") || {}).textContent || "";
+      lbl = lbl.replace(/NEW/g, "").trim();
+      var v = (c.querySelector(".val") || {}).textContent || "";
+      var ch = c.querySelector(".chg"), chT = ch ? ch.textContent.trim() : "";
+      var dir = ch && ch.classList.contains("up") ? "up" : ch && ch.classList.contains("down") ? "down" : "";
+      var tip = chT.match(/（(.*)）/), chShort = chT.replace(/（.*$/, "").replace(/^較前日\s*/, "").replace(/^單日\s*/, "");
+      var sub = c.querySelector(".sub");
+      // 加權：顯示漲跌幅（%），點數放提示；其他：直接顯示變化量，箭頭已表示方向就拿掉正負號
+      var shown = (tip && /%$/.test(tip[1])) ? tip[1] : chShort;
+      if (dir) shown = shown.replace(/^[+\-−]\s*/, "");
+      if (tip && /%$/.test(tip[1])) tip = [0, chT.replace(/（.*$/, "") + " 點"];
+      var spark = /加權/.test(lbl) ? "tx" : /成交值/.test(lbl) ? "vol" : "";
+      return '<div class="pt ' + dir + '"' + (tip || sub ? ' title="' + ((tip ? tip[1] : "") + (sub ? " " + sub.textContent : "")).trim() + '"' : "") + ">" +
+        '<span class="pk">' + (SHORT[lbl] || lbl) + "</span>" +
+        '<b class="pv">' + v.trim() + "</b>" +
+        '<span class="pc">' + (dir === "up" ? "▲ " : dir === "down" ? "▼ " : "") + shown + "</span>" +
+        (spark ? '<svg class="ps" data-s="' + spark + '" viewBox="0 0 100 28" preserveAspectRatio="none" aria-hidden="true"></svg>' : "") +
+        "</div>";
     }).join("");
-    // 已經放進 Masthead 的四張卡，在下方速覽區就不重複顯示
-    [tx, get(/成交值/), get(/融資/), get(/費城|SOX/)].forEach(function (c) { if (c) c.classList.add("in-hero"); });
-    var hero = el("section", "hero");
+    var hero = el("section", "pulse");
     hero.setAttribute("aria-label", "今日盤勢");
     hero.innerHTML =
-      '<div class="h-l">' +
-        '<div class="h-eye"><span class="dot' + (up ? " up" : dn ? " dn" : "") + '"></span>' + stamp + '</div>' +
-        '<div class="h-title">加權指數</div>' +
-        '<div class="h-num" data-v="' + num(val) + '">' + val + "</div>" +
-        '<div class="h-chg ' + (up ? "up" : dn ? "down" : "") + '">' + chg + "</div>" +
-      "</div>" +
-      '<div class="h-r"><svg class="spark" viewBox="0 0 320 110" aria-hidden="true"></svg>' +
-        '<div class="h-cap">近期收盤走勢</div></div>' +
-      '<div class="h-mini">' + mini + "</div>";
+      '<div class="p-head"><span class="p-dot"></span><b>' + stamp + '</b><span class="p-lab">市場脈動</span></div>' +
+      '<div class="p-grid">' + tiles + "</div>" +
+      (note ? '<button class="p-note" type="button" aria-expanded="false">資料說明：' + note + "</button>" : "");
+    if (mktSec) mktSec.classList.add("pulsed");
     var anchor = doc.querySelector(".pro-grid") || secs[0];
     if (anchor) anchor.parentNode.insertBefore(hero, anchor);
     var annc = doc.getElementById("annc");
     if (annc && anchor) anchor.parentNode.insertBefore(annc, anchor);
-    // 走勢線：market.csv
+    var nb = hero.querySelector(".p-note");
+    if (nb) nb.addEventListener("click", function () { var o = nb.classList.toggle("open"); nb.setAttribute("aria-expanded", o); });
+    // 迷你走勢：加權、成交值（market.csv）
     fetch("market.csv", { cache: "no-store" }).then(function (r) { return r.ok ? r.text() : ""; }).then(function (t) {
-      var pts = t.split(/\r?\n/).slice(1).map(function (l) { return l.split(","); })
-        .filter(function (c) { return /^\d{4}-\d\d-\d\d$/.test(c[0]) && !isNaN(parseFloat(c[1])); })
-        .map(function (c) { return [c[0], parseFloat(c[1])]; });
-      var last = num(val);
-      if (pts.length && Math.abs(pts[pts.length - 1][1] - last) > 1 && !isNaN(last)) pts.push(["now", last]);
-      pts = pts.slice(-40);
-      var s = hero.querySelector(".spark");
-      if (pts.length < 2) { hero.querySelector(".h-r").style.display = "none"; return; }
-      var ys = pts.map(function (p) { return p[1]; }), mn = Math.min.apply(null, ys), mx = Math.max.apply(null, ys);
-      var pad = (mx - mn) * 0.15 || 1; mn -= pad; mx += pad;
-      var X = function (i) { return (i / (pts.length - 1)) * 316 + 2; };
-      var Y = function (v) { return 104 - ((v - mn) / (mx - mn)) * 96; };
-      var d = pts.map(function (p, i) { return (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(p[1]).toFixed(1); }).join(" ");
-      var lx = X(pts.length - 1), ly = Y(pts[pts.length - 1][1]);
-      s.innerHTML =
-        '<defs><linearGradient id="spg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="rgb(var(--gold-rgb))" stop-opacity=".35"/>' +
-        '<stop offset="1" stop-color="rgb(var(--gold-rgb))" stop-opacity="0"/></linearGradient></defs>' +
-        '<path class="sp-area" d="' + d + " L" + lx.toFixed(1) + " 110 L2 110 Z" + '" fill="url(#spg)"/>' +
-        '<path class="sp-line" d="' + d + '" fill="none"/>' +
-        '<circle class="sp-dot" cx="' + lx.toFixed(1) + '" cy="' + ly.toFixed(1) + '" r="3.6"/>';
-      var cap = hero.querySelector(".h-cap");
-      cap.textContent = "近 " + pts.length + " 個交易日收盤走勢";
-      if (!reduce) {
-        var line = s.querySelector(".sp-line"), L = line.getTotalLength ? line.getTotalLength() : 0;
-        if (L) { line.style.strokeDasharray = L; line.style.strokeDashoffset = L; requestAnimationFrame(function () { line.style.transition = "stroke-dashoffset 1.4s cubic-bezier(.2,.7,.2,1)"; line.style.strokeDashoffset = 0; }); }
-      }
-    }).catch(function () { hero.querySelector(".h-r").style.display = "none"; });
-    // 數字跳動
-    var n = hero.querySelector(".h-num"), target = parseFloat(n.getAttribute("data-v"));
-    if (!reduce && !isNaN(target)) {
-      var t0 = null, from = target * 0.985, dec = (val.split(".")[1] || "").replace(/\D.*$/, "").length;
-      var step = function (ts) {
-        if (!t0) t0 = ts; var p = Math.min(1, (ts - t0) / 900), e = 1 - Math.pow(1 - p, 3);
-        n.textContent = (from + (target - from) * e).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
-        if (p < 1) requestAnimationFrame(step); else n.textContent = val;
+      var rows = t.split(/\r?\n/).slice(1).filter(function (l) { return /^\d{4}-\d\d-\d\d,/.test(l); });
+      var col = function (k) {
+        return rows.map(function (l) {
+          if (k === "tx") return parseFloat(l.split(",")[1]);
+          var m = l.match(/"([\d,\.]+)\s*億"/); return m ? parseFloat(m[1].replace(/,/g, "")) : NaN;
+        }).filter(function (x) { return !isNaN(x); }).slice(-20);
       };
-      requestAnimationFrame(step);
-    }
+      hero.querySelectorAll(".ps").forEach(function (s) {
+        var ys = col(s.getAttribute("data-s")); if (ys.length < 2) { s.remove(); return; }
+        var mn = Math.min.apply(null, ys), mx = Math.max.apply(null, ys), rg = (mx - mn) || 1;
+        var d = ys.map(function (y, i) { return (i ? "L" : "M") + (i / (ys.length - 1) * 100).toFixed(1) + " " + (25 - (y - mn) / rg * 22).toFixed(1); }).join(" ");
+        s.innerHTML = '<path d="' + d + ' L100 28 L0 28 Z" class="psa"/><path d="' + d + '" class="psl"/>';
+      });
+    }).catch(function () {});
   }
   buildHero();
 
   /* ---------- 5. 捲入淡入 ---------- */
   if (!reduce && "IntersectionObserver" in window) {
-    var targets = doc.querySelectorAll(".sec, .hero");
+    var targets = doc.querySelectorAll(".sec, .pulse");
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
     }, { rootMargin: "0px 0px -6% 0px", threshold: 0.04 });
