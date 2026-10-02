@@ -186,7 +186,7 @@
   var today = document.createElement("span"); today.className = "ol-today";
   today.innerHTML = '<i class="sep">｜</i>今日瀏覽 <b>—</b>';
   box.insertBefore(today, vwrap);
-  var MIN = 10;
+  var MIN = 0;  // 旺來大大要求：線上人數一律顯示，不收起
   function chk() { var v = parseInt(ol.textContent, 10); box.classList.toggle("ol-low", !(v >= MIN)); }
   chk();
   if ("MutationObserver" in window) new MutationObserver(chk).observe(ol, { childList: true, characterData: true, subtree: true });
