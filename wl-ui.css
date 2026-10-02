@@ -529,3 +529,6 @@ html.mob .pt{padding:11px 12px 10px;} html.mob .pv{font-size:1.12rem;}
 @media (hover:hover){ .pt{transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s;} .pt:hover{transform:translateY(-2px);border-color:var(--edge-hi);} }
 @media (max-width:759px){ .pv{font-size:clamp(.92rem,4.3vw,1.12rem);letter-spacing:-.025em;text-overflow:clip;} .pt{padding:10px 10px 9px;} }
 html.mob .pv{font-size:clamp(.92rem,4.3vw,1.12rem);letter-spacing:-.025em;text-overflow:clip;}
+.oline .ol-today b{font-family:var(--num);color:var(--text);font-weight:700;}
+.oline.ol-low .ol-on{display:none;}
+.oline.ol-low .ol-today .sep{display:none;}

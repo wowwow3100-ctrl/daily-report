@@ -171,3 +171,28 @@
     body.animate && body.animate([{ opacity: 0, transform: "translateY(-4px)" }, { opacity: 1, transform: "none" }], { duration: 220, easing: "ease-out" });
   }, true);
 })();
+
+/* ---------- 線上人數顯示：人少時只顯示瀏覽數（真實數字，不灌水） ---------- */
+(function () {
+  "use strict";
+  var ol = document.getElementById("olnum");
+  if (!ol) return;
+  var box = ol.parentNode, vwrap = document.getElementById("vwrap");
+  var on = document.createElement("span"); on.className = "ol-on";
+  // 把「●線上 N 人」包起來，方便整段收起
+  var n = box.firstChild, stop = vwrap || null;
+  while (n && n !== stop) { var nx = n.nextSibling; on.appendChild(n); n = nx; }
+  box.insertBefore(on, box.firstChild);
+  var today = document.createElement("span"); today.className = "ol-today";
+  today.innerHTML = '<i class="sep">｜</i>今日瀏覽 <b>—</b>';
+  box.insertBefore(today, vwrap);
+  var MIN = 10;
+  function chk() { var v = parseInt(ol.textContent, 10); box.classList.toggle("ol-low", !(v >= MIN)); }
+  chk();
+  if ("MutationObserver" in window) new MutationObserver(chk).observe(ol, { childList: true, characterData: true, subtree: true });
+  var d = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10).replace(/-/g, "");
+  fetch("https://abacus.jasoncameron.dev/hit/wanglai-daily-report/day" + d)
+    .then(function (r) { return r.json(); })
+    .then(function (j) { if (j && j.value) today.querySelector("b").textContent = Number(j.value).toLocaleString(); else today.style.display = "none"; })
+    .catch(function () { today.style.display = "none"; });
+})();
