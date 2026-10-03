@@ -154,7 +154,20 @@ def do_push():
     log("push %s (%d files) -> %s" % ("OK" if ok else "FAILED", len(files), sha.strip()))
 
 
+def another_running():
+    """已經有一隻守護在跑（心跳 20 秒內有更新）就不要再開第二隻，避免重複推送。"""
+    try:
+        age = time.time() - os.path.getmtime(HEARTBEAT)
+        with open(HEARTBEAT, encoding="utf-8") as f:
+            pid = f.read().strip().split("PID=")[-1]
+        return age < 20 and pid and int(pid) != os.getpid()
+    except Exception:
+        return False
+
+
 def main():
+    if another_running():
+        return
     log("news push daemon started PID=%d" % os.getpid())
     while True:
         try:
