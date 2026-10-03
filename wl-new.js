@@ -12,7 +12,6 @@
     // 09/24 上線：自選股
     { sel: "h2#watch", until: "2026-10-08" },
     { sel: '.vtab[data-v="watch"]', until: "2026-10-08" },
-    { sel: 'nav.bnav a[href="stocks.html"]', until: "2026-10-08", dot: true },
     // 09/24 上線：本週行事曆、資料交集
     { sel: "h2#cal", until: "2026-10-01" },
     { sel: "h2#overlap", until: "2026-10-01" },
@@ -48,21 +47,43 @@
     });
   }
 
-  // ---- 營收佈告欄：有「新月份」營收時，導覽列按鈕上出現紅色「8月」小圖示；點進去看過就消失 ----
+  // ---- 導覽列 NEW：有新內容才亮，點進那一頁看過就消失，之後又有新內容會再亮 ----
+  // 營收佈告欄：月份或「已公布家數」變了就算新（月初公司陸續公布，每多幾家都會亮）
+  // 個股報告：最新一份報告的日期或檔數變了就算新
   var REV_META = "https://raw.githubusercontent.com/wowwow3100-ctrl/daily-report/data/revenue/meta.json";
-  function revDot() {
-    var a = document.querySelector('nav.bnav a[href="revenue.html"]');
-    if (!a || /revenue\.html$/.test(location.pathname)) return;
-    fetch(REV_META).then(function (r) { return r.json(); }).then(function (m) {
-      if (!m || !m.ym) return;
+  function navNew(href, key, getSig, red) {
+    var a = document.querySelector('nav.bnav a[href="' + href + '"]');
+    if (!a) return;
+    var here = location.pathname.split("/").pop() === href;
+    getSig().then(function (sig) {
+      if (!sig) return;
       var seen = "";
-      try { seen = localStorage.getItem("wl_rev_seen") || ""; } catch (e) {}
-      if (seen === m.ym || a.querySelector(".revdot")) return;
+      try { seen = localStorage.getItem(key) || ""; } catch (e) {}
+      if (here) { try { localStorage.setItem(key, sig); } catch (e) {} return; }
+      if (seen === sig || a.querySelector(".newdot,.revdot")) return;
       var b = document.createElement("span");
-      b.className = "revdot";
-      b.textContent = parseInt(m.ym.slice(5), 10) + "月";
+      b.className = red ? "revdot" : "newb newdot";
+      b.textContent = "NEW";
       a.appendChild(b);
     }).catch(function () {});
+  }
+  function revSig() {
+    return fetch(REV_META).then(function (r) { return r.json(); }).then(function (m) { return m && m.ym ? m.ym + ":" + m.n : ""; });
+  }
+  function stockSig() {
+    return fetch("stocks.json").then(function (r) { return r.json(); }).then(function (j) {
+      var mx = "", n = 0;
+      (j.stocks || []).forEach(function (s) {
+        n += (s.files || []).length;
+        if (s.rec && s.rec > mx) mx = s.rec;
+        (s.files || []).forEach(function (f) { var m = String(f).match(/^(\d{6})_/); if (m) { var d = "20" + m[1].slice(0, 2) + "-" + m[1].slice(2, 4) + "-" + m[1].slice(4, 6); if (d > mx) mx = d; } });
+      });
+      return mx + ":" + n;
+    });
+  }
+  function revDot() {
+    navNew("revenue.html", "wl_rev_sig", revSig, true);
+    navNew("stocks.html", "wl_stk_sig", stockSig, false);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", function () { apply(); revDot(); });
