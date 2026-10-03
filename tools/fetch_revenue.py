@@ -49,6 +49,51 @@ def get_html(url):
         return r.read().decode("cp950", errors="ignore")
 
 
+def parse_rows(html):
+    """用標準庫 HTMLParser 逐列拆 <tr><td>，比 regex 穩（觀測站的表格常有沒關好的標籤）。"""
+    from html.parser import HTMLParser
+    import re
+    rows = []
+
+    class P(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.row, self.cell, self.in_cell = None, [], False
+
+        def handle_starttag(self, tag, attrs):
+            if tag == "tr":
+                self._flush_row(); self.row = []
+            elif tag in ("td", "th"):
+                self._flush_cell(); self.in_cell = True; self.cell = []
+
+        def handle_endtag(self, tag):
+            if tag in ("td", "th"):
+                self._flush_cell()
+            elif tag == "tr":
+                self._flush_row()
+
+        def handle_data(self, data):
+            if self.in_cell:
+                self.cell.append(data)
+            m = re.search(r"產業別：\s*(\S+)", data)
+            if m:
+                rows.append(("ind", m.group(1).strip()))
+
+        def _flush_cell(self):
+            if self.in_cell and self.row is not None:
+                self.row.append("".join(self.cell).replace("\xa0", " ").strip())
+            self.in_cell, self.cell = False, []
+
+        def _flush_row(self):
+            self._flush_cell()
+            if self.row:
+                rows.append(("row", self.row))
+            self.row = None
+
+    p = P(); p.feed(html); p.close()
+    return rows
+
+
 def mops_month(y, m):
     """公開資訊觀測站「每月營業收入統計表」：月初各公司陸續公布就會更新（官方彙總表要等月中）。"""
     import re
@@ -63,11 +108,11 @@ def mops_month(y, m):
                 status["%s%d" % (mkt, k)] = "err %s" % e
                 continue
             ind, n = "", 0
-            for seg in html.split("<tr"):
-                mi = re.search(r"產業別：\s*([^<\s]+)", seg)
-                if mi:
-                    ind = mi.group(1).strip()
-                tds = [re.sub(r"<[^>]+>|&nbsp;", "", t).strip() for t in re.findall(r"<td[^>]*>(.*?)</td>", seg, re.S)]
+            for kind, cells in parse_rows(html):
+                if kind == "ind":
+                    ind = cells
+                    continue
+                tds = cells
                 if len(tds) >= 10 and re.fullmatch(r"\d{4}[A-Z]?", tds[0] or ""):
                     memo = tds[10] if len(tds) > 10 and tds[10] not in ("-", "") else ""
                     out.append([tds[0], tds[1], ind, mkt, num(tds[2]), num(tds[3]), num(tds[4]), num(tds[7]), num(tds[8]), memo])
