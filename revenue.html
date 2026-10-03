@@ -150,6 +150,7 @@
   .rvhero{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:4px 0 14px;}
   .rvhero .ym{font-size:1.5rem;font-weight:900;color:var(--gold);letter-spacing:2px;}
   .rvhero .ym small{font-size:.8rem;color:var(--muted);font-weight:500;letter-spacing:1px;margin-left:8px;}
+  .rvhero .partial{display:inline-block;margin:6px 0 2px;padding:2px 10px;border-radius:99px;font-size:.72rem;font-weight:700;color:var(--gold);border:1px solid var(--gold-dim);background:rgba(232,193,90,.08);}
   .rvhero .sub{color:var(--muted);font-size:.8rem;margin-top:2px;}
   .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px;}
   .kpi{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;}
@@ -589,7 +590,8 @@
       }).join("")+'</div>';
     }
     $("hero").innerHTML='<div class="ym">'+ymText(CUR)+' 營收<small>'+(META&&META.ym===CUR?"最新月份":"歷史月份")+'</small></div>'
-      +'<div class="sub">已公布 '+n.toLocaleString()+' 家（上市 '+L+'．上櫃 '+O+'）'+(issT?'．'+issT:'')+(META&&META.updated?'．本站更新 '+esc(META.updated.slice(5)):'')+'</div>'
+      +(d.partial?'<div class="partial">陸續公布中．公司每月 10 日前公布上月營收，本頁每天自動補進新公布的公司</div>':'')
+      +'<div class="sub">已公布 '+n.toLocaleString()+' 家（上市 '+L+'．上櫃 '+O+'）'+(issT?'．'+issT:'')+(d.partial?'．資料來源：公開資訊觀測站':'')+(META&&META.updated?'．本站更新 '+esc(META.updated.slice(5)):'')+'</div>'
       +'<div class="kpis">'
       +'<div class="kpi"><div class="k">全體合計營收</div><div class="v">'+amt(tot)+'</div></div>'
       +'<div class="kpi"><div class="k">合計年增率</div><div class="v">'+pct(g(sr,sl))+'</div></div>'

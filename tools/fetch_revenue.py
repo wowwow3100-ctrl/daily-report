@@ -41,6 +41,41 @@ def get(url):
     raise last
 
 
+def get_html(url):
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36",
+        "Accept-Language": "zh-TW,zh;q=0.9"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        return r.read().decode("cp950", errors="ignore")
+
+
+def mops_month(y, m):
+    """公開資訊觀測站「每月營業收入統計表」：月初各公司陸續公布就會更新（官方彙總表要等月中）。"""
+    import re
+    out, status = [], {}
+    roc = y - 1911
+    for mkt, folder in (("L", "sii"), ("O", "otc")):
+        for k in (0, 1):  # 0 國內、1 國外（KY）
+            url = "https://mopsov.twse.com.tw/nas/t21/%s/t21sc03_%d_%d_%d.html" % (folder, roc, m, k)
+            try:
+                html = get_html(url)
+            except Exception as e:
+                status["%s%d" % (mkt, k)] = "err %s" % e
+                continue
+            ind, n = "", 0
+            for seg in html.split("<tr"):
+                mi = re.search(r"產業別：\s*([^<\s]+)", seg)
+                if mi:
+                    ind = mi.group(1).strip()
+                tds = [re.sub(r"<[^>]+>|&nbsp;", "", t).strip() for t in re.findall(r"<td[^>]*>(.*?)</td>", seg, re.S)]
+                if len(tds) >= 10 and re.fullmatch(r"\d{4}[A-Z]?", tds[0] or ""):
+                    memo = tds[10] if len(tds) > 10 and tds[10] not in ("-", "") else ""
+                    out.append([tds[0], tds[1], ind, mkt, num(tds[2]), num(tds[3]), num(tds[4]), num(tds[7]), num(tds[8]), memo])
+                    n += 1
+            status["%s%d" % (mkt, k)] = n
+    return out, status
+
+
 def num(v):
     try:
         return int(float(str(v).replace(",", "")))
@@ -91,6 +126,22 @@ def main():
                 num(x.get("累計營業收入-當月累計營收")), num(x.get("累計營業收入-去年累計營收")),
                 (str(x.get("備註", "")).strip() if str(x.get("備註", "")).strip() not in ("-", "") else ""),
             ])
+    # 官方彙總表（月中才出）之後的月份：改從公開資訊觀測站抓「已陸續公布」的
+    mops_status = {}
+    now = datetime.now(TW)
+    if by_ym:
+        ly, lm = map(int, max(by_ym).split("-"))
+    else:
+        ly, lm = (now.year, now.month - 2) if now.month > 2 else (now.year - 1, now.month + 10)
+    ny, nm = (ly, lm + 1) if lm < 12 else (ly + 1, 1)
+    nxt = "%d-%02d" % (ny, nm)
+    if (ny, nm) < (now.year, now.month):
+        rows_m, st = mops_month(ny, nm)
+        mops_status[nxt] = st
+        if rows_m:
+            by_ym[nxt] = rows_m
+            issued["partial"] = nxt
+            print("mops", nxt, len(rows_m), st)
     if not by_ym:
         print("no data")
         return 1
@@ -104,7 +155,8 @@ def main():
             continue
         if old and len(old.get("rows", [])) > len(rows):
             continue  # 不要用比較少的資料蓋掉
-        dump(p, {"ym": ym, "issued": issued,
+        dump(p, {"ym": ym, "issued": {} if ym == issued.get("partial") else {k: v for k, v in issued.items() if k != "partial"},
+                 "partial": ym == issued.get("partial"),
                  "cols": ["code", "name", "ind", "mkt", "rev", "prev", "ly", "cum", "cumly", "memo"],
                  "unit": "千元", "rows": rows})
         changed = True
@@ -139,6 +191,7 @@ def main():
     meta_p = os.path.join(out, "meta.json")
     meta_old = load(meta_p) or {}
     meta = {"ym": latest, "n": len(cur["rows"]), "months": months, "issued": cur.get("issued", {}),
+            "partial": bool(cur.get("partial")), "mops": mops_status,
             "updated": meta_old.get("updated", "")}
     if changed or {k: v for k, v in meta.items() if k != "updated"} != {k: v for k, v in meta_old.items() if k != "updated"}:
         meta["updated"] = datetime.now(TW).strftime("%Y-%m-%d %H:%M")
