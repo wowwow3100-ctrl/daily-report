@@ -534,3 +534,18 @@ html.mob .pv{font-size:clamp(.92rem,4.3vw,1.12rem);letter-spacing:-.025em;text-o
 .oline.ol-low .ol-today .sep{display:none;}
 @media (min-width:1360px){ html:not(.mob) body:not(.home) .oline{max-width:250px;white-space:normal;text-align:right;line-height:1.5;} }
 @media (min-width:1360px){ html:not(.mob) nav.bnav a .revdot{top:-7px;right:-4px;} }
+
+/* ---------- 28. 研究專題橫幅 ---------- */
+a.feat{position:relative;display:grid;gap:6px;margin:4px 0 22px;padding:18px 20px 16px;border-radius:18px;text-decoration:none;color:var(--text);overflow:hidden;
+  background:linear-gradient(135deg,rgba(var(--gold-rgb),.20),rgba(var(--gold-rgb),.04) 55%),var(--card);
+  border:1px solid rgba(var(--gold-rgb),.55);box-shadow:var(--shadow-hi);}
+a.feat::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(closest-side,rgba(var(--gold-rgb),.28),transparent);pointer-events:none;}
+a.feat .f-eye{display:flex;align-items:center;gap:8px;font-size:.72rem;font-weight:800;letter-spacing:3px;color:var(--gold);}
+a.feat .f-eye em{font-style:normal;font-size:.6rem;letter-spacing:1px;padding:1px 7px;border-radius:99px;background:var(--btn-grad);color:var(--on-gold);}
+a.feat .f-title{font-size:1.12rem;font-weight:900;letter-spacing:1px;line-height:1.45;}
+a.feat .f-desc{font-size:.84rem;color:var(--muted);line-height:1.7;}
+a.feat .f-cta{justify-self:start;margin-top:4px;font-size:.84rem;font-weight:800;color:var(--on-gold);background:var(--btn-grad);padding:6px 16px;border-radius:99px;}
+a.feat.big{padding:26px 26px 22px;margin:6px 0 30px;}
+a.feat.big .f-title{font-size:clamp(1.25rem,3.6vw,1.7rem);}
+a.feat.big .f-desc{font-size:.92rem;max-width:760px;}
+@media (hover:hover){a.feat{transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s;} a.feat:hover{transform:translateY(-2px);}}
