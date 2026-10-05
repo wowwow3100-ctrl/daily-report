@@ -192,6 +192,7 @@ def main():
         return 1
 
     changed = False
+    stamp = now.strftime("%Y-%m-%d %H:%M")
     for ym, rows in by_ym.items():
         rows.sort(key=lambda r: r[0])
         p = os.path.join(out, ym + ".json")
@@ -200,10 +201,16 @@ def main():
             continue
         if old and len(old.get("rows", [])) > len(rows):
             continue  # 不要用比較少的資料蓋掉
+        # 本站「第一次收錄」每家公司的時間：給營收頁「最新公布」排序用（之前就有的維持原時間）
+        seen = dict((old or {}).get("seen") or {})
+        first_time = not old
+        for r in rows:
+            if r[0] not in seen:
+                seen[r[0]] = "" if first_time and ym != issued.get("partial") else stamp
         dump(p, {"ym": ym, "issued": {} if ym == issued.get("partial") else {k: v for k, v in issued.items() if k != "partial"},
                  "partial": ym == issued.get("partial"),
                  "cols": ["code", "name", "ind", "mkt", "rev", "prev", "ly", "cum", "cumly", "memo"],
-                 "unit": "千元", "rows": rows})
+                 "unit": "千元", "rows": rows, "seen": seen})
         changed = True
         print("wrote", ym, len(rows))
 
