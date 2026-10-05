@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/10/05（週一）收盤場次</div>
+        <div class="stamp" id="updated">2026/10/05（週一）盤後場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -293,7 +293,7 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/05 收盤．加權與成交值為 10/05 收盤（中央社 13:44，證交所官方值盤後發布後覆核）；融資、擔保維持率、風險戶數為證交所 10/02 官方值（10/05 值晚間發布）；SOX 為 10/02 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/05 盤後．加權與成交值為 10/05 收盤（中央社，證交所 FMTQIK 官方值發布後覆核）；融資、擔保維持率、風險戶數為證交所 10/02 官方值（10/05 值本場尚無法取得）；SOX 為 10/02 美股收盤）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">49,712</div><div class="chg up">+1,236.30（+2.55%）</div></div>
     <div class="m"><div class="lbl">成交值（上市）</div><div class="val">11,508 億</div><div class="chg up">較前日 +22.7%</div></div>
@@ -392,48 +392,48 @@
   <!-- ===== /DATA:PREOPEN ===== -->
 
     <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/05 收盤場．依時間由新到舊）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/05 盤後場．依時間由新到舊）</span></h2>
   <div class="card">
-    <div class="news-title"><span class="cat">市場</span><span class="ntime">10/05 13:44</span>台股大漲 1,236 點收 49,712 點續寫收盤新高，台積電(2330) 漲 3% 收 2,575 元 <a class="ref" href="#src-1">[1]</a></div>
-    <div class="news-body">受美國科技股反彈激勵，盤中最高 49,770 點；成交值放大至 1 兆 1,508 億元。聯發科(2454) 漲 4.34% 收 5,165 元，台達電(2308) 漲 6.37% 收 2,005 元。</div>
+    <div class="news-title"><span class="cat">市場</span><span class="ntime">10/05 17:36</span>富邦金(2881) 董事長蔡明興：台股走勢健康，年底前有機會站上 5 萬點 <a class="ref" href="#src-1">[1]</a></div>
+    <div class="news-body">台股 5 日距 5 萬點僅差 287.96 點；蔡明興笑稱「台積電跳一下就過去了」，並看好 AI 帶動未來一、兩年景氣。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">10/05 13:17</span>56 千金股追平紀錄，川湖(2059)、台光電(2383)、萬潤(6187) 等 8 檔高價股觸及漲停 <a class="ref" href="#src-2">[2]</a></div>
-    <div class="news-body">創意(3443) 盤中 8,690 元創高、健策(3653) 突破 7,000 元；CCL 與 ABF 載板族群齊創高，南亞(1303) 一度大漲近 9%，南電(8046)、欣興(3037)、景碩(3189) 同創新高。</div>
+    <div class="news-title"><span class="cat">籌碼</span><span class="ntime">10/05 17:24</span>外資大買台積電(2330) 9,770 張、台達電(2308) 7,963 張，雙雙為近期單日最多 <a class="ref" href="#src-2">[2]</a></div>
+    <div class="news-body">台積電收 2,575 元新高、台達電大漲逾 6% 收 2,005 元；台積電 10/8 公布 9 月營收、10/15 法說，法人估 9 月營收月減約 6%～14%、仍為同期最佳。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">籌碼</span><span class="ntime">10/05 12:47</span>個股成交量第一友達(2409)、零股第一聯電(2303)，面板股仍為熱門交易標的 <a class="ref" href="#src-3">[3]</a></div>
-    <div class="news-body">盤中成交量前五大含主動統一升級50(00403A)、主動中信台灣收益(00406A) 兩檔 ETF，群創(3481) 逾 32 萬張居第四。</div>
+    <div class="news-title"><span class="cat">籌碼</span><span class="ntime">10/05 17:15</span>外資買超 718.96 億元連 4 買、擠進史上買超前十大，狂敲主動式 ETF <a class="ref" href="#src-3">[3]</a></div>
+    <div class="news-body">外資買超主動統一升級50(00403A) 15.09 萬張最多；個股買超緯創(3231)、華邦電(2344)，賣超友達(2409) 21.21 萬張、聯電(2303) 8.1 萬張；投信轉賣 63.95 億元。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">市場</span><span class="ntime">10/05 12:46</span>台股距 5 萬點約 229 點，法人看好電子權值股、市值型與主動式 ETF <a class="ref" href="#src-4">[4]</a></div>
-    <div class="news-body">第一金投顧指資金集中權值股、帶量上攻；大立光(3008) 本週四、南亞科(2408) 10/12、台積電(2330) 10/15 法說陸續登場。</div>
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/05 17:01</span>外資上週賣超亞股，僅台股、陸股小漲獨強 <a class="ref" href="#src-4">[4]</a></div>
+    <div class="news-body">Bloomberg 統計上週亞股全面遭賣超，南韓賣超逾 62 億美元最多、印度逾 10 億美元居次；今年以來南韓累計賣超擴大至 1,266 億美元。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">市場</span><span class="ntime">10/05 11:28</span>AI 股與南亞(1303) 強攻，台股盤中飆漲 1,294 點衝 49,770 點新高 <a class="ref" href="#src-5">[5]</a></div>
-    <div class="news-body">南亞攻上漲停，AI 與權值股領軍；中央社盤中報導。</div>
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">10/05 16:51</span>台積電(2330) 創多項紀錄：市值 66.77 兆元、單日貢獻指數 594 點 <a class="ref" href="#src-5">[5]</a></div>
+    <div class="news-body">盤中、收盤同創新高 2,580 元及 2,575 元，市值再創新高，單日貢獻加權指數近六成漲點。</div>
   </div>
   <details class="more">
     <summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
-    <div class="news-title"><span class="cat">市場</span><span class="ntime">10/05 10:32</span>台指期突破 5 萬點，台股預估成交量飆至 1.3 兆元 <a class="ref" href="#src-6">[6]</a></div>
-    <div class="news-body">統一投顧：台積電盤中貢獻 556 點、台達電 75 點、聯發科 73 點；提醒美債殖利率偏高與急漲後正乖離過大恐引發短線震盪。</div>
+    <div class="news-title"><span class="cat">籌碼</span><span class="ntime">10/05 15:14</span>三大法人合計買超 764.49 億元，外資及陸資買超 718.96 億元 <a class="ref" href="#src-6">[6]</a></div>
+    <div class="news-body">自營商買超 109.48 億元、投信賣超 63.95 億元；台股收 49,712.04 點，成交值 1 兆 1,508.04 億元。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">產業</span><span class="ntime">10/05 10:13</span>玻璃基板概念股齊漲停：群創(3481)、友達(2409)、TPK-KY(3673)、鈦昇(8027) <a class="ref" href="#src-7">[7]</a></div>
-    <div class="news-body">韓媒報導 NVIDIA 評估下一代 AI 晶片封裝導入玻璃基板，最快 2028 年前導入；專家提醒仍有技術環節待克服。</div>
+    <div class="news-title"><span class="cat">市場</span><span class="ntime">10/05 14:40</span>台股盤中、收盤雙創高突破 49,700 點，台積電(2330) 收 2,575 元新天價 <a class="ref" href="#src-7">[7]</a></div>
+    <div class="news-body">加權指數終場大漲 1,236.3 點、漲幅 2.55%，盤中最高 49,770 點，距 5 萬點大關不到 300 點。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">市場</span><span class="ntime">10/05 10:11</span>台指期觸及 5 萬點，電子指數早盤漲 2.8% 強於大盤 <a class="ref" href="#src-8">[8]</a></div>
-    <div class="news-body">安聯投信經理人：升息循環近尾聲，市場聚焦第三季財報；預估明年台灣企業獲利有機會挑戰 8 兆元以上。</div>
+    <div class="news-title"><span class="cat">籌碼</span><span class="ntime">10/05 14:36</span>外資上週賣超台股 71 億元，逆勢加碼友達(2409)、力積電(6770) 逾 10 萬張 <a class="ref" href="#src-8">[8]</a></div>
+    <div class="news-body">上週外資小幅賣超，但面板與記憶體代工股獲大量加碼，與 5 日單日轉為大賣友達形成對比。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">期貨</span><span class="ntime">10/05 09:59</span>台指期 9:55 前攻上 50,036 點歷史新高，加權指數飆逾 1,200 點緊追 <a class="ref" href="#src-9">[9]</a></div>
-    <div class="news-body">台光電(2383)、金像電(2368) 開盤不久亮燈漲停，玉晶光(3406) 推升千金股至 55 檔。</div>
+    <div class="news-title"><span class="cat">期貨</span><span class="ntime">10/05 13:59</span>10 月台指期收 49,949 點、漲 1,280 點，正價差 236.96 點 <a class="ref" href="#src-9">[9]</a></div>
+    <div class="news-body">11 月期貨收 50,125 點、漲 1,285 點；台指期盤中首度站上 5 萬點。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/05 08:36</span>美科技股走揚、台積電 ADR 漲近 3%，法人：台股拚量增續攻 <a class="ref" href="#src-10">[10]</a></div>
-    <div class="news-body">美國就業數據降溫使升息壓力緩解，四大指數上週五全面收紅，費半漲 2.4%。</div>
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">10/05 13:17</span>56 千金股追平紀錄，川湖(2059)、台光電(2383)、萬潤(6187) 等 8 檔高價股觸及漲停 <a class="ref" href="#src-10">[10]</a></div>
+    <div class="news-body">創意(3443) 盤中創高、健策(3653) 突破 7,000 元；CCL 與 ABF 載板族群齊創高，南亞(1303) 攻上漲停。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
@@ -442,7 +442,7 @@
   <h2 id="broker">10/05 券商報告摘要</h2>
   <div class="card">
     <ul class="sum-list">
-      <li>收盤場：本場無新增具名券商觀點；台股收 49,712 點、上漲 1,236 點續創收盤新高，盤中千金股 56 檔追平紀錄，川湖、台光電、萬潤等 8 檔觸及漲停<a class="ref" href="#src-1">[1]</a><a class="ref" href="#src-2">[2]</a></li>
+      <li>盤後場：本場無新增具名券商觀點；外資買超 718.96 億元連 4 買、擠進史上買超前十大，大買台積電 9,770 張、台達電 7,963 張，三大法人合計買超 764.49 億元<a class="ref" href="#src-2">[2]</a><a class="ref" href="#src-3">[3]</a><a class="ref" href="#src-6">[6]</a></li>
       <li>早盤場新增：<b>瑞銀</b>重申穩懋（3105）買進、目標價由 500 元上調至 725 元，看好星鏈 V3 衛星升級帶動 PA／LNA 含量增 4–5 倍，2028 年毛利率估升至 37.1%<a class="ref" href="#src-11">[11]</a></li>
       <li>10/04 夜間場：<b>奇鋐</b>（3017）未具名法人維持買進、目標價 4,500 元，2027 年營收上修至 3,409 億元、EPS 上修至 180.69 元，認為未列輝達首批 CDU 認證名單影響有限<a class="ref" href="#src-12">[11]</a></li>
       <li>補收錄：<b>國泰證期</b>維持金居（8358）買進、目標價調高至 620 元，高階銅箔第三季起供不應求、HVLP4 占比可望超越 HVLP3，估 2027 年 EPS 21.96 元、較今年翻倍<a class="ref" href="#src-13">[12]</a></li>
@@ -506,16 +506,16 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
-    <li id="src-1"><a href="https://www.cna.com.tw/news/afe/202610050117.aspx" target="_blank" rel="noopener">中央社｜台股漲逾1200點收49712點續寫新高 台積電漲3%收2575元（10/05 13:44）</a></li>
-    <li id="src-2"><a href="https://news.cnyes.com/news/id/6621643" target="_blank" rel="noopener">鉅亨網｜台股叩關5萬點56千金盛況再現 川湖、台光電等8檔高價股攻漲停（10/05 13:17）</a></li>
-    <li id="src-3"><a href="https://udn.com/news/story/7251/9795427" target="_blank" rel="noopener">經濟日報／聯合新聞網｜台股大漲近1,300點 個股成交第一友達、零股成交第一聯電（10/05 12:47）</a></li>
-    <li id="src-4"><a href="https://udn.com/news/story/7251/9795424" target="_blank" rel="noopener">經濟日報／聯合新聞網｜台股5萬點要來了 法人曝第一階段操作核心（10/05 12:46）</a></li>
-    <li id="src-5"><a href="https://www.cna.com.tw/news/afe/202610050063.aspx" target="_blank" rel="noopener">中央社｜AI股與南亞強攻 台股盤中飆漲1294點衝49770點新高（10/05 11:28）</a></li>
-    <li id="src-6"><a href="https://news.cnyes.com/news/id/6621549" target="_blank" rel="noopener">鉅亨網｜法人看好10月有這些利多 台股預估成交量飆至1.3兆元叩關5萬點（10/05 10:32）</a></li>
-    <li id="src-7"><a href="https://udn.com/news/story/7251/9794877" target="_blank" rel="noopener">聯合新聞網｜玻璃基板概念股全噴漲停！群創、友達搶進（10/05 10:13）</a></li>
-    <li id="src-8"><a href="https://www.chinatimes.com/realtimenews/20261005001487-260410" target="_blank" rel="noopener">中時新聞網｜台指期驚漲衝上5萬點！後市怎走？專家最關心這件事（10/05 10:11）</a></li>
-    <li id="src-9"><a href="https://finance.ettoday.net/news/3249163" target="_blank" rel="noopener">ETtoday財經雲｜台指期衝破5萬點大關 加權指數飆逾1200點緊追（10/05 09:59）</a></li>
-    <li id="src-10"><a href="https://www.cna.com.tw/news/afe/202610050016.aspx" target="_blank" rel="noopener">中央社｜美科技股走揚、台積電ADR漲近3% 法人：台股拚量增續攻（10/05 08:36）</a></li>
+    <li id="src-1"><a href="https://www.cna.com.tw/news/afe/202610050239.aspx" target="_blank" rel="noopener">中央社｜台股有望攻破5萬點？蔡明興：台積電跳一下就過去了（10/05 17:36）</a></li>
+    <li id="src-2"><a href="https://udn.com/news/story/7251/9796097" target="_blank" rel="noopener">經濟日報／聯合新聞網｜台股明天就能上五萬點？外資大買台積電、台達電（10/05 17:24）</a></li>
+    <li id="src-3"><a href="https://news.cnyes.com/news/id/6621785" target="_blank" rel="noopener">鉅亨網｜外資加碼台股718億元登買超第十大 狂敲這檔主動式ETF逾15萬張（10/05 17:15）</a></li>
+    <li id="src-4"><a href="https://udn.com/news/story/7251/9796035" target="_blank" rel="noopener">經濟日報／聯合新聞網｜交投謹慎！外資上周賣超亞股 台陸股市獨強（10/05 17:01）</a></li>
+    <li id="src-5"><a href="https://udn.com/news/story/7251/9795983" target="_blank" rel="noopener">經濟日報／聯合新聞網｜台積電今創多項紀錄！市值達66.77兆元 貢獻指數594點（10/05 16:51）</a></li>
+    <li id="src-6"><a href="https://www.cna.com.tw/news/afe/202610050161.aspx" target="_blank" rel="noopener">中央社｜三大法人買超台股764.49億元（10/05 15:14）</a></li>
+    <li id="src-7"><a href="https://www.cna.com.tw/news/afe/202610050148.aspx" target="_blank" rel="noopener">中央社｜台股盤中收盤雙創高突破49700點 台積電收2575元新天價（10/05 14:40）</a></li>
+    <li id="src-8"><a href="https://www.cna.com.tw/news/afe/202610050146.aspx" target="_blank" rel="noopener">中央社｜外資上週賣超台股71億 逆勢加碼友達力積電逾10萬張（10/05 14:36）</a></li>
+    <li id="src-9"><a href="https://www.cna.com.tw/news/afe/202610050121.aspx" target="_blank" rel="noopener">中央社｜10月台指期漲1280點（10/05 13:59）</a></li>
+    <li id="src-10"><a href="https://news.cnyes.com/news/id/6621643" target="_blank" rel="noopener">鉅亨網｜台股叩關5萬點56千金盛況再現 川湖、台光電等8檔高價股攻漲停（10/05 13:17）</a></li>
     <li id="src-11"><a href="https://money.udn.com/money/story/5607/9794172" target="_blank" rel="noopener">經濟日報｜瑞銀：穩懋受惠於 SpaceX 星鏈 V3衛星升級 目標價從500元升到725元（10/04 18:58）</a></li>
     <li id="src-12"><a href="https://www.ctee.com.tw/news/20261004700285-430201" target="_blank" rel="noopener">工商時報｜奇鋐 法人維持買進、目標價 4,500 元（10/04 09:25）</a></li>
     <li id="src-13"><a href="https://www.ctee.com.tw/news/20261001702132-430502" target="_blank" rel="noopener">工商時報｜明年獲利扮股價催化劑！法人點名「這檔」飆速 明年EPS拚翻倍（金居）（10/01 18:36）</a></li>
@@ -526,10 +526,10 @@
     <li id="src-18"><a href="https://udn.com/news/story/7252/9786948" target="_blank" rel="noopener">經濟日報／聯合新聞網｜健策目標價 大和喊上萬元（10/01 02:46）</a></li>
     <li id="src-19"><a href="https://udn.com/news/story/7252/9789869" target="_blank" rel="noopener">經濟日報／聯合新聞網｜南電可望受惠日廠外溢AMD訂單 亞系外資調升目標價（10/02 08:58）</a></li>
     <li id="src-20"><a href="https://ec.ltn.com.tw/article/breakingnews/5594682" target="_blank" rel="noopener">自由財經｜高階ABF載板缺貨到2028 載板三雄創掛牌新高（10/04 11:00）</a></li>
-    <li id="src-21"><a href="https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?date=20261002&amp;response=json" target="_blank" rel="noopener">臺灣證券交易所｜每日市場成交資訊 FMTQIK（最新官方值 10/02：48,475.74 點、成交值 9,382.22 億；10/05 收盤 49,712.04 點、成交值 11,508.04 億暫依中央社，待官方發布覆核）（10/05 14:10 查詢）</a></li>
-    <li id="src-22"><a href="https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20261002&amp;type=IND&amp;response=json" target="_blank" rel="noopener">臺灣證券交易所｜每日收盤行情 MI_INDEX（10/02 類股指數與成分股；10/05 資料收盤後約 1 小時發布，本場尚無）（10/05 14:10 查詢）</a></li>
-    <li id="src-23"><a href="https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ4U_TREND?response=json&amp;days=5&amp;date=20261002" target="_blank" rel="noopener">臺灣證券交易所｜融資融券彙總 MI_MARGN／擔保維持率 BFIJ4U_TREND（10/02 官方值：融資 6,351 億、維持率 286.99%、風險戶 16 戶）（10/02 21:05 查詢）</a></li>
-    <li id="src-24"><a href="https://www.stockq.org/index/SOX.php" target="_blank" rel="noopener">StockQ｜費城半導體指數 SOX（10/02 美股收盤 13,136.67、+2.40%；美股週末休市）（10/03 07:02 查詢）</a></li>
+    <li id="src-21"><a href="https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?date=20261002&amp;response=json" target="_blank" rel="noopener">臺灣證券交易所｜每日市場成交資訊 FMTQIK（最新官方值仍為 10/02：48,475.74 點、成交值 9,382.22 億；10/05 收盤 49,712.04 點、成交值 11,508.04 億依中央社 15:14，待官方發布覆核）（10/05 18:05 查詢）</a></li>
+    <li id="src-22"><a href="https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20261002&amp;type=IND&amp;response=json" target="_blank" rel="noopener">臺灣證券交易所｜每日收盤行情 MI_INDEX（資金流向沿用 10/02 類股指數與成分股；10/05 盤後場本工具無法取得該端點）（10/05 18:05 查詢）</a></li>
+    <li id="src-23"><a href="https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ4U_TREND?response=json&amp;days=5&amp;date=20261002" target="_blank" rel="noopener">臺灣證券交易所｜融資融券彙總 MI_MARGN／擔保維持率 BFIJ4U_TREND（沿用 10/02 官方值：融資 6,351 億、維持率 286.99%、風險戶 16 戶；10/05 值本場無法取得）（10/05 18:05 查詢）</a></li>
+    <li id="src-24"><a href="https://www.stockq.org/index/SOX.php" target="_blank" rel="noopener">StockQ｜費城半導體指數 SOX（10/02 美股收盤 13,136.67、+2.40%；10/05 美股尚未開盤）（10/05 18:05 確認）</a></li>
     <li id="src-25"><a href="https://www.twse.com.tw/rwd/zh/exRight/TWT48U?response=json" target="_blank" rel="noopener">臺灣證券交易所｜除權除息預告表 TWT48U、休市日 holidaySchedule（行事曆用）（10/03 查詢）</a></li>
     <li id="src-26"><a href="https://news.cnyes.com/news/id/6620657" target="_blank" rel="noopener">鉅亨網｜3檔處置股下周一抓去關 準千金股大量遭處置至10/12（10/02 22:29）（行事曆用）</a></li>
   </ol>
