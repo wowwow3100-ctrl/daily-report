@@ -197,7 +197,7 @@ def main():
         rows.sort(key=lambda r: r[0])
         p = os.path.join(out, ym + ".json")
         old = load(p)
-        if old and old.get("rows") == rows:
+        if old and old.get("rows") == rows and ("seen" in old or ym != issued.get("partial")):
             continue
         if old and len(old.get("rows", [])) > len(rows):
             continue  # 不要用比較少的資料蓋掉
