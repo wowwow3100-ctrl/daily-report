@@ -539,6 +539,7 @@
   }
 
   // ================== 營收佈告欄 ==================
+  var SEEN0="";
   var BASE="https://raw.githubusercontent.com/wowwow3100-ctrl/daily-report/data/revenue/";
   var WL=window.WLW||{list:function(){return [];},has:function(){return false;}};
   var ROWS=[], META=null, CUR="", OPS={}, HIGH={};
@@ -568,6 +569,7 @@
   function prep(d){
     HIGH={}; (d.high12||[]).forEach(function(c){HIGH[c]=1;});
     var SEEN=d.seen||{};
+    SEEN0=Object.keys(SEEN).map(function(k){return SEEN[k];}).filter(Boolean).sort()[0]||"";
     ROWS=(d.rows||[]).map(function(r){
       return {code:r[0],name:r[1],ind:r[2]||"其他",mkt:r[3],rev:r[4],prev:r[5],ly:r[6],cum:r[7],cumly:r[8],memo:r[9]||"",
         yoy:g(r[4],r[6]), mom:g(r[4],r[5]), cy:g(r[7],r[8]), seen:SEEN[r[0]]||""};
@@ -674,7 +676,7 @@
       +(WL.has(r.code)?'<span class="st">★</span>':'')
       +(HIGH[r.code]?'<span class="hi">12月新高</span>':'')
       +(OPS[r.code]?'<span class="op">券商觀點</span>':'')
-      +(st.k==="new"&&r.seen?'<span class="nw">'+esc(r.seen.slice(5).replace("-","/"))+' 收錄</span>':'')
+      +(st.k==="new"&&r.seen&&r.seen!==SEEN0?'<span class="nw">'+esc(r.seen.slice(5).replace("-","/"))+' 收錄</span>':'')
       +'<span class="in">'+(r.mkt==="L"?"上市":"上櫃")+'．'+esc(r.ind)+'</span></span>'
       +'<span class="amt">'+amt(r.rev)+'</span>'
       +'<span class="yo"><span class="pc"><span class="lb">年增</span>'+pct(r.yoy)+'</span><span class="ibar"><i style="left:0;width:'+bw+'%;background:var('+((r.yoy||0)>=0?'--up':'--down')+')"></i></span></span>'
@@ -694,7 +696,7 @@
     var sz={"0":"不限規模","100000":"月營收 1 億以上","1000000":"月營收 10 億以上","10000000":"月營收 100 億以上"}[st.size]||"";
     hint.textContent=st.k==="watch"
       ? (WL.list().length?"你的自選股 "+rows.length+" 檔有公布營收（自選在「個股報告」點 ☆ 加入）":"還沒有自選股：到「個股報告」點股票右上角的 ☆ 加入，這裡就會列出它們的營收")
-      : (st.k==="new"?"依本站收錄時間排序，越晚公布的越上面（每小時自動抓一次，時間可能比公司實際公布晚約 1 小時）．":"")+"共 "+rows.length+" 檔"+(st.q?"":"．"+sz)+(st.ind?"．"+st.ind:"")+(/yoy|mom|cum/.test(st.k)&&!st.q?"．已排除基期過低（成長超過 9 倍）的公司":"")+"．點公司看它的券商觀點";
+      : (st.k==="new"?"越晚公布的排越上面，標籤是本站收錄時間（每小時自動抓，可能比公司公布晚約 1 小時；沒標籤的是功能上線前就公布的）．":"")+"共 "+rows.length+" 檔"+(st.q?"":"．"+sz)+(st.ind?"．"+st.ind:"")+(/yoy|mom|cum/.test(st.k)&&!st.q?"．已排除基期過低（成長超過 9 倍）的公司":"")+"．點公司看它的券商觀點";
     if(!rows.length&&st.k!=="watch") list.insertAdjacentHTML("beforeend",'<div id="status">沒有符合條件的公司，放寬規模或產業看看</div>');
   }
 
