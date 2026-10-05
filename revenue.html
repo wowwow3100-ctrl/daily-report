@@ -732,7 +732,7 @@
     render(true);
   }
   function loadMonth(m){
-    fetch(BASE+m+".json").then(function(r){return r.json();}).then(show).catch(function(){});
+    fetch(BASE+m+".json?t="+Math.floor(Date.now()/600000)).then(function(r){return r.json();}).then(show).catch(function(){});
   }
 
   bindUI();
@@ -740,11 +740,11 @@
     (j.stocks||[]).forEach(function(s){ if(s.code) OPS[s.code]=1; });
     if(ROWS.length) render(true);
   }).catch(function(){});
-  fetch(BASE+"meta.json").then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(m){
+  fetch(BASE+"meta.json?t="+Math.floor(Date.now()/600000)).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(m){
     META=m;
     try{ localStorage.setItem("wl_rev_seen",m.ym); }catch(e){}
     var dot=document.querySelector("nav.bnav .revdot"); if(dot) dot.remove();
-    return fetch(BASE+"latest.json").then(function(r){return r.json();});
+    return fetch(BASE+"latest.json?t="+Math.floor(Date.now()/600000)).then(function(r){return r.json();});
   }).then(show).catch(function(){
     $("hero").innerHTML='<div id="status">營收資料整理中，請稍後再回來看看（每天 08:20／14:20／20:20 自動更新）</div>';
   });
