@@ -1,8 +1,8 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-10-06T21:42:11",
-    "fetch": "mops 2026-09 339 {'L0': 176, 'L1': 13, 'O0': 143, 'O1': 7}\nwrote 2026-09 339\nlatest 2026-09 rows 339 high12 0 changed True\n",
-    "status": "pushed"
+    "ts": "2026-10-06T23:05:00",
+    "fetch": "mops 2026-09 339 {'L0': 176, 'L1': 13, 'O0': 143, 'O1': 7}\nlatest 2026-09 rows 339 high12 0 changed False\n",
+    "status": "nochange"
   }
 }
