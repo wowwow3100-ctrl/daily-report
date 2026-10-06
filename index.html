@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/10/06（週二）早盤場次</div>
+        <div class="stamp" id="updated">2026/10/06（週二）收盤場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -293,10 +293,10 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/06 早盤．加權與成交值為 10/05 收盤（中央社，證交所 FMTQIK 官方值發布後覆核）；融資、擔保維持率、風險戶數為證交所 10/02 官方值（10/05 值本場尚無法取得）；SOX 為 10/05 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/06 收盤．加權與成交值為 10/06 收盤（中央社 13:44，證交所 FMTQIK 官方值發布後覆核；前日 12,110 億為官方值）；融資、擔保維持率、風險戶數為證交所 10/02 官方值（新值本場尚無法取得）；SOX 為 10/05 美股收盤）</span></h2>
   <div class="mkt">
-    <div class="m"><div class="lbl">加權指數</div><div class="val">49,712</div><div class="chg up">+1,236.30（+2.55%）</div></div>
-    <div class="m"><div class="lbl">成交值（上市）</div><div class="val">11,508 億</div><div class="chg up">較前日 +22.7%</div></div>
+    <div class="m"><div class="lbl">加權指數</div><div class="val">49,822</div><div class="chg up">+110.51（+0.22%）</div></div>
+    <div class="m"><div class="lbl">成交值（上市）</div><div class="val">9,759 億</div><div class="chg down">較前日 -19.4%</div></div>
     <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">6,351 億</div><div class="chg up">單日 +52.4 億</div></div>
     <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">13,172.74</div><div class="chg up">+0.27%（10/05 美股）</div></div>
     <div class="m"><div class="lbl">全市場擔保維持率</div><div class="val">286.99%</div><div class="chg up">較前日 +0.46</div></div>
@@ -392,48 +392,48 @@
   <!-- ===== /DATA:PREOPEN ===== -->
 
     <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/06 早盤場．依時間由新到舊）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/06 收盤場．依時間由新到舊）</span></h2>
   <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/06 05:53</span>美股四大指數全收紅、那斯達克創收盤新高，費城半導體漲 0.27% <a class="ref" href="#src-1">[1]</a></div>
-    <div class="news-body">道瓊收 51,267.90 點（+0.18%）、標普 7,773.95 點（+0.66%）、那指 27,477.31 點（+1.05%）、費半 13,172.74 點；投資人關注油價回落並觀望季度財報。</div>
+    <div class="news-title"><span class="cat">收盤</span><span class="ntime">10/06 13:44</span>台積電(2330) 收新高 2,585 元，台股收漲 110 點至 49,822 點再寫收盤新猷 <a class="ref" href="#src-1">[1]</a></div>
+    <div class="news-body">早盤一度觸 49,968.92 點逼近 5 萬點大關，隨後震盪；終場 +110.51 點（+0.22%），成交值約 9,759 億元。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/06 03:10</span>巴西大選首輪意外：前總統之子佛拉維歐 47% 領先魯拉，10/25 二輪決選 <a class="ref" href="#src-2">[2]</a></div>
-    <div class="news-body">佛拉維歐立場較親市場，巴西股匯 5 日雙漲；現任總統魯拉得票 45%。</div>
+    <div class="news-title"><span class="cat">產業</span><span class="ntime">10/06 13:36</span>超微蘇姿丰訪台拜會鴻海(2317)、廣達(2382)、台積電(2330)，證實在台百億美元投資將加碼 <a class="ref" href="#src-2">[2]</a></div>
+    <div class="news-body">蘇姿丰稱 CPU、GPU 需求仍高於供給，正與台積電、後段封測及基板供應商加速拉升產能。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">產業</span><span class="ntime">10/06 02:38</span>蘋果傳推首款觸控、疊層 OLED MacBook Pro，鴻海(2317) 可望助攻營運 <a class="ref" href="#src-3">[3]</a></div>
-    <div class="news-body">iPhone 18 Pro 系列銷售傳佳音，蘋果乘勝推出新款 MacBook Pro，主力供應商鴻海成長力道可望增添。</div>
+    <div class="news-title"><span class="cat">盤中</span><span class="ntime">10/06 10:42</span>台積電、聯發科(2454) 回檔，台股盤中翻黑、5 萬點近關情怯 <a class="ref" href="#src-3">[3]</a></div>
+    <div class="news-body">10:23 加權 49,618.87 點；聯發科跌逾 4%，金融、航運、電子零組件撐盤，千金股增至 55 檔。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">半導體</span><span class="ntime">10/06 02:31</span>日本 Rapidus 傳攜手 17 家大廠擴大生態系，搶台積電(2330) 先進製程訂單 <a class="ref" href="#src-4">[4]</a></div>
-    <div class="news-body">英特爾、三星晶圓代工同步積極招手國際大廠；Rapidus 協助客戶開發自有品牌先進晶片。</div>
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">10/06 09:20</span>高盛重申台積電(2330) 買進，目標價由 3,100 元上調至 3,300 元 <a class="ref" href="#src-4">[4]</a></div>
+    <div class="news-body">看好 AI 需求擴及 GPU、網路晶片與伺服器 CPU；2027／2028 年資本支出預估上修至 850／980 億美元。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">市場</span><span class="ntime">10/06 02:12</span>富邦蔡明忠：明年台灣 GDP 估高個位數成長，AI 紅利延續兩年 <a class="ref" href="#src-5">[5]</a></div>
-    <div class="news-body">富邦金董事長蔡明興同步看好基建題材；集團看好台灣完整科技供應鏈站上 AI 浪頭。</div>
+    <div class="news-title"><span class="cat">開盤</span><span class="ntime">10/06 09:12</span>台股早盤 49,968 點再創盤中新高，台積電(2330) 寫新猷 2,590 元 <a class="ref" href="#src-5">[5]</a></div>
+    <div class="news-body">美股那斯達克創高帶動，台股開高逼近 5 萬點。</div>
   </div>
   <details class="more">
     <summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
-    <div class="news-title"><span class="cat">AI</span><span class="ntime">10/06 02:10</span>輝達投資的 Reflection 將推開放權重模型，AI 伺服器供應鏈接單受關注 <a class="ref" href="#src-6">[6]</a></div>
-    <div class="news-body">被視為美國對抗中國開源模型的防線，帶來潛在算力需求；鴻海(2317)、廣達(2382)、緯創(3231)、英業達(2356)、仁寶(2324) 被點名。</div>
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/06 05:53</span>美股四大指數全收紅、那斯達克創收盤新高，費城半導體漲 0.27% <a class="ref" href="#src-6">[6]</a></div>
+    <div class="news-body">道瓊收 51,267.90 點（+0.18%）、標普 7,773.95 點（+0.66%）、那指 27,477.31 點（+1.05%）、費半 13,172.74 點。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/06 02:03</span>美 10 年債殖利率穩居 5% 以上，摩根大通：債市接近超賣 <a class="ref" href="#src-7">[7]</a></div>
-    <div class="news-body">市場擔憂償債成本攀升釀惡性循環，外資認為「美債末日」不至於發生。</div>
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/06 03:10</span>巴西大選首輪意外：前總統之子佛拉維歐 47% 領先魯拉，10/25 二輪決選 <a class="ref" href="#src-7">[7]</a></div>
+    <div class="news-body">佛拉維歐立場較親市場，巴西股匯 5 日雙漲；現任總統魯拉得票 45%。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">AI</span><span class="ntime">10/06 01:59</span>OpenAI 奧特曼：AI 好處遠大過風險，稱 Cerebras 為密切夥伴 <a class="ref" href="#src-8">[8]</a></div>
-    <div class="news-body">奧特曼主張 AI 應持續廣泛開放給大眾使用；消息激勵 Cerebras 5 日早盤勁揚 9%。</div>
+    <div class="news-title"><span class="cat">產業</span><span class="ntime">10/06 02:38</span>蘋果傳推首款觸控、疊層 OLED MacBook Pro，鴻海(2317) 可望助攻營運 <a class="ref" href="#src-8">[8]</a></div>
+    <div class="news-body">iPhone 18 Pro 系列銷售傳佳音，主力供應商鴻海成長力道可望增添。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">10/06 01:03</span>Aletheia 資本給台光電(2383) 買進、目標價 10,000 元，看好 Google TPU 帶動 CCL <a class="ref" href="#src-9">[9]</a></div>
-    <div class="news-body">預估 Google TPU 出貨 2028 年達 1,200 萬台，PCB 潛在市場 2026–2029 年可能成長三倍；目標價外資圈僅次於高盛 10,200 元。</div>
+    <div class="news-title"><span class="cat">半導體</span><span class="ntime">10/06 02:31</span>日本 Rapidus 傳攜手 17 家大廠擴大生態系，搶台積電(2330) 先進製程訂單 <a class="ref" href="#src-9">[9]</a></div>
+    <div class="news-body">英特爾、三星晶圓代工同步積極招手國際大廠。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">期貨</span><span class="ntime">10/05 22:20</span>台指期夜盤攻破 5 萬點大關，台積電(2330) ADR 早盤走高 <a class="ref" href="#src-10">[10]</a></div>
-    <div class="news-body">台指期夜盤 10/05 晚間站上 50,000 點；美股開盤後震盪，仍添變數。</div>
+    <div class="news-title"><span class="cat">市場</span><span class="ntime">10/06 02:12</span>富邦蔡明忠：明年台灣 GDP 估高個位數成長，AI 紅利延續兩年 <a class="ref" href="#src-10">[10]</a></div>
+    <div class="news-body">富邦金董事長蔡明興同步看好基建題材。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
@@ -442,14 +442,18 @@
   <h2 id="broker">10/06 券商報告摘要</h2>
   <div class="card">
     <ul class="sum-list">
-      <li>早盤場新增：<b>Aletheia 資本</b>給予台光電（2383）買進、目標價 10,000 元，外資圈僅次於高盛 10,200 元；預估 Google TPU 出貨 2026 年 360 萬台增至 2028 年 1,200 萬台，CCL 可能出現類似記憶體的長期合約<a class="ref" href="#src-9">[9]</a><a class="ref" href="#src-11">[11]</a></li>
-      <li>補收錄：本國投顧上修<b>金像電</b>（2368）2026 年第 3、4 季獲利預估約 7.6%、16% 並調升目標價（數值原文未載），谷歌 TPU v8 與亞馬遜 T4 PCB 規格升級<a class="ref" href="#src-12">[12]</a></li>
-      <li>補收錄：投顧法人調高<b>南電</b>（8046）目標價（數值原文未載），第 4 季營收估季增約 15%、毛利率估上修至 34%，2027 年第 1 季起供應 AMD Venice ABF 載板<a class="ref" href="#src-13">[13]</a></li>
-      <li>10/05 早盤場：<b>瑞銀</b>重申穩懋（3105）買進、目標價由 500 元上調至 725 元，看好星鏈 V3 衛星升級<a class="ref" href="#src-14">[14]</a></li>
+      <li>收盤場新增：<b>高盛</b>重申台積電（2330）買進、目標價由 3,100 元上調至 3,300 元；看好 Agentic AI 推升伺服器 CPU 需求，AI 需求擴及 GPU、網路晶片與 CPU，2027／2028 年資本支出預估上修至 850／980 億美元<a class="ref" href="#src-4">[4]</a></li>
+      <li>早盤場：<b>Aletheia 資本</b>給予台光電（2383）買進、目標價 10,000 元，外資圈僅次於高盛 10,200 元，看好 Google TPU 帶動 CCL<a class="ref" href="#src-11">[11]</a></li>
+      <li>補收錄：本國投顧調升<b>金像電</b>（2368）、<b>南電</b>（8046）目標價（數值原文未載），分別上修第 3、4 季獲利與第 4 季毛利率預估<a class="ref" href="#src-12">[12]</a><a class="ref" href="#src-13">[13]</a></li>
     </ul>
   </div>
   <table>
     <tr><th>日期</th><th>券商</th><th>個股</th><th>評等</th><th>目標價</th><th>一句話重點</th></tr>
+    <tr>
+      <td class="num">10/06</td><td><span class="tag">外資</span>高盛證券</td><td>台積電 (2330)</td><td><span class="up">買進（上調目標價）</span></td>
+      <td class="num"><span class="up">3,300</span><br><span class="muted">前值 3,100</span></td>
+      <td class="muted">AI 需求擴及 GPU／網通／CPU，上修 2027–2028 年資本支出<a class="ref" href="#src-4">[4]</a></td>
+    </tr>
     <tr>
       <td class="num">10/06</td><td><span class="tag">外資</span>Aletheia 資本</td><td>台光電 (2383)</td><td><span class="up">買進</span></td>
       <td class="num"><span class="up">10,000</span><br><span class="muted">前值待確認</span></td>
@@ -485,11 +489,6 @@
       <td class="num"><span class="up">2,000</span><br><span class="muted">前值 1,700</span></td>
       <td class="muted">BT 漲價警報解除，ABF 毛利率明年朝 50%<a class="ref" href="#src-17">[17]</a></td>
     </tr>
-    <tr>
-      <td class="num">10/04</td><td><span class="tag">內資</span>未具名投顧</td><td>景碩 (3189)</td><td><span class="up">買進（上調目標價）</span></td>
-      <td class="num"><span class="up">1,300</span><br><span class="muted">前值 1,000</span></td>
-      <td class="muted">8 月 EPS 1.59 元優於預期，2027 年 EPS 上修至 27.06 元<a class="ref" href="#src-18">[18]</a></td>
-    </tr>
   </table>
 <!-- ===== /DATA:BROKER ===== -->
 
@@ -505,16 +504,16 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
-    <li id="src-1"><a href="https://udn.com/news/story/6811/9796827" target="_blank" rel="noopener">中央社／聯合新聞網｜市場觀望企業財報 美股收漲那斯達克指數創新高（10/06 05:53）</a></li>
-    <li id="src-2"><a href="https://udn.com/news/story/6811/9796638" target="_blank" rel="noopener">聯合新聞網｜巴西大選首輪投票結果意外 前總統之子得票率領先（10/06 03:10）</a></li>
-    <li id="src-3"><a href="https://udn.com/news/story/6811/9796595" target="_blank" rel="noopener">經濟日報／聯合新聞網｜蘋果新筆電 鴻海將助攻營運（10/06 02:38）</a></li>
-    <li id="src-4"><a href="https://udn.com/news/story/6811/9796679" target="_blank" rel="noopener">經濟日報／聯合新聞網｜日本半導體國家隊強碰台積電 Rapidus攜手17大咖搶訂單（10/06 02:31）</a></li>
-    <li id="src-5"><a href="https://money.udn.com/money/story/5613/9796689" target="_blank" rel="noopener">經濟日報｜蔡明忠看好明年 GDP 估高個位數成長（10/06 02:12）</a></li>
-    <li id="src-6"><a href="https://udn.com/news/story/6811/9796699" target="_blank" rel="noopener">經濟日報／聯合新聞網｜美版DeepSeek搶市 新創Reflection將推開放權重模型（10/06 02:10）</a></li>
-    <li id="src-7"><a href="https://udn.com/news/story/6811/9796648" target="_blank" rel="noopener">經濟日報／聯合新聞網｜市場：美債末日不至於發生 小摩喊債市接近超賣（10/06 02:03）</a></li>
-    <li id="src-8"><a href="https://udn.com/news/story/6811/9796619" target="_blank" rel="noopener">經濟日報／聯合新聞網｜OpenAI執行長奧特曼：AI好處遠大過風險（10/06 01:59）</a></li>
-    <li id="src-9"><a href="https://money.udn.com/money/story/5607/9796372" target="_blank" rel="noopener">經濟日報｜台光電受惠 Google TPU 高速成長 外資喊買 目標價上看10,000元（10/06 01:03）</a></li>
-    <li id="src-10"><a href="https://tw.stock.yahoo.com/news/%E5%8F%B0%E6%8C%87%E6%9C%9F%E5%A4%9C%E7%9B%A4%E6%94%BB%E7%A0%B45%E8%90%AC%E9%BB%9E%E5%A4%A7%E9%97%9C-%E5%8F%B0%E7%A9%8D%E9%9B%BBadr%E6%BC%B2%E9%80%BE1-%E7%BE%8E%E8%82%A1%E9%9C%87%E7%9B%AA%E6%B7%BB%E8%AE%8A%E6%95%B8-142042588.html" target="_blank" rel="noopener">Yahoo股市｜台指期夜盤攻破5萬點大關 台積電ADR走高 美股震盪添變數（10/05 22:20）</a></li>
+    <li id="src-1"><a href="https://www.cna.com.tw/news/afe/202610060127.aspx" target="_blank" rel="noopener">中央社｜台積電收新高2585元 台股收漲110點49822點再寫新猷（10/06 13:44）</a></li>
+    <li id="src-2"><a href="https://www.cna.com.tw/news/afe/202610060124.aspx" target="_blank" rel="noopener">中央社｜超微蘇姿丰訪台密會台積電 證實在台百億美元投資將加碼（10/06 13:36）</a></li>
+    <li id="src-3"><a href="https://www.cna.com.tw/news/afe/202610060046.aspx" target="_blank" rel="noopener">中央社｜台積電聯發科回檔 台股盤中翻黑5萬點近關情怯（10/06 10:42）</a></li>
+    <li id="src-4"><a href="https://news.cnyes.com/news/id/6622317" target="_blank" rel="noopener">鉅亨網｜3100→3300！高盛調高台積電目標價6.5% 看好AI帶動業績強勁成長（10/06 09:20）</a></li>
+    <li id="src-5"><a href="https://www.cna.com.tw/news/afe/202610060029.aspx" target="_blank" rel="noopener">中央社｜台積電寫新猷2590元 台股早盤49968點再創高逼近5萬點（10/06 09:12）</a></li>
+    <li id="src-6"><a href="https://udn.com/news/story/6811/9796827" target="_blank" rel="noopener">中央社／聯合新聞網｜市場觀望企業財報 美股收漲那斯達克指數創新高（10/06 05:53）</a></li>
+    <li id="src-7"><a href="https://udn.com/news/story/6811/9796638" target="_blank" rel="noopener">聯合新聞網｜巴西大選首輪投票結果意外 前總統之子得票率領先（10/06 03:10）</a></li>
+    <li id="src-8"><a href="https://udn.com/news/story/6811/9796595" target="_blank" rel="noopener">經濟日報／聯合新聞網｜蘋果新筆電 鴻海將助攻營運（10/06 02:38）</a></li>
+    <li id="src-9"><a href="https://udn.com/news/story/6811/9796679" target="_blank" rel="noopener">經濟日報／聯合新聞網｜日本半導體國家隊強碰台積電 Rapidus攜手17大咖搶訂單（10/06 02:31）</a></li>
+    <li id="src-10"><a href="https://money.udn.com/money/story/5613/9796689" target="_blank" rel="noopener">經濟日報｜蔡明忠看好明年 GDP 估高個位數成長（10/06 02:12）</a></li>
     <li id="src-11"><a href="https://money.udn.com/money/story/5607/9796461" target="_blank" rel="noopener">經濟日報｜Aletheia：PCB 與 CCL 產業受惠於 Google TPU 台光電目標價上看萬元（10/05 21:13）</a></li>
     <li id="src-12"><a href="https://money.udn.com/money/story/5710/9795528" target="_blank" rel="noopener">經濟日報｜通吃谷歌、亞馬遜訂單 法人調升金像電獲利預估值及目標價（10/05 13:27）</a></li>
     <li id="src-13"><a href="https://money.udn.com/money/story/5607/9795489" target="_blank" rel="noopener">經濟日報｜股價連拉八紅K 法人調高南電獲利預估值及目標價（10/05 13:11）</a></li>
@@ -523,12 +522,12 @@
     <li id="src-16"><a href="https://www.ctee.com.tw/news/20261001702132-430502" target="_blank" rel="noopener">工商時報｜明年獲利扮股價催化劑！法人點名「這檔」飆速 明年EPS拚翻倍（金居）（10/01 18:36）</a></li>
     <li id="src-17"><a href="https://wantrich.chinatimes.com/news/20261002900272-420101" target="_blank" rel="noopener">旺得富理財網｜載板Q1再漲20％！ABF三雄警報解除 外資最推他：目標價1700元→2000元（10/02 12:11）</a></li>
     <li id="src-18"><a href="https://www.setn.com/news/1915483" target="_blank" rel="noopener">三立新聞網｜明年EPS上看27元！「這載板廠」漲價再遇擴產潮 法人喊目標價1300元（10/03 02:01）</a></li>
-    <li id="src-19"><a href="https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK" target="_blank" rel="noopener">臺灣證券交易所｜每日市場成交資訊 FMTQIK（最新官方值仍為 10/02：48,475.74 點、成交值 9,382.22 億；10/05 收盤 49,712.04 點、成交值 11,508.04 億依中央社，待官方發布覆核）（10/06 07:05 查詢）</a></li>
-    <li id="src-20"><a href="https://raw.githubusercontent.com/wowwow3100-ctrl/daily-report/data/sectors/latest.json" target="_blank" rel="noopener">臺灣證券交易所 每日收盤行情 MI_INDEX（GitHub Actions 自動擷取，資料日 10/05）（10/06 07:05 查詢）</a></li>
-    <li id="src-21"><a href="https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ4U_TREND?response=json&amp;days=5&amp;date=20261002" target="_blank" rel="noopener">臺灣證券交易所｜融資融券彙總 MI_MARGN／擔保維持率 BFIJ4U_TREND（沿用 10/02 官方值：融資 6,351 億、維持率 286.99%、風險戶 16 戶；10/05 值本場無法取得）（10/06 07:05 查詢）</a></li>
+    <li id="src-19"><a href="https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK" target="_blank" rel="noopener">臺灣證券交易所｜每日市場成交資訊 FMTQIK（最新官方值 10/05：49,712.04 點、成交值 12,110.41 億；10/06 收盤 49,822.55 點、成交值約 9,759 億依中央社 13:44，待官方發布覆核）（10/06 14:05 查詢）</a></li>
+    <li id="src-20"><a href="https://raw.githubusercontent.com/wowwow3100-ctrl/daily-report/data/sectors/latest.json" target="_blank" rel="noopener">臺灣證券交易所 每日收盤行情 MI_INDEX（GitHub Actions 自動擷取，資料日 10/05）（10/06 14:05 查詢）</a></li>
+    <li id="src-21"><a href="https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ4U_TREND?response=json&amp;days=5&amp;date=20261002" target="_blank" rel="noopener">臺灣證券交易所｜融資融券彙總 MI_MARGN／擔保維持率 BFIJ4U_TREND（沿用 10/02 官方值：融資 6,351 億、維持率 286.99%、風險戶 16 戶；新值本場無法取得）（10/06 14:05 查詢）</a></li>
     <li id="src-22"><a href="https://udn.com/news/story/6811/9796827" target="_blank" rel="noopener">中央社／聯合新聞網｜費城半導體指數 SOX（10/05 美股收盤 13,172.74、+0.27%）（10/06 05:53）</a></li>
     <li id="src-23"><a href="https://www.twse.com.tw/rwd/zh/exRight/TWT48U?response=json" target="_blank" rel="noopener">臺灣證券交易所｜除權除息預告表 TWT48U、休市日 holidaySchedule（行事曆用）（10/03 查詢）</a></li>
-    <li id="src-24"><a href="https://money.udn.com/money/story/5710/9795941" target="_blank" rel="noopener">經濟日報｜矽格營收／9月20.9億連三月創高！第3季首破60億元 明日法說接棒登場（10/05）（行事曆用）</a></li>
+    <li id="src-24"><a href="https://www.cna.com.tw/news/acn/202610060061.aspx" target="_blank" rel="noopener">中央社｜歐盟、中國避免貿易大戰 8日進行「最後談判」（10/06）（行事曆用）</a></li>
   </ol>
   </details>
 <!-- ===== /DATA:SOURCES ===== -->
