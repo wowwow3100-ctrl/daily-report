@@ -483,6 +483,8 @@ html.pro .rvl.in{opacity:1;transform:none;transition:opacity .7s ease,transform 
   html:not(.mob) nav.bnav a.on::before{display:none;}
   html:not(.mob) nav.bnav a .newdot{top:-6px;right:-2px;}
   html:not(.mob) body{padding-bottom:40px;}
+  /* 內頁欄寬較窄：頂部浮動導覽放在頁首上方，避免蓋住 LOGO 與右上角資訊 */
+  html:not(.mob) body:not(.home){padding-top:64px;}
 }
 body.home header .stamp{display:none;}
 body.home .annc{margin:-12px 0 26px;}
