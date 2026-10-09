@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/10/09（週五）盤後場次</div>
+        <div class="stamp" id="updated">2026/10/09（週五）夜間場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -293,7 +293,7 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/08 收盤．10/09 國慶補假休市．盤後場更新．加權與成交值為證交所 FMTQIK 10/08 官方值；融資、擔保維持率、風險戶數皆為證交所 10/08 官方值；SOX 為 10/08 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/08 收盤．10/09 國慶補假休市．夜間場更新．加權與成交值為證交所 FMTQIK 10/08 官方值；融資、擔保維持率、風險戶數皆為證交所 10/08 官方值；SOX 為 10/08 美股收盤）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">49,313</div><div class="chg down">-492.93（-0.99%）</div></div>
     <div class="m"><div class="lbl">成交值（上市）</div><div class="val">9,245 億</div><div class="chg down">較前日 -6.3%</div></div>
@@ -391,11 +391,29 @@
   <!-- ===== /DATA:PREOPEN ===== -->
 
     <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/09 盤後．國慶補假台股休市．依時間由新到舊）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/09 夜間．國慶補假台股休市．依時間由新到舊）</span></h2>
+  <div class="card">
+    <div class="news-title"><span class="cat">營收</span><span class="ntime">10/09 20:50</span>光聖(6442) 9 月營收 20.61 億元創單月新高，第 3 季同步改寫紀錄 <a class="ref" href="#src-29">[29]</a></div>
+    <div class="news-body">9 月營收月增 26.59%、年增 97.26%，超越今年 5 月的 17.25 億元；公司指高芯數產品放量，帶動營收與毛利率持續成長。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/09 19:02</span>美股盤前：記憶體、光通訊股走高，蘋果盤前跌逾 2%；國際油價回落、金價漲 1.5% <a class="ref" href="#src-30">[30]</a></div>
+    <div class="news-body">美光、SK 海力士盤前漲約 2%，Lumentum、Coherent 漲逾 3%；蘋果傳削減 iPhone 18 Pro 零組件訂單拖累股價；WTI 約 90.5 美元、布蘭特約 103 美元，倫敦金約 4,198 美元。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/09 18:44</span>日經亞洲：iPhone 18 Pro 需求不如預期，蘋果 10 月零組件訂單至少砍 15% <a class="ref" href="#src-31">[31]</a></div>
+    <div class="news-body">記憶體成本推升售價壓抑買氣，蘋果自 9 月初對出貨轉趨保守，供應商稱 10 月兩款高階機型訂單減少 15%～20%；11 月後是否再調整仍不明。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">10/09 18:40</span>大立光(3008) 透露客戶下修需求、蘋果傳砍單，鴻海(2317) 等蘋果供應鏈受市場檢視 <a class="ref" href="#src-32">[32]</a></div>
+    <div class="news-body">大立光法說指 11 月手機拉貨將下滑；鴻海 9 月營收破兆元創高但股價連日走低，評論指記憶體族群近期壓力同樣沉重。</div>
+  </div>
   <div class="card">
     <div class="news-title"><span class="cat">國際</span><span class="ntime">10/09 18:13</span>陸監測：「超強」聖嬰現象已形成，預計秋末冬初達峰值 <a class="ref" href="#src-26">[26]</a></div>
     <div class="news-body">中國氣象監測指出超強聖嬰現象已形成，預計秋末冬初達到峰值，後續對農產品與航運等氣候敏感族群的影響值得留意。</div>
   </div>
+  <details class="more">
+    <summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/09 17:41</span>資金轉找業績避風港：臻鼎-KY(4958)、華通(2313)、南亞科(2408) 等 15 檔「營收月月高」股出列 <a class="ref" href="#src-27">[27]</a></div>
     <div class="news-body">美股科技股受中東情勢與 OpenAI 營收預期落差影響下跌，台指期夜盤跌破 49K、台積電(2330) 夜盤收 2,535 元（-30）；這 15 檔連續三個月營收月增，過去五個交易日獲三大法人買超逾 8,000 張。</div>
@@ -405,34 +423,16 @@
     <div class="news-body">AI 相關發債公司的信用違約交換（CDS）價格走升，其中甲骨文最明顯；文章整理五種觀察美股風險的方法，供投資人判斷後市。</div>
   </div>
   <div class="card">
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/09 17:04</span>美光、SanDisk 週四再挫逾 4%，三星財報優異卻拖累記憶體股，分析師稱賣壓過度反應 <a class="ref" href="#src-33">[33]</a></div>
+    <div class="news-body">美股記憶體族群週四成重災區，美光、閃迪到 SK 海力士 ADR 全面重挫；外媒指三星季報營益亮眼但市場不買單，加上東芝擴產消息，分析師認為拋售過度。</div>
+  </div>
+  <div class="card">
     <div class="news-title"><span class="cat">國際</span><span class="ntime">10/09 15:40</span>美國亞太助卿：市場高估台海衝突風險，習近平若知代價過高不會動武 <a class="ref" href="#src-1">[1]</a></div>
     <div class="news-body">美國東亞暨太平洋事務助理國務卿 DeSombre 受訪稱台灣是市場定價最失準的領域之一；美方須與盟友維持可信嚇阻，川普尚未批准 140 億美元新對台軍售案。</div>
   </div>
   <div class="card">
     <div class="news-title"><span class="cat">國際</span><span class="ntime">10/09 13:02</span>Meta 禁止字節跳動旗下平台在美日等 7 國投放廣告，即刻生效 <a class="ref" href="#src-2">[2]</a></div>
     <div class="news-body">臉書與 Instagram 母公司 Meta 宣布禁止 TikTok 中國母公司字節跳動在美國及其他少數國家投放廣告，科技平台與中國業者角力再添變數。</div>
-  </div>
-  <details class="more">
-    <summary>▾ 更多焦點（再看 5 則）</summary>
-  <div class="card">
-    <div class="news-title"><span class="cat">央行</span><span class="ntime">10/09 12:50</span>紐約 Fed：川普關稅推升美國消費品通膨 2.9 個百分點，物價壓力恐延續一年 <a class="ref" href="#src-3">[3]</a></div>
-    <div class="news-body">研究估平均關稅每升 1 個百分點、一年後消費品價格約漲 0.25%；約 90% 關稅成本轉嫁進口價格，國內製造品間接效應需 9～12 個月才完整反映。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/09 12:39</span>川普 8 月證券交易 517 筆，買進 Meta、微軟股票及 SpaceX 債券 <a class="ref" href="#src-4">[4]</a></div>
-    <div class="news-body">美國總統川普最新財務申報顯示，8 月買進 Meta、麥當勞和微軟各至少 100 萬美元股票，及至少 100 萬美元 SpaceX 債券，延續任內頻繁交易。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">營收</span><span class="ntime">10/09 12:32</span>台聚集團 9 月營收：台聚(1304)、台達化(1309) 年月雙增，亞聚(1308)、華夏(1305) 年減 <a class="ref" href="#src-5">[5]</a></div>
-    <div class="news-body">油價高檔墊高上游原料成本；業者看第 4 季塑化下游需求旺季動能有望優於第 3 季，持續提高差異化、利基型產品占比。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/09 12:13</span>木頭姐方舟投資調節 Meta、超微、Alphabet，加碼國防股 Kratos 約 670 萬美元 <a class="ref" href="#src-6">[6]</a></div>
-    <div class="news-body">ARK 週四同步賣出 SpaceX、Meta、超微與 Alphabet；超微執行長蘇姿丰表示正與富士康、台積電(2330) 及記憶體廠合作確保 2027 年產能。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">10/09 12:01</span>緯創旗下緯致公告網路資安事件，部分員工資訊遭未經授權存取 <a class="ref" href="#src-7">[7]</a></div>
-    <div class="news-body">緯致表示已採取相關防護措施，營運正常；部分員工資訊與公務聯繫資訊遭未經授權存取。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
@@ -441,7 +441,7 @@
   <h2 id="broker">10/08 券商報告摘要</h2>
   <div class="card">
     <ul class="sum-list">
-      <li>10/09 國慶補假休市，早盤、收盤與盤後場皆無新增具名券商觀點；最新一批仍為 10/08：<b>花旗環球證券</b> 上調台積電（2330）至 4,000 元<a class="ref" href="#src-19">[19]</a>，<b>麥格理證券</b> 4,410 元仍為內外資最高<a class="ref" href="#src-14">[14]</a>；台積電 9 月營收年增 54.6%<a class="ref" href="#src-18">[18]</a></li>
+      <li>10/09 國慶補假休市，早盤、收盤、盤後與夜間場皆無新增具名券商觀點；最新一批仍為 10/08：<b>花旗環球證券</b> 上調台積電（2330）至 4,000 元<a class="ref" href="#src-19">[19]</a>，<b>麥格理證券</b> 4,410 元仍為內外資最高<a class="ref" href="#src-14">[14]</a>；台積電 9 月營收年增 54.6%<a class="ref" href="#src-18">[18]</a></li>
       <li>10/08 上午外資報告：亞系外資（未具名）首評<b>聖暉*</b>（5536）買進 1,415 元<a class="ref" href="#src-11">[11]</a>；美系外資（未具名）上調<b>臻鼎-KY</b>（4958）600→750 元<a class="ref" href="#src-13">[13]</a>、重申<b>國巨</b>（2327）買進 1,450 元<a class="ref" href="#src-12">[12]</a></li>
       <li>連假期間國際面：OpenAI 年化營收較預期短少約 200 億美元，費半週四重挫 3.39%<a class="ref" href="#src-24">[24]</a>；紐約 Fed 研究指關稅推升美國消費品通膨 2.9 個百分點<a class="ref" href="#src-3">[3]</a>；10/15 台積電法說聚焦資本支出與擴產<a class="ref" href="#src-9">[9]</a></li>
     </ul>
@@ -531,6 +531,11 @@
     <li id="src-26"><a href="https://money.udn.com/money/story/5603/9805318" target="_blank" rel="noopener">經濟日報｜陸監測：「超強」聖嬰現象已形成（10/09 18:13）</a></li>
     <li id="src-27"><a href="https://money.udn.com/money/story/5607/9805258" target="_blank" rel="noopener">經濟日報｜資金轉找業績避風港 15檔「營收月月高」股出列（10/09 17:41）</a></li>
     <li id="src-28"><a href="https://money.udn.com/money/story/123398/9805234" target="_blank" rel="noopener">經濟日報｜AI公司CDS價格上漲恐是警訊？5個方法辨別美股後市吉凶（10/09 17:13）</a></li>
+    <li id="src-29"><a href="https://tw.stock.yahoo.com/news/%E5%85%89%E9%80%9A%E8%A8%8A%E5%A4%A7%E5%BB%A0-9%E6%9C%88%E7%87%9F%E6%94%B6%E7%8C%9B%E6%94%BB%E6%96%B0%E9%AB%98-q3%E5%90%8C%E7%B7%A0%E6%96%B0%E7%8C%B7-%E9%AB%98%E8%8A%AF%E6%95%B8%E7%94%A2%E5%93%81%E6%94%BE%E9%87%8F%E5%B8%B6%E5%8B%95%E7%87%9F%E6%94%B6-%E6%AF%9B%E5%88%A9%E7%8E%87%E6%8C%81%E7%BA%8C%E6%88%90%E9%95%B7-125000009.html" target="_blank" rel="noopener">FTNN新聞網（Yahoo股市）｜「光通訊大廠」9月營收猛攻新高、Q3同締新猷（10/09 20:50）</a></li>
+    <li id="src-30"><a href="https://m.21jingji.com/article/20261009/herald/1d9875fbb40a277d6daeef9cddced047.html" target="_blank" rel="noopener">21世紀經濟報導（東方財富網）｜美股盤前速遞：記憶體股普漲、蘋果跌2%、油價下跌金銀上漲（10/09 19:02）</a></li>
+    <li id="src-31"><a href="https://tw.stock.yahoo.com/news/%E6%9E%9C%E7%B2%89%E5%AB%8C%E8%B2%B4%E4%B8%8D%E8%B2%B7%E5%96%AE-%E6%97%A5%E5%AA%92-%E8%98%8B%E6%9E%9Ciphone-18-pro%E6%9C%AC%E6%9C%88%E8%87%B3%E5%B0%91%E7%A0%8D%E5%96%AE15-104400394.html" target="_blank" rel="noopener">知新聞（Yahoo股市）｜果粉嫌貴不買單 日媒：蘋果iPhone 18 Pro本月至少砍單15%（10/09 18:44）</a></li>
+    <li id="src-32"><a href="https://www.chinatimes.com/realtimenews/20261009002911-260410" target="_blank" rel="noopener">中時新聞網｜鴻海衰被大立光掃到？兆元營收救不了股價（10/09 18:40）</a></li>
+    <li id="src-33"><a href="https://www.chinatimes.com/realtimenews/20261009002667-260410" target="_blank" rel="noopener">中時新聞網｜美光、SanDisk又慘遭血洗！記憶體狂跌是「錯殺」？（10/09 17:04）</a></li>
   </ol>
   </details>
 <!-- ===== /DATA:SOURCES ===== -->
