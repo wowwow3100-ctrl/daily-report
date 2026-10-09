@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/10/09（週五）早盤場次</div>
+        <div class="stamp" id="updated">2026/10/09（週五）收盤場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -293,10 +293,10 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/08 收盤．10/09 國慶補假休市．早盤場更新．加權與成交值為 10/08 收盤新聞值（經濟日報 13:49／鉅亨網 19:57，證交所 FMTQIK 官方值尚未發布、待覆核；成交值增減以 10/07 官方值 9,862.80 億計）；融資為 10/07 值（財訊快報）；擔保維持率、風險戶數為證交所 10/02 官方值（新值本場仍無法取得）；SOX 為 10/08 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/08 收盤．10/09 國慶補假休市．收盤場更新．加權與成交值為證交所 FMTQIK 10/08 官方值（成交值 9,245.09 億，原早盤記新聞值 8,697 億有誤，已更正）；融資為 10/07 值（財訊快報）；擔保維持率、風險戶數為證交所 10/02 官方值（新值本場仍無法取得）；SOX 為 10/08 美股收盤）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">49,313</div><div class="chg down">-492.93（-0.99%）</div></div>
-    <div class="m"><div class="lbl">成交值（上市）</div><div class="val">8,697 億</div><div class="chg down">較前日 -11.8%</div></div>
+    <div class="m"><div class="lbl">成交值（上市）</div><div class="val">9,245 億</div><div class="chg down">較前日 -6.3%</div></div>
     <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">6,400 億</div><div class="chg up">單日 +23.4 億</div></div>
     <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">12,624</div><div class="chg down">-3.39%（10/08 美股）</div></div>
     <div class="m"><div class="lbl">全市場擔保維持率</div><div class="val">286.99%</div><div class="chg up">較前日 +0.46</div></div>
@@ -391,48 +391,48 @@
   <!-- ===== /DATA:PREOPEN ===== -->
 
     <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/09 早盤．國慶補假台股休市．依時間由新到舊）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/09 收盤．國慶補假台股休市．依時間由新到舊）</span></h2>
   <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/09 06:01</span>〈美股盤後〉OpenAI 營收低於傳聞拖累 AI 股，費半重挫 3.39% 收 12,623.72 點、台積電 ADR 跌 3.01% <a class="ref" href="#src-1">[1]</a></div>
-    <div class="news-body">OpenAI 揭露 9 月底年化營收約 500 億美元、低於先前傳聞約 700 億美元；那指跌 1.25%、道瓊小漲 0.10%；輝達跌 2.94%、美光跌 4.79%，12 月升息機率升至 69.2%。</div>
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/09 12:39</span>川普 8 月證券交易 517 筆，買進 Meta、微軟股票及 SpaceX 債券 <a class="ref" href="#src-1">[1]</a></div>
+    <div class="news-body">美國總統川普最新財務申報顯示，8 月買進 Meta、麥當勞和微軟各至少 100 萬美元股票，及至少 100 萬美元 SpaceX 債券，延續任內頻繁交易。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/09 04:48</span>荷姆茲海峽再傳多起油輪觸雷爆炸，周邊單週至少 12 起油氣船遇襲 <a class="ref" href="#src-2">[2]</a></div>
-    <div class="news-body">伊朗媒體稱南部航道發生數起「巨大爆炸」，行經未授權航線油輪可能觸雷；美財政部新增 27 家企業、22 艘船舶制裁。</div>
+    <div class="news-title"><span class="cat">營收</span><span class="ntime">10/09 12:32</span>台聚集團 9 月營收：台聚(1304)、台達化(1309) 年月雙增，亞聚(1308)、華夏(1305) 年減 <a class="ref" href="#src-2">[2]</a></div>
+    <div class="news-body">油價高檔墊高上游原料成本；業者看第 4 季塑化下游需求旺季動能有望優於第 3 季，持續提高差異化、利基型產品占比。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/09 04:41</span>中東緊張及颶風干擾供應，國際油價收漲約 4%：布蘭特 104.28 美元、西德州 91.49 美元 <a class="ref" href="#src-3">[3]</a></div>
-    <div class="news-body">市場擔心美國打擊伊朗，颶風逼近美國墨西哥灣沿岸恐干擾產油，布蘭特原油觸及 9/29 以來新高。</div>
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">10/09 11:56</span>遊戲股王鈊象(3293) 下半年營運優於上半年，法人上修全年 EPS 至 47.2 元 <a class="ref" href="#src-3">[3]</a></div>
+    <div class="news-body">法人圈看好今年營運優於去年、下半年優於上半年，上修今年營運展望；報導未提具名券商評等與目標價。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/09 02:10</span>川普稱與伊朗討論「富有成效」，11/3 期中選舉前不會恢復攻擊 <a class="ref" href="#src-4">[4]</a></div>
-    <div class="news-body">先前傳出五角大廈備戰、擬於選前空襲伊朗；川普發文澄清，但對伊朗港口封鎖持續，油價自盤中高點回落。</div>
+    <div class="news-title"><span class="cat">法說</span><span class="ntime">10/09 11:55</span>台積電(2330) 10/15 法說聚焦資本支出、德州設廠與擴產 <a class="ref" href="#src-4">[4]</a></div>
+    <div class="news-body">台積電第 3 季營收改寫歷史新高，法人預期第 4 季更上層樓；法說除資本支出外，市場關注赴德州擴產與合作傳聞。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/09</span>美國以涉濫用、詐欺為由，暫停微軟等科技巨頭參與外籍勞工綠卡計畫 <a class="ref" href="#src-5">[5]</a></div>
-    <div class="news-body">科技業 H-1B 轉綠卡管道受阻，鉅亨網另報導留美實習擬每人收費 7 萬美元，市場關注對美科技業人才招募影響。</div>
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/09 11:54</span>川普稱選前不打伊朗，紐時：美軍擬 3 天空襲方案、航艦將會師中東 <a class="ref" href="#src-5">[5]</a></div>
+    <div class="news-body">紐約時報報導川普近月多次否決對伊朗重啟戰事計畫，但美軍仍備妥方案；中東情勢牽動油價與通膨預期。</div>
   </div>
   <details class="more">
     <summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
-    <div class="news-title"><span class="cat">營收</span><span class="ntime">10/08 22:50</span>精誠(6214) 9 月營收 83.72 億元、年增 55.69% 創同期新高；緯致科技第 3 季營收創新高 <a class="ref" href="#src-6">[6]</a></div>
-    <div class="news-body">AI 與企業數位轉型需求帶動資服業；精誠前 3 季營收 463.84 億元、年增 42.3%，緯致第 3 季 37.52 億元、年增 25.6%。</div>
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/09 10:54</span>OpenAI 年化營收較預期短少約 200 億美元，AI 前景疑慮升溫 <a class="ref" href="#src-6">[6]</a></div>
+    <div class="news-body">英媒依 OpenAI 提供投資人的財務文件報導，年化營收低於先前預期約 200 億美元，前一晚美股 AI 股與費半同步重挫。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">營收</span><span class="ntime">10/08 21:10</span>緯創(3231)、英業達(2356) 第 3 季營收創新高，和碩(4938) 9 月 2,147.53 億元刷新單月紀錄 <a class="ref" href="#src-7">[7]</a></div>
-    <div class="news-body">緯創 Q3 營收 1.15 兆元、年增逾 1 倍；英業達預期 Q4 伺服器優於 Q3、筆電季減 4%～9%；仁寶(2324) 9 月年增 35.4%。</div>
+    <div class="news-title"><span class="cat">產業</span><span class="ntime">10/09 10:43</span>AI 光通訊缺貨看不到盡頭，Lumentum 產能訂滿至 2029 年初 <a class="ref" href="#src-7">[7]</a></div>
+    <div class="news-body">Lumentum 執行長表示即使加速擴產仍遠趕不上客戶需求，AI 資料中心帶動光通訊元件需求激增。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">營收</span><span class="ntime">10/08 21:09</span>宏碁(2353) 9 月營收 347.37 億元創 14 年同期新高，華碩(2357) 972.43 億元寫單月次高 <a class="ref" href="#src-8">[8]</a></div>
-    <div class="news-body">宏碁 Q3 營收 918.22 億元、年增 25.1%；華碩 Q3 集團營收 2,763.3 億元、年增 38%，部分伺服器專案遞延至 10 月出貨。</div>
+    <div class="news-title"><span class="cat">央行</span><span class="ntime">10/09 10:05</span>聯準會 9 月會議紀錄釋鷹派訊號，美元指數站上 102 <a class="ref" href="#src-8">[8]</a></div>
+    <div class="news-body">紀錄顯示官員普遍支持升息 1 碼、通膨風險具持續性；國銀認為明年 3 月前不易轉向寬鬆。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">產業</span><span class="ntime">10/08 21:00</span>格芯與台積電(2330) 簽 20 億美元、初期 5 年協議，為 CoWoS 供應矽中介層 <a class="ref" href="#src-9">[9]</a></div>
-    <div class="news-body">格芯擴充紐約馬爾他廠產能，預計 2028 年上半年放量，可望成為美國首個先進封裝矽中介層供應來源；格芯股價收漲 2.68%。</div>
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/09 05:30</span>AI 記憶體爆賺，三星第 3 季營業利潤預估 107.4 兆韓元、首破百兆 <a class="ref" href="#src-9">[9]</a></div>
+    <div class="news-body">年增 782.5%，高於 LSEG 預測 106.1 兆韓元，為全球首家單季營益突破百兆韓元的科技企業。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">營收</span><span class="ntime">10/08 20:31</span>貨櫃三雄 9 月營收大增：長榮(2603) 497.11 億元年增 63.75%、陽明(2609) 年增 69.94% <a class="ref" href="#src-10">[10]</a></div>
-    <div class="news-body">受惠運價相對高檔與十一長假前出貨潮；業者稱中國節後復工需求回溫優於往年。</div>
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">10/09 05:30</span>大立光(3008) 光纖陣列 FA 通過認證，預計明年中量產貢獻營收 <a class="ref" href="#src-10">[10]</a></div>
+    <div class="news-body">董事長林恩平法說表示客戶本月確認產能需求、明年第二季底完成產能建置；第四季 9、10 月拉貨持平、11 月下滑。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
@@ -441,9 +441,9 @@
   <h2 id="broker">10/08 券商報告摘要</h2>
   <div class="card">
     <ul class="sum-list">
-      <li>10/09 國慶補假休市，早盤場無新增具名券商觀點；最新一批仍為 10/08：<b>花旗環球證券</b> 上調台積電（2330）至 4,000 元<a class="ref" href="#src-19">[19]</a>，<b>麥格理證券</b> 4,410 元仍為內外資最高<a class="ref" href="#src-14">[14]</a>；台積電 9 月營收年增 54.6%<a class="ref" href="#src-18">[18]</a></li>
+      <li>10/09 國慶補假休市，早盤與收盤場皆無新增具名券商觀點；最新一批仍為 10/08：<b>花旗環球證券</b> 上調台積電（2330）至 4,000 元<a class="ref" href="#src-19">[19]</a>，<b>麥格理證券</b> 4,410 元仍為內外資最高<a class="ref" href="#src-14">[14]</a>；台積電 9 月營收年增 54.6%<a class="ref" href="#src-18">[18]</a></li>
       <li>10/08 上午外資報告：亞系外資（未具名）首評<b>聖暉*</b>（5536）買進 1,415 元<a class="ref" href="#src-11">[11]</a>；美系外資（未具名）上調<b>臻鼎-KY</b>（4958）600→750 元<a class="ref" href="#src-13">[13]</a>、重申<b>國巨</b>（2327）買進 1,450 元<a class="ref" href="#src-12">[12]</a></li>
-      <li>連假期間國際面：OpenAI 營收低於傳聞，費半週四重挫 3.39%、台積電 ADR 跌 3.01%<a class="ref" href="#src-1">[1]</a>；格芯將為台積電 CoWoS 供應矽中介層<a class="ref" href="#src-9">[9]</a>，10/15 台積電法說為下一個焦點</li>
+      <li>連假期間國際面：OpenAI 年化營收較預期短少約 200 億美元，費半週四重挫 3.39%<a class="ref" href="#src-6">[6]</a><a class="ref" href="#src-24">[24]</a>；10/15 台積電法說聚焦資本支出與擴產<a class="ref" href="#src-4">[4]</a></li>
     </ul>
   </div>
   <table>
@@ -503,16 +503,16 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
-    <li id="src-1"><a href="https://news.cnyes.com/news/id/6626512" target="_blank" rel="noopener">鉅亨網｜〈美股盤後〉OpenAI營收遭爆不如預期 AI概念股嚇趴 費半、台積電ADR重挫逾3%（10/09 06:01）</a></li>
-    <li id="src-2"><a href="https://news.cnyes.com/news/id/6626520" target="_blank" rel="noopener">鉅亨網｜航運風險升溫！荷姆茲海峽再傳多起油輪觸雷爆炸（10/09 04:48）</a></li>
-    <li id="src-3"><a href="https://www.cna.com.tw/news/afe/202610090008.aspx" target="_blank" rel="noopener">中央社｜中東緊張及颶風影響 國際油價大漲（10/09 04:41）</a></li>
-    <li id="src-4"><a href="https://www.cna.com.tw/news/aopl/202610090005.aspx" target="_blank" rel="noopener">中央社｜川普稱和伊朗討論富有成效 美期中選舉前不會恢復攻擊（10/09 02:10）</a></li>
-    <li id="src-5"><a href="https://www.cna.com.tw/news/aopl/202610090003.aspx" target="_blank" rel="noopener">中央社｜涉濫用、詐欺 美暫停微軟等科技巨頭參與外籍勞工綠卡計畫（10/09）</a></li>
-    <li id="src-6"><a href="https://www.cna.com.tw/news/afe/202610080386.aspx" target="_blank" rel="noopener">中央社｜精誠資訊9月營收年增55% 緯致科技第3季寫新高（10/08 22:50）</a></li>
-    <li id="src-7"><a href="https://www.cna.com.tw/news/afe/202610080358.aspx" target="_blank" rel="noopener">中央社｜緯創英業達第3季營收創新高 和碩9月歷年最旺（10/08 21:10）</a></li>
-    <li id="src-8"><a href="https://www.cna.com.tw/news/afe/202610080357.aspx" target="_blank" rel="noopener">中央社｜宏碁9月營收登14年同期新高 華碩創單月次高（10/08 21:09）</a></li>
-    <li id="src-9"><a href="https://news.cnyes.com/news/id/6625992" target="_blank" rel="noopener">鉅亨網｜台積電CoWoS找來新幫手！格芯簽20億美元協議 在美擴產關鍵元件（10/08 21:00）</a></li>
-    <li id="src-10"><a href="https://www.cna.com.tw/news/afe/202610080345.aspx" target="_blank" rel="noopener">中央社｜貨櫃三雄9月營收大增 展望後市需求回溫優於往年（10/08 20:31）</a></li>
+    <li id="src-1"><a href="https://money.udn.com/money/story/123398/9804685" target="_blank" rel="noopener">經濟日報｜川普8月證券交易517筆 買進 Meta 微軟股票及 SpaceX 債券（10/09 12:39）</a></li>
+    <li id="src-2"><a href="https://money.udn.com/money/story/5710/9804864" target="_blank" rel="noopener">經濟日報｜台聚集團營收 台聚、台達化年月雙增 亞聚、華夏年減（10/09 12:32）</a></li>
+    <li id="src-3"><a href="https://money.udn.com/money/story/11074/9804787" target="_blank" rel="noopener">經濟日報｜鈊象下半年營運優於上半年 法人上修全年 EPS 至47.2元（10/09 11:56）</a></li>
+    <li id="src-4"><a href="https://money.udn.com/money/story/5612/9804780" target="_blank" rel="noopener">經濟日報｜赴德州設廠、結盟馬斯克？台積電15日法說聚焦營運擴產（10/09 11:55）</a></li>
+    <li id="src-5"><a href="https://money.udn.com/money/story/5599/9804777" target="_blank" rel="noopener">經濟日報｜川普稱選前不打伊朗　紐時：美軍擬3天空襲方案航艦將會師中東（10/09 11:54）</a></li>
+    <li id="src-6"><a href="https://money.udn.com/money/story/123398/9804658" target="_blank" rel="noopener">經濟日報｜OpenAI年化營收較預期短少200億美元　AI前景疑慮上升（10/09 10:54）</a></li>
+    <li id="src-7"><a href="https://money.udn.com/money/story/5599/9804638" target="_blank" rel="noopener">經濟日報｜AI 光通訊缺貨看不到盡頭 Lumentum 產能訂滿至2029年初（10/09 10:43）</a></li>
+    <li id="src-8"><a href="https://money.udn.com/money/story/5616/9804550" target="_blank" rel="noopener">經濟日報｜聯準會9月會議紀錄釋發鷹派訊號 美元短期獲支撐（10/09 10:05）</a></li>
+    <li id="src-9"><a href="https://ec.ltn.com.tw/article/paper/1773840" target="_blank" rel="noopener">自由財經｜AI記憶體爆賺 三星Q3獲利首破百兆韓元（10/09 05:30）</a></li>
+    <li id="src-10"><a href="https://ec.ltn.com.tw/article/paper/1773790" target="_blank" rel="noopener">自由財經｜大立光FA通過認證 明年中量產貢獻營收（10/09 05:30）</a></li>
     <li id="src-11"><a href="https://www.chinatimes.com/realtimenews/20261008002606-260410" target="_blank" rel="noopener">時報資訊｜《其他電》亞系外資首評聖暉*給予買進評等 目標價1415元（10/08 11:59）</a></li>
     <li id="src-12"><a href="https://www.chinatimes.com/realtimenews/20261008002309-260410" target="_blank" rel="noopener">時報資訊｜《電零組》國巨Q3營運超標拚Q4更旺 外資維持高目標價（10/08 11:09）</a></li>
     <li id="src-13"><a href="https://www.chinatimes.com/realtimenews/20261008002050-260410" target="_blank" rel="noopener">時報資訊｜《電零組》外資上修臻鼎-KY 2027、2028年獲利 目標價750元（10/08 10:29）</a></li>
@@ -522,8 +522,8 @@
     <li id="src-17"><a href="https://news.cnyes.com/news/id/6622317" target="_blank" rel="noopener">鉅亨網｜3100→3300！高盛調高台積電目標價6.5% 看好AI帶動業績強勁成長（10/06 09:20）</a></li>
     <li id="src-18"><a href="https://money.udn.com/money/story/5607/9802747" target="_blank" rel="noopener">經濟日報｜台積電營收／9月逾5,118億元 創歷年同期新高 優於法人第3季預期（10/08 13:35）</a></li>
     <li id="src-19"><a href="https://udn.com/news/story/7252/9803353" target="_blank" rel="noopener">經濟日報｜上看四字頭！又一家外資升台積電目標價 分析預期將迎三大亮點（10/08 16:46）</a></li>
-    <li id="src-20"><a href="https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK" target="_blank" rel="noopener">臺灣證券交易所｜每日市場成交資訊 FMTQIK（最新官方值仍為 10/07：49,806.37 點、成交值 9,862.80 億；10/08 收盤依新聞值，待官方發布覆核）（10/09 07:05 查詢）</a></li>
-    <li id="src-21"><a href="https://raw.githubusercontent.com/wowwow3100-ctrl/daily-report/data/sectors/latest.json" target="_blank" rel="noopener">臺灣證券交易所 每日收盤行情 MI_INDEX（GitHub Actions 自動擷取，資料日 10/05；10/06 之後尚未產出，備援端點本場無法存取）（10/09 07:05 查詢）</a></li>
+    <li id="src-20"><a href="https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK" target="_blank" rel="noopener">臺灣證券交易所｜每日市場成交資訊 FMTQIK（10/08 官方值：49,313.44 點、-492.93、成交值 9,245.09 億）（10/09 14:10 查詢）</a></li>
+    <li id="src-21"><a href="https://raw.githubusercontent.com/wowwow3100-ctrl/daily-report/data/sectors/latest.json" target="_blank" rel="noopener">臺灣證券交易所 每日收盤行情 MI_INDEX（GitHub Actions 自動擷取，資料日 10/05；10/06 之後尚未產出，備援端點本場無法存取）（10/09 14:10 查詢）</a></li>
     <li id="src-22"><a href="https://tw.stock.yahoo.com/news/%E9%9B%86%E4%B8%AD%E5%B8%82%E5%A0%B4%E8%88%87%E5%BA%97%E9%A0%AD%E5%B8%82%E5%A0%B4%E9%80%B1%E4%B8%89%E8%B3%87%E5%88%B8%E5%90%8C%E6%AD%A5%E5%A2%9E%E5%8A%A0-005902945.html" target="_blank" rel="noopener">財訊快報（Yahoo 股市）｜集中市場與店頭市場週三資券同步增加：7 日融資餘額 6,400.00 億元、增 23.43 億元（10/08）</a></li>
     <li id="src-23"><a href="https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ4U_TREND?response=json&amp;days=5&amp;date=20261002" target="_blank" rel="noopener">臺灣證券交易所｜擔保維持率 BFIJ4U_TREND（沿用 10/02 官方值：維持率 286.99%、風險戶 16 戶；新值本場無法取得）（10/09 07:05 查詢）</a></li>
     <li id="src-24"><a href="https://news.cnyes.com/news/id/6626512" target="_blank" rel="noopener">鉅亨網 美股盤後｜費城半導體 12,623.72 點、-3.39%（10/08 美股收盤）（10/09 06:01）</a></li>
