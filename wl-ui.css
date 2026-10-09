@@ -400,6 +400,9 @@ nav.bnav a .revdot{position:absolute;top:-3px;right:calc(50% - 30px);padding:0 5
 .subtabs a.ext:hover{color:#E2CCFF;background:rgba(185,140,255,.12);}
 html[data-theme="light"] .subtabs a.ext,html[data-theme="white"] .subtabs a.ext{color:#7B3FC4;border-color:rgba(123,63,196,.45);}
 html[data-theme="light"] .subtabs a.ext:hover,html[data-theme="white"] .subtabs a.ext:hover{background:rgba(123,63,196,.08);color:#5E2A9E;}
+.subtabs a.ext.life{color:#6fd391;border-color:rgba(76,175,110,.6);}
+.subtabs a.ext.life:hover{color:#9be8b4;background:rgba(76,175,110,.12);}
+html[data-theme="light"] .subtabs a.ext.life,html[data-theme="white"] .subtabs a.ext.life{color:#2e7d4a;border-color:rgba(46,125,74,.5);}
 
 /* =====================================================================
    26. 體驗層（搭配 wl-pro.js）：Masthead、章節節奏、桌機兩欄、動態

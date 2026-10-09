@@ -148,6 +148,9 @@
   .sister[open] .st{color:var(--gold);}
   .sbox{display:block;text-decoration:none;background:var(--card);border:1px solid var(--gold-dim);border-radius:14px;padding:14px 18px;}
   .sbox:hover{border-color:var(--gold);}
+  .sister .sbox+.sbox{margin-top:10px;}
+  .sbox.life{border-color:rgba(76,175,110,.55);}
+  .sbox.life b,.sbox.life em{color:#4caf6e;}
   .sbox b{display:block;color:var(--gold);font-size:1.05rem;letter-spacing:1px;}
   .sbox span{display:block;color:var(--muted);font-size:.85rem;margin-top:4px;}
   .sbox em{display:inline-block;margin-top:8px;font-style:normal;font-weight:800;font-size:.85rem;color:var(--gold);}
@@ -155,7 +158,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap">
-<link rel="stylesheet" href="wl-ui.css?v=17">
+<link rel="stylesheet" href="wl-ui.css?v=18">
 <script>(function(){var h=document.documentElement;try{h.setAttribute("data-theme",(localStorage.getItem("wl_theme")||"gold").replace("navy","gold"));h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");}catch(e){}})();</script>
 </head>
 <body>
@@ -200,7 +203,7 @@
     <button class="nok" id="nok">知道了 ✓（之後縮成一行）</button>
   </div>
 
-  <div class="subtabs"><a class="on" href="wish.html">許願池</a><a href="reports.html">回憶過去</a><a class="ext" href="https://aboutlife-production.up.railway.app/" target="_blank" rel="noopener">旺來開運所 ↗</a></div>
+  <div class="subtabs"><a class="on" href="wish.html">許願池</a><a href="reports.html">回憶過去</a><a class="ext" href="https://aboutlife-production.up.railway.app/" target="_blank" rel="noopener">旺來開運所 ↗</a><a class="ext life" href="https://web-production-e1521.up.railway.app/" target="_blank" rel="noopener">台股生命線 ↗</a></div>
 
   <div class="intro">
     <div class="big">🌠 這裡是許願池</div>
@@ -229,6 +232,11 @@
 
   <div class="sister">
     <div class="st">旺來的其他小站</div>
+    <a class="sbox life" href="https://web-production-e1521.up.railway.app/" target="_blank" rel="noopener">
+      <b>旺來 · 台股生命線</b>
+      <span>旺來自己做的台股技術指標查詢工具：條件自己勾、清單自己看，還有歷史回測統計（資料呈現，非投資建議）</span>
+      <em>去看看 →</em>
+    </a>
     <a class="sbox" href="https://aboutlife-production.up.railway.app/" target="_blank" rel="noopener">
       <b>旺來開運所 About Life</b>
       <span>星座・生肖・姓名學・生命靈數・八字五行・每日塔羅，免費線上命理分析（僅供娛樂參考）</span>
