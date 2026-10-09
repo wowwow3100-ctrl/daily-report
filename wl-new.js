@@ -86,6 +86,30 @@
     navNew("stocks.html", "wl_stk_sig", stockSig, false);
   }
 
+
+  // ---- 浮誇主題：切過去的那一下撒一陣 🍍 ----
+  function pineRain(){
+    if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    for (var i = 0; i < 28; i++) (function(i){
+      setTimeout(function(){
+        var p = document.createElement("span");
+        p.className = "fx-pine"; p.textContent = "🍍";
+        p.style.left = (Math.random() * 96) + "vw";
+        p.style.fontSize = (18 + Math.random() * 22) + "px";
+        p.style.animationDuration = (2.2 + Math.random() * 2.2) + "s";
+        document.body.appendChild(p);
+        setTimeout(function(){ p.remove(); }, 5000);
+      }, i * 60);
+    })(i);
+  }
+  try {
+    var lastTh = document.documentElement.getAttribute("data-theme");
+    new MutationObserver(function(){
+      var t = document.documentElement.getAttribute("data-theme");
+      if (t === "fx" && lastTh !== "fx") pineRain();
+      lastTh = t;
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  } catch (e) {}
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", function () { apply(); revDot(); });
   else { apply(); revDot(); }
   // 有些區塊是資料載入後才畫出來的，稍後再補掛一次
