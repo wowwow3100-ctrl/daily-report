@@ -148,6 +148,31 @@
   .sister[open] .st{color:var(--gold);}
   .sbox{display:block;text-decoration:none;background:var(--card);border:1px solid var(--gold-dim);border-radius:14px;padding:14px 18px;}
   .sbox:hover{border-color:var(--gold);}
+  /* 台股生命線橫幅（鳳梨） */
+  .lifebn{position:relative;display:flex;align-items:center;gap:18px;overflow:hidden;text-decoration:none;margin:4px 0 18px;
+    padding:22px 24px 30px;border-radius:22px;color:#fff;
+    background:radial-gradient(120% 140% at 100% 0%,rgba(255,214,90,.55),transparent 55%),linear-gradient(135deg,#1f5e33 0%,#2f8a4a 45%,#c9a12e 100%);
+    box-shadow:0 18px 40px -20px rgba(31,94,51,.9),0 0 0 1px rgba(255,214,90,.45) inset;transition:transform .25s,box-shadow .25s;}
+  .lifebn:hover{transform:translateY(-3px);box-shadow:0 24px 50px -20px rgba(31,94,51,1),0 0 0 1px rgba(255,230,140,.8) inset;}
+  .lb-pine{flex:none;font-size:64px;line-height:1;filter:drop-shadow(0 6px 10px rgba(0,0,0,.35));animation:lbBob 3s ease-in-out infinite;position:relative;z-index:1;}
+  .lb-txt{position:relative;z-index:1;display:flex;flex-direction:column;gap:3px;min-width:0;}
+  .lb-txt small{font-size:.72rem;letter-spacing:3px;color:#FFE9A6;font-weight:800;}
+  .lb-txt b{font-size:1.45rem;font-weight:900;letter-spacing:1px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.25);}
+  .lb-txt>span{font-size:.88rem;color:rgba(255,255,255,.9);line-height:1.6;}
+  .lb-txt em{align-self:flex-start;margin-top:8px;font-style:normal;font-weight:900;font-size:.88rem;color:#1f3d12;background:linear-gradient(180deg,#FFE58A,#F2C24A);padding:6px 16px;border-radius:999px;box-shadow:0 6px 16px -6px rgba(0,0,0,.4);}
+  .lb-txt em i{font-style:normal;display:inline-block;transition:transform .25s;}
+  .lifebn:hover .lb-txt em i{transform:translateX(4px);}
+  .lb-note{position:absolute;right:16px;bottom:9px;font-size:.66rem;color:rgba(255,255,255,.75);z-index:1;}
+  .lb-rain{position:absolute;inset:0;pointer-events:none;}
+  .lb-rain i{position:absolute;top:-30px;font-style:normal;font-size:18px;opacity:.28;animation:lbFall 7s linear infinite;}
+  .lb-rain i:nth-child(1){left:42%;animation-delay:0s}.lb-rain i:nth-child(2){left:55%;animation-delay:1.2s;font-size:14px}
+  .lb-rain i:nth-child(3){left:68%;animation-delay:2.6s}.lb-rain i:nth-child(4){left:80%;animation-delay:3.4s;font-size:22px}
+  .lb-rain i:nth-child(5){left:90%;animation-delay:4.8s;font-size:13px}.lb-rain i:nth-child(6){left:30%;animation-delay:5.6s;font-size:16px}
+  @keyframes lbFall{to{transform:translateY(190px) rotate(320deg);}}
+  @keyframes lbBob{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-6px) rotate(6deg)}}
+  @media (max-width:520px){.lifebn{gap:12px;padding:18px 16px 30px;}.lb-pine{font-size:46px;}.lb-txt b{font-size:1.2rem;}}
+  @media (prefers-reduced-motion:reduce){.lb-pine,.lb-rain i{animation:none;}.lb-rain{display:none;}}
+
   .sister .sbox+.sbox{margin-top:10px;}
   .sbox.life{border-color:rgba(76,175,110,.55);}
   .sbox.life b,.sbox.life em{color:#4caf6e;}
@@ -158,7 +183,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap">
-<link rel="stylesheet" href="wl-ui.css?v=19">
+<link rel="stylesheet" href="wl-ui.css?v=20">
 <script>(function(){var h=document.documentElement;try{h.setAttribute("data-theme",(localStorage.getItem("wl_theme")||"gold").replace("navy","gold"));h.setAttribute("data-size",localStorage.getItem("wl_fs")||"std");}catch(e){}})();</script>
 </head>
 <body>
@@ -206,6 +231,19 @@
 
   <div class="subtabs"><a class="on" href="wish.html">許願池</a><a href="reports.html">回憶過去</a><a class="ext" href="https://aboutlife-production.up.railway.app/" target="_blank" rel="noopener">旺來開運所 ↗</a><a class="ext life" href="https://web-production-e1521.up.railway.app/" target="_blank" rel="noopener">台股生命線 ↗</a></div>
 
+
+  <a class="lifebn" href="https://web-production-e1521.up.railway.app/" target="_blank" rel="noopener" aria-label="打開旺來台股生命線 App">
+    <span class="lb-rain" aria-hidden="true"><i>🍍</i><i>🍍</i><i>🍍</i><i>🍍</i><i>🍍</i><i>🍍</i></span>
+    <span class="lb-pine" aria-hidden="true">🍍</span>
+    <span class="lb-txt">
+      <small>旺來的另一個作品</small>
+      <b>旺來 · 台股生命線</b>
+      <span>條件自己勾、清單自己看的台股技術指標工具，附歷史回測統計</span>
+      <em>打開 App <i>→</i></em>
+    </span>
+    <span class="lb-note">工具型 App．資料呈現，非投資建議</span>
+  </a>
+
   <div class="intro">
     <div class="big">🌠 這裡是許願池</div>
     <p>想多看哪檔個股的整理？想要什麼新功能？哪裡看不順眼、字太小、顏色太醜？通通寫下來丟進池子。</p>
@@ -233,11 +271,6 @@
 
   <div class="sister">
     <div class="st">旺來的其他小站</div>
-    <a class="sbox life" href="https://web-production-e1521.up.railway.app/" target="_blank" rel="noopener">
-      <b>旺來 · 台股生命線</b>
-      <span>旺來自己做的台股技術指標查詢工具：條件自己勾、清單自己看，還有歷史回測統計（資料呈現，非投資建議）</span>
-      <em>去看看 →</em>
-    </a>
     <a class="sbox" href="https://aboutlife-production.up.railway.app/" target="_blank" rel="noopener">
       <b>旺來開運所 About Life</b>
       <span>星座・生肖・姓名學・生命靈數・八字五行・每日塔羅，免費線上命理分析（僅供娛樂參考）</span>
