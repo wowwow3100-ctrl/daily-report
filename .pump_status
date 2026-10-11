@@ -1,8 +1,8 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-10-10T23:05:02",
-    "fetch": "mops 2026-09 1625 {'L0': 808, 'L1': 59, 'O0': 737, 'O1': 21}\nlatest 2026-09 rows 1625 high12 0 changed False\n",
+    "ts": "2026-10-11T13:05:01",
+    "fetch": "mops 2026-09 1627 {'L0': 809, 'L1': 59, 'O0': 738, 'O1': 21}\nlatest 2026-09 rows 1627 high12 0 changed False\n",
     "status": "nochange"
   },
   "sectors": {
