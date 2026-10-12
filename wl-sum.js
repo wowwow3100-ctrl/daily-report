@@ -46,8 +46,8 @@
       var name = m[1], code = m[2], rest = html.slice(m[0].length);
       var plain = li.textContent;
       var badge = UPW.test(plain) ? '<span class="sl-badge up">調升</span>'
-        : DNW.test(plain) ? '<span class="sl-badge dn">下修</span>'
-        : KEEPW.test(plain) ? '<span class="sl-badge">維持</span>' : "";
+        : KEEPW.test(plain) ? '<span class="sl-badge">維持</span>'
+        : DNW.test(plain) ? '<span class="sl-badge dn">下修</span>' : "";
       li.innerHTML =
         '<div class="sl-h"><a class="sl-nm" href="stocks.html?code=' + code + '">' + name + '</a>' +
         '<span class="sl-cd">' + code + "</span>" + badge + "</div>" +
