@@ -1,14 +1,14 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-10-12T14:05:01",
-    "fetch": "latest 2026-09 rows 1627 high12 0 changed False\n",
+    "ts": "2026-10-12T18:05:03",
+    "fetch": "latest 2026-09 rows 1629 high12 0 changed False\n",
     "status": "nochange"
   },
   "sectors": {
     "kind": "sectors",
-    "ts": "2026-10-09T20:45:04",
-    "fetch": "no change 2026-10-08\n",
+    "ts": "2026-10-12T17:45:01",
+    "fetch": "no change 2026-10-12\n",
     "status": "nochange"
   }
 }
