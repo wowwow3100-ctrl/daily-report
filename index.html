@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/10/12（週一）盤後場次</div>
+        <div class="stamp" id="updated">2026/10/12（週一）夜間場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -294,7 +294,7 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/12 收盤．盤後場．加權與成交值為證交所 FMTQIK 10/12 官方值；融資、擔保維持率、風險戶數為證交所 10/08 官方值（10/12 信用資料尚未發布）；SOX 為 10/09 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/12 收盤．夜間場．加權與成交值為證交所 FMTQIK 10/12 官方值；融資、擔保維持率、風險戶數為證交所 10/08 官方值（10/12 信用資料本場次無法取得）；SOX 為 10/09 美股收盤，10/12 美股尚未收盤）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">49,302</div><div class="chg down">-11.48（-0.02%）</div></div>
     <div class="m"><div class="lbl">成交值（上市）</div><div class="val">8,945 億</div><div class="chg down">較前日 -3.2%</div></div>
@@ -392,48 +392,48 @@
   <!-- ===== /DATA:PREOPEN ===== -->
 
     <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/12 盤後場．依時間由新到舊）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/12 夜間場．依時間由新到舊）</span></h2>
   <div class="card">
-    <div class="news-title"><span class="cat">產業</span><span class="ntime">10/12 17:34</span>台塑四寶 9 月合計營收 1,697 億元，月增 8.1%、年增 51.9% <a class="ref" href="#src-1">[1]</a></div>
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/12 20:00</span>沙烏地能源大臣：能源安全絕不能視為理所當然，布蘭特油價維持 103～105 美元 <a class="ref" href="#src-1">[1]</a></div>
+    <div class="news-body">利雅德機場五天內四度遭襲；東西輸油管道 9 月遇襲後，10/6 已恢復日輸約 580 萬桶，繞過荷姆茲海峽運往紅海港口。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/12 18:40</span>美股期指漲跌互見，油價站穩 100 美元，銀行財報與 9 月 CPI 成焦點 <a class="ref" href="#src-2">[2]</a></div>
+    <div class="news-body">美東 5:36 道瓊期貨 +0.08%、標普 +0.12%、那指 -0.05%；週二起富國、高盛、花旗、摩根大通公布財報，市場預估 9 月 CPI 年增 3.7%，FedWatch 本月升息機率約 19%。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">產業</span><span class="ntime">10/12 17:34</span>台塑四寶 9 月合計營收 1,697 億元，月增 8.1%、年增 51.9% <a class="ref" href="#src-3">[3]</a></div>
     <div class="news-body">台塑(1301)、南亞(1303)、台化(1326)、台塑化(6505) 9 月營收合計 1,697 億元；台塑化單月 869.28 億元、年增 65.59%。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/12 17:22</span>南亞科(2408) 法說：Q3 EPS 25.4 元，總座稱 DRAM 仍嚴重缺貨、Q4 價格續漲 <a class="ref" href="#src-2">[2]</a></div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/12 17:22</span>南亞科(2408) 法說：Q3 EPS 25.4 元，總座稱 DRAM 仍嚴重缺貨、Q4 價格續漲 <a class="ref" href="#src-4">[4]</a></div>
     <div class="news-body">Q3 稅後純益 876.27 億元、季增 74.6%，毛利率 85.7%；前三季 EPS 49.28 元。AI 基礎設施營收占比逾 20%，預期 2027～2029 年持續提升。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/12 17:17</span>友達(2409) 遭外資連 5 賣、今再賣 2.6 萬張，大立光(3008) 法說不看好 MicroLED CPO <a class="ref" href="#src-3">[3]</a></div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/12 17:17</span>友達(2409) 遭外資連 5 賣、今再賣 2.6 萬張，大立光(3008) 法說不看好 MicroLED CPO <a class="ref" href="#src-5">[5]</a></div>
     <div class="news-body">外資賣超前三名為台塑(1301)、友達、鴻海(2317)；大立光法說指 MicroLED 用於 CPO 耗電與體積偏大，友達收 35.55 元、跌 2.87%，守住月線。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">產業</span><span class="ntime">10/12 16:59</span>要台積電(2330)「包電廠」？台電：仍屬概念性討論 <a class="ref" href="#src-4">[4]</a></div>
-    <div class="news-body">針對外界討論由大用電戶參與電廠投資，台電回應目前仍屬概念性討論。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/12 16:42</span>外資賣超 521.98 億元，台塑(1301) 終止連 5 買、遭砍 3.68 萬張居首 <a class="ref" href="#src-5">[5]</a></div>
-    <div class="news-body">賣超前十依序為台塑、友達(2409)、鴻海(2317)、力積電(6770)、台塑化(6505)、聯電(2303)、台中銀(2812)、中纖(1718)、台積電(2330)、南亞(1303)。</div>
   </div>
   <details class="more">
     <summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
-    <div class="news-title"><span class="cat">產業</span><span class="ntime">10/12 16:40</span>台達電(2308) 9 月營收 654 億元創同期高，Q3 1,970.59 億元連兩季新高 <a class="ref" href="#src-6">[6]</a></div>
+    <div class="news-title"><span class="cat">產業</span><span class="ntime">10/12 16:59</span>要台積電(2330)「包電廠」？台電：仍屬概念性討論 <a class="ref" href="#src-6">[6]</a></div>
+    <div class="news-body">針對外界討論由大用電戶參與電廠投資，台電回應目前仍屬概念性討論。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/12 16:42</span>外資賣超 521.98 億元，台塑(1301) 終止連 5 買、遭砍 3.68 萬張居首 <a class="ref" href="#src-7">[7]</a></div>
+    <div class="news-body">賣超前十依序為台塑、友達(2409)、鴻海(2317)、力積電(6770)、台塑化(6505)、聯電(2303)、台中銀(2812)、中纖(1718)、台積電(2330)、南亞(1303)。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">產業</span><span class="ntime">10/12 16:40</span>台達電(2308) 9 月營收 654 億元創同期高，Q3 1,970.59 億元連兩季新高 <a class="ref" href="#src-8">[8]</a></div>
     <div class="news-body">9 月年增 37.2%，前 9 月 5,396.68 億元；對美 ITC 337 調查表示將依程序積極因應，相關產品目前未受影響。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/12 16:37</span>外資 4 天提款 1,477.52 億元，三大法人今賣超 593.69 億元 <a class="ref" href="#src-7">[7]</a></div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/12 16:37</span>外資 4 天提款 1,477.52 億元，三大法人今賣超 593.69 億元 <a class="ref" href="#src-9">[9]</a></div>
     <div class="news-body">外資賣超 521.98 億元、自營商賣超 142.94 億元，僅投信買超 71.24 億元；群益投顧認為短線維持技術性調整。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/12 16:08</span>台股盤後：開低走高、量縮收跌 11 點，10 日線失而復得 <a class="ref" href="#src-8">[8]</a></div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/12 16:08</span>台股盤後：開低走高、量縮收跌 11 點，10 日線失而復得 <a class="ref" href="#src-10">[10]</a></div>
     <div class="news-body">337 調查與連假期間費半收黑使前四大權值股收黑，大立光(3008)、日月光投控(3711)、長榮(2603) 助攻收斂跌幅。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/12 15:01</span>台積電(2330) Q3 營收 1.4 兆元創新高，法人估單季 EPS 28.5～30 元 <a class="ref" href="#src-9">[9]</a></div>
-    <div class="news-body">9 月營收月減 0.5%、年增 54.6%；Q3 季增 17.6%，優於公司先前預期，10/15 法說。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/12 14:52</span>長榮(2603) 法說利多，滙豐升評買進、目標價 300 元，貨櫃三雄大漲 <a class="ref" href="#src-10">[10]</a></div>
-    <div class="news-body">長榮漲停 255.5 元，萬海(2615)、陽明(2609) 漲逾半根停板；國內金控研究機構亦調升至買進、目標價 290 元。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
@@ -442,53 +442,53 @@
   <h2 id="broker">10/12 券商報告摘要</h2>
   <div class="card">
     <ul class="sum-list">
-      <li>長榮（2603）10/08 法說後，<b>滙豐證券</b>升評至「買進」、目標價 300 元；<b>國內金控旗下研究機構（未具名）</b>亦調升至買進、目標價 290 元，估 2026 年 EPS 43.53 元<a class="ref" href="#src-10">[10]</a>；經濟日報另報導元大投顧調升至買進、2027 年 EPS 估 51.04 元<a class="ref" href="#src-11">[11]</a></li>
-      <li>貿聯-KY（3665）：<b>大型本國投顧（未具名）</b>看好美系 CSP ASIC 平台量產與併表 Interplex Datacom，調高獲利預估與目標價（數字未揭露，待確認）<a class="ref" href="#src-12">[12]</a></li>
-      <li>大立光（3008）：本土投顧維持「買進」、目標價 8,200 元<a class="ref" href="#src-13">[13]</a>，高盛 11,000 元仍居最高<a class="ref" href="#src-16">[16]</a>；今日漲停 7,325 元，但法說不看好 MicroLED CPO 使友達（2409）承壓<a class="ref" href="#src-3">[3]</a></li>
-      <li>早盤美系券商同步調升萬潤（6187）、欣興（3037）、景碩（3189）目標價（數字待確認）<a class="ref" href="#src-14">[14]</a><a class="ref" href="#src-15">[15]</a></li>
+      <li>和碩（4938）：9 月營收 2,147.53 億元創新高，<b>法人（報導未具名）</b>由持有調升至「買進」、目標價 116 元，看好 AI 伺服器與 iPhone 新機帶動 Q4 再創高<a class="ref" href="#src-18">[18]</a></li>
+      <li>大立光（3008）法說後 3 家美系外資：除 11,000 元外，另一家重申「買進」、目標價 8,500 元（下調 2026／2027 年淨利預估），一家「持股續抱」、目標價 7,100 元<a class="ref" href="#src-19">[19]</a></li>
+      <li>長榮（2603）10/08 法說後，<b>滙豐證券</b>升評至「買進」、目標價 300 元；<b>國內金控旗下研究機構（未具名）</b>亦調升至買進、目標價 290 元，估 2026 年 EPS 43.53 元<a class="ref" href="#src-11">[11]</a>；經濟日報另報導元大投顧調升至買進、2027 年 EPS 估 51.04 元<a class="ref" href="#src-12">[12]</a></li>
+      <li>貿聯-KY（3665）：<b>大型本國投顧（未具名）</b>看好美系 CSP ASIC 平台量產與併表 Interplex Datacom，調高獲利預估與目標價（數字未揭露，待確認）<a class="ref" href="#src-13">[13]</a></li>
     </ul>
   </div>
   <table>
     <tr><th>日期</th><th>券商</th><th>個股</th><th>評等</th><th>目標價</th><th>一句話重點</th></tr>
     <tr>
+      <td class="num">10/12</td><td><span class="tag">法人</span>未具名法人</td><td>和碩 (4938)</td><td><span class="up">升評買進</span></td>
+      <td class="num"><span class="up">116</span><br><span class="muted">前值 待確認</span></td>
+      <td class="muted">9 月營收創新高，AI 伺服器與新機帶動 Q4<a class="ref" href="#src-18">[18]</a></td>
+    </tr>
+    <tr>
+      <td class="num">10/12</td><td><span class="tag">外資</span>未具名美系外資</td><td>大立光 (3008)</td><td><span class="up">買進（重申）</span></td>
+      <td class="num"><span class="up">8,500</span><br><span class="muted">前值 待確認</span></td>
+      <td class="muted">FAU 2028 年營收占比估 44%，短期下修獲利<a class="ref" href="#src-19">[19]</a></td>
+    </tr>
+    <tr>
+      <td class="num">10/12</td><td><span class="tag">外資</span>未具名美系外資</td><td>大立光 (3008)</td><td>持股續抱</td>
+      <td class="num">7,100<br><span class="muted">前值 待確認</span></td>
+      <td class="muted">中性看法，論點未揭露<a class="ref" href="#src-19">[19]</a></td>
+    </tr>
+    <tr>
       <td class="num">10/12</td><td><span class="tag">外資</span>滙豐證券</td><td>長榮 (2603)</td><td><span class="up">升評買進</span></td>
       <td class="num"><span class="up">300</span><br><span class="muted">前值 待確認</span></td>
-      <td class="muted">法說看好 Q4 至春節前需求，巴拿馬限航撐運價<a class="ref" href="#src-10">[10]</a></td>
+      <td class="muted">法說看好 Q4 至春節前需求，巴拿馬限航撐運價<a class="ref" href="#src-11">[11]</a></td>
     </tr>
     <tr>
       <td class="num">10/12</td><td><span class="tag">內資</span>未具名金控研究機構</td><td>長榮 (2603)</td><td><span class="up">升評買進</span></td>
       <td class="num"><span class="up">290</span><br><span class="muted">前值 待確認</span></td>
-      <td class="muted">2026 年 EPS 估 43.53 元、殖利率逾 9%<a class="ref" href="#src-10">[10]</a></td>
+      <td class="muted">2026 年 EPS 估 43.53 元、殖利率逾 9%<a class="ref" href="#src-11">[11]</a></td>
     </tr>
     <tr>
       <td class="num">10/12</td><td><span class="tag">內資</span>未具名本國投顧</td><td>貿聯-KY (3665)</td><td><span class="up">升目標（評等待確認）</span></td>
       <td class="num"><span class="up">待確認</span><br><span class="muted">前值 待確認</span></td>
-      <td class="muted">ASIC 平台量產、併表 Interplex 綜效<a class="ref" href="#src-12">[12]</a></td>
+      <td class="muted">ASIC 平台量產、併表 Interplex 綜效<a class="ref" href="#src-13">[13]</a></td>
     </tr>
     <tr>
       <td class="num">10/12</td><td><span class="tag">內資</span>未具名本土投顧</td><td>大立光 (3008)</td><td><span class="up">買進（維持）</span></td>
       <td class="num"><span class="up">8,200</span><br><span class="muted">前值 待確認</span></td>
-      <td class="muted">FA 通過認證，光通訊占比 2029 年估 27%<a class="ref" href="#src-13">[13]</a></td>
+      <td class="muted">FA 通過認證，光通訊占比 2029 年估 27%<a class="ref" href="#src-14">[14]</a></td>
     </tr>
     <tr>
       <td class="num">10/12</td><td><span class="tag">外資</span>未具名美系外資</td><td>萬潤 (6187)</td><td><span class="up">正向（升目標）</span></td>
       <td class="num"><span class="up">待確認</span><br><span class="muted">前值 待確認</span></td>
-      <td class="muted">精材 oS 擴產，2027 年 EPS 估 48 元<a class="ref" href="#src-14">[14]</a></td>
-    </tr>
-    <tr>
-      <td class="num">10/12</td><td><span class="tag">外資</span>未具名美系外資</td><td>欣興 (3037)</td><td><span class="up">看好（升目標）</span></td>
-      <td class="num"><span class="up">待確認</span><br><span class="muted">前值 待確認</span></td>
-      <td class="muted">PCB／HDI 毛利率展望更樂觀<a class="ref" href="#src-15">[15]</a></td>
-    </tr>
-    <tr>
-      <td class="num">10/12</td><td><span class="tag">外資</span>未具名美系外資</td><td>景碩 (3189)</td><td><span class="up">看好（升目標）</span></td>
-      <td class="num"><span class="up">待確認</span><br><span class="muted">前值 待確認</span></td>
-      <td class="muted">Q4 毛利率估升至 29.3%<a class="ref" href="#src-15">[15]</a></td>
-    </tr>
-    <tr>
-      <td class="num">10/11</td><td><span class="tag">外資</span>高盛證券</td><td>大立光 (3008)</td><td><span class="up">買進（上調）</span></td>
-      <td class="num"><span class="up">11,000</span><br><span class="muted">前值 6,263</span></td>
-      <td class="muted">FA／FAU 切入 CPO，估 2030 年 FAU 占營收逾 5 成<a class="ref" href="#src-16">[16]</a></td>
+      <td class="muted">精材 oS 擴產，2027 年 EPS 估 48 元<a class="ref" href="#src-15">[15]</a></td>
     </tr>
   </table>
 <!-- ===== /DATA:BROKER ===== -->
@@ -505,29 +505,32 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
-    <li id="src-1"><a href="https://money.udn.com/money/story/5710/9809789" target="_blank" rel="noopener">經濟日報｜台塑四寶 9 月合計營收 1,697 億元，月增 8.1%、年增 51.9%（10/12 17:34）</a></li>
-    <li id="src-2"><a href="https://news.cnyes.com/news/id/6628124" target="_blank" rel="noopener">鉅亨網｜南亞科(2408) 法說：Q3 EPS 25.4 元，總座稱 DRAM 仍嚴重缺貨、Q4 價格續漲（10/12 17:22）</a></li>
-    <li id="src-3"><a href="https://money.udn.com/money/story/5607/9809806" target="_blank" rel="noopener">經濟日報｜友達(2409) 遭外資連 5 賣、今再賣 2.6 萬張，大立光(3008) 法說不看好 MicroLED CPO（10/12 17:17）</a></li>
-    <li id="src-4"><a href="https://money.udn.com/money/story/7307/9809777" target="_blank" rel="noopener">經濟日報｜要台積電(2330)「包電廠」？台電：仍屬概念性討論（10/12 16:59）</a></li>
-    <li id="src-5"><a href="https://ec.ltn.com.tw/article/breakingnews/5603828" target="_blank" rel="noopener">自由財經｜外資賣超 521.98 億元，台塑(1301) 終止連 5 買、遭砍 3.68 萬張居首（10/12 16:42）</a></li>
-    <li id="src-6"><a href="https://www.chinatimes.com/realtimenews/20261012003134-260410" target="_blank" rel="noopener">時報資訊｜台達電(2308) 9 月營收 654 億元創同期高，Q3 1,970.59 億元連兩季新高（10/12 16:40）</a></li>
-    <li id="src-7"><a href="https://www.chinatimes.com/realtimenews/20261012002795-260410" target="_blank" rel="noopener">時報資訊｜外資 4 天提款 1,477.52 億元，三大法人今賣超 593.69 億元（10/12 16:37）</a></li>
-    <li id="src-8"><a href="https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=8ae24f45-886f-439d-b648-f12bf58971a9" target="_blank" rel="noopener">MoneyDJ｜台股盤後：開低走高、量縮收跌 11 點，10 日線失而復得（10/12 16:08）</a></li>
-    <li id="src-9"><a href="https://udn.com/news/story/7252/9809513" target="_blank" rel="noopener">經濟日報｜台積電(2330) Q3 營收 1.4 兆元創新高，法人估單季 EPS 28.5～30 元（10/12 15:01）</a></li>
-    <li id="src-10"><a href="https://www.chinatimes.com/realtimenews/20261012002651-260410" target="_blank" rel="noopener">時報資訊｜長榮(2603) 法說利多，滙豐升評買進、目標價 300 元，貨櫃三雄大漲（10/12 14:52）</a></li>
-    <li id="src-11"><a href="https://money.udn.com/money/story/5710/9808613" target="_blank" rel="noopener">經濟日報｜長榮量價俱揚大漲逾7% 法人上修獲利目標（元大投顧調升至買進）（10/12 09:14）</a></li>
-    <li id="src-12"><a href="https://money.udn.com/money/story/5607/9809276" target="_blank" rel="noopener">經濟日報｜併購效應逐漸顯現 法人調升貿聯獲利預估值及目標價（10/12 13:14）</a></li>
-    <li id="src-13"><a href="https://finance.ettoday.net/news/3253012" target="_blank" rel="noopener">ETtoday財經雲｜本土投顧維持大立光(3008)「買進」、目標價 8,200 元，看好切入 CPO（10/12 09:49）</a></li>
-    <li id="src-14"><a href="https://udn.com/news/story/7252/9808578" target="_blank" rel="noopener">經濟日報｜美系大行調升萬潤(6187) 目標價，看好精材(3374) oS 產能擴張（10/12 08:52）</a></li>
-    <li id="src-15"><a href="https://money.udn.com/money/story/5607/9808557" target="_blank" rel="noopener">經濟日報｜美系券商同步調升欣興(3037)、景碩(3189) 目標價，展望毛利率樂觀（10/12 08:39）</a></li>
-    <li id="src-16"><a href="https://money.udn.com/money/story/5607/9808162" target="_blank" rel="noopener">經濟日報｜震撼！高盛：大立光 FAU 占比將提升 目標價上看這價位 留意五風險（10/11 21:46）</a></li>
-    <li id="src-17"><a href="https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?date=20261012&amp;response=json" target="_blank" rel="noopener">臺灣證券交易所｜每日市場成交資訊 FMTQIK（10/12 官方值：49,301.96 點、成交值 8,945.22 億元）（10/12 18:05 查詢）</a></li>
-    <li id="src-18"><a href="https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20261012&amp;type=IND&amp;response=json" target="_blank" rel="noopener">臺灣證券交易所｜每日收盤行情 MI_INDEX（10/12 類股指數與各類股成分股行情，資金流向來源；data/sectors/latest.json 仍為 10/05，採備援端點）（10/12 18:05 查詢）</a></li>
-    <li id="src-19"><a href="https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20261008&amp;selectType=MS&amp;response=json" target="_blank" rel="noopener">臺灣證券交易所｜融資融券彙總 MI_MARGN（10/08 官方值：融資餘額 6,464.06 億元、單日 +64.0 億；10/12 尚未發布）（10/12 18:05 查詢）</a></li>
-    <li id="src-20"><a href="https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ4U_TREND?response=json&amp;days=5&amp;date=20261012" target="_blank" rel="noopener">臺灣證券交易所｜擔保維持率 BFIJ4U_TREND（最新仍為 10/08：維持率 288.39%、風險戶 17 戶）（10/12 18:05 查詢）</a></li>
-    <li id="src-21"><a href="https://www.twse.com.tw/rwd/zh/exRight/TWT48U?response=json" target="_blank" rel="noopener">臺灣證券交易所｜除權除息預告表 TWT48U、休市日 holidaySchedule（行事曆用）（10/12 18:05 查詢）</a></li>
-    <li id="src-22"><a href="https://raw.githubusercontent.com/wowwow3100-ctrl/daily-report/data/sectors/latest.json" target="_blank" rel="noopener">GitHub Actions 資金流向快取 data/sectors/latest.json（資料日 10/05，較最新交易日舊，本場次未採用）（10/12 18:05 查詢）</a></li>
-    <li id="src-23"><a href="https://news.cnyes.com/news/id/6627082" target="_blank" rel="noopener">鉅亨網 美股盤後｜費城半導體 12,572.42 點、-0.41%（10/09 美股收盤）三大指數周線收紅（10/10 06:01）</a></li>
+    <li id="src-1"><a href="https://news.cnyes.com/news/id/6628403" target="_blank" rel="noopener">鉅亨網｜沙烏地能源大臣：能源安全絕不能視為理所當然，布蘭特油價維持 103～105 美元（10/12 20:00）</a></li>
+    <li id="src-2"><a href="https://uanalyze.com.tw/articles/4396756928" target="_blank" rel="noopener">優分析｜美股期指漲跌互見，油價站穩 100 美元，銀行財報與通膨數據成市場焦點（10/12 18:40）</a></li>
+    <li id="src-3"><a href="https://money.udn.com/money/story/5710/9809789" target="_blank" rel="noopener">經濟日報｜台塑四寶 9 月合計營收 1,697 億元，月增 8.1%、年增 51.9%（10/12 17:34）</a></li>
+    <li id="src-4"><a href="https://news.cnyes.com/news/id/6628124" target="_blank" rel="noopener">鉅亨網｜南亞科(2408) 法說：Q3 EPS 25.4 元，總座稱 DRAM 仍嚴重缺貨、Q4 價格續漲（10/12 17:22）</a></li>
+    <li id="src-5"><a href="https://money.udn.com/money/story/5607/9809806" target="_blank" rel="noopener">經濟日報｜友達(2409) 遭外資連 5 賣、今再賣 2.6 萬張，大立光(3008) 法說不看好 MicroLED CPO（10/12 17:17）</a></li>
+    <li id="src-6"><a href="https://money.udn.com/money/story/7307/9809777" target="_blank" rel="noopener">經濟日報｜要台積電(2330)「包電廠」？台電：仍屬概念性討論（10/12 16:59）</a></li>
+    <li id="src-7"><a href="https://ec.ltn.com.tw/article/breakingnews/5603828" target="_blank" rel="noopener">自由財經｜外資賣超 521.98 億元，台塑(1301) 終止連 5 買、遭砍 3.68 萬張居首（10/12 16:42）</a></li>
+    <li id="src-8"><a href="https://www.chinatimes.com/realtimenews/20261012003134-260410" target="_blank" rel="noopener">時報資訊｜台達電(2308) 9 月營收 654 億元創同期高，Q3 1,970.59 億元連兩季新高（10/12 16:40）</a></li>
+    <li id="src-9"><a href="https://www.chinatimes.com/realtimenews/20261012002795-260410" target="_blank" rel="noopener">時報資訊｜外資 4 天提款 1,477.52 億元，三大法人今賣超 593.69 億元（10/12 16:37）</a></li>
+    <li id="src-10"><a href="https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=8ae24f45-886f-439d-b648-f12bf58971a9" target="_blank" rel="noopener">MoneyDJ｜台股盤後：開低走高、量縮收跌 11 點，10 日線失而復得（10/12 16:08）</a></li>
+    <li id="src-11"><a href="https://www.chinatimes.com/realtimenews/20261012002651-260410" target="_blank" rel="noopener">時報資訊｜長榮(2603) 法說利多，滙豐升評買進、目標價 300 元，貨櫃三雄大漲（10/12 14:52）</a></li>
+    <li id="src-12"><a href="https://money.udn.com/money/story/5710/9808613" target="_blank" rel="noopener">經濟日報｜長榮量價俱揚大漲逾7% 法人上修獲利目標（元大投顧調升至買進）（10/12 09:14）</a></li>
+    <li id="src-13"><a href="https://money.udn.com/money/story/5607/9809276" target="_blank" rel="noopener">經濟日報｜併購效應逐漸顯現 法人調升貿聯獲利預估值及目標價（10/12 13:14）</a></li>
+    <li id="src-14"><a href="https://finance.ettoday.net/news/3253012" target="_blank" rel="noopener">ETtoday財經雲｜本土投顧維持大立光(3008)「買進」、目標價 8,200 元，看好切入 CPO（10/12 09:49）</a></li>
+    <li id="src-15"><a href="https://udn.com/news/story/7252/9808578" target="_blank" rel="noopener">經濟日報｜美系大行調升萬潤(6187) 目標價，看好精材(3374) oS 產能擴張（10/12 08:52）</a></li>
+    <li id="src-16"><a href="https://money.udn.com/money/story/5607/9808557" target="_blank" rel="noopener">經濟日報｜美系券商同步調升欣興(3037)、景碩(3189) 目標價，展望毛利率樂觀（10/12 08:39）</a></li>
+    <li id="src-17"><a href="https://money.udn.com/money/story/5607/9808162" target="_blank" rel="noopener">經濟日報｜震撼！高盛：大立光 FAU 占比將提升 目標價上看這價位 留意五風險（10/11 21:46）</a></li>
+    <li id="src-18"><a href="https://www.businesstoday.com.tw/article/category/183008/post/202610120020/" target="_blank" rel="noopener">今周刊（非凡新聞）｜和碩(4938) 漲停逼百元，法人調升至買進、目標價 116 元（10/12 12:17）</a></li>
+    <li id="src-19"><a href="https://www.ctee.com.tw/news/20261012700766-430201" target="_blank" rel="noopener">工商時報｜《光電股》外資看好大立光FAU前景 目標價最高喊1.1萬（另兩家 8,500／7,100 元）（10/12 09:33）</a></li>
+    <li id="src-20"><a href="https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?date=20261012&amp;response=json" target="_blank" rel="noopener">臺灣證券交易所｜每日市場成交資訊 FMTQIK（10/12 官方值：49,301.96 點、成交值 8,945.22 億元）（盤後場 10/12 18:05 查詢；夜間場未能重新擷取）</a></li>
+    <li id="src-21"><a href="https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20261012&amp;type=IND&amp;response=json" target="_blank" rel="noopener">臺灣證券交易所｜每日收盤行情 MI_INDEX（10/12 類股指數與各類股成分股行情，資金流向來源；data/sectors/latest.json 仍為 10/05，採備援端點）（盤後場 10/12 18:05 查詢；夜間場未能重新擷取）</a></li>
+    <li id="src-22"><a href="https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20261008&amp;selectType=MS&amp;response=json" target="_blank" rel="noopener">臺灣證券交易所｜融資融券彙總 MI_MARGN（10/08 官方值：融資餘額 6,464.06 億元、單日 +64.0 億；10/12 尚未發布）（盤後場 10/12 18:05 查詢；夜間場未能重新擷取）</a></li>
+    <li id="src-23"><a href="https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ4U_TREND?response=json&amp;days=5&amp;date=20261012" target="_blank" rel="noopener">臺灣證券交易所｜擔保維持率 BFIJ4U_TREND（最新仍為 10/08：維持率 288.39%、風險戶 17 戶）（盤後場 10/12 18:05 查詢；夜間場未能重新擷取）</a></li>
+    <li id="src-24"><a href="https://www.twse.com.tw/rwd/zh/exRight/TWT48U?response=json" target="_blank" rel="noopener">臺灣證券交易所｜除權除息預告表 TWT48U、休市日 holidaySchedule（行事曆用）（盤後場 10/12 18:05 查詢；夜間場未能重新擷取）</a></li>
+    <li id="src-25"><a href="https://raw.githubusercontent.com/wowwow3100-ctrl/daily-report/data/sectors/latest.json" target="_blank" rel="noopener">GitHub Actions 資金流向快取 data/sectors/latest.json（資料日 10/05，較最新交易日舊，本場次未採用）（盤後場 10/12 18:05 查詢；夜間場未能重新擷取）</a></li>
+    <li id="src-26"><a href="https://news.cnyes.com/news/id/6627082" target="_blank" rel="noopener">鉅亨網 美股盤後｜費城半導體 12,572.42 點、-0.41%（10/09 美股收盤）三大指數周線收紅（10/10 06:01）</a></li>
   </ol>
   </details>
 <!-- ===== /DATA:SOURCES ===== -->
