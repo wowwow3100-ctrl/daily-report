@@ -36,6 +36,25 @@
     });
   }
 
+
+  // ---- 今日焦點：前 15 則直接顯示，第 16 則以後才摺疊 ----
+  var SHOW = 15;
+  function focusFold() {
+    var det = document.querySelector("details.more");
+    if (!det || det.getAttribute("data-ff")) return;
+    det.setAttribute("data-ff", "1");
+    var par = det.parentNode;
+    // 摺疊裡的卡片先全部搬出來，排在摺疊前面
+    [].slice.call(det.querySelectorAll(":scope > .card")).forEach(function (c) { par.insertBefore(c, det); });
+    // 往前數同一層、在摺疊之前的新聞卡
+    var cards = [], el = det.previousElementSibling;
+    while (el && el.classList.contains("card") && el.querySelector(".news-title")) { cards.unshift(el); el = el.previousElementSibling; }
+    var extra = cards.slice(SHOW);
+    if (!extra.length) { det.remove(); return; }
+    extra.forEach(function (c) { det.appendChild(c); });
+    var sm = det.querySelector("summary");
+    if (sm) sm.textContent = "▾ 更多焦點（再看 " + extra.length + " 則）";
+  }
   function enhance() {
     document.querySelectorAll("ul.sum-list li").forEach(function (li) {
       if (li.getAttribute("data-sl")) return;
@@ -56,5 +75,6 @@
       hlText(li.querySelector(".sl-b"));
     });
   }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", enhance); else enhance();
+  function run() { try { focusFold(); } catch (e) {} enhance(); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run); else run();
 })();
