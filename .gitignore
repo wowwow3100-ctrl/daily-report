@@ -14,3 +14,5 @@ __pycache__/
 .pump_now
 .pump_paused
 .push_restart
+.watchdog_last
+.watchdog_off

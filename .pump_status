@@ -13,8 +13,8 @@
   },
   "market": {
     "kind": "market",
-    "ts": "2026-10-14T01:17:51",
-    "fetch": "keep fail Expecting value: line 1 column 1 (char 0)\nwrote {'updated': '2026-10-14 01:17', 'margin': {'bal': 6449.8, 'chg': -83.5}, 'date': '2026-10-13', 'label': '10/13'}\n",
+    "ts": "2026-10-15T02:12:33",
+    "fetch": "wrote {'updated': '2026-10-15 02:12', 'margin': {'bal': 6515.7, 'chg': 65.9}, 'date': '2026-10-14', 'label': '10/14', 'keep': {'rate': 282.82, 'below': 8, 'call': 1, 'exe': 0, 'risk': 9, 'rate_chg': 1.85, 'risk_chg': -3, 'date': '20261014'}}\n",
     "status": "pushed"
   }
 }
