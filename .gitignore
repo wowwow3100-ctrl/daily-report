@@ -10,3 +10,7 @@ logs/
 收件匣/
 *.tmp.html
 __pycache__/
+.pump_status
+.pump_now
+.pump_paused
+.push_restart

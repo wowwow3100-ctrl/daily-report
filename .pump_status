@@ -10,5 +10,11 @@
     "ts": "2026-10-13T20:45:01",
     "fetch": "no change 2026-10-13\n",
     "status": "nochange"
+  },
+  "market": {
+    "kind": "market",
+    "ts": "2026-10-14T01:17:51",
+    "fetch": "keep fail Expecting value: line 1 column 1 (char 0)\nwrote {'updated': '2026-10-14 01:17', 'margin': {'bal': 6449.8, 'chg': -83.5}, 'date': '2026-10-13', 'label': '10/13'}\n",
+    "status": "pushed"
   }
 }
