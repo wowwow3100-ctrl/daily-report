@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/10/15（週四）收盤場次</div>
+        <div class="stamp" id="updated">2026/10/15（週四）盤後場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -294,11 +294,11 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/15 收盤場．加權與成交值為 10/15 收盤新聞報導值（證交所官方 FMTQIK／MI_INDEX 10/15 尚未發布，待覆核）；融資餘額為證交所 10/13 官方值（10/14、10/15 尚未發布）；擔保維持率與風險戶數為證交所 10/14 官方值；SOX 為 10/14 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/15 盤後場．加權與成交值為 10/15 收盤新聞報導值（證交所官方 FMTQIK／MI_INDEX 10/15 尚未發布，待覆核）；融資餘額為證交所 10/14 官方值（10/15 尚未發布）；擔保維持率與風險戶數為證交所 10/14 官方值；SOX 為 10/14 美股收盤）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">46,970</div><div class="chg down">-1,655.96（-3.41%）</div></div>
     <div class="m"><div class="lbl">成交值（上市）</div><div class="val">1.32 兆</div><div class="chg up">較前日 +42.1%（新聞值）</div></div>
-    <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">6,450 億</div><div class="chg down">單日 -83.5 億</div></div>
+    <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">6,516 億</div><div class="chg up">單日 +65.9 億</div></div>
     <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">11,684</div><div class="chg down">-4.30%（10/14 美股）</div></div>
     <div class="m"><div class="lbl">全市場擔保維持率</div><div class="val">282.82%</div><div class="chg up">較前日 +1.85</div></div>
     <div class="m"><div class="lbl">信用風險戶數</div><div class="val">9 戶</div><div class="chg down">較前日 -3 戶</div><div class="sub">維持率不足 8｜追繳 1｜處分 0</div></div>
@@ -392,7 +392,51 @@
   <!-- ===== /DATA:PREOPEN ===== -->
 
         <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/15 收盤場．依時間由新到舊．共 20 則）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/15 盤後場．依時間由新到舊．共 20 則）</span></h2>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/15 17:48</span>千金股淪重災區：盤中 19 檔跌停、收盤 10 檔跌停，川湖跌出萬金股 <a class="ref" href="#src-34">[34]</a></div>
+    <div class="news-body">台股收盤下挫 1,655.96 點（單日第六大跌點）；千金股數量減至 48 檔，景碩(3189)、環球晶(6488)脫離千金股名單，僅藥華藥(6446)、玉晶光(3406)逆勢收紅，分別漲 1.26%、4.69%。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">籌碼</span><span class="ntime">10/15 17:30</span>外資史上最大提款 3,026 億！台積電(2330)遭賣超約 3.4 萬張，前三大賣超皆為主動式 ETF <a class="ref" href="#src-35">[35]</a></div>
+    <div class="news-body">外資賣超台積電約 3.41 萬張（以收盤價估約 832 億元）；賣超前三名為主動統一升級50(00403A)13.9 萬張、主動統一台股增長(00981A)12.84 萬張、主動中信台灣收益(00406A)11.91 萬張，元大台灣50(0050)賣超 10.38 萬張居第四。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">券商</span><span class="ntime">10/15 17:18</span>台股一片慘綠 玉晶光(3406)逆勢收 1,115 元，瑞銀給「買進」、目標價 1,250 元 <a class="ref" href="#src-36">[36]</a></div>
+    <div class="news-body">瑞銀證券上調玉晶光 2027、2028 年 EPS 6%、3% 至 43.93 元、49.22 元；切入 CPO 光學零組件（稜鏡、V 型槽、MT 連接器），2026 年 CPO 營收占比預估低於 5%，2027 下半年至 2028 年明顯貢獻；樂觀情境下股價上看 2,365 元。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">籌碼</span><span class="ntime">10/15 17:14</span>外資大賣超、散戶沒在怕！0050 單日淨申購 328 億元創歷史新高 <a class="ref" href="#src-37">[37]</a></div>
+    <div class="news-body">元大台灣50(0050)淨申購 328 億元創高，正2 ETF(00631L)淨申購 119 億元為半年來單日最大；法人認為散戶看好長期成長，台積電(2330)法說營收獲利雙創高可能帶動反彈。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">期貨</span><span class="ntime">10/15 17:10</span>台股明天還會繼續跌？外資空單已近 10 萬口 <a class="ref" href="#src-38">[38]</a></div>
+    <div class="news-body">外資台指期淨空單近 10 萬口；10/15 三大法人合計賣超 3,700.76 億元，其中外資賣超 3,025.55 億元（較第二名多約 1,251.52 億元）、自營商賣超 958.24 億元、投信買超 283.03 億元。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">匯市</span><span class="ntime">10/15 17:08</span>外資創紀錄瘋砍台股，新台幣盤中狂貶逾 3.7 角、匯市再爆天量 <a class="ref" href="#src-39">[39]</a></div>
+    <div class="news-body">新台幣盤中一度貶至 32.452 元，收 32.265 元（貶 1.92 角）為逾兩個月新低，本周四個交易日累貶約 3.9 角；央行與出口商聯手穩匯，台北外匯市場單日成交 70.3 億美元。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">財報</span><span class="ntime">10/15 16:40</span>〈台積電法說〉2026 至 2028 年資本支出將顯著增加，全球近 20 座晶圓廠推進中 <a class="ref" href="#src-40">[40]</a></div>
+    <div class="news-body">台積電(2330)重申今年資本支出 600 億至 640 億美元；未來幾年在台灣興建 13 座先進製程與先進封裝廠，海外另建 5 至 6 座。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">期貨</span><span class="ntime">10/15 16:15</span>台積電法說會也救不了台股？外資賣超金額、期貨空單創新高，台指期夜盤繼續殺 <a class="ref" href="#src-41">[41]</a></div>
+    <div class="news-body">外資台指期再增約 1.08 萬口空單，淨空單約 9.76 萬口創歷史新高；盤後台指期夜盤翻黑下殺逾百點，台積電 ADR 盤前跌逾 2%。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">財報</span><span class="ntime">10/15 15:55</span>魏哲家：AI 需求看不到放緩跡象，未來 3 年資本支出顯著高於過去 <a class="ref" href="#src-42">[42]</a></div>
+    <div class="news-body">台積電(2330)總裁魏哲家表示整體需求可能仍遠高於目前產能，「看不到任何需求放緩的跡象」，並預期 2026 至 2028 年資本支出明顯高於過去三年。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">籌碼</span><span class="ntime">10/15 15:44</span>外資瘋砍台股 3,025 億元破紀錄！三大法人、自營商也是史上最殺 <a class="ref" href="#src-43">[43]</a></div>
+    <div class="news-body">外資賣超 3,025.56 億元、自營商賣超 958.24 億元皆為史上第一大，投信買超 283.03 億元，三大法人合計賣超 3,700.76 億元創高；台達電(2308)跌 8.68%、聯發科(2454)跌 6.93%、台積電(2330)跌 2.01%，日月光投控(3711)、南亞(1303)跌停。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">財報</span><span class="ntime">10/15 14:55</span>台積電(2330)再調升全年美元營收成長至 44%，第 4 季估季增 14% <a class="ref" href="#src-44">[44]</a></div>
+    <div class="news-body">第 4 季營收區間 523 億至 543 億美元（中間值季增 14%、年增 58%），毛利率約 65%～67%；2026 年美元營收預估成長約 44%，高於 7 月預估的「微幅超越 40%」。</div>
+  </div>
   <div class="card">
     <div class="news-title"><span class="cat">財報</span><span class="ntime">10/15 14:15</span>台積電(2330)Q3 營收 1.49 兆、稅後純益約 7,631 億、EPS 29.43 元，毛利率 66.4% 略低於預期 <a class="ref" href="#src-31">[31]</a></div>
     <div class="news-body">Q3 營收約 1.494 兆元（年增 50.9%）、稅後純益約 7,630.6 億元（年增 68.7%）、EPS 29.43 元；毛利率 66.4%，較第二季降 1.3 個百分點；2 奈米占營收 8%、3 奈米 33%，高效能運算占 68%。台積電收 2,440 元（-50 元）。</div>
@@ -402,13 +446,15 @@
     <div class="news-body">加權指數收 46,969.87 點（-1,655.96 點、-3.41%），盤中最大跌點一度達 1,830 點；主因費半 10/14 重挫與美國通膨高於預期引發升息疑慮，指數爆量跌破月線。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/15</span>台股重挫 1,655 點創單日第六大跌點，成交值約 1.32 兆元 <a class="ref" href="#src-33">[33]</a></div>
-    <div class="news-body">成交金額約 1 兆 3,197.7 億元；權值股與高價股賣壓沉重：聯發科(2454)收 4,165 元（-310 元）、台達電(2308)收 1,630 元（-155 元）、鴻海(2317)收 239.5 元（-3.5 元）；ETF 占盤中成交量前十名多數。</div>
+    <div class="news-title"><span class="cat">金融</span><span class="ntime">10/15 12:48</span>〈焦點股〉資金狂湧金融股 玉山金(2884)逼近 50 元，中信金、元大金齊刷新天價 <a class="ref" href="#src-45">[45]</a></div>
+    <div class="news-body">民營金控普遍漲 2% 至 4%：玉山金盤中最高 49.5 元創高，中信金(2891)最高 73.6 元、市值突破 1.43 兆元，元大金(2885)最高 72.8 元；法人認為殖利率與利息淨收益使金控成為大盤震盪時的防禦首選。</div>
   </div>
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/15 10:23</span>台積電(2330)法說前夕賣壓空襲、回測季線，外資連 6 賣、投信連 11 買 <a class="ref" href="#src-1">[1]</a></div>
     <div class="news-body">美國 9 月 CPI 年增 3.7% 高於預期，費半 10/14 重挫 4.3%、台積電 ADR 跌 3.4%；台積電盤中低點 2,420 元（-2.8%）跌破月線，10:14 約 2,450 元。外資連 6 賣累計約 5.7 萬張，投信連 11 買 8,238 張、自營商連 20 買約 1.2 萬張，市場等 14:00 法說的 AI 成長、資本支出與美國廠進度。</div>
   </div>
+  <details class="more">
+  <summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/15 10:15</span>〈台股開盤〉美通膨升息壓力拉警報，電子哀鴻遍野重挫 1,400 點摜破月線 <a class="ref" href="#src-2">[2]</a></div>
     <div class="news-body">加權指數盤中最低 47,153 點（-1,472 點），10:15 報 47,179 點（-1,482 點、-3.05%），預估成交約 1.69 兆元；台積電(2330)低見 2,420 元，聯發科(2454)、台達電(2308)、日月光投控(3711)同步重挫，電信、資安股相對抗跌。</div>
@@ -429,52 +475,6 @@
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/15 09:30</span>升息陰霾重擊台股！早盤大跌逾千點，半導體全面承壓、靜待台積電法說 <a class="ref" href="#src-6">[6]</a></div>
     <div class="news-body">早盤加權指數跌約 1,242 點（-2.55%）、跌破 47,000 點，聯發科(2454)跌 4.92%、日月光投控(3711)跌 7.36%，半導體類股指數下挫 2.46%；投資人焦點轉向 14:00 登場的台積電(2330)第三季法說會。</div>
   </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/15 09:21</span>費半重挫 4.3%！台股急殺 1,400 點摜破月線，台積電法說前回測季線 <a class="ref" href="#src-7">[7]</a></div>
-    <div class="news-body">加權指數開盤 48,382.75 點（-243.08），一度殺至 47,153.87 點（-1,471.96），10 月台指期 47,716 點（-1,082）；台積電(2330)開盤 2,420 元（-70）。市場憂慮 AI 業者舉債擴張，CoreWeave 重挫逾 15%。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/15 09:04</span>費半暴跌拖累！台股跳水逾 1,400 點殺至 4 萬 7，台積電跌 55 元、緯穎跌停 <a class="ref" href="#src-8">[8]</a></div>
-    <div class="news-body">台積電(2330)跌 55 元至 2,435 元、聯發科(2454)跌 230 元至 4,245 元、緯穎(6669)跌停 1,905 元；美國 9 月 CPI 年增 3.7% 引發升息疑慮，費半昨夜重挫 4.30%。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">籌碼</span><span class="ntime">10/15 09:03</span>台股開盤狂瀉逾 1,400 點！台積電今法說登場，股價跌 60 元報 2,420 <a class="ref" href="#src-9">[9]</a></div>
-    <div class="news-body">那斯達克跌 1.88%、費半跌 4.3%、輝達跌 3.16%；台股 10/14 外資賣超 200.4 億元、連 6 賣，投信買超 161.1 億元，三大法人合計賣超約 154 億元。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">期貨</span><span class="ntime">10/15 08:36</span>台指期夜盤下跌 853 點，法人：台股聚焦台積電法說會 <a class="ref" href="#src-10">[10]</a></div>
-    <div class="news-body">費半跌 524.41 點（-4.3%）、台積電 ADR 跌 3.4%，台指期夜盤跌 853 點。法人認為台股基本面穩健、多家公司 9 月營收創高，台積電法說與 ASML 強勁財報可望提供買盤支撐；加權指數 10/14 收 48,625.83 點（+284.52）。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/15 08:03</span>《美股》收盤速報：鬼故事又來了！AI 股遭血洗，DC、晶片、光通訊全殺 <a class="ref" href="#src-11">[11]</a></div>
-    <div class="news-body">道瓊收 51,621.48 點（-0.09%）、標普 500 收 7,718.94 點（-1.11%）、那斯達克收 26,692.87 點（-1.88%）、費半收 11,684.38 點（-4.30%）；戴爾約跌 11% 拖累資料中心硬體股，輝達、超微、美光與台積電 ADR 同步重挫。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/15 07:41</span>今晨國際頭條一次看：通膨升溫美股重挫，澤倫斯基直指川普背叛 <a class="ref" href="#src-12">[12]</a></div>
-    <div class="news-body">美國 9 月通膨升溫，市場重新押注 Fed 10 月升息，標普 500 跌 1.1%、那斯達克跌 1.9%，為 7 月以來最差單日表現；金融時報報導 Anthropic 第 3 季營收季增 50% 至 168 億美元，並連續第二季獲利。</div>
-  </div>
-  <details class="more">
-  <summary>▾ 更多焦點（再看 5 則）</summary>
-  <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/15 07:05</span>台積電 ADR 挫跌 3.4%，台指期大跌 853 點 <a class="ref" href="#src-13">[13]</a></div>
-    <div class="news-body">台積電 ADR 收 430.00 美元，較台北股價溢價 11.1%；台指期夜盤收 47,945 點（-853 點、-1.8%）；台積電(2330)台股 10/14 收平盤 2,490 元，加權指數收 48,625.83 點（+284.53）。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/15 06:49</span>美股收盤／通膨掀 AI 股賣壓，費半重挫 4.3%，美股創 7 月來最重跌幅 <a class="ref" href="#src-14">[14]</a></div>
-    <div class="news-body">9 月 CPI 年增 3.7%（8 月為 3.4%）使市場押注 Fed 本月再升息；費半連 6 黑、期間累計跌約 12%，市場隱含 10 月升息機率升至 37%（前值 22%），但多位分析師仍預期 Fed 到 12 月才行動。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/15 06:21</span>輝達、台積電 ADR 跌逾 3%，通膨數據加深晶片股賣壓 <a class="ref" href="#src-15">[15]</a></div>
-    <div class="news-body">輝達跌逾 3%、台積電 ADR 跌 3.4%、超微跌 5.7%；CoreWeave 因高負債與利息支出擔憂重挫逾 16%。市場轉向 10/15 台積電法說，預期獲利成長約 60%。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/15 06:02</span>〈美股盤後〉美 CPI 升溫、AI 融資疑慮夾擊，費半重摔超 4%，台積電 ADR 跌逾 3% <a class="ref" href="#src-16">[16]</a></div>
-    <div class="news-body">9 月 CPI 年增 3.7%（預期 3.6%）、核心 CPI 年增 2.6%（預期 2.5%），升息預期升溫，美元指數升至 2025 年 5 月以來高點；AI 業者過度依賴債務融資成為科技股賣壓來源。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/15 04:36</span>美通膨掀升息疑慮，美股收黑、那指跌逾 1.8% <a class="ref" href="#src-17">[17]</a></div>
-    <div class="news-body">那斯達克跌 511.51 點（-1.88%）至 26,692.87 點，標普 500 跌 86.51 點（-1.11%）至 7,718.94 點，道瓊跌 48.62 點（-0.09%）至 51,621.48 點；費半跌 524.41 點（-4.30%）至 11,684.38 點，跌幅最重。</div>
-  </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
 
@@ -482,14 +482,19 @@
   <h2 id="broker">10/15 券商報告摘要</h2>
   <div class="card">
     <ul class="sum-list">
+      <li>玉晶光（3406）：瑞銀證券給予「買進」、目標價 1,250 元（前值待確認）；上調 2027、2028 年 EPS 6%、3% 至 43.93 元、49.22 元，CPO 光學零組件預期 2027 下半年起明顯貢獻；10/15 台股重挫仍逆勢收 1,115 元（+4.7%）<a class="ref" href="#src-36">[36]</a></li>
       <li>南亞（1303）：摩根大通維持「優於大盤」、目標價 415 元（前值 350 元）；同一份報告台塑（1301）90 元（前值 70 元）、台化（1326）90 元（前值 80 元）、台塑化（6505）130 元（前值 100 元）皆上調，理由為電子材料獲利創高、煉油利差高檔與轉投資收益；南亞 10/14 盤中一度漲停至 350.5 元<a class="ref" href="#src-21">[21]</a></li>
       <li>日月光投控（3711）：美銀證券維持「買進」、目標價 900 元（前值 800 元），第三季營收季增約 28%、優於公司財測 20%；風險為折舊費用與資本支出攀升<a class="ref" href="#src-22">[22]</a></li>
-      <li>信驊（5274）：日系外資給予「買進」、目標價 26,660 元，第三季營收 47.86 億元、年增 105%，認為邁威爾新品擴大市場而非取代 BMC；風險為 AI 伺服器需求轉弱<a class="ref" href="#src-23">[23]</a></li>
       <li>台積電（2330）：法說會 10/15 登場，滙豐證券「買進」、目標價 3,800 元（前值 3,400 元）；壹蘋整理九家法人目標價，麥格理 4,410 元最高；美銀證券「買進」、目標價 3,260 元（前值 3,100 元）；10/15 法說前，國泰證券預期第三季營收優於預期，元大投顧認為毛利率與資本支出指引可能上修<a class="ref" href="#src-24">[24]</a><a class="ref" href="#src-3">[3]</a></li>
     </ul>
   </div>
   <table>
     <tr><th>日期</th><th>券商</th><th>個股</th><th>評等</th><th>目標價</th><th>一句話重點</th></tr>
+    <tr>
+      <td class="num">10/15</td><td><span class="tag">外資</span>瑞銀證券</td><td>玉晶光 (3406)</td><td>買進</td>
+      <td class="num"><span class="up">1,250</span><br><span class="muted">前值 待確認</span></td>
+      <td class="muted">切入 CPO 光學零組件，上調 2027/2028 EPS 6%／3%<a class="ref" href="#src-36">[36]</a></td>
+    </tr>
     <tr>
       <td class="num">10/14</td><td><span class="tag">外資</span>滙豐證券</td><td>台積電 (2330)</td><td>買進</td>
       <td class="num"><span class="up">3,800</span><br><span class="muted">前值 3,400</span></td>
@@ -524,11 +529,6 @@
       <td class="num">10/13</td><td><span class="tag">外資</span>未具名日系外資</td><td>信驊 (5274)</td><td>買進</td>
       <td class="num"><span class="up">26,660</span><br><span class="muted">前值 待確認</span></td>
       <td class="muted">Q3 營收年增 105%，Q4 指引 66～68 億元<a class="ref" href="#src-23">[23]</a></td>
-    </tr>
-    <tr>
-      <td class="num">10/13</td><td><span class="tag">外資</span>美國銀行證券</td><td>台積電 (2330)</td><td>買進（維持）</td>
-      <td class="num"><span class="up">3,260</span><br><span class="muted">前值 3,100</span></td>
-      <td class="muted">2 奈米訂單與先進封裝擴產，估 Q4 營收季增 10～15%<a class="ref" href="#src-25">[25]</a></td>
     </tr>
   </table>
 <!-- ===== /DATA:BROKER ===== -->
@@ -569,12 +569,25 @@
     <li id="src-25"><a href="https://money.udn.com/money/story/5607/9812894" target="_blank" rel="noopener">經濟日報｜台積電(2330)目標價 美銀喊 3,260 元，累計已有八家外資調升（10/14 02:54）</a></li>
     <li id="src-26"><a href="https://www.ctee.com.tw/news/20261014700084-439901" target="_blank" rel="noopener">工商時報｜砍完台積再喊多！外資最新目標價站上4字頭（10/14 03:00）</a></li>
     <li id="src-27"><a href="https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK" target="_blank" rel="noopener">臺灣證券交易所｜每日市場成交資訊 FMTQIK（官方值至 10/13；10/15 加權與成交值採新聞報導值）</a></li>
-    <li id="src-28"><a href="https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20261013&amp;selectType=MS&amp;response=json" target="_blank" rel="noopener">臺灣證券交易所｜信用交易統計 MI_MARGN（10/13 官方值；10/14 尚未發布）</a></li>
+    <li id="src-28"><a href="https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20261013&amp;selectType=MS&amp;response=json" target="_blank" rel="noopener">臺灣證券交易所｜信用交易統計 MI_MARGN（10/13 官方值，已由 src-46 更新至 10/14）</a></li>
     <li id="src-29"><a href="https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ4U_TREND?response=json&amp;days=5&amp;date=20261014" target="_blank" rel="noopener">臺灣證券交易所｜全市場擔保維持率 BFIJ4U_TREND（10/14 官方值）</a></li>
     <li id="src-30"><a href="https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20261014&amp;type=IND&amp;response=json" target="_blank" rel="noopener">臺灣證券交易所 每日收盤行情 MI_INDEX（資金流向與成分股，資料日 10/14；備援端點自行計算，sectors latest.json 資料日 10/05 較舊未採用）</a></li>
       <li id="src-31"><a href="https://www.storm.mg/lifestyle/11172642" target="_blank" rel="noopener">風傳媒｜台股崩 1655 點失守 4 萬 7！台積電 Q3 大賺 7630 億（10/15 14:15）</a></li>
     <li id="src-32"><a href="https://money.udn.com/money/story/5607/9816549" target="_blank" rel="noopener">經濟日報｜台股大跌 1655 點 大盤 46969 點作收（10/15 13:51）</a></li>
     <li id="src-33"><a href="https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E9%87%8D%E6%8C%AB1655%E9%BB%9E%E5%89%B5%E5%96%AE%E6%97%A5%E7%AC%AC%E5%85%AD%E5%A4%A7%E8%B7%8C%E9%BB%9E-%E5%A4%B1%E5%AE%88%E6%9C%88%E7%B7%9A-%E5%8F%B0%E7%A9%8D%E9%9B%BB%E8%B7%8C50%E5%85%83-055656138.html" target="_blank" rel="noopener">Yahoo 新聞｜台股重挫 1655 點創單日第六大跌點 失守月線 台積電跌 50 元（10/15）</a></li>
+      <li id="src-34"><a href="https://www.cna.com.tw/news/afe/202610150270.aspx" target="_blank" rel="noopener">中央社｜股后川湖跌出萬金股 千金股盤中19檔跌停（10/15 17:48）</a></li>
+      <li id="src-35"><a href="https://newtalk.tw/news/view/2026-10-15/1065752" target="_blank" rel="noopener">新頭殼｜外資史上最大提款3,026億！台積電遭賣超3.4萬張 前20大還砍誰？（10/15 17:30）</a></li>
+      <li id="src-36"><a href="https://money.udn.com/money/story/5710/9817205" target="_blank" rel="noopener">經濟日報｜台股一片慘綠 玉晶光卻笑傲江湖！外資指出關鍵底氣（10/15 17:18）</a></li>
+      <li id="src-37"><a href="https://ec.ltn.com.tw/article/breakingnews/5607512" target="_blank" rel="noopener">自由財經｜外資大賣超、散戶沒在怕！0050淨申購328億元創歷史新高（10/15 17:14）</a></li>
+      <li id="src-38"><a href="https://storm.mg/article/11172768" target="_blank" rel="noopener">風傳媒｜台股明天還會繼續跌？外資提款機模式全開 專家曝恐怖訊號：空單已近10萬口（10/15 17:10）</a></li>
+      <li id="src-39"><a href="https://money.udn.com/money/story/5612/9817182" target="_blank" rel="noopener">經濟日報｜外資創紀錄瘋砍台股 新台幣盤中狂貶逾3.7角再爆天量（10/15 17:08）</a></li>
+      <li id="src-40"><a href="https://news.cnyes.com/news/id/6631191" target="_blank" rel="noopener">鉅亨網｜〈台積電法說〉2026至2028年資本支出將顯著增加 全球近20座晶圓廠推進中（10/15 16:40）</a></li>
+      <li id="src-41"><a href="https://www.storm.mg/article/11172736" target="_blank" rel="noopener">風傳媒｜台積電法說會也救不了台股？外資賣超金額、期貨空單創新高，台指期夜盤繼續殺（10/15 16:15）</a></li>
+      <li id="src-42"><a href="https://ec.ltn.com.tw/article/breakingnews/5607329" target="_blank" rel="noopener">自由財經｜魏哲家：AI需求看不到放緩跡象 未來3年資本支出顯著高於過去（10/15 15:55）</a></li>
+      <li id="src-43"><a href="https://www.chinatimes.com/realtimenews/20261015003223-260410" target="_blank" rel="noopener">中時新聞網｜外資瘋砍台股3025億元破紀錄！三大法人、自營商也是史上最殺（10/15 15:44）</a></li>
+      <li id="src-44"><a href="https://money.udn.com/money/story/5607/9816786" target="_blank" rel="noopener">經濟日報｜台積電再調升全年美元營收成長44% 第4季估季增14%（10/15 14:55）</a></li>
+      <li id="src-45"><a href="https://news.cnyes.com/news/id/6631058" target="_blank" rel="noopener">鉅亨網｜〈焦點股〉資金狂湧金融股 玉山金逼近50元 中信金、元大金齊刷新天價（10/15 12:48）</a></li>
+      <li id="src-46"><a href="https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=20261014&amp;selectType=MS&amp;response=json" target="_blank" rel="noopener">臺灣證券交易所｜信用交易統計 MI_MARGN（10/14 官方值，融資餘額 6,516 億）</a></li>
   </ol>
   </details>
 <!-- ===== /DATA:SOURCES ===== -->
