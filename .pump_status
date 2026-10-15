@@ -19,8 +19,8 @@
   },
   "material": {
     "kind": "material",
-    "ts": "2026-10-15T23:15:02",
-    "fetch": "no change 102\n",
-    "status": "nochange"
+    "ts": "2026-10-16T02:10:05",
+    "fetch": "detail fail 9105 code 406 查無相符資料\ndetail fail 9103 code 406 查無相符資料\ndetail fail 9103 code 406 查無相符資料\nwrote 565 details 65 days 8\n",
+    "status": "pushed"
   }
 }

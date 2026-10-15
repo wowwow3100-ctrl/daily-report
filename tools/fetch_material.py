@@ -58,7 +58,7 @@ def main():
     except Exception:
         old = {"items": []}
     keep = {}
-    for x in old.get("items", []):
+    for x in json.loads(json.dumps(old.get("items", []))):  # 複製一份，避免改到 old 造成「沒變」誤判
         keep[x.get("k") or "%s|%s|%s|%s" % (x["d"], x["t"], x["c"], x["title"][:30])] = x
     now = datetime.now(TW)
     ok_days = 0
