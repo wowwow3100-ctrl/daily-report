@@ -13,14 +13,14 @@
   },
   "market": {
     "kind": "market",
-    "ts": "2026-10-15T23:45:04",
+    "ts": "2026-10-16T07:10:04",
     "fetch": "no change 2026-10-15\n",
     "status": "nochange"
   },
   "material": {
     "kind": "material",
-    "ts": "2026-10-16T02:10:05",
-    "fetch": "detail fail 9105 code 406 查無相符資料\ndetail fail 9103 code 406 查無相符資料\ndetail fail 9103 code 406 查無相符資料\nwrote 565 details 65 days 8\n",
+    "ts": "2026-10-16T07:15:03",
+    "fetch": "wrote 570 details 5 days 8\n",
     "status": "pushed"
   }
 }
