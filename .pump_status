@@ -16,5 +16,11 @@
     "ts": "2026-10-15T07:10:01",
     "fetch": "no change 2026-10-14\n",
     "status": "nochange"
+  },
+  "material": {
+    "kind": "material",
+    "ts": "2026-10-15T21:15:01",
+    "fetch": "no change 102\n",
+    "status": "nochange"
   }
 }
