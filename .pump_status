@@ -1,9 +1,9 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-10-13T23:05:03",
-    "fetch": "latest 2026-09 rows 1762 high12 0 changed False\n",
-    "status": "nochange"
+    "ts": "2026-10-15T08:25:03",
+    "fetch": "wrote 2026-09 1966\nlatest 2026-09 rows 1966 high12 0 changed True\n",
+    "status": "pushed"
   },
   "sectors": {
     "kind": "sectors",
@@ -13,8 +13,8 @@
   },
   "market": {
     "kind": "market",
-    "ts": "2026-10-15T02:12:33",
-    "fetch": "wrote {'updated': '2026-10-15 02:12', 'margin': {'bal': 6515.7, 'chg': 65.9}, 'date': '2026-10-14', 'label': '10/14', 'keep': {'rate': 282.82, 'below': 8, 'call': 1, 'exe': 0, 'risk': 9, 'rate_chg': 1.85, 'risk_chg': -3, 'date': '20261014'}}\n",
-    "status": "pushed"
+    "ts": "2026-10-15T07:10:01",
+    "fetch": "no change 2026-10-14\n",
+    "status": "nochange"
   }
 }
