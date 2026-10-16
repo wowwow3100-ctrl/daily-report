@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/10/16（週五）盤後場次</div>
+        <div class="stamp" id="updated">2026/10/16（週五）夜間場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -294,7 +294,7 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/16 盤後場．加權與成交值為 10/16 收盤新聞報導值（證交所 FMTQIK 官方值僅至 10/14，待覆核）；融資餘額、擔保維持率與風險戶數為證交所 10/15 官方值；SOX 為 10/15 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/16 夜間場．加權與成交值為 10/16 收盤新聞報導值（證交所 FMTQIK 官方值僅至 10/14，待覆核）；融資餘額、擔保維持率與風險戶數為證交所 10/15 官方值；SOX 為 10/15 美股收盤）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">47,111</div><div class="chg up">+141.39（+0.30%）</div></div>
     <div class="m"><div class="lbl">成交值（上市）</div><div class="val">9,359 億</div><div class="chg down">較前日 -29.1%（新聞值對新聞值）</div></div>
@@ -393,8 +393,32 @@
   </div>
   <!-- ===== /DATA:PREOPEN ===== -->
 
-                <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/16 盤後場．依時間由新到舊．共 20 則）</span></h2>
+                                <!-- ===== DATA:FOCUS_NEWS ===== -->
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/16 夜間場．依時間由新到舊．共 20 則）</span></h2>
+  <div class="card">
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/16 21:12</span>IMF 估日本明年名目 GDP 跌至全球第六 首度落後印度、英國 <a class="ref" href="#src-145">[145]</a></div>
+    <div class="news-body">IMF《世界經濟展望》預估日本明年名目 GDP 可能退居全球第六，首度被印度與英國超越；報導指日圓貶值、物價上漲與人口老化為主因。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/16 20:53</span>費半指數連七跌 然後呢？技術分析師：短多訊號閃現 有望漲到年底 <a class="ref" href="#src-146">[146]</a></div>
+    <div class="news-body">Jefferies 分析師認為那斯達克 100 自低點強勢反彈是 10 月修正以來最振奮的跡象；BTIG 則提醒 2002、2008 年費半連跌後反彈，隨後仍分別重挫 33%、38%。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">10/16 20:37</span>今日最夯股／正文開盤即漲停鎖死 有望挑戰前波高點 <a class="ref" href="#src-147">[147]</a></div>
+    <div class="news-body">經濟日報「今日最夯股」專欄：正文開盤即鎖死漲停，為當日市場人氣焦點，文章認為有望挑戰前一波高點（全文為付費內容，摘要依標題與導言）。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">10/16 20:07</span>台銀無人機案訓練品項決標 詠昇取得供應契約 <a class="ref" href="#src-148">[148]</a></div>
+    <div class="news-body">世紀民生旗下詠昇電子取得台灣銀行採購部無人機組共同供應契約的「訓練用無人機組」品項並完成簽約；全案總預算約 10.48 億元，各機關預估需求 3,894 台、約 1.32 億元。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">產業</span><span class="ntime">10/16 19:59</span>鴻海(2317)砸 233 億元 取得三菱電機移動 5 成股權 <a class="ref" href="#src-149">[149]</a></div>
+    <div class="news-body">鴻海透過利億國際以約 1,150 億日圓（約新台幣 233 億元）取得三菱電機移動 50% 股權，共同經營汽車設備事業並開發電動車基礎架構；需取得主管機關核准，預計 2027 年 10 月 1 日完成。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/16 19:04</span>豐田 2030 年前全車型導入軟體定義汽車 搭載自家平台 <a class="ref" href="#src-150">[150]</a></div>
+    <div class="news-body">豐田計劃 2030 年前將約 50 款車型改為軟體定義汽車，每年 1,000 萬輛新車搭載自家 Arene 軟體平台，2035 年前並規劃開放給其他車廠。</div>
+  </div>
   <div class="card">
     <div class="news-title"><span class="cat">產業</span><span class="ntime">10/16 18:14</span>挺政府赴美設 AI 產業園區！童子賢：飛天車設備成熟 但缺應用情境 <a class="ref" href="#src-125">[125]</a></div>
     <div class="news-body">童子賢表示支持政府赴美設立 AI 產業園區，並談到馬斯克的飛天車：硬體設備已趨成熟，但缺乏應用情境。</div>
@@ -412,6 +436,10 @@
     <div class="news-body">台積電(2330)董事長魏哲家出席胡正明新書活動，表示多用 AI 台積電將受惠。</div>
   </div>
   <div class="card">
+    <div class="news-title"><span class="cat">政策</span><span class="ntime">10/16 17:24</span>彭博專訪 龔明鑫：台灣準備對中國緊縮 AI 晶片出口管制 <a class="ref" href="#src-151">[151]</a></div>
+    <div class="news-body">經濟部長龔明鑫表示，台灣準備將 AI 伺服器與尖端半導體納入管制清單以與美國限制一致，新制上路後輸往中國將依貿易法追究刑責，時程未說明。</div>
+  </div>
+  <div class="card">
     <div class="news-title"><span class="cat">外資</span><span class="ntime">10/16 17:15</span>台積電(2330)法說後收黑！魏哲家鬱卒、法人卻喊上 5,000 元 內外資目標一次看 <a class="ref" href="#src-129">[129]</a></div>
     <div class="news-body">台積電收盤下跌，內外資法說後目標價區間約 3,088～5,000 元；法巴證券目標價由 2,890 元上調至 3,090 元。</div>
   </div>
@@ -427,6 +455,7 @@
     <div class="news-title"><span class="cat">營收</span><span class="ntime">10/16 16:08</span>高階玻纖布獲利超補！富喬(1815)9 月獲利年增 341.33% <a class="ref" href="#src-132">[132]</a></div>
     <div class="news-body">富喬 9 月獲利年增 341.33%，主要受惠高階玻纖布價格走高。</div>
   </div>
+  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
     <div class="news-title"><span class="cat">市場</span><span class="ntime">10/16 16:00</span>券商 APP 改版「買賣鈕」互換！一票股民手誤賣台積電(2330)氣炸 <a class="ref" href="#src-133">[133]</a></div>
     <div class="news-body">券商 APP 改版後買、賣按鈕位置互換，多名投資人反映誤賣出台積電。</div>
@@ -446,35 +475,6 @@
   <div class="card">
     <div class="news-title"><span class="cat">匯市</span><span class="ntime">10/16 13:37</span>中經院估新台幣匯率第 4 季走升 均價為 31.82 元 <a class="ref" href="#src-137">[137]</a></div>
     <div class="news-body">中經院預估新台幣第 4 季走升，均價 31.82 元。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">政策</span><span class="ntime">10/16 13:18</span>赴德州建 AI 供應鏈 經部：每座園區投資估最高 40 億美元 <a class="ref" href="#src-138">[138]</a></div>
-    <div class="news-body">經濟部估計，赴德州建置 AI 供應鏈，每座園區投資金額最高約 40 億美元。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">10/16 12:23</span>鴻海(2317)整合產業鏈推表後儲能電池系統 拚 2027 上半年量產 <a class="ref" href="#src-139">[139]</a></div>
-    <div class="news-body">鴻海整合供應鏈推出表後儲能電池系統，目標 2027 年上半年量產。</div>
-  </div>
-  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
-  <div class="card">
-    <div class="news-title"><span class="cat">總經</span><span class="ntime">10/16 12:07</span>中經院上修 2026 經濟成長預測值至 12.16% 景氣內外皆熱 <a class="ref" href="#src-140">[140]</a></div>
-    <div class="news-body">中經院將 2026 年經濟成長預測上修至 12.16%，指國內外景氣皆熱。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台積電</span><span class="ntime">10/16 11:56</span>台積電(2330)魏哲家：法說會後股價真的跌了 心情不太好 <a class="ref" href="#src-141">[141]</a></div>
-    <div class="news-body">魏哲家表示法說會後股價下跌心情不太好；多家外資同日上調或維持目標價。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">10/16 11:43</span>光寶科(2301)360 億元聯貸案簽約 首度導入永續連結 <a class="ref" href="#src-142">[142]</a></div>
-    <div class="news-body">光寶科簽署 360 億元聯貸案，首度導入永續連結條款；自由時報報導超額認購達 140%。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/16 09:48</span>升息預期及基建成本飆 全球 AI 龍頭股市值蒸發 32 兆 <a class="ref" href="#src-143">[143]</a></div>
-    <div class="news-body">升息預期升溫與基建成本攀升，使全球 AI 龍頭股市值大幅縮水。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">金融</span><span class="ntime">10/16 07:33</span>獲利新高！玉山金(2884)前 9 月賺 318.5 億元、EPS 1.95 元 <a class="ref" href="#src-144">[144]</a></div>
-    <div class="news-body">玉山金前 9 月獲利創新高，稅後純益 318.5 億元、EPS 1.95 元。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
@@ -536,10 +536,17 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
+    <li id="src-145"><a href="https://money.udn.com/money/story/5599/9819915" target="_blank" rel="noopener">經濟日報｜IMF 估日本明年名目 GDP 跌至全球第六 首度落後印度、英國（10/16 21:12）</a></li>
+    <li id="src-146"><a href="https://money.udn.com/money/story/123398/9819893" target="_blank" rel="noopener">經濟日報｜費半指數連七跌 然後呢？技術分析師：短多訊號閃現 有望漲到年底（10/16 20:53）</a></li>
+    <li id="src-147"><a href="https://money.udn.com/money/story/5607/9819771" target="_blank" rel="noopener">經濟日報｜今日最夯股／正文開盤即漲停鎖死 有望挑戰前波高點（10/16 20:37）</a></li>
+    <li id="src-148"><a href="https://www.cna.com.tw/news/afe/202610160322.aspx" target="_blank" rel="noopener">中央社｜台銀無人機案訓練品項決標 詠昇取得供應契約（10/16 20:07）</a></li>
+    <li id="src-149"><a href="https://www.cna.com.tw/news/afe/202610160320.aspx" target="_blank" rel="noopener">中央社｜鴻海(2317)砸 233 億元 取得三菱電機移動 5 成股權（10/16 19:59）</a></li>
+    <li id="src-150"><a href="https://www.cna.com.tw/news/afe/202610160301.aspx" target="_blank" rel="noopener">中央社｜豐田 2030 年前全車型導入軟體定義汽車 搭載自家平台（10/16 19:04）</a></li>
     <li id="src-125"><a href="https://money.udn.com/money/story/5612/9819691" target="_blank" rel="noopener">經濟日報｜挺政府赴美設 AI 產業園區！童子賢：飛天車設備成熟 但缺應用情境（10/16 18:14）</a></li>
     <li id="src-126"><a href="https://money.udn.com/money/story/5612/9819687" target="_blank" rel="noopener">經濟日報｜熱錢大出逃 新台幣續挫寫逾 1 年單週最大貶幅（10/16 18:12）</a></li>
     <li id="src-127"><a href="https://money.udn.com/money/story/5599/9819682" target="_blank" rel="noopener">經濟日報｜英特爾遭控詐欺 撕毀晶圓代工合約 高塔半導體求償恐涉數億美元（10/16 18:12）</a></li>
     <li id="src-128"><a href="https://ec.ltn.com.tw/article/breakingnews/5608699" target="_blank" rel="noopener">自由時報｜胡正明出書魏哲家站台 喊話「多用 AI 台積電受惠」（10/16 17:45）</a></li>
+    <li id="src-151"><a href="https://www.cna.com.tw/news/afe/202610163006.aspx" target="_blank" rel="noopener">中央社｜彭博專訪 龔明鑫：台灣準備對中國緊縮 AI 晶片出口管制（10/16 17:24）</a></li>
     <li id="src-129"><a href="https://money.udn.com/money/story/5607/9819470" target="_blank" rel="noopener">經濟日報｜台積電(2330)法說後收黑！魏哲家鬱卒、法人卻喊上 5,000 元 內外資目標一次看（10/16 17:15）</a></li>
     <li id="src-130"><a href="https://www.chinatimes.com/realtimenews/20261016003329-260410" target="_blank" rel="noopener">中時新聞網｜外資殺瘋了！8 天提款台股 6,817 億元 三大法人動向曝光（10/16 16:29）</a></li>
     <li id="src-131"><a href="https://ec.ltn.com.tw/article/breakingnews/5608588" target="_blank" rel="noopener">自由時報｜東元(1504)董座利明献：未來 2-3 年營收拚破千億 2027 年海外營收過半（10/16 16:23）</a></li>
@@ -549,13 +556,6 @@
     <li id="src-135"><a href="https://www.storm.mg/article/11173059" target="_blank" rel="noopener">風傳媒｜三大法人買賣超》外資連 8 賣、投信逆勢連 6 買！台股反彈 141 點，法人仍賣超 678 億元（10/16 15:09）</a></li>
     <li id="src-136"><a href="https://ec.ltn.com.tw/article/breakingnews/5607954" target="_blank" rel="noopener">自由時報｜台股收盤》台積電(2330)尾盤爆 6,066 張賣單！指數僅小漲 141 點（10/16 13:52）</a></li>
     <li id="src-137"><a href="https://www.cna.com.tw/news/afe/202610160135.aspx" target="_blank" rel="noopener">中央社｜中經院估新台幣匯率第 4 季走升 均價為 31.82 元（10/16 13:37）</a></li>
-    <li id="src-138"><a href="https://www.cna.com.tw/news/afe/202610160128.aspx" target="_blank" rel="noopener">中央社｜赴德州建 AI 供應鏈 經部：每座園區投資估最高 40 億美元（10/16 13:18）</a></li>
-    <li id="src-139"><a href="https://www.cna.com.tw/news/afe/202610160107.aspx" target="_blank" rel="noopener">中央社｜鴻海(2317)整合產業鏈推表後儲能電池系統 拚 2027 上半年量產（10/16 12:23）</a></li>
-    <li id="src-140"><a href="https://www.cna.com.tw/news/afe/202610160102.aspx" target="_blank" rel="noopener">中央社｜中經院上修 2026 經濟成長預測值至 12.16% 景氣內外皆熱（10/16 12:07）</a></li>
-    <li id="src-141"><a href="https://ec.ltn.com.tw/article/breakingnews/5608193" target="_blank" rel="noopener">自由時報｜台積電(2330)魏哲家：法說會後股價真的跌了 心情不太好（10/16 11:56）</a></li>
-    <li id="src-142"><a href="https://www.cna.com.tw/news/afe/202610160089.aspx" target="_blank" rel="noopener">中央社｜光寶科(2301)360 億元聯貸案簽約 首度導入永續連結（10/16 11:43）</a></li>
-    <li id="src-143"><a href="https://www.cna.com.tw/news/afe/202610160035.aspx" target="_blank" rel="noopener">中央社｜升息預期及基建成本飆 全球 AI 龍頭股市值蒸發 32 兆（10/16 09:48）</a></li>
-    <li id="src-144"><a href="https://www.ctee.com.tw/news/20261016700534-430201" target="_blank" rel="noopener">工商時報｜獲利新高！玉山金(2884)前 9 月賺 318.5 億元、EPS 1.95 元（10/16 07:33）</a></li>
     <li id="src-105"><a href="https://www.chinatimes.com/realtimenews/20261016002729-260410" target="_blank" rel="noopener">中時新聞網｜外資續看讚台積電(2330)後市，毛利率看法分歧（10/16 13:19）</a></li>
     <li id="src-115"><a href="https://www.setn.com/news/1923132" target="_blank" rel="noopener">三立新聞網｜外資無情屠殺！南亞(1303)遭砍 4.06 萬張仍跌停收 314.5 元（10/16 05:30）</a></li>
     <li id="src-117"><a href="https://ctee.com.tw/news/20261016700076-439901" target="_blank" rel="noopener">工商時報｜台積電(2330)法說好氣色，符外資預期（10/16 03:00）</a></li>
