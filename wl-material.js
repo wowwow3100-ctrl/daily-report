@@ -17,7 +17,7 @@
 
   function itemHTML(x, w) {
     var hot = HOT.exec(x.title), star = w.indexOf(x.c) >= 0;
-    return '<details class="mt-it' + (star ? " star" : "") + '"><summary>' +
+    return '<details class="mt-it' + (star ? " mt-star" : "") + '"><summary>' +
       '<span class="mt-tm">' + md(x.d) + (x.t ? " " + x.t : "") + "</span>" +
       '<a class="mt-co" href="stocks.html?code=' + esc(x.c) + '">' + (star ? "★ " : "") + esc(x.n) + '<i>' + esc(x.c) + "</i></a>" +
       (hot ? '<span class="mt-tag">' + esc(hot[1]) + "</span>" : "") +
