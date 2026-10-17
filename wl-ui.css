@@ -670,3 +670,9 @@ ul.sum-list li.sl-card{padding:12px 0 12px 16px;}
 .mt-bd{font-size:.82rem;line-height:1.75;color:var(--muted);padding:0 0 12px;white-space:pre-wrap;word-break:break-word;}
 .mt-src{margin-top:6px;font-size:.7rem;opacity:.8;}
 .mt-more>summary{margin-top:6px;}
+
+/* ---------- 32. 手機防溢出（10/17：有手機在右上角出現重大訊息的字） ---------- */
+html,body{overflow-x:hidden;max-width:100%;}
+.mtbox,.mt-list,.mt-it,.mt-it>summary,.mt-bd{min-width:0;max-width:100%;overflow:hidden;}
+.mt-tt,.mt-bd{overflow-wrap:anywhere;}
+.oline{flex-wrap:wrap;white-space:normal;max-width:100%;}
