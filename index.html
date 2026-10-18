@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/10/18（週日）盤後場次</div>
+        <div class="stamp" id="updated">2026/10/19（週一）早盤場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -294,10 +294,10 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/18 收盤場．週日休市，數據沿用 10/16．加權為證交所 MI_INDEX 10/16 官方收盤，成交值為中央社 10/16 收盤報導值（FMTQIK 官方值僅至 10/15，待覆核）；融資餘額為證交所 10/16 官方值；擔保維持率與風險戶數為證交所 10/16 官方值；SOX 為 10/16 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/19 早盤場．最新交易日為 10/16，數據沿用：加權與成交值為證交所 FMTQIK 官方值，融資餘額、擔保維持率與風險戶數為證交所 10/16 官方值，SOX 為 10/16 美股收盤；10/19 開盤前無新數據）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">47,111</div><div class="chg up">+141.39（+0.30%）</div></div>
-    <div class="m"><div class="lbl">成交值（上市）</div><div class="val">9,359 億</div><div class="chg down">較前日 -34.8%（對 10/15 官方值）</div></div>
+    <div class="m"><div class="lbl">成交值（上市）</div><div class="val">9,938 億</div><div class="chg down">較前日 -30.8%（FMTQIK 官方值）</div></div>
     <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">6,456 億</div><div class="chg down">單日 -8.2 億</div></div>
     <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">11,137</div><div class="chg down">-3.83%（10/16 美股，連八黑）</div></div>
     <div class="m"><div class="lbl">全市場擔保維持率</div><div class="val">277.30%</div><div class="chg up">較前日 +0.86</div></div>
@@ -393,10 +393,42 @@
   <!-- ===== /DATA:PREOPEN ===== -->
 
                                 <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/18 盤後場．依時間由新到舊．共 20 則）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/19 早盤場．週末新聞較少，部分為 10/17～10/18 報導，依時間由新到舊．共 20 則）</span></h2>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/19 05:30</span>外資 10/16 大買中鋼(2002)約 4.37 萬張居買超第一 賣超台積電(2330)約 2.2 萬張 <a class="ref" href="#src-267">[267]</a></div>
+    <div class="news-body">10/16 加權收 47,111.26 點（+141.39）；外資買超中鋼約 4.37 萬張、股價漲 1.56% 收 19.55 元，同日賣超台積電約 2.2 萬張；投信賣超聯電(2303)、買超華航(2610)。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">財經</span><span class="ntime">10/19 03:10</span>10 月 19 日五件財經大事：台指期夜盤殺逾千點 台股後市三情境 台積電 A14 加速 輝達 GTC 柏林 10/20 登場 <a class="ref" href="#src-268">[268]</a></div>
+    <div class="news-body">經濟日報整理：美股 10/16 收黑、台指期夜盤跌逾 1,000 點，分析師推演三種情境，以下跌 400～600 點為最可能，支撐落在 46,500～47,000 點；台積電先進製程進度受關注；輝達 GTC 柏林 10/20～22 舉行，鴻海、廣達等 AI 供應鏈受矚目；友達與大立光就 Micro LED 能否用於 CPO 的說法引發討論。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/19 01:00</span>外資上週提款 5,862 億 永豐投顧：本週大盤 45,000～49,000 點震盪 季線面臨考驗 <a class="ref" href="#src-269">[269]</a></div>
+    <div class="news-body">上週外資賣超約 5,862 億元、三大法人合計賣超約 7,094 億元；外資台指期淨空單由 10/8 的 83,194 口增至 10/16 的 93,675 口。永豐投顧指加權已跌破 5 日、10 日與月線，融資餘額仍約 6,464 億元，槓桿去化若加速恐短暫跌破季線，盤整可能需兩週以上。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/19 00:52</span>【台股 10/19 盤前分析】中期仍偏多 油電燃氣、玻璃陶瓷、航運相對強 關注 Fed 與歐洲央行方向 <a class="ref" href="#src-270">[270]</a></div>
+    <div class="news-body">10/16 加權收 47,111.26 點；作者認為中期格局仍偏多，10/16 以油電燃氣、玻璃陶瓷與航運族群較強，聯準會與歐洲央行貨幣政策方向是中期變數（文章未納入 10/16 夜間美股表現）。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/18 21:38</span>記憶體股財報亮眼股價卻大跌 分析師：估值回調 最快 Q4 中後期止跌 週一開盤前先降槓桿 <a class="ref" href="#src-271">[271]</a></div>
+    <div class="news-body">上週記憶體股財報亮眼但股價重挫，市場擔心中國廠商擴產造成供給過剩；多數分析師認為屬估值修正、基本面未反轉。專家提醒開盤前先降低融資與衍生品槓桿，觀察融資減少、外資賣壓趨緩與夜盤止跌等訊號。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">10/18 20:09</span>日本核定台積電(2330)熊本二廠生產 3 奈米 預計 2028 年 12 月投產 月產能 6,000 片 <a class="ref" href="#src-272">[272]</a></div>
+    <div class="news-body">日本經產省 10/16 核定熊本第二廠生產 3 奈米，預計 2028 年 12 月開始生產；規劃月產能 6,000 片，日方先前規劃補助約 7,320 億日圓，最終產能取決於補助金額；第一廠將調整產品組合，停產 12～16 奈米製程。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/18 13:45</span>全球科技股週殺 韓股跌逾 14% 最慘 記憶體成重災區 <a class="ref" href="#src-273">[273]</a></div>
+    <div class="news-body">本週韓國綜合指數跌 14.46%、費半跌 11.41%、那斯達克與台股各跌約 4.5%；三星電子週跌 17.75%、SK 海力士跌 19.95%、美光跌 14.59%。分析師點出中國長鑫（CXMT）DRAM 技術進展、AI 資料中心投資報酬疑慮與美國通膨利率不確定性，長線 AI 趨勢未變。</div>
+  </div>
   <div class="card">
     <div class="news-title"><span class="cat">美股</span><span class="ntime">10/18 12:55</span>美股週觀察：AI 疑慮升溫 那斯達克週跌 4.5% Meta、特斯拉、SpaceX 財報將登場 <a class="ref" href="#src-262">[262]</a></div>
     <div class="news-body">過去一週 AI 相關股遭賣壓，那斯達克綜合指數週跌 4.5%、標普 500 跌 1.95%；CoreWeave 單週暴跌 25%、美光跌近 15%；Meta 與特斯拉將於 10/21 美東盤後公布財報，SpaceX 預計 10/20 公布；10 年期美債殖利率降至 5.1%，原油週漲 10.4%至每桶 101.41 美元。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/18 11:32</span>週一台股恐下殺千點？法人點名 15 檔「雙資護航」 開盤盯季線 46,000 點 <a class="ref" href="#src-274">[274]</a></div>
+    <div class="news-body">美股費半 10/16 重挫近 4%、台指期夜盤跌 1,144 點，市場預期 10/19 開盤賣壓沉重、考驗 46,000 點季線；法人建議選股不選市，留意投信買超、外資回補個股，並觀察季線能否守住與資金是否轉向抗跌族群。</div>
   </div>
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/18 10:11</span>三大法人單日賣超 678 億 外資連 8 日賣超 台積電(2330)居首 6 檔處置股 10/19 起處置至 10/23 <a class="ref" href="#src-264">[264]</a></div>
@@ -407,6 +439,10 @@
     <div class="news-body">台股 10/16 收 47,111.26 點（+141.39），成交量約 9,864 億元；安聯投信認為 AI 伺服器與半導體需求仍是成長動能，GPU、ABF 載板、PCB/CCL 與液冷散熱供應鏈需求強勁，高利率與高評價下產業與個股分化將持續。</div>
   </div>
   <div class="card">
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/18 08:32</span>費半連 8 黑、恐慌指數急升 10/19 台股開盤防線告急 <a class="ref" href="#src-275">[275]</a></div>
+    <div class="news-body">美股 10/16 道瓊跌 0.3% 收 52,002.41、標普 500 跌 1.1%、那斯達克跌 2.1%、費半跌 3.8% 收 11,137.29，VIX 單日大漲 21.5%；台股上週大跌 2,202 點，上市市值蒸發約 7.1 兆元，外資連 8 日賣超；金融股相對抗跌。</div>
+  </div>
+  <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/18 05:00</span>下周 1100 點大逃殺？專家押 6 檔底氣股賭 Q4 大爆發 <a class="ref" href="#src-266">[266]</a></div>
     <div class="news-body">台指期夜盤 10/16 下殺 1,144 點，指數回測季線（約 46,000 點）；分析師認為這波是高檔換手而非趨勢反轉，點名 PCB 上游材料與被動元件，包括聯茂(6213)、富喬(1815)、被動元件國巨(2327)、大毅(3357)、華新科(2492)；若跌破季線且外資續賣，不宜急於搶反彈。（個股為媒體報導，非本站建議）</div>
   </div>
@@ -415,13 +451,10 @@
     <div class="news-body">費城半導體指數單週跌 11.4%、連跌 8 個交易日，為 2008 年金融海嘯以來最長跌勢；CoreWeave 信用惡化引發 AI 債務風險疑慮，布蘭特原油逼近 110 美元，推升 10 年期美債殖利率突破 5.1%。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/18 03:00</span>友達彭双浪：明年景氣不悲觀 記憶體缺貨排擠效應仍待觀察 <a class="ref" href="#src-261">[261]</a></div>
-    <div class="news-body">友達董事長彭双浪 10/17 表示，多數研調機構預測 2027 年景氣略優於今年，戰爭與石油等變數影響減弱；他也指出記憶體缺貨與漲價對手機及 IT 產品的排擠效應何時緩解仍待觀察。</div>
-  </div>
-  <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/18 03:00</span>AI 受惠股前三季獲利亮眼 法人估約 180 家賺逾一個股本 群聯(8299)、宜鼎(5289)、川湖(2059)、大立光(3008)、信驊(5274)居前 <a class="ref" href="#src-261">[261]</a></div>
     <div class="news-body">AI 需求、產品組合優化與漲價效應推升上市櫃公司獲利，法人預估約 180 家公司前三季獲利將超過一個股本，前五強可超過十個股本。</div>
   </div>
+  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
     <div class="news-title"><span class="cat">國際</span><span class="ntime">10/18 02:30</span>費半連八黑 台積電 ADR 週線跌近 9% 油價與 AI 債務疑慮並存 <a class="ref" href="#src-260">[260]</a></div>
     <div class="news-body">費半 10/16 連續第八個交易日收黑；布蘭特原油 10/16 盤中一度漲至每桶 110 美元，為 5 月以來首見，Anthropic 為晶片交易向黑石籌資殖利率逾 10%，市場擔心融資成本拖慢 AI 投資；下週 Meta、特斯拉等財報將檢驗獲利能否支撐 AI 熱潮。</div>
@@ -441,39 +474,6 @@
   <div class="card">
     <div class="news-title"><span class="cat">美股</span><span class="ntime">10/17 12:28</span>納指周跌 4.5% 費半 8 連黑 下周財報成關鍵 <a class="ref" href="#src-253">[253]</a></div>
     <div class="news-body">費半 10/16 跌 3.8%、八連跌，單週跌 11.4%，為 2025 年 4 月以來最差；那斯達克跌 2.14%、標普 500 跌 1.09%，VIX 漲逾 20%；AI 企業債務疑慮拖累 CoreWeave 週跌約 25%，布蘭特原油一度觸及 110 美元；下週關注 SpaceX(10/20)、Meta 與特斯拉(10/21)財報。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/17 08:51</span>台股一週重挫 2,202 點 上市市值蒸發 7.17 兆元 <a class="ref" href="#src-240">[240]</a></div>
-    <div class="news-body">截至 10/16 加權收 47,111.26 點，較 10/8 跌 2,202.18 點（週跌 4.47%）；上市總市值降至 154.18 兆元，一週縮水約 7.17 兆元，電子零組件類股跌幅最大。本週集中市場成交 5 兆 4,967.06 億元，半導體與電子零組件合計占上市成交近六成。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/17 06:45</span>歐盟擬 12 月實施貿易多元化措施 加速降低對中國依賴 <a class="ref" href="#src-201">[201]</a></div>
-    <div class="news-body">歐盟執委會主席范德賴恩表示，最快 12 月推出「歐盟多元化」措施，要求化學品、機械等關鍵產業從至少三家供應商採購重要原料；歐盟與中國並就油電混合車進口達成配額協議。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/17 06:14</span>供應緩解前景黯淡 油價上漲 <a class="ref" href="#src-204">[204]</a></div>
-    <div class="news-body">布蘭特 12 月期貨漲 3.7% 收每桶 109.86 美元，盤中一度觸及 110 美元、為 5 月以來首見；WTI 11 月期貨漲 3.5% 收 101.41 美元。</div>
-  </div>
-  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
-  <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/17 05:47</span>快逃？美股 1 指標亮紅燈了 156 年僅見 3 次、前 2 次都出事 <a class="ref" href="#src-205">[205]</a></div>
-    <div class="news-body">自由時報報導美股有一項指標亮起紅燈，156 年來僅出現 3 次，前兩次後來都出事（指標細節以原文為準）。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/17 05:21</span>科技股回升動能不足 美股收黑 <a class="ref" href="#src-206">[206]</a></div>
-    <div class="news-body">10/16 道瓊跌 175.28 點（-0.34%）收 52,002.41；標普 500 跌 1.09% 收 7,659.44；那斯達克跌 2.14% 收 26,140.04；費半重挫 3.83% 收 11,137.29，市場對 AI 相關投資感到憂慮。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">財經</span><span class="ntime">10/17 03:20</span>10 月 17 日 五件財經大事搶先看 <a class="ref" href="#src-241">[241]</a></div>
-    <div class="news-body">Aletheia 資本將台積電(2330)目標價調升至 5,000 元；美銀調查亞洲基金經理人淨加碼台灣比率達 50%；經濟部證實德州科學園區由民間出資、政府協助；立法院三讀通過 65 歲以上長者健保費由中央全額補助。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/17 03:00</span>台股高檔震盪 三主軸選股 <a class="ref" href="#src-242">[242]</a></div>
-    <div class="news-body">指數自高點回檔約 7%，獲利了結賣壓與 AI 基礎建設融資疑慮並存；文章認為進入選股不選市格局，建議鎖定獲利強韌龍頭、準千金股與題材未來龍頭。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">匯市</span><span class="ntime">10/17 03:00</span>貶不停 台幣本周淪最弱亞幣 <a class="ref" href="#src-243">[243]</a></div>
-    <div class="news-body">新台幣 10/16 收 32.338 元、貶 7.3 分創逾兩個月新低，本週貶 4.63 角（約 1.43%），週線連三黑；外資已連續七個交易日賣超，大量匯出資金是台幣走弱主因。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
@@ -544,6 +544,16 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
+    <li id="src-267"><a href="https://www.setn.com/news/1923712" target="_blank" rel="noopener">三立新聞網｜【盤前】外資愛了 加碼買進「這檔」4.3萬張（10/19 05:30）</a></li>
+    <li id="src-268"><a href="https://money.udn.com/money/story/5607/9822955" target="_blank" rel="noopener">經濟日報｜10月19日 五件財經大事搶先看（10/19 03:10）</a></li>
+    <li id="src-269"><a href="https://news.nextapple.com/finance/20261019/8E1B43DD51BD633597D8375509D552FF" target="_blank" rel="noopener">壹蘋新聞網｜外資提款5862億！投顧：台股本週續震盪 季線面臨考驗（10/19 01:00）</a></li>
+    <li id="src-270"><a href="https://www.lifetoutiao.news/358830/" target="_blank" rel="noopener">生活頭條｜【台股10/19日盤前分析】（10/19 00:52）</a></li>
+    <li id="src-271"><a href="https://businesstoday.com.tw/article/category/183008/post/202610180010" target="_blank" rel="noopener">今周刊｜華邦電、南亞科、旺宏…記憶體股強勢反彈？（10/18 21:38）</a></li>
+    <li id="src-272"><a href="https://news.nextapple.com/finance/20261018/D754EED528E4D9409F7E2307A5B280AD" target="_blank" rel="noopener">壹蘋新聞網｜日政府批准！台積電熊本二廠確定生產3奈米晶片（10/18 20:09）</a></li>
+    <li id="src-273"><a href="https://news.nextapple.com/finance/20261018/0A7DF85D8C4FED8FCD930DABE9FDA4FB" target="_blank" rel="noopener">壹蘋新聞網｜全球科技股本週殺聲隆隆！韓股跌逾14%最慘 記憶體成重災區（10/18 13:45）</a></li>
+    <li id="src-274"><a href="https://storm.mg/article/11173422" target="_blank" rel="noopener">風傳媒｜台股周一恐下殺千點？法人點名15檔「雙資護航」（10/18 11:32）</a></li>
+    <li id="src-275"><a href="https://ctinews.com/news/items/4bnbkwe6WP" target="_blank" rel="noopener">中天新聞網｜費半連8黑、恐慌指數急升 10/19台股開盤防線告急（10/18 08:32）</a></li>
+    <li id="src-276"><a href="https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK" target="_blank" rel="noopener">臺灣證券交易所｜每日市場成交資訊 FMTQIK（官方值至 10/16，成交值 9,938 億）</a></li>
     <li id="src-201"><a href="https://money.udn.com/money/story/5599/9820324" target="_blank" rel="noopener">經濟日報｜歐盟擬 12 月實施貿易多元化措施 加速降低對中國依賴（10/17 06:45）</a></li>
     <li id="src-202"><a href="https://news.cnyes.com/news/id/6632411" target="_blank" rel="noopener">鉅亨網｜10 月先停、12 月最後一升？高盛預測 Fed 升息路徑（10/17）</a></li>
     <li id="src-203"><a href="https://news.cnyes.com/news/id/6632403" target="_blank" rel="noopener">鉅亨網｜摩根士丹利發出最新警告：記憶體股低本益比恐為周期頂峰「估值陷阱」（10/17）</a></li>
