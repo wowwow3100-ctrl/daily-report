@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/10/18（週日）早盤場次</div>
+        <div class="stamp" id="updated">2026/10/18（週日）收盤場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -294,7 +294,7 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/17 盤後場．加權為證交所 MI_INDEX 10/16 官方收盤，成交值為中央社 10/16 收盤報導值（FMTQIK 官方值僅至 10/15，待覆核）；融資餘額為證交所 10/16 官方值；擔保維持率與風險戶數為證交所 10/16 官方值；SOX 為 10/16 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/18 收盤場．週日休市，數據沿用 10/16．加權為證交所 MI_INDEX 10/16 官方收盤，成交值為中央社 10/16 收盤報導值（FMTQIK 官方值僅至 10/15，待覆核）；融資餘額為證交所 10/16 官方值；擔保維持率與風險戶數為證交所 10/16 官方值；SOX 為 10/16 美股收盤）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">47,111</div><div class="chg up">+141.39（+0.30%）</div></div>
     <div class="m"><div class="lbl">成交值（上市）</div><div class="val">9,359 億</div><div class="chg down">較前日 -34.8%（對 10/15 官方值）</div></div>
@@ -394,7 +394,15 @@
   <!-- ===== /DATA:PREOPEN ===== -->
 
                                 <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/18 早盤場．依時間由新到舊．共 20 則）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/18 收盤場．依時間由新到舊．共 20 則）</span></h2>
+  <div class="card">
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/18 12:55</span>美股週觀察：AI 疑慮升溫 那斯達克週跌 4.5% Meta、特斯拉、SpaceX 財報將登場 <a class="ref" href="#src-262">[262]</a></div>
+    <div class="news-body">過去一週 AI 相關股遭賣壓，那斯達克綜合指數週跌 4.5%、標普 500 跌 1.95%；CoreWeave 單週暴跌 25%、美光跌近 15%；Meta 與特斯拉將於 10/21 美東盤後公布財報，SpaceX 預計 10/20 公布；10 年期美債殖利率降至 5.1%，原油週漲 10.4%至每桶 101.41 美元。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/18 04:10</span>AI 債務與油價風險 費半連跌 8 天 <a class="ref" href="#src-263">[263]</a></div>
+    <div class="news-body">費城半導體指數單週跌 11.4%、連跌 8 個交易日，為 2008 年金融海嘯以來最長跌勢；CoreWeave 信用惡化引發 AI 債務風險疑慮，布蘭特原油逼近 110 美元，推升 10 年期美債殖利率突破 5.1%。</div>
+  </div>
   <div class="card">
     <div class="news-title"><span class="cat">國際</span><span class="ntime">10/18 03:00</span>友達彭双浪：明年景氣不悲觀 記憶體缺貨排擠效應仍待觀察 <a class="ref" href="#src-261">[261]</a></div>
     <div class="news-body">友達董事長彭双浪 10/17 表示，多數研調機構預測 2027 年景氣略優於今年，戰爭與石油等變數影響減弱；他也指出記憶體缺貨與漲價對手機及 IT 產品的排擠效應何時緩解仍待觀察。</div>
@@ -447,6 +455,7 @@
     <div class="news-title"><span class="cat">財經</span><span class="ntime">10/17 03:20</span>10 月 17 日 五件財經大事搶先看 <a class="ref" href="#src-241">[241]</a></div>
     <div class="news-body">Aletheia 資本將台積電(2330)目標價調升至 5,000 元；美銀調查亞洲基金經理人淨加碼台灣比率達 50%；經濟部證實德州科學園區由民間出資、政府協助；立法院三讀通過 65 歲以上長者健保費由中央全額補助。</div>
   </div>
+  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/17 03:00</span>台股高檔震盪 三主軸選股 <a class="ref" href="#src-242">[242]</a></div>
     <div class="news-body">指數自高點回檔約 7%，獲利了結賣壓與 AI 基礎建設融資疑慮並存；文章認為進入選股不選市格局，建議鎖定獲利強韌龍頭、準千金股與題材未來龍頭。</div>
@@ -455,7 +464,6 @@
     <div class="news-title"><span class="cat">匯市</span><span class="ntime">10/17 03:00</span>貶不停 台幣本周淪最弱亞幣 <a class="ref" href="#src-243">[243]</a></div>
     <div class="news-body">新台幣 10/16 收 32.338 元、貶 7.3 分創逾兩個月新低，本週貶 4.63 角（約 1.43%），週線連三黑；外資已連續七個交易日賣超，大量匯出資金是台幣走弱主因。</div>
   </div>
-  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/17 02:54</span>15 檔逆風特攻隊 吸金 獲買盤青睞 後市還有看頭 <a class="ref" href="#src-207">[207]</a></div>
     <div class="news-body">台股本週大跌約 4.4%，部分個股憑 9 月營收佳、第 4 季展望正面逆勢吸金；文中提到台表科、長榮(2603)、今國光等（全文為付費內容）。</div>
@@ -467,14 +475,6 @@
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/17 02:43</span>台股躍亞洲基金首選市場 淨加碼比率達 50% 領先日韓 <a class="ref" href="#src-209">[209]</a></div>
     <div class="news-body">美銀證券 10 月調查（10/2～10/8、95 位亞洲基金經理人）顯示，台灣為最看好市場，淨加碼比率 50%，高於日本 45%、南韓 15%；35% 受訪者認為台灣是下一波 AI 熱潮最大受惠者。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/17 02:41</span>內資護持 指數重返 47K <a class="ref" href="#src-210">[210]</a></div>
-    <div class="news-body">台股 10/16 漲 141 點收 47,111 點；本週跌 2,202 點（約 4.4%），為歷年單週跌幅第二大。外資連 8 日賣超累計 6,817.8 億元，台積電(2330)單日遭賣超 535.6 億元；投信連 6 買、公股行庫承接 156.9 億元。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">政策</span><span class="ntime">10/17 02:23</span>經長：將在德州設科學園區 採「業者出資、政府協助」模式 <a class="ref" href="#src-211">[211]</a></div>
-    <div class="news-body">經濟部規劃在德州設科學園區，由電電公會集資、業者共同投資，每園區約需 20～40 億美元，協助台積電(2330)、鴻海(2317)中小供應商赴美設廠，政府提供融資保證及簽證、土地協助。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
@@ -575,6 +575,8 @@
     <li id="src-242"><a href="https://www.ctee.com.tw/news/20261017700140-439901" target="_blank" rel="noopener">工商時報｜台股高檔震盪 三主軸選股（10/17 03:00）</a></li>
     <li id="src-243"><a href="https://www.ctee.com.tw/news/20261017700029-439901" target="_blank" rel="noopener">工商時報｜貶不停 台幣本周淪最弱亞幣（10/17 03:00）</a></li>
     <li id="src-244"><a href="https://udn.com/news/story/7251/9819742" target="_blank" rel="noopener">經濟日報｜台股淪提款機…外資連 8 日賣超 今調節台積電 2.2 萬張（10/16 19:09）</a></li>
+    <li id="src-262"><a href="https://uanalyze.com.tw/articles/1723257303" target="_blank" rel="noopener">優分析｜美股觀察：AI投資疑慮升溫、那斯達克週跌4.5% Meta、特斯拉與SpaceX將公布財報（10/18 12:55）</a></li>
+    <li id="src-263"><a href="https://www.chinatimes.com/newspapers/20261018000353-260120" target="_blank" rel="noopener">中國時報｜AI債務與油價風險 費半連跌8天（10/18 04:10）</a></li>
     <li id="src-260"><a href="https://money.udn.com/money/story/5607/9821535" target="_blank" rel="noopener">經濟日報｜10月18日 五件財經大事搶先看：費半連八黑、油價（10/18 02:30）</a></li>
     <li id="src-261"><a href="https://money.udn.com/money/story/5607/9821535" target="_blank" rel="noopener">經濟日報｜10月18日 五件財經大事搶先看：友達彭双浪、AI 受惠股獲利（10/18 03:00）</a></li>
     <li id="src-250"><a href="https://www.chinatimes.com/realtimenews/20261017002733-260410" target="_blank" rel="noopener">中時新聞網｜下周一恐血洗1100點…千萬別做錯！「15檔有大人在顧」完整名單來了（10/17 18:36）</a></li>
