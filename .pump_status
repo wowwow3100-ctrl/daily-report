@@ -13,14 +13,14 @@
   },
   "market": {
     "kind": "market",
-    "ts": "2026-10-20T07:10:04",
-    "fetch": "no change 2026-10-19\n",
+    "ts": "2026-10-20T23:45:01",
+    "fetch": "no change 2026-10-20\n",
     "status": "nochange"
   },
   "material": {
     "kind": "material",
-    "ts": "2026-10-20T20:15:02",
-    "fetch": "wrote 885 details 5 days 8\n",
-    "status": "pushed"
+    "ts": "2026-10-20T23:15:01",
+    "fetch": "no change 888\n",
+    "status": "nochange"
   }
 }
