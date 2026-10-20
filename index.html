@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/10/20（週二）夜間場次</div>
+        <div class="stamp" id="updated">2026/10/21（週三）早盤場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -294,12 +294,12 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/20 夜間場．加權與成交值為 10/20 經濟日報收盤報導值，證交所官方 10/20 資料尚未發布、待覆核；融資餘額、擔保維持率與風險戶數為證交所 10/19 官方值；SOX 為 10/19 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/21 早盤場．加權與成交值為 10/20 經濟日報收盤報導值，證交所官方 10/20 資料尚未發布、待覆核；融資餘額、擔保維持率與風險戶數為證交所 10/19 官方值；SOX 為 10/20 美股收盤）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">46,293</div><div class="chg down">-529.15（-1.13%）</div></div>
     <div class="m"><div class="lbl">成交值（上市）</div><div class="val">7,587 億</div><div class="chg down">較前日 -8.0%（經濟日報收盤報導值）</div></div>
     <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">6,406 億</div><div class="chg down">單日 -49.8 億</div></div>
-    <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">11,316</div><div class="chg up">+1.61%（10/19 美股，止跌反彈）</div></div>
+    <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">11,284</div><div class="chg down">-0.29%（10/20 美股，前日 +1.61%）</div></div>
     <div class="m"><div class="lbl">全市場擔保維持率</div><div class="val">273.84%</div><div class="chg down">較前日 -3.46</div></div>
     <div class="m"><div class="lbl">信用風險戶數</div><div class="val">18 戶</div><div class="chg up">較前日 +7 戶</div><div class="sub">維持率不足 12｜追繳 4｜處分 2</div></div>
   </div>
@@ -392,7 +392,23 @@
   <!-- ===== /DATA:PREOPEN ===== -->
 
                                                                 <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/20 夜間場．依時間由新到舊．共 20 則）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/21 早盤場．依時間由新到舊．共 20 則）</span></h2>
+  <div class="card">
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/21 06:16</span>美股收盤：道瓊大漲 529.85 點收 52,495.88 費半 -0.29% 收 11,283.81 台積電(2330)ADR 漲 1.16% 3M 財報帶動 <a class="ref" href="#src-338">[338]</a></div>
+    <div class="news-body">自由財經：那指 -0.02%、標普 500 +0.28%；3M 上調全年財測股價漲逾 5%，油價回落，惟市場仍擔憂 AI 投資回報，SK 海力士 ADR 跌 2.2%、台股 ADR 跌多漲少。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/21 05:10</span>台股盤前要聞：台灣美光罷工危機升溫 22 日關鍵協商 9 月外銷訂單 1,142.1 億美元連 19 紅 新台幣 32.617 股匯雙殺 <a class="ref" href="#src-339">[339]</a></div>
+    <div class="news-body">鉅亨網：9 月外銷訂單月增 10.9%、年增 62.4%，AI 與高效能運算需求帶動；20 日三大法人賣超約 968 億元，新台幣單日貶 1.72 角。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/21 05:00</span>SpaceX 公布 Q3 財報 營收約 145.8 億美元年增 161% 淨利約 44 億美元 盤後小漲 台積電(2330)ADR 收 425.08 美元 <a class="ref" href="#src-340">[340]</a></div>
+    <div class="news-body">新浪財經：每股盈餘 0.35 美元、資本支出約 195.9 億美元；Meta、特斯拉 21 日美股盤後公布財報。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/21 04:42</span>美股收評：道瓊逆勢大漲 1.02% 那指微跌 醫療防禦股領漲 市場對 AI 鉅額資本支出回報存疑 <a class="ref" href="#src-341">[341]</a></div>
+    <div class="news-body">Investing.com／FX168：Meta、Netflix、Alphabet 偏弱；油價自五個月高位回落；中東局勢仍有不確定性。</div>
+  </div>
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/20 19:52</span>台股再探季線 外資續賣 795 億連 10 賣 反手敲進緯創(3231)、仁寶(2324)、英業達(2356)、和碩(4938)、鴻海(2317) <a class="ref" href="#src-327">[327]</a></div>
     <div class="news-body">鉅亨網：外資累計連 10 日賣超逾 8,380 億元，單日減碼多檔 ETF、友達(2409) 與晶圓代工族群，轉而買進電子代工股。</div>
@@ -410,6 +426,10 @@
     <div class="news-body">今周刊：新台幣盤中低見 32.672，10 天貶近 1 元；外資 10/20 賣超 795.39 億元，央行表示將視資金流向適時進場。分析師李其展提醒，美股反彈或美元轉弱可能出現假跌破。</div>
   </div>
   <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/20 17:00</span>外資連 10 賣台股 10 月賣超 7,416 億 今年累計賣超逾 2.11 兆元 投信連 8 買累計 1,336 億 <a class="ref" href="#src-342">[342]</a></div>
+    <div class="news-body">經濟日報：外資及陸資 10/20 賣超 795.4 億元，近 10 日累計 8,380 億元；分析認為 10 月升息機率低、12 月較可能。</div>
+  </div>
+  <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/20 16:30</span>基富通張錫：外資今年賣超破 2 兆不必驚 看好台積電(2330) 2028 年有機會上看 5,000 元 <a class="ref" href="#src-330">[330]</a></div>
     <div class="news-body">工商時報：張錫指出外資總市值今年增至逾 70 兆元，賣超占比不高；台積電 10/20 收 2,405 元。</div>
   </div>
@@ -422,6 +442,10 @@
     <div class="news-body">風傳媒：加權收 46,292.93（-529.15），台積電拖累約 118 點；三大法人合計賣超約 968 億元。軟板股台郡(6269)再漲停收 88.3 元，光學鏡頭族群逆勢走強，PCB 族群多數開高走低。</div>
   </div>
   <div class="card">
+    <div class="news-title"><span class="cat">期貨</span><span class="ntime">10/20 15:56</span>連兩日險守季線 台指期夜盤反彈 永豐期：量縮至 10/13 以來低點 賣壓有減緩跡象 <a class="ref" href="#src-343">[343]</a></div>
+    <div class="news-body">工商時報：夜盤一度上漲 73 點至 46,414；群益期指出外資現貨與期貨態度偏謹慎，季線若帶量跌破恐加速下殺。</div>
+  </div>
+  <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/20 15:36</span>外資連 10 賣今再砍 795 億 台股開高走低收跌 529 點 投信連 8 日買超 <a class="ref" href="#src-332">[332]</a></div>
     <div class="news-body">Newtalk：早盤一度翻紅，權值股賣壓加重後翻黑，收 46,292.93；投信買超仍難抵銷外資與自營商賣壓。</div>
   </div>
@@ -429,6 +453,7 @@
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/20 13:57</span>台股跌 529.15 點收 46,292.93 跌破季線 成交 7,587 億 第一金投顧：上方缺口未補盤整恐拉長 <a class="ref" href="#src-325">[325]</a></div>
     <div class="news-body">經濟日報：緯創(3231)、台玻(1802)、奇鋐(3017)、鴻海(2317)等成交值大且收高，南亞(1303)、聯發科(2454)、大立光(3008)等偏弱；群益投顧提醒 Meta 本週三財報為 AI 資本支出關鍵觀察點。</div>
   </div>
+  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/20 10:02</span>郭哲榮：10/25 前這週可能是第四季布局時機 指中東油價與通膨疑慮是前日重挫主因 <a class="ref" href="#src-333">[333]</a></div>
     <div class="news-body">三立財經：早盤 9:36 加權一度漲 60 點至 46,882；分析師點名台積電(2330)、元大台灣50(0050) 等標的（個人看法，非本站建議）。</div>
@@ -449,46 +474,31 @@
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/20 08:21</span>10/20 盤前：台股回測季線築底 關注 AI 投資變現能力 昨日三大法人賣超 888.64 億 <a class="ref" href="#src-336">[336]</a></div>
     <div class="news-body">經濟日報：後續焦點含輝達 GTC 柏林、TPCA 與 IMPACT 展及外資期貨空單動向，分析建議保留資金彈性。</div>
   </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/20 08:12</span>10／20 盤前：PCB 展登場 CCL、PTFE、玻纖布、先進封裝題材 台積電(2330)熊本廠投資金額上修 <a class="ref" href="#src-337">[337]</a></div>
-    <div class="news-body">工商時報：利多含央行盤中喊話、PCB 展六大領域；利空為短期反彈需條件配合、AI 熱潮加劇通膨使聯準會升息兩難。</div>
-  </div>
-  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
-  <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/20 05:55</span>美股收盤：AI 買盤回流 那指 +1.11% 費半 +1.61% 收 11,316 道瓊小跌 0.07% <a class="ref" href="#src-301">[301]</a></div>
-    <div class="news-body">三立新聞網：10/19 美股 AI 股逢低買盤進場，費城半導體收 11,316.34 點（+179.06）、那斯達克 26,430.89（+290.85）、標普 500 7,690.73（+0.41%）、道瓊 51,966.03（-0.07%）。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">總經</span><span class="ntime">10/20 03:35</span>五件財經大事：新台幣連兩日測試 32.5 元 央行盤中罕見喊話 外資今年賣超破 2 兆 英特爾談追趕台積電(2330) <a class="ref" href="#src-302">[302]</a></div>
-    <div class="news-body">經濟日報：央行認為貶值主因為 AI 估值偏高與外資匯出，將視供需適時進場；另有民間參與公共建設投資創四年同期新高、華委新加坡子公司完成 20 億美元聯貸等。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/20 01:30</span>史上首見！外資賣台股今年砍逾 2 兆 10 月已賣超約 6,620 億 台積電(2330)被賣最多 <a class="ref" href="#src-303">[303]</a></div>
-    <div class="news-body">聯合報／經濟日報：外資 10/19 賣超約 767 億，今年累計賣超約 2.03 兆元，超越 2022 年約 1.2 兆的紀錄；台積電累計被賣約 1.9 兆，櫃買市場則仍有約 1,060 億買超。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/19 22:39</span>美股存儲半導體集體反彈 閃迪、西部數據漲逾 6% 美光、SK 海力士漲逾 3% <a class="ref" href="#src-304">[304]</a></div>
-    <div class="news-body">21 世紀經濟報導：記憶體股連跌數日後回升，費半盤中一度漲逾 3%，希捷漲逾 5%、英特爾漲逾 4%；現貨黃金跌破 4,150 美元。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/19 18:54</span>外資賣超 767 億連 9 賣 調節力積電(6770)4.64 萬張居首 中鋼(2002)、友達(2409)居買超前列 <a class="ref" href="#src-305">[305]</a></div>
-    <div class="news-body">經濟日報：三大法人合計賣超 899.54 億；外資賣超力積電、元大台灣50(0050) 3.68 萬張、台玻(1802) 2.98 萬張；台積電(2330)被賣 9,834 張、連 9 日減碼。</div>
-  </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
 
   <!-- ===== DATA:BROKER ===== -->
-  <h2 id="broker">10/19 券商報告摘要</h2>
+  <h2 id="broker">10/20 券商報告摘要</h2>
   <div class="card">
     <ul class="sum-list">
+      <li>緯穎（6669）：外資（未具名）將目標價由 3,184 元上調至 3,200 元，認為 AI ASIC 伺服器需求將延續至 2027 年<a class="ref" href="#src-331">[331]</a></li>
+      <li>緯創（3231）：2027 年 EPS 預估由 19.96 元上修至 31.06 元，目標價由 300 元上調至 308 元（券商名稱待確認）<a class="ref" href="#src-331">[331]</a></li>
       <li>致茂（2360）：富邦投顧維持「買進」、目標價 2,700 元；Q3 營收高於預期，AI 伺服器電源測試需求預計延續至 2027 年<a class="ref" href="#src-321">[321]</a></li>
       <li>聯茂（6213）：大和資本將合理股價由 600 元上調至 1,110 元，為外資首家喊出千元預期<a class="ref" href="#src-319">[319]</a></li>
-      <li>儒鴻（1476）：統一投顧「買進」、目標價 365 元（前值 330 元）；訂單能見度達 2027 年 3～4 月，印尼第三期產能稍晚<a class="ref" href="#src-321">[321]</a></li>
-      <li>長榮（2603）：富邦投顧「買進」、目標價 305 元；Q3 遠洋運價反彈，惟新船供給增加可能壓抑 2027 年運價<a class="ref" href="#src-321">[321]</a></li>
     </ul>
   </div>
   <table>
     <tr><th>日期</th><th>券商</th><th>個股</th><th>評等</th><th>目標價</th><th>一句話重點</th></tr>
+    <tr>
+      <td class="num">10/20</td><td><span class="tag">外資</span>★未具名</td><td>緯穎 (6669)</td><td>未提及</td>
+      <td class="num"><span class="up">3,200</span><br><span class="muted">前值 3,184</span></td>
+      <td class="muted">AI ASIC 伺服器需求延續至 2027 年（今周刊 10/20 16:17）<a class="ref" href="#src-331">[331]</a></td>
+    </tr>
+    <tr>
+      <td class="num">10/20</td><td><span class="tag">待確認</span>★未具名</td><td>緯創 (3231)</td><td>未提及</td>
+      <td class="num"><span class="up">308</span><br><span class="muted">前值 300</span></td>
+      <td class="muted">2027 年 EPS 預估 19.96→31.06 元（今周刊 10/20 16:17）<a class="ref" href="#src-331">[331]</a></td>
+    </tr>
     <tr>
       <td class="num">10/19</td><td><span class="tag">內資</span>富邦投顧</td><td>致茂 (2360)</td><td>買進（維持）</td>
       <td class="num"><span class="up">2,700</span><br><span class="muted">前值 2,700</span></td>
@@ -544,6 +554,12 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
+    <li id="src-338"><a href="https://ec.ltn.com.tw/article/breakingnews/5613045" target="_blank" rel="noopener">自由財經｜美股收盤》財報抵銷AI投資疑慮 美股漲跌互見 台積電ADR漲1.16％（10/21 06:16）</a></li>
+    <li id="src-339"><a href="https://news.cnyes.com/news/id/6634420" target="_blank" rel="noopener">鉅亨網｜〈台股盤前要聞〉台灣美光罷工危機升溫、外銷訂單連19紅、股匯雙殺再現（10/21 05:10）</a></li>
+    <li id="src-340"><a href="https://k.sina.com.cn/article_7857201856_1d45362c001908rt6y.html" target="_blank" rel="noopener">新浪財經｜新浪美股熱點小時報（SpaceX Q3 財報，10/21 05:00）</a></li>
+    <li id="src-341"><a href="https://hk.investing.com/news/stock-market-news/article-1707932" target="_blank" rel="noopener">Investing.com／FX168｜美股收評：道指狂飆530點、納指逆勢收跌（10/21 04:42）</a></li>
+    <li id="src-342"><a href="https://money.udn.com/money/story/5607/9826647" target="_blank" rel="noopener">經濟日報｜外資連10賣台股 今年累計賣超規模逾2.1兆元（10/20 17:00）</a></li>
+    <li id="src-343"><a href="https://www.ctee.com.tw/news/20261020701551-430202" target="_blank" rel="noopener">工商時報｜連兩日險守季線 台指期夜盤反彈（10/20 15:56）</a></li>
     <li id="src-327"><a href="https://news.cnyes.com/news/id/6634417" target="_blank" rel="noopener">鉅亨網｜台股再探季線 外資續賣795億元連10賣 反手敲進電子代工股（10/20 19:52）</a></li>
     <li id="src-328"><a href="https://money.udn.com/money/story/5612/9826707" target="_blank" rel="noopener">經濟日報｜外資賣超台股795億元減碼ETF 連10日調節台積電（10/20 17:22）</a></li>
     <li id="src-329"><a href="https://news.tvbs.com.tw/money/4038786" target="_blank" rel="noopener">TVBS新聞網｜外資連10賣再砍795億！這檔ETF狂倒13萬張（10/20 17:14）</a></li>
