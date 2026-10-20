@@ -104,6 +104,39 @@ def safety_check(files, bulk=False):
     return None
 
 
+MUST = ('class="bnav"', "</html>", "<!-- ===== /DATA:SOURCES ===== -->", "<footer>")
+S_OPEN, S_CLOSE = "<!-- ===== DATA:SOURCES ===== -->", "<!-- ===== /DATA:SOURCES ===== -->"
+
+
+def guard_index():
+    """推送前檢查 index.html 版型是否完整（排程改來源區時曾把頁尾＋底部導覽列吃掉）。
+    壞了就用上一版（HEAD）的版型尾巴補回來，只保留這次新寫的來源清單。"""
+    import re
+    p = os.path.join(HERE, "index.html")
+    cur = open(p, encoding="utf-8").read()
+    if all(m in cur for m in MUST) and cur.count('<ol class="srcs">') == 1:
+        return
+    rc, good, _ = git(["show", "HEAD:index.html"])
+    if rc != 0 or not all(m in good for m in MUST) or S_OPEN not in cur:
+        log("guard_index: index.html broken and cannot repair; restoring HEAD copy")
+        git(["checkout", "--", "index.html"])
+        return
+    i = cur.index(S_OPEN)
+    seg = cur[i:]
+    gi, ge = good.index(S_OPEN), good.index(S_CLOSE) + len(S_CLOSE)
+    block = good[gi:ge]
+    if '<ol class="srcs">' in seg:
+        s = seg.rindex('<ol class="srcs">')
+        e = seg.find("</ol>", s)
+        if e > 0:
+            newol = seg[s:e + 5]
+            block = re.sub(r'<ol class="srcs">.*?</ol>', lambda m: newol, block, count=1, flags=re.S)
+    fixed = cur[:i] + block + good[ge:]
+    with open(p, "w", encoding="utf-8") as f:
+        f.write(fixed)
+    log("guard_index: repaired index.html tail (footer/nav) from HEAD")
+
+
 def do_push():
     global _last_push_ts
     if time.time() - _last_push_ts < RATE_LIMIT_SEC:
@@ -137,6 +170,10 @@ def do_push():
 
     subject = msg.splitlines()[0][:120]
     body = "\n".join(msg.splitlines()[1:]).strip()
+    try:
+        guard_index()
+    except Exception as e:
+        log("guard_index error: %s" % e)
     rc1, o1, e1 = git(["add", "-A"])
     cargs = GIT_AUTHOR + ["commit", "-m", subject] + (["-m", body] if body else [])
     rc2, o2, e2 = git(cargs)
