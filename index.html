@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/10/21（週三）收盤場次</div>
+        <div class="stamp" id="updated">2026/10/22（週四）早盤場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -294,12 +294,12 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/21 收盤場．加權與成交值為中央社 10/21 收盤報導值，證交所官方 10/21 資料尚未發布、待覆核；融資餘額、擔保維持率與風險戶數為證交所 10/20 官方值；SOX 為 10/20 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/22 早盤場．加權與成交值為 10/21 收盤報導值，證交所官方 10/21 資料尚未發布、待覆核；融資餘額、擔保維持率與風險戶數為證交所 10/20 官方值；SOX 為 10/21 美股收盤）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">46,888</div><div class="chg up">+594.84（+1.28%）</div></div>
-    <div class="m"><div class="lbl">成交值（上市）</div><div class="val">8,332 億</div><div class="chg up">較前日 +9.8%（中央社收盤報導值）</div></div>
+    <div class="m"><div class="lbl">成交值（上市）</div><div class="val">8,332 億</div><div class="chg up">較前日 +9.8%（中央社收盤報導值；經濟日報 8,746 億含不同口徑）</div></div>
     <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">6,381 億</div><div class="chg down">單日 -25.2 億</div></div>
-    <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">11,284</div><div class="chg down">-0.29%（10/20 美股，前日 +1.61%）</div></div>
+    <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">11,506</div><div class="chg up">+1.97%（10/21 美股，前日 -0.29%）</div></div>
     <div class="m"><div class="lbl">全市場擔保維持率</div><div class="val">271.07%</div><div class="chg down">較前日 -2.77</div></div>
     <div class="m"><div class="lbl">信用風險戶數</div><div class="val">20 戶</div><div class="chg up">較前日 +2 戶</div><div class="sub">維持率不足 14｜追繳 6｜處分 0</div></div>
   </div>
@@ -392,7 +392,43 @@
   <!-- ===== /DATA:PREOPEN ===== -->
 
                                                                 <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/21 收盤場．依時間由新到舊．共 20 則）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/22 早盤場．依時間由新到舊．共 20 則）</span></h2>
+  <div class="card">
+    <div class="news-title"><span class="cat">期貨</span><span class="ntime">10/22 06:17</span>SpaceX 財報報喜 美股狂歡 台指夜盤飆 469 點 台股反攻號角響 <a class="ref" href="#src-400">[400]</a></div>
+    <div class="news-body">三立新聞網：四大指數收紅，輝達(NVDA) 漲 2.54%、美超微漲約 9.6%；外資期貨淨空單仍達 86,072 口。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">ADR</span><span class="ntime">10/22 06:16</span>美股四大指數收漲 費半 +1.97% 收 11,505.56 台積電 ADR +1.60% 日月光 ADR +4.02% 台指期夜盤收 47,482 (+469) <a class="ref" href="#src-401">[401]</a></div>
+    <div class="news-body">民視新聞網：道瓊 +360.21 點收 52,856.09、標普 500 收 7,757.17、那斯達克收 26,702.86；聯電 ADR +0.76%。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/22</span>〈美股盤後〉SpaceX 財報重燃 AI 買氣 標普連 3 紅 費半漲近 2% <a class="ref" href="#src-402">[402]</a></div>
+    <div class="news-body">鉅亨網：SpaceX 股價 +7.79%，馬斯克稱與特斯拉各設委員會評估合併；Meta 上調 2026 資本支出下限至 1,350 億美元；Netflix -5.31%。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/22 03:32</span>10/22 五件財經大事：輝達 GTC 柏林點名欣興(3037)、京元電(2449)、矽品 公平會禁 Grab 併購 foodpanda 台灣 <a class="ref" href="#src-403">[403]</a></div>
+    <div class="news-body">經濟日報：八家上市櫃科技廠前三季斥資逾 130 億元在台中買地，大立光(3008) 斥資逾 80 億元連買七座廠房。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/22 03:15</span>台股呈現「底底高」格局 大盤強彈 594 點 外資終止連十賣 <a class="ref" href="#src-404">[404]</a></div>
+    <div class="news-body">經濟日報：成交 8,746 億元；外資買超 22.3 億元、投信買超 127.9 億元、自營商賣超 135.7 億元；分析師盯 48,650 點關卡，Fed 10/28 會議為變數。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/22 03:00</span>台股見短線止跌訊號 反攻 47K 輝達 AI 工廠 14 天部署 鴻海(2317)、廣達(2382)、緯創(3231)、台達電(2308) 列夥伴 <a class="ref" href="#src-405">[405]</a></div>
+    <div class="news-body">工商時報：加權收 46,887、站回 5 日線，上方壓力約 48,155；美國科技大廠財報與 Fed 決策為關鍵風險。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">期貨</span><span class="ntime">10/21 21:41</span>台指期夜盤衝破 47K 美股開盤費半回血 Meta、特斯拉財報將至 <a class="ref" href="#src-406">[406]</a></div>
+    <div class="news-body">三立新聞網：夜盤盤中高 47,475、低 46,983；美股開盤費半一度上漲 1.53%。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/21 17:36</span>外資買超 9.6 億終止連 10 賣 加碼友達(2409) 4.4 萬張居首 鴻海(2317)、南亞(1303) 次之 <a class="ref" href="#src-407">[407]</a></div>
+    <div class="news-body">東森新聞：三大法人合計買超 5.68 億元；外資賣超台積電(2330) 6,153 張；台積電、台塑四寶、被動元件與 PCB 族群走強。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/21 17:17</span>外資中止連 10 賣 台股期現貨齊翻多 買超友達(2409)、鴻海(2317)、南亞(1303) 各逾 2 萬張 <a class="ref" href="#src-408">[408]</a></div>
+    <div class="news-body">鉅亨網：投信買超 129.19 億元、自營商賣超 133.11 億元；外資期貨淨空單 86,072 口，連 10 賣累計賣超約 8,380.64 億元。</div>
+  </div>
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/21 13:57</span>台股漲 594.84 點收 46,887.77 成交 8,332 億 塑膠 +4.58% 金融 +2.55% 領漲 <a class="ref" href="#src-344">[344]</a></div>
     <div class="news-body">中央社：盤中高點 47,254.93，非金融指數收 41,594.41；上市 610 檔上漲、384 檔下跌、113 檔平盤。</div>
@@ -417,6 +453,7 @@
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/21 09:15</span>台股開高強彈近 800 點 台積電(2330) 領軍五大權值股走揚 低軌衛星族群升空 <a class="ref" href="#src-349">[349]</a></div>
     <div class="news-body">經濟日報：台指期夜盤大漲 634 點帶動開盤，騰輝電子-KY(6672)、元晶(6443) 快速漲停；今日台指期結算，留意盤中震盪。</div>
   </div>
+  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/21 09:06</span>終結跌勢！台股開盤大反彈 733 點 收復 47,000 台積電(2330) 開 2,425 元 <a class="ref" href="#src-350">[350]</a></div>
     <div class="news-body">民視新聞網：開盤升幅 1.59% 至 47,025.95，鴻海(2317)、聯發科(2454)、台達電(2308) 及四大金控同步開高。</div>
@@ -430,57 +467,21 @@
     <div class="news-body">自由財經：那指 -0.02%、標普 500 +0.28%；3M 上調全年財測股價漲逾 5%，油價回落，惟市場仍擔憂 AI 投資回報，SK 海力士 ADR 跌 2.2%、台股 ADR 跌多漲少。</div>
   </div>
   <div class="card">
+    <div class="news-title"><span class="cat">券商</span><span class="ntime">10/21 03:00</span>南亞(1303) 目標價 瑞銀喊上 390 元 樂觀情境 440 元 麥格理 424 元 <a class="ref" href="#src-409">[409]</a></div>
+    <div class="news-body">工商時報：瑞銀上調 2026、2027 年 EPS 預估至 16、26 元；第四季 CCL 營業利益率 39%、2027 年擴至 44%。</div>
+  </div>
+  <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/21 05:10</span>台股盤前要聞：台灣美光罷工危機升溫 22 日關鍵協商 9 月外銷訂單 1,142.1 億美元連 19 紅 新台幣 32.617 股匯雙殺 <a class="ref" href="#src-339">[339]</a></div>
     <div class="news-body">鉅亨網：9 月外銷訂單月增 10.9%、年增 62.4%，AI 與高效能運算需求帶動；20 日三大法人賣超約 968 億元，新台幣單日貶 1.72 角。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/21 05:00</span>SpaceX 公布 Q3 財報 營收約 145.8 億美元年增 161% 淨利約 44 億美元 盤後小漲 台積電(2330)ADR 收 425.08 美元 <a class="ref" href="#src-340">[340]</a></div>
-    <div class="news-body">新浪財經：每股盈餘 0.35 美元、資本支出約 195.9 億美元；Meta、特斯拉 21 日美股盤後公布財報。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/21 04:42</span>美股收評：道瓊逆勢大漲 1.02% 那指微跌 醫療防禦股領漲 市場對 AI 鉅額資本支出回報存疑 <a class="ref" href="#src-341">[341]</a></div>
-    <div class="news-body">Investing.com／FX168：Meta、Netflix、Alphabet 偏弱；油價自五個月高位回落；中東局勢仍有不確定性。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/21 04:14</span>10/21 五件財經大事：9 月外銷訂單 1,142.1 億美元年增 62.4% 證交所推「提升企業價值計畫 2.0」 <a class="ref" href="#src-352">[352]</a></div>
-    <div class="news-body">經濟日報：外銷訂單連兩個月破千億美元；首批 29 家公司適用新揭露制度含台積電(2330)；蘋果 28 日舉行新品發表會。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/20 19:52</span>台股再探季線 外資續賣 795 億連 10 賣 反手敲進緯創(3231)、仁寶(2324)、英業達(2356)、和碩(4938)、鴻海(2317) <a class="ref" href="#src-327">[327]</a></div>
-    <div class="news-body">鉅亨網：外資累計連 10 日賣超逾 8,380 億元，單日減碼多檔 ETF、友達(2409) 與晶圓代工族群，轉而買進電子代工股。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/20 17:22</span>外資賣超 795.4 億減碼 ETF 連 10 日調節台積電(2330) 累計減碼 13.23 萬張 投信買超 183.15 億 <a class="ref" href="#src-328">[328]</a></div>
-    <div class="news-body">經濟日報：三大法人合計賣超 968.04 億元；外資連 10 日調節台積電合計約 13.23 萬張。</div>
-  </div>
-  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/20 17:14</span>外資連 10 賣再砍 795 億 中信台灣收益(00406A) 遭賣逾 13 萬張 緯創(3231)、台玻(1802)、仁寶(2324)「老 AI」居買超榜 <a class="ref" href="#src-329">[329]</a></div>
-    <div class="news-body">TVBS：外資當日賣超 795.39 億元；買超榜以緯創、台玻、仁寶等老 AI 族群居前，顯示資金有輪動跡象。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">匯市</span><span class="ntime">10/20 17:06</span>新台幣收 32.617 貶 1.72 角 創 2025 年 4 月以來新低 外資連 10 賣累計約 8,380 億 <a class="ref" href="#src-323">[323]</a></div>
-    <div class="news-body">今周刊：新台幣盤中低見 32.672，10 天貶近 1 元；外資 10/20 賣超 795.39 億元，央行表示將視資金流向適時進場。分析師李其展提醒，美股反彈或美元轉弱可能出現假跌破。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/20 17:00</span>外資連 10 賣台股 10 月賣超 7,416 億 今年累計賣超逾 2.11 兆元 投信連 8 買累計 1,336 億 <a class="ref" href="#src-342">[342]</a></div>
-    <div class="news-body">經濟日報：外資及陸資 10/20 賣超 795.4 億元，近 10 日累計 8,380 億元；分析認為 10 月升息機率低、12 月較可能。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/20 16:30</span>基富通張錫：外資今年賣超破 2 兆不必驚 看好台積電(2330) 2028 年有機會上看 5,000 元 <a class="ref" href="#src-330">[330]</a></div>
-    <div class="news-body">工商時報：張錫指出外資總市值今年增至逾 70 兆元，賣超占比不高；台積電 10/20 收 2,405 元。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">10/20 16:17</span>輝達 GTC 柏林 10/20～22 黃仁勳 21 日下午主題演說 高盛列 18 家台廠「買進」 緯創(3231)盤中一度漲逾 6% <a class="ref" href="#src-331">[331]</a></div>
-    <div class="news-body">今周刊：高盛買進名單含鴻海(2317)、緯穎(6669)、緯創、奇鋐(3017)、台光電(2383)、台積電(2330) 等，帶動伺服器代工股走高。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
 
   <!-- ===== DATA:BROKER ===== -->
-  <h2 id="broker">10/20 券商報告摘要</h2>
+  <h2 id="broker">10/22 券商報告摘要</h2>
   <div class="card">
     <ul class="sum-list">
+      <li>南亞（1303）：瑞銀將目標價上調至 390 元（樂觀情境 440 元），上修 2026、2027 年 EPS 至 16、26 元，看好銅箔基板毛利率擴張<a class="ref" href="#src-409">[409]</a></li>
       <li>緯穎（6669）：外資（未具名）將目標價由 3,184 元上調至 3,200 元，認為 AI ASIC 伺服器需求將延續至 2027 年<a class="ref" href="#src-331">[331]</a></li>
       <li>緯創（3231）：2027 年 EPS 預估由 19.96 元上修至 31.06 元，目標價由 300 元上調至 308 元（券商名稱待確認）<a class="ref" href="#src-331">[331]</a></li>
       <li>致茂（2360）：富邦投顧維持「買進」、目標價 2,700 元；Q3 營收高於預期，AI 伺服器電源測試需求預計延續至 2027 年<a class="ref" href="#src-321">[321]</a></li>
@@ -489,6 +490,11 @@
   </div>
   <table>
     <tr><th>日期</th><th>券商</th><th>個股</th><th>評等</th><th>目標價</th><th>一句話重點</th></tr>
+    <tr>
+      <td class="num">10/21</td><td><span class="tag">外資</span>瑞銀 UBS</td><td>南亞 (1303)</td><td>未提及</td>
+      <td class="num"><span class="up">390</span><br><span class="muted">前值 待確認</span></td>
+      <td class="muted">CCL 毛利率擴張優於預期，EPS 上修至 16／26 元（工商時報 10/21 03:00）<a class="ref" href="#src-409">[409]</a></td>
+    </tr>
     <tr>
       <td class="num">10/20</td><td><span class="tag">外資</span>★未具名</td><td>緯穎 (6669)</td><td>未提及</td>
       <td class="num"><span class="up">3,200</span><br><span class="muted">前值 3,184</span></td>
@@ -554,6 +560,16 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
+    <li id="src-400"><a href="https://www.setn.com/news/1926406" target="_blank" rel="noopener">三立新聞網｜【盤前】SpaceX財報報喜美股狂歡！台指夜盤飆469點（10/22 06:17）</a></li>
+    <li id="src-401"><a href="https://www.ftvnews.com.tw/news/detail/2026A22W0068" target="_blank" rel="noopener">民視新聞網｜SpaceX報喜！費半勁揚近2％ 台指期夜盤狂飆近5百點（10/22 06:16）</a></li>
+    <li id="src-402"><a href="https://news.cnyes.com/news/id/6635431" target="_blank" rel="noopener">鉅亨網｜〈美股盤後〉SpaceX財報重燃AI買氣 標普連3紅 費半漲近2%（10/22）</a></li>
+    <li id="src-403"><a href="https://money.udn.com/money/story/5607/9829918" target="_blank" rel="noopener">經濟日報｜10月22日 五件財經大事搶先看（10/22 03:32）</a></li>
+    <li id="src-404"><a href="https://udn.com/news/story/7251/9829736" target="_blank" rel="noopener">經濟日報｜台股呈現「底底高」格局！大盤強彈 外資終止連十賣（10/22 03:15）</a></li>
+    <li id="src-405"><a href="https://www.ctee.com.tw/news/20261022700052-439901" target="_blank" rel="noopener">工商時報｜台股見短線止跌訊號 反攻47K（10/22 03:00）</a></li>
+    <li id="src-406"><a href="https://www.setn.com/news/1926322" target="_blank" rel="noopener">三立新聞網｜重磅雙巨頭財報將至！美股開盤費半回血 台指期夜盤衝破47K（10/21 21:41）</a></li>
+    <li id="src-407"><a href="https://news.ebc.net.tw/news/business/576829" target="_blank" rel="noopener">東森新聞｜終止連10賣！外資買超9.6億 掃貨友達、鴻海、南亞（10/21 17:36）</a></li>
+    <li id="src-408"><a href="https://news.cnyes.com/news/id/6635076" target="_blank" rel="noopener">鉅亨網｜外資中止連10賣！台股期現貨齊翻多（10/21 17:17）</a></li>
+    <li id="src-409"><a href="https://www.ctee.com.tw/news/20261021700079-439901" target="_blank" rel="noopener">工商時報｜南亞目標價 瑞銀喊上390元（10/21 03:00）</a></li>
     <li id="src-344"><a href="https://www.cna.com.tw/news/afe/202610210125.aspx" target="_blank" rel="noopener">中央社｜台股漲594.84點 收46887.77點 成交8332億（10/21 13:57）</a></li>
     <li id="src-345"><a href="https://udn.com/news/story/7239/9828491" target="_blank" rel="noopener">聯合新聞網｜台股震盪反彈 金融股具三大支撐攻守兼備（10/21 13:19）</a></li>
     <li id="src-346"><a href="https://businesstoday.com.tw/article/category/183008/post/202610210040" target="_blank" rel="noopener">今周刊｜台股漲千點是逃命波還穩了？台幣又貶破32.7（10/21 12:04）</a></li>
