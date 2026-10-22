@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/10/22（週四）盤後場次</div>
+        <div class="stamp" id="updated">2026/10/22（週四）夜間場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -294,11 +294,11 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/22 盤後場．加權與成交值為 10/22 中央社 13:56 收盤報導值，證交所官方尚未發布、待覆核；融資餘額、擔保維持率與風險戶數為證交所 10/20 官方值（10/21 尚未發布）；SOX 為 10/21 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/22 夜間場．加權與成交值為 10/22 中央社 13:56 收盤報導值，證交所官方尚未發布、待覆核；融資餘額為證交所 10/21 官方值；擔保維持率與風險戶數為 10/20 官方值（10/21 尚未發布）；SOX 為 10/21 美股收盤）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">46,041</div><div class="chg down">-846.34（-1.81%）</div></div>
     <div class="m"><div class="lbl">成交值（上市）</div><div class="val">8,792 億</div><div class="chg up">較前日 +0.5%（中央社報導值；10/21 官方 8,746 億）</div></div>
-    <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">6,381 億</div><div class="chg down">單日 -25.2 億（10/20 官方）</div></div>
+    <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">6,444 億</div><div class="chg up">單日 +62.7 億（10/21 官方）</div></div>
     <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">11,506</div><div class="chg up">+1.97%（10/21 美股，前日 -0.29%）</div></div>
     <div class="m"><div class="lbl">全市場擔保維持率</div><div class="val">271.07%</div><div class="chg down">較前日 -2.77（10/20 官方）</div></div>
     <div class="m"><div class="lbl">信用風險戶數</div><div class="val">20 戶</div><div class="chg up">較前日 +2 戶</div><div class="sub">維持率不足 14｜追繳 6｜處分 0（10/20 官方）</div></div>
@@ -392,7 +392,23 @@
   <!-- ===== /DATA:PREOPEN ===== -->
 
                                                                 <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/22 盤後場．依時間由新到舊．共 20 則）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/22 夜間場．依時間由新到舊．共 20 則）</span></h2>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/22 20:39</span>薔琵颱風來襲 台北股市23日休市1天 <a class="ref" href="#src-526">[526]</a></div>
+    <div class="news-body">中央社：北市宣布 23 日停止上班，證交所與櫃買中心全日休市，原應交割款券順延；上櫃（含興櫃）、權證、ETF、ETN、債券、黃金現貨與衍生性商品同步停止交易。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/22 20:26</span>薔琵颱風來襲！台股明天休市一天 台北匯市同步暫停交易 <a class="ref" href="#src-527">[527]</a></div>
+    <div class="news-body">聯合新聞網：10/26 為光復節補假，台股連休四天、預計 10/27 恢復交易；台北外匯市場同步休市，市場人士提醒連休期間的國際變化將反映在 10/27 開盤。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/22 20:23</span>薔琵颱風逼近！北市23日停班停課 台北股匯休市一天 <a class="ref" href="#src-528">[528]</a></div>
+    <div class="news-body">鉅亨網：證交所、櫃買中心、期交所與台北外匯市場配合休市一天，當日應屆交割款券順延至下一個營業日辦理。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/22 20:21</span>北北基放颱風假了！證交所宣布台股連休四天 27日才開盤 <a class="ref" href="#src-529">[529]</a></div>
+    <div class="news-body">經濟日報：10/23（週五）集中市場全日休市，加上 10/26 光復節補假，台股 10/27（週二）才開盤。</div>
+  </div>
   <div class="card">
     <div class="news-title"><span class="cat">法人</span><span class="ntime">10/22 17:34</span>外資再砍816億 逆勢買台泥(1101)、台玻(1802) 「這檔最狠」10天進貨23萬張 <a class="ref" href="#src-520">[520]</a></div>
     <div class="news-body">東森財經：外資買超台泥 25,549 張、台玻 25,235 張、中鋼(2002) 24,664 張；賣超以主動式 ETF 為主，友達(2409) 賣超 41,971 張。</div>
@@ -404,6 +420,10 @@
   <div class="card">
     <div class="news-title"><span class="cat">個股</span><span class="ntime">10/22 16:37</span>外資砍友達(2409)4萬張 投信救援卻仍收跌4.97% <a class="ref" href="#src-522">[522]</a></div>
     <div class="news-body">鏡週刊／三立：友達被外資賣超 41,971 張居首，投信買超 4,839 張護盤，股價收 35.4 元。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">期貨</span><span class="ntime">10/22 16:22</span>期現貨轉為正價差 台指期夜盤反彈 <a class="ref" href="#src-530">[530]</a></div>
+    <div class="news-body">工商時報：SpaceX、美超微與 Meta 財報緩解 AI 泡沫疑慮，台指期日盤一度拉升至 47,000 點附近後轉弱，收 46,262 點（-741），期現貨價差轉為正 230.57 點。</div>
   </div>
   <div class="card">
     <div class="news-title"><span class="cat">法人</span><span class="ntime">10/22 15:14</span>外資又揮大刀！三大法人賣超1,001億元 台股重挫846點失守季線 <a class="ref" href="#src-523">[523]</a></div>
@@ -433,6 +453,8 @@
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/22 13:47</span>台積電(2330)跌35元 台股下挫846點險守46000點關卡 <a class="ref" href="#src-503">[503]</a></div>
     <div class="news-body">中央社：台積電收 2,385 元；電子類股跌 2.11%、金融類股漲 0.62%，櫃買指數跌 3.47%。</div>
   </div>
+  <details class="more">
+  <summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
     <div class="news-title"><span class="cat">櫃買</span><span class="ntime">10/22 12:53</span>盤中速報 櫃買指數下跌11.85點至383.57點 跌幅3% <a class="ref" href="#src-504">[504]</a></div>
     <div class="news-body">鉅亨網：櫃買近一週累計 -5.88%；光通訊模組族群 -5.80%，光環(3234)、華星光(4979)、上詮(3363)跌幅居前。</div>
@@ -442,38 +464,16 @@
     <div class="news-body">CMoney：華星光(4979)、前鼎、統新、昇達科跌約 6%～8%；康聯訊逆勢漲停 9.96%。</div>
   </div>
   <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/22 12:33</span>台股高低震盪逾千點的兇手是誰？分析師曝原因 但強調下跌是買點 <a class="ref" href="#src-531">[531]</a></div>
+    <div class="news-body">經濟日報：分析師張陳浩認為颱風假與光復節長假效應、中東地緣風險拖累美國電子盤是主因，賣壓主要來自內資，並點名台積電(2330)、欣興(3037)、台光電(2383)等 AI 與被動元件族群。</div>
+  </div>
+  <div class="card">
     <div class="news-title"><span class="cat">美股</span><span class="ntime">10/22 12:12</span>費半終結八連跌強彈近2% 記憶體族群領漲 台股準備接棒？ <a class="ref" href="#src-506">[506]</a></div>
     <div class="news-body">CMoney：10/21 費半反彈終止八連跌，記憶體與儲存股領漲；分析指 HDD 上升循環支撐 Seagate、Western Digital。</div>
   </div>
   <div class="card">
     <div class="news-title"><span class="cat">產業</span><span class="ntime">10/22 12:10</span>電容族群重挫大跌 賣壓調節回測季線 <a class="ref" href="#src-507">[507]</a></div>
     <div class="news-body">CMoney：被動元件電容類股指數盤中 -6.03%，華新科(2492)-8.38%、鈺邦與金山電跌逾 7%、禾伸堂(3026)-6.63%、國巨(2327)-4.98%。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/22 09:08</span>台積電(2330)漲15元至2435元！台股漲逾444點站上47300點 <a class="ref" href="#src-508">[508]</a></div>
-    <div class="news-body">NOWnews：加權開盤 46,943、盤中最高 47,332.18；聯發科(2454)一度漲 75 元至 4,215 元，鴻海(2317)、廣達(2382)小跌。</div>
-  </div>
-  <details class="more">
-  <summary>▾ 更多焦點（再看 5 則）</summary>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/22 09:06</span>台股快訊 開盤上漲400點、站回4.7萬點 台積電(2330)開盤上漲15元 <a class="ref" href="#src-509">[509]</a></div>
-    <div class="news-body">風傳媒：SpaceX 財報亮眼、可能與特斯拉合併消息帶動資金回流科技股，美股四大指數 10/21 全數收高。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/22 07:48</span>SpaceX及美超微財報提振市場信心 美股道瓊漲360點 台積電ADR漲1.6% <a class="ref" href="#src-510">[510]</a></div>
-    <div class="news-body">新頭殼：那斯達克 +1.05%、標普 500 +0.58%、費半 +1.97%；SpaceX 營收年增 161%、股價 +7.8%，台積電 ADR 收 431.89 美元。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">ADR</span><span class="ntime">10/22 07:15</span>台積電(2330)ADR上漲1.6%三連漲 台指期夜盤上漲469點 <a class="ref" href="#src-511">[511]</a></div>
-    <div class="news-body">聯合新聞網：台積電 ADR 溢價約 15.7%；台指期夜盤收 47,482 點；輝達漲 2.5%。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">期貨</span><span class="ntime">10/22 06:17</span>SpaceX 財報報喜 美股狂歡 台指夜盤飆 469 點 台股反攻號角響 <a class="ref" href="#src-400">[400]</a></div>
-    <div class="news-body">三立新聞網：四大指數收紅，輝達(NVDA) 漲 2.54%、美超微漲約 9.6%；外資期貨淨空單仍達 86,072 口。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">ADR</span><span class="ntime">10/22 06:16</span>美股四大指數收漲 費半 +1.97% 收 11,505.56 台積電 ADR +1.60% 日月光 ADR +4.02% 台指期夜盤收 47,482 (+469) <a class="ref" href="#src-401">[401]</a></div>
-    <div class="news-body">民視新聞網：道瓊 +360.21 點收 52,856.09、標普 500 收 7,757.17、那斯達克收 26,702.86；聯電 ADR +0.76%。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
@@ -545,6 +545,12 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
+    <li id="src-526"><a href="https://www.cna.com.tw/news/afe/202610220388.aspx" target="_blank" rel="noopener">中央社｜薔琵颱風來襲 台北股市23日休市1天（10/22 20:39）</a></li>
+    <li id="src-527"><a href="https://udn.com/news/story/7251/9832133" target="_blank" rel="noopener">聯合新聞網｜薔琵颱風來襲！台股明天休市一天 台北匯市同步暫停交易（10/22 20:26）</a></li>
+    <li id="src-528"><a href="https://news.cnyes.com/news/id/6636138" target="_blank" rel="noopener">鉅亨網｜薔琵颱風逼近！北市23日停班停課 台北股匯休市一天（10/22 20:23）</a></li>
+    <li id="src-529"><a href="https://udn.com/news/story/7251/9832123" target="_blank" rel="noopener">經濟日報｜北北基放颱風假了！證交所宣布台股連休四天 27日才開盤（10/22 20:21）</a></li>
+    <li id="src-530"><a href="https://www.ctee.com.tw/news/20261022701680-430202" target="_blank" rel="noopener">工商時報｜期現貨轉為正價差 台指期夜盤反彈（10/22 16:22）</a></li>
+    <li id="src-531"><a href="https://udn.com/news/story/7251/9830826" target="_blank" rel="noopener">經濟日報｜台股高低震盪逾千點的兇手是誰？分析師曝原因 但強調下跌是買點（10/22 12:33）</a></li>
         <li id="src-520"><a href="https://fnc.ebc.net.tw/fncnews/stock/221409" target="_blank" rel="noopener">東森財經新聞｜外資再砍816億 逆勢買台泥(1101)、台玻(1802) 「這檔最狠」10天進貨23萬張（10/22 17:34）</a></li>
     <li id="src-521"><a href="https://www.chinatimes.com/realtimenews/20261022003738-260410" target="_blank" rel="noopener">工商時報｜台股震盪1291點收最低！外資大賣816億 專家曝止跌關鍵（10/22 16:58）</a></li>
     <li id="src-522"><a href="https://www.mirrormedia.mg/external/setn_1926774" target="_blank" rel="noopener">鏡週刊｜外資砍友達(2409)4萬張 投信救援卻仍收跌4.97%（10/22 16:37）</a></li>
@@ -571,7 +577,7 @@
     <li id="src-405"><a href="https://www.ctee.com.tw/news/20261022700052-439901" target="_blank" rel="noopener">工商時報｜台股見短線止跌訊號 反攻47K（10/22 03:00）</a></li>
     <li id="src-512"><a href="https://udn.com/news/story/7252/9829697" target="_blank" rel="noopener">經濟日報｜內外資加持 台積電(2330)拉尾盤（10/22 02:53）</a></li>
     <li id="src-513"><a href="https://vocus.cc/article/6ad8c1c4fd89780001e63641" target="_blank" rel="noopener">退役操盤人的投研筆記｜2026/10/21 券商個股報告整理（10/21 21:46）</a></li>
-    <li id="src-514">臺灣證券交易所 FMTQIK（官方至 10/21）／MI_INDEX 10/21（資金流向，最新可得資料；10/22 資料尚未發布）／MI_MARGN、BFIJ4U_TREND（官方至 10/20）；10/22 加權與成交值為中央社 13:56 收盤報導值，待官方覆核</li>
+    <li id="src-514">臺灣證券交易所 FMTQIK（官方至 10/21）／MI_INDEX 10/21（資金流向，最新可得資料；10/22 資料尚未發布）／MI_MARGN（融資，官方至 10/21）／BFIJ4U_TREND（維持率與風險戶，官方至 10/20）；10/22 加權與成交值為中央社 13:56 收盤報導值，待官方覆核</li>
   </ol>
   </details>
 <!-- ===== /DATA:SOURCES ===== -->
