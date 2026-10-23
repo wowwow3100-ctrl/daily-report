@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/10/23（週五）早盤場次</div>
+        <div class="stamp" id="updated">2026/10/23（週五）收盤場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -294,14 +294,14 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/23 早盤場．台股因薔琵颱風 10/23 休市、10/27 恢復交易；加權與成交值為 10/22 中央社 13:56 收盤報導值，證交所官方尚未發布、待覆核；融資餘額為證交所 10/21 官方值；擔保維持率與風險戶數為 10/20 官方值；SOX 為 10/22 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/23 收盤場．台股因薔琵颱風 10/23 休市、10/27 恢復交易；以下為 10/22 證交所官方數據；SOX 為 10/22 美股收盤）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">46,041</div><div class="chg down">-846.34（-1.81%）</div></div>
-    <div class="m"><div class="lbl">成交值（上市）</div><div class="val">8,792 億</div><div class="chg up">較前日 +0.5%（中央社報導值；10/21 官方 8,746 億）</div></div>
-    <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">6,444 億</div><div class="chg up">單日 +62.7 億（10/21 官方）</div></div>
+    <div class="m"><div class="lbl">成交值（上市）</div><div class="val">9,334 億</div><div class="chg up">較前日 +6.7%（官方 10/22；前日 8,746 億）</div></div>
+    <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">6,339 億</div><div class="chg down">單日 -104.9 億（10/22 官方）</div></div>
     <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">10,732</div><div class="chg down">-6.72%（10/22 美股，前日 +1.97%）</div></div>
-    <div class="m"><div class="lbl">全市場擔保維持率</div><div class="val">271.07%</div><div class="chg down">較前日 -2.77（10/20 官方）</div></div>
-    <div class="m"><div class="lbl">信用風險戶數</div><div class="val">20 戶</div><div class="chg up">較前日 +2 戶</div><div class="sub">維持率不足 14｜追繳 6｜處分 0（10/20 官方）</div></div>
+    <div class="m"><div class="lbl">全市場擔保維持率</div><div class="val">270.00%</div><div class="chg down">較前日 -4.50（10/22 官方）</div></div>
+    <div class="m"><div class="lbl">信用風險戶數</div><div class="val">34 戶</div><div class="chg up">較前日 +29 戶</div><div class="sub">維持率不足 20｜追繳 12｜處分 2（10/22 官方）</div></div>
   </div>
 <!-- ===== /DATA:MARKET ===== -->
 
@@ -391,7 +391,15 @@
   <!-- ===== /DATA:PREOPEN ===== -->
 
                                                                 <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/23 早盤場．依時間由新到舊．共 20 則）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（10/23 收盤場．台股因薔琵颱風今日休市、連休至 10/26．依時間由新到舊．共 20 則）</span></h2>
+  <div class="card">
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/23 12:50</span>Meta財報亮眼卻遭股債雙殺！8250億美元承諾揭開AI投資真實代價 <a class="ref" href="#src-610">[610]</a></div>
+    <div class="news-body">鉅亨網：Meta 第三季營收年增 26%、第四季財測優於預期，但財報後股價反轉；截至 9 月底租約與合約承諾合計約 8,250 億美元，5 年期 CDS 創歷史新高，市場擔憂 AI 基建融資與信用風險。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">10/23 06:22</span>美股收盤／AI燒錢疑慮掀晶片股殺盤 費半重摔6.7%、台積電ADR跌4.5% <a class="ref" href="#src-611">[611]</a></div>
+    <div class="news-body">聯合新聞網：那斯達克 -2.6%；避險資金轉向公債，10 年期殖利率一個月來首度跌破 5%，布蘭特原油上漲 4% 至 113.17 美元，中東局勢推升供應疑慮。</div>
+  </div>
   <div class="card">
     <div class="news-title"><span class="cat">國際</span><span class="ntime">10/23 06:20</span>Meta借錢擴張AI基建引爆債市警訊 資料中心債券殖利率飆升 <a class="ref" href="#src-600">[600]</a></div>
     <div class="news-body">鉅亨網：Meta 上修 2026 資本支出至 1,350～1,450 億美元，第三季自由現金流為 -21.2 億美元，5 年期 CDS 利差創 114.79 bp 新高；報導指這不代表違約風險。</div>
@@ -444,6 +452,8 @@
     <div class="news-title"><span class="cat">法人</span><span class="ntime">10/22 16:58</span>台股震盪1291點收最低！外資大賣816億 專家曝止跌關鍵 <a class="ref" href="#src-521">[521]</a></div>
     <div class="news-body">工商時報：加權收 46,041、跌破 5 日線與季線，盤中高 47,332；三大法人合計賣超 1,001.59 億元，資金轉進電信三雄與金控股，櫃買指數跌 3.47% 至 381.69。</div>
   </div>
+  <details class="more">
+  <summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
     <div class="news-title"><span class="cat">個股</span><span class="ntime">10/22 16:37</span>外資砍友達(2409)4萬張 投信救援卻仍收跌4.97% <a class="ref" href="#src-522">[522]</a></div>
     <div class="news-body">鏡週刊／三立：友達被外資賣超 41,971 張居首，投信買超 4,839 張護盤，股價收 35.4 元。</div>
@@ -452,8 +462,6 @@
     <div class="news-title"><span class="cat">期貨</span><span class="ntime">10/22 16:22</span>期現貨轉為正價差 台指期夜盤反彈 <a class="ref" href="#src-530">[530]</a></div>
     <div class="news-body">工商時報：SpaceX、美超微與 Meta 財報緩解 AI 泡沫疑慮，台指期日盤一度拉升至 47,000 點附近後轉弱，收 46,262 點（-741），期現貨價差轉為正 230.57 點。</div>
   </div>
-  <details class="more">
-  <summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
     <div class="news-title"><span class="cat">法人</span><span class="ntime">10/22 15:14</span>外資又揮大刀！三大法人賣超1,001億元 台股重挫846點失守季線 <a class="ref" href="#src-523">[523]</a></div>
     <div class="news-body">聯合新聞網：外資賣超 816.56 億元、自營商賣超 273.78 億元、投信買超 88.75 億元；市場受中東情勢、美股期指轉弱、日韓股市重挫及光復節連假與強颱薔琵不確定因素影響。</div>
@@ -465,14 +473,6 @@
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">10/22 13:56</span>台股跌846.34點 收46041.43點 成交8792億 <a class="ref" href="#src-500">[500]</a></div>
     <div class="news-body">中央社：開高走低，盤中最高 47,332.18、收在全日最低；上市 254 檔上漲、759 檔下跌，櫃買指數跌 3.47%。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/22 13:50</span>台股跳水暴跌846點！台積電(2330)跌35元 日月光投控(3711)跌4.39%拖累大盤 <a class="ref" href="#src-501">[501]</a></div>
-    <div class="news-body">寶島新聞：日月光投控收 654 元、聯發科(2454)收 4,010 元（-3.14%）、台達電(2308)跌 4.00%，鴻海(2317)收 245 元（-2.00%）。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">10/22 13:47</span>台股收盤／台積電(2330)跌35元 台股慘跌846點 櫃買重挫3.4%類股慘綠 <a class="ref" href="#src-502">[502]</a></div>
-    <div class="news-body">三立新聞網：櫃買收 381.69 點（-3.47%），兩市合計成交約 1.1048 兆元；南亞(1303)-6.08%、聯茂(6213)-5.59%、國巨(2327)-6.46%、華新科(2492)-9.25%，台光電(2383)逆勢 +1.60%。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
@@ -544,6 +544,8 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
+    <li id="src-610"><a href="https://news.cnyes.com/news/id/6636513" target="_blank" rel="noopener">鉅亨網｜Meta財報亮眼卻遭股債雙殺！8250億美元承諾揭開AI投資真實代價（10/23 12:50）</a></li>
+    <li id="src-611"><a href="https://udn.com/news/story/6811/9832714" target="_blank" rel="noopener">聯合新聞網｜美股收盤／AI燒錢疑慮掀晶片股殺盤 費半重摔6.7%、台積電ADR跌4.5%（10/23 06:22）</a></li>
     <li id="src-600"><a href="https://news.cnyes.com/news/id/6636372" target="_blank" rel="noopener">鉅亨網｜Meta借錢擴張AI基建引爆債市警訊 資料中心債券殖利率飆升（10/23 06:20）</a></li>
     <li id="src-601"><a href="https://news.cnyes.com/news/id/6636334" target="_blank" rel="noopener">鉅亨網｜〈美股盤後〉Meta重燃AI交易恐慌 費半狂瀉近7% 台積電ADR跌超4.5%（10/23 06:06）</a></li>
     <li id="src-602"><a href="https://ec.ltn.com.tw/article/breakingnews/5615826" target="_blank" rel="noopener">自由財經｜美股收盤》AI支出疑慮升！費半暴跌近7％ 台積電ADR重挫4.5％（10/23 05:47）</a></li>
@@ -565,7 +567,7 @@
     <li id="src-501"><a href="https://www.ftnn.com.tw/news/589392" target="_blank" rel="noopener">寶島新聞網｜台股跳水暴跌846點！台積電(2330)跌35元 日月光投控(3711)跌4.39%拖累大盤（10/22 13:50）</a></li>
     <li id="src-502"><a href="https://www.setn.com/news/1926415" target="_blank" rel="noopener">三立新聞網｜台股收盤／台積電(2330)跌35元 台股慘跌846點 櫃買重挫3.4%類股慘綠（10/22 13:47）</a></li>
     <li id="src-513"><a href="https://vocus.cc/article/6ad8c1c4fd89780001e63641" target="_blank" rel="noopener">退役操盤人的投研筆記｜2026/10/21 券商個股報告整理（10/21 21:46）</a></li>
-    <li id="src-514">臺灣證券交易所 FMTQIK（官方至 10/21）／MI_INDEX 10/21（資金流向，最新可得資料）／MI_MARGN（融資，官方至 10/21）／BFIJ4U_TREND（維持率與風險戶，官方至 10/20）；10/22 加權與成交值為中央社 13:56 收盤報導值，待官方覆核；10/23 台股休市、無新交易日資料</li>
+    <li id="src-514">臺灣證券交易所 FMTQIK（官方至 10/22）／MI_MARGN（融資，官方 10/22）／BFIJ4U_TREND（維持率與風險戶，官方 10/22）／MI_INDEX 10/21（資金流向；10/22 資料證交所尚未發布，為最新可得）；10/23 台股休市、無新交易日資料</li>
   </ol>
   </details>
 <!-- ===== /DATA:SOURCES ===== -->
