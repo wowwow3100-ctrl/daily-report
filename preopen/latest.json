@@ -1,67 +1,73 @@
 {
- "updated": "2026-10-27 06:52",
- "date": "2026-10-27",
- "label": "10/27 06:52",
+ "updated": "2026-10-28 04:30",
+ "date": "2026-10-28",
+ "label": "10/28 04:30",
  "items": [
   {
-   "cat": "美股",
-   "title": "AI交易回暖提振大盤 美國股市收高",
-   "url": "https://www.cna.com.tw/news/afe/202610270011.aspx",
-   "src": "中央社"
+   "cat": "ADR",
+   "title": "美股早盤／晶片股連二漲 四大指數齊揚 台積電 ADR 漲1%",
+   "url": "https://money.udn.com/money/story/123398/9840677",
+   "src": "經濟日報"
   },
   {
    "cat": "美股",
-   "title": "〈美股盤後〉Anthropic IPO重燃AI熱情 晶片股反攻 費半勁揚約3%",
-   "url": "https://news.cnyes.com/news/id/6637949",
+   "title": "〈美股早盤〉油價回落、晶片股續揚 主要指數開高靜待Fed決策",
+   "url": "https://news.cnyes.com/news/id/6638600",
    "src": "鉅亨網"
   },
   {
-   "cat": "美股",
-   "title": "Anthropic申請IPO！美股4大指數齊揚 費半漲304點、那指漲214點",
-   "url": "https://www.setn.com/news/1928996",
-   "src": "三立新聞網"
-  },
-  {
-   "cat": "ADR",
-   "title": "Anthropic遞IPO申請帶動半導體狂飆！那指大升、費半猛飆近3％",
-   "url": "https://www.ftvnews.com.tw/news/detail/2026A27W0065",
-   "src": "民視新聞網"
+   "cat": "期貨",
+   "title": "中東緊張局勢露曙光 台指期夜盤大漲500點",
+   "url": "https://udn.com/news/story/7255/9840635",
+   "src": "聯合新聞網"
   },
   {
    "cat": "期貨",
-   "title": "星期二開盤要噴了？美股指數全收紅 台指期夜盤遇休市",
-   "url": "https://tw.stock.yahoo.com/news/%E6%98%9F%E6%9C%9F%E4%BA%8C%E9%96%8B%E7%9B%A4%E8%A6%81%E5%99%B4%E4%BA%86-%E7%BE%8E%E8%82%A1%E6%8C%87%E6%95%B8%E5%85%A8%E6%94%B6%E7%B4%85-%E5%8F%B0%E6%8C%87%E6%9C%9F%E5%A4%9C%E7%9B%A4%E9%81%87%E4%BC%91%E5%B8%82-223922850.html",
-   "src": "Yahoo股市"
+   "title": "台指期夜盤反彈 力拚站回季線",
+   "url": "https://www.ctee.com.tw/news/20261027701617-430202",
+   "src": "工商時報"
+  },
+  {
+   "cat": "數據",
+   "title": "期中選前傳佳音！美國10月消費者信心升至91.7 終結連三月下滑",
+   "url": "https://news.cnyes.com/news/id/6638828",
+   "src": "鉅亨網"
   },
   {
    "cat": "國際",
-   "title": "10月27日 五件財經大事搶先看",
-   "url": "https://money.udn.com/money/story/5607/9838635",
-   "src": "經濟日報"
+   "title": "美國期中選舉倒數 聯準會下週利率料將按兵不動",
+   "url": "https://www.cna.com.tw/news/aopl/202610250050.aspx",
+   "src": "中央社"
+  },
+  {
+   "cat": "國際",
+   "title": "新台幣升5.6分 收32.452元",
+   "url": "https://www.cna.com.tw/news/afe/202610270187.aspx",
+   "src": "中央社"
   },
   {
    "cat": "個股",
-   "title": "台股27日有探底壓力 法人：半年線支撐受考驗",
-   "url": "https://money.udn.com/money/story/5612/9837709",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "個股",
-   "title": "廣運子公司金運 興櫃前法說27日登場",
-   "url": "https://udn.com/news/story/7252/9837775",
+   "title": "旺宏財報／史上最賺一季 第3季獲利破百億、前三季賺逾一股本",
+   "url": "https://udn.com/news/story/7252/9840148",
    "src": "聯合新聞網"
   },
   {
    "cat": "個股",
-   "title": "台股收假迎反彈關鍵？「黃金法說週」登場 台達電、聯發科接力",
-   "url": "https://news.tvbs.com.tw/money/4041302",
-   "src": "TVBS"
+   "title": "精測財報／第3季 EPS 16.75元 連續三季刷新單季紀錄",
+   "url": "https://money.udn.com/money/story/11074/9840496",
+   "src": "經濟日報"
   },
   {
    "cat": "個股",
-   "title": "4檔處置股因颱風順延10/27抓去關 PCB飆股金居處置到11/2止",
-   "url": "https://news.cnyes.com/news/id/6636083",
-   "src": "鉅亨網"
+   "title": "力成財報／第3季獲利26.1億年增近七成 前三季 EPS 9.05元創同期次高",
+   "url": "https://money.udn.com/money/story/5710/9840092",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "個股",
+   "title": "寶雅財報／前三季獲利28.7億元、年增逾三成 創歷史新高",
+   "url": "https://udn.com/news/story/7252/9840091",
+   "src": "聯合新聞網"
   }
  ]
 }
