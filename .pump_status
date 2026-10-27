@@ -7,7 +7,7 @@
   },
   "sectors": {
     "kind": "sectors",
-    "ts": "2026-10-27T20:45:56",
+    "ts": "2026-10-27T21:11:24",
     "fetch": "fetch error: Command '['C:\\\\Users\\\\asus\\\\AppData\\\\Local\\\\Python\\\\pythoncore-3.14-64\\\\pythonw.exe', 'D:\\\\APP\\\\旺來新聞站\\\\tools\\\\fetch_sectors.py', 'D:\\\\APP\\\\_wl_data_branch\\\\sectors']' timed out after 900 seconds",
     "status": "nochange"
   },
