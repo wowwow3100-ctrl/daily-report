@@ -238,7 +238,7 @@ def pump(kind):
         try:
             p = subprocess.run([sys.executable, os.path.join(HERE, "tools", script), os.path.join(DATA_WT, kind)],
                                cwd=HERE, capture_output=True, text=True, encoding="utf-8", errors="replace",
-                               timeout=900, env=env, creationflags=NOWIN)
+                               timeout=300, env=env, creationflags=NOWIN)
             st["fetch"] = (p.stdout or "")[-600:] + (p.stderr or "")[-400:]
         except Exception as e:
             st["fetch"] = "fetch error: %s" % e
@@ -341,14 +341,49 @@ def another_running():
         return False
 
 
-def main():
-    if "--reloaded" not in sys.argv and another_running():
-        return
-    log("news push daemon started PID=%d" % os.getpid())
+_LOCK = None
+
+
+def take_lock(wait=45):
+    """只准一隻守護在跑：綁 127.0.0.1:47831 當鎖（程式結束 Windows 會自動放掉）。"""
+    global _LOCK
+    import socket
+    end = time.time() + wait
+    while True:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        try:
+            if os.name == "nt":
+                s.setsockopt(socket.SOL_SOCKET, getattr(socket, "SO_EXCLUSIVEADDRUSE", -5), 1)
+            s.bind(("127.0.0.1", 47831))
+            s.listen(1)
+            _LOCK = s
+            return True
+        except OSError:
+            s.close()
+            if time.time() > end:
+                return False
+            time.sleep(3)
+
+
+def beat_forever():
+    """心跳獨立一條線：抓資料卡很久也照樣報平安，看門狗就不會一直多開。"""
     while True:
         try:
             with open(HEARTBEAT, "w", encoding="utf-8") as f:
                 f.write("%s PID=%d\n" % (datetime.datetime.now().isoformat(timespec="seconds"), os.getpid()))
+        except Exception:
+            pass
+        time.sleep(15)
+
+
+def main():
+    if not take_lock(45 if "--reloaded" in sys.argv else 5):
+        return
+    import threading
+    threading.Thread(target=beat_forever, daemon=True).start()
+    log("news push daemon started PID=%d (lock ok)" % os.getpid())
+    while True:
+        try:
             if os.path.exists(os.path.join(HERE, ".push_restart")):
                 os.remove(os.path.join(HERE, ".push_restart"))
                 log("restart requested")

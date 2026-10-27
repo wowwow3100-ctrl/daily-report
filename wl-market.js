@@ -32,15 +32,16 @@
 
   function apply(d) {
     var tag = "（" + d.label + " 證交所）";
+    function tagOf(x) { return x && x.label ? "（" + x.label + " " + (x.src || "證交所") + "）" : tag; }
     if (d.margin) {
       var g = d.margin.chg;
-      setCard(/融資餘額/, fmt(Math.round(d.margin.bal), 0) + " 億", "單日 " + sign(g, 1) + " 億" + tag, g > 0 ? "up" : g < 0 ? "down" : "", null);
+      setCard(/融資餘額/, fmt(Math.round(d.margin.bal), 0) + " 億", "單日 " + sign(g, 1) + " 億" + tagOf(d.margin), g > 0 ? "up" : g < 0 ? "down" : "", null);
     }
     if (d.keep) {
-      var k = d.keep;
-      if (k.rate) setCard(/擔保維持率/, fmt(k.rate, 2) + "%", "較前日 " + (k.rate_chg != null ? sign(k.rate_chg, 2) : "—") + tag,
+      var k = d.keep, tag2 = tagOf(k);
+      if (k.rate) setCard(/擔保維持率/, fmt(k.rate, 2) + "%", "較前日 " + (k.rate_chg != null ? sign(k.rate_chg, 2) : "—") + tag2,
         k.rate_chg > 0 ? "up" : k.rate_chg < 0 ? "down" : "", null);
-      if (k.risk != null) setCard(/信用風險戶/, fmt(k.risk, 0) + " 戶", "較前日 " + (k.risk_chg != null ? sign(k.risk_chg, 0) + " 戶" : "—") + tag,
+      if (k.risk != null) setCard(/信用風險戶/, fmt(k.risk, 0) + " 戶", "較前日 " + (k.risk_chg != null ? sign(k.risk_chg, 0) + " 戶" : "—") + tag2,
         k.risk_chg > 0 ? "up" : k.risk_chg < 0 ? "down" : "", "維持率不足 " + k.below + "｜追繳 " + k.call + "｜處分 " + k.exe);
     }
   }
