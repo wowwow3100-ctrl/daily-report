@@ -1,24 +1,66 @@
 {
- "updated": "2026-10-28 06:42",
- "date": "2026-10-28",
- "label": "10/28 06:42",
+ "updated": "2026-10-29 06:41",
+ "date": "2026-10-29",
+ "label": "10/29 06:41",
  "items": [
   {
    "cat": "美股",
-   "title": "〈美股盤後〉Anthropic IPO熱潮延燒 費半漲3.6% 波音崩逾10%壓",
-   "url": "https://news.cnyes.com/news/id/6638589",
+   "title": "〈美股盤後〉Fed按兵不動 三大指數連三紅 SK海力士ADR、甲骨文狂飆超10%",
+   "url": "https://news.cnyes.com/news/id/6639733",
    "src": "鉅亨網"
   },
   {
-   "cat": "ADR",
-   "title": "美股收盤》AI股提振！費半勁揚3.6％ 台積電ADR漲近3％",
-   "url": "https://ec.ltn.com.tw/article/breakingnews/5620870",
-   "src": "自由財經"
+   "cat": "美股",
+   "title": "聯準會維持利率不變 美股收高",
+   "url": "https://www.cna.com.tw/news/afe/202610290013.aspx",
+   "src": "中央社"
+  },
+  {
+   "cat": "國際",
+   "title": "Fed 決策／10月28 日會議聲明全文",
+   "url": "https://money.udn.com/money/story/5599/9843610",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "國際",
+   "title": "Fed 10月、9月聲明比一比：將「等待更多資訊」判斷下次行動、2人主張升息1碼",
+   "url": "https://tw.stock.yahoo.com/news/fed-10%E6%9C%88-9%E6%9C%88%E8%81%B2%E6%98%8E%E6%AF%94-%E6%AF%94-%E5%B0%87-183649251.html",
+   "src": "Yahoo股市"
   },
   {
    "cat": "期貨",
-   "title": "10月27日期交所夜盤行情",
-   "url": "https://money.udn.com/money/story/11112/9841076",
+   "title": "10月28日期交所夜盤行情",
+   "url": "https://money.udn.com/money/story/11112/9843608",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "個股",
+   "title": "10月29日 五件財經大事搶先看",
+   "url": "https://money.udn.com/money/story/5607/9843597",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "個股",
+   "title": "〈台股盤後〉電子股領軍CCL、記憶體走揚 強彈939點重返47000點大關",
+   "url": "https://news.cnyes.com/news/id/6639442",
+   "src": "鉅亨網"
+  },
+  {
+   "cat": "個股",
+   "title": "千金股增至49檔",
+   "url": "https://money.udn.com/money/story/5607/9843325",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "個股",
+   "title": "12檔投信鎖碼股 強勢表態",
+   "url": "https://money.udn.com/money/story/5607/9843038",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "個股",
+   "title": "三大法人買超台股298.94億元",
+   "url": "https://money.udn.com/money/story/5607/9842363",
    "src": "經濟日報"
   },
   {
@@ -26,42 +68,6 @@
    "title": "期中選前傳佳音！美國10月消費者信心升至91.7 終結連三月下滑",
    "url": "https://news.cnyes.com/news/id/6638828",
    "src": "鉅亨網"
-  },
-  {
-   "cat": "國際",
-   "title": "暫停升息不代表緊縮循環結束 本週Fed會議有哪些重點？",
-   "url": "https://news.cnyes.com/news/id/6637975",
-   "src": "鉅亨網"
-  },
-  {
-   "cat": "國際",
-   "title": "市場預估聯準會利率按兵不動 國銀估美元窄幅震盪",
-   "url": "https://udn.com/news/story/7239/9839309",
-   "src": "聯合新聞網"
-  },
-  {
-   "cat": "國際",
-   "title": "10月28日 五件財經大事搶先看",
-   "url": "https://money.udn.com/money/story/5607/9841047",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "個股",
-   "title": "〈台股盤前要聞〉新台幣爆量轉升5.6分收32.452元、旺宏Q3 EPS 5.5",
-   "url": "https://news.cnyes.com/news/id/6638791",
-   "src": "鉅亨網"
-  },
-  {
-   "cat": "個股",
-   "title": "台股驚險收紅漲54點！台積電站穩2400元 CCL台燿爆鬼故事跌停",
-   "url": "https://www.chinatimes.com/realtimenews/20261027002561-260410",
-   "src": "中時新聞網"
-  },
-  {
-   "cat": "個股",
-   "title": "台股重量級法說會登場！聯發科、台達電、聯電上陣 AI需求能變獲利？",
-   "url": "https://udn.com/news/story/7252/9836939",
-   "src": "聯合新聞網"
   }
  ]
 }
