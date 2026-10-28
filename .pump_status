@@ -1,26 +1,26 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-10-27T20:56:02",
-    "fetch": "fetch error: Command '['C:\\\\Users\\\\asus\\\\AppData\\\\Local\\\\Python\\\\pythoncore-3.14-64\\\\pythonw.exe', 'D:\\\\APP\\\\旺來新聞站\\\\tools\\\\fetch_revenue.py', 'D:\\\\APP\\\\_wl_data_branch\\\\revenue']' timed out after 900 seconds",
+    "ts": "2026-10-28T20:25:01",
+    "fetch": "latest 2026-09 rows 1981 high12 0 changed False\n",
     "status": "nochange"
   },
   "sectors": {
     "kind": "sectors",
-    "ts": "2026-10-27T21:11:24",
-    "fetch": "fetch error: Command '['C:\\\\Users\\\\asus\\\\AppData\\\\Local\\\\Python\\\\pythoncore-3.14-64\\\\pythonw.exe', 'D:\\\\APP\\\\旺來新聞站\\\\tools\\\\fetch_sectors.py', 'D:\\\\APP\\\\_wl_data_branch\\\\sectors']' timed out after 900 seconds",
+    "ts": "2026-10-28T20:45:03",
+    "fetch": "no change 2026-10-28\n",
     "status": "nochange"
   },
   "market": {
     "kind": "market",
-    "ts": "2026-10-27T23:45:02",
-    "fetch": "fetch error: Command '['C:\\\\Users\\\\asus\\\\AppData\\\\Local\\\\Python\\\\pythoncore-3.14-64\\\\pythonw.exe', 'D:\\\\APP\\\\旺來新聞站\\\\tools\\\\fetch_market.py', 'D:\\\\APP\\\\_wl_data_branch\\\\market']' timed out after 300 seconds",
+    "ts": "2026-10-28T23:45:03",
+    "fetch": "no change 2026-10-28\n",
     "status": "nochange"
   },
   "material": {
     "kind": "material",
-    "ts": "2026-10-27T23:15:00",
-    "fetch": "fetch error: Command '['C:\\\\Users\\\\asus\\\\AppData\\\\Local\\\\Python\\\\pythoncore-3.14-64\\\\pythonw.exe', 'D:\\\\APP\\\\旺來新聞站\\\\tools\\\\fetch_material.py', 'D:\\\\APP\\\\_wl_data_branch\\\\material']' timed out after 300 seconds",
-    "status": "nochange"
+    "ts": "2026-10-28T23:15:04",
+    "fetch": "wrote 970 details 3 days 8\n",
+    "status": "pushed"
   }
 }
