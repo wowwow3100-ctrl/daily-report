@@ -13,9 +13,9 @@
   },
   "market": {
     "kind": "market",
-    "ts": "2026-10-29T23:59:52",
-    "fetch": "wrote {'updated': '2026-10-29 23:59', 'margin': {'bal': 6339.1, 'chg': 16.1}, 'index': {'close': 46368.33, 'chg': -667.25, 'pct': -1.42, 'amt': 8238, 'date': '2026-10-29', 'label': '10/29', 'amt_prev': 7503, 'amt_pct': 9.8}, 'sox': {'close': 11684.0, 'pct': 1.75, 'prev_pct': 3.6, 'label': '10/28'}, 'date': '2026-10-29', 'label': '10/29', 'keep': {'rate': 271.35, 'below': 13, 'call': 7, 'exe': 3, 'risk': 23, 'rate_chg': -3.15, 'risk_chg': 12, 'date': '20261029'}}\n",
-    "status": "pushed"
+    "ts": "2026-10-30T00:01:03",
+    "fetch": "no change 2026-10-29\n",
+    "status": "nochange"
   },
   "material": {
     "kind": "material",
