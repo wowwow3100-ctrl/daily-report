@@ -12,7 +12,7 @@
   function fmt(n, d) { return Number(n).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d }); }
   function sign(n, d) { return (n > 0 ? "+" : n < 0 ? "-" : "") + fmt(Math.abs(n), d); }
 
-  function setCard(re, val, chgTxt, dir, sub) {
+  function setCard(re, val, chgTxt, dir, sub, pulseTxt) {
     document.querySelectorAll(".mkt .m").forEach(function (m) {
       var l = m.querySelector(".lbl"); if (!l || !re.test(l.textContent)) return;
       var v = m.querySelector(".val"), c = m.querySelector(".chg");
@@ -24,13 +24,36 @@
       var k = t.querySelector(".pk"); if (!k || !re.test(k.textContent)) return;
       var v = t.querySelector(".pv"), c = t.querySelector(".pc");
       if (v) v.textContent = val;
-      if (c) c.textContent = (dir === "up" ? "▲ " : dir === "down" ? "▼ " : "") + chgTxt.replace(/^(單日|較前日)\s*/, "").replace(/^[+\-]\s*/, "").replace(/（.*$/, "");
+      if (c) c.textContent = (dir === "up" ? "▲ " : dir === "down" ? "▼ " : "") + (pulseTxt != null ? pulseTxt : chgTxt.replace(/^(單日|較前日)\s*/, "").replace(/^[+\-]\s*/, "").replace(/（.*$/, ""));
       t.classList.remove("up", "down"); if (dir) t.classList.add(dir);
       if (sub != null) t.title = sub;
     });
   }
 
+  function dirOf(n) { return n > 0 ? "up" : n < 0 ? "down" : ""; }
+
+  function applyIndex(d) {
+    var ix = d.index, sx = d.sox, notes = [];
+    if (ix) {
+      setCard(/加權指數/, fmt(Math.round(ix.close), 0), sign(ix.chg, 2) + "（" + sign(ix.pct, 2) + "%）", dirOf(ix.chg), null, sign(ix.pct, 2).replace(/^[+\-]/, "") + "%");
+      if (ix.amt) setCard(/成交值/, fmt(ix.amt, 0) + " 億", "較前日 " + (ix.amt_pct != null ? sign(ix.amt_pct, 1) + "%" : "—") + "（" + ix.label + " 證交所" + (ix.amt_prev ? "；前日 " + fmt(ix.amt_prev, 0) + " 億" : "") + "）", dirOf(ix.amt_pct || 0), null);
+      notes.push("加權指數、成交值為 " + ix.label + " 收盤");
+    }
+    if (sx) {
+      setCard(/費城半導體|SOX/, fmt(Math.round(sx.close), 0), sign(sx.pct, 2) + "%（" + sx.label + " 美股收盤，前日 " + sign(sx.prev_pct, 2) + "%）", dirOf(sx.pct), null, sign(sx.pct, 2).replace(/^[+\-]/, "") + "%");
+      notes.push("SOX 為 " + sx.label + " 美股收盤");
+    }
+    if (d.label) notes.push("融資、維持率、風險戶為 " + d.label + " 證交所資料");
+    if (!notes.length) return;
+    var txt = "（" + notes.join("；") + "）";
+    var h = document.getElementById("mkt"), m = h && h.querySelector(".muted");
+    if (m) m.textContent = txt;
+    var pn = document.querySelector(".pulse .p-note");
+    if (pn) pn.textContent = "資料說明：" + txt.replace(/^（|）$/g, "");
+  }
+
   function apply(d) {
+    applyIndex(d);
     var tag = "（" + d.label + " 證交所）";
     function tagOf(x) { return x && x.label ? "（" + x.label + " " + (x.src || "證交所") + "）" : tag; }
     if (d.margin) {

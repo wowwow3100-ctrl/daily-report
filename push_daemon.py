@@ -285,7 +285,7 @@ def pump_due(now):
         if key not in _pump_done:
             due.append(key)
     # 融資／維持率／風險戶：證交所約 21:30 才公布，晚上多抓幾次＋隔天早上補一次
-    if (wd < 5 and h in (21, 22, 23) and m >= 45) or (wd < 6 and h == 7 and m >= 10):
+    if (wd < 5 and h in (21, 22, 23) and m >= 45) or (wd < 6 and h == 7 and m >= 10) or (wd < 5 and h in (14, 15) and m >= 40):
         key = ("market", now.strftime("%Y%m%d%H"))
         if key not in _pump_done:
             due.append(key)

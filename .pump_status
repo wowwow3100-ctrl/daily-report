@@ -1,26 +1,26 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-10-28T20:25:01",
+    "ts": "2026-10-29T20:25:02",
     "fetch": "latest 2026-09 rows 1981 high12 0 changed False\n",
     "status": "nochange"
   },
   "sectors": {
     "kind": "sectors",
-    "ts": "2026-10-28T20:45:03",
-    "fetch": "no change 2026-10-28\n",
+    "ts": "2026-10-29T20:45:03",
+    "fetch": "no change 2026-10-29\n",
     "status": "nochange"
   },
   "market": {
     "kind": "market",
-    "ts": "2026-10-28T23:45:03",
-    "fetch": "no change 2026-10-28\n",
-    "status": "nochange"
+    "ts": "2026-10-29T23:59:52",
+    "fetch": "wrote {'updated': '2026-10-29 23:59', 'margin': {'bal': 6339.1, 'chg': 16.1}, 'index': {'close': 46368.33, 'chg': -667.25, 'pct': -1.42, 'amt': 8238, 'date': '2026-10-29', 'label': '10/29', 'amt_prev': 7503, 'amt_pct': 9.8}, 'sox': {'close': 11684.0, 'pct': 1.75, 'prev_pct': 3.6, 'label': '10/28'}, 'date': '2026-10-29', 'label': '10/29', 'keep': {'rate': 271.35, 'below': 13, 'call': 7, 'exe': 3, 'risk': 23, 'rate_chg': -3.15, 'risk_chg': 12, 'date': '20261029'}}\n",
+    "status": "pushed"
   },
   "material": {
     "kind": "material",
-    "ts": "2026-10-28T23:15:04",
-    "fetch": "wrote 970 details 3 days 8\n",
+    "ts": "2026-10-29T23:59:40",
+    "fetch": "wrote 1089 details 1 days 8\n",
     "status": "pushed"
   }
 }
