@@ -13,14 +13,14 @@
   },
   "market": {
     "kind": "market",
-    "ts": "2026-10-30T20:54:05",
-    "fetch": "wrote {'updated': '2026-10-30 20:54', 'margin': {'bal': 6234.7, 'chg': -104.4, 'amt_k': 623467886.0, 'prev_k': 633910848.0}, 'index': {'close': 45211.83, 'chg': -1156.5, 'pct': -2.49, 'amt': 9396, 'date': '2026-10-30', 'label': '10/30', 'amt_prev': 8238, 'amt_pct': 14.1}, 'sox': {'close': 11518.2, 'pct': -1.42, 'prev_pct': 1.75, 'label': '10/29'}, 'date': '2026-10-30', 'label': '10/30', 'fin_keep': {'rate': 171.75, 'n': 1238, 'chg': -6.69, 'date': '2026-10-30'}, 'keep': {'rate': 264.64, 'below': 25, 'call': 17, 'exe': 4, 'risk': 46, 'rate_chg': -6.71, 'risk_chg': 23, 'date': '20261030'}}\n",
-    "status": "pushed"
+    "ts": "2026-10-30T23:45:00",
+    "fetch": "no change 2026-10-30\n",
+    "status": "nochange"
   },
   "material": {
     "kind": "material",
-    "ts": "2026-10-30T20:15:00",
-    "fetch": "wrote 1209 details 2 days 8\n",
-    "status": "pushed"
+    "ts": "2026-10-30T23:15:01",
+    "fetch": "no change 1218\n",
+    "status": "nochange"
   }
 }
