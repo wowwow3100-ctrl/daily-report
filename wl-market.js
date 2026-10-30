@@ -62,7 +62,13 @@
     }
     if (d.keep) {
       var k = d.keep, tag2 = tagOf(k);
-      if (k.rate) setCard(/擔保維持率/, fmt(k.rate, 2) + "%", "較前日 " + (k.rate_chg != null ? sign(k.rate_chg, 2) : "—") + tag2,
+      if (d.fin_keep && d.fin_keep.rate) {
+        var f = d.fin_keep;
+        document.querySelectorAll(".mkt .m .lbl").forEach(function (l) { if (/擔保維持率|融資維持率/.test(l.textContent)) l.textContent = "大盤融資維持率"; });
+        document.querySelectorAll(".pulse .pt .pk").forEach(function (l) { if (/擔保維持率|融資維持率/.test(l.textContent)) l.textContent = "融資維持率"; });
+        setCard(/融資維持率/, fmt(f.rate, 2) + "%", "較前日 " + (f.chg != null ? sign(f.chg, 2) : "—") + "（" + d.label + " 證交所資料計算）",
+          f.chg > 0 ? "up" : f.chg < 0 ? "down" : "", "130% 為追繳線｜一般落在 130%～180%");
+      } else if (k.rate) setCard(/擔保維持率/, fmt(k.rate, 2) + "%", "較前日 " + (k.rate_chg != null ? sign(k.rate_chg, 2) : "—") + tag2,
         k.rate_chg > 0 ? "up" : k.rate_chg < 0 ? "down" : "", null);
       if (k.risk != null) setCard(/信用風險戶/, fmt(k.risk, 0) + " 戶", "較前日 " + (k.risk_chg != null ? sign(k.risk_chg, 0) + " 戶" : "—") + tag2,
         k.risk_chg > 0 ? "up" : k.risk_chg < 0 ? "down" : "", "維持率不足 " + k.below + "｜追繳 " + k.call + "｜處分 " + k.exe);

@@ -99,7 +99,7 @@
     var noteEl = mktSec && mktSec.querySelector("h2 .muted");
     var note = noteEl ? noteEl.textContent.replace(/^（|）$/g, "") : "";
     var stamp = (doc.getElementById("updated") || {}).textContent || "";
-    var SHORT = { "加權指數": "加權指數", "成交值（上市）": "成交值", "融資餘額（上市）": "融資餘額", "費城半導體 SOX": "費半 SOX", "全市場擔保維持率": "擔保維持率", "信用風險戶數": "信用風險戶" };
+    var SHORT = { "加權指數": "加權指數", "成交值（上市）": "成交值", "融資餘額（上市）": "融資餘額", "費城半導體 SOX": "費半 SOX", "全市場擔保維持率": "擔保維持率", "大盤融資維持率": "融資維持率", "信用風險戶數": "信用風險戶" };
     var tiles = Array.prototype.map.call(cards, function (c, i) {
       var lbl = (c.querySelector(".lbl") || {}).textContent || "";
       lbl = lbl.replace(/NEW/g, "").trim();

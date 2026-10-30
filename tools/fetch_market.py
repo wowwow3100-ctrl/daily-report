@@ -51,7 +51,7 @@ def margin_on(ds):
             if r and "融資金額" in str(r[0]):
                 prev, today = num(r[4]), num(r[5])
                 if today:
-                    return {"bal": round(today / 100000, 1), "chg": round((today - (prev or today)) / 100000, 1)}
+                    return {"bal": round(today / 100000, 1), "chg": round((today - (prev or today)) / 100000, 1), "amt_k": today, "prev_k": prev}
     return None
 
 
@@ -74,6 +74,56 @@ def keep_trend(ds):
     d = a.get("date") or a.get("txDate") or a.get("dataDate")
     out["date"] = str(d) if d else ""
     return out, None
+
+
+def _col(fields, name, start=0):
+    for i, f in enumerate(fields or []):
+        if i >= start and name in str(f):
+            return i
+    return None
+
+
+def fin_keep(ds, total_amt_k, prev_amt_k=None):
+    """大盤融資維持率 ＝ 上市融資餘額市值 ÷ 融資金額（一般落在 130%～180%，130% 是追繳線）。"""
+    j = get("https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=%s&selectType=ALL&response=json" % ds)
+    lots, plots = {}, {}
+    for t in j.get("tables") or []:
+        f = t.get("fields") or []
+        ic, ib, ipb = _col(f, "代號"), _col(f, "今日餘額"), _col(f, "前日餘額")
+        if ic is None or ib is None:
+            continue
+        for r in t.get("data") or []:
+            v = num(r[ib])
+            if v:
+                lots[str(r[ic]).strip()] = v
+            if ipb is not None and num(r[ipb]):
+                plots[str(r[ic]).strip()] = num(r[ipb])
+    time.sleep(2)
+    j = get("https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=%s&type=ALLBUT0999&response=json" % ds)
+    px, ppx = {}, {}
+    for t in j.get("tables") or []:
+        f = t.get("fields") or []
+        ic, ip = _col(f, "證券代號"), _col(f, "收盤價")
+        isg, idf = _col(f, "漲跌(+/-)"), _col(f, "漲跌價差")
+        if ic is None or ip is None:
+            continue
+        for r in t.get("data") or []:
+            v = num(r[ip])
+            if v:
+                c = str(r[ic]).strip()
+                px[c] = v
+                if isg is not None and idf is not None:
+                    d = num(r[idf]) or 0
+                    sg = -1 if "-" in str(r[isg]) or "green" in str(r[isg]) else 1
+                    ppx[c] = v - sg * d
+    if len(lots) < 300 or len(px) < 300 or not total_amt_k:
+        return None
+    mv = sum(n * 1000 * px[c] for c, n in lots.items() if c in px)
+    out = {"rate": round(mv / (total_amt_k * 1000) * 100, 2), "n": len(lots)}
+    if prev_amt_k and len(plots) > 300 and len(ppx) > 300:
+        pmv = sum(n * 1000 * ppx[c] for c, n in plots.items() if c in ppx)
+        out["chg"] = round(out["rate"] - pmv / (prev_amt_k * 1000) * 100, 2)
+    return out
 
 
 def roc(s):
@@ -173,6 +223,12 @@ def main():
     res["date"] = day.strftime("%Y-%m-%d")
     res["label"] = day.strftime("%m/%d")
     try:
+        fk = fin_keep(day.strftime("%Y%m%d"), res["margin"].get("amt_k"), res["margin"].get("prev_k"))
+        if fk:
+            res["fin_keep"] = fk
+    except Exception as e:
+        print("fin_keep fail", e)
+    try:
         k, raw = keep_trend(day.strftime("%Y%m%d"))
         if k:
             res["keep"] = k
@@ -185,6 +241,9 @@ def main():
         old = json.load(open(p, encoding="utf-8"))
     except Exception:
         old = None
+    fk = res.get("fin_keep")
+    if fk:
+        fk["date"] = res["date"]
     if old and {k: v for k, v in old.items() if k != "updated"} == {k: v for k, v in res.items() if k != "updated"}:
         print("no change", res["date"])
         return 0
