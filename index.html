@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/11/01（週日）盤後場次</div>
+        <div class="stamp" id="updated">2026/11/01（週日）夜間場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -294,7 +294,7 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/01 早盤場．週日休市，加權、成交值、融資、維持率與風險戶皆為證交所 10/30 收盤資料；SOX 為 10/30 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/01 夜間場．週日休市，加權、成交值、融資、維持率與風險戶皆為證交所 10/30 收盤資料；SOX 為 10/30 美股收盤）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">45,212</div><div class="chg down">-1,156.50（-2.49%）（10/30）</div></div>
     <div class="m"><div class="lbl">成交值（上市）</div><div class="val">9,396 億</div><div class="chg up">較前日 +14.1%（10/30 證交所；前日 8,238 億）</div></div>
@@ -393,10 +393,26 @@
   <!-- ===== /DATA:PREOPEN ===== -->
 
                                                                 <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/01 盤後場．依時間由新到舊．共 20 則）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/01 夜間場．依時間由新到舊．共 20 則）</span></h2>
+  <div class="card">
+    <div class="news-title"><span class="cat">能源</span><span class="ntime">11/01 17:28</span>中油：下週汽柴油價格不調整 累計吸收約318.6億元 <a class="ref" href="#src-2201">[2201]</a></div>
+    <div class="news-body">中央社：台灣中油宣布 11/2 至 11/8 汽、柴油價格維持不調整，自 2/28 起的平穩措施累計吸收約 318.6 億元；台塑石化同步公布 11/2 起不漲價，92 無鉛每公升 31.2 元、超級柴油 29.7 元<a class="ref" href="#src-2202">[2202]</a>。中油另宣布 11 月桶裝瓦斯與工業用液化石油氣價格不調整（依機制應漲每公斤 3.5 元），今年累計吸收約 137 億元<a class="ref" href="#src-2203">[2203]</a>。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">AI</span><span class="ntime">11/01 17:24</span>閉眼買？外媒欽點2檔AI股抱緊10年不要賣 台積電入榜 <a class="ref" href="#src-2204">[2204]</a></div>
+    <div class="news-body">自由財經引述美媒：荷蘭半導體設備商 ASML 與台積電(2330) 雖不直接設計 AI 晶片，仍可隨 AI 晶片需求成長受惠，文中以長期持有 10 年為情境分析；報導同時提到半導體類股近期遭遇賣壓。</div>
+  </div>
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">11/01 16:43</span>〈台股風向球〉融資恐殺出引爆補跌壓力 台股走勢可能有2種情境 <a class="ref" href="#src-2101">[2101]</a></div>
     <div class="news-body">鉅亨網：台股上週跌 829 點、週線連 3 黑，外資單週賣超 1,734 億元（台積電(2330) 625 億元居首）、投信連 3 買。永豐投顧以 45,000 點半年線為多空分水嶺，融資餘額由 10/12 高點 6,533 億元降至 10/29 的 6,339 億元；若守住 44,600 點以上融資可望緩降，若一路下探年線則融資恐需降至約 4,200 億元；加權指數預估本益比已降至 16 倍出頭。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/01 16:37</span>波斯灣船隻再遇襲 卡達天然氣油輪遭不明物體攻擊 <a class="ref" href="#src-2205">[2205]</a></div>
+    <div class="news-body">中央社：卡達通訊社報導，卡達天然氣運輸公司旗下液化天然氣運輸船「梅耶達號」10/30 晚間行經波斯灣時遭不明物體攻擊；自今年 2 月中東爆發戰爭以來，伊朗持續攻擊荷莫茲海峽及波斯灣船隻，美國則以封鎖伊朗港口回應。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">原物料</span><span class="ntime">11/01 15:28</span>華爾街多頭幾乎棄船！金價恐殺到3000美元 分析師給出時間了 <a class="ref" href="#src-2206">[2206]</a></div>
+    <div class="news-body">自由財經：Kitco 最新黃金週度調查顯示，金價失守每盎司 3,900 美元後，華爾街看多陣營轉為看空居多；分析師指市場正經歷去槓桿，技術面不排除續探，明年第一季恐下探 3,000 美元左右。</div>
   </div>
   <div class="card">
     <div class="news-title"><span class="cat">航運</span><span class="ntime">11/01 15:25</span>貨櫃船造價略有下修 IMO秘書長認為增加造船能量可支持綠色轉型 <a class="ref" href="#src-2102">[2102]</a></div>
@@ -409,10 +425,6 @@
   <div class="card">
     <div class="news-title"><span class="cat">國際</span><span class="ntime">11/01 14:21</span>美期中選舉3劇本！彭博點「台股4檔」受波及 亞洲4地掀變局 <a class="ref" href="#src-2104">[2104]</a></div>
     <div class="news-body">ETtoday財經雲引述彭博：美國期中選舉分為民主黨橫掃國會、共和黨守住國會、分立政府三種情境；台積電(2330)、鴻海(2317)、廣達(2382)、台達電(2308) 列入觀察名單，AI 資料中心監管、電力成本與科技政策變化恐牽動亞洲科技股；分立政府情境下美債殖利率與美元可能承壓。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">消費</span><span class="ntime">11/01 13:46</span>春水堂今起調漲「平均貴12%」 珍珠奶茶1杯200元 <a class="ref" href="#src-2001">[2001]</a></div>
-    <div class="news-body">壹蘋新聞網：春水堂人文茶館宣布 11/1 起調整餐點與飲品價格，範圍涵蓋八成以上品項、平均調幅約 12%；以北區價格為例，珍珠奶茶（M 杯）調整為 200 元、功夫麵 135 元。</div>
   </div>
   <div class="card">
     <div class="news-title"><span class="cat">國際</span><span class="ntime">11/01 13:23</span>全球科技股Q4開局慘！韓股、費半重挫逾15% 台股跌近6%今年仍稱霸 <a class="ref" href="#src-2002">[2002]</a></div>
@@ -442,6 +454,7 @@
     <div class="news-title"><span class="cat">政策</span><span class="ntime">11/01 12:04</span>台股殺千點還有端「基本麵」！金管會搬出4大數據 股民直呼吃不下 <a class="ref" href="#src-2007">[2007]</a></div>
     <div class="news-body">聯合新聞網：金管會公布截至 9 月底台股本益比約 26.68 倍、現金殖利率 1.54%，上市櫃前 9 月累計營收 49.89 兆元、年增 38.21%；10/29 信用交易整戶擔保維持率 180.21%、借券賣出占成交值 4.31%。PTT 網友以「吃麵」諧音熱議。</div>
   </div>
+  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">11/01 11:48</span>AI變現疑慮引爆科技股賣壓 法人：台股45000點保衛戰 <a class="ref" href="#src-2008">[2008]</a></div>
     <div class="news-body">中央社：台股 10 月下挫 2,728.3 點、失守半年線（約 45,300 點），週線連 3 跌。永豐投顧指美國 4 大 CSP 資本支出仍上修、需求未轉弱，壓力在評價面；外資賣壓已由台積電(2330) 擴散到台達電(2308)、聯發科(2454)，11 月觀察其他權值股賣壓是否收斂；年線約在 38,500 點。</div>
@@ -456,24 +469,12 @@
   </div>
   <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/01 10:10</span>志聖策略投資暉盛1900張 搶先進封裝商機 <a class="ref" href="#src-2012">[2012]</a></div>
-    <div class="news-body">壹蘋新聞網：志聖(2467) 以策略性投資人身分認購暉盛(7730) 私募普通股 1,900 張，交易完成後持股約 4.68%，雙方將結合電漿處理、熱製程與自動化設備優勢，強化先進封裝關鍵製程技術。</div>
+    <div class="news-title"><span class="cat">產業</span><span class="ntime">11/01 10:43</span>AI通膨席捲手機市場 業者：價格壓力恐燒至2028年 <a class="ref" href="#src-2207">[2207]</a></div>
+    <div class="news-body">中央社：TrendForce 調查，近兩代 iPhone Pro 256GB 機種物料成本中記憶體占比由一年前約 10% 升至 2026 年 Q3 約 34%，2027 年上半年估破 40%；三星、vivo、OPPO 台灣主管均指記憶體需求明年底前仍熱，手機漲價壓力恐延續至 2028 年。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">金融</span><span class="ntime">11/01 09:43</span>獲利強強滾！金融三業前三季暴賺近1.3兆元 刷新史上新高紀錄 <a class="ref" href="#src-2106">[2106]</a></div>
-    <div class="news-body">工商時報：金管會統計金融三業前三季稅前獲利 1 兆 2,715.44 億元創史上新高，全年有望挑戰 1.5 兆元；銀行業 5,946.9 億元（年增 21.9%）、保險業 3,977 億元、證券期貨投信業 2,791.54 億元（年增 152.11%），券商受惠成交值增加，經紀業務收入年增 125.27%。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/01 09:20</span>英特爾暴跌拖累美股！台股危險了？分析師揭聯電、台達電操作關鍵、點名3大族群成避風港 <a class="ref" href="#src-2107">[2107]</a></div>
-    <div class="news-body">工商時報：英特爾上週五重挫 28.58%、費半跌 7.2%，台股 11/2 開盤恐承壓。國泰證期顧問分析師郭經緯指聯電(2303) 證實明年成熟製程報價調漲 10% 但幅度不如市場預期、台達電(2308) Q3 EPS 9.04 元受長短料與存貨跌價影響；並點名機電／工具機、記憶體、IC 設計三族群近期技術面轉強。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/01 09:10</span>金居啟動大馬建廠計畫 高階銅箔新廠落腳居林、取得3.12萬坪土地 <a class="ref" href="#src-2108">[2108]</a></div>
-    <div class="news-body">鉅亨網：金居(8358) 取得馬來西亞吉打州居林高科技園區 Phase 4A 土地使用權，規劃 HVLP4 高頻高速銅箔新廠、年產能 3 萬噸，分兩期於 2028 年下半年起陸續開出，總投資約 80 億～100 億元，擬在台發行約 70 億元可轉債支應；客戶設定包括台光電(2383)、台燿(6274)、騰輝-KY(6672)、聯茂(6213)。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/01 08:52</span>聯發科跌近3成能撿便宜？ 股價重挫關鍵 <a class="ref" href="#src-2013">[2013]</a></div>
-    <div class="news-body">ETtoday財經雲（鏡週刊）：聯發科(2454) 自 5,480 元高點回落近三成；黑石財經執行長温建勳指法說將今年 AI ASIC 營收展望上修至 21 億～25 億美元、2028 年有新客戶加入，並認為美國資料中心建置速度才是關鍵；10 月外資賣超聯發科約 4 萬張。</div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/01 10:14</span>台積電0050今年各增百萬持有人 正2、主動式ETF崛起 <a class="ref" href="#src-2208">[2208]</a></div>
+    <div class="news-body">中央社：集保資料顯示截至 10/22，持有人數破百萬的證券增至 8 檔，0050 約 372 萬人居首、台積電(2330) 316.7 萬人居次，兩者今年各增逾百萬人，台積電零股族占比升至 81.9%；聯電(2303) 新進百萬股東之列，主動式 ETF 受益人次合計年增 543.6%。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
@@ -545,15 +546,19 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
+    <li id="src-2201"><a href="https://tw.news.yahoo.com/%E4%B8%AD%E6%B2%B9-%E4%B8%8B%E9%80%B1%E6%B1%BD%E6%9F%B4%E6%B2%B9%E5%83%B9%E6%A0%BC%E4%B8%8D%E8%AA%BF%E6%95%B4-%E7%B4%AF%E8%A8%88%E5%90%B8%E6%94%B6%E7%B4%84318-6%E5%84%84%E5%85%83-092825996.html" target="_blank" rel="noopener">中央社（Yahoo新聞）｜中油：下週汽柴油價格不調整 累計吸收約318.6億元（11/01 17:28）</a></li>
+    <li id="src-2202"><a href="https://news.cts.com.tw/cna/money/202611/202611013096142.html" target="_blank" rel="noopener">中央社（華視新聞網）｜台塑石化：2日起汽柴油不漲價（11/01 15:43）</a></li>
+    <li id="src-2203"><a href="https://news.cts.com.tw/cna/money/202611/202611013096161.html" target="_blank" rel="noopener">中央社（華視新聞網）｜中油11月桶裝瓦斯價格不調整 累計吸收137億元（11/01 16:50）</a></li>
+    <li id="src-2204"><a href="https://ec.ltn.com.tw/article/breakingnews/5625841" target="_blank" rel="noopener">自由財經｜閉眼買？外媒欽點2檔AI股抱緊10年不要賣 台積電入榜（11/01 17:24）</a></li>
+    <li id="src-2205"><a href="https://news.cts.com.tw/cna/international/202611/202611013096157.html" target="_blank" rel="noopener">中央社（華視新聞網）｜波斯灣船隻再遇襲 卡達天然氣油輪遭不明物體攻擊（11/01 16:37）</a></li>
+    <li id="src-2206"><a href="https://ec.ltn.com.tw/article/breakingnews/5625754" target="_blank" rel="noopener">自由財經｜華爾街多頭幾乎棄船！金價恐殺到3000美元 分析師給出時間了（11/01 15:28）</a></li>
+    <li id="src-2207"><a href="https://news.cts.com.tw/cna/money/202611/202611013096076.html" target="_blank" rel="noopener">中央社（華視新聞網）｜AI通膨席捲手機市場 業者：價格壓力恐燒至2028年（11/01 10:43）</a></li>
+    <li id="src-2208"><a href="https://news.cts.com.tw/cna/money/202611/202611013096071.html" target="_blank" rel="noopener">中央社（華視新聞網）｜台積電0050今年各增百萬持有人 正2、主動式ETF崛起（11/01 10:14）</a></li>
     <li id="src-2101"><a href="https://news.cnyes.com/news/id/6643193" target="_blank" rel="noopener">鉅亨網｜〈台股風向球〉融資恐殺出引爆補跌壓力 台股走勢可能有2種情境（11/01 16:43）</a></li>
     <li id="src-2102"><a href="https://finance.ettoday.net/news/3264406" target="_blank" rel="noopener">ETtoday財經雲｜貨櫃船造價略有下修 IMO秘書長認為增加造船能量可支持綠色轉型（11/01 15:25）</a></li>
     <li id="src-2103"><a href="https://news.cnyes.com/news/id/6643282" target="_blank" rel="noopener">鉅亨網｜AI不只要算力更拚交付速度！FII、FIT深化合作因應客戶「昨天到貨」急單需求（11/01 14:30）</a></li>
     <li id="src-2104"><a href="https://finance.ettoday.net/news/3264377" target="_blank" rel="noopener">ETtoday財經雲｜美期中選舉3劇本！彭博點「台股4檔」受波及 亞洲4地掀變局（11/01 14:21）</a></li>
     <li id="src-2105"><a href="https://news.cnyes.com/news/id/6643199" target="_blank" rel="noopener">鉅亨網｜伊朗盯上荷姆茲最大油輪船隊！點名南韓Sinokor、警告11月1日採取「全面行動」（11/01 12:10）</a></li>
-    <li id="src-2106"><a href="https://www.ctee.com.tw/news/20261101700297-430301" target="_blank" rel="noopener">工商時報｜獲利強強滾！金融三業前三季暴賺近1.3兆元 刷新史上新高紀錄（11/01 09:43）</a></li>
-    <li id="src-2107"><a href="https://www.ctee.com.tw/news/20261101700277-430201" target="_blank" rel="noopener">工商時報｜英特爾暴跌拖累美股！台股危險了？分析師揭聯電、台達電操作關鍵、點名3大族群成避風港（11/01 09:20）</a></li>
-    <li id="src-2108"><a href="https://news.cnyes.com/news/id/6643020" target="_blank" rel="noopener">鉅亨網｜金居啟動大馬建廠計畫 高階銅箔新廠落腳居林、取得3.12萬坪土地（11/01 09:10）</a></li>
-    <li id="src-2001"><a href="https://news.nextapple.com/life/20261101/5B086FD7C7CE64F362E23F19F638A83F" target="_blank" rel="noopener">壹蘋新聞網｜春水堂今起調漲「平均貴12%」 珍珠奶茶1杯200元（11/01 13:46）</a></li>
     <li id="src-2002"><a href="https://news.nextapple.com/finance/20261101/C502F007F4B9D53F8874BD682E47651B" target="_blank" rel="noopener">壹蘋新聞網｜全球科技股Q4開局慘！韓股、費半重挫逾15% 台股跌近6%今年仍稱霸（11/01 13:23）</a></li>
     <li id="src-2003"><a href="https://udn.com/news/story/7251/9850057" target="_blank" rel="noopener">經濟日報｜費半重挫7.2%！法人：英特爾財測失利引爆半導體避險潮 資金防禦輪動（11/01 13:00）</a></li>
     <li id="src-2004"><a href="https://udn.com/news/story/12806/9849856" target="_blank" rel="noopener">聯合新聞網｜AI軍備競賽愈燒愈兇！Meta遭標普下修展望 現金缺口恐達2.32兆（11/01 12:55）</a></li>
@@ -563,8 +568,6 @@
     <li id="src-2008"><a href="https://news.cts.com.tw/cna/money/202611/202611013096088.html" target="_blank" rel="noopener">中央社｜AI變現疑慮引爆科技股賣壓 法人：台股45000點保衛戰（11/01 11:48）</a></li>
     <li id="src-2009"><a href="https://udn.com/news/story/12806/9849818" target="_blank" rel="noopener">聯合新聞網｜國安基金不急護盤！台股重挫千點 阮清華：股市有漲有跌很正常（11/01 11:04）</a></li>
     <li id="src-2010"><a href="https://news.nextapple.com/finance/20261101/A3031F9F80618ED43A407EF009A4AD3B" target="_blank" rel="noopener">壹蘋新聞網｜台股高點回檔近1成！法人看籌碼醞釀反彈 點名2大潛力族群（11/01 10:44）</a></li>
-    <li id="src-2012"><a href="https://news.nextapple.com/finance/20261101/2451F0BD395FB4AEB983C21B1D7BBF08" target="_blank" rel="noopener">壹蘋新聞網｜志聖策略投資暉盛1900張 搶先進封裝商機（11/01 10:10）</a></li>
-    <li id="src-2013"><a href="https://finance.ettoday.net/news/3264199" target="_blank" rel="noopener">ETtoday財經雲｜聯發科跌近3成能撿便宜？ 股價重挫關鍵（11/01 08:52）</a></li>
     <li id="src-1420"><a href="https://www.chinatimes.com/realtimenews/20261030002262-260410" target="_blank" rel="noopener">中時新聞網｜《電週邊》研華(2395)翻紅逆攻 土洋看法不同調（10/30 12:29）</a></li>
     <li id="src-1421"><a href="https://udn.com/news/story/12806/9846273" target="_blank" rel="noopener">聯合新聞網｜聯電(2303)昨跌停外資卻喊加碼！大摩目標價 188 元（10/30 09:28）</a></li>
     <li id="src-1422"><a href="https://www.setn.com/news/1930323" target="_blank" rel="noopener">三立新聞網｜Q3 獲利大暴增 358%！欣興(3037)稼動率破 9 成 目標價至 1,300 元（10/30 01:30）</a></li>
