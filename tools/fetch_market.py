@@ -7,6 +7,9 @@
   - 全市場擔保維持率、信用風險戶數：BFIJ4U_TREND
   - 加權指數收盤／漲跌、上市成交值：FMTQIK（約 14:30 收盤後就有）
   - 費城半導體 SOX：Yahoo Finance 日線（美股收盤）
+  - 生命線失守比例：台股生命線 App 公開 API /api/site/breadth（2026-11-01 v5 加入）
+    跟 App 大盤檢查「全市場水位」同一份算法、同一份資料 → 情報站與 App 數字一致
+    App 暫時連不到就沿用上一次的數字（日期照實標），不會用別的來源湊
 網頁（wl-market.js）讀到後直接覆蓋首頁卡片，並標出資料日期。
 證交所融資資料約在交易日 21:30 前後才公布，所以會從今天往前找最近一個有資料的交易日。
 用法: python fetch_market.py <輸出資料夾>
@@ -184,6 +187,36 @@ def sox_info():
             "label": datetime.fromtimestamp(t2, ny).strftime("%m/%d")}
 
 
+LIFELINE_BREADTH = "https://web-production-e1521.up.railway.app/api/site/breadth?days=20"
+
+
+def breadth_info():
+    """台股生命線 App 的全市場生命線失守比例；拿不到回 None。"""
+    req = urllib.request.Request(LIFELINE_BREADTH, headers={"User-Agent": "Mozilla/5.0 (wanglai-news market)", "Accept": "application/json"})
+    last = None
+    for i in range(2):
+        try:
+            with urllib.request.urlopen(req, timeout=40) as r:
+                j = json.loads(r.read().decode("utf-8"))
+            break
+        except Exception as e:  # noqa
+            last = e
+            time.sleep(4)
+    else:
+        raise last
+    if not j.get("ok") or j.get("pct") is None or not j.get("date"):
+        return None
+    d = str(j["date"])[:10]
+    out = {"pct": round(float(j["pct"]), 1), "below": int(j["below"]), "n": int(j["n"]),
+           "chg_pp": j.get("chg_pp"), "light": j.get("light"), "date": d, "label": d[5:7] + "/" + d[8:10],
+           "hist": [round(float(x["pct"]), 1) for x in (j.get("history") or []) if x.get("pct") is not None][-20:],
+           "src": "台股生命線"}
+    ds = j.get("datasets") or {}
+    if ds.get("chip_layers"):
+        out["chip_week"] = str(ds["chip_layers"])[:10]
+    return out
+
+
 def main():
     outdir = sys.argv[1] if len(sys.argv) > 1 else "market"
     os.makedirs(outdir, exist_ok=True)
@@ -217,6 +250,14 @@ def main():
             res["sox"] = sx
     except Exception as e:
         print("sox fail", e)
+    try:
+        br = breadth_info()
+        if br:
+            res["breadth"] = br
+        else:
+            print("breadth: lifeline api returned no data")
+    except Exception as e:
+        print("breadth fail", e)
     if not day:
         print("no margin data")
         return 1
@@ -244,6 +285,8 @@ def main():
     fk = res.get("fin_keep")
     if fk:
         fk["date"] = res["date"]
+    if "breadth" not in res and old and old.get("breadth"):
+        res["breadth"] = old["breadth"]  # App 暫時連不到：沿用上一次（日期照實標，網頁會顯示是哪天的資料）
     if old and {k: v for k, v in old.items() if k != "updated"} == {k: v for k, v in res.items() if k != "updated"}:
         print("no change", res["date"])
         return 0

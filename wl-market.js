@@ -1,10 +1,13 @@
 /* =====================================================================
-   旺來新聞站 · 盤後信用數據校正 wl-market.js
+   旺來新聞站 · 盤後信用數據校正 wl-market.js  (v5, 2026-11-01)
    ---------------------------------------------------------------------
    融資餘額、擔保維持率、信用風險戶數改用證交所官方資料（推送守護在
    這台電腦每晚抓好，寫在 data 分支 market/latest.json），網頁打開時
    直接覆蓋首頁卡片與市場脈動列，並標出資料日期，避免排程抓到前一天
    的數字卻標成今天。
+   v5：市場脈動多一塊「生命線失守比例」— 資料來自台股生命線 App 的
+   公開 API（/api/site/breadth，跟 App 大盤檢查「全市場水位」同一份
+   算法），由推送守護一起寫進 market/latest.json 的 breadth。
    ===================================================================== */
 (function () {
   "use strict";
@@ -22,6 +25,7 @@
     });
     document.querySelectorAll(".pulse .pt").forEach(function (t) {
       var k = t.querySelector(".pk"); if (!k || !re.test(k.textContent)) return;
+      if (t.classList.contains("pt-br")) return;
       var v = t.querySelector(".pv"), c = t.querySelector(".pc");
       if (v) v.textContent = val;
       if (c) c.textContent = (dir === "up" ? "▲ " : dir === "down" ? "▼ " : "") + (pulseTxt != null ? pulseTxt : chgTxt.replace(/^(單日|較前日)\s*/, "").replace(/^[+\-]\s*/, "").replace(/（.*$/, ""));
@@ -44,12 +48,101 @@
       notes.push("SOX 為 " + sx.label + " 美股收盤");
     }
     if (d.label) notes.push("融資、維持率、風險戶為 " + d.label + " 證交所資料");
+    if (d.breadth && d.breadth.label) notes.push("生命線失守比例為台股生命線 App " + d.breadth.label + " 收盤資料");
     if (!notes.length) return;
     var txt = "（" + notes.join("；") + "）";
     var h = document.getElementById("mkt"), m = h && h.querySelector(".muted");
     if (m) m.textContent = txt;
     var pn = document.querySelector(".pulse .p-note");
     if (pn) pn.textContent = "資料說明：" + txt.replace(/^（|）$/g, "");
+  }
+
+  /* ---------- v5：生命線失守比例 ---------- */
+  var LIGHT = { g: ["綠燈", "多數個股在線上"], y: ["黃燈", "個股分歧"], r: ["紅燈", "個股在殺"] };
+  function lightOf(p) { return p < 40 ? "g" : p < 55 ? "y" : "r"; }   // 跟台股生命線 App 大盤檢查同一把尺
+
+  function injectCss() {
+    if (document.getElementById("wl-br-css")) return;
+    var st = document.createElement("style");
+    st.id = "wl-br-css";
+    st.textContent = [
+      ".pt.pt-br{grid-column:1/-1;display:grid;grid-template-columns:minmax(118px,auto) minmax(0,1fr) auto;grid-template-areas:'l mid sp';align-items:center;column-gap:20px;row-gap:8px;}",
+      ".pt-br .br-l{grid-area:l;display:flex;flex-direction:column;gap:2px;min-width:0;}",
+      ".pt-br .br-mid{grid-area:mid;min-width:0;display:flex;flex-direction:column;gap:7px;}",
+      ".pt-br .br-sp{grid-area:sp;display:flex;flex-direction:column;align-items:flex-end;gap:2px;}",
+      ".pt-br .br-sp svg{display:block;width:128px;height:34px;}",
+      ".pt-br .br-sp .psl{fill:none;stroke:rgb(var(--gold-rgb));stroke-width:1.6;vector-effect:non-scaling-stroke;stroke-linejoin:round;}",
+      ".pt-br .br-sp .psa{fill:rgba(var(--gold-rgb),.12);}",
+      ".pt-br .br-sp .dot{fill:rgb(var(--gold-rgb));}",
+      ".pt-br .br-cap{font-size:.62rem;color:var(--muted);letter-spacing:1px;white-space:nowrap;}",
+      ".pt-br .br-bar{position:relative;height:9px;border-radius:99px;background:rgba(var(--gold-rgb),.13);overflow:visible;}",
+      ".pt-br .br-bar i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:var(--br-c,var(--gold));transition:width .8s cubic-bezier(.2,.7,.2,1);}",
+      ".pt-br .br-bar s{position:absolute;top:-3px;bottom:-3px;width:1px;background:var(--muted);opacity:.55;text-decoration:none;}",
+      ".pt-br .br-scale{position:relative;height:12px;font-size:.58rem;color:var(--muted);font-family:var(--num);}",
+      ".pt-br .br-scale span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap;}",
+      ".pt-br .br-meta{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;font-size:.7rem;color:var(--muted);line-height:1.5;}",
+      ".pt-br .br-meta b{color:var(--text);font-family:var(--num);font-weight:700;}",
+      ".pt-br .br-lt{display:inline-flex;align-items:center;gap:6px;padding:1px 9px 1px 7px;border-radius:99px;border:1px solid var(--br-c,var(--edge));color:var(--text);font-weight:700;white-space:nowrap;}",
+      ".pt-br .br-lt::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--br-c,var(--muted));box-shadow:0 0 0 3px rgba(127,127,127,.12);}",
+      ".pt-br .br-link{color:var(--gold);text-decoration:none;white-space:nowrap;}",
+      ".pt-br .br-link:hover{text-decoration:underline;}",
+      ".pt-br.lt-g{--br-c:var(--down);} .pt-br.lt-y{--br-c:var(--gold);} .pt-br.lt-r{--br-c:var(--up);}",
+      "@media (max-width:759px){.pt.pt-br{grid-template-columns:minmax(0,auto) minmax(0,1fr);grid-template-areas:'l sp' 'mid mid';column-gap:12px;}.pt-br .br-sp svg{width:112px;height:30px;}}",
+      "html.mob .pt.pt-br{grid-template-columns:minmax(0,auto) minmax(0,1fr);grid-template-areas:'l sp' 'mid mid';column-gap:12px;}",
+      "html.mob .pt-br .br-sp svg{width:112px;height:30px;}"
+    ].join("\n");
+    document.head.appendChild(st);
+  }
+
+  function sparkPath(ys) {
+    var mn = Math.min.apply(null, ys), mx = Math.max.apply(null, ys), rg = (mx - mn) || 1;
+    var pts = ys.map(function (y, i) { return [(i / (ys.length - 1) * 100), (30 - (y - mn) / rg * 24)]; });
+    var d = pts.map(function (p, i) { return (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1); }).join(" ");
+    return { line: d, area: d + " L100 34 L0 34 Z", last: pts[pts.length - 1], mn: mn, mx: mx };
+  }
+
+  function applyBreadth(d) {
+    var b = d.breadth;
+    if (!b || b.pct == null || isNaN(Number(b.pct))) return;
+    var pct = Number(b.pct), lt = b.light && LIGHT[b.light] ? b.light : lightOf(pct), L = LIGHT[lt];
+    var chg = b.chg_pp, dir = chg > 0 ? "up" : chg < 0 ? "down" : "";
+    var chgTxt = chg == null ? "—" : (dir === "up" ? "▲ " : dir === "down" ? "▼ " : "持平 ") + (chg ? fmt(Math.abs(chg), 1) + " 個百分點" : "");
+    var counts = fmt(b.n, 0) + " 檔中 <b>" + fmt(b.below, 0) + "</b> 檔收在生命線下";
+    var tip = "全市場收盤跌破生命線的比例（<40% 綠、40～55% 黃、≥55% 紅）｜" + fmt(b.n, 0) + " 檔中 " + fmt(b.below, 0) + " 檔在線下｜" +
+      "資料：台股生命線 App " + (b.label || "") + " 收盤，與 App 大盤檢查「全市場水位」同一份算法" + (b.chip_week ? "｜App 大戶籌碼資料週 " + b.chip_week.slice(5).replace("-", "/") : "");
+    var grid = document.querySelector(".pulse .p-grid");
+    if (grid) {
+      injectCss();
+      var t = grid.querySelector(".pt-br");
+      if (!t) { t = document.createElement("div"); grid.appendChild(t); }
+      t.className = "pt pt-br lt-" + lt + (dir ? " " + dir : "");
+      t.setAttribute("data-k", "breadth");
+      t.title = tip;
+      var hist = (b.hist || []).map(Number).filter(function (x) { return !isNaN(x); });
+      var sp = "";
+      if (hist.length >= 3) {
+        var s = sparkPath(hist);
+        sp = '<div class="br-sp"><svg viewBox="0 0 100 34" preserveAspectRatio="none" aria-hidden="true"><path class="psa" d="' + s.area + '"/><path class="psl" d="' + s.line + '"/></svg>' +
+          '<span class="br-cap">近 ' + hist.length + " 日 " + fmt(s.mn, 0) + "～" + fmt(s.mx, 0) + "%</span></div>";
+      }
+      t.innerHTML =
+        '<div class="br-l"><span class="pk">生命線失守比例</span><b class="pv">' + fmt(pct, 1) + '%</b><span class="pc">' + chgTxt + "</span></div>" +
+        '<div class="br-mid">' +
+          '<div class="br-bar" role="img" aria-label="失守比例 ' + fmt(pct, 1) + '%"><i style="width:' + Math.max(0, Math.min(100, pct)) + '%"></i><s style="left:40%"></s><s style="left:55%"></s></div>' +
+          '<div class="br-scale" aria-hidden="true"><span style="left:0;transform:none">0</span><span style="left:40%">40</span><span style="left:55%">55</span><span style="left:100%;transform:translateX(-100%)">100%</span></div>' +
+          '<div class="br-meta"><span class="br-lt">' + L[0] + "・" + L[1] + "</span><span>" + counts + "</span><span>" + (b.label || "") + ' 收盤・與<a class="br-link" href="https://web-production-e1521.up.railway.app/" target="_blank" rel="noopener">台股生命線 App</a> 同步</span></div>' +
+        "</div>" + sp;
+      return;
+    }
+    // 沒有市場脈動列（非首頁版型）→ 退回在大盤速覽補一張卡
+    var mk = document.querySelector(".mkt");
+    if (!mk) return;
+    var m = mk.querySelector(".m-br");
+    if (!m) { m = document.createElement("div"); m.className = "m m-br"; mk.appendChild(m); }
+    m.title = tip;
+    m.innerHTML = '<div class="lbl">生命線失守比例</div><div class="val">' + fmt(pct, 1) + '%</div>' +
+      '<div class="chg' + (dir ? " " + dir : "") + '">較前日 ' + (chg == null ? "—" : sign(chg, 1) + " 個百分點") + "（" + (b.label || "") + " 台股生命線）</div>" +
+      '<div class="sub">' + L[0] + "・" + L[1] + "｜" + fmt(b.n, 0) + " 檔中 " + fmt(b.below, 0) + " 檔在線下</div>";
   }
 
   function apply(d) {
@@ -73,6 +166,7 @@
       if (k.risk != null) setCard(/信用風險戶/, fmt(k.risk, 0) + " 戶", "較前日 " + (k.risk_chg != null ? sign(k.risk_chg, 0) + " 戶" : "—") + tag2,
         k.risk_chg > 0 ? "up" : k.risk_chg < 0 ? "down" : "", "維持率不足 " + k.below + "｜追繳 " + k.call + "｜處分 " + k.exe);
     }
+    try { applyBreadth(d); } catch (e) {}
   }
 
   function run() {
