@@ -1,13 +1,14 @@
 /* =====================================================================
-   旺來新聞站 · 盤後信用數據校正 wl-market.js  (v5, 2026-11-01)
+   旺來新聞站 · 盤後信用數據校正 wl-market.js  (v6, 2026-11-02)
    ---------------------------------------------------------------------
    融資餘額、擔保維持率、信用風險戶數改用證交所官方資料（推送守護在
    這台電腦每晚抓好，寫在 data 分支 market/latest.json），網頁打開時
    直接覆蓋首頁卡片與市場脈動列，並標出資料日期，避免排程抓到前一天
    的數字卻標成今天。
-   v5：市場脈動多一塊「生命線失守比例」— 資料來自台股生命線 App 的
-   公開 API（/api/site/breadth，跟 App 大盤檢查「全市場水位」同一份
-   算法），由推送守護一起寫進 market/latest.json 的 breadth。
+   v5：市場脈動多一塊「生命線失守比例」，資料在 market/latest.json 的 breadth。
+   v6：改成研究版算法——20 日均量 1,000 張以上的上市櫃普通股、還原收盤價，
+   由這台電腦的旺來資料庫每天盤後自動算好（wanglai-db/daily_breadth.py）；
+   台股生命線 App 的大盤檢查讀同一份。燈號：40% 以下綠、40～60% 黃、60% 以上紅。
    ===================================================================== */
 (function () {
   "use strict";
@@ -48,7 +49,7 @@
       notes.push("SOX 為 " + sx.label + " 美股收盤");
     }
     if (d.label) notes.push("融資、維持率、風險戶為 " + d.label + " 證交所資料");
-    if (d.breadth && d.breadth.label) notes.push("生命線失守比例為台股生命線 App " + d.breadth.label + " 收盤資料");
+    if (d.breadth && d.breadth.label) notes.push("生命線失守比例為 " + d.breadth.label + " 收盤、成交量千張以上個股、還原價計算");
     if (!notes.length) return;
     var txt = "（" + notes.join("；") + "）";
     var h = document.getElementById("mkt"), m = h && h.querySelector(".muted");
@@ -59,7 +60,7 @@
 
   /* ---------- v5：生命線失守比例 ---------- */
   var LIGHT = { g: ["綠燈", "多數個股在線上"], y: ["黃燈", "個股分歧"], r: ["紅燈", "個股在殺"] };
-  function lightOf(p) { return p < 40 ? "g" : p < 55 ? "y" : "r"; }   // 跟台股生命線 App 大盤檢查同一把尺
+  function lightOf(p) { return p < 40 ? "g" : p < 60 ? "y" : "r"; }   // 研究版的尺，跟台股生命線 App 大盤檢查同一把
 
   function injectCss() {
     if (document.getElementById("wl-br-css")) return;
@@ -104,12 +105,14 @@
   function applyBreadth(d) {
     var b = d.breadth;
     if (!b || b.pct == null || isNaN(Number(b.pct))) return;
-    var pct = Number(b.pct), lt = b.light && LIGHT[b.light] ? b.light : lightOf(pct), L = LIGHT[lt];
+    var pct = Number(b.pct), lt = lightOf(pct), L = LIGHT[lt].slice();
+    if (pct >= 80) L[1] = "全面跌破";
     var chg = b.chg_pp, dir = chg > 0 ? "up" : chg < 0 ? "down" : "";
     var chgTxt = chg == null ? "—" : (dir === "up" ? "▲ " : dir === "down" ? "▼ " : "持平 ") + (chg ? fmt(Math.abs(chg), 1) + " 個百分點" : "");
-    var counts = fmt(b.n, 0) + " 檔中 <b>" + fmt(b.below, 0) + "</b> 檔收在生命線下";
-    var tip = "全市場收盤跌破生命線的比例（<40% 綠、40～55% 黃、≥55% 紅）｜" + fmt(b.n, 0) + " 檔中 " + fmt(b.below, 0) + " 檔在線下｜" +
-      "資料：台股生命線 App " + (b.label || "") + " 收盤，與 App 大盤檢查「全市場水位」同一份算法" + (b.chip_week ? "｜App 大戶籌碼資料週 " + b.chip_week.slice(5).replace("-", "/") : "");
+    var counts = "成交量千張以上 " + fmt(b.n, 0) + " 檔中 <b>" + fmt(b.below, 0) + "</b> 檔收在生命線下";
+    var tip = "近 20 日均量 1,000 張以上的上市櫃普通股，還原收盤價低於生命線的比例（<40% 綠、40～60% 黃、≥60% 紅；80% 以上＝全市場一起跌破）｜" +
+      fmt(b.n, 0) + " 檔中 " + fmt(b.below, 0) + " 檔在線下｜" + (b.label || "") + " 收盤" +
+      (b.all_pct != null ? "｜全部上市櫃（不分量能）" + fmt(b.all_pct, 1) + "%" : "") + "｜與台股生命線 App 大盤檢查同一份數字";
     var grid = document.querySelector(".pulse .p-grid");
     if (grid) {
       injectCss();
@@ -128,9 +131,9 @@
       t.innerHTML =
         '<div class="br-l"><span class="pk">生命線失守比例</span><b class="pv">' + fmt(pct, 1) + '%</b><span class="pc">' + chgTxt + "</span></div>" +
         '<div class="br-mid">' +
-          '<div class="br-bar" role="img" aria-label="失守比例 ' + fmt(pct, 1) + '%"><i style="width:' + Math.max(0, Math.min(100, pct)) + '%"></i><s style="left:40%"></s><s style="left:55%"></s></div>' +
-          '<div class="br-scale" aria-hidden="true"><span style="left:0;transform:none">0</span><span style="left:40%">40</span><span style="left:55%">55</span><span style="left:100%;transform:translateX(-100%)">100%</span></div>' +
-          '<div class="br-meta"><span class="br-lt">' + L[0] + "・" + L[1] + "</span><span>" + counts + "</span><span>" + (b.label || "") + ' 收盤・與<a class="br-link" href="https://web-production-e1521.up.railway.app/" target="_blank" rel="noopener">台股生命線 App</a> 同步</span></div>' +
+          '<div class="br-bar" role="img" aria-label="失守比例 ' + fmt(pct, 1) + '%"><i style="width:' + Math.max(0, Math.min(100, pct)) + '%"></i><s style="left:40%"></s><s style="left:60%"></s><s style="left:80%"></s></div>' +
+          '<div class="br-scale" aria-hidden="true"><span style="left:0;transform:none">0</span><span style="left:40%">40</span><span style="left:60%">60</span><span style="left:80%">80</span><span style="left:100%;transform:translateX(-100%)">100%</span></div>' +
+          '<div class="br-meta"><span class="br-lt">' + L[0] + "・" + L[1] + "</span><span>" + counts + "</span><span>" + (b.label || "") + ' 收盤・還原價・與<a class="br-link" href="https://web-production-e1521.up.railway.app/" target="_blank" rel="noopener">台股生命線 App</a> 同步</span></div>' +
         "</div>" + sp;
       return;
     }
@@ -142,7 +145,7 @@
     m.title = tip;
     m.innerHTML = '<div class="lbl">生命線失守比例</div><div class="val">' + fmt(pct, 1) + '%</div>' +
       '<div class="chg' + (dir ? " " + dir : "") + '">較前日 ' + (chg == null ? "—" : sign(chg, 1) + " 個百分點") + "（" + (b.label || "") + " 台股生命線）</div>" +
-      '<div class="sub">' + L[0] + "・" + L[1] + "｜" + fmt(b.n, 0) + " 檔中 " + fmt(b.below, 0) + " 檔在線下</div>";
+      '<div class="sub">' + L[0] + "・" + L[1] + "｜千張以上 " + fmt(b.n, 0) + " 檔中 " + fmt(b.below, 0) + " 檔在線下</div>";
   }
 
   function apply(d) {

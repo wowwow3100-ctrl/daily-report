@@ -7,9 +7,10 @@
   - 全市場擔保維持率、信用風險戶數：BFIJ4U_TREND
   - 加權指數收盤／漲跌、上市成交值：FMTQIK（約 14:30 收盤後就有）
   - 費城半導體 SOX：Yahoo Finance 日線（美股收盤）
-  - 生命線失守比例：台股生命線 App 公開 API /api/site/breadth（2026-11-01 v5 加入）
-    跟 App 大盤檢查「全市場水位」同一份算法、同一份資料 → 情報站與 App 數字一致
-    App 暫時連不到就沿用上一次的數字（日期照實標），不會用別的來源湊
+  - 生命線失守比例：讀 D:\\APP\\wanglai-db\\out\\breadth_1000.json（2026-11-02 改成研究版算法）
+    母體＝20 日均量 1,000 張以上的上市櫃普通股、還原收盤價；由 wanglai-db\\daily_breadth.py
+    每天盤後自動更新（推送守護 14:50 叫它）。台股生命線 App 的大盤檢查也讀這裡推上去的同一份。
+    檔案讀不到就沿用上一次的數字（日期照實標），不會用別的來源湊
 網頁（wl-market.js）讀到後直接覆蓋首頁卡片，並標出資料日期。
 證交所融資資料約在交易日 21:30 前後才公布，所以會從今天往前找最近一個有資料的交易日。
 用法: python fetch_market.py <輸出資料夾>
@@ -187,33 +188,27 @@ def sox_info():
             "label": datetime.fromtimestamp(t2, ny).strftime("%m/%d")}
 
 
-LIFELINE_BREADTH = "https://web-production-e1521.up.railway.app/api/site/breadth?days=20"
+BREADTH_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+                            "wanglai-db", "out", "breadth_1000.json")
 
 
 def breadth_info():
-    """台股生命線 App 的全市場生命線失守比例；拿不到回 None。"""
-    req = urllib.request.Request(LIFELINE_BREADTH, headers={"User-Agent": "Mozilla/5.0 (wanglai-news market)", "Accept": "application/json"})
-    last = None
-    for i in range(2):
-        try:
-            with urllib.request.urlopen(req, timeout=40) as r:
-                j = json.loads(r.read().decode("utf-8"))
-            break
-        except Exception as e:  # noqa
-            last = e
-            time.sleep(4)
-    else:
-        raise last
-    if not j.get("ok") or j.get("pct") is None or not j.get("date"):
+    """旺來資料庫算好的生命線失守比例（研究版：千張以上＋還原價）；沒有檔回 None。"""
+    with open(BREADTH_FILE, encoding="utf-8") as f:
+        j = json.load(f)
+    if j.get("pct") is None or not j.get("date"):
         return None
     d = str(j["date"])[:10]
     out = {"pct": round(float(j["pct"]), 1), "below": int(j["below"]), "n": int(j["n"]),
            "chg_pp": j.get("chg_pp"), "light": j.get("light"), "date": d, "label": d[5:7] + "/" + d[8:10],
-           "hist": [round(float(x["pct"]), 1) for x in (j.get("history") or []) if x.get("pct") is not None][-20:],
-           "src": "台股生命線"}
-    ds = j.get("datasets") or {}
-    if ds.get("chip_layers"):
-        out["chip_week"] = str(ds["chip_layers"])[:10]
+           "hist": [round(float(x["pct"]), 1) for x in (j.get("hist") or []) if x.get("pct") is not None][-20:],
+           "rule": j.get("rule"), "src": "旺來資料庫"}
+    a = j.get("all") or {}
+    if a.get("pct") is not None:
+        out["all_pct"] = a["pct"]
+    t = j.get("taiex") or {}
+    if t.get("dist_pct") is not None:
+        out["taiex_dist"] = t["dist_pct"]
     return out
 
 
@@ -255,7 +250,7 @@ def main():
         if br:
             res["breadth"] = br
         else:
-            print("breadth: lifeline api returned no data")
+            print("breadth: breadth_1000.json has no data")
     except Exception as e:
         print("breadth fail", e)
     if not day:

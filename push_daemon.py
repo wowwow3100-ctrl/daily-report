@@ -268,6 +268,62 @@ def pump(kind):
     log("pump %s -> %s" % (kind, st.get("status")))
 
 
+# ---------------------------------------------------------------------------
+# 旺來資料庫每日更新（2026-11-02 加）：盤後叫 D:\APP\wanglai-db\daily_breadth.py
+# 更新資料庫並算「生命線失守比例」（研究版：20 日均量千張以上＋還原價）。
+# 它要跑 5~10 分鐘，所以另開背景程序、不卡住推送；算完它會自己寫 .pump_now 叫 market 推上網站。
+#   週一到週五 14:50 跑；當天的還沒算到就 16:20、19:20、22:20 再試
+# ---------------------------------------------------------------------------
+DB_DIR = os.path.join(os.path.dirname(HERE), "wanglai-db")
+
+
+def spawn_dbupdate(force=False):
+    st = {"kind": "dbupdate", "ts": datetime.datetime.now().isoformat(timespec="seconds")}
+    runner = os.path.join(DB_DIR, "daily_breadth.py")
+    done = None
+    try:
+        with open(os.path.join(DB_DIR, "out", "breadth_1000.json"), encoding="utf-8") as f:
+            done = json.load(f).get("date")
+    except Exception:
+        pass
+    try:
+        running = time.time() - os.path.getmtime(os.path.join(DB_DIR, ".update.lock")) < 3600
+    except OSError:
+        running = False
+    if not os.path.exists(runner):
+        st["status"] = "missing"
+    elif running:
+        st["status"] = "running"
+    elif done == datetime.date.today().isoformat() and not force:
+        st["status"] = "uptodate"
+    else:
+        try:
+            subprocess.Popen([sys.executable, runner, "--notify", HERE], cwd=DB_DIR,
+                             creationflags=(NOWIN | 0x00000008) if os.name == "nt" else 0, close_fds=True)
+            st["status"] = "spawned"
+        except Exception as e:
+            st.update(status="error", error=str(e)[:300])
+    st["fetch"] = "breadth_1000.json date=%s" % done
+    try:
+        allst = {}
+        if os.path.exists(PUMP_STATUS):
+            with open(PUMP_STATUS, encoding="utf-8") as f:
+                allst = json.load(f)
+        allst["dbupdate"] = st
+        with open(PUMP_STATUS, "w", encoding="utf-8") as f:
+            json.dump(allst, f, ensure_ascii=False, indent=2)
+    except Exception:
+        pass
+    log("pump dbupdate -> %s" % st["status"])
+
+
+def run_kind(kind, force=False):
+    if kind == "dbupdate":
+        spawn_dbupdate(force=force)
+    else:
+        pump(kind)
+
+
 def pump_due(now):
     due = []
     h, m, d, wd = now.hour, now.minute, now.day, now.weekday()
@@ -289,6 +345,11 @@ def pump_due(now):
         key = ("market", now.strftime("%Y%m%d%H"))
         if key not in _pump_done:
             due.append(key)
+    # 旺來資料庫＋生命線失守比例：平日 14:50；當天還沒算到就 16:20、19:20、22:20 再試（算到了會自動略過）
+    if wd < 5 and ((h == 14 and m >= 50) or (h in (16, 19, 22) and m >= 20)):
+        key = ("dbupdate", now.strftime("%Y%m%d%H"))
+        if key not in _pump_done:
+            due.append(key)
     return due
 
 
@@ -298,7 +359,7 @@ def run_pumps():
     for key in pump_due(datetime.datetime.now()):
         _pump_done[key] = 1
         try:
-            pump(key[0])
+            run_kind(key[0])
         except Exception as e:
             log("pump %s crashed: %s" % (key[0], e))
     if os.path.exists(os.path.join(HERE, ".pump_now")):  # 手動立刻跑一次（內容寫 revenue 或 sectors，空白＝兩個都跑）
@@ -308,9 +369,10 @@ def run_pumps():
             os.remove(os.path.join(HERE, ".pump_now"))
         except Exception:
             want = ""
-        for k in (["revenue", "sectors", "market", "material"] if not want else [want]):
+        # 可以一次寫好幾種（空白隔開）；dbupdate＝立刻更新旺來資料庫＋失守比例
+        for k in (["revenue", "sectors", "market", "material"] if not want else want.split()):
             try:
-                pump(k)
+                run_kind(k, force=True)
             except Exception as e:
                 log("pump %s crashed: %s" % (k, e))
 
