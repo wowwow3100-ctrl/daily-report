@@ -1,13 +1,13 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-11-02T17:05:04",
-    "fetch": "mops 2026-10 10 {'L0': 5, 'L1': 0, 'O0': 5, 'O1': 0}\nwrote 2026-10 10\nlatest 2026-10 rows 10 high12 0 changed True\n",
+    "ts": "2026-11-02T20:05:03",
+    "fetch": "latest 2026-10 rows 14 high12 0 changed False\n",
     "status": "pushed"
   },
   "sectors": {
     "kind": "sectors",
-    "ts": "2026-11-02T17:45:03",
+    "ts": "2026-11-02T20:45:03",
     "fetch": "no change 2026-11-02\n",
     "status": "nochange"
   },
@@ -19,13 +19,13 @@
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-02T17:15:04",
-    "fetch": "detail fail 912000 code 406 查無相符資料\ndetail fail 9110 code 406 查無相符資料\ndetail fail 912000 code 406 查無相符資料\ndetail fail 9110 code 406 查無相符資料\nwrote 1069 details 45 days 8\n",
+    "ts": "2026-11-02T20:15:04",
+    "fetch": "wrote 1116 details 8 days 8\n",
     "status": "pushed"
   },
   "dbupdate": {
     "kind": "dbupdate",
-    "ts": "2026-11-02T16:20:03",
+    "ts": "2026-11-02T19:20:02",
     "status": "uptodate",
     "fetch": "breadth_1000.json date=2026-11-02"
   }
