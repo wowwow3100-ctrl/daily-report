@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/11/02（週一）早盤場次</div>
+        <div class="stamp" id="updated">2026/11/02（週一）收盤場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -294,10 +294,10 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/02 早盤場．週一開盤前，加權、成交值、融資、維持率與風險戶皆為證交所 10/30 收盤資料；SOX 為 10/30 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/02 收盤場．加權與成交值為 11/02 收盤報導值；融資、維持率與風險戶為證交所 10/30 資料；SOX 為 10/30 美股收盤）</span></h2>
   <div class="mkt">
-    <div class="m"><div class="lbl">加權指數</div><div class="val">45,212</div><div class="chg down">-1,156.50（-2.49%）（10/30）</div></div>
-    <div class="m"><div class="lbl">成交值（上市）</div><div class="val">9,396 億</div><div class="chg up">較前日 +14.1%（10/30 證交所；前日 8,238 億）</div></div>
+    <div class="m"><div class="lbl">加權指數</div><div class="val">44,920</div><div class="chg down">-291.69（-0.65%）（11/02）</div></div>
+    <div class="m"><div class="lbl">成交值（上市）</div><div class="val">7,588 億</div><div class="chg down">較前日 -19.2%（11/02 報導值；前日 9,396 億）</div></div>
     <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">6,235 億</div><div class="chg down">單日 -104.4 億（10/30 官方）</div></div>
     <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">10,689</div><div class="chg down">-7.20%（10/30 美股，前日 -1.42%）</div></div>
     <div class="m"><div class="lbl">大盤融資維持率</div><div class="val">171.75%</div><div class="chg down">較前日 -6.69（10/30 證交所資料計算）</div><div class="sub">130% 為追繳線｜一般落在 130%～180%</div></div>
@@ -394,7 +394,51 @@
   <!-- ===== /DATA:PREOPEN ===== -->
 
                                                                 <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/02 早盤場．依時間由新到舊．共 20 則）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/02 收盤場．依時間由新到舊．共 20 則）</span></h2>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/02 13:47</span>台積電收低40元 台股45,000點站不上、收跌291點 連三天留下影線 <a class="ref" href="#src-2401">[2401]</a></div>
+    <div class="news-body">經濟日報：加權指數收 44,920.14 點、跌 291.69 點（-0.65%），成交 7,588 億元；台積電(2330) 收 2,330 元、跌 40 元。盤中最低 44,399.1 點後跌勢收斂，聯發科(2454)、鴻海(2317)、台達電(2308)、台塑化(6505)、南亞(1303) 貢獻雙位數漲點；創意(3443)、國巨(2327)、聯電(2303) 等成交大且疲軟。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/02 13:30</span>美以熱線！以總理促期中選舉後立即攻伊朗 川普表態下一步 <a class="ref" href="#src-2402">[2402]</a></div>
+    <div class="news-body">經濟日報：以色列總理與川普通話，敦促美方在 11/3 期中選舉後立即對伊朗採取軍事行動；美伊仍在卡達斡旋談判，中東情勢成為選後市場變數之一。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/02 13:25</span>HPC、邊緣 AI長期營收提升可期 法人調高瑞昱獲利預估值及目標價 <a class="ref" href="#src-2403">[2403]</a></div>
+    <div class="news-body">經濟日報：瑞昱(2379) 第 3 季財報符合預期、第 4 季可望優於季節性；HPC 與邊緣 AI 營收占比目前約高個位數，長期目標 2030 年逾 30%，100G 光學 PHY 驗證中、預計 2027 年量產。報導未揭露法人名稱與目標價數字。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/02 13:11</span>AI加速器貢獻明顯提升 法人調高聯發科獲利預估值 <a class="ref" href="#src-2404">[2404]</a></div>
+    <div class="news-body">經濟日報：法人指聯發科(2454) 資料中心 AI 加速器貢獻明顯提升，上調獲利預估值；聯發科今日逆勢收紅，為撐盤主力之一。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/02 13:10</span>幣安撐住了！客戶瘋狂提領後趨穩定 資金淨流出1,200億元 占總額僅2% <a class="ref" href="#src-2405">[2405]</a></div>
+    <div class="news-body">經濟日報：幣安遭竊事件後恢復上線，客戶提領潮趨於穩定，資金淨流出約 1,200 億元、僅占總額約 2%；資安疑雲帶動台股資安概念股走強。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/02 13:02</span>費半重挫7.2%台股沒在怕！加權指數跌幅收斂 櫃買率先翻紅 <a class="ref" href="#src-2406">[2406]</a></div>
+    <div class="news-body">經濟日報：上週五費半重挫 7.2%，台股今日開低後跌幅逐步收斂，櫃買指數盤中率先翻紅；資安、資服概念股多檔亮燈漲停。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">產業</span><span class="ntime">11/02 12:35</span>有AI伺服器、沒電線也不行！缺電危機浮現 華新、大亞走強 <a class="ref" href="#src-2407">[2407]</a></div>
+    <div class="news-body">經濟日報：AI 資料中心用電需求帶動電網建設題材，線纜族群逆勢走強，華新(1605)、大亞(1609) 等上漲，榮星(1617) 盤中強攻。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/02 11:48</span>台股跌夠了嗎？ 法人曝最恐慌時間點 但有四利多加持 <a class="ref" href="#src-2408">[2408]</a></div>
+    <div class="news-body">經濟日報：法人分析台股自高點回檔後的恐慌時點，並列出四項基本面支撐因素；同時提醒美國期中選舉與科技股財報仍是短線變數。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">匯市</span><span class="ntime">11/02 10:12</span>外資賣壓延燒匯市 新台幣重貶逾2角逼近32.7元 <a class="ref" href="#src-2409">[2409]</a></div>
+    <div class="news-body">中央社：美國科技大廠財報欠佳加深 AI 投資疑慮，外資上週五賣超台股逾 1,100 億元、遞延匯出今日湧現；新台幣 32.5 元開盤後最低觸及 32.694 元，匯銀人士認為短線偏弱。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/02 09:39</span>〈台股開盤〉一度重摔逾800點 聯發科、鴻海挺身而出力守4萬5 <a class="ref" href="#src-2410">[2410]</a></div>
+    <div class="news-body">鉅亨網：台股以 45,034.53 點開低、最低 44,399.1 點；台積電(2330) 以 2,310 元開出，聯發科(2454) 漲逾 3%、鴻海(2317) 漲逾 1%；資金流入線纜族群，美股上週五費半跌 7.2%、英特爾暴跌近 30%。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/02 08:18</span>11月2日盤前／台股失半年線 惟技術面進入超跌區 靜待籌碼沉澱 <a class="ref" href="#src-2411">[2411]</a></div>
+    <div class="news-body">經濟日報：台股上週五跌破半年線，技術指標進入超跌區；法人認為短線需待籌碼沉澱，留意美國期中選舉與科技財報結果。</div>
+  </div>
   <div class="card">
     <div class="news-title"><span class="cat">數據</span><span class="ntime">11/02 03:07</span>11月2日 五件財經大事搶先看 <a class="ref" href="#src-2301">[2301]</a></div>
     <div class="news-body">經濟日報：美股上週五重挫、台股今日開盤承壓，多家投顧以 44,700 點為多空關鍵；聯電(2303) 取得中際旭創、賽麗光子光通訊大單，初期總量上看 1 萬片、單價為傳統 CMOS 製程七倍；矽晶圓業者稱客戶拉貨優於預期、新接訂單報價「漲定了」；第二屆碳費費率審議會今日召開。</div>
@@ -411,6 +455,7 @@
     <div class="news-title"><span class="cat">生技</span><span class="ntime">11/02 00:35</span>第一類接觸／台康雙引擎營運爆發 明年進入盈利關鍵期 <a class="ref" href="#src-2304">[2304]</a></div>
     <div class="news-body">經濟日報：台康生技(6589) 董事長劉理成表示，CDMO 與生物相似藥雙引擎帶動今年營收爆發性成長、明年進入盈利關鍵期；乳癌藥 EG1206A 預計明年底先後取得歐盟及美國藥證。</div>
   </div>
+  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
     <div class="news-title"><span class="cat">原物料</span><span class="ntime">11/02 00:30</span>中鋼盤價有望連三漲 <a class="ref" href="#src-2305">[2305]</a></div>
     <div class="news-body">經濟日報：大陸前 3 季粗鋼產量 7.2 億公噸、年減 2.9%，熱軋鋼捲年減 4.8%，庫存持續去化；中鋼(2002) 即將開出的 12 月盤價有望連三個月上漲，美國熱軋每公噸達 1,440 美元。</div>
@@ -430,51 +475,6 @@
   <div class="card">
     <div class="news-title"><span class="cat">國際</span><span class="ntime">11/01 23:17</span>伊朗與卡達連續3天談判！擬美伊達成協議後48小時內重開荷姆茲海峽 <a class="ref" href="#src-2309">[2309]</a></div>
     <div class="news-body">鉅亨網引述路透：伊朗談判代表在杜哈與卡達斡旋代表連續第三天會談，若與華府達成協議，荷姆茲海峽可在兩天內重開；川普稱投票前不對伊朗發動新攻擊，但未排除選後軍事行動。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/01 22:10</span>美國期中選舉共和黨告急！民主黨領先逾8個百分點 眾議院恐易手 <a class="ref" href="#src-2310">[2310]</a></div>
-    <div class="news-body">鉅亨網：最新民調民主黨在國會通用選票領先逾 8 個百分點，川普支持率 40%、不滿意度 59%；Cook Political Report 預測民主黨眾院可取得 227～240 席，市場恐面臨財政、貿易與監管不確定性。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">金融</span><span class="ntime">11/01 22:02</span>國泰李長庚喊「AI 不死」！三壽險 Q3 科技股齊加碼 <a class="ref" href="#src-2311">[2311]</a></div>
-    <div class="news-body">經濟日報：國泰(2882)、富邦(2881)、凱基金(2883) 9 月底科技股部位 1.58 兆元創新高、季增 1,216 億元；買盤聚焦聯電(2303)、京元電子(2449)、欣興(3037) 合計逾 6.1 萬張，萬潤(6187) 等五檔為國泰大額持股新面孔。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">政策</span><span class="ntime">11/01 21:52</span>台股大跌金管會盯緊了！重要均線、三大風險指標全監控 <a class="ref" href="#src-2312">[2312]</a></div>
-    <div class="news-body">經濟日報：金管會緊盯年線、半年線、季線與擔保維持率、借券賣出比重、違約率三大指標；截至 10/30 信用交易整戶擔保維持率 173.46%、借券賣出占成交值約 3.93%，必要時將採取相關措施。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/01 21:41</span>穩懋法說財報優於預期 外資目標價上看七字頭 但示警短期已漲多 <a class="ref" href="#src-2313">[2313]</a></div>
-    <div class="news-body">經濟日報：穩懋(3105) 法說後，摩根士丹利由中立升至優於大盤、目標價 600→700 元（核心毛利率 40.7% 遠高於共識 29%）；大和資本 449→620 元但評等降為優於大盤；高盛 142→162 元、維持賣出。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">能源</span><span class="ntime">11/01 17:28</span>中油：下週汽柴油價格不調整 累計吸收約318.6億元 <a class="ref" href="#src-2201">[2201]</a></div>
-    <div class="news-body">中央社：台灣中油宣布 11/2 至 11/8 汽、柴油價格維持不調整，自 2/28 起的平穩措施累計吸收約 318.6 億元；台塑石化同步公布 11/2 起不漲價，92 無鉛每公升 31.2 元、超級柴油 29.7 元<a class="ref" href="#src-2202">[2202]</a>。中油另宣布 11 月桶裝瓦斯與工業用液化石油氣價格不調整，今年累計吸收約 137 億元<a class="ref" href="#src-2203">[2203]</a>。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">AI</span><span class="ntime">11/01 17:24</span>閉眼買？外媒欽點2檔AI股抱緊10年不要賣 台積電入榜 <a class="ref" href="#src-2204">[2204]</a></div>
-    <div class="news-body">自由財經引述美媒：荷蘭半導體設備商 ASML 與台積電(2330) 雖不直接設計 AI 晶片，仍可隨 AI 晶片需求成長受惠，文中以長期持有 10 年為情境分析；報導同時提到半導體類股近期遭遇賣壓。</div>
-  </div>
-  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/01 16:43</span>〈台股風向球〉融資恐殺出引爆補跌壓力 台股走勢可能有2種情境 <a class="ref" href="#src-2101">[2101]</a></div>
-    <div class="news-body">鉅亨網：台股上週跌 829 點、週線連 3 黑，外資單週賣超 1,734 億元（台積電(2330) 625 億元居首）、投信連 3 買。永豐投顧以 45,000 點半年線為多空分水嶺，若守住 44,600 點以上融資可望緩降，若一路下探年線則融資恐需降至約 4,200 億元。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/01 16:37</span>波斯灣船隻再遇襲 卡達天然氣油輪遭不明物體攻擊 <a class="ref" href="#src-2205">[2205]</a></div>
-    <div class="news-body">中央社：卡達天然氣運輸公司旗下液化天然氣運輸船「梅耶達號」10/30 晚間行經波斯灣時遭不明物體攻擊；自今年 2 月中東爆發戰爭以來，伊朗持續攻擊荷莫茲海峽及波斯灣船隻。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">原物料</span><span class="ntime">11/01 15:28</span>華爾街多頭幾乎棄船！金價恐殺到3000美元 分析師給出時間了 <a class="ref" href="#src-2206">[2206]</a></div>
-    <div class="news-body">自由財經：Kitco 黃金週度調查顯示，金價失守每盎司 3,900 美元後華爾街轉為看空居多；分析師指市場正經歷去槓桿，明年第一季恐下探 3,000 美元左右。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">航運</span><span class="ntime">11/01 15:25</span>貨櫃船造價略有下修 IMO秘書長認為增加造船能量可支持綠色轉型 <a class="ref" href="#src-2102">[2102]</a></div>
-    <div class="news-body">ETtoday財經雲：馬士基傳將向滬東中華造船廠訂造 24 艘 2.4 萬箱 LNG 雙燃料貨櫃船，每艘約 2.42 億美元，較長榮(2603) 去年初同型船造價低 8.68% 以上；台船(2208) 高層表示貨櫃船建造高峰已過。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">AI</span><span class="ntime">11/01 14:30</span>AI不只要算力更拚交付速度！FII、FIT深化合作因應客戶「昨天到貨」急單需求 <a class="ref" href="#src-2103">[2103]</a></div>
-    <div class="news-body">鉅亨網：鴻海(2317) 科技日上，工業富聯與鴻騰精密董事長指出，客戶需求已從產品規格轉向供應規模與交付速度；FIT 著墨 CHIPLINK 448G、800G／1.6T 與 CPO 光通訊及液冷技術。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
@@ -546,6 +546,17 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
+    <li id="src-2401"><a href="https://money.udn.com/money/story/5607/9851867" target="_blank" rel="noopener">經濟日報｜台積電收低40元 台股45,000點站不上、收跌291點 連三天留下影線（11/02 13:47）</a></li>
+    <li id="src-2402"><a href="https://money.udn.com/money/story/5599/9851783" target="_blank" rel="noopener">經濟日報｜美以熱線！以總理促期中選舉後立即攻伊朗 川普表態下一步（11/02 13:30）</a></li>
+    <li id="src-2403"><a href="https://money.udn.com/money/story/5607/9851805" target="_blank" rel="noopener">經濟日報｜HPC、邊緣 AI長期營收提升可期 法人調高瑞昱獲利預估值及目標價（11/02 13:25）</a></li>
+    <li id="src-2404"><a href="https://money.udn.com/money/story/5607/9851766" target="_blank" rel="noopener">經濟日報｜AI加速器貢獻明顯提升 法人調高聯發科獲利預估值（11/02 13:11）</a></li>
+    <li id="src-2405"><a href="https://money.udn.com/money/story/5599/9851444" target="_blank" rel="noopener">經濟日報｜幣安撐住了！客戶瘋狂提領後趨穩定 資金淨流出1,200億元 占總額僅2%（11/02 13:10）</a></li>
+    <li id="src-2406"><a href="https://money.udn.com/money/story/11074/9851736" target="_blank" rel="noopener">經濟日報｜費半重挫7.2%台股沒在怕！加權指數跌幅收斂 櫃買率先翻紅（11/02 13:02）</a></li>
+    <li id="src-2407"><a href="https://money.udn.com/money/story/5607/9851633" target="_blank" rel="noopener">經濟日報｜有AI伺服器、沒電線也不行！缺電危機浮現 華新、大亞走強（11/02 12:35）</a></li>
+    <li id="src-2408"><a href="https://money.udn.com/money/story/5607/9851522" target="_blank" rel="noopener">經濟日報｜台股跌夠了嗎？ 法人曝最恐慌時間點 但有四利多加持（11/02 11:48）</a></li>
+    <li id="src-2409"><a href="https://www.cna.com.tw/news/afe/202611020031.aspx" target="_blank" rel="noopener">中央社｜外資賣壓延燒匯市 新台幣重貶逾2角逼近32.7元（11/02 10:12）</a></li>
+    <li id="src-2410"><a href="https://news.cnyes.com/news/id/6643616" target="_blank" rel="noopener">鉅亨網｜〈台股開盤〉一度重摔逾800點 聯發科、鴻海挺身而出力守4萬5（11/02 09:39）</a></li>
+    <li id="src-2411"><a href="https://money.udn.com/money/story/5607/9851033" target="_blank" rel="noopener">經濟日報｜11月2日盤前／台股失半年線 惟技術面進入超跌區 靜待籌碼沉澱（11/02 08:18）</a></li>
     <li id="src-2301"><a href="https://money.udn.com/money/story/5607/9850926" target="_blank" rel="noopener">經濟日報｜11月2日 五件財經大事搶先看（11/02 03:07）</a></li>
     <li id="src-2302"><a href="https://www.ctee.com.tw/news/20261102700063-439901" target="_blank" rel="noopener">工商時報｜台股反攻 半導體三本柱扛重任（11/02 03:00）</a></li>
     <li id="src-2303"><a href="https://money.udn.com/money/story/5607/9850509" target="_blank" rel="noopener">經濟日報｜日月光目標價 喊到908（11/02 00:40）</a></li>
@@ -555,23 +566,11 @@
     <li id="src-2307"><a href="https://news.cnyes.com/news/id/6643434" target="_blank" rel="noopener">鉅亨網｜川普預告民主黨若奪國會多數將成「否決先生」！揚言否決法案逼朝野協商（11/02 00:28）</a></li>
     <li id="src-2308"><a href="https://news.cnyes.com/news/id/6643433" target="_blank" rel="noopener">鉅亨網｜〈熱門股〉穩懋Q3財報佳績+AI光通訊大廠收購題材 周漲19%站上所有均線（11/02 00:15）</a></li>
     <li id="src-2309"><a href="https://news.cnyes.com/news/id/6643425" target="_blank" rel="noopener">鉅亨網｜伊朗與卡達連續3天談判！擬美伊達成協議後48小時內重開荷姆茲海峽（11/01 23:17）</a></li>
-    <li id="src-2310"><a href="https://news.cnyes.com/news/id/6643300" target="_blank" rel="noopener">鉅亨網｜美國期中選舉共和黨告急！民主黨領先逾8個百分點 眾議院恐易手、參議院也拉警報（11/01 22:10）</a></li>
-    <li id="src-2311"><a href="https://money.udn.com/money/story/5613/9850638" target="_blank" rel="noopener">經濟日報｜國泰李長庚喊「AI 不死」！三壽險 Q3 科技股齊加碼 誰買最猛？（11/01 22:02）</a></li>
-    <li id="src-2312"><a href="https://money.udn.com/money/story/5613/9850629" target="_blank" rel="noopener">經濟日報｜台股大跌金管會盯緊了！重要均線、三大風險指標全監控（11/01 21:52）</a></li>
     <li id="src-2313"><a href="https://money.udn.com/money/story/5607/9850614" target="_blank" rel="noopener">經濟日報｜穩懋法說財報優於預期 外資目標價上看七字頭 但示警短期已漲多（11/01 21:41）</a></li>
-    <li id="src-2201"><a href="https://tw.news.yahoo.com/%E4%B8%AD%E6%B2%B9-%E4%B8%8B%E9%80%B1%E6%B1%BD%E6%9F%B4%E6%B2%B9%E5%83%B9%E6%A0%BC%E4%B8%8D%E8%AA%BF%E6%95%B4-%E7%B4%AF%E8%A8%88%E5%90%B8%E6%94%B6%E7%B4%84318-6%E5%84%84%E5%85%83-092825996.html" target="_blank" rel="noopener">中央社（Yahoo新聞）｜中油：下週汽柴油價格不調整 累計吸收約318.6億元（11/01 17:28）</a></li>
-    <li id="src-2202"><a href="https://news.cts.com.tw/cna/money/202611/202611013096142.html" target="_blank" rel="noopener">中央社（華視新聞網）｜台塑石化：2日起汽柴油不漲價（11/01 15:43）</a></li>
-    <li id="src-2203"><a href="https://news.cts.com.tw/cna/money/202611/202611013096161.html" target="_blank" rel="noopener">中央社（華視新聞網）｜中油11月桶裝瓦斯價格不調整 累計吸收137億元（11/01 16:50）</a></li>
-    <li id="src-2204"><a href="https://ec.ltn.com.tw/article/breakingnews/5625841" target="_blank" rel="noopener">自由財經｜閉眼買？外媒欽點2檔AI股抱緊10年不要賣 台積電入榜（11/01 17:24）</a></li>
-    <li id="src-2205"><a href="https://news.cts.com.tw/cna/international/202611/202611013096157.html" target="_blank" rel="noopener">中央社（華視新聞網）｜波斯灣船隻再遇襲 卡達天然氣油輪遭不明物體攻擊（11/01 16:37）</a></li>
-    <li id="src-2206"><a href="https://ec.ltn.com.tw/article/breakingnews/5625754" target="_blank" rel="noopener">自由財經｜華爾街多頭幾乎棄船！金價恐殺到3000美元 分析師給出時間了（11/01 15:28）</a></li>
-    <li id="src-2101"><a href="https://news.cnyes.com/news/id/6643193" target="_blank" rel="noopener">鉅亨網｜〈台股風向球〉融資恐殺出引爆補跌壓力 台股走勢可能有2種情境（11/01 16:43）</a></li>
-    <li id="src-2102"><a href="https://finance.ettoday.net/news/3264406" target="_blank" rel="noopener">ETtoday財經雲｜貨櫃船造價略有下修 IMO秘書長認為增加造船能量可支持綠色轉型（11/01 15:25）</a></li>
-    <li id="src-2103"><a href="https://news.cnyes.com/news/id/6643282" target="_blank" rel="noopener">鉅亨網｜AI不只要算力更拚交付速度！FII、FIT深化合作因應客戶「昨天到貨」急單需求（11/01 14:30）</a></li>
     <li id="src-1421"><a href="https://udn.com/news/story/12806/9846273" target="_blank" rel="noopener">聯合新聞網｜聯電(2303)昨跌停外資卻喊加碼！大摩目標價 188 元（10/30 09:28）</a></li>
     <li id="src-1422"><a href="https://www.setn.com/news/1930323" target="_blank" rel="noopener">三立新聞網｜Q3 獲利大暴增 358%！欣興(3037)稼動率破 9 成 目標價至 1,300 元（10/30 01:30）</a></li>
-    <li id="src-514">臺灣證券交易所 FMTQIK／MI_MARGN／BFIJ4U_TREND（自動擷取 data/market latest.json，資料日 10/30：加權指數、成交值 9,396 億、融資餘額、融資維持率與信用風險戶數；11/02 早盤開盤前沿用）；費城半導體 10/30 收盤 10,688.80（-7.20%）取自 data/market latest.json</li>
-    <li id="src-515">臺灣證券交易所 每日收盤行情 MI_INDEX（自動擷取，資料日 10/30）</li>
+    <li id="src-514">臺灣證券交易所 FMTQIK／MI_MARGN／BFIJ4U_TREND（自動擷取 data/market latest.json，資料日 10/30：融資餘額、融資維持率與信用風險戶數；11/02 官方資料於本場次執行時尚未產出，沿用 10/30）；11/02 加權指數與成交值取自經濟日報收盤報導（11/02 13:47），待證交所官方值覆核；費城半導體 10/30 收盤 10,688.80（-7.20%）</li>
+    <li id="src-515">臺灣證券交易所 每日收盤行情 MI_INDEX（自動擷取，資料日 10/30；11/02 類股資料於本場次執行時尚未發布）</li>
   </ol>
   </details>
 <!-- ===== /DATA:SOURCES ===== -->
