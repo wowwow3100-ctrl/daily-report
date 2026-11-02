@@ -1,67 +1,73 @@
 {
- "updated": "2026-11-02 06:42",
- "date": "2026-11-02",
- "label": "11/02 06:42",
+ "updated": "2026-11-03 06:41",
+ "date": "2026-11-03",
+ "label": "11/03 06:41",
  "items": [
   {
    "cat": "美股",
-   "title": "美股｜美股周五受壓 納指挫2.856% 費半瀉7.201%",
-   "url": "https://hk.finance.yahoo.com/news/%E7%BE%8E%E8%82%A1-%E7%BE%8E%E8%82%A1%E5%91%A8%E4%BA%94%E5%8F%97%E5%A3%93-%E7%B4%8D%E6%8C%87%E6%8C%AB2-856-%E8%B2%BB%E5%8D%8A%E7%80%897-220018656.html",
-   "src": "Yahoo財經"
+   "title": "〈美股盤後〉川普稱不急於再打伊朗、鎧俠財測拖累記憶體股 費半11月首日挫逾3%",
+   "url": "https://news.cnyes.com/news/id/6644206",
+   "src": "鉅亨網"
   },
   {
-   "cat": "美股",
-   "title": "AI 融資警報響！費半大跌7.2%、英特爾跌近29% 下周財報和選舉再考驗",
-   "url": "https://money.udn.com/money/story/123398/9848481",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "美股",
-   "title": "英特爾股價暴跌3成蒸發4.57兆元 創半世紀最大跌幅",
-   "url": "https://udn.com/news/story/6811/9848278",
-   "src": "聯合新聞網"
+   "cat": "數據",
+   "title": "製造業擴張加快！美國10月ISM製造業指數升至55.5 創逾四年次高",
+   "url": "https://news.cnyes.com/news/id/6644402",
+   "src": "鉅亨網"
   },
   {
    "cat": "ADR",
-   "title": "美科技股重挫台積電ADR跌近6% 法人：台股下週開盤恐承壓",
-   "url": "https://www.cna.com.tw/news/afe/202610310073.aspx",
-   "src": "中央社"
+   "title": "美股早盤小漲開出！台積電ADR仍無力 台指期夜盤再跌300點",
+   "url": "https://www.nownews.com/news/6888772",
+   "src": "NOWnews"
   },
   {
    "cat": "期貨",
-   "title": "快新聞／星期一慘了！美股費半狂瀉7.2% 台指期夜盤崩跌867點",
-   "url": "https://finance.ftvnews.com.tw/news/detail/2026A31W0074",
-   "src": "民視財經"
-  },
-  {
-   "cat": "國際",
-   "title": "AI投資疑慮升溫 費半狂洩...美股迎「三重考驗」 能否止跌回血？",
-   "url": "https://www.ctee.com.tw/news/20261101700041-439901",
+   "title": "台指期夜盤拚守45K 法人：後市可望利空出盡",
+   "url": "https://www.ctee.com.tw/news/20261102701405-430202",
    "src": "工商時報"
   },
   {
    "cat": "國際",
-   "title": "AI警報 美選、財報 考驗市場信心",
-   "url": "https://udn.com/news/story/7238/9849486",
-   "src": "聯合新聞網"
+   "title": "11月3日 五件財經大事搶先看",
+   "url": "https://money.udn.com/money/story/5607/9853202",
+   "src": "經濟日報"
   },
   {
    "cat": "國際",
-   "title": "匯市最前線／台幣32.3~32.8元整理",
-   "url": "https://money.udn.com/money/story/5616/9849395",
+   "title": "本週操盤筆記：美國期中選舉、蘋果財報、非農就業報告",
+   "url": "https://news.cnyes.com/news/id/6643249",
+   "src": "鉅亨網"
+  },
+  {
+   "cat": "數據",
+   "title": "外資再砍735億元、投信大買361億元！台股失守 45K 三大法人賣超526億",
+   "url": "https://money.udn.com/money/story/5607/9852106",
    "src": "經濟日報"
   },
   {
    "cat": "個股",
-   "title": "11月2日 五件財經大事搶先看",
-   "url": "https://money.udn.com/money/story/5607/9850926",
+   "title": "晶碩營收寫兩個新高 日歐隱形眼鏡熱銷 Q4 營運向上",
+   "url": "https://money.udn.com/money/story/5710/9852762",
    "src": "經濟日報"
   },
   {
-   "cat": "數據",
-   "title": "《總經放大鏡》下週(11/2-11/6)全球重要經濟數據預告",
-   "url": "https://tw.stock.yahoo.com/news/%E7%B8%BD%E7%B6%93%E6%94%BE%E5%A4%A7%E9%8F%A1-%E4%B8%8B%E9%80%B1-11-2-11-001000182.html",
-   "src": "Yahoo股市"
+   "cat": "個股",
+   "title": "義隆Q3盈餘銳減八成",
+   "url": "https://money.udn.com/money/story/5710/9852678",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "個股",
+   "title": "宏碁遊戲 Q3 EPS -0.8元",
+   "url": "https://money.udn.com/money/story/5710/9852672",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "個股",
+   "title": "宏于訂單火 本月將上櫃",
+   "url": "https://money.udn.com/money/story/11074/9852681",
+   "src": "經濟日報"
   }
  ]
 }
