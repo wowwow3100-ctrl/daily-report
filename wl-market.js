@@ -173,7 +173,7 @@
   }
 
   function run() {
-    fetch(URL + "?t=" + Math.floor(Date.now() / 600000)).then(function (r) { return r.json(); }).then(function (d) {
+    fetch(URL + "?t=" + Math.floor(Date.now() / 120000)).then(function (r) { return r.json(); }).then(function (d) {
       if (!d || !d.label) return;
       // 市場脈動列是 wl-pro.js 產生的，稍等它長出來再覆蓋一次
       apply(d); setTimeout(function () { apply(d); }, 800);

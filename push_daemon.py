@@ -324,6 +324,24 @@ def run_kind(kind, force=False):
         pump(kind)
 
 
+def market_state(now):
+    """看 data 分支 market/latest.json：
+    done    ＝今天的融資＋維持率都已經推上去了（晚上不用再抓）
+    trading ＝今天有開盤（加權收盤是今天的），但融資還沒到 → 繼續每 10 分鐘看
+    unknown ＝讀不到／判斷不出來"""
+    try:
+        with open(os.path.join(DATA_WT, "market", "latest.json"), encoding="utf-8") as f:
+            j = json.load(f)
+    except Exception:
+        return "unknown"
+    today = now.strftime("%Y-%m-%d")
+    if j.get("date") == today and str((j.get("keep") or {}).get("date", "")) == now.strftime("%Y%m%d"):
+        return "done"
+    if (j.get("index") or {}).get("date") == today:
+        return "trading"
+    return "unknown"
+
+
 def pump_due(now):
     due = []
     h, m, d, wd = now.hour, now.minute, now.day, now.weekday()
@@ -340,8 +358,21 @@ def pump_due(now):
         key = ("material", now.strftime("%Y%m%d%H"))
         if key not in _pump_done:
             due.append(key)
-    # 融資／維持率／風險戶：證交所約 21:30 才公布，晚上多抓幾次＋隔天早上補一次
-    if (wd < 5 and h in (21, 22, 23) and m >= 45) or (wd < 6 and h == 7 and m >= 10) or (wd < 5 and h in (14, 15) and m >= 40):
+    # 融資／維持率／風險戶（2026-11-03 改）：證交所多半 21 點前後就公布（11/03 21:04 已經有），
+    # 以前 21:45 才第一次抓，會晚將近一小時。改成：平日 17:30 起每 10 分鐘看一次，抓到「今天」的就停。
+    # 今天是不是交易日看 data 分支裡加權收盤的日期（14:40／15:40 那兩次會先抓到）；
+    # 判斷不出來（例如加權那次也沒抓到）就退回舊的 21:45／22:45／23:45。隔天 07:10 補抓照舊。
+    if wd < 5 and (h >= 18 or (h == 17 and m >= 30)):
+        mst = market_state(now)
+        if mst == "trading":
+            key = ("market", now.strftime("%Y%m%d%H") + "_%d" % (m // 10))
+            if key not in _pump_done:
+                due.append(key)
+        elif mst == "unknown" and h in (21, 22, 23) and m >= 45:
+            key = ("market", now.strftime("%Y%m%d%H"))
+            if key not in _pump_done:
+                due.append(key)
+    if (wd < 6 and h == 7 and m >= 10) or (wd < 5 and h in (14, 15) and m >= 40):
         key = ("market", now.strftime("%Y%m%d%H"))
         if key not in _pump_done:
             due.append(key)
