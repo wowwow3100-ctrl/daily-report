@@ -1,73 +1,73 @@
 {
- "updated": "2026-11-03 06:41",
- "date": "2026-11-03",
- "label": "11/03 06:41",
+ "updated": "2026-11-04 06:41",
+ "date": "2026-11-04",
+ "label": "11/04 06:41",
  "items": [
   {
    "cat": "美股",
-   "title": "〈美股盤後〉川普稱不急於再打伊朗、鎧俠財測拖累記憶體股 費半11月首日挫逾3%",
-   "url": "https://news.cnyes.com/news/id/6644206",
+   "title": "〈美股盤後〉期中選舉登場！資金重返AI股 費半勁揚逾2.6% AMD盤後噴高",
+   "url": "https://news.cnyes.com/news/id/6645477",
    "src": "鉅亨網"
   },
   {
-   "cat": "數據",
-   "title": "製造業擴張加快！美國10月ISM製造業指數升至55.5 創逾四年次高",
-   "url": "https://news.cnyes.com/news/id/6644402",
-   "src": "鉅亨網"
+   "cat": "美股",
+   "title": "美股早盤／這次是真反彈嗎？晶片股反攻 道瓊受累於蘋果而下跌",
+   "url": "https://udn.com/news/story/6811/9855413",
+   "src": "聯合新聞網"
   },
   {
-   "cat": "ADR",
-   "title": "美股早盤小漲開出！台積電ADR仍無力 台指期夜盤再跌300點",
-   "url": "https://www.nownews.com/news/6888772",
-   "src": "NOWnews"
+   "cat": "美股",
+   "title": "美期中選舉在即 AI股反彈推升那指漲逾1%",
+   "url": "https://www.4gtv.tv/article/2026110403000004",
+   "src": "四季線上"
   },
   {
    "cat": "期貨",
-   "title": "台指期夜盤拚守45K 法人：後市可望利空出盡",
-   "url": "https://www.ctee.com.tw/news/20261102701405-430202",
-   "src": "工商時報"
+   "title": "【盤前】費半大漲AMD盤後飆高！台指夜盤漲426點 台股今拚止跌反彈",
+   "url": "https://www.setn.com/news/1933094",
+   "src": "三立新聞網"
+  },
+  {
+   "cat": "期貨",
+   "title": "台指期夜盤震盪1100點 重新站上44K大關 費半漲近4％",
+   "url": "https://www.chinatimes.com/realtimenews/20261103004987-260410",
+   "src": "中時新聞網"
   },
   {
    "cat": "國際",
-   "title": "11月3日 五件財經大事搶先看",
-   "url": "https://money.udn.com/money/story/5607/9853202",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "國際",
-   "title": "本週操盤筆記：美國期中選舉、蘋果財報、非農就業報告",
-   "url": "https://news.cnyes.com/news/id/6643249",
+   "title": "〈美國期中選舉〉民主黨若拿下國會 哪些美股最敏感？華爾街點名四大類股",
+   "url": "https://news.cnyes.com/news/id/6645484",
    "src": "鉅亨網"
   },
   {
+   "cat": "國際",
+   "title": "外資出逃股匯雙殺 新台幣重貶1.68角爆史上第4大量",
+   "url": "https://www.cna.com.tw/news/afe/202611030261.aspx",
+   "src": "中央社"
+  },
+  {
+   "cat": "國際",
+   "title": "11月4日 五件財經大事搶先看",
+   "url": "https://money.udn.com/money/story/5607/9855687",
+   "src": "經濟日報"
+  },
+  {
    "cat": "數據",
-   "title": "外資再砍735億元、投信大買361億元！台股失守 45K 三大法人賣超526億",
-   "url": "https://money.udn.com/money/story/5607/9852106",
-   "src": "經濟日報"
+   "title": "Fed能鬆口氣了？美國9月職缺意外增至752.3萬個 創四個月新高",
+   "url": "https://news.cnyes.com/news/id/6645697",
+   "src": "鉅亨網"
   },
   {
    "cat": "個股",
-   "title": "晶碩營收寫兩個新高 日歐隱形眼鏡熱銷 Q4 營運向上",
-   "url": "https://money.udn.com/money/story/5710/9852762",
-   "src": "經濟日報"
+   "title": "外資大砍1,073億元！三大法人提款1,464億元 台積電失守2,300元",
+   "url": "https://udn.com/news/story/7251/9854579",
+   "src": "聯合新聞網"
   },
   {
    "cat": "個股",
-   "title": "義隆Q3盈餘銳減八成",
-   "url": "https://money.udn.com/money/story/5710/9852678",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "個股",
-   "title": "宏碁遊戲 Q3 EPS -0.8元",
-   "url": "https://money.udn.com/money/story/5710/9852672",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "個股",
-   "title": "宏于訂單火 本月將上櫃",
-   "url": "https://money.udn.com/money/story/11074/9852681",
-   "src": "經濟日報"
+   "title": "【鉅亨-盤前掃瞄】基本面",
+   "url": "https://news.cnyes.com/news/id/6644667",
+   "src": "鉅亨網"
   }
  ]
 }
