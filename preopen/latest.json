@@ -1,73 +1,73 @@
 {
- "updated": "2026-11-04 06:41",
- "date": "2026-11-04",
- "label": "11/04 06:41",
+ "updated": "2026-11-05 06:41",
+ "date": "2026-11-05",
+ "label": "11/05 06:41",
  "items": [
   {
    "cat": "美股",
-   "title": "〈美股盤後〉期中選舉登場！資金重返AI股 費半勁揚逾2.6% AMD盤後噴高",
-   "url": "https://news.cnyes.com/news/id/6645477",
+   "title": "〈美股盤後〉藍潮席捲國會 道瓊飆近1570點 費半挫逾3% 記憶體類股慘崩",
+   "url": "https://news.cnyes.com/news/id/6646812",
    "src": "鉅亨網"
   },
   {
-   "cat": "美股",
-   "title": "美股早盤／這次是真反彈嗎？晶片股反攻 道瓊受累於蘋果而下跌",
-   "url": "https://udn.com/news/story/6811/9855413",
+   "cat": "ADR",
+   "title": "美股收盤》道瓊狂漲1569點！費半下挫3％ 台積電ADR跌逾2％",
+   "url": "https://ec.ltn.com.tw/article/breakingnews/5629867",
+   "src": "自由財經"
+  },
+  {
+   "cat": "期貨",
+   "title": "川普期中考沒及格 台指期夜盤一度噴漲千點",
+   "url": "https://udn.com/news/story/7251/9857887",
    "src": "聯合新聞網"
   },
   {
-   "cat": "美股",
-   "title": "美期中選舉在即 AI股反彈推升那指漲逾1%",
-   "url": "https://www.4gtv.tv/article/2026110403000004",
-   "src": "四季線上"
-  },
-  {
    "cat": "期貨",
-   "title": "【盤前】費半大漲AMD盤後飆高！台指夜盤漲426點 台股今拚止跌反彈",
-   "url": "https://www.setn.com/news/1933094",
-   "src": "三立新聞網"
-  },
-  {
-   "cat": "期貨",
-   "title": "台指期夜盤震盪1100點 重新站上44K大關 費半漲近4％",
-   "url": "https://www.chinatimes.com/realtimenews/20261103004987-260410",
+   "title": "明天穩了？ 台指期夜盤狂飆逾1000點 站回44K大關",
+   "url": "https://www.chinatimes.com/realtimenews/20261104004314-260410",
    "src": "中時新聞網"
   },
   {
+   "cat": "期貨",
+   "title": "11月4日期交所夜盤行情",
+   "url": "https://money.udn.com/money/story/11112/9858291",
+   "src": "經濟日報"
+  },
+  {
    "cat": "國際",
-   "title": "〈美國期中選舉〉民主黨若拿下國會 哪些美股最敏感？華爾街點名四大類股",
-   "url": "https://news.cnyes.com/news/id/6645484",
+   "title": "〈能源盤後〉期中選舉重擊川普 市場押注伊朗戰事有望落幕 油價挫逾8%",
+   "url": "https://news.cnyes.com/news/id/6647289",
    "src": "鉅亨網"
   },
   {
    "cat": "國際",
-   "title": "外資出逃股匯雙殺 新台幣重貶1.68角爆史上第4大量",
-   "url": "https://www.cna.com.tw/news/afe/202611030261.aspx",
+   "title": "市場消化美期中選舉結果 歐股收盤勁揚",
+   "url": "https://www.cna.com.tw/news/afe/202611050007.aspx",
    "src": "中央社"
   },
   {
    "cat": "國際",
-   "title": "11月4日 五件財經大事搶先看",
-   "url": "https://money.udn.com/money/story/5607/9855687",
-   "src": "經濟日報"
+   "title": "〈美國期中選舉〉選完也別急著追AI股！華爾街提醒贏家輸家要挑清楚",
+   "url": "https://news.cnyes.com/news/id/6647252",
+   "src": "鉅亨網"
+  },
+  {
+   "cat": "個股",
+   "title": "〈研華法說〉Q4營收站穩300億元拚新高 明年展望樂觀估高雙位數成長",
+   "url": "https://news.cnyes.com/news/id/6646885",
+   "src": "鉅亨網"
+  },
+  {
+   "cat": "個股",
+   "title": "〈電子五哥營收〉英業達10月營收799.66億元創同期高 伺服器展望維持正面",
+   "url": "https://news.cnyes.com/news/id/6646638",
+   "src": "鉅亨網"
   },
   {
    "cat": "數據",
-   "title": "Fed能鬆口氣了？美國9月職缺意外增至752.3萬個 創四個月新高",
-   "url": "https://news.cnyes.com/news/id/6645697",
-   "src": "鉅亨網"
-  },
-  {
-   "cat": "個股",
-   "title": "外資大砍1,073億元！三大法人提款1,464億元 台積電失守2,300元",
-   "url": "https://udn.com/news/story/7251/9854579",
-   "src": "聯合新聞網"
-  },
-  {
-   "cat": "個股",
-   "title": "【鉅亨-盤前掃瞄】基本面",
-   "url": "https://news.cnyes.com/news/id/6644667",
-   "src": "鉅亨網"
+   "title": "11月5日 五件財經大事搶先看",
+   "url": "https://money.udn.com/money/story/5607/9858299",
+   "src": "經濟日報"
   }
  ]
 }
