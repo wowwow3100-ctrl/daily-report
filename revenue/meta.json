@@ -1,1 +1,1 @@
-{"ym":"2026-10","n":103,"months":["2026-08","2026-09","2026-10"],"issued":{},"partial":true,"mops":{"2026-10":{"L0":46,"L1":6,"O0":51,"O1":0}},"updated":"2026-11-04 19:05"}
+{"ym":"2026-10","n":103,"months":["2026-08","2026-09","2026-10"],"issued":{},"partial":true,"mops":{"2026-10":{"L0":"err <urlopen error [WinError 10054] 遠端主機已強制關閉一個現存的連線。>","L1":"err <urlopen error [WinError 10054] 遠端主機已強制關閉一個現存的連線。>","O0":"err <urlopen error [WinError 10054] 遠端主機已強制關閉一個現存的連線。>","O1":"err <urlopen error [WinError 10054] 遠端主機已強制關閉一個現存的連線。>"}},"updated":"2026-11-04 20:05"}
