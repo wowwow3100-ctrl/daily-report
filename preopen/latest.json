@@ -1,72 +1,78 @@
 {
- "updated": "2026-11-05 06:41",
- "date": "2026-11-05",
- "label": "11/05 06:41",
+ "updated": "2026-11-06 06:41",
+ "date": "2026-11-06",
+ "label": "11/06 06:41",
  "items": [
   {
    "cat": "美股",
-   "title": "〈美股盤後〉藍潮席捲國會 道瓊飆近1570點 費半挫逾3% 記憶體類股慘崩",
-   "url": "https://news.cnyes.com/news/id/6646812",
-   "src": "鉅亨網"
+   "title": "美股四大指數全面重挫！費半跌逾12％ 台股夜盤失守4萬點",
+   "url": "https://tw.news.yahoo.com/%E7%BE%8E%E8%82%A1%E5%9B%9B%E5%A4%A7%E6%8C%87%E6%95%B8%E5%85%A8%E9%9D%A2%E9%87%8D%E6%8C%AB-%E8%B2%BB%E5%8D%8A%E8%B7%8C%E9%80%BE12-%E5%8F%B0%E8%82%A1%E5%A4%9C%E7%9B%A4%E5%A4%B1%E5%AE%884%E8%90%AC%E9%BB%9E-212122736.html",
+   "src": "Yahoo新聞"
+  },
+  {
+   "cat": "美股",
+   "title": "美股收盤／那指重挫5.52%陷修正 AI監管疑慮引爆晶片股賣壓",
+   "url": "https://uanalyze.com.tw/articles/3255658503",
+   "src": "優分析"
   },
   {
    "cat": "ADR",
-   "title": "美股收盤》道瓊狂漲1569點！費半下挫3％ 台積電ADR跌逾2％",
-   "url": "https://ec.ltn.com.tw/article/breakingnews/5629867",
+   "title": "美股收盤》血洗科技股！道瓊狂跌1833點 台積電ADR重挫逾10％",
+   "url": "https://ec.ltn.com.tw/article/breakingnews/5631141",
    "src": "自由財經"
   },
   {
-   "cat": "期貨",
-   "title": "川普期中考沒及格 台指期夜盤一度噴漲千點",
-   "url": "https://udn.com/news/story/7251/9857887",
-   "src": "聯合新聞網"
-  },
-  {
-   "cat": "期貨",
-   "title": "明天穩了？ 台指期夜盤狂飆逾1000點 站回44K大關",
-   "url": "https://www.chinatimes.com/realtimenews/20261104004314-260410",
-   "src": "中時新聞網"
-  },
-  {
-   "cat": "期貨",
-   "title": "11月4日期交所夜盤行情",
-   "url": "https://money.udn.com/money/story/11112/9858291",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "國際",
-   "title": "〈能源盤後〉期中選舉重擊川普 市場押注伊朗戰事有望落幕 油價挫逾8%",
-   "url": "https://news.cnyes.com/news/id/6647289",
+   "cat": "ADR",
+   "title": "選後行情變臉！那指盤中跌入修正區間 台積電ADR挫近7.6%",
+   "url": "https://news.cnyes.com/news/id/6649126",
    "src": "鉅亨網"
   },
   {
+   "cat": "期貨",
+   "title": "台指期夜盤大跳水 失守4萬點大關",
+   "url": "https://udn.com/news/story/7255/9860815",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "期貨",
+   "title": "台股周五開盤不妙？ 美股那指、費半血崩 台指期夜盤狂殺逾2千點",
+   "url": "https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E5%91%A8%E4%BA%94%E9%96%8B%E7%9B%A4%E4%B8%8D%E5%A6%99-%E7%BE%8E%E8%82%A1%E9%82%A3%E6%8C%87-%E8%B2%BB%E5%8D%8A%E8%A1%80%E5%B4%A9-%E5%8F%B0%E6%8C%87%E6%9C%9F%E5%A4%9C%E7%9B%A4%E7%8B%82%E6%AE%BA%E9%80%BE2%E5%8D%83%E9%BB%9E-163505300.html",
+   "src": "Yahoo新聞"
+  },
+  {
+   "cat": "期貨",
+   "title": "期貨最新報價11／5期交所夜盤行情",
+   "url": "https://www.ctee.com.tw/news/20261105701966-430202",
+   "src": "工商時報"
+  },
+  {
    "cat": "國際",
-   "title": "市場消化美期中選舉結果 歐股收盤勁揚",
-   "url": "https://www.cna.com.tw/news/afe/202611050007.aspx",
+   "title": "熱錢出走新台幣險破33元 出口商積極拋匯收32.876元",
+   "url": "https://www.cna.com.tw/news/afe/202611050279.aspx",
    "src": "中央社"
   },
   {
    "cat": "國際",
-   "title": "〈美國期中選舉〉選完也別急著追AI股！華爾街提醒贏家輸家要挑清楚",
-   "url": "https://news.cnyes.com/news/id/6647252",
-   "src": "鉅亨網"
+   "title": "新台幣重貶 央行喊話出口商：勿過度期待貶值、有需求就結售",
+   "url": "https://tw.stock.yahoo.com/news/%E6%96%B0%E5%8F%B0%E5%B9%A3%E9%87%8D%E8%B2%B6-%E5%A4%AE%E8%A1%8C%E5%96%8A%E8%A9%B1%E5%87%BA%E5%8F%A3%E5%95%86-%E5%8B%BF%E9%81%8E%E5%BA%A6%E6%9C%9F%E5%BE%85%E8%B2%B6%E5%80%BC-%E6%9C%89%E9%9C%80%E6%B1%82%E5%B0%B1%E7%B5%90%E5%94%AE-102728003.html",
+   "src": "Yahoo股市"
   },
   {
    "cat": "個股",
-   "title": "〈研華法說〉Q4營收站穩300億元拚新高 明年展望樂觀估高雙位數成長",
-   "url": "https://news.cnyes.com/news/id/6646885",
-   "src": "鉅亨網"
+   "title": "50大權值股跌停11家！台股重挫1,374點連六黑 台積電收低20元",
+   "url": "https://udn.com/news/story/7251/9859380",
+   "src": "聯合新聞網"
   },
   {
-   "cat": "個股",
-   "title": "〈電子五哥營收〉英業達10月營收799.66億元創同期高 伺服器展望維持正面",
-   "url": "https://news.cnyes.com/news/id/6646638",
+   "cat": "數據",
+   "title": "〈台股盤前要聞〉10月外資淨匯出280億美元創高、10月CPI連6月破2%",
+   "url": "https://news.cnyes.com/news/id/6649069",
    "src": "鉅亨網"
   },
   {
    "cat": "數據",
-   "title": "11月5日 五件財經大事搶先看",
-   "url": "https://money.udn.com/money/story/5607/9858299",
+   "title": "11月6日 五件財經大事搶先看",
+   "url": "https://money.udn.com/money/story/5607/9860880",
    "src": "經濟日報"
   }
  ]
