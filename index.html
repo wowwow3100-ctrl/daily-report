@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/11/05（週四）早盤場次</div>
+        <div class="stamp" id="updated">2026/11/05（週四）收盤場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -294,7 +294,7 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/05 早盤場．加權、成交值、融資、維持率與風險戶皆為證交所 11/04 官方值；SOX 為 11/04 美股收盤，依新聞報導）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/05 收盤場．證交所今日官方數字尚未發布，六卡仍為 11/04 官方值；今日加權 13:22 盤中暫報 41,598.49（-1,350.42，-3.14%，鉅亨網盤中速報），收盤官方值待盤後場次更新）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">42,949</div><div class="chg down">-358.63（-0.83%）（11/04）</div></div>
     <div class="m"><div class="lbl">成交值（上市）</div><div class="val">11,769 億</div><div class="chg up">較前日 +17.5%（11/04 官方；前日 10,020 億）</div></div>
@@ -392,103 +392,113 @@
   <!-- ===== /DATA:PREOPEN ===== -->
 
                                                                 <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/05 早盤場．依時間由新到舊．共 20 則）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/05 收盤場．依時間由新到舊．共 20 則）</span></h2>
   <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">11/05 06:17</span>美期中選舉不確定性緩解 道瓊狂飆1,569點 費半重挫3.13% 台積電ADR跌2.24% 台指期夜盤收43,404點 <a class="ref" href="#src-3501">[3501]</a></div>
-    <div class="news-body">中時新聞網：民主黨期中選舉取得決定性勝利、川普表態接受結果，美股三大指數同步收高，道瓊收 53,356.12 點、創 2025 年 4 月以來最佳單日表現；費半因 AI 監管趨嚴疑慮跌 3.13% 收 10,268.66 點，台積電(2330) ADR 收 395.75 美元。台指期夜盤收 43,404 點、漲 201 點。</div>
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/05 13:25</span>PCB類股成殺盤重心 尖點(8021)鎖死跌停 現增抽籤股明撥券低於承銷價 <a class="ref" href="#src-3601">[3601]</a></div>
+    <div class="news-body">ETtoday財經雲：PCB 族群今日一面倒，鑽針廠尖點跌停鎖在 340.5 元，現增抽籤股 11/06 撥券入戶，較承銷價 388 元每張帳面少 4.75 萬元。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/05 05:00</span>台積電(2330) ADR一個月跌逾15% 外媒揭退休投資人逆勢加碼 <a class="ref" href="#src-3502">[3502]</a></div>
-    <div class="news-body">中時新聞網引述外媒：截至 4 日台積電 ADR 短短 1 個月下跌逾 15%，仍有退休投資人表示只持有台積電、不買輝達與英特爾，看重其先進製程在 AI 浪潮中的地位。</div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/05 13:01</span>台股盤中急殺逾千點失守42K 千金股8檔跌停、僅剩39檔 <a class="ref" href="#src-3602">[3602]</a></div>
+    <div class="news-body">鉅亨網：期中選舉後市場擔憂 AI 監管與資料中心審批收緊，加上費半重挫 3.13%，加權指數盤中下探 41,866.1 點、跌破 42,000 點整數關卡，千金股盤中縮水至 39 檔。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">產業</span><span class="ntime">11/05 04:10</span>美國期中選舉後川普政策恐遭掣肘 張建一：AI不會逆轉、僅放緩 <a class="ref" href="#src-3503">[3503]</a></div>
-    <div class="news-body">工商時報產業特刊：美國期中選舉結果出爐後，業界評估川普政策推動恐受國會制衡；張建一認為 AI 發展趨勢不會逆轉，速度可能放緩。</div>
+    <div class="news-title"><span class="cat">法人</span><span class="ntime">11/05 12:41</span>摩根士丹利調升金居(8358)目標價至745元 看Q4毛利率升至34% <a class="ref" href="#src-3603">[3603]</a></div>
+    <div class="news-body">工商時報：大摩維持「優於大盤」，看好高階銅箔比重提高、加工費調漲約一成與夏季電價退場，估 Q4 EPS 3.02 元、年增 102%；目標價由 730 元調高至 745 元。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/05 04:10</span>選後觀測：華爾街聚焦三大領域 監管將趨嚴 <a class="ref" href="#src-3504">[3504]</a></div>
-    <div class="news-body">工商時報產業特刊：民主黨掌握參眾兩院後，華爾街關注三大領域的政策走向，預期相關監管將趨嚴；同日美股費半即因 AI 監管疑慮走弱。</div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/05 12:27</span>AI概念股全面倒地 9檔千金股跌停 萬潤(6187)、南電(8046)跌出千金俱樂部 <a class="ref" href="#src-3604">[3604]</a></div>
+    <div class="news-body">自由財經：櫃買指數暴跌逾 5%，創意(3443)、健策(3653)、台光電(2383)、穎崴(6515)、雙鴻(3324)、台燿(6274)等跌停；統一證券指技術面進入超賣區、短期醞釀反彈空間，但仍需留意美國 AI 基建進度。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/04 22:15</span>美期中選舉後歷史統計 美台股市近7次全數上漲 <a class="ref" href="#src-3505">[3505]</a></div>
-    <div class="news-body">中時新聞網：統計 1998 年至 2022 年近 7 次美國期中選舉後，美股與台股加權指數雙雙 7 次全漲；隨選舉不確定性消退，市場焦點回到企業獲利與產業成長動能。</div>
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/05 12:10</span>韓股暴跌逾4% SK海力士崩跌近8% <a class="ref" href="#src-3605">[3605]</a></div>
+    <div class="news-body">中時新聞網：外資大舉賣超韓股，韓國綜合指數跌逾 4%，記憶體大廠 SK 海力士重挫近 8%，亞股記憶體族群同步走弱。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">法人</span><span class="ntime">11/04 22:12</span>外資天天擴大提款 公股銀主管：台股面臨外資匯出與匯率雙重考驗 <a class="ref" href="#src-3506">[3506]</a></div>
-    <div class="news-body">工商時報：美國科技股修正加深市場對 AI 投資變現效率的顧慮，國際熱錢加速撤離亞洲；公股銀主管指出外資 10 月賣超台股 9,943.17 億元創單月新高，短線指數反彈空間受限、內資承接力道有限。</div>
+    <div class="news-title"><span class="cat">匯率</span><span class="ntime">11/05 12:04</span>新台幣午盤重貶1.29角 暫收32.95元 <a class="ref" href="#src-3606">[3606]</a></div>
+    <div class="news-body">中央社：新台幣兌美元中午暫收 32.95 元、重貶 1.29 角，早盤最低 32.965 元逼近 33 元關卡，成交金額 18.46 億美元。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/04 21:59</span>馬斯克重金挺共和黨失利 特斯拉盤前暴跌逾5% <a class="ref" href="#src-3507">[3507]</a></div>
-    <div class="news-body">中時新聞網：美國期中選舉共和黨受挫，最大金主之一的馬斯克在 X 連發兩文自嘲；特斯拉盤前重挫逾 5%。</div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/05 11:56</span>台股又崩1200點破底 融資斷頭潮湧現 分析：未見三大訊號別急接 <a class="ref" href="#src-3607">[3607]</a></div>
+    <div class="news-body">中時新聞網：台股盤中再探新低、跌點一度逾 1,200 點，報導指融資斷頭賣壓湧現，分析師列出止跌前須觀察的三項訊號。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/04 21:45</span>美國期中選舉變數消除 法人：台股有機會醞釀反彈 <a class="ref" href="#src-3508">[3508]</a></div>
-    <div class="news-body">中央社：法人認為美國期中選舉結果底定、政治不確定性消除，台股有機會醞釀反彈；後續仍需觀察新台幣匯率、外資動向與融資餘額變化。</div>
+    <div class="news-title"><span class="cat">ETF</span><span class="ntime">11/05 11:37</span>美選後資金轉向 全台首檔金礦ETF 009832盤中漲逾8% <a class="ref" href="#src-3608">[3608]</a></div>
+    <div class="news-body">中時新聞網：美國期中選舉後市場重新配置資金，金礦主題 ETF 009832 逆勢大漲約 8%，報導分析其背後漲勢原因。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">期貨</span><span class="ntime">11/04 21:07</span>台指期夜盤一度大漲1,071點至44,274點 台積電(2330)期漲39元 <a class="ref" href="#src-3509">[3509]</a></div>
-    <div class="news-body">經濟日報：台指期夜盤以 43,430 點開出，隨民主黨掌握參眾兩院、美股電子盤轉強，一度上衝 44,274 點；21 時報約 43,660 點、漲 457 點。布蘭特與 WTI 油價晚間跌逾 1%，黃金大漲逾 100 美元，美債殖利率全面走軟。</div>
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/05 11:16</span>景碩(3189)大股東申讓、聯茂(6213)進入處置 雙觸跌停 <a class="ref" href="#src-3609">[3609]</a></div>
+    <div class="news-body">ETtoday財經雲：AI 投資回收疑慮引發估值修正，ABF 載板與 CCL 族群重挫；景碩早盤觸及 740 元跌停，聯茂今起處置、股價打落 551 元跌停並跌破季線。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/04 20:59</span>謝金河：川普期中考被活當 須重新評估AI未來 台股5萬點恐等明年 <a class="ref" href="#src-3510">[3510]</a></div>
-    <div class="news-body">中時新聞網：財信傳媒董事長謝金河晚間發文評論期中選舉結果，提到德州變天衝擊馬斯克相關事業，並認為市場需重新評估 AI 前景，台股站上 5 萬點恐要等到明年。</div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/05 11:09</span>盤中解析：電子權值股拖累 資金轉進航空與非電族群 <a class="ref" href="#src-3610">[3610]</a></div>
+    <div class="news-body">時報資訊：台積電(2330)開 2,250 元、盤中一度 2,285 元，聯發科(2454)一度下探 3,520 元；電子零組件類股跌 5.94%，造紙、汽車、生技、營建逆勢走揚，華航(2610)盤中漲 8%、長榮航(2618)漲 6%。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">匯率</span><span class="ntime">11/04 20:00</span>新台幣33元關卡險失守 出口商拋匯成收斂關鍵 <a class="ref" href="#src-3511">[3511]</a></div>
-    <div class="news-body">中時新聞網：台北金融市場股匯雙殺，台股 4 日盤中一度失守 42,000 點，尾盤反彈後資金撤出趨緩，加上出口商在相對低點拋匯，新台幣終場收 32.821 元、貶 6.1 分。</div>
+    <div class="news-title"><span class="cat">匯率</span><span class="ntime">11/05 11:06</span>台銀日圓現鈔賣價0.2122 刷17個月最差 <a class="ref" href="#src-3611">[3611]</a></div>
+    <div class="news-body">ETtoday財經雲：新台幣盤中再貶逾 1.3 角逼近 33 元，連帶拖累換日圓行情，台銀日圓現鈔牌告 0.2122 為 2025 年 6 月以來最差，10 萬元新台幣少換約 3 萬日圓。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">金融</span><span class="ntime">11/04 19:11</span>永豐銀證實遭駭異常轉帳4,176萬元 董總鞠躬致歉 不排除向供應商求償 <a class="ref" href="#src-3512">[3512]</a></div>
-    <div class="news-body">中時新聞網：永豐銀行董事長曹為實與總經理莊銘福晚間召開記者會致歉，證實新網銀交易系統供應商安全設定遭駭客入侵，419 名存戶被異常轉出；款項已返還，金管會要求 11/12 前提交調查報告。</div>
+    <div class="news-title"><span class="cat">ETF</span><span class="ntime">11/05 11:03</span>外資史上第5大賣超之際 主動式ETF續加碼台積電(2330)、聯發科(2454) <a class="ref" href="#src-3612">[3612]</a></div>
+    <div class="news-body">Newtalk：11/04 主動式 ETF 買盤集中權值股，00981A 單日買進約 36.24 億元、加碼台積電 805 張與日月光投控(3711) 1,463 張；整體仍需留意外資賣壓。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/04 18:51</span>民主黨期中選舉大勝 亞股尾盤急拉 專家：AI題材影響大於政治 <a class="ref" href="#src-3402">[3402]</a></div>
-    <div class="news-body">NOWnews：民主黨奪下參眾兩院多數，亞股盤中重挫後尾盤迅速拉回、美股期指收斂跌幅。摩根資產管理許長泰指川普仍握否決權，AI 題材影響大於政治；盛寶銀行認為政策最壞情境可能已被定價。</div>
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/05 10:51</span>台達電(2308)跳空重挫創9個月低 較10月高點跌46% <a class="ref" href="#src-3613">[3613]</a></div>
+    <div class="news-body">ETtoday財經雲：台達電今日最低 1,125 元、跌破 1,200 元，創今年 2 月以來新低，相較 10/6 波段高點 2,115 元近一個月跌幅約 46%。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">營收</span><span class="ntime">11/04 18:45</span>矽格(6257) 10月營收21億元創新高 連4個月站穩20億元 <a class="ref" href="#src-3403">[3403]</a></div>
-    <div class="news-body">Yahoo股市：封測廠矽格 10 月營收 21 億元、刷新單月紀錄，連續 4 個月逾 20 億元；公司搶攻矽光子商機，2027 年 AI 應用占比拚破 3 成。</div>
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/05 10:39</span>記憶體缺貨衝擊擴大 高通財測不如預期盤後跌7% <a class="ref" href="#src-3614">[3614]</a></div>
+    <div class="news-body">時報資訊：高通公布財測偏弱，記憶體缺貨影響手機供應鏈，盤後股價下跌約 7%。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">營收</span><span class="ntime">11/04 18:35</span>英業達(2356) 10月營收799億元 創同期新高 <a class="ref" href="#src-3404">[3404]</a></div>
-    <div class="news-body">Yahoo股市：英業達 10 月營收約 799.66 億元、月減 18.9%、年增 46%，創歷年同期新高，受惠 AI 伺服器拉貨；10 月筆電出貨 140 萬台、月減 40 萬台。</div>
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/05 10:30</span>巴克萊點出AI兩大隱憂 提醒年底行情勿過度樂觀 <a class="ref" href="#src-3615">[3615]</a></div>
+    <div class="news-body">中時新聞網：巴克萊提醒美股年底行情存在 AI 相關的兩項風險，市場需留意 AI 投資回收與估值問題。</div>
   </div>
   <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/04 18:16</span>德州州長選舉翻盤 主張暫停AI資料中心開發者勝出 專家示警AI供應鏈 <a class="ref" href="#src-3513">[3513]</a></div>
-    <div class="news-body">中時新聞網：民主黨在國會選舉取得突破，德州出現歷史性翻盤，由主張暫停 AI 資料中心開發的民主黨候選人希諾霍薩勝出；投資達人葉育碩提醒台股 AI 供應鏈需留意後續政策影響。</div>
+    <div class="news-title"><span class="cat">產業</span><span class="ntime">11/05 10:10</span>民主黨勝選概念股走強 元晶(6443)、聯合再生(3576)、倉和(6538)亮燈 <a class="ref" href="#src-3616">[3616]</a></div>
+    <div class="news-body">ETtoday財經雲：市場預期美國再生能源政策可能轉向，太陽能族群逆勢上漲，安集(6477)漲逾 8%、碩禾(3691)漲逾半根停板。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/04 17:40</span>研華(2395)法說：Q4營收續戰高 明年拚雙位數成長 <a class="ref" href="#src-3514">[3514]</a></div>
-    <div class="news-body">時報資訊：研華線上法說會指出受惠 AI、半導體設備與雲端基礎建設需求，第 3 季接單出貨比升至 1.64；預估第 4 季營收 9.7 億至 9.9 億美元，明年目標雙位數成長。</div>
+    <div class="news-title"><span class="cat">法人</span><span class="ntime">11/05 10:09</span>日系外資調升創意(3443)目標價至7,800元 看2027年6項AI專案量產 <a class="ref" href="#src-3617">[3617]</a></div>
+    <div class="news-body">時報資訊：日系外資指主要 AI CPU 客戶提前拉貨，上修 2026～2028 年 EPS 8%～50%，目標價由 5,125 元調高至 7,800 元、維持「買進」；同日盤中創意隨 AI 族群觸及跌停。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">半導體</span><span class="ntime">11/04 17:40</span>聯發科(2454)延攬英特爾37年老將 攜台積電(2330)衝AI <a class="ref" href="#src-3405">[3405]</a></div>
-    <div class="news-body">時報資訊：聯發科延攬在英特爾任職 37 年的資深人士加盟，報導指將與台積電合作強化 AI 布局。</div>
+    <div class="news-title"><span class="cat">產業</span><span class="ntime">11/05 09:49</span>Panasonic新竹廠爆炸 美系外資看台光電(2383)、台燿(6274)轉單 兩檔仍跌停 <a class="ref" href="#src-3618">[3618]</a></div>
+    <div class="news-body">時報資訊：台灣松下湖口廠 11/04 凌晨爆炸火警，月產能約 20 萬張；美系外資維持兩檔「建議加碼」，預期台光電最可能獲轉單，但早盤兩檔隨大盤重挫跌停。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">籌碼</span><span class="ntime">11/04 15:43</span>外資台指期淨空單增至93,647口 聯發科(2454)、日月光投控(3711)逆勢收紅 <a class="ref" href="#src-3306">[3306]</a></div>
-    <div class="news-body">Newtalk：台積電(2330)收 2,260 元、鴻海(2317)跌 2.24%、台達電(2308)跌 3.94%，聯發科漲 1.09%、台光電(2383)漲 3.64%、聯電(2303)漲 2.43%；上市漲停 49 家、跌停僅 4 家，外資台指期淨空單較前日增約 1,830 口。</div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/05 09:27</span>台股開盤後狂殺逾千點至41,866點 6檔千金股觸跌停 <a class="ref" href="#src-3619">[3619]</a></div>
+    <div class="news-body">ETtoday財經雲：民主黨勝選衝擊 AI 族群，開盤不到 25 分鐘逾 1,100 家上市櫃公司下跌，指數一度跌 1,082.81 點至 41,866.1 點。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">產業</span><span class="ntime">11/04 15:14</span>台灣大(3045)公開收購精誠(6214)跨過39%門檻 成就條件全數達成 <a class="ref" href="#src-3307">[3307]</a></div>
-    <div class="news-body">中央社：截至 4 日下午 1 時 16 分累計應賣 1 億 1,131 萬股、占精誠已發行股份 40.89%，加上公平會不禁止結合，兩項成就條件達成；公開收購受理至 11/5 下午 3 時 30 分，精誠股價 4 日一度跌停。</div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/05 09:06</span>台股開低283點 台積電(2330)開盤後一度翻紅 <a class="ref" href="#src-3620">[3620]</a></div>
+    <div class="news-body">ETtoday財經雲：加權指數以 42,666 點開出、跌 283 點，台積電開 2,250 元後一度漲至 2,275 元；費半前一交易日跌 331.74 點收 10,268.65 點。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
 
   <!-- ===== DATA:BROKER ===== -->
-  <h2 id="broker">11/04 券商報告摘要</h2>
+  <h2 id="broker">11/05 券商報告摘要</h2>
   <div class="card">
     <ul class="sum-list">
-      <li>頎邦（6147）：美系外資（未具名）重申「買進」，目標價 270 元（前值 230 元），看好矽光子金凸塊業務第 4 季季增逾 50%、封測漲價與韓系 DDIC 外包需求，上修 2026～2028 年獲利預估<a class="ref" href="#src-3114">[3114]</a></li>
-      <li>奇鋐（3017）：日系外資（未具名）給予「買進」，目標價 4,815 元（前值 4,465 元），法說前看好液冷滲透率提升與 2027 年 Q3 前水冷板產能增 60%<a class="ref" href="#src-3009">[3009]</a></li>
-      <li>景碩（3189）：凱基投顧維持「增加持股」，目標價 1,340 元（前值 935 元），Q3 毛利率 33.9%、營益率 22.1% 優於預期，上修 2026～2028 年 EPS<a class="ref" href="#src-2911">[2911]</a></li>
-      <li>聯發科（2454）：瑞銀給予「買進」，目標價 7,300 元，報導稱為外資最高；高盛維持「買進」，目標價 7,100 元（前值 7,000 元）<a class="ref" href="#src-2509">[2509]</a>；大和資本重申「買進」，目標價 5,500 元，看好首個 AI 加速器專案放量優於預期<a class="ref" href="#src-3406">[3406]</a></li>
+      <li>創意（3443）：日系外資（未具名）維持「買進」，目標價 7,800 元（前值 5,125 元），主要 AI CPU 客戶提前拉貨、估 2027 年 6 項主要 AI 專案量產，上修 2026～2028 年 EPS 8%～50%<a class="ref" href="#src-3617">[3617]</a></li>
+      <li>金居（8358）：摩根士丹利維持「優於大盤」，目標價 745 元（前值 730 元），看好高階銅箔比重提高與加工費調漲，估第 4 季毛利率升至 34%、EPS 3.02 元<a class="ref" href="#src-3603">[3603]</a></li>
+      <li>台光電（2383）：美系外資維持「建議加碼」，報導指 Panasonic 新竹廠火警後轉單可能性最高；台燿（6274）同獲維持「建議加碼」，報導未載目標價<a class="ref" href="#src-3618">[3618]</a></li>
+      <li>頎邦（6147）：美系外資（未具名）重申「買進」，目標價 270 元（前值 230 元），看好矽光子金凸塊業務與封測漲價<a class="ref" href="#src-3114">[3114]</a></li>
     </ul>
   </div>
   <table>
     <tr><th>日期</th><th>券商</th><th>個股</th><th>評等</th><th>目標價</th><th>一句話重點</th></tr>
+    <tr>
+      <td class="num">11/05</td><td><span class="tag">外資</span>日系外資（未具名）</td><td>創意 (3443)</td><td>買進</td>
+      <td class="num"><span class="up">7,800</span><br><span class="muted">前值 5,125</span></td>
+      <td class="muted">AI CPU 客戶提前拉貨，2027 年估 6 項主要 AI 專案量產（時報資訊 11/05 10:09）<a class="ref" href="#src-3617">[3617]</a></td>
+    </tr>
+    <tr>
+      <td class="num">11/05</td><td><span class="tag">外資</span>摩根士丹利 Morgan Stanley</td><td>金居 (8358)</td><td>優於大盤</td>
+      <td class="num"><span class="up">745</span><br><span class="muted">前值 730</span></td>
+      <td class="muted">加工費調漲與高階銅箔比重提高，估 Q4 EPS 年增 102%（工商時報 11/05 12:41）<a class="ref" href="#src-3603">[3603]</a></td>
+    </tr>
     <tr>
       <td class="num">11/03</td><td><span class="tag">外資</span>大和資本 Daiwa</td><td>聯發科 (2454)</td><td>買進</td>
       <td class="num"><span class="up">5,500</span></td>
@@ -519,16 +529,6 @@
       <td class="num"><span class="up">7,300</span></td>
       <td class="muted">看好雲端 AI 執行力與第二家非中國 CSP 客戶，外資最高目標價（壹蘋新聞網 11/02 10:37）<a class="ref" href="#src-2509">[2509]</a></td>
     </tr>
-    <tr>
-      <td class="num">11/02</td><td><span class="tag">外資</span>高盛證券 Goldman Sachs</td><td>聯發科 (2454)</td><td>買進</td>
-      <td class="num"><span class="up">7,100</span><br><span class="muted">前值 7,000</span></td>
-      <td class="muted">調升 2026～2028 年營收與獲利預估（壹蘋新聞網 11/02 10:37）<a class="ref" href="#src-2509">[2509]</a></td>
-    </tr>
-    <tr>
-      <td class="num">11/02</td><td><span class="tag">外資</span>花旗環球 Citi</td><td>日月光投控 (3711)</td><td>買進</td>
-      <td class="num"><span class="up">908</span><br><span class="muted">前值 750</span></td>
-      <td class="muted">AI 帶動先進封裝與測試需求，報導稱為外資圈最高目標價（經濟日報 11/02 00:40）<a class="ref" href="#src-2303">[2303]</a></td>
-    </tr>
   </table>
 <!-- ===== /DATA:BROKER ===== -->
 
@@ -544,33 +544,32 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
-    <li id="src-3501"><a href="https://www.chinatimes.com/realtimenews/20261105000968-260410" target="_blank" rel="noopener">中時新聞網｜美期中選舉不確定性緩解 道瓊狂飆1569點、費半重挫逾3％（11/05 06:17）</a></li>
-    <li id="src-3502"><a href="https://www.chinatimes.com/realtimenews/20261105000018-260410" target="_blank" rel="noopener">中時新聞網｜不買輝達、英特爾！外媒揭退休投資人「只押台積電」 致勝底氣曝光（11/05 05:00）</a></li>
-    <li id="src-3503"><a href="https://www.chinatimes.com/newspapers/20261105000262-260210" target="_blank" rel="noopener">工商時報｜美國期中選舉》川普政策恐遭掣肘 張建一：AI不會逆轉 僅放緩（11/05 04:10）</a></li>
-    <li id="src-3504"><a href="https://www.chinatimes.com/newspapers/20261105000237-260210" target="_blank" rel="noopener">工商時報｜美國期中選舉》選後觀測--華爾街看三領域 監管將趨嚴（11/05 04:10）</a></li>
-    <li id="src-3505"><a href="https://www.chinatimes.com/realtimenews/20261104004742-260410" target="_blank" rel="noopener">中時新聞網｜美期中選舉後多頭開趴！歷史統計美台股市7戰全勝（11/04 22:15）</a></li>
-    <li id="src-3506"><a href="https://www.chinatimes.com/realtimenews/20261104004744-260410" target="_blank" rel="noopener">工商時報（中時新聞網）｜外資天天擴大提款！台股雙重考驗 內資孤掌難鳴別急著接刀（11/04 22:12）</a></li>
-    <li id="src-3507"><a href="https://www.chinatimes.com/realtimenews/20261104004790-260410" target="_blank" rel="noopener">中時新聞網｜從金主變苦主？馬斯克豪擲146億挺共和黨失利 特斯拉盤前暴跌逾5％（11/04 21:59）</a></li>
-    <li id="src-3508"><a href="https://udn.com/news/story/7251/9857933" target="_blank" rel="noopener">中央社（聯合新聞網轉載）｜美國期中選舉變數消除 法人：台股有機會醞釀反彈（11/04 21:45）</a></li>
-    <li id="src-3509"><a href="https://udn.com/news/story/7251/9857887" target="_blank" rel="noopener">經濟日報｜川普期中考沒及格 台指期夜盤一度噴漲千點（11/04 21:07）</a></li>
-    <li id="src-3510"><a href="https://www.chinatimes.com/realtimenews/20261104004622-260410" target="_blank" rel="noopener">中時新聞網｜川普期中考被當！謝金河提醒須重新評估AI未來：台股5萬恐等明年（11/04 20:59）</a></li>
-    <li id="src-3511"><a href="https://www.chinatimes.com/realtimenews/20261104004171-260410" target="_blank" rel="noopener">中時新聞網｜新台幣33元關卡險失守 出口商拋補需求成關鍵（11/04 20:00）</a></li>
-    <li id="src-3512"><a href="https://www.chinatimes.com/realtimenews/20261104004336-260410" target="_blank" rel="noopener">中時新聞網｜永豐銀遭駭異常轉帳4176萬 董總鞠躬致歉：不排除向供應商求償（11/04 19:11）</a></li>
-    <li id="src-3513"><a href="https://www.chinatimes.com/realtimenews/20261104004123-260410" target="_blank" rel="noopener">中時新聞網｜美「孤星州」驚爆變天！專家示警：台股AI供應鏈暗藏未爆彈（11/04 18:16）</a></li>
-    <li id="src-3514"><a href="https://www.chinatimes.com/realtimenews/20261104004015-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜《電週邊》研華Q4營收續戰高 明年拚雙位數成長、AI需求續旺（11/04 17:40）</a></li>
-    <li id="src-3402"><a href="https://www.nownews.com/news/6889471" target="_blank" rel="noopener">NOWnews｜民主黨期中選舉大勝！亞股尾盤突狂拉 全球專家分析股市前景（11/04 18:51）</a></li>
-    <li id="src-3403"><a href="https://tw.stock.yahoo.com/news/10%E6%9C%88%E7%87%9F%E6%94%B621%E5%84%84%E5%85%83%E5%89%B5%E6%AD%B7%E5%8F%B2%E6%96%B0%E9%AB%98-%E5%B0%81%E6%B8%AC%E5%A4%A7%E5%BB%A0-%E9%80%A34%E5%80%8B%E6%9C%88%E7%AB%99%E7%A9%A920%E5%84%84%E5%85%83-%E6%90%B6%E6%94%BB%E7%9F%BD%E5%85%89%E5%AD%90%E5%95%86%E6%A9%9F-2027%E5%B9%B4ai%E6%87%89%E7%94%A8%E5%8D%A0%E6%AF%94%E6%8B%9A%E7%A0%B43%E6%88%90-104500674.html" target="_blank" rel="noopener">Yahoo股市｜10月營收21億元創歷史新高！「封測大廠」連4個月站穩20億元 搶攻矽光子商機（11/04 18:45）</a></li>
-    <li id="src-3404"><a href="https://tw.stock.yahoo.com/news/%E8%8B%B1%E6%A5%AD%E9%81%9410%E6%9C%88%E7%87%9F%E6%94%B6%E9%80%BE799%E5%84%84%E5%AF%AB%E5%90%8C%E6%9C%9F%E6%96%B0%E9%AB%98-%E4%BC%BA%E6%9C%8D%E5%99%A8%E5%B1%95%E6%9C%9B%E4%BD%B3-103527656.html" target="_blank" rel="noopener">Yahoo股市｜英業達10月營收逾799億寫同期新高 伺服器展望佳（11/04 18:35）</a></li>
-    <li id="src-3405"><a href="https://www.chinatimes.com/realtimenews/20261104004014-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜《半導體》聯發科挖到大咖！英特爾37年老將加盟 攜台積電衝AI（11/04 17:40）</a></li>
-    <li id="src-3306"><a href="https://newtalk.tw/news/view/2026-11-04/1069268" target="_blank" rel="noopener">Newtalk新聞｜台股盤中震盪近1,900點！外資「連5賣」狂提款1,499億 投信逆勢「連17買」（11/04 15:43）</a></li>
-    <li id="src-3307"><a href="https://www.cna.com.tw/news/afe/202611040186.aspx" target="_blank" rel="noopener">中央社｜台灣大收購精誠突破39%門檻 成就條件全達陣（11/04 15:14）</a></li>
+    <li id="src-3601"><a href="https://finance.ettoday.net/news/3266910" target="_blank" rel="noopener">ETtoday財經雲｜中籤挫咧等！PCB飆股尖點摜跌停 新股明到手現賠4.75萬元（11/05 13:25）</a></li>
+    <li id="src-3602"><a href="https://news.cnyes.com/news/id/6647769" target="_blank" rel="noopener">鉅亨網｜台股急殺逾千點失守42K關卡 千金股遭提款8檔跌停只剩39檔（11/05 13:01）</a></li>
+    <li id="src-3603"><a href="https://www.chinatimes.com/realtimenews/20261105002554-260410" target="_blank" rel="noopener">工商時報（中時新聞網）｜金居Q4獲利狂加速 外資強升目標價至745元（11/05 12:41）</a></li>
+    <li id="src-3604"><a href="https://ec.ltn.com.tw/article/breakingnews/5630250" target="_blank" rel="noopener">自由財經｜台股急殺逾1200點！9檔千金股又跌停（11/05 12:27）</a></li>
+    <li id="src-3605"><a href="https://www.chinatimes.com/realtimenews/20261105002594-260410" target="_blank" rel="noopener">中時新聞網｜《韓股》外資殺紅眼！韓股暴跌超過4% SK海力士崩跌近8%（11/05 12:10）</a></li>
+    <li id="src-3606"><a href="https://www.cna.com.tw/news/afe/202611050096.aspx" target="_blank" rel="noopener">中央社｜新台幣午盤重貶1.29角 暫收32.95元（11/05 12:04）</a></li>
+    <li id="src-3607"><a href="https://www.chinatimes.com/realtimenews/20261105002471-260410" target="_blank" rel="noopener">中時新聞網｜台股又崩1200點破底！融資爆斷頭潮 未見「3大訊號」別接刀（11/05 11:56）</a></li>
+    <li id="src-3608"><a href="https://www.chinatimes.com/realtimenews/20261105002142-260410" target="_blank" rel="noopener">中時新聞網｜美選後爆洗牌！全台首檔金礦ETF 009832狂噴8％ 揭背後爆發力原因（11/05 11:37）</a></li>
+    <li id="src-3609"><a href="https://finance.ettoday.net/news/3266818" target="_blank" rel="noopener">ETtoday財經雲｜PCB利空罩頂！景碩大股東申讓、聯茂抓去關 雙觸跌停（11/05 11:16）</a></li>
+    <li id="src-3610"><a href="https://www.chinatimes.com/realtimenews/20261105002257-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜《盤中解析》台股驚魂殺千點 跌破4萬2又急拉（11/05 11:09）</a></li>
+    <li id="src-3611"><a href="https://finance.ettoday.net/news/3266811" target="_blank" rel="noopener">ETtoday財經雲｜日圓「0.2122」刷17個月最苦 10萬新台幣少換3萬日圓（11/05 11:06）</a></li>
+    <li id="src-3612"><a href="https://newtalk.tw/news/view/2026-11-05/1069422" target="_blank" rel="noopener">Newtalk新聞｜外資史上第5大賣超也不怕！台積連3日獲買超、聯發科被搶買（11/05 11:03）</a></li>
+    <li id="src-3613"><a href="https://finance.ettoday.net/news/3266782" target="_blank" rel="noopener">ETtoday財經雲｜權值三哥台達電殺低創9個月低點 近月股價逼近腰斬（11/05 10:51）</a></li>
+    <li id="src-3614"><a href="https://www.chinatimes.com/realtimenews/20261105002039-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜《國際產業》記憶體缺貨災情漫延！高通財測弱 盤後慘跌7%（11/05 10:39）</a></li>
+    <li id="src-3615"><a href="https://www.chinatimes.com/realtimenews/20261105001826-260410" target="_blank" rel="noopener">中時新聞網｜年底行情別嗨太早！巴克萊點出AI兩大隱憂：美股未爆彈（11/05 10:30）</a></li>
+    <li id="src-3616"><a href="https://finance.ettoday.net/news/3266718" target="_blank" rel="noopener">ETtoday財經雲｜大盤狂殺千點！民主黨「當選概念股」出籠 台廠3檔能源股亮燈（11/05 10:10）</a></li>
+    <li id="src-3617"><a href="https://www.chinatimes.com/realtimenews/20261105001864-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜《半導體》創意股價翻倍後回檔！外資反喊撿便宜、目標價上看7800元（11/05 10:09）</a></li>
+    <li id="src-3618"><a href="https://www.chinatimes.com/realtimenews/20261105001790-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜《熱門族群》Panasonic新竹廠爆炸嚇暈 台光電及台燿雙殺跌停（11/05 09:49）</a></li>
+    <li id="src-3619"><a href="https://finance.ettoday.net/news/3266687" target="_blank" rel="noopener">ETtoday財經雲｜台股殺千點 6檔千金股熄火觸跌停（11/05 09:27）</a></li>
+    <li id="src-3620"><a href="https://finance.ettoday.net/news/3266679" target="_blank" rel="noopener">ETtoday財經雲｜台積電翻紅漲15元至2275 台股跌勢收斂至212點（11/05 09:06）</a></li>
     <li id="src-3406"><a href="https://www.ctee.com.tw/news/20261103700081-439901" target="_blank" rel="noopener">工商時報｜聯發科如何撐台股？外資看好AI ASIC業務、新目標價出爐 大摩分析師關鍵疑問有解答（11/03 03:00）</a></li>
     <li id="src-3114"><a href="https://www.ftnn.com.tw/news/592592" target="_blank" rel="noopener">FTNN新聞網｜目標價270元！「封測大廠」產能放量+漲價效益 矽光子業務Q4拼季增50%（11/03 21:45）</a></li>
     <li id="src-3009"><a href="https://www.chinatimes.com/realtimenews/20261103003004-260410" target="_blank" rel="noopener">中時新聞網｜《電零組》奇鋐獲外資喊價4815元 難敵台股重挫收黑（11/03 14:19）</a></li>
     <li id="src-2911"><a href="https://www.businesstoday.com.tw/article/category/183008/post/202611030011/" target="_blank" rel="noopener">今周刊（旺得富理財網授權）｜欣興、南電、景碩股價全逼跌停，現在撿便宜？外資連11天賣超它、法人拆解基本面優選這檔，目標價曝光（11/03 12:10）</a></li>
     <li id="src-2509"><a href="https://news.nextapple.com/finance/20261102/D1BE2B9E3B3BCB2EF7043ED6F6AC989B" target="_blank" rel="noopener">壹蘋新聞網｜看好AI ASIC發展！聯發科開盤一度漲近4% 外資按讚目標價喊7300元（11/02 10:37）</a></li>
-    <li id="src-2303"><a href="https://money.udn.com/money/story/5607/9850509" target="_blank" rel="noopener">經濟日報｜日月光目標價 喊到908（11/02 00:40）</a></li>
-    <li id="src-516">加權指數 11/04 收盤 42,948.91（-358.63，-0.83%）與成交值 11,769 億元、融資餘額 5,970 億元（-28.3 億）、大盤融資維持率 164.66%、擔保維持率 253.17% 與信用風險戶數 73 戶皆為臺灣證券交易所 11/04 官方值（data/market latest.json，11/04 20:50 擷取）；費城半導體 11/04 收盤 10,268.66（-3.13%）依中時新聞網 11/05 06:17 報導</li>
+    <li id="src-516">加權指數 11/04 收盤 42,948.91（-358.63，-0.83%）與成交值 11,769 億元、融資餘額 5,970 億元（-28.3 億）、大盤融資維持率 164.66%、擔保維持率 253.17% 與信用風險戶數 73 戶皆為臺灣證券交易所 11/04 官方值（data/market latest.json，11/05 07:10 擷取；11/05 官方值於本場次截稿時尚未發布）；費城半導體 11/04 收盤 10,268.65（-3.13%）</li>
     <li id="src-515">臺灣證券交易所 每日收盤行情 MI_INDEX（自動擷取，資料日 11/04）</li>
   </ol>
   </details>
