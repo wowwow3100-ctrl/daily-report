@@ -1,31 +1,31 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-11-05T17:05:04",
-    "fetch": "mops 2026-10 236 {'L0': 117, 'L1': 15, 'O0': 102, 'O1': 2}\nwrote 2026-10 236\nlatest 2026-10 rows 236 high12 0 changed True\n",
+    "ts": "2026-11-05T20:05:04",
+    "fetch": "latest 2026-10 rows 286 high12 0 changed False\n",
     "status": "pushed"
   },
   "sectors": {
     "kind": "sectors",
-    "ts": "2026-11-05T17:45:01",
+    "ts": "2026-11-05T20:45:02",
     "fetch": "no change 2026-11-05\n",
     "status": "nochange"
   },
   "market": {
     "kind": "market",
-    "ts": "2026-11-05T17:50:01",
-    "fetch": "no change 2026-11-04\n",
-    "status": "nochange"
+    "ts": "2026-11-05T20:50:01",
+    "fetch": "dth': {'pct': 57.1, 'below': 328, 'n': 574, 'chg_pp': 11.4, 'light': 'y', 'date': '2026-11-05', 'label': '11/05', 'hist': [17.6, 16.7, 16.9, 17.4, 18.7, 16.8, 22.1, 19.9, 23.6, 25.7, 23.2, 28.2, 28.6, 24.4, 28.5, 37.6, 36.1, 46.3, 45.7, 57.1], 'rule': '上市櫃普通股中，近 20 日均量 1,000 張以上者，還原收盤價低於生命線的比例', 'src': '旺來資料庫', 'all_pct': 73.3, 'taiex_dist': 1.5}, 'date': '2026-11-05', 'label': '11/05', 'fin_keep': {'rate': 155.73, 'n': 1239, 'chg': -8.74, 'date': '2026-11-05'}, 'keep': {'rate': 245.69, 'below': 229, 'call': 201, 'exe': 10, 'risk': 440, 'rate_chg': -7.48, 'risk_chg': 367, 'date': '20261105'}}\n",
+    "status": "pushed"
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-05T17:15:04",
-    "fetch": "fetch error: Command '['C:\\\\Users\\\\asus\\\\AppData\\\\Local\\\\Python\\\\pythoncore-3.14-64\\\\pythonw.exe', 'D:\\\\APP\\\\旺來新聞站\\\\tools\\\\fetch_material.py', 'D:\\\\APP\\\\_wl_data_branch\\\\material']' timed out after 300 seconds",
-    "status": "nochange"
+    "ts": "2026-11-05T20:15:02",
+    "fetch": "wrote 2149 details 24 days 8\n",
+    "status": "pushed"
   },
   "dbupdate": {
     "kind": "dbupdate",
-    "ts": "2026-11-05T16:20:03",
+    "ts": "2026-11-05T19:20:08",
     "status": "uptodate",
     "fetch": "breadth_1000.json date=2026-11-05"
   }
