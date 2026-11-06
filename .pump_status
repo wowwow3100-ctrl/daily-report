@@ -1,31 +1,31 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-11-06T17:05:00",
-    "fetch": "mops 2026-10 564 {'L0': 286, 'L1': 21, 'O0': 248, 'O1': 9}\nwrote 2026-10 564\nlatest 2026-10 rows 564 high12 0 changed True\n",
+    "ts": "2026-11-06T20:05:02",
+    "fetch": "mops 2026-10 642 {'L0': 327, 'L1': 25, 'O0': 281, 'O1': 9}\nwrote 2026-10 642\nlatest 2026-10 rows 642 high12 0 changed True\n",
     "status": "pushed"
   },
   "sectors": {
     "kind": "sectors",
-    "ts": "2026-11-06T17:45:01",
+    "ts": "2026-11-06T20:45:00",
     "fetch": "no change 2026-11-06\n",
     "status": "nochange"
   },
   "market": {
     "kind": "market",
-    "ts": "2026-11-06T17:50:04",
+    "ts": "2026-11-06T20:50:03",
     "fetch": "no change 2026-11-05\n",
     "status": "nochange"
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-06T17:15:04",
-    "fetch": "fetch error: Command '['C:\\\\Users\\\\asus\\\\AppData\\\\Local\\\\Python\\\\pythoncore-3.14-64\\\\pythonw.exe', 'D:\\\\APP\\\\旺來新聞站\\\\tools\\\\fetch_material.py', 'D:\\\\APP\\\\_wl_data_branch\\\\material']' timed out after 300 seconds",
-    "status": "nochange"
+    "ts": "2026-11-06T20:15:02",
+    "fetch": "wrote 2602 details 18 days 8\n",
+    "status": "pushed"
   },
   "dbupdate": {
     "kind": "dbupdate",
-    "ts": "2026-11-06T16:20:00",
+    "ts": "2026-11-06T19:20:08",
     "status": "uptodate",
     "fetch": "breadth_1000.json date=2026-11-06"
   }
