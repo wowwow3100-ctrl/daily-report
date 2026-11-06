@@ -1,32 +1,32 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-11-06T13:05:02",
-    "fetch": "mops 2026-10 297 {'L0': 148, 'L1': 17, 'O0': 127, 'O1': 5}\nlatest 2026-10 rows 297 high12 0 changed False\n",
-    "status": "nochange"
+    "ts": "2026-11-06T17:05:00",
+    "fetch": "mops 2026-10 564 {'L0': 286, 'L1': 21, 'O0': 248, 'O1': 9}\nwrote 2026-10 564\nlatest 2026-10 rows 564 high12 0 changed True\n",
+    "status": "pushed"
   },
   "sectors": {
     "kind": "sectors",
-    "ts": "2026-11-05T20:45:02",
-    "fetch": "no change 2026-11-05\n",
+    "ts": "2026-11-06T17:45:01",
+    "fetch": "no change 2026-11-06\n",
     "status": "nochange"
   },
   "market": {
     "kind": "market",
-    "ts": "2026-11-06T07:10:02",
-    "fetch": "dth': {'pct': 57.1, 'below': 328, 'n': 574, 'chg_pp': 11.4, 'light': 'y', 'date': '2026-11-05', 'label': '11/05', 'hist': [17.6, 16.7, 16.9, 17.4, 18.7, 16.8, 22.1, 19.9, 23.6, 25.7, 23.2, 28.2, 28.6, 24.4, 28.5, 37.6, 36.1, 46.3, 45.7, 57.1], 'rule': '上市櫃普通股中，近 20 日均量 1,000 張以上者，還原收盤價低於生命線的比例', 'src': '旺來資料庫', 'all_pct': 73.3, 'taiex_dist': 1.5}, 'date': '2026-11-05', 'label': '11/05', 'fin_keep': {'rate': 155.73, 'n': 1239, 'chg': -8.74, 'date': '2026-11-05'}, 'keep': {'rate': 245.69, 'below': 229, 'call': 201, 'exe': 10, 'risk': 440, 'rate_chg': -7.48, 'risk_chg': 367, 'date': '20261105'}}\n",
-    "status": "pushed"
+    "ts": "2026-11-06T17:50:04",
+    "fetch": "no change 2026-11-05\n",
+    "status": "nochange"
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-06T13:15:01",
-    "fetch": "wrote 1937 details 1 days 8\n",
-    "status": "pushed"
+    "ts": "2026-11-06T17:15:04",
+    "fetch": "fetch error: Command '['C:\\\\Users\\\\asus\\\\AppData\\\\Local\\\\Python\\\\pythoncore-3.14-64\\\\pythonw.exe', 'D:\\\\APP\\\\旺來新聞站\\\\tools\\\\fetch_material.py', 'D:\\\\APP\\\\_wl_data_branch\\\\material']' timed out after 300 seconds",
+    "status": "nochange"
   },
   "dbupdate": {
     "kind": "dbupdate",
-    "ts": "2026-11-05T22:20:01",
+    "ts": "2026-11-06T16:20:00",
     "status": "uptodate",
-    "fetch": "breadth_1000.json date=2026-11-05"
+    "fetch": "breadth_1000.json date=2026-11-06"
   }
 }
