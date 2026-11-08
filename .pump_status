@@ -1,8 +1,8 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-11-08T13:05:03",
-    "fetch": "mops 2026-10 658 {'L0': 333, 'L1': 26, 'O0': 290, 'O1': 9}\nlatest 2026-10 rows 658 high12 0 changed False\n",
+    "ts": "2026-11-08T17:05:00",
+    "fetch": "mops 2026-10 660 {'L0': 335, 'L1': 26, 'O0': 290, 'O1': 9}\nlatest 2026-10 rows 660 high12 0 changed False\n",
     "status": "nochange"
   },
   "sectors": {
@@ -19,8 +19,8 @@
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-08T13:15:00",
-    "fetch": "no change 2131\n",
+    "ts": "2026-11-08T17:15:04",
+    "fetch": "no change 2133\n",
     "status": "nochange"
   },
   "dbupdate": {
