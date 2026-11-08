@@ -295,36 +295,8 @@
   <div class="rvhero" id="hero"><div id="status">營收資料載入中…</div></div>
 
   <!-- ===== DATA:REVENUE ===== -->
-  <div class="sect-head">📈 上市櫃月營收（2026 年 8 月）．點開看產業成長榜（資料：櫃買中心產業月營收）</div>
-  <ol class="sectlist">
-    <li><details class="stkbox">
-      <summary><span class="sn">市</span><span class="snm">上市　32 產業：31 成長 / 1 衰退</span><b class="up">最高 +90.6%</b></summary>
-      <ul class="stklist">
-        <li><span class="stn">電腦及週邊設備業</span><span class="stc">1.60 兆</span><b class="up">+90.59%</b></li>
-        <li><span class="stn">電子通路業</span><span class="stc">5,291 億</span><b class="up">+88.92%</b></li>
-        <li><span class="stn">半導體業</span><span class="stc">9,109 億</span><b class="up">+61.30%</b></li>
-        <li><span class="stn">金融保險業（唯一衰退）</span><span class="stc">2,283 億</span><b class="down">-34.88%</b></li>
-      </ul>
-    </details></li>
-    <li><details class="stkbox">
-      <summary><span class="sn">櫃</span><span class="snm">上櫃　28 產業：28 個全數成長</span><b class="up">最高 +140.2%</b></summary>
-      <ul class="stklist">
-        <li><span class="stn">電子通路業</span><span class="stc">156 億</span><b class="up">+140.16%</b></li>
-        <li><span class="stn">金融業</span><span class="stc">53 億</span><b class="up">+109.18%</b></li>
-        <li><span class="stn">半導體業</span><span class="stc">1,038 億</span><b class="up">+96.26%</b></li>
-      </ul>
-    </details></li>
-    <li><details class="stkbox">
-      <summary><span class="sn">比</span><span class="snm">營收占比最高產業</span><b class="up">上市電腦周邊 27.1%</b></summary>
-      <ul class="stklist">
-        <li><span class="stn">上市：電腦及週邊設備業</span><b class="up">27.10%</b></li>
-        <li><span class="stn">上市：其他電子業</span><b class="up">17.35%</b></li>
-        <li><span class="stn">上市：半導體業</span><b class="up">15.46%</b></li>
-        <li><span class="stn">上櫃：半導體業</span><b class="up">28.48%</b></li>
-        <li><span class="stn">上櫃：電腦及週邊設備業</span><b class="up">10.77%</b></li>
-      </ul>
-    </details></li>
-  </ol>
+  <!-- 2026-11-08 起自動產生：讀 data 分支 revenue/<月份>.json，同產業各公司月營收加總算年增率（下方 wl-sect 小程式），不用再手動更新 -->
+  <div id="sectwrap"><div class="sect-head">📈 上市櫃產業月營收載入中…</div></div>
   <!-- ===== /DATA:REVENUE ===== -->
 
   <details class="indbox" id="indbox" open style="display:none">
@@ -750,6 +722,71 @@
     return fetch(BASE+"latest.json?t="+Math.floor(Date.now()/600000)).then(function(r){return r.json();});
   }).then(show).catch(function(){
     $("hero").innerHTML='<div id="status">營收資料整理中，請稍後再回來看看（每天 08:20／14:20／20:20 自動更新）</div>';
+  });
+})();
+</script>
+<script>
+/* 上市櫃產業月營收小表（2026-11-08 改成自動）：
+   讀 data 分支 revenue/meta.json 找「已公布完」的最新月份（當月還在陸續公布就用上個月），
+   同產業各公司月營收加總、只用去年同月也有營收的公司算年增率（跟櫃買中心產業月營收對得上），
+   存託憑證不算產業。 */
+(function(){
+  var BASE="https://raw.githubusercontent.com/wowwow3100-ctrl/daily-report/data/revenue/";
+  var box=document.getElementById("sectwrap"); if(!box) return;
+  function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+  function amt(v){ return v>=1e9 ? (v/1e9).toFixed(2)+" 兆" : Math.round(v/1e5).toLocaleString()+" 億"; }
+  function sg(p){ return (p>=0?"+":"-")+Math.abs(p).toFixed(2)+"%"; }
+  function stamp(){ return Math.floor(Date.now()/600000); }
+  function agg(d, mkt){
+    var ix={}; (d.cols||[]).forEach(function(c,i){ix[c]=i;});
+    var m={}, tot=0;
+    (d.rows||[]).forEach(function(r){
+      if(r[ix.mkt]!==mkt) return;
+      var ind=r[ix.ind]||"其他"; if(ind==="存託憑證") return;
+      var rev=+r[ix.rev]||0, ly=+r[ix.ly]||0;
+      var a=m[ind]||(m[ind]={ind:ind,rev:0,ly:0,all:0});
+      a.all+=rev; tot+=rev;
+      if(rev>0&&ly>0){ a.rev+=rev; a.ly+=ly; }
+    });
+    var arr=[]; for(var k in m){ var a=m[k]; if(a.ly>0){ a.yoy=(a.rev/a.ly-1)*100; arr.push(a);} }
+    arr.sort(function(x,y){return y.yoy-x.yoy;});
+    var sh=[]; for(var k2 in m) sh.push({ind:k2,p:tot>0?m[k2].all/tot*100:0});
+    sh.sort(function(x,y){return y.p-x.p;});
+    return {list:arr, share:sh};
+  }
+  function mbox(tag, name, g){
+    var L=g.list, n=L.length; if(!n) return "";
+    var down=L.filter(function(x){return x.yoy<0;}), up=n-down.length;
+    var head=up===n ? name+"　"+n+" 產業："+n+" 個全數成長" : (down.length===n ? name+"　"+n+" 產業：全數衰退" : name+"　"+n+" 產業："+up+" 成長 / "+down.length+" 衰退");
+    var top=L.slice(0,3).filter(function(x){return x.yoy>=0;});
+    var worst=down.slice().sort(function(x,y){return x.yoy-y.yoy;}).slice(0,3);
+    var li=top.concat(worst).map(function(x){
+      var lab=x.ind+(x.yoy<0&&down.length===1?"（唯一衰退）":"");
+      return '<li><span class="stn">'+esc(lab)+'</span><span class="stc">'+amt(x.all)+'</span><b class="'+(x.yoy>=0?"up":"down")+'">'+sg(x.yoy)+'</b></li>';
+    }).join("");
+    return '<li><details class="stkbox"><summary><span class="sn">'+tag+'</span><span class="snm">'+esc(head)+'</span><b class="'+(L[0].yoy>=0?"up":"down")+'">最高 '+(L[0].yoy>=0?"+":"-")+Math.abs(L[0].yoy).toFixed(1)+'%</b></summary><ul class="stklist">'+li+'</ul></details></li>';
+  }
+  function render(ym, d, note){
+    var gL=agg(d,"L"), gO=agg(d,"O");
+    var y=ym.slice(0,4), mo=parseInt(ym.slice(5,7),10);
+    var sL=gL.share.slice(0,3), sO=gO.share.slice(0,2);
+    var s0=sL[0];
+    var shareBox = s0 ? '<li><details class="stkbox"><summary><span class="sn">比</span><span class="snm">營收占比最高產業</span><b class="up">上市'+esc(s0.ind.replace(/業$/,""))+' '+s0.p.toFixed(1)+'%</b></summary><ul class="stklist">'
+      + sL.map(function(x){return '<li><span class="stn">上市：'+esc(x.ind)+'</span><b class="up">'+x.p.toFixed(2)+'%</b></li>';}).join("")
+      + sO.map(function(x){return '<li><span class="stn">上櫃：'+esc(x.ind)+'</span><b class="up">'+x.p.toFixed(2)+'%</b></li>';}).join("")
+      + '</ul></details></li>' : "";
+    box.innerHTML='<div class="sect-head">📈 上市櫃月營收（'+y+' 年 '+mo+' 月）．點開看產業成長榜（資料：公開資訊觀測站各公司月營收加總）'+(note?'．'+esc(note):'')+'</div>'
+      + '<ol class="sectlist">'+mbox("市","上市",gL)+mbox("櫃","上櫃",gO)+shareBox+'</ol>';
+  }
+  fetch(BASE+"meta.json?t="+stamp()).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(m){
+    var months=(m.months||[]).slice().sort(), ym=m.ym, note="";
+    if(m.partial && months.length>1){
+      var i=months.indexOf(m.ym); ym=months[(i>0?i:months.length)-1];
+      note=parseInt(String(m.ym).slice(5,7),10)+" 月營收還在陸續公布，全部公布後自動換新";
+    }
+    return fetch(BASE+ym+".json?t="+stamp()).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(d){ render(ym,d,note); });
+  }).catch(function(){
+    box.innerHTML='<div class="sect-head">📈 上市櫃產業月營收暫時讀不到，請稍後再看</div>';
   });
 })();
 </script>
