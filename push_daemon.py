@@ -342,6 +342,48 @@ def market_state(now):
     return "unknown"
 
 
+_QUICK = {"t": 0.0, "last": None}
+
+
+def twse_margin_ready(now):
+    """輕量檢查（2026-11-09 加）：只打證交所 2 個小請求，看「今天」的融資、維持率公布了沒。
+    回傳 (融資好了, 維持率好了)；連不上就當作還沒好（10 分鐘一次的完整抓取照樣會跑）。"""
+    import urllib.request
+    ds = now.strftime("%Y%m%d")
+    ua = {"User-Agent": "Mozilla/5.0 (wanglai-news market)", "Accept": "application/json"}
+
+    def get(url):
+        with urllib.request.urlopen(urllib.request.Request(url, headers=ua), timeout=20) as r:
+            return json.loads(r.read().decode("utf-8"))
+    m_ok = k_ok = False
+    try:
+        j = get("https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?date=%s&selectType=MS&response=json" % ds)
+        if str(j.get("date")) == ds:
+            for t in (j.get("tables") or []):
+                for r in (t.get("data") or []):
+                    if r and len(r) > 5 and "融資金額" in str(r[0]) and str(r[5]).replace(",", "").strip() not in ("", "0"):
+                        m_ok = True
+    except Exception:
+        pass
+    try:
+        j = get("https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ4U_TREND?response=json&days=2&date=%s" % ds)
+        rows = [x for x in (j.get("data") or []) if isinstance(x, dict)]
+        k_ok = bool(rows) and str(rows[-1].get("date")) == ds
+    except Exception:
+        pass
+    return m_ok, k_ok
+
+
+def market_dates():
+    """data 分支 market/latest.json 現在是哪一天的融資（YYYY-MM-DD）、哪一天的維持率（YYYYMMDD）。"""
+    try:
+        with open(os.path.join(DATA_WT, "market", "latest.json"), encoding="utf-8") as f:
+            j = json.load(f)
+        return j.get("date"), str((j.get("keep") or {}).get("date", ""))
+    except Exception:
+        return None, ""
+
+
 def pump_due(now):
     due = []
     h, m, d, wd = now.hour, now.minute, now.day, now.weekday()
@@ -358,7 +400,7 @@ def pump_due(now):
         key = ("material", now.strftime("%Y%m%d%H"))
         if key not in _pump_done:
             due.append(key)
-    # 融資／維持率／風險戶（2026-11-03 改）：證交所多半 21 點前後就公布（11/03 21:04 已經有），
+    # 融資／維持率／風險戶（2026-11-03 改，11-09 加 2 分鐘輕量檢查）：證交所多半 20:50～21:05 公布（11/03 21:04、11/09 20:59 已經有），
     # 以前 21:45 才第一次抓，會晚將近一小時。改成：平日 17:30 起每 10 分鐘看一次，抓到「今天」的就停。
     # 今天是不是交易日看 data 分支裡加權收盤的日期（14:40／15:40 那兩次會先抓到）；
     # 判斷不出來（例如加權那次也沒抓到）就退回舊的 21:45／22:45／23:45。隔天 07:10 補抓照舊。
@@ -368,6 +410,16 @@ def pump_due(now):
             key = ("market", now.strftime("%Y%m%d%H") + "_%d" % (m // 10))
             if key not in _pump_done:
                 due.append(key)
+            # 2026-11-09 加：每 2 分鐘輕量檢查一次證交所，一公布就馬上抓（11/09 20:5x 公布，10 分鐘一次會慢最多 10 分鐘）
+            elif time.time() - _QUICK["t"] >= 110:
+                _QUICK["t"] = time.time()
+                m_ok, k_ok = twse_margin_ready(now)
+                jd, kd = market_dates()
+                _QUICK["last"] = (now.strftime("%H:%M"), m_ok, k_ok)
+                if (m_ok and jd != now.strftime("%Y-%m-%d")) or (k_ok and kd != now.strftime("%Y%m%d")):
+                    key = ("market", "q" + now.strftime("%Y%m%d%H%M"))
+                    if key not in _pump_done:
+                        due.append(key)
         elif mst == "unknown" and h in (21, 22, 23) and m >= 45:
             key = ("market", now.strftime("%Y%m%d%H"))
             if key not in _pump_done:
