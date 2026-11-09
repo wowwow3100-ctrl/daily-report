@@ -1,32 +1,32 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-11-09T13:05:03",
-    "fetch": "mops 2026-10 687 {'L0': 344, 'L1': 26, 'O0': 305, 'O1': 12}\nwrote 2026-10 687\nlatest 2026-10 rows 687 high12 0 changed True\n",
+    "ts": "2026-11-09T17:05:02",
+    "fetch": "mops 2026-10 1079 {'L0': 530, 'L1': 47, 'O0': 486, 'O1': 16}\nwrote 2026-10 1079\nlatest 2026-10 rows 1079 high12 0 changed True\n",
     "status": "pushed"
   },
   "sectors": {
     "kind": "sectors",
-    "ts": "2026-11-06T20:45:00",
-    "fetch": "no change 2026-11-06\n",
+    "ts": "2026-11-09T17:45:04",
+    "fetch": "no change 2026-11-09\n",
     "status": "nochange"
   },
   "market": {
     "kind": "market",
-    "ts": "2026-11-09T07:10:00",
+    "ts": "2026-11-09T17:50:01",
     "fetch": "no change 2026-11-06\n",
     "status": "nochange"
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-09T13:15:02",
-    "fetch": "no change 2134\n",
-    "status": "nochange"
+    "ts": "2026-11-09T17:15:04",
+    "fetch": "wrote 2505 details 145 days 8\n",
+    "status": "pushed"
   },
   "dbupdate": {
     "kind": "dbupdate",
-    "ts": "2026-11-06T22:20:01",
+    "ts": "2026-11-09T16:20:01",
     "status": "uptodate",
-    "fetch": "breadth_1000.json date=2026-11-06"
+    "fetch": "breadth_1000.json date=2026-11-09"
   }
 }
