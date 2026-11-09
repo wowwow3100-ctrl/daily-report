@@ -1,79 +1,73 @@
 {
- "updated": "2026-11-06 06:41",
- "date": "2026-11-06",
- "label": "11/06 06:41",
+ "updated": "2026-11-10 06:41",
+ "date": "2026-11-10",
+ "label": "11/10 06:41",
  "items": [
   {
    "cat": "美股",
-   "title": "美股四大指數全面重挫！費半跌逾12％ 台股夜盤失守4萬點",
-   "url": "https://tw.news.yahoo.com/%E7%BE%8E%E8%82%A1%E5%9B%9B%E5%A4%A7%E6%8C%87%E6%95%B8%E5%85%A8%E9%9D%A2%E9%87%8D%E6%8C%AB-%E8%B2%BB%E5%8D%8A%E8%B7%8C%E9%80%BE12-%E5%8F%B0%E8%82%A1%E5%A4%9C%E7%9B%A4%E5%A4%B1%E5%AE%884%E8%90%AC%E9%BB%9E-212122736.html",
-   "src": "Yahoo新聞"
-  },
-  {
-   "cat": "美股",
-   "title": "美股收盤／那指重挫5.52%陷修正 AI監管疑慮引爆晶片股賣壓",
-   "url": "https://uanalyze.com.tw/articles/3255658503",
-   "src": "優分析"
+   "title": "〈美股盤後〉道瓊飆逾1100點 標普創4月來最佳日 輝達逆勢跌超4%",
+   "url": "https://news.cnyes.com/news/id/6654538",
+   "src": "鉅亨網"
   },
   {
    "cat": "ADR",
-   "title": "美股收盤》血洗科技股！道瓊狂跌1833點 台積電ADR重挫逾10％",
-   "url": "https://ec.ltn.com.tw/article/breakingnews/5631141",
-   "src": "自由財經"
-  },
-  {
-   "cat": "ADR",
-   "title": "選後行情變臉！那指盤中跌入修正區間 台積電ADR挫近7.6%",
-   "url": "https://news.cnyes.com/news/id/6649126",
+   "title": "盤中速報 - 台積電ADR(TSM-US)大漲5.01%，報394.24美元",
+   "url": "https://news.cnyes.com/news/id/6654793",
    "src": "鉅亨網"
   },
   {
    "cat": "期貨",
-   "title": "台指期夜盤大跳水 失守4萬點大關",
-   "url": "https://udn.com/news/story/7255/9860815",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "期貨",
-   "title": "台股周五開盤不妙？ 美股那指、費半血崩 台指期夜盤狂殺逾2千點",
-   "url": "https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E5%91%A8%E4%BA%94%E9%96%8B%E7%9B%A4%E4%B8%8D%E5%A6%99-%E7%BE%8E%E8%82%A1%E9%82%A3%E6%8C%87-%E8%B2%BB%E5%8D%8A%E8%A1%80%E5%B4%A9-%E5%8F%B0%E6%8C%87%E6%9C%9F%E5%A4%9C%E7%9B%A4%E7%8B%82%E6%AE%BA%E9%80%BE2%E5%8D%83%E9%BB%9E-163505300.html",
+   "title": "【盤前】油價大跌費半狂飆6.8%！台指夜盤漲1064點 台股今拚續攻",
+   "url": "https://tw.news.yahoo.com/%E7%9B%A4%E5%89%8D-%E6%B2%B9%E5%83%B9%E5%A4%A7%E8%B7%8C%E8%B2%BB%E5%8D%8A%E7%8B%82%E9%A3%866-8-%E5%8F%B0%E6%8C%87%E5%A4%9C%E7%9B%A4%E6%BC%B21064%E9%BB%9E-%E5%8F%B0%E8%82%A1%E4%BB%8A%E6%8B%9A%E7%BA%8C%E6%94%BB-221800605.html",
    "src": "Yahoo新聞"
   },
   {
    "cat": "期貨",
-   "title": "期貨最新報價11／5期交所夜盤行情",
-   "url": "https://www.ctee.com.tw/news/20261105701966-430202",
-   "src": "工商時報"
-  },
-  {
-   "cat": "國際",
-   "title": "熱錢出走新台幣險破33元 出口商積極拋匯收32.876元",
-   "url": "https://www.cna.com.tw/news/afe/202611050279.aspx",
-   "src": "中央社"
-  },
-  {
-   "cat": "國際",
-   "title": "新台幣重貶 央行喊話出口商：勿過度期待貶值、有需求就結售",
-   "url": "https://tw.stock.yahoo.com/news/%E6%96%B0%E5%8F%B0%E5%B9%A3%E9%87%8D%E8%B2%B6-%E5%A4%AE%E8%A1%8C%E5%96%8A%E8%A9%B1%E5%87%BA%E5%8F%A3%E5%95%86-%E5%8B%BF%E9%81%8E%E5%BA%A6%E6%9C%9F%E5%BE%85%E8%B2%B6%E5%80%BC-%E6%9C%89%E9%9C%80%E6%B1%82%E5%B0%B1%E7%B5%90%E5%94%AE-102728003.html",
-   "src": "Yahoo股市"
-  },
-  {
-   "cat": "個股",
-   "title": "50大權值股跌停11家！台股重挫1,374點連六黑 台積電收低20元",
-   "url": "https://udn.com/news/story/7251/9859380",
+   "title": "外資10.1萬口空單創歷史新高 台指期夜盤41K保衛戰開打",
+   "url": "https://udn.com/news/story/7255/9867609",
    "src": "聯合新聞網"
   },
   {
-   "cat": "數據",
-   "title": "〈台股盤前要聞〉10月外資淨匯出280億美元創高、10月CPI連6月破2%",
-   "url": "https://news.cnyes.com/news/id/6649069",
+   "cat": "期貨",
+   "title": "11月台股期指漲1771點",
+   "url": "https://www.cna.com.tw/news/afe/202611090102.aspx",
+   "src": "中央社"
+  },
+  {
+   "cat": "個股",
+   "title": "輝達盤前股價跌近5%！董事會調查添變數 黃仁勳去留受關注",
+   "url": "https://news.cnyes.com/news/id/6653703",
+   "src": "鉅亨網"
+  },
+  {
+   "cat": "個股",
+   "title": "11月10日 五件財經大事搶先看",
+   "url": "https://money.udn.com/money/story/5607/9868001",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "國際",
+   "title": "《國際金融》日耗資天價阻貶 日圓仍不振",
+   "url": "https://www.chinatimes.com/realtimenews/20261109002891-260410",
+   "src": "中時新聞網"
+  },
+  {
+   "cat": "國際",
+   "title": "焦點速報 - 美元指數(DXY) 大跌0.4%，報101.893點",
+   "url": "https://news.cnyes.com/news/id/6653324",
    "src": "鉅亨網"
   },
   {
    "cat": "數據",
-   "title": "11月6日 五件財經大事搶先看",
-   "url": "https://money.udn.com/money/story/5607/9860880",
-   "src": "經濟日報"
+   "title": "本週操盤筆記：美國CPI、PPI、英國GDP與中國通膨數據",
+   "url": "https://news.cnyes.com/news/id/6652199",
+   "src": "鉅亨網"
+  },
+  {
+   "cat": "數據",
+   "title": "《總經放大鏡》下週(11/9-11/13)全球重要經濟數據預告",
+   "url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=740afcee-ff34-4160-80cc-af9b00e2ea26",
+   "src": "MoneyDJ"
   }
  ]
 }
