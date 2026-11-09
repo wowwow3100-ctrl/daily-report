@@ -1,31 +1,31 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-11-09T17:05:02",
-    "fetch": "mops 2026-10 1079 {'L0': 530, 'L1': 47, 'O0': 486, 'O1': 16}\nwrote 2026-10 1079\nlatest 2026-10 rows 1079 high12 0 changed True\n",
+    "ts": "2026-11-09T20:05:00",
+    "fetch": "mops 2026-10 1208 {'L0': 595, 'L1': 51, 'O0': 544, 'O1': 18}\nwrote 2026-10 1208\nlatest 2026-10 rows 1208 high12 0 changed True\n",
     "status": "pushed"
   },
   "sectors": {
     "kind": "sectors",
-    "ts": "2026-11-09T17:45:04",
+    "ts": "2026-11-09T20:45:01",
     "fetch": "no change 2026-11-09\n",
     "status": "nochange"
   },
   "market": {
     "kind": "market",
-    "ts": "2026-11-09T17:50:01",
+    "ts": "2026-11-09T20:50:04",
     "fetch": "no change 2026-11-06\n",
     "status": "nochange"
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-09T17:15:04",
-    "fetch": "wrote 2505 details 145 days 8\n",
+    "ts": "2026-11-09T20:15:04",
+    "fetch": "wrote 2688 details 14 days 8\n",
     "status": "pushed"
   },
   "dbupdate": {
     "kind": "dbupdate",
-    "ts": "2026-11-09T16:20:01",
+    "ts": "2026-11-09T19:20:07",
     "status": "uptodate",
     "fetch": "breadth_1000.json date=2026-11-09"
   }
