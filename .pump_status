@@ -1,9 +1,9 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-11-10T20:05:04",
-    "fetch": "latest 2026-10 rows 1970 high12 0 changed False\n",
-    "status": "pushed"
+    "ts": "2026-11-10T23:05:02",
+    "fetch": "fetch failed L Expecting value: line 1 column 1 (char 0)\nmops 2026-10 1972 {'L0': 982, 'L1': 93, 'O0': 867, 'O1': 30}\nlatest 2026-10 rows 1972 high12 0 changed False\n",
+    "status": "nochange"
   },
   "sectors": {
     "kind": "sectors",
@@ -19,13 +19,13 @@
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-10T20:15:00",
-    "fetch": "detail fail 911608 code 406 查無相符資料\nwrote 3573 details 168 days 8\n",
+    "ts": "2026-11-10T23:15:04",
+    "fetch": "wrote 3603 details 2 days 8\n",
     "status": "pushed"
   },
   "dbupdate": {
     "kind": "dbupdate",
-    "ts": "2026-11-10T19:20:12",
+    "ts": "2026-11-10T22:20:04",
     "status": "uptodate",
     "fetch": "breadth_1000.json date=2026-11-10"
   }
