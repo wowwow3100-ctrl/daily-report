@@ -1,73 +1,79 @@
 {
- "updated": "2026-11-10 06:41",
- "date": "2026-11-10",
- "label": "11/10 06:41",
+ "updated": "2026-11-11 06:42",
+ "date": "2026-11-11",
+ "label": "11/11 06:42",
  "items": [
   {
    "cat": "美股",
-   "title": "〈美股盤後〉道瓊飆逾1100點 標普創4月來最佳日 輝達逆勢跌超4%",
-   "url": "https://news.cnyes.com/news/id/6654538",
+   "title": "〈美股盤後〉美CPI超預期 12月升息兩碼機率升 四大指數盡墨 輝達再挫超5%",
+   "url": "https://news.cnyes.com/news/id/6657862",
    "src": "鉅亨網"
   },
   {
    "cat": "ADR",
-   "title": "盤中速報 - 台積電ADR(TSM-US)大漲5.01%，報394.24美元",
-   "url": "https://news.cnyes.com/news/id/6654793",
-   "src": "鉅亨網"
+   "title": "台積電ADR10日上漲7.86美元漲幅2.02%折台股2606.06元",
+   "url": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E7%A9%8D%E9%9B%BBadr10%E6%97%A5%E4%B8%8A%E6%BC%B27-86%E7%BE%8E%E5%85%83%E6%BC%B2%E5%B9%852-02-%E6%8A%98%E5%8F%B0%E8%82%A12606-06%E5%85%83-214119804.html",
+   "src": "Yahoo股市"
   },
   {
-   "cat": "期貨",
-   "title": "【盤前】油價大跌費半狂飆6.8%！台指夜盤漲1064點 台股今拚續攻",
-   "url": "https://tw.news.yahoo.com/%E7%9B%A4%E5%89%8D-%E6%B2%B9%E5%83%B9%E5%A4%A7%E8%B7%8C%E8%B2%BB%E5%8D%8A%E7%8B%82%E9%A3%866-8-%E5%8F%B0%E6%8C%87%E5%A4%9C%E7%9B%A4%E6%BC%B21064%E9%BB%9E-%E5%8F%B0%E8%82%A1%E4%BB%8A%E6%8B%9A%E7%BA%8C%E6%94%BB-221800605.html",
-   "src": "Yahoo新聞"
-  },
-  {
-   "cat": "期貨",
-   "title": "外資10.1萬口空單創歷史新高 台指期夜盤41K保衛戰開打",
-   "url": "https://udn.com/news/story/7255/9867609",
+   "cat": "美股",
+   "title": "美股早盤／費半摔1.5%！分析師：黃仁勳若離職 輝達價值恐減三成",
+   "url": "https://udn.com/news/story/6811/9870379",
    "src": "聯合新聞網"
   },
   {
-   "cat": "期貨",
-   "title": "11月台股期指漲1771點",
-   "url": "https://www.cna.com.tw/news/afe/202611090102.aspx",
+   "cat": "數據",
+   "title": "美國10月CPI高於市場預期 聯準會升息壓力增",
+   "url": "https://www.cna.com.tw/news/aopl/202611100366.aspx",
    "src": "中央社"
   },
   {
-   "cat": "個股",
-   "title": "輝達盤前股價跌近5%！董事會調查添變數 黃仁勳去留受關注",
-   "url": "https://news.cnyes.com/news/id/6653703",
-   "src": "鉅亨網"
-  },
-  {
-   "cat": "個股",
-   "title": "11月10日 五件財經大事搶先看",
-   "url": "https://money.udn.com/money/story/5607/9868001",
+   "cat": "國際",
+   "title": "美 CPI 超預期 上月物價月增0.4% 市場認為下月篤定升息",
+   "url": "https://money.udn.com/money/story/5599/9870465",
    "src": "經濟日報"
   },
   {
    "cat": "國際",
-   "title": "《國際金融》日耗資天價阻貶 日圓仍不振",
-   "url": "https://www.chinatimes.com/realtimenews/20261109002891-260410",
-   "src": "中時新聞網"
+   "title": "通膨仍火熱！美CPI月增0.4％高於預期 Fed理事華勒挺擴大升息至2碼",
+   "url": "https://ec.ltn.com.tw/article/breakingnews/5636338",
+   "src": "自由財經"
   },
   {
-   "cat": "國際",
-   "title": "焦點速報 - 美元指數(DXY) 大跌0.4%，報101.893點",
-   "url": "https://news.cnyes.com/news/id/6653324",
+   "cat": "期貨",
+   "title": "快訊／CPI出爐了！美股開盤慘綠 台指期夜盤也下挫359點",
+   "url": "https://www.setn.com/news/1936800",
+   "src": "三立新聞網"
+  },
+  {
+   "cat": "期貨",
+   "title": "台積電業績亮麗 但台指期夜盤上半場、台積電期走跌",
+   "url": "https://money.udn.com/money/story/11112/9870246",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "期貨",
+   "title": "外資期貨淨空單再創高 台指期夜盤轉跌 法人揭操作心法",
+   "url": "https://www.chinatimes.com/realtimenews/20261110003836-260410",
+   "src": "工商時報"
+  },
+  {
+   "cat": "個股",
+   "title": "十大領頭羊營運三增聚光 增添台股多頭底氣",
+   "url": "https://money.udn.com/money/story/5607/9870322",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "個股",
+   "title": "電信三雄前十月獲利俏",
+   "url": "https://money.udn.com/money/story/5710/9870139",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "個股",
+   "title": "營收速報 - 星宇航空(2646)10月營收58.95億元年增率高達59.47％",
+   "url": "https://news.cnyes.com/news/id/6656831",
    "src": "鉅亨網"
-  },
-  {
-   "cat": "數據",
-   "title": "本週操盤筆記：美國CPI、PPI、英國GDP與中國通膨數據",
-   "url": "https://news.cnyes.com/news/id/6652199",
-   "src": "鉅亨網"
-  },
-  {
-   "cat": "數據",
-   "title": "《總經放大鏡》下週(11/9-11/13)全球重要經濟數據預告",
-   "url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=740afcee-ff34-4160-80cc-af9b00e2ea26",
-   "src": "MoneyDJ"
   }
  ]
 }
