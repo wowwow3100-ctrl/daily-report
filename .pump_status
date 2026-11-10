@@ -1,31 +1,31 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-11-10T17:05:00",
-    "fetch": "mops 2026-10 1906 {'L0': 955, 'L1': 89, 'O0': 835, 'O1': 27}\nwrote 2026-10 1906\nlatest 2026-10 rows 1906 high12 0 changed True\n",
+    "ts": "2026-11-10T20:05:04",
+    "fetch": "latest 2026-10 rows 1970 high12 0 changed False\n",
     "status": "pushed"
   },
   "sectors": {
     "kind": "sectors",
-    "ts": "2026-11-10T17:45:00",
+    "ts": "2026-11-10T20:45:03",
     "fetch": "no change 2026-11-10\n",
     "status": "nochange"
   },
   "market": {
     "kind": "market",
-    "ts": "2026-11-10T17:50:03",
-    "fetch": "no change 2026-11-09\n",
-    "status": "nochange"
+    "ts": "2026-11-10T20:46:49",
+    "fetch": " 'sox': {'close': 10033.93, 'pct': 6.85, 'prev_pct': 4.21, 'label': '11/09'}, 'breadth': {'pct': 54.5, 'below': 312, 'n': 572, 'chg_pp': -1.6, 'light': 'y', 'date': '2026-11-10', 'label': '11/10', 'hist': [17.4, 18.7, 16.8, 22.1, 19.9, 23.6, 25.7, 23.2, 28.2, 28.6, 24.4, 28.5, 37.6, 36.1, 46.3, 45.7, 57.1, 65.3, 56.1, 54.5], 'rule': '上市櫃普通股中，近 20 日均量 1,000 張以上者，還原收盤價低於生命線的比例', 'src': '旺來資料庫', 'all_pct': 73.4, 'taiex_dist': 3.8}, 'date': '2026-11-10', 'label': '11/10', 'keep': {'rate': 255.68, 'below': 26, 'call': 7, 'exe': 9, 'risk': 42, 'rate_chg': 7.33, 'risk_chg': -59, 'date': '20261110'}}\n",
+    "status": "pushed"
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-10T17:15:02",
-    "fetch": "fetch error: Command '['C:\\\\Users\\\\asus\\\\AppData\\\\Local\\\\Python\\\\pythoncore-3.14-64\\\\pythonw.exe', 'D:\\\\APP\\\\旺來新聞站\\\\tools\\\\fetch_material.py', 'D:\\\\APP\\\\_wl_data_branch\\\\material']' timed out after 300 seconds",
-    "status": "nochange"
+    "ts": "2026-11-10T20:15:00",
+    "fetch": "detail fail 911608 code 406 查無相符資料\nwrote 3573 details 168 days 8\n",
+    "status": "pushed"
   },
   "dbupdate": {
     "kind": "dbupdate",
-    "ts": "2026-11-10T16:20:10",
+    "ts": "2026-11-10T19:20:12",
     "status": "uptodate",
     "fetch": "breadth_1000.json date=2026-11-10"
   }
