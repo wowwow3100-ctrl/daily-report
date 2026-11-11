@@ -1,7 +1,7 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-11-11T17:05:02",
+    "ts": "2026-11-11T19:05:01",
     "fetch": "latest 2026-10 rows 1972 high12 0 changed False\n",
     "status": "nochange"
   },
@@ -13,19 +13,19 @@
   },
   "market": {
     "kind": "market",
-    "ts": "2026-11-11T17:50:01",
+    "ts": "2026-11-11T19:40:02",
     "fetch": "no change 2026-11-10\n",
     "status": "nochange"
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-11T17:15:00",
-    "fetch": "wrote 4007 details 250 days 8\n",
+    "ts": "2026-11-11T19:15:04",
+    "fetch": "detail fail 911622 code 406 查無相符資料\nwrote 4267 details 129 days 8\n",
     "status": "pushed"
   },
   "dbupdate": {
     "kind": "dbupdate",
-    "ts": "2026-11-11T16:20:06",
+    "ts": "2026-11-11T19:20:06",
     "status": "uptodate",
     "fetch": "breadth_1000.json date=2026-11-11"
   }

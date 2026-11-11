@@ -173,6 +173,41 @@
   @media (max-width:520px){.lifebn{gap:12px;padding:18px 16px 30px;}.lb-pine{font-size:46px;}.lb-txt b{font-size:1.2rem;}}
   @media (prefers-reduced-motion:reduce){.lb-pine,.lb-rain i{animation:none;}.lb-rain{display:none;}}
 
+  /* 旺來群島橫幅（海） */
+  .seabn{position:relative;display:block;overflow:hidden;text-decoration:none;margin:0 0 22px;min-height:300px;border-radius:24px;color:#fff;isolation:isolate;
+    background:linear-gradient(180deg,#0b2a4a 0%,#14507e 38%,#2f8fbf 62%,#7fd0e6 100%);
+    box-shadow:0 22px 48px -22px rgba(8,40,70,.95),0 0 0 1px rgba(160,225,255,.35) inset;transition:transform .25s,box-shadow .25s;}
+  .seabn:hover{transform:translateY(-3px);box-shadow:0 28px 56px -22px rgba(8,40,70,1),0 0 0 1px rgba(190,240,255,.7) inset;}
+  .sb-sun{position:absolute;right:12%;top:26px;width:86px;height:86px;border-radius:50%;z-index:-1;
+    background:radial-gradient(circle,#fff6d0 0%,#ffd66e 45%,rgba(255,200,90,0) 72%);filter:blur(.3px);animation:sbGlow 6s ease-in-out infinite;}
+  .sb-star{position:absolute;inset:0 0 50% 0;z-index:-1;opacity:.55;
+    background-image:radial-gradient(1.4px 1.4px at 12% 22%,#fff,transparent),radial-gradient(1.2px 1.2px at 30% 12%,#fff,transparent),radial-gradient(1px 1px at 48% 30%,#fff,transparent),radial-gradient(1.3px 1.3px at 66% 16%,#fff,transparent),radial-gradient(1px 1px at 22% 40%,#fff,transparent);}
+  .sb-isle{position:absolute;right:6%;bottom:96px;width:220px;height:70px;z-index:-1;}
+  .sb-boat{position:absolute;left:58%;bottom:92px;width:62px;height:62px;z-index:-1;animation:sbBoat 4.5s ease-in-out infinite;transform-origin:50% 90%;}
+  .sb-wave{position:absolute;left:0;width:200%;height:120px;z-index:-1;background-repeat:repeat-x;background-size:50% 100%;}
+  .sb-wave.w1{bottom:58px;opacity:.55;animation:sbWave 14s linear infinite;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 120' preserveAspectRatio='none'%3E%3Cpath d='M0 60 Q100 30 200 60 T400 60 T600 60 T800 60 V120 H0Z' fill='%233aa6d0'/%3E%3C/svg%3E");}
+  .sb-wave.w2{bottom:28px;opacity:.75;animation:sbWave 10s linear infinite reverse;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 120' preserveAspectRatio='none'%3E%3Cpath d='M0 55 Q100 85 200 55 T400 55 T600 55 T800 55 V120 H0Z' fill='%23217fb0'/%3E%3C/svg%3E");}
+  .sb-wave.w3{bottom:-10px;animation:sbWave 7s linear infinite;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 120' preserveAspectRatio='none'%3E%3Cpath d='M0 50 Q100 20 200 50 T400 50 T600 50 T800 50 V120 H0Z' fill='%23104f7c'/%3E%3C/svg%3E");}
+  .sb-line{position:absolute;left:0;right:0;bottom:104px;height:0;border-top:1.5px dashed rgba(255,236,160,.75);z-index:-1;}
+  .sb-line span{position:absolute;left:14px;top:-20px;font-size:.66rem;letter-spacing:2px;color:#ffe9a6;font-weight:800;}
+  .sb-txt{position:relative;display:flex;flex-direction:column;gap:6px;padding:26px 26px 0;max-width:560px;}
+  .sb-txt small{font-size:.74rem;letter-spacing:4px;color:#bfeaff;font-weight:800;}
+  .sb-txt b{font-size:2.3rem;font-weight:900;letter-spacing:3px;line-height:1.1;color:#fff;text-shadow:0 3px 14px rgba(0,30,60,.55);}
+  .sb-txt>span{font-size:.92rem;line-height:1.7;color:rgba(235,248,255,.95);text-shadow:0 1px 6px rgba(0,30,60,.5);}
+  .sb-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px;}
+  .sb-tags i{font-style:normal;font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(200,240,255,.35);backdrop-filter:blur(4px);}
+  .sb-cta{position:absolute;left:26px;bottom:22px;font-style:normal;font-weight:900;font-size:.95rem;color:#0b2a4a;background:linear-gradient(180deg,#fff3c4,#ffd36b);padding:9px 20px;border-radius:999px;box-shadow:0 8px 20px -8px rgba(0,0,0,.55);}
+  .sb-cta i{font-style:normal;display:inline-block;transition:transform .25s;}
+  .seabn:hover .sb-cta i{transform:translateX(5px);}
+  .sb-note{position:absolute;right:16px;bottom:10px;font-size:.66rem;color:rgba(230,246,255,.85);}
+  @keyframes sbWave{to{transform:translateX(-50%);}}
+  @keyframes sbBoat{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-7px) rotate(5deg)}}
+  @keyframes sbGlow{0%,100%{opacity:.9;transform:scale(1)}50%{opacity:1;transform:scale(1.07)}}
+  @media (max-width:560px){.seabn{min-height:340px}.sb-txt{padding:20px 18px 0}.sb-txt b{font-size:1.8rem}.sb-isle{width:150px;right:-10px;bottom:100px}.sb-boat{left:46%;width:50px;height:50px}.sb-sun{width:64px;height:64px;right:8%;top:18px}.sb-cta{left:18px}}
+  @media (prefers-reduced-motion:reduce){.sb-wave,.sb-boat,.sb-sun{animation:none}}
   .sister .sbox+.sbox{margin-top:10px;}
   .sbox.life{border-color:rgba(76,175,110,.55);}
   .sbox.life b,.sbox.life em{color:#4caf6e;}
@@ -242,6 +277,25 @@
       <em>打開 App <i>→</i></em>
     </span>
     <span class="lb-note">工具型 App．資料呈現，非投資建議</span>
+  </a>
+
+  <a class="seabn" href="https://wowwow3100-ctrl.github.io/stock-sea/" target="_blank" rel="noopener" aria-label="打開旺來群島：台股生命線航海課">
+    <span class="sb-star" aria-hidden="true"></span>
+    <span class="sb-sun" aria-hidden="true"></span>
+    <svg class="sb-isle" viewBox="0 0 220 70" aria-hidden="true"><path d="M10 70 C40 40 70 22 104 20 C140 18 170 38 210 70Z" fill="#1d6b4a"/><path d="M60 70 C80 50 100 40 124 40 C150 42 170 56 190 70Z" fill="#2c8a5c"/><path d="M118 22 L118 2" stroke="#6b4a2a" stroke-width="3"/><path d="M118 4 C108 0 98 4 92 10 M118 4 C128 0 138 4 144 10 M118 4 C112 8 106 14 104 20 M118 4 C124 8 130 14 132 20" stroke="#3fae6a" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="110" cy="70" rx="104" ry="5" fill="#e9d8a6" opacity=".55"/></svg>
+    <svg class="sb-boat" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 V44" stroke="#5a3b20" stroke-width="2.5"/><path d="M33 8 L54 40 H33Z" fill="#ffe28a"/><path d="M31 12 L14 40 H31Z" fill="#fff8e6"/><path d="M8 44 H56 L48 56 H16Z" fill="#7a3b1e"/><path d="M33 6 L44 9 L33 12Z" fill="#e8483b"/></svg>
+    <span class="sb-wave w1" aria-hidden="true"></span>
+    <span class="sb-line" aria-hidden="true"><span>海平面＝生命線</span></span>
+    <span class="sb-wave w2" aria-hidden="true"></span>
+    <span class="sb-wave w3" aria-hidden="true"></span>
+    <span class="sb-txt">
+      <small>NEW．台股生命線・航海課</small>
+      <b>旺來群島</b>
+      <span>開船靠岸、讀課程卡、過挑戰蓋印章。十座島，一座島複習一個觀念；島露出水面多少，就是離生命線多遠。</span>
+      <span class="sb-tags"><i>3D 開船</i><i>十座島課程</i><i>集章升級帆船</i><i>手機也能玩</i></span>
+    </span>
+    <em class="sb-cta">開船出航 <i>→</i></em>
+    <span class="sb-note">工具介紹，並非投資建議</span>
   </a>
 
   <div class="intro">
