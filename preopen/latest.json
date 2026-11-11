@@ -1,79 +1,73 @@
 {
- "updated": "2026-11-11 06:42",
- "date": "2026-11-11",
- "label": "11/11 06:42",
+ "updated": "2026-11-12 06:45",
+ "date": "2026-11-12",
+ "label": "11/12 06:45",
  "items": [
   {
    "cat": "美股",
-   "title": "〈美股盤後〉美CPI超預期 12月升息兩碼機率升 四大指數盡墨 輝達再挫超5%",
-   "url": "https://news.cnyes.com/news/id/6657862",
-   "src": "鉅亨網"
-  },
-  {
-   "cat": "ADR",
-   "title": "台積電ADR10日上漲7.86美元漲幅2.02%折台股2606.06元",
-   "url": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E7%A9%8D%E9%9B%BBadr10%E6%97%A5%E4%B8%8A%E6%BC%B27-86%E7%BE%8E%E5%85%83%E6%BC%B2%E5%B9%852-02-%E6%8A%98%E5%8F%B0%E8%82%A12606-06%E5%85%83-214119804.html",
-   "src": "Yahoo股市"
-  },
-  {
-   "cat": "美股",
-   "title": "美股早盤／費半摔1.5%！分析師：黃仁勳若離職 輝達價值恐減三成",
-   "url": "https://udn.com/news/story/6811/9870379",
-   "src": "聯合新聞網"
-  },
-  {
-   "cat": "數據",
-   "title": "美國10月CPI高於市場預期 聯準會升息壓力增",
-   "url": "https://www.cna.com.tw/news/aopl/202611100366.aspx",
+   "title": "CoreWeave財報緩解AI疑慮 美股收高輝達止穩",
+   "url": "https://www.cna.com.tw/news/afe/202611120010.aspx",
    "src": "中央社"
   },
   {
-   "cat": "國際",
-   "title": "美 CPI 超預期 上月物價月增0.4% 市場認為下月篤定升息",
-   "url": "https://money.udn.com/money/story/5599/9870465",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "國際",
-   "title": "通膨仍火熱！美CPI月增0.4％高於預期 Fed理事華勒挺擴大升息至2碼",
-   "url": "https://ec.ltn.com.tw/article/breakingnews/5636338",
+   "cat": "ADR",
+   "title": "美股收盤》輝達止跌！費半狂飆近6％ 台積電ADR漲逾4％",
+   "url": "https://ec.ltn.com.tw/article/breakingnews/5637726",
    "src": "自由財經"
   },
   {
    "cat": "期貨",
-   "title": "快訊／CPI出爐了！美股開盤慘綠 台指期夜盤也下挫359點",
-   "url": "https://www.setn.com/news/1936800",
-   "src": "三立新聞網"
+   "title": "【盤前】CoreWeave回神費半飆5.6%！台指夜盤漲470點",
+   "url": "https://tw.news.yahoo.com/%E7%9B%A4%E5%89%8D-coreweave%E5%9B%9E%E7%A5%9E%E8%B2%BB%E5%8D%8A%E9%A3%865-6-%E5%8F%B0%E6%8C%87%E5%A4%9C%E7%9B%A4%E6%BC%B2470%E9%BB%9E-%E5%8F%B0%E8%82%A1%E6%8B%9A%E5%BB%B6%E7%BA%8C%E5%8F%8D%E5%BD%88-222700786.html",
+   "src": "Yahoo新聞"
   },
   {
    "cat": "期貨",
-   "title": "台積電業績亮麗 但台指期夜盤上半場、台積電期走跌",
-   "url": "https://money.udn.com/money/story/11112/9870246",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "期貨",
-   "title": "外資期貨淨空單再創高 台指期夜盤轉跌 法人揭操作心法",
-   "url": "https://www.chinatimes.com/realtimenews/20261110003836-260410",
-   "src": "工商時報"
-  },
-  {
-   "cat": "個股",
-   "title": "十大領頭羊營運三增聚光 增添台股多頭底氣",
-   "url": "https://money.udn.com/money/story/5607/9870322",
+   "title": "CoreWeave 發威！美股、台指期夜盤活跳跳",
+   "url": "https://money.udn.com/money/story/11112/9872734",
    "src": "經濟日報"
   },
   {
    "cat": "個股",
-   "title": "電信三雄前十月獲利俏",
-   "url": "https://money.udn.com/money/story/5710/9870139",
+   "title": "「輝達親兒子」CoreWeave 報喜 上修今年財測 鴻海、技嘉等受惠",
+   "url": "https://money.udn.com/money/story/11162/9872895",
    "src": "經濟日報"
   },
   {
    "cat": "個股",
-   "title": "營收速報 - 星宇航空(2646)10月營收58.95億元年增率高達59.47％",
-   "url": "https://news.cnyes.com/news/id/6656831",
+   "title": "〈台股盤前要聞〉廣達明年AI伺服器營收年增高雙位數",
+   "url": "https://news.cnyes.com/news/id/6659644",
    "src": "鉅亨網"
+  },
+  {
+   "cat": "個股",
+   "title": "台積電喊先進製程需求「永無止境」 AI 成長呈現拋物線攀升",
+   "url": "https://money.udn.com/money/story/5612/9872989",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "個股",
+   "title": "小摩：台積電產能加速擴張到2028年",
+   "url": "https://money.udn.com/money/story/5607/9872971",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "國際",
+   "title": "CPI掀美債殺盤、連沃勒都轉鷹 華爾街將「一口氣升息2碼」納入定價",
+   "url": "https://news.cnyes.com/news/id/6658215",
+   "src": "鉅亨網"
+  },
+  {
+   "cat": "國際",
+   "title": "美晶片出口管制沒用！中國大學持續取得輝達高階AI晶片",
+   "url": "https://news.cnyes.com/news/id/6659865",
+   "src": "鉅亨網"
+  },
+  {
+   "cat": "數據",
+   "title": "經長：今年經濟成長一定超越12.7% 至少創39年新高",
+   "url": "https://money.udn.com/money/story/7307/9872909",
+   "src": "經濟日報"
   }
  ]
 }
