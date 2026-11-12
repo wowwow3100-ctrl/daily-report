@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/11/12（週四）早盤場次</div>
+        <div class="stamp" id="updated">2026/11/12（週四）收盤場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -294,10 +294,10 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/12 早盤場．加權、成交值、融資餘額、大盤融資維持率與信用風險戶數為 11/11 證交所官方值；費城半導體為 11/11 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/12 收盤場．加權與成交值為 11/12 收盤報導值、待證交所官方值更新；融資餘額、大盤融資維持率與信用風險戶數為 11/11 證交所官方值；費城半導體為 11/11 美股收盤）</span></h2>
   <div class="mkt">
-    <div class="m"><div class="lbl">加權指數</div><div class="val">44,257.15</div><div class="chg up">+1,545.23（+3.62%）（11/11）</div></div>
-    <div class="m"><div class="lbl">成交值（上市）</div><div class="val">8,763 億</div><div class="chg down">較前日 -15.3%（11/11）</div></div>
+    <div class="m"><div class="lbl">加權指數</div><div class="val">43,091.87</div><div class="chg down">-1,165.28（-2.63%）（11/12）</div></div>
+    <div class="m"><div class="lbl">成交值（上市）</div><div class="val">10,133 億</div><div class="chg up">較前日 +15.6%（11/12 報導值）</div></div>
     <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">5,412 億</div><div class="chg up">單日 +44.8 億（11/11）</div></div>
     <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">10,564</div><div class="chg up">+5.66%（11/11 美股，前日 -0.35%）</div></div>
     <div class="m"><div class="lbl">大盤融資維持率</div><div class="val">174.17%</div><div class="chg up">較前日 +6.23（11/11）</div><div class="sub">130% 為追繳線｜一般落在 130%～180%</div></div>
@@ -392,103 +392,117 @@
 <!-- ===== /DATA:PREOPEN ===== -->
 
                                                                 <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/12 早盤場．依時間由新到舊．共 20 則）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/12 收盤場．依時間由新到舊．共 20 則）</span></h2>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/12 06:45</span>傳輝達董事會今開會決定黃仁勳去留 輝達盤後一度重挫 8% <a class="ref" href="#src-14001">[14001]</a></div>
-    <div class="news-body">經濟日報：引述《華爾街日報》，輝達董事會正準備撤換執行長黃仁勳，最快今天開會；《紐時》另爆黃仁勳與醫療事業副總裁鮑爾有婚外情，輝達週三盤後一度重挫 8%。</div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/12 13:40</span>台股開高走低收跌 1,165 點 收 43,091.87 點 台積電(2330) 收 2,340 元跌 55 元 <a class="ref" href="#src-15001">[15001]</a></div>
+    <div class="news-body">經濟日報：加權指數跌 2.63%，成交量 1 兆 133 億元；連漲三天後 11:30 過後賣壓出籠，跌破 44,000 點，守住 10 日線。成交金額大且走高者有台玻(1802)、世芯-KY(3661)、旺矽(6223)等。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/12 06:19</span>《紐時》：黃仁勳婚外情再爆一樁 對象為輝達醫療事業副總裁 <a class="ref" href="#src-14002">[14002]</a></div>
-    <div class="news-body">經濟日報：《紐約時報》引述五位前輝達員工，指黃仁勳另與直屬部屬、醫療事業副總裁鮑爾有婚外情，輝達盤後股價走低。</div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/12 12:45</span>費半大漲 5.6% 台股卻陷震盪 盤中高低差約 820 點 <a class="ref" href="#src-15002">[15002]</a></div>
+    <div class="news-body">經濟日報：美股四大指數 11 日全數收紅，台股 12 日盤中最高 44,525 點、最低 43,703 點，台積電(2330) 盤中最低 2,355 元，壓抑大盤走勢。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">11/12 05:52</span>美股收高 費半大漲 5.66% 台積電 ADR 漲 4.25% 收 413.35 美元 <a class="ref" href="#src-14003">[14003]</a></div>
-    <div class="news-body">自由財經：CoreWeave 財報優於預期、上調 2026 年財測，輝達連 2 跌後反彈 2.9%；道瓊 +0.49% 收 52,486.49 點、那指 +1.60%、費半收 10,564.11 點。10 月 CPI 月增 0.4% 高於預期，FedWatch 顯示 12 月升息 2 碼機率約 9 成。</div>
+    <div class="news-title"><span class="cat">產業</span><span class="ntime">11/12 12:39</span>大摩：舊世代記憶體定價優勢不足以抵銷需求疲軟 下調六檔台股目標價 <a class="ref" href="#src-15003">[15003]</a></div>
+    <div class="news-body">經濟日報：摩根士丹利發布〈舊世代記憶體：定價能力是否已觸頂？〉報告，指 DDR3/4、SLC/MLC NAND、NOR Flash 等利基型記憶體定價優勢已不足以抵銷需求疲軟，下調相關個股評等與目標價（即 11/11 收錄之華邦電、旺宏等同一份報告）。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/12 05:31</span>伊朗戰爭前景訊號分歧 國際油價上揚 <a class="ref" href="#src-14004">[14004]</a></div>
-    <div class="news-body">中央社：市場對伊朗戰事走向的訊號解讀分歧，國際油價週三收高。</div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/12 12:19</span>黃仁勳風暴擴大 台股早盤一度跌逾 500 點失守 44,000 點 <a class="ref" href="#src-15004">[15004]</a></div>
+    <div class="news-body">經濟日報：輝達與台股供應鏈關係密切，上午 11 時過後外資賣股，大盤最低來到 43,703 點。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/12 03:59</span>輝達客戶 Megaspeed 涉轉運晶片輸中 傳美財長質問商務部長為何不列管 <a class="ref" href="#src-14005">[14005]</a></div>
-    <div class="news-body">中央社：Axios 報導，財長貝森特在白宮戰情室當面質問商務部長盧特尼克，為何未將 Megaspeed 列入實體清單；黃仁勳被爆與該公司員工有婚外情，該員工涉嫌為中國從事間諜活動。</div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/12 12:18</span>MSCI 半年度調整 景碩(3189)、南電(8046)、台燿(6274) 納入全球標準指數 <a class="ref" href="#src-15005">[15005]</a></div>
+    <div class="news-body">經濟日報：台股全球標準指數成分股「3 進 4 出」，刪除萬海(2615) 等 4 檔，11/30 盤後生效；消息公布後部分新納入個股盤中走跌。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">政策</span><span class="ntime">11/12 02:45</span>台灣主權基金雛型浮現 初期資本額暫定 300 億元 <a class="ref" href="#src-14006">[14006]</a></div>
-    <div class="news-body">經濟日報：國發會主委葉俊顯表示主權基金已進入法條研擬，預計年底前提出專法草案，初期資本額以新台幣 300 億元為設想，以海外策略型投資為主。</div>
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/12 12:09</span>廣達(2382) 法說後 美系、日系外資同步下修目標價 <a class="ref" href="#src-15006">[15006]</a></div>
+    <div class="news-body">時報資訊：公司預估 2027 年 AI 與通用伺服器雙位數成長、伺服器占營收可望達九成；美系外資目標價 500 元降至 450 元、日系外資 480 元降至 400 元，皆維持「買進」。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/12 02:33</span>黃仁勳婚外情涉國安 美眾院委員會主席：國會準備發出傳票 <a class="ref" href="#src-14007">[14007]</a></div>
-    <div class="news-body">中央社：美國眾議院委員會主席表示，國會已準備就黃仁勳婚外情涉及的國安疑慮發出傳票。</div>
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/12 12:07</span>路透：輝達董事會今晚開會 決定是否撤換黃仁勳 <a class="ref" href="#src-15007">[15007]</a></div>
+    <div class="news-body">中央社：輝達 11/8 才表態支持經營團隊，態度急轉；依章程多數董事通過即可解職，董事會已與外部機構物色接班人選，財務長克瑞斯被視為可能代理人選。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">產業</span><span class="ntime">11/12 02:13</span>CoreWeave 上修今年財測 鴻海(2317)、技嘉(2376)等台廠受惠 <a class="ref" href="#src-14008">[14008]</a></div>
-    <div class="news-body">經濟日報：CoreWeave 上季財報優於預期並調高 2026 年財測，喊出 2028 年上半年可望實現調整後獲利，市場看好明年 AI 伺服器採購潮延續。</div>
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/12 11:51</span>彭博：黃仁勳醜聞核心人物黃樂已返中國 現居北京 <a class="ref" href="#src-15008">[15008]</a></div>
+    <div class="news-body">中央社：彭博報導，涉案女商人黃樂目前人在北京。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/12 02:00</span>Baird 將輝達降評「中立」目標價 500 美元砍至 200 美元 大摩移出首選 <a class="ref" href="#src-14009">[14009]</a></div>
-    <div class="news-body">鉅亨網：Baird 擔心 H200 若再禁銷中國恐造成約 50 億美元存貨跌價損失（分析師情境推估）；大摩因停損政策移出首選但維持「加碼」。LSEG 統計 64 家券商仍有 59 家給買進，輝達 11/17 公布財報。</div>
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/12 11:39</span>日經指數早盤收漲 466 點 AI 概念股走勢分歧 <a class="ref" href="#src-15009">[15009]</a></div>
+    <div class="news-body">時報資訊：日股早盤上漲，AI 相關個股漲跌互見。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/12 01:15</span>台股 3 個交易日 V 型反彈 4,555 點 挑戰史上單週最大漲點 <a class="ref" href="#src-14010">[14010]</a></div>
-    <div class="news-body">經濟日報：法人預期全週可望改寫單週最大漲點紀錄，目前盤勢進入震盪整理期，指數年底前觀察前波壓力區 48,200 點。</div>
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/12 11:19</span>黃仁勳去留牽動亞股 AI 供應鏈 台灣大型廠商曝險比重受關注 <a class="ref" href="#src-15010">[15010]</a></div>
+    <div class="news-body">時報資訊：外電整理輝達亞洲供應鏈營收曝險，台灣大型廠商比重約 36% 居前。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/12 01:12</span>外資今年賣超台股逾 3 兆元創紀錄 投信買超 1.19 兆元承接 <a class="ref" href="#src-14011">[14011]</a></div>
-    <div class="news-body">經濟日報：截至 11/11 外資今年累計賣超約 3 兆元，其中台積電(2330) 約 2.3 兆元、占 76%；自營商賣超 1.59 兆元，投信買超 1.19 兆元同創紀錄，台股今年仍漲逾 5 成。</div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/12 10:49</span>盤中解析：AI 概念股反彈 台股上攻 44,500 點挑戰月線 <a class="ref" href="#src-15011">[15011]</a></div>
+    <div class="news-body">時報資訊：早盤 AI 概念股反彈，指數一度挑戰月線。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/11 22:20</span>彭博：沙烏地 10 月原油產量大增 創中東戰事爆發前以來新高 <a class="ref" href="#src-14012">[14012]</a></div>
-    <div class="news-body">中央社：彭博調查顯示沙烏地阿拉伯 10 月原油產量明顯增加，回到中東戰事爆發前以來最高水準。</div>
+    <div class="news-title"><span class="cat">政策</span><span class="ntime">11/12 10:24</span>國安基金首度進場 台股早盤黑翻紅 <a class="ref" href="#src-15012">[15012]</a></div>
+    <div class="news-body">經濟日報：國安基金上週五決議第 10 次護盤後今日首度進場，開盤後一度下跌近 400 點的大盤拉回上漲逾百點。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">期貨</span><span class="ntime">11/11 21:04</span>CoreWeave 化解 AI 放緩擔憂 美股、台指期夜盤走高 <a class="ref" href="#src-14013">[14013]</a></div>
-    <div class="news-body">經濟日報：截至晚間約 9 點，台指期夜盤約 44,524 點、上漲 388 點，台積電期夜盤約 2,411 元、上漲 23 元。</div>
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/12 09:59</span>南亞(1303) 斥資 115 億元擴建玻纖布產能 歐系外資目標價 390 元 <a class="ref" href="#src-15013">[15013]</a></div>
+    <div class="news-body">時報資訊：彰濱新廠預計 2029 年底新增 1.02 億公尺年產能、較現有增 17%，約六到七成供內部使用；歐系外資維持「買進」、目標價 390 元。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/11 20:58</span>緯創(3231) 前三季 EPS 13.54 元 加碼 134 億元資本支出擴充 AI 伺服器產能 <a class="ref" href="#src-14014">[14014]</a></div>
-    <div class="news-body">鉅亨網：第三季營收 1.15 兆元年增 1.02 倍、稅後純益 184.02 億元、EPS 5.74 元；董事會通過新增資本支出擴充台灣與墨西哥伺服器產能。</div>
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/12 09:56</span>鴻海(2317) 今午實體法說 早盤小漲約 1% <a class="ref" href="#src-15014">[15014]</a></div>
+    <div class="news-body">Yahoo股市：鴻海下午 3 點舉行第 3 季法說會，市場關注美國擴產與 AI 伺服器交付進度；華碩(2357) 下午 4 點線上法說。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/11 20:30</span>黃仁勳爭議牽動東南亞晶片供應鏈監管 泰專家：資料中心受考驗 <a class="ref" href="#src-14015">[14015]</a></div>
-    <div class="news-body">中央社：泰國專家指黃仁勳相關爭議牽動東南亞晶片供應鏈監管，區域資料中心面臨考驗。</div>
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/12 09:39</span>鈺創(5351) 第三季獲利近 25 億元 前三季 EPS 14.28 元 <a class="ref" href="#src-15015">[15015]</a></div>
+    <div class="news-body">時報資訊：鈺創第三季獲利大幅成長，前三季每股盈餘 14.28 元。</div>
   </div>
   <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
-    <div class="news-title"><span class="cat">產業</span><span class="ntime">11/11 20:12</span>科學園區審議會通過 6 件投資案 總額逾 103 億元 <a class="ref" href="#src-14016">[14016]</a></div>
-    <div class="news-body">中央社：國科會科學園區審議會通過 6 件投資案，投資總額超過新台幣 103 億元。</div>
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/12 09:30</span>黃仁勳去留未定 專家示警輝達估值恐折價 台廠 AI 概念股受波及 <a class="ref" href="#src-15016">[15016]</a></div>
+    <div class="news-body">時報資訊：專家指領導階層不確定性可能使輝達評價折價，台灣 AI 供應鏈同步承壓。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/11 19:54</span>聯友金屬看好氧化鎢需求 新產線明年第 4 季貢獻營收 <a class="ref" href="#src-14017">[14017]</a></div>
-    <div class="news-body">中央社：聯友金屬看好氧化鎢需求成長，新產線預計 2027 年第 4 季開始貢獻營收。</div>
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/12 09:03</span>台股開高後翻黑 一度跌逾 330 點 台積電(2330) 跌 35 元 <a class="ref" href="#src-15017">[15017]</a></div>
+    <div class="news-body">時報資訊：受輝達經營層風波影響，台股開盤後由紅翻黑。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">政策</span><span class="ntime">11/11 19:41</span>國家關鍵技術清單增修 納入高階載板、低軌衛星通訊 <a class="ref" href="#src-14018">[14018]</a></div>
-    <div class="news-body">中央社：政府增修國家關鍵技術清單，涵括高階載板與低軌衛星通訊等項目。</div>
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/12 06:45</span>傳輝達董事會開會決定黃仁勳去留 輝達盤後一度重挫 8% <a class="ref" href="#src-15018">[15018]</a></div>
+    <div class="news-body">經濟日報：引述《華爾街日報》，輝達董事會正準備撤換執行長黃仁勳；《紐時》另爆黃仁勳與醫療事業副總裁有婚外情。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/11 19:03</span>台積電(2330) 侯永清：搭高鐵 3 小時可備齊晶圓廠千種化學品 <a class="ref" href="#src-14019">[14019]</a></div>
-    <div class="news-body">中央社：台積電高層指台灣半導體供應鏈群聚，晶圓廠所需上千種化學品在高鐵 3 小時範圍內即可備齊，此優勢難以複製。</div>
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">11/12 05:52</span>美股收高 費半大漲 5.66% 台積電 ADR 漲 4.25% <a class="ref" href="#src-15019">[15019]</a></div>
+    <div class="news-body">自由財經：CoreWeave 財報優於預期並上調財測，輝達反彈 2.9%；10 月 CPI 月增 0.4% 高於預期。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/11 18:55</span>台橡(2103)：明年營運仍充滿挑戰 多元布局因應 <a class="ref" href="#src-14020">[14020]</a></div>
-    <div class="news-body">中央社：台橡表示 2027 年營運環境仍充滿挑戰，將以多元布局因應。</div>
+    <div class="news-title"><span class="cat">政策</span><span class="ntime">11/12 02:45</span>台灣主權基金雛型浮現 初期資本額暫定 300 億元 <a class="ref" href="#src-15020">[15020]</a></div>
+    <div class="news-body">經濟日報：國發會表示主權基金已進入法條研擬，預計年底前提出專法草案，以海外策略型投資為主。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
 
   <!-- ===== DATA:BROKER ===== -->
-  <h2 id="broker">11/11 券商報告摘要</h2>
+  <h2 id="broker">11/12 券商報告摘要</h2>
   <div class="card">
     <ul class="sum-list">
-      <li>華邦電（2344）：美系外資降評為「中立」，目標價 120 元（前值 288 元），旺宏（2337）目標價 90 元、力積電（6770）54 元同步降評，認為利基型記憶體定價力恐見頂<a class="ref" href="#src-13005">[13005]</a></li>
-      <li>南茂（8150）：瑞銀重申「買進」，目標價 155 元（前值 166 元），第三季 EPS 1.89 元優於預期<a class="ref" href="#src-13003">[13003]</a></li>
-      <li>上銀（2049）：美系外資維持「加碼」，目標價 450 元，交期拉長、機器人業務占比提升<a class="ref" href="#src-13006">[13006]</a></li>
-      <li>群聯（8299）：美系外資降評為「減碼」，目標價 1,357 元（前值 2,588 元），第三季毛利率 59% 低於預期<a class="ref" href="#src-12007">[12007]</a></li>
+      <li>廣達（2382）：法說後美系外資維持「買進」，目標價 450 元（前值 500 元）；日系外資重申「買進」，目標價 400 元（前值 480 元），主因營業利益率與本益比假設下修<a class="ref" href="#src-15006">[15006]</a></li>
+      <li>南亞（1303）：歐系外資維持「買進」，目標價 390 元，看好 115 億元玻纖布擴產強化 CCL 垂直整合<a class="ref" href="#src-15013">[15013]</a></li>
+      <li>華邦電（2344）：11/11 收錄之利基型記憶體降評報告，經濟日報 11/12 報導出具券商為摩根士丹利，旺宏（2337）、力積電（6770）等同步下修<a class="ref" href="#src-15003">[15003]</a></li>
     </ul>
   </div>
   <table>
     <tr><th>日期</th><th>券商</th><th>個股</th><th>評等</th><th>目標價</th><th>一句話重點</th></tr>
+    <tr>
+      <td class="num">11/12</td><td><span class="tag">外資</span>美系外資（未具名）</td><td>廣達 (2382)</td><td>買進<br><span class="muted">維持</span></td>
+      <td class="num"><span class="down">450</span><br><span class="muted">前值 500</span></td>
+      <td class="muted">營業利益率韌性不足、關注 AI 業務延續性（時報資訊 11/12 12:09）<a class="ref" href="#src-15006">[15006]</a></td>
+    </tr>
+    <tr>
+      <td class="num">11/12</td><td><span class="tag">外資</span>日系外資（未具名）</td><td>廣達 (2382)</td><td>買進<br><span class="muted">重申</span></td>
+      <td class="num"><span class="down">400</span><br><span class="muted">前值 480</span></td>
+      <td class="muted">上修營收與 EPS、本益比 15 倍降至 11 倍（時報資訊 11/12 12:09）<a class="ref" href="#src-15006">[15006]</a></td>
+    </tr>
+    <tr>
+      <td class="num">11/12</td><td><span class="tag">外資</span>歐系外資（未具名）</td><td>南亞 (1303)</td><td>買進<br><span class="muted">維持</span></td>
+      <td class="num">390</td>
+      <td class="muted">玻纖布擴產 1.02 億公尺、2030 年起挹注獲利（時報資訊 11/12 09:59）<a class="ref" href="#src-15013">[15013]</a></td>
+    </tr>
     <tr>
       <td class="num">11/11</td><td><span class="tag">外資</span>美系外資（未具名）</td><td>華邦電 (2344)</td><td><span class="down">中立</span><br><span class="muted">降評</span></td>
       <td class="num"><span class="down">120</span><br><span class="muted">前值 288</span></td>
@@ -500,34 +514,9 @@
       <td class="muted">NOR／SLC 供需缺口收斂（時報資訊 11/11 17:21）<a class="ref" href="#src-13005">[13005]</a></td>
     </tr>
     <tr>
-      <td class="num">11/11</td><td><span class="tag">外資</span>美系外資（未具名）</td><td>力積電 (6770)</td><td><span class="down">中立</span><br><span class="muted">降評</span></td>
-      <td class="num"><span class="down">54</span><br><span class="muted">前值 111</span></td>
-      <td class="muted">同一份記憶體報告（時報資訊 11/11 17:21）<a class="ref" href="#src-13005">[13005]</a></td>
-    </tr>
-    <tr>
-      <td class="num">11/11</td><td><span class="tag">外資</span>美系外資（未具名）</td><td>南亞科 (2408)</td><td>優於大盤<br><span class="muted">維持</span></td>
-      <td class="num"><span class="down">550</span><br><span class="muted">前值 600</span></td>
-      <td class="muted">評等維持、目標價下修（時報資訊 11/11 17:21）<a class="ref" href="#src-13005">[13005]</a></td>
-    </tr>
-    <tr>
-      <td class="num">11/11</td><td><span class="tag">外資</span>美系外資（未具名）</td><td>愛普 (6531)</td><td>優於大盤<br><span class="muted">維持</span></td>
-      <td class="num"><span class="down">1,465</span><br><span class="muted">前值 1,666</span></td>
-      <td class="muted">移出首選名單（時報資訊 11/11 17:21）<a class="ref" href="#src-13005">[13005]</a></td>
-    </tr>
-    <tr>
       <td class="num">11/11</td><td><span class="tag">外資</span>瑞銀 UBS</td><td>南茂 (8150)</td><td>買進<br><span class="muted">重申</span></td>
       <td class="num"><span class="down">155</span><br><span class="muted">前值 166</span></td>
       <td class="muted">Q3 毛利率 21.7% 優於預期（時報資訊 11/11 17:41）<a class="ref" href="#src-13003">[13003]</a></td>
-    </tr>
-    <tr>
-      <td class="num">11/11</td><td><span class="tag">外資</span>美系外資（未具名）</td><td>上銀 (2049)</td><td>加碼<br><span class="muted">維持</span></td>
-      <td class="num">450</td>
-      <td class="muted">交期拉長、機器人業務成長（時報資訊 11/11 10:59）<a class="ref" href="#src-13006">[13006]</a></td>
-    </tr>
-    <tr>
-      <td class="num">11/11</td><td><span class="tag">外資</span>美系外資（未具名）</td><td>群聯 (8299)</td><td><span class="down">減碼</span><br><span class="muted">降評</span></td>
-      <td class="num"><span class="down">1,357</span><br><span class="muted">前值 2,588</span></td>
-      <td class="muted">Q3 毛利率 59% 遜預期，修正估值模型錯誤（時報資訊 11/11 09:39）<a class="ref" href="#src-12007">[12007]</a></td>
     </tr>
   </table>
 <!-- ===== /DATA:BROKER ===== -->
@@ -544,32 +533,30 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
-    <li id="src-14001"><a href="https://money.udn.com/money/story/123398/9873186" target="_blank" rel="noopener">經濟日報｜傳輝達董事會今開會決定黃仁勳去留 盤後一度重摔8%（11/12 06:45）</a></li>
-    <li id="src-14002"><a href="https://money.udn.com/money/story/5599/9873177" target="_blank" rel="noopener">經濟日報｜黃仁勳婚外情再爆一樁 紐時稱對象是輝達女副總裁（11/12 06:19）</a></li>
-    <li id="src-14003"><a href="https://ec.ltn.com.tw/article/breakingnews/5637726" target="_blank" rel="noopener">自由財經｜美股收盤》輝達止跌！費半狂飆近6％ 台積電ADR漲逾4％（11/12 05:52）</a></li>
-    <li id="src-14004"><a href="https://www.cna.com.tw/news/afe/202611120009.aspx" target="_blank" rel="noopener">中央社｜伊朗戰爭前景訊號分歧 國際油價上揚（11/12 05:31）</a></li>
-    <li id="src-14005"><a href="https://www.cna.com.tw/news/aopl/202611120008.aspx" target="_blank" rel="noopener">中央社｜輝達客戶涉轉運晶片輸中 傳美財長質問商務部長為何不列管（11/12 03:59）</a></li>
-    <li id="src-14006"><a href="https://money.udn.com/money/story/7307/9872898" target="_blank" rel="noopener">經濟日報｜台灣主權基金有譜 初期資本額300億元 以海外策略型投資為主（11/12 02:45）</a></li>
-    <li id="src-14007"><a href="https://www.cna.com.tw/news/aopl/202611123001.aspx" target="_blank" rel="noopener">中央社｜黃仁勳婚外情涉國安 美眾院委員會主席：國會準備發出傳票（11/12 02:33）</a></li>
-    <li id="src-14008"><a href="https://money.udn.com/money/story/11162/9872895" target="_blank" rel="noopener">經濟日報｜「輝達親兒子」CoreWeave 報喜 上修今年財測 鴻海、技嘉等受惠（11/12 02:13）</a></li>
-    <li id="src-14009"><a href="https://news.cnyes.com/news/id/6659672" target="_blank" rel="noopener">鉅亨網｜目標價500砍到200美元！輝達遭罕見降評 大摩也撤首選（11/12 02:00）</a></li>
-    <li id="src-14010"><a href="https://money.udn.com/money/story/5607/9873032" target="_blank" rel="noopener">經濟日報｜台股 V 型反彈 挑戰單周最大漲點 指數年底前上看48,200點（11/12 01:15）</a></li>
-    <li id="src-14011"><a href="https://money.udn.com/money/story/5607/9872978" target="_blank" rel="noopener">經濟日報｜台股錢潮翻滾散戶法人化 無懼外資今年來賣超逾3兆元（11/12 01:12）</a></li>
-    <li id="src-14012"><a href="https://www.cna.com.tw/news/afe/202611113011.aspx" target="_blank" rel="noopener">中央社｜彭博：沙烏地10月原油產量大增 創中東戰事爆發前以來新高（11/11 22:20）</a></li>
-    <li id="src-14013"><a href="https://udn.com/news/story/7255/9872734" target="_blank" rel="noopener">經濟日報｜化解AI放緩擔憂！CoreWeave發威 美股、台指期夜盤活跳跳（11/11 21:04）</a></li>
-    <li id="src-14014"><a href="https://news.cnyes.com/news/id/6659550" target="_blank" rel="noopener">鉅亨網｜緯創前三季獲利428億元EPS 13.54元 加碼資本支出再擴充伺服器產能（11/11 20:58）</a></li>
-    <li id="src-14015"><a href="https://www.cna.com.tw/news/afe/202611110321.aspx" target="_blank" rel="noopener">中央社｜黃仁勳爭議牽動東南亞晶片供應鏈監管 泰專家：資料中心受考驗（11/11 20:30）</a></li>
-    <li id="src-14016"><a href="https://www.cna.com.tw/news/afe/202611110315.aspx" target="_blank" rel="noopener">中央社｜科學園區審議會通過6件投資案 總額逾103億元（11/11 20:12）</a></li>
-    <li id="src-14017"><a href="https://www.cna.com.tw/news/afe/202611110312.aspx" target="_blank" rel="noopener">中央社｜聯友金屬看好氧化鎢需求 新產線明年第4季貢獻營收（11/11 19:54）</a></li>
-    <li id="src-14018"><a href="https://www.cna.com.tw/news/afe/202611110311.aspx" target="_blank" rel="noopener">中央社｜國家關鍵技術清單增修 涵括高階載板、低軌衛星通訊（11/11 19:41）</a></li>
-    <li id="src-14019"><a href="https://www.cna.com.tw/news/afe/202611110302.aspx" target="_blank" rel="noopener">中央社｜台積電侯永清：搭高鐵3小時可備齊晶圓廠千種化學品 台灣優勢難複製（11/11 19:03）</a></li>
-    <li id="src-14020"><a href="https://www.cna.com.tw/news/afe/202611110300.aspx" target="_blank" rel="noopener">中央社｜台橡：明年營運仍充滿挑戰 多元布局因應（11/11 18:55）</a></li>
+    <li id="src-15001"><a href="https://udn.com/news/story/7251/9874197" target="_blank" rel="noopener">經濟日報｜三天連漲暫歇 台股開高走低收跌1,165點守住10日線 台積電收低55元（11/12 13:40）</a></li>
+    <li id="src-15002"><a href="https://udn.com/news/story/7251/9874017" target="_blank" rel="noopener">經濟日報｜費半大漲台股卻陷入震盪 法人：指數反彈走勢將延續 往月線邁進（11/12 12:45）</a></li>
+    <li id="src-15003"><a href="https://udn.com/news/story/7251/9874001" target="_blank" rel="noopener">經濟日報｜大摩：舊世代記憶體定價優勢已不足以抵銷需求疲軟 下調六台股目標價（11/12 12:39）</a></li>
+    <li id="src-15004"><a href="https://udn.com/news/story/7251/9873954" target="_blank" rel="noopener">經濟日報｜黃仁勳婚外情風暴擴大 台股受波及 早盤一度大跌超過500點（11/12 12:19）</a></li>
+    <li id="src-15005"><a href="https://udn.com/news/story/7251/9873952" target="_blank" rel="noopener">經濟日報｜MSCI 利多失靈？景碩、南電、台燿升級卻走跌 「這檔」強鎖漲停（11/12 12:18）</a></li>
+    <li id="src-15006"><a href="https://www.chinatimes.com/realtimenews/20261112002629-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜《電週邊》廣達營運前景正向 惟2外資喊降價（11/12 12:09）</a></li>
+    <li id="src-15007"><a href="https://www.cna.com.tw/news/afe/202611120110.aspx" target="_blank" rel="noopener">中央社｜黃仁勳再爆外遇輝達陷危機 董事會態度急轉彎（11/12 12:07）</a></li>
+    <li id="src-15008"><a href="https://www.cna.com.tw/news/aopl/202611123002.aspx" target="_blank" rel="noopener">中央社｜彭博：黃仁勳醜聞核心人物黃樂已返中國 現人在北京（11/12 11:51）</a></li>
+    <li id="src-15009"><a href="https://www.chinatimes.com/realtimenews/20261112002446-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜《日股》日經晨收漲466點 AI股兩樣情 差別在它（11/12 11:39）</a></li>
+    <li id="src-15010"><a href="https://www.chinatimes.com/realtimenews/20261112002212-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜黃仁勳若下台亞股殺血海！台灣巨頭曝險36％最危險 名單一次看（11/12 11:19）</a></li>
+    <li id="src-15011"><a href="https://www.chinatimes.com/realtimenews/20261112002153-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜《盤中解析》AI概念股反彈 台股續攻44500點挑戰月線（11/12 10:49）</a></li>
+    <li id="src-15012"><a href="https://udn.com/news/story/7251/9873520" target="_blank" rel="noopener">經濟日報｜國安基金今日出手使台股早盤黑翻紅 法人建議：操作避免積極追價（11/12 10:24）</a></li>
+    <li id="src-15013"><a href="https://www.chinatimes.com/realtimenews/20261112001801-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜《塑膠股》AI玻纖布供不應求！南亞重金擴產 外資力挺390元（11/12 09:59）</a></li>
+    <li id="src-15014"><a href="https://tw.stock.yahoo.com/news/%E9%B4%BB%E6%B5%B7%E4%B9%85%E9%81%95%E5%AF%A6%E9%AB%94%E6%B3%95%E8%AA%AA%E4%B8%8B%E5%8D%88%E7%99%BB%E5%A0%B4%EF%BC%81%E6%97%A9%E7%9B%A4%E5%B0%8F%E6%BC%B21%E6%9A%96%E8%BA%AB-%E5%88%86%E6%9E%90%E5%B8%AB%EF%BC%9A%E5%8D%A1%E4%BD%8D%E5%85%88%E7%AD%89%E7%AD%89-015644499.html" target="_blank" rel="noopener">Yahoo股市｜鴻海久違實體法說下午登場！早盤小漲1%暖身 分析師：卡位先等等（11/12 09:56）</a></li>
+    <li id="src-15015"><a href="https://www.chinatimes.com/realtimenews/20261112001669-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜《半導體》鈺創獲利大爆發！Q3海賺近25億元、前三季EPS達14.28元（11/12 09:39）</a></li>
+    <li id="src-15016"><a href="https://www.chinatimes.com/realtimenews/20261112001463-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜黃仁勳連環出軌恐下台 專家示警估值折價30％：台廠AI概念股躺槍（11/12 09:30）</a></li>
+    <li id="src-15017"><a href="https://www.chinatimes.com/realtimenews/20261112001467-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜黃仁勳若下台就慘了！台股開高後下跌逾330點 台積電殺低35元（11/12 09:03）</a></li>
+    <li id="src-15018"><a href="https://money.udn.com/money/story/123398/9873186" target="_blank" rel="noopener">經濟日報｜傳輝達董事會今開會決定黃仁勳去留 盤後一度重摔8%（11/12 06:45）</a></li>
+    <li id="src-15019"><a href="https://ec.ltn.com.tw/article/breakingnews/5637726" target="_blank" rel="noopener">自由財經｜美股收盤》輝達止跌！費半狂飆近6％ 台積電ADR漲逾4％（11/12 05:52）</a></li>
+    <li id="src-15020"><a href="https://money.udn.com/money/story/7307/9872898" target="_blank" rel="noopener">經濟日報｜台灣主權基金有譜 初期資本額300億元 以海外策略型投資為主（11/12 02:45）</a></li>
     <li id="src-13003"><a href="https://www.chinatimes.com/realtimenews/20261111004164-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜《半導體》南茂第3季EPS優預期 外資喊買（11/11 17:41）</a></li>
     <li id="src-13005"><a href="https://www.chinatimes.com/realtimenews/20261111004075-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜《半導體》外資示警傳統記憶體定價力恐見頂 華邦電、旺宏等遭降評（11/11 17:21）</a></li>
-    <li id="src-13006"><a href="https://www.chinatimes.com/realtimenews/20261111002046-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜《電機股》美系外資維持上銀加碼評等 目標價450元（11/11 10:59）</a></li>
-    <li id="src-12007"><a href="https://www.chinatimes.com/realtimenews/20261111001650-260410" target="_blank" rel="noopener">時報資訊（中時新聞網）｜群聯獲利上修卻遭降評！外資認了算錯帳、目標價砍48％（11/11 09:39）；另見 風傳媒〈群聯出大事？外資罕見認錯「目標價高估了」〉（11/11 13:52）https://www.storm.mg/article/11180539</a></li>
-    <li id="src-818">加權指數 11/11 收盤 44,257.15（+1,545.23，+3.62%）、成交值 8,763 億元；融資餘額 5,411.6 億元（+44.8 億）、大盤融資維持率 174.17%（+6.23）、全市場擔保維持率 263.48%（+7.80）與信用風險戶數 16 戶（-26；不足 9／追繳 3／處分 4）皆為臺灣證券交易所 11/11 官方值（data/market latest.json 11/11 20:56 版，讀本機 origin/data 同步）；費城半導體 11/11 收盤 10,564.11（+5.66%，自由財經／中央社 11/12 美股收盤報導）</li>
-    <li id="src-816">臺灣證券交易所 每日收盤行情 MI_INDEX（自動擷取，資料日 11/11）</li>
+    <li id="src-818">加權指數 11/12 收盤 43,091.87（-1,165.28，-2.63%）、成交值約 10,133 億元為經濟日報 11/12 13:40 收盤報導值（證交所官方值於收盤後更新，前端 wl-market.js 會自動換上）；融資餘額 5,411.6 億元（+44.8 億）、大盤融資維持率 174.17%（+6.23）與信用風險戶數 16 戶（-26；不足 9／追繳 3／處分 4）為臺灣證券交易所 11/11 官方值（data/market latest.json 11/11 版，讀本機 origin/data 同步）；費城半導體 11/11 收盤 10,564.11（+5.66%，自由財經 11/12 05:52 美股收盤報導）</li>
+    <li id="src-816">臺灣證券交易所 每日收盤行情 MI_INDEX（自動擷取，資料日 11/11；11/12 資料收盤後約 1 小時發布，前端 wl-sectors.js 會自動更新）</li>
 </ol>
   </details>
 <!-- ===== /DATA:SOURCES ===== -->
