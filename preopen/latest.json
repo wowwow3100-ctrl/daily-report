@@ -1,73 +1,67 @@
 {
- "updated": "2026-11-12 06:45",
- "date": "2026-11-12",
- "label": "11/12 06:45",
+ "updated": "2026-11-13 06:42",
+ "date": "2026-11-13",
+ "label": "11/13 06:42",
  "items": [
   {
    "cat": "美股",
-   "title": "CoreWeave財報緩解AI疑慮 美股收高輝達止穩",
-   "url": "https://www.cna.com.tw/news/afe/202611120010.aspx",
-   "src": "中央社"
+   "title": "〈美股盤後〉黃仁勳閃辭後 輝達市值一夕蒸發超1800億美元 四大指數全黑",
+   "url": "https://news.cnyes.com/news/id/6660716",
+   "src": "鉅亨網"
   },
   {
    "cat": "ADR",
-   "title": "美股收盤》輝達止跌！費半狂飆近6％ 台積電ADR漲逾4％",
-   "url": "https://ec.ltn.com.tw/article/breakingnews/5637726",
+   "title": "美股收盤》黃仁勳辭職！輝達下挫逾4％ 台積電ADR跌近2％",
+   "url": "https://ec.ltn.com.tw/article/breakingnews/5639091",
    "src": "自由財經"
   },
   {
+   "cat": "美股",
+   "title": "美股早盤／黃仁勳辭職下台！輝達股價暴跌8% 市值跌破4兆美元",
+   "url": "https://money.udn.com/money/story/123398/9875472",
+   "src": "經濟日報"
+  },
+  {
    "cat": "期貨",
-   "title": "【盤前】CoreWeave回神費半飆5.6%！台指夜盤漲470點",
-   "url": "https://tw.news.yahoo.com/%E7%9B%A4%E5%89%8D-coreweave%E5%9B%9E%E7%A5%9E%E8%B2%BB%E5%8D%8A%E9%A3%865-6-%E5%8F%B0%E6%8C%87%E5%A4%9C%E7%9B%A4%E6%BC%B2470%E9%BB%9E-%E5%8F%B0%E8%82%A1%E6%8B%9A%E5%BB%B6%E7%BA%8C%E5%8F%8D%E5%BD%88-222700786.html",
+   "title": "快新聞／黃仁勳閃辭掀巨浪！台指期夜盤暴跌700點後V轉 終場上漲548點",
+   "url": "https://www.ftvnews.com.tw/news/detail/2026B13W0074",
+   "src": "民視新聞網"
+  },
+  {
+   "cat": "期貨",
+   "title": "【盤前】黃仁勳閃辭重擊美股！台指夜盤逆漲548點 台股拚反攻3變數",
+   "url": "https://tw.news.yahoo.com/%E7%9B%A4%E5%89%8D-%E9%BB%83%E4%BB%81%E5%8B%B3%E9%96%83%E8%BE%AD%E9%87%8D%E6%93%8A%E7%BE%8E%E8%82%A1-%E5%8F%B0%E6%8C%87%E5%A4%9C%E7%9B%A4%E9%80%86%E6%BC%B2548%E9%BB%9E-%E5%8F%B0%E8%82%A1%E6%8B%9A%E5%8F%8D%E6%94%BB3%E8%AE%8A%E6%95%B8-222500072.html",
    "src": "Yahoo新聞"
   },
   {
-   "cat": "期貨",
-   "title": "CoreWeave 發威！美股、台指期夜盤活跳跳",
-   "url": "https://money.udn.com/money/story/11112/9872734",
-   "src": "經濟日報"
-  },
-  {
    "cat": "個股",
-   "title": "「輝達親兒子」CoreWeave 報喜 上修今年財測 鴻海、技嘉等受惠",
-   "url": "https://money.udn.com/money/story/11162/9872895",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "個股",
-   "title": "〈台股盤前要聞〉廣達明年AI伺服器營收年增高雙位數",
-   "url": "https://news.cnyes.com/news/id/6659644",
+   "title": "〈台股盤前要聞〉MSCI調整PCB獲青睞、鴻海上修全年展望、黃仁勳辭輝達執行長",
+   "url": "https://news.cnyes.com/news/id/6660917",
    "src": "鉅亨網"
   },
   {
    "cat": "個股",
-   "title": "台積電喊先進製程需求「永無止境」 AI 成長呈現拋物線攀升",
-   "url": "https://money.udn.com/money/story/5612/9872989",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "個股",
-   "title": "小摩：台積電產能加速擴張到2028年",
-   "url": "https://money.udn.com/money/story/5607/9872971",
+   "title": "黃仁勳下台 受惠受害廠商一次看",
+   "url": "https://money.udn.com/money/story/5607/9875594",
    "src": "經濟日報"
   },
   {
    "cat": "國際",
-   "title": "CPI掀美債殺盤、連沃勒都轉鷹 華爾街將「一口氣升息2碼」納入定價",
-   "url": "https://news.cnyes.com/news/id/6658215",
-   "src": "鉅亨網"
-  },
-  {
-   "cat": "國際",
-   "title": "美晶片出口管制沒用！中國大學持續取得輝達高階AI晶片",
-   "url": "https://news.cnyes.com/news/id/6659865",
-   "src": "鉅亨網"
+   "title": "黃仁勳請辭…他的下台引爆兩大焦慮 台鏈短期恐受衝擊",
+   "url": "https://udn.com/news/story/7238/9875584",
+   "src": "聯合新聞網"
   },
   {
    "cat": "數據",
-   "title": "經長：今年經濟成長一定超越12.7% 至少創39年新高",
-   "url": "https://money.udn.com/money/story/7307/9872909",
+   "title": "11月13日 五件財經大事搶先看",
+   "url": "https://money.udn.com/money/story/5607/9875772",
    "src": "經濟日報"
+  },
+  {
+   "cat": "數據",
+   "title": "美初領失業金微增至20萬 勞動市場持穩助聯準會抗通膨",
+   "url": "https://www.ftvnews.com.tw/news/detail/2026B12W0868",
+   "src": "民視新聞網"
   }
  ]
 }
