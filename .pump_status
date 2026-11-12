@@ -1,32 +1,32 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-11-12T13:05:03",
+    "ts": "2026-11-12T17:05:03",
     "fetch": "latest 2026-10 rows 1973 high12 0 changed False\n",
     "status": "nochange"
   },
   "sectors": {
     "kind": "sectors",
-    "ts": "2026-11-11T20:45:02",
-    "fetch": "no change 2026-11-11\n",
+    "ts": "2026-11-12T17:45:04",
+    "fetch": "no change 2026-11-12\n",
     "status": "nochange"
   },
   "market": {
     "kind": "market",
-    "ts": "2026-11-12T07:10:00",
-    "fetch": "'}, 'breadth': {'pct': 49.9, 'below': 281, 'n': 563, 'chg_pp': -4.6, 'light': 'y', 'date': '2026-11-11', 'label': '11/11', 'hist': [18.7, 16.8, 22.1, 19.9, 23.6, 25.7, 23.2, 28.2, 28.6, 24.4, 28.5, 37.6, 36.1, 46.3, 45.7, 57.1, 65.3, 56.1, 54.5, 49.9], 'rule': '上市櫃普通股中，近 20 日均量 1,000 張以上者，還原收盤價低於生命線的比例', 'src': '旺來資料庫', 'all_pct': 71.7, 'taiex_dist': 7.4}, 'date': '2026-11-11', 'label': '11/11', 'fin_keep': {'rate': 174.17, 'n': 1241, 'chg': 6.23, 'date': '2026-11-11'}, 'keep': {'rate': 263.48, 'below': 9, 'call': 3, 'exe': 4, 'risk': 16, 'rate_chg': 7.8, 'risk_chg': -26, 'date': '20261111'}}\n",
-    "status": "pushed"
+    "ts": "2026-11-12T17:50:00",
+    "fetch": "no change 2026-11-11\n",
+    "status": "nochange"
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-12T13:15:04",
-    "fetch": "wrote 4036 details 3 days 8\n",
+    "ts": "2026-11-12T17:15:04",
+    "fetch": "wrote 4474 details 155 days 8\n",
     "status": "pushed"
   },
   "dbupdate": {
     "kind": "dbupdate",
-    "ts": "2026-11-11T22:20:04",
+    "ts": "2026-11-12T16:20:02",
     "status": "uptodate",
-    "fetch": "breadth_1000.json date=2026-11-11"
+    "fetch": "breadth_1000.json date=2026-11-12"
   }
 }
