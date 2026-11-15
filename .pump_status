@@ -1,8 +1,8 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-11-15T08:25:03",
-    "fetch": "wrote 2026-10 1982\nlatest 2026-10 rows 1982 high12 0 changed True\n",
+    "ts": "2026-11-15T14:25:04",
+    "fetch": "wrote 2026-10 1983\nlatest 2026-10 rows 1983 high12 0 changed True\n",
     "status": "pushed"
   },
   "sectors": {
@@ -19,7 +19,7 @@
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-15T13:15:04",
+    "ts": "2026-11-15T17:15:04",
     "fetch": "no change 3591\n",
     "status": "nochange"
   },
