@@ -1,79 +1,73 @@
 {
- "updated": "2026-11-16 06:41",
- "date": "2026-11-16",
- "label": "11/16 06:41",
+ "updated": "2026-11-17 06:41",
+ "date": "2026-11-17",
+ "label": "11/17 06:41",
  "items": [
   {
    "cat": "美股",
-   "title": "費半又跌 但周線仍漲8.1% 下周輝達財報、Anthropic上市決戰AI買氣",
-   "url": "https://money.udn.com/money/story/123398/9878337",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "ADR",
-   "title": "台積電ADR13日下跌6.76美元跌幅1.67%折台股2618.70元",
-   "url": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E7%A9%8D%E9%9B%BBadr13%E6%97%A5%E4%B8%8B%E8%B7%8C6-76%E7%BE%8E%E5%85%83%E8%B7%8C%E5%B9%851-67-%E6%8A%98%E5%8F%B0%E8%82%A12618-70%E5%85%83-235141332.html",
-   "src": "Yahoo股市"
-  },
-  {
-   "cat": "美股",
-   "title": "輝達恐寫14年最長連跌！一周市值蒸發6572億美元 下周財報能止血？",
-   "url": "https://news.cnyes.com/news/id/6662258",
+   "title": "〈美股盤後〉輝達財報前AI股掀賣壓 道瓊瀉近740點",
+   "url": "https://news.cnyes.com/news/id/6664477",
    "src": "鉅亨網"
   },
   {
-   "cat": "美股",
-   "title": "輝達衝擊外溢 美晶片股下挫 超微重摔 本周盯兩件大事",
-   "url": "https://money.udn.com/money/story/123398/9879200",
+   "cat": "ADR",
+   "title": "盤中速報 - 台積電ADR(TSM-US)大跌5.01%，報378.77美元",
+   "url": "https://news.cnyes.com/news/id/6664366",
+   "src": "鉅亨網"
+  },
+  {
+   "cat": "期貨",
+   "title": "再傳美國擴大管制AI晶片出口 台指期夜盤上沖下洗",
+   "url": "https://money.udn.com/money/story/11112/9882547",
    "src": "經濟日報"
   },
   {
    "cat": "期貨",
-   "title": "11月13日期交所夜盤行情",
-   "url": "https://money.udn.com/money/story/11112/9878029",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "個股",
-   "title": "資金大風吹！市場熱錢「賣輝達、轉台積」 專家揭台股下周攻防關鍵指標",
-   "url": "https://news.cnyes.com/news/id/6662541",
-   "src": "鉅亨網"
-  },
-  {
-   "cat": "個股",
-   "title": "市場氣氛轉弱 外資調降廣達、鴻海及緯創等AI伺服器概念股目標價",
-   "url": "https://money.udn.com/money/story/5607/9880441",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "個股",
-   "title": "11月16日 五件財經大事搶先看",
-   "url": "https://money.udn.com/money/story/5607/9880726",
-   "src": "經濟日報"
+   "title": "創史上第二大跌點後 台指期夜盤反彈",
+   "url": "https://www.ctee.com.tw/news/20261116701490-430202",
+   "src": "工商時報"
   },
   {
    "cat": "國際",
-   "title": "川普11/19將與習近平、普丁三方會談！不談輝達但聚焦去核化、伊朗戰爭",
-   "url": "https://news.cnyes.com/news/id/6662470",
-   "src": "鉅亨網"
-  },
-  {
-   "cat": "國際",
-   "title": "下周開盤前 五件值得留意的國際大事",
-   "url": "https://money.udn.com/money/story/123398/9878843",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "國際",
-   "title": "新台幣升5.1分 收32.838元",
-   "url": "https://www.cna.com.tw/news/afe/202611130191.aspx",
+   "title": "川普訪亞洲之際 美祭新規限制中國取得先進AI晶片",
+   "url": "https://www.cna.com.tw/news/aopl/202611160297.aspx",
    "src": "中央社"
   },
   {
-   "cat": "數據",
-   "title": "美國10月零售銷售 估年增6.5％",
-   "url": "https://www.ctee.com.tw/news/20261115700016-430105",
+   "cat": "國際",
+   "title": "輝達財報、Anthropic掛牌本週登場 市場屏息以待",
+   "url": "https://www.cna.com.tw/news/afe/202611163002.aspx",
+   "src": "中央社"
+  },
+  {
+   "cat": "國際",
+   "title": "股匯同步下殺 央行尾盤真槍實彈穩匯、新台幣貶幅收斂",
+   "url": "https://www.ctee.com.tw/news/20261116701739-430302",
    "src": "工商時報"
+  },
+  {
+   "cat": "個股",
+   "title": "11月17日 五件財經大事搶先看",
+   "url": "https://money.udn.com/money/story/5607/9882905",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "個股",
+   "title": "高價股發青！信驊、創意等逾10檔摔跌停 千金股剩37檔",
+   "url": "https://www.ctee.com.tw/news/20261116700916-430201",
+   "src": "工商時報"
+  },
+  {
+   "cat": "個股",
+   "title": "外資連7賣上週再減碼967億元 今年累計賣超近3兆",
+   "url": "https://www.ctee.com.tw/news/20261116701377-430201",
+   "src": "工商時報"
+  },
+  {
+   "cat": "數據",
+   "title": "輝達18日清晨交卷 本週美股財報一次看",
+   "url": "https://tw.news.yahoo.com/%E8%BC%9D%E9%81%9418%E6%97%A5%E6%B8%85%E6%99%A8%E4%BA%A4%E5%8D%B7-%E6%9C%AC%E9%80%B1%E7%BE%8E%E8%82%A1%E8%B2%A1%E5%A0%B1-%E6%AC%A1%E7%9C%8B-023500274.html",
+   "src": "Yahoo新聞"
   }
  ]
 }
