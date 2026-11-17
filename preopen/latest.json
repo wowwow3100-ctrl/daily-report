@@ -1,73 +1,73 @@
 {
- "updated": "2026-11-17 06:41",
- "date": "2026-11-17",
- "label": "11/17 06:41",
+ "updated": "2026-11-18 06:41",
+ "date": "2026-11-18",
+ "label": "11/18 06:41",
  "items": [
   {
    "cat": "美股",
-   "title": "〈美股盤後〉輝達財報前AI股掀賣壓 道瓊瀉近740點",
-   "url": "https://news.cnyes.com/news/id/6664477",
+   "title": "快新聞／美股漲跌互見！道瓊重挫848點 費半逆勢收漲",
+   "url": "https://finance.ftvnews.com.tw/news/detail/2026B18W0069",
+   "src": "民視財經"
+  },
+  {
+   "cat": "美股",
+   "title": "〈美股盤後〉道瓊尾盤一度狂瀉逾1000點 標普創7月底來最低收盤",
+   "url": "https://news.cnyes.com/news/id/6665655",
    "src": "鉅亨網"
+  },
+  {
+   "cat": "美股",
+   "title": "市場關注科技股前景與輝達財報 美股多收低",
+   "url": "https://cna.com.tw/news/afe/202611180011.aspx",
+   "src": "中央社"
   },
   {
    "cat": "ADR",
-   "title": "盤中速報 - 台積電ADR(TSM-US)大跌5.01%，報378.77美元",
-   "url": "https://news.cnyes.com/news/id/6664366",
+   "title": "美股收盤》重挫！標普創7月底來最低 台積電ADR跌3.68％",
+   "url": "https://ec.ltn.com.tw/article/breakingnews/5644357",
+   "src": "自由財經"
+  },
+  {
+   "cat": "美股",
+   "title": "輝達第4季財測超乎華爾街預期 盤後股價一度彈漲2%",
+   "url": "https://www.cna.com.tw/news/aopl/202611180009.aspx",
+   "src": "中央社"
+  },
+  {
+   "cat": "美股",
+   "title": "〈財報〉輝達Q3超預期財測強盤後走揚 董事會無意讓黃仁勳回歸",
+   "url": "https://news.cnyes.com/news/id/6665276",
    "src": "鉅亨網"
   },
   {
    "cat": "期貨",
-   "title": "再傳美國擴大管制AI晶片出口 台指期夜盤上沖下洗",
-   "url": "https://money.udn.com/money/story/11112/9882547",
+   "title": "等待輝達財報 台指期夜盤上沖下洗",
+   "url": "https://money.udn.com/money/story/11112/9884978",
    "src": "經濟日報"
   },
   {
-   "cat": "期貨",
-   "title": "創史上第二大跌點後 台指期夜盤反彈",
-   "url": "https://www.ctee.com.tw/news/20261116701490-430202",
-   "src": "工商時報"
-  },
-  {
    "cat": "國際",
-   "title": "川普訪亞洲之際 美祭新規限制中國取得先進AI晶片",
-   "url": "https://www.cna.com.tw/news/aopl/202611160297.aspx",
-   "src": "中央社"
-  },
-  {
-   "cat": "國際",
-   "title": "輝達財報、Anthropic掛牌本週登場 市場屏息以待",
-   "url": "https://www.cna.com.tw/news/afe/202611163002.aspx",
-   "src": "中央社"
-  },
-  {
-   "cat": "國際",
-   "title": "股匯同步下殺 央行尾盤真槍實彈穩匯、新台幣貶幅收斂",
-   "url": "https://www.ctee.com.tw/news/20261116701739-430302",
-   "src": "工商時報"
-  },
-  {
-   "cat": "個股",
-   "title": "11月17日 五件財經大事搶先看",
-   "url": "https://money.udn.com/money/story/5607/9882905",
+   "title": "11月18日 五件財經大事搶先看",
+   "url": "https://money.udn.com/money/story/5607/9885377",
    "src": "經濟日報"
   },
   {
-   "cat": "個股",
-   "title": "高價股發青！信驊、創意等逾10檔摔跌停 千金股剩37檔",
-   "url": "https://www.ctee.com.tw/news/20261116700916-430201",
-   "src": "工商時報"
+   "cat": "國際",
+   "title": "《國際經濟》押注聯準會升息 美元再創「對等關稅」來19月新高",
+   "url": "https://www.chinatimes.com/realtimenews/20261117002632-260410",
+   "src": "中時新聞網"
+  },
+  {
+   "cat": "國際",
+   "title": "新台幣升3.6分 收32.85元",
+   "url": "https://www.cna.com.tw/news/afe/202611170189.aspx",
+   "src": "中央社"
   },
   {
    "cat": "個股",
-   "title": "外資連7賣上週再減碼967億元 今年累計賣超近3兆",
-   "url": "https://www.ctee.com.tw/news/20261116701377-430201",
-   "src": "工商時報"
-  },
-  {
-   "cat": "數據",
-   "title": "輝達18日清晨交卷 本週美股財報一次看",
-   "url": "https://tw.news.yahoo.com/%E8%BC%9D%E9%81%9418%E6%97%A5%E6%B8%85%E6%99%A8%E4%BA%A4%E5%8D%B7-%E6%9C%AC%E9%80%B1%E7%BE%8E%E8%82%A1%E8%B2%A1%E5%A0%B1-%E6%AC%A1%E7%9C%8B-023500274.html",
-   "src": "Yahoo新聞"
+   "title": "震盪1,747點多頭空歡喜 台股收跌947點守住4萬大關 台積電收低45元",
+   "url": "https://udn.com/news/story/7251/9883924",
+   "src": "聯合新聞網"
   }
  ]
 }
