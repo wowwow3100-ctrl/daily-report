@@ -19,13 +19,13 @@
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-18T20:15:02",
-    "fetch": "wrote 3491 details 2 days 8\n",
+    "ts": "2026-11-18T23:15:02",
+    "fetch": "wrote 3496 details 2 days 8\n",
     "status": "pushed"
   },
   "dbupdate": {
     "kind": "dbupdate",
-    "ts": "2026-11-18T19:20:09",
+    "ts": "2026-11-18T22:20:01",
     "status": "uptodate",
     "fetch": "breadth_1000.json date=2026-11-18"
   }
