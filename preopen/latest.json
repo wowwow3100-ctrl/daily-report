@@ -1,73 +1,67 @@
 {
- "updated": "2026-11-19 06:42",
- "date": "2026-11-19",
- "label": "11/19 06:42",
+ "updated": "2026-11-20 06:42",
+ "date": "2026-11-20",
+ "label": "11/20 06:42",
  "items": [
   {
    "cat": "美股",
-   "title": "〈美股盤後〉輝達財報難救股價！道瓊挫逾560點 標普連五黑 那指逆勢翻紅",
-   "url": "https://news.cnyes.com/news/id/6666524",
+   "title": "〈美股盤後〉Anthropic上市難救AI買氣！道瓊暴跌超1100點 那指費半跌",
+   "url": "https://news.cnyes.com/news/id/6667840",
    "src": "鉅亨網"
   },
   {
-   "cat": "ADR",
-   "title": "快新聞／美股漲跌互見！道瓊跌561點、費半微漲 台積電ADR小漲0.38％",
-   "url": "https://www.ftvnews.com.tw/news/detail/2026B19W0059",
-   "src": "民視新聞"
+   "cat": "美股",
+   "title": "美股收挫 Anthropic漲逾17%未能帶動大盤",
+   "url": "https://tw.news.yahoo.com/%E7%BE%8E%E8%82%A1%E6%94%B6%E6%8C%AB-anthropic%E6%BC%B2%E9%80%BE17-%E6%9C%AA%E8%83%BD%E5%B8%B6%E5%8B%95%E5%A4%A7%E7%9B%A4-214257709.html",
+   "src": "Yahoo新聞"
   },
   {
-   "cat": "期貨",
-   "title": "輝達臨時 CEO 召開全體員工會議 台指期夜盤震盪",
-   "url": "https://money.udn.com/money/story/11112/9887445",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "國際",
-   "title": "輝達財測亮眼仍難消市場疑慮 股價收跌近3%",
-   "url": "https://money.udn.com/money/story/123398/9887910",
-   "src": "經濟日報"
-  },
-  {
-   "cat": "國際",
-   "title": "輝達財報利多失靈 投資人開始擔憂黃仁勳接班問題",
-   "url": "https://news.cnyes.com/news/id/6666793",
+   "cat": "美股",
+   "title": "〈美股早盤〉Anthropic掛牌熱潮點火 科技股反攻 那指強彈近2%",
+   "url": "https://news.cnyes.com/news/id/6667810",
    "src": "鉅亨網"
   },
   {
    "cat": "國際",
-   "title": "輝達財報後股價轉跌拖累全球股市　美元強勢創19個月新高",
-   "url": "https://finance.ftvnews.com.tw/news/detail/2026B19W0022",
+   "title": "AI巨頭Anthropic風光上市 首日漲17%市值衝2兆美元",
+   "url": "https://finance.ftvnews.com.tw/news/detail/2026B20W0060",
    "src": "民視財經"
   },
   {
+   "cat": "期貨",
+   "title": "快訊》Anthropic帶旺 台指期夜盤挑戰4萬點關卡 費半強彈4％",
+   "url": "https://www.chinatimes.com/realtimenews/20261119005145-260410",
+   "src": "中時新聞網"
+  },
+  {
+   "cat": "期貨",
+   "title": "Anthropic成AI股救命稻草！費半狂噴 台指期夜盤飆漲逾1000點",
+   "url": "https://ec.ltn.com.tw/article/breakingnews/5646992",
+   "src": "自由財經"
+  },
+  {
    "cat": "數據",
-   "title": "11月19日 五件財經大事搶先看",
-   "url": "https://money.udn.com/money/story/5607/9887857",
+   "title": "11月20日 五件財經大事搶先看",
+   "url": "https://money.udn.com/money/story/5607/9890346",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "國際",
+   "title": "〈台幣〉央行積極調節匯市波動 貶轉升收32.942元",
+   "url": "https://news.cnyes.com/news/id/6667656",
+   "src": "鉅亨網"
+  },
+  {
+   "cat": "國際",
+   "title": "避險標的受考驗... 美債持有國紛紛減持 單月總值降至9兆美元",
+   "url": "https://money.udn.com/money/story/5599/9890107",
    "src": "經濟日報"
   },
   {
    "cat": "個股",
-   "title": "罕見連環爆！AI鏈驚見鉅額違約交割 創意、華通等9檔合計4.27億元",
-   "url": "https://news.cnyes.com/news/id/6666606",
-   "src": "鉅亨網"
-  },
-  {
-   "cat": "個股",
-   "title": "黃仁勳回鍋無望？營收亮眼難抵換帥衝擊！野村看台股有戲：4大族群將「倒吃甘藨」",
-   "url": "https://news.cnyes.com/news/id/6666601",
-   "src": "鉅亨網"
-  },
-  {
-   "cat": "個股",
-   "title": "盤後速報 - 兆豐國泰R2(01007T)次交易(19)日除息0.22元，參考…",
-   "url": "https://news.cnyes.com/news/id/6666349",
-   "src": "鉅亨網"
-  },
-  {
-   "cat": "個股",
-   "title": "11/19起嘉鋼、鑫創等續維持變更，惟其變更交易之事由已有變動",
-   "url": "https://tw.stock.yahoo.com/news/11-19%E8%B5%B7%E5%98%89%E9%8B%BC-%E9%91%AB%E5%89%B5%E7%AD%89%E7%BA%8C%E7%B6%AD%E6%8C%81%E8%AE%8A%E6%9B%B4-%E6%83%9F%E5%85%B6%E8%AE%8A%E6%9B%B4%E4%BA%A4%E6%98%93%E4%B9%8B%E4%BA%8B%E7%94%B1%E5%B7%B2%E6%9C%89%E8%AE%8A%E5%8B%95-004400412.html",
-   "src": "Yahoo股市"
+   "title": "擋不住的賣壓！台股收盤摜破39K 下跌1,768點 台積電收低75元",
+   "url": "https://udn.com/news/story/7251/9888887",
+   "src": "聯合新聞網"
   }
  ]
 }
