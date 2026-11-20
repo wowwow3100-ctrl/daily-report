@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/11/20（週五）盤後場次</div>
+        <div class="stamp" id="updated">2026/11/20（週五）夜間場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -294,14 +294,14 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/20 盤後場．加權指數與成交值為證交所 11/20 官方值；融資餘額、大盤融資維持率與信用風險戶數為證交所 11/19 官方值（11/20 尚未發布）；費城半導體為 11/19 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/20 夜間場．加權指數、成交值、融資餘額與信用風險戶數為證交所 11/20 官方值；大盤融資維持率為 11/19 官方值（11/20 尚未發布）；費城半導體為 11/19 美股收盤）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">36,033.29</div><div class="chg down">-2,393.60（-6.23%）（11/20）</div></div>
     <div class="m"><div class="lbl">成交值（上市）</div><div class="val">9,353 億</div><div class="chg down">較前日 -0.8%（11/20）</div></div>
-    <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">4,844 億</div><div class="chg down">單日 -236.6 億（11/19）</div></div>
+    <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">4,352 億</div><div class="chg down">單日 -491.4 億（11/20）</div></div>
     <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">9,420</div><div class="chg down">-2.41%（11/19 美股，前日 +0.10%）</div></div>
     <div class="m"><div class="lbl">大盤融資維持率</div><div class="val">147.90%</div><div class="chg down">較前日 -8.32（11/19）</div><div class="sub">130% 為追繳線｜一般落在 130%～180%</div></div>
-    <div class="m"><div class="lbl">信用風險戶數</div><div class="val">1,120 戶</div><div class="chg up">較前日 +997 戶</div><div class="sub">維持率不足 534｜追繳 536｜處分 50（11/19）</div></div>
+    <div class="m"><div class="lbl">信用風險戶數</div><div class="val">3,107 戶</div><div class="chg up">較前日 +1,987 戶</div><div class="sub">維持率不足 1,525｜追繳 1,508｜處分 74（11/20）</div></div>
   </div>
 <!-- ===== /DATA:MARKET ===== -->
 
@@ -394,10 +394,42 @@
 <!-- ===== /DATA:PREOPEN ===== -->
 
                                                                 <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/20 盤後場．依時間由新到舊．共 20 則）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/20 夜間場．依時間由新到舊．共 20 則）</span></h2>
+  <div class="card">
+    <div class="news-title"><span class="cat">經濟</span><span class="ntime">11/20 20:39</span>10 月四大傳產貨品外銷訂單呈兩位數成長 經濟部：AI 供應鏈帶動 <a class="ref" href="#src-2301">[2301]</a></div>
+    <div class="news-body">經濟日報：經濟部指出，10 月傳統產業主要貨品外銷訂單出現兩位數成長，動能來自 AI 相關供應鏈需求外溢。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">政策</span><span class="ntime">11/20 20:18</span>台股連日暴跌 行政院長卓榮泰聽取財經簡報 11/21 續開會研商 <a class="ref" href="#src-2302">[2302]</a></div>
+    <div class="news-body">經濟日報：行政院 20 日下午召集財經首長聽取股市與國際金融情勢簡報，21 日將召開後續會議；另據經濟日報 18:46 報導，副院長鄭麗君傍晚召集金管會等部會，研議第三波穩定市場措施。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/20 20:03</span>【經濟x彭博】Anthropic 上市次日恐將下跌 AI 之憂蓋過 IPO 成功之喜 <a class="ref" href="#src-2303">[2303]</a></div>
+    <div class="news-body">經濟日報（彭博）：Anthropic 19 日以 83 美元發行、首日收 97 美元，彭博分析指掛牌次日股價恐回落，市場對 AI 投資回報的疑慮可能壓過 IPO 熱度。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/20 18:21</span>台日韓三市場台股跌最深 金管會：9 日以來跌 9.24% <a class="ref" href="#src-2304">[2304]</a></div>
+    <div class="news-body">經濟日報：金管會統計，台股自 9 日以來累計下跌 9.24%，在台、日、韓三地市場中跌幅最大。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">政策</span><span class="ntime">11/20 17:59</span>第二波限空令上路首日台股仍重挫逾 2,300 點 金管會出面喊話 <a class="ref" href="#src-2305">[2305]</a></div>
+    <div class="news-body">經濟日報：前一交易日跌幅達 3.5% 的個股，次一交易日不得於平盤以下融券或借券賣出，此措施 20 日上路，台股仍重挫 2,393.60 點，金管會對外說明並呼籲投資人理性因應。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/20 17:56</span>3,666 戶融資追繳壓力 股魚：下週一、二為斷頭賣壓關鍵 <a class="ref" href="#src-2306">[2306]</a></div>
+    <div class="news-body">中時新聞網：投資達人股魚指 11/18 追繳 719 戶將於下週一到期、11/19 追繳 2,947 戶於下週二到期，追繳戶數回到每日 150～200 戶的正常區間前，市場回穩恐需時間。</div>
+  </div>
   <div class="card">
     <div class="news-title"><span class="cat">國際</span><span class="ntime">11/20 17:49</span>SpaceX 發債 320 億美元採購輝達晶片 銀行對擔保品先設防 <a class="ref" href="#src-2201">[2201]</a></div>
     <div class="news-body">經濟日報：SpaceX 擬發行 320 億美元債券購買輝達晶片，承銷銀行對擔保品條件設限，市場關注 AI 算力採購的融資結構。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">期貨</span><span class="ntime">11/20 17:40</span>台指期夜盤跌深反彈逾 350 點 期貨商：低檔承接力道仍弱 <a class="ref" href="#src-2307">[2307]</a></div>
+    <div class="news-body">工商時報（中時新聞網轉載）：台指期夜盤一度上漲 354 點至 36,154 點；台新期貨指出現貨留下跳空長黑、收在 5 日與 10 日線下方，成交逾 8,700 億元下價格續降，承接力道有限。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/20 17:36</span>證交所：短期市場波動不改產業基本面 <a class="ref" href="#src-2308">[2308]</a></div>
+    <div class="news-body">經濟日報：證交所董事長林修銘表示短期波動不影響產業基本面；證交所並指融資餘額已較 10 月高點減少逾 1,500 億元，違約交割與融資追繳處分情形尚未出現明顯異常。</div>
   </div>
   <div class="card">
     <div class="news-title"><span class="cat">經濟</span><span class="ntime">11/20 17:15</span>10 月外銷訂單 1,238 億美元、年增 78.3% 雙創歷史新高 <a class="ref" href="#src-2202">[2202]</a></div>
@@ -423,6 +455,7 @@
     <div class="news-title"><span class="cat">期貨</span><span class="ntime">11/20 15:27</span>上市櫃 368 檔跌停 外資台指期淨空單減至 97,863 口 <a class="ref" href="#src-2207">[2207]</a></div>
     <div class="news-body">Newtalk 新聞：上漲 66 家、下跌 1,896 家；外資台指期未平倉淨空單較前日減 1,356 口，連兩日合計減空 1,575 口，但仍近 10 萬口高檔。元大台灣50(0050) 收 84.45 元、跌破 11/6 低點。</div>
   </div>
+  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">11/20 15:13</span>三大法人賣超台股 522.46 億元 自營商賣超 340.84 億元最多 <a class="ref" href="#src-2208">[2208]</a></div>
     <div class="news-body">中央社：外資及陸資賣超 94.13 億元、連五賣；投信由買轉賣 87.49 億元；自營商賣超 340.84 億元（自行買賣 -50.68 億、避險 -290.16 億）。</div>
@@ -442,39 +475,6 @@
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">11/20 13:51</span>櫃買盤後：櫃買指數跌 22.02 點 收 263.31 點 <a class="ref" href="#src-2212">[2212]</a></div>
     <div class="news-body">Yahoo 股市：櫃買指數單日跌幅 7.72%，中小型股跌勢重於大盤；櫃買市場 189 檔跌停。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/20 13:40</span>台股收跌 2,393 點 史上第三大收盤跌點 台積電(2330) 收 2,000 元 <a class="ref" href="#src-2101">[2101]</a></div>
-    <div class="news-body">中央社：加權指數終場跌 2,393.60 點（-6.23%）收 36,033.29 點，盤中最多跌 2,688.21 點，創近七個月新低，成交值 8,773 億元。台積電盤中最低 1,970 元、尾盤拉回收 2,000 元，鴻海(2317) 收 210 元，聯發科(2454)、台達電(2308) 跌停；本週前四個交易日已累計下跌 5,248 點。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/20 13:34</span>美眾院公布資料：川普政府曾批准輝達、超微出口近 88 萬顆先進晶片至中國 <a class="ref" href="#src-2102">[2102]</a></div>
-    <div class="news-body">壹蘋新聞網：眾議院公布資料顯示，川普政府曾批准輝達及超微出口近 88 萬顆先進晶片，交易對象為被美方列入黑名單的解放軍關係企業；黃仁勳 12 月 1 日將赴國會說明。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/20 13:20</span>ASIC 族群遭血洗 創意(3443) 連 5 根跌停 <a class="ref" href="#src-2213">[2213]</a></div>
-    <div class="news-body">中時新聞網：創意連五日跌停、股價跌掉逾 3,000 元；股王信驊(5274) 同步連兩日跌停至 7,860 元。</div>
-  </div>
-  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
-  <div class="card">
-    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/20 13:00</span>MLCC 缺貨看到明年上半年 美系外資看好國巨(2327) 定價能力 <a class="ref" href="#src-2214">[2214]</a></div>
-    <div class="news-body">中時新聞網：美系外資依三環集團近況，指中低容值 MLCC 第 3 季 ASP 漲 20%～30%、高容值缺貨延續至 2027 年上半年，給予國巨「優於大盤」；國巨當日失守 300 元，禾伸堂(3026)、華新科(2492) 跌停。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/20 12:41</span>3,666 戶陷融資追繳壓力 股魚：斷頭賣壓恐延續到下週 <a class="ref" href="#src-2103">[2103]</a></div>
-    <div class="news-body">EBC 東森財經新聞：台股本週三個交易日重挫逾 5,000 點，20 日盤中一度失守 36,000 點；投資達人股魚指市場累積約 3,666 戶追繳壓力，若未及時補足資金，下週恐有更多斷頭賣壓。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/20 12:28</span>單週盤中累計跌逾 7,700 點 分析師：估值修正與籌碼清洗 <a class="ref" href="#src-2104">[2104]</a></div>
-    <div class="news-body">中時財經即時：20 日盤中最低 35,959 點、失守 36,000 點，本週盤中累計跌逾 7,700 點；分析師認為這波急跌是主力與外資主導的估值修正與籌碼清洗，待融資斷頭洗淨後資金將回到具成長性的 AI 晶片供應鏈等領域。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/20 12:24</span>總經學家吳嘉隆：台股重挫非泡沫 需熬過 3～4 個月陣痛期 <a class="ref" href="#src-2105">[2105]</a></div>
-    <div class="news-body">EBC 東森財經新聞：吳嘉隆認為這波恐慌性拋售源自輝達執行長去職引發的不確定性，「還沒到產業革命後期的狂熱與泡沫」，熬過 3 至 4 個月陣痛期後行情可望回來。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/20 12:10</span>台股恐慌殺盤後 法人點名先進製程、ASIC、光通訊／CPO 三大主軸 <a class="ref" href="#src-2106">[2106]</a></div>
-    <div class="news-body">經濟日報：玉山投信指外資淨空單達 9.9 萬口高水位、乖離已大，具技術性反彈條件；台股本益比已由 20 倍快速回落到 15 倍以下，約為過去十年平均。市場將由 AI 供應鏈齊漲轉向重視獲利能見度。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
@@ -546,6 +546,14 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
+    <li id="src-2301"><a href="https://money.udn.com/money/story/10869/9892131" target="_blank" rel="noopener">經濟日報｜春燕來了？10月四大傳產訂單竟呈兩位數成長…經部：AI 供應鏈帶動（11/20 20:39）</a></li>
+    <li id="src-2302"><a href="https://money.udn.com/money/story/7307/9892036" target="_blank" rel="noopener">經濟日報｜台股連日暴跌 政院：卓揆傍晚聽取簡報 明續開會研商因應對策（11/20 20:18）</a></li>
+    <li id="src-2303"><a href="https://money.udn.com/money/story/123398/9891491" target="_blank" rel="noopener">經濟日報（彭博）｜【經濟x彭博】Anthropic 上市次日恐將下跌 AI 之憂將蓋過 IPO 成功之喜（11/20 20:03）</a></li>
+    <li id="src-2304"><a href="https://money.udn.com/money/story/5612/9891944" target="_blank" rel="noopener">經濟日報｜台日韓台灣跌最慘 金管會：9日以來跌9.24%（11/20 18:21）</a></li>
+    <li id="src-2305"><a href="https://money.udn.com/money/story/5613/9891907" target="_blank" rel="noopener">經濟日報｜第二波限空令上路台股仍重挫逾2,300點 金管會喊話了（11/20 17:59）</a></li>
+    <li id="src-2306"><a href="https://www.chinatimes.com/realtimenews/20261120003783-260410" target="_blank" rel="noopener">中時新聞網｜狂殺2393點 下周更危險？3666戶融資追繳大限 「這時間」恐爆斷頭潮（11/20 17:56）</a></li>
+    <li id="src-2307"><a href="https://www.chinatimes.com/realtimenews/20261120003671-260410" target="_blank" rel="noopener">工商時報（中時新聞網轉載）｜台指期夜盤跌深反彈 期貨商：低檔承接力道弱（11/20 17:40）</a></li>
+    <li id="src-2308"><a href="https://money.udn.com/money/story/5612/9891860" target="_blank" rel="noopener">經濟日報｜台股重挫 證交所：短期市場波動不改產業基本面（11/20 17:36）</a></li>
     <li id="src-2201"><a href="https://money.udn.com/money/story/5599/9891406" target="_blank" rel="noopener">經濟日報｜SpaceX 發債320億美元買輝達晶片 銀行先設防：別把擔保品送上太空（11/20 17:49）</a></li>
     <li id="src-2202"><a href="https://money.udn.com/money/story/10869/9891758" target="_blank" rel="noopener">經濟日報｜AI 動能優於預期！10月外銷訂單1,238億美元、年增78.3% 雙創歷史新高（11/20 17:15）</a></li>
     <li id="src-2203"><a href="https://money.udn.com/money/story/5612/9891771" target="_blank" rel="noopener">經濟日報（中央社）｜台股單週下跌7641點史上之最 本土法人加入停損行列（11/20 17:01）</a></li>
@@ -558,19 +566,12 @@
     <li id="src-2210"><a href="https://www.chinatimes.com/realtimenews/20261120002851-260410" target="_blank" rel="noopener">中時新聞網｜台股血崩 台幣驚險守住33元！匯銀人士曝後市3大止貶關鍵（11/20 14:24）</a></li>
     <li id="src-2211"><a href="https://news.cnyes.com/news/id/6668992" target="_blank" rel="noopener">鉅亨網｜〈台股盤後〉限空令2.0擋不住賣壓狂瀉2393點創史上第三大跌點 本周跌逾7000點跌幅17.5%（11/20 14:09）</a></li>
     <li id="src-2212"><a href="https://tw.stock.yahoo.com/news/%E6%AB%83%E8%B2%B7%E7%9B%A4%E5%BE%8C-%E8%B7%8C22-02%E9%BB%9E-055119236.html" target="_blank" rel="noopener">Yahoo股市｜【櫃買盤後】跌22.02點（11/20 13:51）</a></li>
-    <li id="src-2101"><a href="https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E6%94%B6%E8%B7%8C2393%E9%BB%9E-%E5%89%B5%E5%8F%B2%E4%B8%8A%E7%AC%AC%E4%B8%89%E5%A4%A7%E6%94%B6%E7%9B%A4%E8%B7%8C%E9%BB%9E-%E5%8F%B0%E7%A9%8D%E9%9B%BB%E6%94%B62000%E5%85%83-%E8%81%AF%E7%99%BC%E7%A7%91%E3%80%81%E5%8F%B0%E9%81%94%E9%9B%BB%E8%B7%8C%E5%81%9C-054022283.html" target="_blank" rel="noopener">中央社（Yahoo新聞轉載）｜台股收跌2393點 創史上第三大收盤跌點 台積電收2000元 聯發科、台達電跌停（11/20 13:40）</a></li>
-    <li id="src-2102"><a href="https://tw.news.yahoo.com/%E5%AE%B3%E9%BB%83%E4%BB%81%E5%8B%B3%E8%83%8C%E9%8D%8B-%E6%8A%93%E5%88%B0%E4%BA%86-%E5%B7%9D%E6%99%AE%E6%94%BF%E5%BA%9C%E6%89%B9%E5%87%8688%E8%90%AC%E9%A1%86%E5%85%88%E9%80%B2%E6%99%B6%E7%89%87%E5%87%BA%E5%8F%A3%E4%B8%AD%E5%9C%8B-053400470.html" target="_blank" rel="noopener">壹蘋新聞網（Yahoo新聞轉載）｜害黃仁勳背鍋？抓到了：川普政府批准88萬顆先進晶片出口中國（11/20 13:34）</a></li>
-    <li id="src-2213"><a href="https://www.chinatimes.com/realtimenews/20261120002651-260410" target="_blank" rel="noopener">中時新聞網｜台股ASIC遭血洗！創意苦吞連續5根跌停、跌掉逾3000元（11/20 13:20）</a></li>
     <li id="src-2214"><a href="https://www.chinatimes.com/realtimenews/20261120002571-260410" target="_blank" rel="noopener">中時新聞網（時報資訊）｜《電零組》MLCC缺貨看到明年上半年 外資看好國巨定價能力（11/20 13:00）</a></li>
-    <li id="src-2103"><a href="https://tw.stock.yahoo.com/news/3666%E6%88%B6%E9%99%B7%E8%BF%BD%E7%B9%B3%E5%8D%B1%E6%A9%9F-%E8%82%A1%E9%AD%9A-%E6%96%B7%E9%A0%AD%E8%B3%A3%E5%A3%93%E6%81%90%E6%8C%81%E7%BA%8C%E5%88%B0%E4%B8%8B%E5%91%A8-044100699.html" target="_blank" rel="noopener">EBC東森財經新聞（Yahoo股市轉載）｜3666戶陷追繳危機！ 股魚：斷頭賣壓恐持續到下周（11/20 12:41）</a></li>
-    <li id="src-2104"><a href="https://tw.stock.yahoo.com/news/%E5%96%AE%E5%91%A8%E8%A1%80%E6%B4%977700%E9%BB%9E-%E5%8F%B0%E8%82%A1%E7%82%BA%E4%BD%95%E6%AE%BA%E9%80%99%E9%BA%BC%E5%85%87-%E5%B0%88%E5%AE%B6%E9%A9%9A%E7%88%862%E5%A4%A7%E5%92%96%E8%81%AF%E6%89%8B%E7%8B%99%E6%93%8A-042804824.html" target="_blank" rel="noopener">中時財經即時（Yahoo股市轉載）｜單周血洗7700點！台股為何殺這麼兇？（11/20 12:28）</a></li>
-    <li id="src-2105"><a href="https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E8%B7%B3%E6%B0%B4%E9%87%8D%E6%8C%AB%E9%9D%9E%E6%B3%A1%E6%B2%AB-%E7%B8%BD%E7%B6%93%E5%B0%88%E5%AE%B6%E5%96%8A-%E5%85%88%E5%BF%8D3%E5%80%8B%E6%9C%88-%E8%A1%8C%E6%83%85%E6%9C%83%E6%8D%B2%E5%9C%9F%E9%87%8D%E4%BE%86-042400191.html" target="_blank" rel="noopener">EBC東森財經新聞（Yahoo股市轉載）｜台股跳水重挫非泡沫！ 總經專家喊「先忍3個月」（11/20 12:24）</a></li>
-    <li id="src-2106"><a href="https://money.udn.com/money/story/5607/9890992" target="_blank" rel="noopener">經濟日報｜台股恐慌殺盤後誰先反攻？法人鎖定 AI 三大主軸（11/20 12:10）</a></li>
     <li id="src-2215"><a href="https://www.chinatimes.com/realtimenews/20261120002329-260410" target="_blank" rel="noopener">中時新聞網（時報資訊）｜《半導體》記憶體漲價成隱憂！瑞昱AI商機浮現 外資給800元目標價（11/20 11:59）</a></li>
     <li id="src-2008"><a href="https://www.ctee.com.tw/news/20261120700227-439901" target="_blank" rel="noopener">工商時報｜航空雙雄翱翔 內外資按讚（11/20 03:00）</a></li>
     <li id="src-2009"><a href="https://www.ctee.com.tw/news/20261120700304-439901" target="_blank" rel="noopener">工商時報｜台積、0050低檔反彈可期（11/20 03:00）</a></li>
     <li id="src-2010"><a href="https://www.ctee.com.tw/news/20261120700301-439901" target="_blank" rel="noopener">工商時報｜雙引擎點火 啟碁、昇達科有戲（11/20 03:00）</a></li>
-    <li id="src-2216">加權指數 11/20 收盤 36,033.29（-2,393.60，-6.23%）、成交值 9,353 億元（較前日 -0.8%）為臺灣證券交易所官方值（data/market latest.json 11/20 17:30 版）；融資餘額 4,843.7 億元（-236.6 億）、大盤融資維持率 147.90%（-8.32）、信用風險戶數 1,120 戶（+997；不足 534／追繳 536／處分 50）為證交所 11/19 官方值；費城半導體 11/19 收盤 9,419.72（-2.41%）</li>
+    <li id="src-2216">加權指數 11/20 收盤 36,033.29（-2,393.60，-6.23%）、成交值 9,353 億元（較前日 -0.8%）、融資餘額 4,352.3 億元（單日 -491.4 億）、全市場擔保維持率 220.72%（-11.23）、信用風險戶數 3,107 戶（+1,987；不足 1,525／追繳 1,508／處分 74）為臺灣證券交易所 11/20 官方值（data/market latest.json 11/20 20:49 版）；大盤融資維持率 147.90%（-8.32）為 11/19 官方值；費城半導體 11/19 收盤 9,419.72（-2.41%）</li>
     <li id="src-2217">臺灣證券交易所 每日收盤行情 MI_INDEX（自動擷取，資料日 11/20）</li>
 </ol>
   </details>
