@@ -1,67 +1,79 @@
 {
- "updated": "2026-11-20 06:42",
- "date": "2026-11-20",
- "label": "11/20 06:42",
+ "updated": "2026-11-23 06:41",
+ "date": "2026-11-23",
+ "label": "11/23 06:41",
  "items": [
   {
    "cat": "美股",
-   "title": "〈美股盤後〉Anthropic上市難救AI買氣！道瓊暴跌超1100點 那指費半跌",
-   "url": "https://news.cnyes.com/news/id/6667840",
-   "src": "鉅亨網"
+   "title": "晶片股血流成河！費半暴跌近11% 美股下周能否止血看三關",
+   "url": "https://money.udn.com/money/story/123398/9893064",
+   "src": "經濟日報"
   },
   {
    "cat": "美股",
-   "title": "美股收挫 Anthropic漲逾17%未能帶動大盤",
-   "url": "https://tw.news.yahoo.com/%E7%BE%8E%E8%82%A1%E6%94%B6%E6%8C%AB-anthropic%E6%BC%B2%E9%80%BE17-%E6%9C%AA%E8%83%BD%E5%B8%B6%E5%8B%95%E5%A4%A7%E7%9B%A4-214257709.html",
+   "title": "美股大爆破 費半瀉逾10％、那指今年白做工",
+   "url": "https://www.ctee.com.tw/news/20261122700029-439901",
+   "src": "工商時報"
+  },
+  {
+   "cat": "美股",
+   "title": "費半一週跌17% 寫2001年來最慘",
+   "url": "https://tw.news.yahoo.com/%E8%B2%BB%E5%8D%8A-%E9%80%B1%E8%B7%8C17-%E5%AF%AB2001%E5%B9%B4%E4%BE%86%E6%9C%80%E6%85%98-043000927.html",
    "src": "Yahoo新聞"
   },
   {
-   "cat": "美股",
-   "title": "〈美股早盤〉Anthropic掛牌熱潮點火 科技股反攻 那指強彈近2%",
-   "url": "https://news.cnyes.com/news/id/6667810",
-   "src": "鉅亨網"
-  },
-  {
-   "cat": "國際",
-   "title": "AI巨頭Anthropic風光上市 首日漲17%市值衝2兆美元",
-   "url": "https://finance.ftvnews.com.tw/news/detail/2026B20W0060",
-   "src": "民視財經"
+   "cat": "ADR",
+   "title": "費半暴跌10.7％、台積電ADR摔逾9％！台股周一開盤繼續殺？",
+   "url": "https://tw.stock.yahoo.com/news/%E8%B2%BB%E5%8D%8A%E6%9A%B4%E8%B7%8C10-7-%E5%8F%B0%E7%A9%8D%E9%9B%BBadr%E6%91%94%E9%80%BE9-%E5%8F%B0%E8%82%A1%E5%91%A8-%E9%96%8B%E7%9B%A4%E7%B9%BC%E7%BA%8C%E6%AE%BA-015353993.html",
+   "src": "Yahoo股市"
   },
   {
    "cat": "期貨",
-   "title": "快訊》Anthropic帶旺 台指期夜盤挑戰4萬點關卡 費半強彈4％",
-   "url": "https://www.chinatimes.com/realtimenews/20261119005145-260410",
-   "src": "中時新聞網"
+   "title": "費半挫11%台積電ADR跌9.5%，台指期夜盤崩1881點見33K",
+   "url": "https://www.businesstoday.com.tw/article/category/183008/post/202611210002/",
+   "src": "今周刊"
   },
   {
    "cat": "期貨",
-   "title": "Anthropic成AI股救命稻草！費半狂噴 台指期夜盤飆漲逾1000點",
-   "url": "https://ec.ltn.com.tw/article/breakingnews/5646992",
-   "src": "自由財經"
+   "title": "台股崩跌 金管會11/23起祭全面平盤下禁空令5措施",
+   "url": "https://cna.com.tw/news/afe/202611210127.aspx",
+   "src": "中央社"
+  },
+  {
+   "cat": "期貨",
+   "title": "美台股狂瀉金管會禁空令升級 法人：台股23日力抗賣壓",
+   "url": "https://money.udn.com/money/story/5612/9894512",
+   "src": "經濟日報"
   },
   {
    "cat": "數據",
-   "title": "11月20日 五件財經大事搶先看",
-   "url": "https://money.udn.com/money/story/5607/9890346",
-   "src": "經濟日報"
+   "title": "〈台股盤前要聞〉金管會：23日起全面禁平盤以下放空、10月外銷訂單連21紅",
+   "url": "https://news.cnyes.com/news/id/6669876",
+   "src": "鉅亨網"
   },
   {
-   "cat": "國際",
-   "title": "〈台幣〉央行積極調節匯市波動 貶轉升收32.942元",
-   "url": "https://news.cnyes.com/news/id/6667656",
+   "cat": "個股",
+   "title": "台積電周線重挫15.8%！台股創36年最慘單周紀錄",
+   "url": "https://news.cnyes.com/news/id/6669709",
    "src": "鉅亨網"
   },
   {
    "cat": "國際",
-   "title": "避險標的受考驗... 美債持有國紛紛減持 單月總值降至9兆美元",
-   "url": "https://money.udn.com/money/story/5599/9890107",
-   "src": "經濟日報"
+   "title": "〈紐約匯市〉美元走軟 日元、瑞郎強升 比特幣跌破6萬美元",
+   "url": "https://news.cnyes.com/news/id/6669310",
+   "src": "鉅亨網"
   },
   {
-   "cat": "個股",
-   "title": "擋不住的賣壓！台股收盤摜破39K 下跌1,768點 台積電收低75元",
-   "url": "https://udn.com/news/story/7251/9888887",
-   "src": "聯合新聞網"
+   "cat": "國際",
+   "title": "油價漲 週線連3黑",
+   "url": "https://www.cna.com.tw/news/afe/202611210018.aspx",
+   "src": "中央社"
+  },
+  {
+   "cat": "數據",
+   "title": "11月23日 五件財經大事搶先看",
+   "url": "https://money.udn.com/money/story/5607/9895427",
+   "src": "經濟日報"
   }
  ]
 }
