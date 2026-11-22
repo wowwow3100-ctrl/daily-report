@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/11/22（週日）收盤場次</div>
+        <div class="stamp" id="updated">2026/11/22（週日）盤後場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -294,7 +294,7 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/22 早盤場．週末休市；加權指數、成交值、融資餘額、大盤融資維持率與信用風險戶數皆為證交所 11/20 官方值；費城半導體為 11/20 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/22 盤後場．週末休市；加權指數、成交值、融資餘額、大盤融資維持率與信用風險戶數皆為證交所 11/20 官方值；費城半導體為 11/20 美股收盤）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">36,033.29</div><div class="chg down">-2,393.60（-6.23%）（11/20）</div></div>
     <div class="m"><div class="lbl">成交值（上市）</div><div class="val">9,353 億</div><div class="chg down">較前日 -0.8%（11/20）</div></div>
@@ -392,7 +392,39 @@
 <!-- ===== /DATA:PREOPEN ===== -->
 
                                                                 <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/22 收盤場．依時間由新到舊．共 20 則）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/22 盤後場．依時間由新到舊．共 20 則）</span></h2>
+  <div class="card">
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/22 17:28</span>專家曝 3 張風險骨牌：全球資產無差別拋售、AI 高槓桿融資、銀行壞帳 恐不只衝擊科技股 <a class="ref" href="#src-3001">[3001]</a></div>
+    <div class="news-body">中時新聞網：投資專家葉育碩指本波全球股市重挫可能藏著流動性危機，第一張骨牌為股債商品與加密貨幣同步遭拋售，第二張為 AI 資料中心靠貸款與私募信貸支撐的高槓桿融資，第三張為銀行與影子銀行受壞帳波及；他強調此為風險情境，不代表必然發生。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">經濟</span><span class="ntime">11/22 17:20</span>經濟部：股市震盪未影響企業接單 前 10 月外銷訂單逾 9,400 億美元 2027 年出口拚破 1 兆美元 <a class="ref" href="#src-3002">[3002]</a></div>
+    <div class="news-body">FTNN新聞網：經濟部 11/21 徵詢八大工商團體，表示半導體、電子業者對前景仍具信心；10 月出口 967.6 億美元創單月新高、年增 58.9%，第三季製造業產值年增 43.09%，政府將持續關注銀行授信並強化融資與信用保證。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/22 16:49</span>融資斷頭潮碰上禁空令 11/20 上市融資單日減 491 億創紀錄 分析師看月線負乖離 15% 超跌 <a class="ref" href="#src-3003">[3003]</a></div>
+    <div class="news-body">Newtalk新聞：上市櫃融資 11/20 合計減少 637.01 億元、上市融券減少 1 萬餘張；截至 11/19 追繳 2,947 戶、處分 520 戶。分析師楊育華指 11/6 融資大減後 5 個交易日反彈近 4,000 點；張貽程則提醒週一恐開低。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">金融</span><span class="ntime">11/22 16:02</span>六大金控 11/23 起接力開第三季法說 國泰金(2882) 前三季 EPS 6.94 元居冠 <a class="ref" href="#src-3004">[3004]</a></div>
+    <div class="news-body">FTNN新聞網：永豐金(2890) 11/23、兆豐金(2886) 11/24、華南金(2880) 11/26，國泰金、第一金(2892)、台新新光金(2887) 11/27 同日登場；台新新光金前三季獲利 641.7 億元、年增 184%，市場關注 2027 年展望與股利配發空間。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/22 15:26</span>分析師林漢偉：ABC 波段推估 C 波滿足點約 32,394 點 觀察跌停股打開與低檔爆量 <a class="ref" href="#src-3005">[3005]</a></div>
+    <div class="news-body">FTNN新聞網：台指期夜盤跌至約 33,719 點，距推估滿足點約 1,500 點；週一、週二恐仍有融資斷頭與期貨追繳賣壓，他提及華邦電(2344)、南亞科(2408) 融資減幅明顯、法人開始承接，並提醒 12/1 黃仁勳國會聽證為後續變數。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/22 14:29</span>台新投顧黃文清：指數自高點跌近 3 成、融資減肥 33% 下週有望出現落底訊號 <a class="ref" href="#src-3006">[3006]</a></div>
+    <div class="news-body">NOWnews今日新聞：黃文清認為加大限空令有助穩定信心，指數跌幅已達過去急升息、對等關稅時期水準；外資截至 11/17 累計賣超 3 兆 986 億元，但通常會在低點回補，反彈力道仍須觀察。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/22 12:31</span>《WIRED》：輝達董事會拒絕黃仁勳回任 主因為「誠信與信任」問題 <a class="ref" href="#src-3007">[3007]</a></div>
+    <div class="news-body">Newtalk新聞：川普 11/20 再度力挺黃仁勳道歉後回鍋，但《WIRED》引述消息人士指董事會 2025 年 10 月即詢問相關關係遭否認，直到今年 11/8 才承認；輝達仍由原財務長克瑞斯代理執行長，持續物色接班人。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">個股</span><span class="ntime">11/22 12:05</span>玉晶光(3406) 連 5 跌 34% 本土投顧維持「買進」目標價 1,090 元 看好 EBO 明年放量 <a class="ref" href="#src-3008">[3008]</a></div>
+    <div class="news-body">FTNN新聞網：投顧看好與 3M 合作的擴束光學（EBO）產品 2027 年第二季起大量出貨，NPO／CPO 元件逐步延伸至 FA／FAU，預估 2027 年 EPS 43.59 元；玉晶光 11/20 跌停收 648 元。</div>
+  </div>
   <div class="card">
     <div class="news-title"><span class="cat">政策</span><span class="ntime">11/22 10:30</span>國安基金護盤清單曝光：近 10 日公股買超台積電(2330) 442 億元居冠 專家：禁空令仍難擋外資賣現股 <a class="ref" href="#src-2901">[2901]</a></div>
     <div class="news-body">TVBS新聞網：觀察 11/9 起八大公股行庫買超，台積電(2330) 2 萬 959 張、442.32 億元遙遙領先，台達電(2308) 64.27 億元居次，另買超元大台灣50(0050) 130.65 億元；專家李其展認為禁空令可減少盤中多殺多，但無法抵擋外資現股調節，週一觀察盤中是否再現連鎖急殺與外資賣超是否放緩。</div>
@@ -400,6 +432,10 @@
   <div class="card">
     <div class="news-title"><span class="cat">產業</span><span class="ntime">11/22 09:54</span>後黃仁勳時代 輝達擴大結盟台積電(2330)、鴻海(2317) 等 6 家台廠 專家：AI 訂單短期無虞 <a class="ref" href="#src-2902">[2902]</a></div>
     <div class="news-body">中央社：輝達 11/18 宣示擴大與台積電、鴻海、矽品、京元電(2449)、景碩(3189)、欣興(3037) 合作，以現金投資與多年期合約擴充產能；台經院劉佩真指 Vera Rubin NVL72 已出貨、供應承諾金額升至 3,900 億美元，但永久執行長人選未定，台廠與輝達關係未來可能「去感情化」。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/22 09:40</span>安聯投信：AI 進入「獲利驗證」重新定價 點名四大止穩訊號 <a class="ref" href="#src-3009">[3009]</a></div>
+    <div class="news-body">鉅亨網：安聯台股團隊建議觀察雲端資本支出與伺服器訂單、權值股能否止穩、外資期現貨賣壓與融資去化，以及上漲家數與非電族群是否回溫；預估 2027 年台股企業獲利成長 35%。</div>
   </div>
   <div class="card">
     <div class="news-title"><span class="cat">政策</span><span class="ntime">11/22 09:18</span>金管會第三波限空令 11/23 上路：全面禁平盤下放空、融券保證金 150%、暫停認售權證 <a class="ref" href="#src-2903">[2903]</a></div>
@@ -417,6 +453,7 @@
     <div class="news-title"><span class="cat">台股</span><span class="ntime">11/22 04:10</span>分析師：美股未止穩前台股難逆勢 周一恐仍有下跌千點壓力 <a class="ref" href="#src-2801">[2801]</a></div>
     <div class="news-body">中國時報：台股 11/20 創史上第 3 大跌點後美股再崩，政府雖祭出平盤以下禁空等 5 大措施，分析師普遍認為主要在穩定民心，也憂心抑制跌幅反而延長「黑暗期」；資深分析師蔡明翰指關鍵在費半有效止穩，另有分析師認為對照基本面已有超跌現象。</div>
   </div>
+  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
     <div class="news-title"><span class="cat">金融</span><span class="ntime">11/22 04:10</span>台股週跌 17.5% 三大法人仍逆勢買超 8 檔金融股各逾萬張 永豐金(2890) 居首 <a class="ref" href="#src-2906">[2906]</a></div>
     <div class="news-body">工商時報：三大法人近一週集中市場合計賣超逾 3,300 億元，但截至 11/20 買超 8 檔金融股合計約 15.6 萬張，永豐金約 3.29 萬張、中信金(2891) 2.53 萬張、兆豐金(2886) 2.25 萬張；其中兆豐金近週跌 6.50% 最抗跌。</div>
@@ -437,58 +474,26 @@
     <div class="news-title"><span class="cat">政策</span><span class="ntime">11/22</span>金管會接連加碼禁空令 加重劑量是否對症下藥？法人不排除本週下探 32,000 點 <a class="ref" href="#src-2805">[2805]</a></div>
     <div class="news-body">經濟日報：有條件限空令上路一個交易日後台股仍重挫 6.23%，金管會緊急加強限空措施試圖穩定信心，但短期賣壓仍未消退，報導引述法人不排除本週下探 32,000 點。</div>
   </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/22</span>川普再籲輝達讓黃仁勳回鍋 並稱將對赴海外建資料中心美企課重稅 <a class="ref" href="#src-2806">[2806]</a></div>
-    <div class="news-body">經濟日報：川普 11/20 白宮記者會再度力挺黃仁勳重返輝達，希望他鄭重道歉後回去工作；同時表示不允許美企到其他國家興建資料中心，若這麼做將課徵重稅。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/22</span>美財長鬆口 輝達 H200 晶片可賣給中國大陸 <a class="ref" href="#src-2807">[2807]</a></div>
-    <div class="news-body">經濟日報：報導美國財政部長表態輝達 H200 晶片可出售給中國大陸；稍早美眾院公開的資料顯示，中企申請的 344 萬顆輝達、超微晶片僅約 88 萬顆獲准且尚未出貨。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">11/21 22:10</span>高盛：CTA 陷「愈跌愈賣」循環 未來一週美股恐再賣 658 億～806 億美元 <a class="ref" href="#src-2808">[2808]</a></div>
-    <div class="news-body">鉅亨網：高盛恐慌指數升至 9 分（滿分 10），CTA 過去一個月已賣出 570 億美元股票、美股淨部位轉為淨空 190 億美元；模型估市場持平下週仍賣 658 億美元、續跌則達 806 億美元，即使反彈也可能觸發 286 億美元賣盤。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/21 18:44</span>外資與八大公股行庫同步買超 16 檔 聯電(2303) 近 5 日獲外資買超逾 10 萬張 <a class="ref" href="#src-2809">[2809]</a></div>
-    <div class="news-body">中時新聞網：台指期夜盤跌 1,881 點收 33,919 點、台積電期貨跌 116 元至 1,880 元；外資 11/20 賣超縮至 94.13 億元，近 5 日與公股同步買超的包括聯電(2303)、台泥(1101)、友達(2409)、彰銀(2801)、英業達(2356) 等 16 檔。</div>
-  </div>
-  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/21 18:37</span>禁空令有用嗎？法人看法兩極 樂觀派看下週反彈、悲觀派憂回「代工行情」 <a class="ref" href="#src-2702">[2702]</a></div>
-    <div class="news-body">經濟日報：台新投顧黃文清認為融資波段減幅已超過大盤跌幅、籌碼大致清洗；第一金投顧黃詣庭估 2027 年上市公司獲利 9.5 兆元、前瞻本益比約 14 倍。另有投顧擔憂輝達換帥後重新審視台廠報價，AI 供應鏈高毛利恐難維持。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">美股</span><span class="ntime">11/21 18:06</span>費半單週跌 17.1% 市值蒸發 2.3 兆美元 寫 2001 年 9 月以來最慘週線 <a class="ref" href="#src-2703">[2703]</a></div>
-    <div class="news-body">經濟日報：費半 11/20 單日跌 10.7%、30 檔成分股全數跌逾 5%，Astera Labs、Credo、安謀跌 14%～16%；超微在晶片運往中國疑雲下跌 13%（公司已否認），FCC 也考慮限制光學設備出口，政策風險持續升溫。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/21 17:59</span>法人：禁空令限縮所有空頭工具 台股本波跌近 3 成可靜待打底 <a class="ref" href="#src-2810">[2810]</a></div>
-    <div class="news-body">中央社：台新投顧黃文清認為融資大減、籌碼有效清洗；第一金投顧黃詣庭指本波跌近 30%、近 2 日外資賣超明顯收斂，若下週出現連續長下影線或帶量跳空長紅，可視為短線底部徵兆。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/21 17:40</span>黃仁勳下一站是英特爾？少了他的輝達恐掀人才出走潮 <a class="ref" href="#src-2601">[2601]</a></div>
-    <div class="news-body">經濟日報：報導引述瑞穗證券分析師指出，有投資組合經理人推測黃仁勳可能轉往英特爾，市場也關注輝達後續是否出現人才流失；相關說法目前仍屬市場傳聞，未獲當事人證實。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">經濟</span><span class="ntime">11/21 17:07</span>中油：11/23 起汽、柴油價格維持不調整 95 無鉛每公升 32.7 元 <a class="ref" href="#src-2602">[2602]</a></div>
-    <div class="news-body">ETtoday財經雲：11/23～11/29 汽柴油不調整，92 無鉛每公升 31.2 元、95 無鉛 32.7 元、98 無鉛 34.7 元、超級柴油 29.9 元。</div>
-  </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
 
   <!-- ===== DATA:BROKER ===== -->
-  <h2 id="broker">11/20 券商報告摘要</h2>
+  <h2 id="broker">11/22 券商報告摘要</h2>
   <div class="card">
     <ul class="sum-list">
+      <li>玉晶光（3406）：本土投顧維持「買進」，目標價 1,090 元；看好與 3M 合作的 EBO 擴束光學產品 2027 年第二季起大量出貨，預估 2027 年 EPS 43.59 元；11/20 跌停收 648 元、連 5 日跌 34.35%（FTNN新聞網 11/22 12:05）<a class="ref" href="#src-3008">[3008]</a></li>
       <li>瑞昱（2379）：美系外資維持「中立」，目標價 800 元；客戶庫存調整反映出貨時程而非需求轉弱，邊緣伺服器與邊緣 AI 為中長期機會，但 DRAM 高價推升 BOM 成本為隱憂（中時新聞網 11/20 11:59）<a class="ref" href="#src-2215">[2215]</a></li>
       <li>國巨（2327）：美系外資給予「優於大盤」，目標價報導未揭露；中低容值 MLCC 補漲、高容值缺貨延續至 2027 年上半年，高階產品短期競爭有限（中時新聞網 11/20 13:00）<a class="ref" href="#src-2214">[2214]</a></li>
       <li>長榮航（2618）：摩根士丹利維持「優於大盤」，目標價 47.5 元；金控旗下投顧給予「買進」，目標價 54 元（上調），看好第四季客貨運旺季與 2027 年燃油成本下降（工商時報 11/20 03:00）<a class="ref" href="#src-2008">[2008]</a></li>
-      <li>台積電（2330）：法人維持「買進」，目標價 2,945 元；看好 2 奈米、A16 放量與先進封裝產能倍增（工商時報 11/20 03:00）<a class="ref" href="#src-2009">[2009]</a></li>
     </ul>
   </div>
   <table>
     <tr><th>日期</th><th>券商</th><th>個股</th><th>評等</th><th>目標價</th><th>一句話重點</th></tr>
+    <tr>
+      <td class="num">11/22</td><td><span class="tag">內資</span>本土投顧（未具名）</td><td>玉晶光 (3406)</td><td>買進<br><span class="muted">維持</span></td>
+      <td class="num">1,090<br><span class="muted">前值 待確認</span></td>
+      <td class="muted">EBO 2027 年 Q2 起大量出貨、NPO／CPO 元件逐步放量（FTNN新聞網 11/22 12:05）<a class="ref" href="#src-3008">[3008]</a></td>
+    </tr>
     <tr>
       <td class="num">11/20</td><td><span class="tag">外資</span>美系外資（未具名）</td><td>瑞昱 (2379)</td><td>中立<br><span class="muted">維持</span></td>
       <td class="num">800<br><span class="muted">前值 待確認</span></td>
@@ -515,11 +520,6 @@
       <td class="muted">客運連假需求與貨運旺季帶動營收（工商時報 11/20 03:00）<a class="ref" href="#src-2008">[2008]</a></td>
     </tr>
     <tr>
-      <td class="num">11/20</td><td><span class="tag">內資</span>凱基投顧</td><td>華航 (2610)</td><td>未揭露</td>
-      <td class="num">26<br><span class="muted">前值 待確認</span></td>
-      <td class="muted">燃油每桶 150 美元假設下 2027 年 EPS 估 2.17 元（工商時報 11/20 03:00）<a class="ref" href="#src-2008">[2008]</a></td>
-    </tr>
-    <tr>
       <td class="num">11/20</td><td><span class="tag">內資</span>本土法人（未具名）</td><td>昇達科 (3491)</td><td>買進<br><span class="muted">維持</span></td>
       <td class="num">1,780<br><span class="muted">前值 待確認</span></td>
       <td class="muted">毫米波與資料中心高速連接新產品，2027 年 EPS 估 35.6 元（工商時報 11/20 03:00）<a class="ref" href="#src-2010">[2010]</a></td>
@@ -544,8 +544,17 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
+    <li id="src-3001"><a href="https://www.chinatimes.com/realtimenews/20261122002476-260410" target="_blank" rel="noopener">中時新聞網｜台股暴跌只是開始？專家曝3風險骨牌：連續倒下恐不只影響科技業（11/22 17:28）</a></li>
+    <li id="src-3002"><a href="https://www.ftnn.com.tw/news/598485" target="_blank" rel="noopener">FTNN新聞網｜台股單週慘跌17.5%！經濟部喊話「企業接單未受影響」　明年出口拚破兆美元（11/22 17:20）</a></li>
+    <li id="src-3003"><a href="https://newtalk.tw/news/view/2026-11-22/1072550" target="_blank" rel="noopener">Newtalk新聞｜台股明還要殺？融資斷頭潮碰上禁空令 分析師曝數據反彈關鍵（11/22 16:49）</a></li>
+    <li id="src-3004"><a href="https://www.ftnn.com.tw/news/598486" target="_blank" rel="noopener">FTNN新聞網｜明年金控股利能領多少？6大金控明起接力開法說　國泰金前3季獲利居冠、EPS達6.94元（11/22 16:02）</a></li>
+    <li id="src-3005"><a href="https://www.ftnn.com.tw/news/598442" target="_blank" rel="noopener">FTNN新聞網｜台股黑色星期一要來了？分析師估恐再殺1500點、「這訊號」才是反彈關鍵（11/22 15:26）</a></li>
+    <li id="src-3006"><a href="https://www.nownews.com/news/6894517" target="_blank" rel="noopener">NOWnews今日新聞｜限空令加大、外資回補　分析師：台股下週有望落底反彈（11/22 14:29）</a></li>
+    <li id="src-3007"><a href="https://newtalk.tw/news/view/2026-11-22/1072516" target="_blank" rel="noopener">Newtalk新聞｜川普力挺黃仁勳回鍋遭拒！《WIRED》揭董事會內幕：說謊長達1年（11/22 12:31）</a></li>
+    <li id="src-3008"><a href="https://www.ftnn.com.tw/news/598423" target="_blank" rel="noopener">FTNN新聞網｜「光學大廠」5天暴跌34.35%！投顧力挺目標價喊千元　EBO明年拚大量出貨（11/22 12:05）</a></li>
     <li id="src-2901"><a href="https://news.tvbs.com.tw/money/4054203" target="_blank" rel="noopener">TVBS新聞網｜台股狂瀉金管會禁空！國安基金護盤清單曝　專家：仍難擋外資賣現股（11/22 10:30）</a></li>
     <li id="src-2902"><a href="https://news.cts.com.tw/cna/money/202611/202611223103918.html" target="_blank" rel="noopener">中央社（華視新聞網轉載）｜後黃仁勳時代輝達結盟供應鏈　穩主導地位宣示AI訂單無虞（11/22 09:54）</a></li>
+    <li id="src-3009"><a href="https://news.cnyes.com/news/id/6669803" target="_blank" rel="noopener">鉅亨網｜AI進入重新定價 法人：聚焦四大止穩訊號 靜待籌碼沉澱後分批布局（11/22 09:40）</a></li>
     <li id="src-2903"><a href="https://www.chinatimes.com/realtimenews/20261122000963-260410" target="_blank" rel="noopener">中時新聞網（時報資訊）｜《台北股市》金管會限空再加碼 全面禁空令明出鞘（11/22 09:18）</a></li>
     <li id="src-2904"><a href="https://news.tvbs.com.tw/money/4054161" target="_blank" rel="noopener">TVBS新聞網｜回到原點還變負！股民賠千萬　台達電11個月總市值蒸發2467億（11/22 08:57）</a></li>
     <li id="src-2905"><a href="https://www.chinatimes.com/realtimenews/20261122000027-260410" target="_blank" rel="noopener">中時新聞網｜台積電2千元已到地板價！杜金龍曝長線目標 4檔作帳行情（11/22 06:00）</a></li>
@@ -555,15 +564,6 @@
     <li id="src-2803"><a href="https://money.udn.com/money/story/5599/9893834" target="_blank" rel="noopener">經濟日報｜比特幣價格一度跌至兩年多低點 日圓、瑞郎躍避險寵兒（11/22 02:48）</a></li>
     <li id="src-2804"><a href="https://money.udn.com/money/story/5607/9893817" target="_blank" rel="noopener">經濟日報｜大盤短線超跌 六大名師教你看台股中長期價值（11/22）</a></li>
     <li id="src-2805"><a href="https://udn.com/news/story/7251/9893819" target="_blank" rel="noopener">經濟日報｜金管會接連加碼禁空令 加重劑量…真的對症下藥？（11/22）</a></li>
-    <li id="src-2806"><a href="https://money.udn.com/money/story/123398/9893844" target="_blank" rel="noopener">經濟日報｜川普籲輝達讓黃仁勳回鍋 強調「應給頂尖人才第二次機會」（11/22）</a></li>
-    <li id="src-2807"><a href="https://money.udn.com/money/story/5599/9893852" target="_blank" rel="noopener">經濟日報｜美財長鬆口 輝達 H200 晶片可賣給大陸（11/22）</a></li>
-    <li id="src-2808"><a href="https://news.cnyes.com/news/id/6669718" target="_blank" rel="noopener">鉅亨網｜CTA陷「愈跌愈賣」惡性循環！高盛：未來一周美股將出現另一波大規模拋售（11/21 22:10）</a></li>
-    <li id="src-2809"><a href="https://www.chinatimes.com/realtimenews/20261121002846-260410" target="_blank" rel="noopener">中時新聞網｜下周再崩1900點敢上車？外資暗中吃貨友達16檔 竟與國家隊同步抄底（11/21 18:44）</a></li>
-    <li id="src-2702"><a href="https://money.udn.com/money/story/5607/9893567" target="_blank" rel="noopener">經濟日報｜金管會出手禁平盤下放空！台股救市措施有用嗎？法人看反彈或回代工價（11/21 18:37）</a></li>
-    <li id="src-2703"><a href="https://money.udn.com/money/story/123398/9893524" target="_blank" rel="noopener">經濟日報｜AI 泡沫爆了嗎？恐慌氣氛瀰漫 費城半導體指數本周殺盤25年來最慘（11/21 18:06）</a></li>
-    <li id="src-2810"><a href="https://www.cna.com.tw/news/afe/202611210177.aspx" target="_blank" rel="noopener">中央社｜費半重挫逾10%金管會強化禁空令　法人：台股靜待打底（11/21 17:59）</a></li>
-    <li id="src-2601"><a href="https://money.udn.com/money/story/123398/9893480" target="_blank" rel="noopener">經濟日報｜黃仁勳下一站是英特爾？少了他的輝達恐掀人才出走潮（11/21 17:40）</a></li>
-    <li id="src-2602"><a href="https://finance.ettoday.net/news/3276129" target="_blank" rel="noopener">ETtoday財經雲｜加油不急！下周油價不調整　95無鉛每公升32.7元（11/21 17:07）</a></li>
     <li id="src-2214"><a href="https://www.chinatimes.com/realtimenews/20261120002571-260410" target="_blank" rel="noopener">中時新聞網（時報資訊）｜《電零組》MLCC缺貨看到明年上半年 外資看好國巨定價能力（11/20 13:00）</a></li>
     <li id="src-2215"><a href="https://www.chinatimes.com/realtimenews/20261120002329-260410" target="_blank" rel="noopener">中時新聞網（時報資訊）｜《半導體》記憶體漲價成隱憂！瑞昱AI商機浮現 外資給800元目標價（11/20 11:59）</a></li>
     <li id="src-2008"><a href="https://www.ctee.com.tw/news/20261120700227-439901" target="_blank" rel="noopener">工商時報｜航空雙雄翱翔 內外資按讚（11/20 03:00）</a></li>
