@@ -13,15 +13,15 @@
   },
   "market": {
     "kind": "market",
-    "ts": "2026-11-21T07:10:01",
-    "fetch": ": {'pct': 84.0, 'below': 478, 'n': 569, 'chg_pp': 6.9, 'light': 'r', 'date': '2026-11-20', 'label': '11/20', 'hist': [28.2, 28.6, 24.4, 28.5, 37.6, 36.1, 46.3, 45.7, 57.0, 65.2, 56.0, 54.5, 49.8, 54.6, 48.5, 60.6, 66.4, 65.6, 77.1, 84.0], 'rule': '上市櫃普通股中，近 20 日均量 1,000 張以上者，還原收盤價低於生命線的比例', 'src': '旺來資料庫', 'all_pct': 89.5, 'taiex_dist': -13.2}, 'date': '2026-11-20', 'label': '11/20', 'fin_keep': {'rate': 140.4, 'n': 1242, 'chg': -7.5, 'date': '2026-11-20'}, 'keep': {'rate': 220.72, 'below': 1525, 'call': 1508, 'exe': 74, 'risk': 3107, 'rate_chg': -11.23, 'risk_chg': 1987, 'date': '20261120'}}\n",
-    "status": "pushed"
+    "ts": "2026-11-23T07:21:59",
+    "status": "error",
+    "error": "worktree: error: unable to create file market/latest.json: Invalid argument\nfatal: Could not reset index file to revision 'origin/data'.\n"
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-22T20:15:00",
-    "fetch": "no change 819\n",
-    "status": "nochange"
+    "ts": "2026-11-23T07:21:56",
+    "status": "error",
+    "error": "worktree: error: unable to create file market/latest.json: Invalid argument\nfatal: Could not reset index file to revision 'origin/data'.\n"
   },
   "dbupdate": {
     "kind": "dbupdate",
