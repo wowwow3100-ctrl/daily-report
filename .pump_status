@@ -1,13 +1,13 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-11-23T14:25:04",
+    "ts": "2026-11-23T20:25:01",
     "status": "error",
     "error": "worktree: error: unable to create file market/latest.json: Invalid argument\nfatal: Could not reset index file to revision 'origin/data'.\n"
   },
   "sectors": {
     "kind": "sectors",
-    "ts": "2026-11-23T17:45:04",
+    "ts": "2026-11-23T20:45:26",
     "status": "error",
     "error": "worktree: error: unable to create file market/latest.json: Invalid argument\nfatal: Could not reset index file to revision 'origin/data'.\n"
   },
@@ -19,7 +19,7 @@
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-23T19:15:00",
+    "ts": "2026-11-23T20:15:00",
     "status": "error",
     "error": "worktree: error: unable to create file market/latest.json: Invalid argument\nfatal: Could not reset index file to revision 'origin/data'.\n"
   },
