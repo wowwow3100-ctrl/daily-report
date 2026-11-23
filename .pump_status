@@ -13,19 +13,19 @@
   },
   "market": {
     "kind": "market",
-    "ts": "2026-11-23T15:40:04",
+    "ts": "2026-11-23T23:45:04",
     "status": "error",
-    "error": "worktree: error: unable to create file market/latest.json: Invalid argument\nfatal: Could not reset index file to revision 'origin/data'.\n"
+    "error": "worktree: error: unable to open loose object 4b2758cb7c74cbfcbeb235493717c83b13566cf3: Function not implemented\nfatal: unable to read tree (ccab47bdfd1a37cc6a7bb9b8ae5da2690ce227b2)\n"
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-23T20:15:00",
+    "ts": "2026-11-23T23:15:04",
     "status": "error",
     "error": "worktree: error: unable to create file market/latest.json: Invalid argument\nfatal: Could not reset index file to revision 'origin/data'.\n"
   },
   "dbupdate": {
     "kind": "dbupdate",
-    "ts": "2026-11-23T19:20:28",
+    "ts": "2026-11-23T22:20:03",
     "status": "uptodate",
     "fetch": "breadth_1000.json date=2026-11-23"
   }
