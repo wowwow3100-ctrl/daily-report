@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/11/23（週一）夜間場次</div>
+        <div class="stamp" id="updated">2026/11/24（週二）早盤場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -294,12 +294,12 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/23 夜間場．加權指數與成交值為 11/23 收盤；融資餘額、大盤融資維持率與信用風險戶數為證交所 11/20 官方值，今日官方值晚間公布後自動更新；費城半導體為 11/20 美股收盤，11/23 美股 22:30 開盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/24 早盤場．加權指數與成交值為 11/23 收盤；融資餘額、大盤融資維持率與信用風險戶數為證交所 11/20 官方值，最新官方值由前端自動更新；費城半導體為 11/23 美股收盤）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">36,811.89</div><div class="chg up">+778.60（+2.16%）（11/23）</div></div>
     <div class="m"><div class="lbl">成交值（上市）</div><div class="val">10,792 億</div><div class="chg up">較前日 +15.4%（11/23）</div></div>
     <div class="m"><div class="lbl">融資餘額（上市）</div><div class="val">4,352 億</div><div class="chg down">單日 -491.4 億（11/20）</div></div>
-    <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">8,409</div><div class="chg down">-10.73%（11/20 美股，前日 -2.41%）</div></div>
+    <div class="m"><div class="lbl">費城半導體 SOX</div><div class="val">9,588</div><div class="chg up">+14.03%（11/23 美股，前日 -10.73%）</div></div>
     <div class="m"><div class="lbl">大盤融資維持率</div><div class="val">140.40%</div><div class="chg down">較前日 -7.50（11/20）</div><div class="sub">130% 為追繳線｜一般落在 130%～180%</div></div>
     <div class="m"><div class="lbl">信用風險戶數</div><div class="val">3,107 戶</div><div class="chg up">較前日 +1,987 戶</div><div class="sub">維持率不足 1,525｜追繳 1,508｜處分 74（11/20）</div></div>
   </div>
@@ -390,12 +390,72 @@
     </ul>
   </div>
 <!-- ===== /DATA:PREOPEN ===== -->
-
-                                                                <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/23 夜間場．依時間由新到舊．共 20 則）</span></h2>
+  <!-- ===== DATA:FOCUS_NEWS ===== -->
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/24 早盤場．依時間由新到舊．共 20 則）</span></h2>
+  <div class="card">
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">11/24 06:37</span>美股收盤：輝達(NVDA) 暴漲 31.48% 費半飆 14.03% 台積電 ADR 漲 14.08% 收 363.60 美元 <a class="ref" href="#src-3601">[3601]</a></div>
+    <div class="news-body">自由財經：輝達董事會宣布黃仁勳回任執行長，輝達創 2003 年以來最大單日漲幅；道瓊漲 1,447.98 點收 49,595.31 點、那指漲 6.51%、標普漲 4.73%，費半收 9,588.05 點。聯電 ADR 漲 19.52%、日月光 ADR 漲逾 21%；中時新聞網 05:44 報導台積電 ADR 收 363.37 美元（+14.01%），兩報收盤價略有出入。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/24 05:51</span>美擬將新加坡 Megaspeed 列入貿易黑名單 Melius、Bernstein 調升輝達評等 <a class="ref" href="#src-3602">[3602]</a></div>
+    <div class="news-body">鉅亨網：輝達單日市值增約 9,544 億美元；Melius Research 將輝達由「持有」升至「買進」、目標價 220 美元，Bernstein 升至「優於大盤」、目標價 200 美元。知情人士指美國計劃將引發輝達人事風波的 Megaspeed 列入黑名單；美股週四感恩節休市、週五提前收盤。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">政策</span><span class="ntime">11/24 03:17</span>證交所、櫃買中心董座致函上市櫃公司 47 家上市櫃宣布買回庫藏股 <a class="ref" href="#src-3603">[3603]</a></div>
+    <div class="news-body">經濟日報：證交所董事長林修銘、櫃買中心董事長簡立忠親自致函全體上市櫃公司，呼籲財務健全企業啟動庫藏股，搭配金管會納入 ESG 評鑑加分的政策誘因，已有 47 家上市櫃公司宣布買回。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">政策</span><span class="ntime">11/24 01:50</span>融資維持率今起降至 120% 回溯取消追繳 處置股制度 27 日開會檢討 <a class="ref" href="#src-3604">[3604]</a></div>
+    <div class="news-body">聯合報：20 日已產生的 64.64 億元追繳金額可獲解除，市場推估新制短期可緩解約 65 億至 80 億元緊急補繳壓力；工商協進會理事長吳東亮建議檢討處置股買方預收款規定，金管會主委彭金隆表示相關會議預計 27 日召開。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/24 01:39</span>法人：台股跌深反彈有望延續 V 型反轉仍待觀察 11/28 選舉與 12/1 國會約談為變數 <a class="ref" href="#src-3605">[3605]</a></div>
+    <div class="news-body">風傳媒：輝達開盤一度大漲 33.07%；台股 23 日已先反彈 778 點、收復前一交易日約三分之一跌點。眾議院三委員會將於美東 12/1、12/2 分別閉門約談黃仁勳與輝達法務長泰特，關注先進晶片是否流向中國相關人士。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">籌碼</span><span class="ntime">11/24 01:33</span>三大法人連 6 賣 六個交易日自台股撤出逾 3,800 億元 <a class="ref" href="#src-3606">[3606]</a></div>
+    <div class="news-body">經濟日報：23 日台股在政策護盤與美股盤前反彈下大漲 778 點，但三大法人合計仍賣超 511.77 億元、連續第六個交易日站在賣方；加計上週賣超 3,303 億元，六個交易日累計撤出逾 3,800 億元。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">期貨</span><span class="ntime">11/24 01:25</span>台指期夜盤一度漲停 40,324 點 終場收 39,829 點漲 3,170 點 台積電期貨收 2,210 元 <a class="ref" href="#src-3607">[3607]</a></div>
+    <div class="news-body">經濟日報：黃仁勳重返輝達消息傳出後，台指期夜盤一度暴漲 3,665 點亮燈，法人指市場不確定性降低，短線先看收復 4 萬點關卡。中時新聞網報導夜盤終場收 39,829 點、漲 3,170 點（+8.65%），台積電期貨收 2,210 元（+8.60%）；風傳媒指漲停曾一度打開。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">籌碼</span><span class="ntime">11/24 01:19</span>近五日外資投信同步買超 10 檔 聯電(2303)、永豐金(2890)、華航(2610) 在列 <a class="ref" href="#src-3608">[3608]</a></div>
+    <div class="news-body">經濟日報：台股上週歷經大幅修正後 23 日強力反彈，統計外資、投信近五個交易日合計買超個股，聯電(2303)、永豐金(2890)、華航(2610) 等名列其中。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/23 23:59</span>彭博：川普親自施壓輝達董事會推動黃仁勳回任 國會跨黨派關注國安與出口管制 <a class="ref" href="#src-3609">[3609]</a></div>
+    <div class="news-body">風傳媒：白宮直接介入公司治理，引發國會跨黨派與民主黨人對國安、出口管制與股票交易的關注；川普稱司法部長已確認政府未掌握黃仁勳違法證據。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">產業</span><span class="ntime">11/23 23:15</span>限空令 3.0 後記憶體股全面翻紅 力積電(6770)、南亞科(2408)、華邦電(2344)、旺宏(2337) <a class="ref" href="#src-3610">[3610]</a></div>
+    <div class="news-body">FTNN新聞網：金管會平盤以下禁空等措施上路首日，記憶體族群力積電(6770)、南亞科(2408)、華邦電(2344)、旺宏(2337) 全面收紅，報導引述法人認為產業最壞情況已過。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">ADR</span><span class="ntime">11/23 23:11</span>台股 ADR 盤中全面大漲 台積電(2330) ADR 漲逾 16%、日月光投控(3711) ADR 漲逾 20% <a class="ref" href="#src-3611">[3611]</a></div>
+    <div class="news-body">FTNN新聞網：截至台灣時間晚間 11 點左右，台積電 ADR 報 370.53 美元（+16.25%）、日月光 ADR 漲 20.59%、聯電(2303) ADR 漲 19.93%、鴻海(2317) ADR 漲 8.17%、南茂(8150) ADR 漲 18.75%（盤中數字，收盤見上方美股收盤報導）。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">美股</span><span class="ntime">11/23 22:39</span>輝達董事會全票通過 黃仁勳即刻回任總裁、執行長及董事 <a class="ref" href="#src-3612">[3612]</a></div>
+    <div class="news-body">風傳媒：距 11/12 請辭僅 11 天，董事會表示已取得美國政府高層意見，認定回任不構成國安風險；董事長瓊斯續任，克雷斯卸下代理執行長、續任財務長，獨立董事委員會調查持續進行，輝達另成立國安與出口管制委員會。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">產業</span><span class="ntime">11/23 20:32</span>華邦電(2344) 攜成大成立共同研發中心 每年投入千萬攻 AI 製程與先進封裝散熱 <a class="ref" href="#src-3613">[3613]</a></div>
+    <div class="news-body">風傳媒：華邦電每年投入新台幣 1,000 萬元，與成功大學共同研究以 AI 優化半導體製程與電路設計，以及先進封裝與記憶體架構的散熱問題。</div>
+  </div>
   <div class="card">
     <div class="news-title"><span class="cat">國際</span><span class="ntime">11/23 20:21</span>彭博：美股大跌難撼聯準會鷹派立場 華爾街仍押美債殖利率曲線趨平 <a class="ref" href="#src-3501">[3501]</a></div>
     <div class="news-body">經濟日報（經濟x彭博）：股市劇烈修正並未改變聯準會偏鷹的政策路徑判斷，華爾街交易員仍偏好押注美債殖利率曲線趨平的部位；市場本週聚焦美國 10 月 PCE 與第三季 GDP 修正值。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">產業</span><span class="ntime">11/23 20:07</span>中華電(2412) 籲 5G 毫米波移往 26GHz 遠傳(4904)：無移頻必要 <a class="ref" href="#src-3614">[3614]</a></div>
+    <div class="news-body">風傳媒：中華電信董事長簡志誠建議 5G 毫米波逐步移往 26GHz，為低軌衛星擴大 28GHz 使用空間；遠傳聲明現行機制已能兼顧行動與衛星通訊，並透露已循共用機制取得頻率核配。</div>
+  </div>
+  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
+  <div class="card">
+    <div class="news-title"><span class="cat">產業</span><span class="ntime">11/23 19:56</span>電電公會理事長劉揚偉：短期波動 AI 產業健康至少再持續 2、3 年 <a class="ref" href="#src-3615">[3615]</a></div>
+    <div class="news-body">風傳媒：劉揚偉出席行政院座談後表示，輝達事件與美國中期選舉造成的是短期股市波動，產業界相信黃仁勳打造的 AI 產業是百年一遇的產業革命，目前產業狀況健康。</div>
   </div>
   <div class="card">
     <div class="news-title"><span class="cat">美股</span><span class="ntime">11/23 19:40</span>美股盤前晶片股全面強彈 輝達漲逾 9%、台積電 ADR 漲近 7% 那指期貨揚 3.71% <a class="ref" href="#src-3502">[3502]</a></div>
@@ -410,69 +470,8 @@
     <div class="news-body">ETtoday：證交所公告愛普*(6531)、創意(3443)、金像電(2368)、景碩(3189) 達違約交割揭露標準，合計 1 億 7,843.92 萬元，愛普* 6,936.5 萬元居冠；創意累計違約金額達 1 億 3,897.5 萬元，櫃買市場無個股達標。</div>
   </div>
   <div class="card">
-    <div class="news-title"><span class="cat">匯市</span><span class="ntime">11/23</span>台股收紅 新台幣連 3 升 收 32.895 元 <a class="ref" href="#src-3402">[3402]</a></div>
-    <div class="news-body">中央社：新台幣盤中一度貶至 32.999 元逼近 33 元關卡，午後隨台股反彈翻升，終場收 32.895 元、升 4.1 分，連續第三個交易日走升。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">籌碼</span><span class="ntime">11/23</span>外資賣超 289 億元連 6 賣 買超前 5 名清一色為 ETF <a class="ref" href="#src-3403">[3403]</a></div>
-    <div class="news-body">中央社：三大法人合計賣超 511.77 億元，外資賣超 289.48 億元、投信賣超 32.28 億元、自營商賣超 190.01 億元；ETtoday 指外資連 6 賣累計 2,476.18 億元，台指期淨空單增 5,569 口至 10.3 萬餘口。</div>
-  </div>
-  <div class="card">
     <div class="news-title"><span class="cat">公告</span><span class="ntime">11/23 18:20</span>11 檔 Q3 財報欠佳 24 日起暫停信用交易 <a class="ref" href="#src-3504">[3504]</a></div>
     <div class="news-body">ETtoday：證交所、櫃買中心依第三季財報公布，上市台苯(1310)、沛爾生醫-創(6949) 等 5 檔、上櫃基亞(3176) 等 6 檔每股淨值低於票面，合計 11 檔自 11/24 起暫停融資融券。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">公告</span><span class="ntime">11/23 17:54</span>14 檔新增處置股 健策(3653) 24 日起處置至 11/30 <a class="ref" href="#src-3505">[3505]</a></div>
-    <div class="news-body">ETtoday：證交所與櫃買中心公告健策(3653)、東台(4526)、泰鼎-KY(4927)、訊芯-KY(6451)、聯亞(3081)、上詮(3363)、金山電(8042) 等 14 檔，自 11/24 起處置至 11/30。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/23 17:22</span>台股跌完了嗎？第一金投顧：不以第 1 根大紅 K 當底部 12 月上旬兩關卡待過 <a class="ref" href="#src-3506">[3506]</a></div>
-    <div class="news-body">經濟日報：上市櫃合計漲停 68 家、跌停 16 家；第一金投顧黃詣庭指先看今日低點 35,442 點不破、是否連續下影線與帶量紅 K，上檔年線約 39,451 點；12 月初黃仁勳國會聽證會與 12/9 聯準會決議為兩大觀察時點。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/23 17:06</span>台股終止連 7 黑 三大法人仍賣超 511 億 康和：12 月有機會年末反彈 <a class="ref" href="#src-3407">[3407]</a></div>
-    <div class="news-body">中時新聞網（工商）：加權指數日 K 終止連七黑，季線負乖離仍逾 20%、融資大幅減肥；康和證券廖繼弘認為具跌深反彈條件，但中期技術面修復仍需時間。前高盛技術分析師 Meisler 指美股 24~25 日進入超賣反彈觀察窗口。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">產業</span><span class="ntime">11/23 17:02</span>台積電(2330) 回應 AI 雜音：全球 AI 需求持續增加 先進製程仍供不應求 <a class="ref" href="#src-3507">[3507]</a></div>
-    <div class="news-body">ETtoday：台積電表示，雖然消費性產品及價格敏感市場面臨挑戰，但全球 AI 需求持續增加，先進製程產能仍供不應求。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">期貨</span><span class="ntime">11/23 17:01</span>政策救市再＋1 台指期夜盤震盪走揚 暫報 36,666 點 <a class="ref" href="#src-3408">[3408]</a></div>
-    <div class="news-body">工商時報：輝達盤前漲約 7%，加上融資維持率下修，夜盤開出後續揚；永豐期貨指跌停家數由 180 家降至 9 家、漲停回到 43 家，VIX 升至 55.36。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">政策</span><span class="ntime">11/23 15:58</span>十大券商三建言：國安基金擴大至 1 兆元、買盤擴及中小型績優股與台股 ETF <a class="ref" href="#src-3508">[3508]</a></div>
-    <div class="news-body">經濟日報：證交所、櫃買中心 22 日邀十大券商研商，除拍板融資維持率降至 120%，券商建議金融機構借款上限由 2,000 億元拉高至 7,000 億元、總規模擴至 1 兆元以上，並評估直接買進市值型或高股息 ETF，阻斷「下跌、贖回、砍股」循環。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">政策</span><span class="ntime">11/23 15:35</span>證交所董事長林修銘致函千家上市公司 鼓勵實施庫藏股、辦理法說會 <a class="ref" href="#src-3509">[3509]</a></div>
-    <div class="news-body">ETtoday：繼 11/16、17、20 三度信心喊話後，證交所 23 日致函全體上市公司並由專人致電，鼓勵實施庫藏股與辦理法人說明會，強化資訊揭露、凝聚市場信心。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/23 15:34</span>台股本益比降至 13.5 倍 永豐金總座：市場恐慌不等於價值消失 <a class="ref" href="#src-3409">[3409]</a></div>
-    <div class="news-body">中時新聞網：永豐金法說會上，經營層表示台股本益比已降至約 13.5 倍，市場恐慌不代表基本面惡化。</div>
-  </div>
-  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
-  <div class="card">
-    <div class="news-title"><span class="cat">籌碼</span><span class="ntime">11/23 15:29</span>外資今年累計賣超台股 3.21 兆元 年度首破 3 兆創新高 <a class="ref" href="#src-3410">[3410]</a></div>
-    <div class="news-body">工商時報：外資上週賣超 2,186.69 億元，賣超台積電(2330) 約 5.9 萬張、買超聯電(2303) 約 10.64 萬張；今年累計賣超金額首度在同一年度突破 3 兆元（各報累計數字略有出入，以證交所為準）。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">政策</span><span class="ntime">11/23 15:12</span>證交所：融資擔保維持率 24 日起由 130% 降至 120% 先前追繳通知取消 <a class="ref" href="#src-3510">[3510]</a></div>
-    <div class="news-body">ETtoday：證交所召集證券商取得共識，考量系統調整時程自 11/24 實施；工商時報與中央社同步報導，11/24 前擔保維持率低於 130% 已被通知補繳者，追繳紀錄一律取消。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/23 14:08</span>上市櫃 68 檔漲停 玻璃陶瓷漲 9.01%、塑膠漲 7.12% 金融跌 2.65% <a class="ref" href="#src-3411">[3411]</a></div>
-    <div class="news-body">工商時報：記憶體力積電(6770)、群聯(8299)、創見(2451)、宜鼎(5289) 漲停，千金股世芯-KY(3661)、台光電(2383)、智邦(2345) 登頂；上市成交量以聯電(2303)、友達(2409)、群創(3481) 居前。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/23 13:51</span>台股開低走高 收漲 778.60 點 終場 36,811.89 點 成交值 1 兆 791.65 億元 <a class="ref" href="#src-3301">[3301]</a></div>
-    <div class="news-body">中央社：加權指數開盤 35,899.48 點，盤中最低 35,442.41 點、最高 37,108.20 點；上漲 658 家、下跌 374 家。八大類股塑化漲 4.46% 最強，金融股跌 2.65%、營建與造紙收黑；漲幅前五為康普、聯發科(2454)、台達電(2308)、貿聯-KY(3665)、裕慶-KY。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">台股</span><span class="ntime">11/23 13:42</span>國安基金帶動反彈 台積電(2330) 收 2,030 元漲 1.5% 跌停權值股陸續打開 <a class="ref" href="#src-3302">[3302]</a></div>
-    <div class="news-body">經濟日報：成交金額大且走高為聯發科(2454)、台達電(2308)、南亞(1303)、聯電(2303)、台光電(2383)、欣興(3037)、國巨(2327)、南亞科(2408)、日月光投控(3711)；疲軟者為創意(3443)、景碩(3189)、鴻海(2317)、健策(3653)、大立光(3008)等。第一金投顧指 0.382 拉回滿足區約 33,000 點，核心仍在美股能否止穩。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
@@ -545,34 +544,35 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
+    <li id="src-3601"><a href="https://ec.ltn.com.tw/article/breakingnews/5651136" target="_blank" rel="noopener">自由財經｜美股收盤》輝達暴漲31.48％帶動美股全面收紅 台積電ADR狂飆14.03％（11/24 06:37）；中時新聞網｜黃仁勳回歸帶動美股！道瓊飆1451點、輝達漲31.48％ https://www.chinatimes.com/realtimenews/20261124000983-260410（11/24 05:44）</a></li>
+    <li id="src-3602"><a href="https://news.cnyes.com/news/id/6670378" target="_blank" rel="noopener">鉅亨網｜〈美股盤後〉見證歷史！黃仁勳辭職11天閃電回鍋 輝達單日狂飆超31% 費半瘋漲超14%（11/24 05:51）</a></li>
+    <li id="src-3603"><a href="https://udn.com/news/story/7251/9897348" target="_blank" rel="noopener">經濟日報｜47家上市櫃要買庫藏股（11/24 03:17）</a></li>
+    <li id="src-3604"><a href="https://udn.com/news/story/7251/9897517" target="_blank" rel="noopener">聯合報｜融資維持率降至120％ 回溯取消追繳（11/24 01:50）；經濟日報｜處置股制度有望再鬆綁 https://udn.com/news/story/7251/9897347（11/24 03:19）</a></li>
+    <li id="src-3605"><a href="https://www.storm.mg/article/11184466" target="_blank" rel="noopener">風傳媒｜黃仁勳回任輝達執行長！輝達開盤飆33%、那斯達克漲7.3%，法人看台股V型反轉仍待觀察（11/24 01:39）</a></li>
+    <li id="src-3606"><a href="https://udn.com/news/story/7251/9897502" target="_blank" rel="noopener">經濟日報｜三大法人賣超511億 與政府護盤股市不同調（11/24 01:33）</a></li>
+    <li id="src-3607"><a href="https://udn.com/news/story/7251/9897397" target="_blank" rel="noopener">經濟日報｜黃仁勳重返輝達 台指期夜盤一度飆漲3,665點 化解「人造熊市」危機（11/24 01:25）；中時新聞網 https://www.chinatimes.com/realtimenews/20261124000983-260410（11/24 05:44）；風傳媒｜台指期、台積電期貨漲停卻鎖不住 https://www.storm.mg/article/11184448（11/23 22:47）</a></li>
+    <li id="src-3608"><a href="https://udn.com/news/story/7251/9897061" target="_blank" rel="noopener">經濟日報｜10檔外資投信同買股吸睛 聯電、永豐金等營運展望佳（11/24 01:19）</a></li>
+    <li id="src-3609"><a href="https://www.storm.mg/article/11184460" target="_blank" rel="noopener">風傳媒｜是哪個華府高層放話，促使黃仁勳歸位？彭博：川普親自出馬，直接施壓輝達董事會（11/23 23:59）</a></li>
+    <li id="src-3610"><a href="https://www.ftnn.com.tw/news/598915" target="_blank" rel="noopener">FTNN新聞網｜限空令3.0發威！力積電、南亞科、華邦電、旺宏全面翻紅（11/23 23:15）</a></li>
+    <li id="src-3611"><a href="https://www.ftnn.com.tw/news/598938" target="_blank" rel="noopener">FTNN新聞網｜快訊／黃仁勳王者歸來台股ADR全線爆噴！台積電ADR噴漲16%、日月光、聯電ADR狂噴20%（11/23 23:11）</a></li>
+    <li id="src-3612"><a href="https://www.storm.mg/article/11184445" target="_blank" rel="noopener">風傳媒｜董事會全票通過，黃仁勳回任輝達執行長！辭職11天後大逆轉（11/23 22:39）</a></li>
+    <li id="src-3613"><a href="https://www.storm.mg/article/11184409" target="_blank" rel="noopener">風傳媒｜深化半導體產學合作，華邦電攜成大成立共同研發中心（11/23 20:32）</a></li>
     <li id="src-3501"><a href="https://money.udn.com/money/story/5599/9895960" target="_blank" rel="noopener">經濟日報｜【經濟x彭博】股市大跌難撼聯準會鷹派立場 華爾街仍青睞美債殖利率曲線趨平交易（11/23 20:21）</a></li>
+    <li id="src-3614"><a href="https://www.storm.mg/article/11184407" target="_blank" rel="noopener">風傳媒｜中華電信籲5G毫米波移往26GHz！遠傳稱「無移頻必要」（11/23 20:07）</a></li>
+    <li id="src-3615"><a href="https://www.storm.mg/article/11184404" target="_blank" rel="noopener">風傳媒｜輝達、美選震盪股市！劉揚偉喊「相信黃仁勳」（11/23 19:56）</a></li>
     <li id="src-3502"><a href="https://news.cnyes.com/news/id/6670199" target="_blank" rel="noopener">鉅亨網｜美股盤前晶片股全面飆漲 輝達與SK海力士領軍強勢反彈（11/23 19:40）；ETtoday｜美股盤前大反攻！輝達暴漲近9% 科技巨頭全面噴出 https://finance.ettoday.net/news/3277238（11/23 19:59）；TVBS新聞網｜台積電ADR盤前強彈逾8%、輝達飆近10% https://news.tvbs.com.tw/money/4055034（11/23 17:50）</a></li>
     <li id="src-3401"><a href="https://www.cna.com.tw/news/aipl/202611230242.aspx" target="_blank" rel="noopener">中央社｜卓榮泰：基本面良好 政府加大力道挺中小微企業（11/23 18:53）</a></li>
     <li id="src-3503"><a href="https://finance.ettoday.net/news/3277220" target="_blank" rel="noopener">ETtoday｜快訊／韭菜翻車！4檔違約交割金額共1.78億 創意5天爆2起（11/23 18:51）</a></li>
-    <li id="src-3402"><a href="https://www.cna.com.tw/news/afe/202611230239.aspx" target="_blank" rel="noopener">中央社｜台股收紅漲778點 新台幣連3升收32.895元（11/23）</a></li>
-    <li id="src-3403"><a href="https://www.cna.com.tw/news/afe/202611230232.aspx" target="_blank" rel="noopener">中央社｜外資賣超289億元連6賣 買超前5名清一色為ETF（11/23）</a></li>
     <li id="src-3504"><a href="https://finance.ettoday.net/news/3277211" target="_blank" rel="noopener">ETtoday｜快訊／台股11檔Q3財報欠佳！明起暫停信用交易（11/23 18:20）</a></li>
-    <li id="src-3505"><a href="https://finance.ettoday.net/news/3277199" target="_blank" rel="noopener">ETtoday｜快訊／14檔「抓去關」新名單 散熱股王健策明起處置到11／30（11/23 17:54）</a></li>
-    <li id="src-3506"><a href="https://money.udn.com/money/story/5607/9896775" target="_blank" rel="noopener">經濟日報｜台股跌完了嗎？ 法人曝還有這兩個關卡要過…（11/23 17:22）</a></li>
-    <li id="src-3407"><a href="https://www.chinatimes.com/realtimenews/20261123003521-260410" target="_blank" rel="noopener">中時新聞網（工商）｜台股終止連7黑 三大法人仍賣超511億 年末反彈關鍵曝（11/23 17:06）</a></li>
-    <li id="src-3507"><a href="https://finance.ettoday.net/news/3277147" target="_blank" rel="noopener">ETtoday｜快訊／台積電發聲反擊AI雜音 喊「先進製程持續供不應求」（11/23 17:02）</a></li>
-    <li id="src-3408"><a href="https://www.ctee.com.tw/news/20261123701478-430202" target="_blank" rel="noopener">工商時報｜政策救市再＋1 台指期夜盤震盪走揚（11/23 17:01）</a></li>
-    <li id="src-3508"><a href="https://money.udn.com/money/story/5607/9896606" target="_blank" rel="noopener">經濟日報｜別再只買台積電？十大券商喊擴大國安基金銀彈、改買中小型股與 ETF（11/23 15:58）</a></li>
-    <li id="src-3509"><a href="https://finance.ettoday.net/news/3277073" target="_blank" rel="noopener">ETtoday｜證交所董座救市拼了！發函千家上市公司 鼓勵做2件事（11/23 15:35）</a></li>
-    <li id="src-3409"><a href="https://www.chinatimes.com/realtimenews/20261123002946-260410" target="_blank" rel="noopener">中時新聞網｜台股本益比降至13.5倍！永豐金總座：市場恐慌不等於價值消失（11/23 15:34）</a></li>
-    <li id="src-3410"><a href="https://www.chinatimes.com/realtimenews/20261123003043-260410" target="_blank" rel="noopener">中時新聞網（工商）｜外資出走！今年來累計賣超台股3.21兆元創新高（11/23 15:29）；中時新聞網｜外資提款2186億狂砍台積電5.9萬張 轉手掃貨聯電10.64萬張 https://www.chinatimes.com/realtimenews/20261123002688-260410（11/23）</a></li>
-    <li id="src-3510"><a href="https://finance.ettoday.net/news/3277059" target="_blank" rel="noopener">ETtoday｜快訊／台股護盤令+1！融資擔保維持率明起降至120%（11/23 15:12）；工商時報｜確定了！證交所宣布：融資維持率24日起降為120％ https://www.ctee.com.tw/news/20261123701305-430201（11/23）</a></li>
     <li id="src-3411"><a href="https://www.ctee.com.tw/news/20261123701174-430201" target="_blank" rel="noopener">工商時報｜政策護盤台股漲778點 記憶體反攻 這檔翻紅外資目標價給5字頭（11/23 14:08）</a></li>
-    <li id="src-3301"><a href="https://www.cna.com.tw/news/afe/202611230106.aspx" target="_blank" rel="noopener">中央社｜台股開低走高 收漲778.60點（11/23 13:51）</a></li>
-    <li id="src-3302"><a href="https://udn.com/news/story/7251/9896260" target="_blank" rel="noopener">經濟日報｜國安基金率多頭上演反彈秀、台股上漲778點收36,811點 成交量再破兆（11/23 13:42）</a></li>
     <li id="src-3319"><a href="https://tw.stock.yahoo.com/news/%E7%9B%AE%E6%A8%99%E5%83%B9%E5%A5%94%E5%88%B030%E5%85%83-41-3%E5%85%83-%E5%8F%B0%E8%82%A1%E6%AE%BA7%E5%8D%83%E9%BB%9E-2%E6%AA%94%E9%98%B2%E7%A6%A6%E8%82%A1-030000979.html" target="_blank" rel="noopener">FTNN新聞網（Yahoo股市轉載）｜目標價奔到30元、41.3元！台股殺7千點「2檔防禦股」EPS衝0.79元、3.14元（11/21 19:00）</a></li>
     <li id="src-3210"><a href="https://money.udn.com/money/story/5607/9895114" target="_blank" rel="noopener">經濟日報｜大摩：聯發科可望贏得新 TPU 專案 重申目標價6,188元（11/23）；經濟日報｜聯發科擁利基 大摩按讚 維持「優於大盤」評等 https://money.udn.com/money/story/5607/9894982（11/23）</a></li>
     <li id="src-3008"><a href="https://www.ftnn.com.tw/news/598423" target="_blank" rel="noopener">FTNN新聞網｜「光學大廠」5天暴跌34.35%！投顧力挺目標價喊千元　EBO明年拚大量出貨（11/22 12:05）</a></li>
     <li id="src-2214"><a href="https://www.chinatimes.com/realtimenews/20261120002571-260410" target="_blank" rel="noopener">中時新聞網（時報資訊）｜《電零組》MLCC缺貨看到明年上半年 外資看好國巨定價能力（11/20 13:00）</a></li>
     <li id="src-2215"><a href="https://www.chinatimes.com/realtimenews/20261120002329-260410" target="_blank" rel="noopener">中時新聞網（時報資訊）｜《半導體》記憶體漲價成隱憂！瑞昱AI商機浮現 外資給800元目標價（11/20 11:59）</a></li>
     <li id="src-2008"><a href="https://www.ctee.com.tw/news/20261120700227-439901" target="_blank" rel="noopener">工商時報｜航空雙雄翱翔 內外資按讚（11/20 03:00）</a></li>
-    <li id="src-2812">加權指數 11/23 收盤 36,811.89（+778.60，+2.16%）、成交值 10,791.65 億元（較 11/20 +15.4%）取自中央社收盤報導（11/23 13:51），夜間場 data/market 尚未更新至 11/23（本機 origin/data 最後版本 11/23 06:41），證交所端點排程無法直接讀取，待前端 wl-market.js 以官方值覆蓋；融資餘額 4,352.3 億元（單日 -491.4 億）、大盤融資維持率 140.40%（-7.50）、信用風險戶數 3,107 戶（不足 1,525／追繳 1,508／處分 74）為臺灣證券交易所 11/20 官方值（data/market latest.json）；費城半導體 11/20 收盤 8,408.59（-10.73%），11/23 美股尚未開盤</li>
-    <li id="src-2813">臺灣證券交易所 每日收盤行情 MI_INDEX（自動擷取，資料日 11/20；11/23 類股資料待收盤後發布，前端自動更新）</li>
+    <li id="src-2812">加權指數 11/23 收盤 36,811.89（+778.60，+2.16%）、成交值 10,791.65 億元（較 11/20 +15.4%）取自中央社收盤報導（11/23 13:51）；本場次 data/market latest.json 與證交所端點排程無法直接讀取，待前端 wl-market.js 以官方值覆蓋；融資餘額 4,352.3 億元（單日 -491.4 億）、大盤融資維持率 140.40%（-7.50）、信用風險戶數 3,107 戶（不足 1,525／追繳 1,508／處分 74）為臺灣證券交易所 11/20 官方值；費城半導體 11/23 收盤 9,588.05（+14.03%）取自自由財經、鉅亨網美股收盤報導（11/24 06:37、05:51）</li>
+    <li id="src-2813">臺灣證券交易所 每日收盤行情 MI_INDEX（自動擷取，資料日 11/20；11/23 類股資料本場次無法讀取，前端 wl-sectors.js 自動更新）</li>
 </ol>
   </details>
 <!-- ===== /DATA:SOURCES ===== -->
