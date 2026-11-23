@@ -1,78 +1,72 @@
 {
- "updated": "2026-11-23 06:41",
- "date": "2026-11-23",
- "label": "11/23 06:41",
+ "updated": "2026-11-24 06:41",
+ "date": "2026-11-24",
+ "label": "11/24 06:41",
  "items": [
   {
    "cat": "美股",
-   "title": "晶片股血流成河！費半暴跌近11% 美股下周能否止血看三關",
-   "url": "https://money.udn.com/money/story/123398/9893064",
-   "src": "經濟日報"
+   "title": "〈美股盤後〉見證歷史！黃仁勳辭職11天閃電回鍋 輝達單日狂飆超31%",
+   "url": "https://news.cnyes.com/news/id/6670378",
+   "src": "鉅亨網"
   },
   {
    "cat": "美股",
-   "title": "美股大爆破 費半瀉逾10％、那指今年白做工",
-   "url": "https://www.ctee.com.tw/news/20261122700029-439901",
-   "src": "工商時報"
-  },
-  {
-   "cat": "美股",
-   "title": "費半一週跌17% 寫2001年來最慘",
-   "url": "https://tw.news.yahoo.com/%E8%B2%BB%E5%8D%8A-%E9%80%B1%E8%B7%8C17-%E5%AF%AB2001%E5%B9%B4%E4%BE%86%E6%9C%80%E6%85%98-043000927.html",
+   "title": "黃仁勳滿血回歸！美股4大指數強勢反彈 道瓊飆漲1447點、費半漲逾14％",
+   "url": "https://tw.news.yahoo.com/%E9%BB%83%E4%BB%81%E5%8B%B3%E6%BB%BF%E8%A1%80%E5%9B%9E%E6%AD%B8-%E7%BE%8E%E8%82%A14%E5%A4%A7%E6%8C%87%E6%95%B8%E5%BC%B7%E5%8B%A2%E5%8F%8D%E5%BD%88-%E9%81%93%E7%93%8A%E9%A3%86%E6%BC%B21447%E9%BB%9E-%E8%B2%BB%E5%8D%8A%E6%BC%B2%E9%80%BE14-215700189.html",
    "src": "Yahoo新聞"
   },
   {
    "cat": "ADR",
-   "title": "費半暴跌10.7％、台積電ADR摔逾9％！台股周一開盤繼續殺？",
-   "url": "https://tw.stock.yahoo.com/news/%E8%B2%BB%E5%8D%8A%E6%9A%B4%E8%B7%8C10-7-%E5%8F%B0%E7%A9%8D%E9%9B%BBadr%E6%91%94%E9%80%BE9-%E5%8F%B0%E8%82%A1%E5%91%A8-%E9%96%8B%E7%9B%A4%E7%B9%BC%E7%BA%8C%E6%AE%BA-015353993.html",
+   "title": "盤中速報 - 台積電ADR(TSM-US)大漲20.65%，報384.53美元",
+   "url": "https://news.cnyes.com/news/id/6670327",
+   "src": "鉅亨網"
+  },
+  {
+   "cat": "ADR",
+   "title": "台積電ADR溢價19% 明天台股開盤怎麼",
+   "url": "https://tw.news.yahoo.com/%E5%8F%B0%E7%A9%8D%E9%9B%BBadr%E6%BA%A2%E5%83%B919-%E6%98%8E%E5%A4%A9%E5%8F%B0%E8%82%A1%E9%96%8B%E7%9B%A4%E6%80%8E%E9%BA%BC-161000472.html",
+   "src": "Yahoo新聞"
+  },
+  {
+   "cat": "期貨",
+   "title": "黃仁勳「王者歸來」！台指期夜盤狂飆3665點攻漲停 衝破4萬點",
+   "url": "https://tw.stock.yahoo.com/news/%E9%BB%83%E4%BB%81%E5%8B%B3%E3%80%8C%E7%8E%8B%E8%80%85%E6%AD%B8%E4%BE%86%E3%80%8D%EF%BC%81%E5%8F%B0%E6%8C%87%E6%9C%9F%E5%A4%9C%E7%9B%A4%E7%8B%82%E9%A3%863665%E9%BB%9E%E6%94%BB%E6%BC%B2%E5%81%9C-%E8%A1%9D%E7%A0%B44%E8%90%AC%E9%BB%9E-153610840.html",
    "src": "Yahoo股市"
   },
   {
    "cat": "期貨",
-   "title": "費半挫11%台積電ADR跌9.5%，台指期夜盤崩1881點見33K",
-   "url": "https://www.businesstoday.com.tw/article/category/183008/post/202611210002/",
-   "src": "今周刊"
-  },
-  {
-   "cat": "期貨",
-   "title": "台股崩跌 金管會11/23起祭全面平盤下禁空令5措施",
-   "url": "https://cna.com.tw/news/afe/202611210127.aspx",
-   "src": "中央社"
-  },
-  {
-   "cat": "期貨",
-   "title": "美台股狂瀉金管會禁空令升級 法人：台股23日力抗賣壓",
-   "url": "https://money.udn.com/money/story/5612/9894512",
+   "title": "11月23日 期交所夜盤行情",
+   "url": "https://money.udn.com/money/story/11112/9897594",
    "src": "經濟日報"
   },
   {
-   "cat": "數據",
-   "title": "〈台股盤前要聞〉金管會：23日起全面禁平盤以下放空、10月外銷訂單連21紅",
-   "url": "https://news.cnyes.com/news/id/6669876",
+   "cat": "國際",
+   "title": "黃仁勳回歸幕後推手！川普親曝：「我說服了輝達董事會」",
+   "url": "https://news.cnyes.com/news/id/6670389",
    "src": "鉅亨網"
+  },
+  {
+   "cat": "國際",
+   "title": "黃仁勳11天大逆轉！從辭職到重掌輝達 關鍵時間軸一次看",
+   "url": "https://news.cnyes.com/news/id/6670331",
+   "src": "鉅亨網"
+  },
+  {
+   "cat": "數據",
+   "title": "忐忑的感恩節 本周公布4經濟數據 投資人緊盯",
+   "url": "https://www.worldjournal.com/wj/story/121172/9896124",
+   "src": "世界日報"
   },
   {
    "cat": "個股",
-   "title": "台積電周線重挫15.8%！台股創36年最慘單周紀錄",
-   "url": "https://news.cnyes.com/news/id/6669709",
-   "src": "鉅亨網"
+   "title": "台達董座申讓近半數持股 要轉到新籌備公司廣曜",
+   "url": "https://money.udn.com/money/story/5607/9897326",
+   "src": "經濟日報"
   },
   {
-   "cat": "國際",
-   "title": "〈紐約匯市〉美元走軟 日元、瑞郎強升 比特幣跌破6萬美元",
-   "url": "https://news.cnyes.com/news/id/6669310",
-   "src": "鉅亨網"
-  },
-  {
-   "cat": "國際",
-   "title": "油價漲 週線連3黑",
-   "url": "https://www.cna.com.tw/news/afe/202611210018.aspx",
-   "src": "中央社"
-  },
-  {
-   "cat": "數據",
-   "title": "11月23日 五件財經大事搶先看",
-   "url": "https://money.udn.com/money/story/5607/9895427",
+   "cat": "個股",
+   "title": "47家上市櫃要買庫藏股",
+   "url": "https://money.udn.com/money/story/5607/9897348",
    "src": "經濟日報"
   }
  ]
