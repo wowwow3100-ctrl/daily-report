@@ -202,7 +202,10 @@ def do_push():
 # ---------------------------------------------------------------------------
 import sys
 NOWIN = 0x08000000 if os.name == "nt" else 0  # CREATE_NO_WINDOW：pythonw 底下跑 git 不要跳黑窗
-DATA_WT = os.path.join(os.path.dirname(HERE), "_wl_data_branch")
+# 2026-11-24 改：data 分支改用「獨立 clone」(D:\APP\_wl_data_clone)。舊的 _wl_data_branch 是主 repo 的 worktree，
+# 跟主 repo 共用物件庫；11/22 深夜有一個物件檔和 market/latest.json 在磁碟上壞掉（讀取會回 Function not implemented），
+# 之後融資、重大訊息、資金流向、營收全部抓不了。獨立 clone 不碰那個壞掉的物件庫，再壞也能自己重抓。
+DATA_WT = os.path.join(os.path.dirname(HERE), "_wl_data_clone")
 PUMP_STATUS = os.path.join(HERE, ".pump_status")
 _pump_done = {}
 
@@ -217,13 +220,23 @@ def gitc(args, cwd, timeout=240):
 
 
 def ensure_data_wt():
+    """準備 data 分支的獨立 clone：已經有就 fetch＋reset；壞了就把舊資料夾改名保留、重新 clone（不刪任何東西）。"""
     if os.path.exists(os.path.join(DATA_WT, ".git")):
         gitc(["fetch", "origin", "data"], DATA_WT)
         rc, _, err = gitc(["reset", "--hard", "origin/data"], DATA_WT)
-        return rc == 0, err
-    gitc(["fetch", "origin", "data"], HERE)
-    gitc(["worktree", "prune"], HERE)
-    rc, _, err = gitc(["worktree", "add", "-f", "-B", "data-local", DATA_WT, "origin/data"], HERE)
+        if rc == 0:
+            return True, ""
+        try:
+            os.replace(DATA_WT, DATA_WT + "_broken_" + datetime.datetime.now().strftime("%Y%m%d_%H%M%S"))
+            log("data clone broken, renamed and re-cloning: %s" % err[-200:])
+        except OSError as e:
+            return False, "reset failed: %s / rename failed: %s" % (err[-300:], e)
+    rc, url, _ = gitc(["remote", "get-url", "origin"], HERE)
+    url = (url or "").strip() or "https://github.com/wowwow3100-ctrl/daily-report.git"
+    rc, _, err = gitc(["clone", "--depth", "50", "--branch", "data", "--single-branch", url, DATA_WT],
+                      os.path.dirname(HERE), timeout=600)
+    if rc == 0:
+        log("data clone created at %s" % DATA_WT)
     return rc == 0, err
 
 
