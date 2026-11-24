@@ -498,10 +498,7 @@
   }
   var vs=document.getElementById("views");
   if(vs){
-    fetch("https://abacus.jasoncameron.dev/hit/wanglai-daily-report/site")
-      .then(function(r){return r.json();})
-      .then(function(j){if(j&&j.value)vs.textContent=Number(j.value).toLocaleString();})
-      .catch(function(e){var w=document.getElementById("vwrap");if(w)w.style.display="none";});
+    (function(){/* 2026-11-24：計數服務偶爾沒回應時，不再把「累計瀏覽」整段藏起來；先顯示這台裝置上次看到的數字，重試一次 */var VK="wl_views_last";var showV=function(v){vs.textContent=Number(v).toLocaleString();};try{var c0=localStorage.getItem(VK);if(c0)showV(c0);}catch(e){}var hitV=function(n){fetch("https://abacus.jasoncameron.dev/hit/wanglai-daily-report/site").then(function(r){return r.json();}).then(function(j){if(j&&j.value){showV(j.value);try{localStorage.setItem(VK,String(j.value));}catch(e){}}}).catch(function(e){if(n<1){setTimeout(function(){hitV(n+1);},3000);return;}var has=false;try{has=!!localStorage.getItem(VK);}catch(e2){}if(!has){var w=document.getElementById("vwrap");if(w)w.style.display="none";}});};hitV(0);})();
   }
   // ---- 設定面板開關 ----
   var sb=document.getElementById("setbtn"), sp=document.getElementById("setpanel");
@@ -791,6 +788,6 @@
 })();
 </script>
 <script src="wl-new.js?v=4"></script>
-<script src="wl-pro.js?v=10"></script>
+<script src="wl-pro.js?v=12"></script>
 </body>
 </html>

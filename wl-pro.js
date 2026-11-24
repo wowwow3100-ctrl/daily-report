@@ -191,8 +191,19 @@
   chk();
   if ("MutationObserver" in window) new MutationObserver(chk).observe(ol, { childList: true, characterData: true, subtree: true });
   var d = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10).replace(/-/g, "");
-  fetch("https://abacus.jasoncameron.dev/hit/wanglai-daily-report/day" + d)
-    .then(function (r) { return r.json(); })
-    .then(function (j) { if (j && j.value) today.querySelector("b").textContent = Number(j.value).toLocaleString(); else today.style.display = "none"; })
-    .catch(function () { today.style.display = "none"; });
+  // 2026-11-24：計數服務偶爾沒回應時，先顯示這台裝置今天上次看到的數字並重試一次，不再整段藏起來
+  var TK = "wl_today_" + d, tb = today.querySelector("b");
+  try { var t0 = localStorage.getItem(TK); if (t0) tb.textContent = Number(t0).toLocaleString(); } catch (e) {}
+  function hitT(n) {
+    fetch("https://abacus.jasoncameron.dev/hit/wanglai-daily-report/day" + d)
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (j && j.value) { tb.textContent = Number(j.value).toLocaleString(); try { localStorage.setItem(TK, String(j.value)); } catch (e) {} }
+      })
+      .catch(function () {
+        if (n < 1) { setTimeout(function () { hitT(n + 1); }, 3000); return; }
+        if (tb.textContent === "—") today.style.display = "none";
+      });
+  }
+  hitT(0);
 })();

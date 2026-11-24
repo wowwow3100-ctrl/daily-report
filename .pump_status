@@ -7,9 +7,9 @@
   },
   "sectors": {
     "kind": "sectors",
-    "ts": "2026-11-24T20:38:50",
-    "fetch": "wrote 2026-11-24 ['半導體', '玻璃陶瓷', '其他電子', '電子零組件', '電腦及週邊設備']\n",
-    "status": "pushed"
+    "ts": "2026-11-24T20:45:00",
+    "fetch": "no change 2026-11-24\n",
+    "status": "nochange"
   },
   "market": {
     "kind": "market",
