@@ -1,72 +1,78 @@
 {
- "updated": "2026-11-25 06:41",
- "date": "2026-11-25",
- "label": "11/25 06:41",
+ "updated": "2026-11-26 06:41",
+ "date": "2026-11-26",
+ "label": "11/26 06:41",
  "items": [
   {
    "cat": "美股",
-   "title": "〈美股盤後〉川普關稅風暴恐再起！費半慘跌近8% 輝達摔超5%",
-   "url": "https://news.cnyes.com/news/id/6671173",
-   "src": "鉅亨網"
+   "title": "美股收盤》逢低買盤進場！道瓊收復千點跌幅上漲 台積電ADR跌近2％",
+   "url": "https://ec.ltn.com.tw/article/breakingnews/5653621",
+   "src": "自由財經"
   },
   {
    "cat": "美股",
-   "title": "〈美股早盤〉狂歡只一天？黃仁勳回歸行情降溫 輝達拖累主要指數開低",
-   "url": "https://news.cnyes.com/news/id/6670998",
-   "src": "鉅亨網"
+   "title": "美股收盤漲跌互見！那指跌幅收斂 道瓊逆勢上揚164點",
+   "url": "https://finance.ftvnews.com.tw/news/detail/2026B26W0070",
+   "src": "民視財經網"
   },
   {
-   "cat": "ADR",
-   "title": "盤中速報 - 台積電ADR(TSM-US)大跌5.02%，報345.36美元",
-   "url": "https://news.cnyes.com/news/id/6671132",
-   "src": "鉅亨網"
-  },
-  {
-   "cat": "期貨",
-   "title": "【盤前】川普關稅再起費半崩近8%！台指夜盤殺1842點 台股4萬點告急",
-   "url": "https://www.setn.com/news/1944400",
-   "src": "三立新聞"
-  },
-  {
-   "cat": "期貨",
-   "title": "快訊／台指期夜盤失守39K！狂殺近1500點 費半重挫逾7%",
-   "url": "https://finance.ettoday.net/news/3277925",
-   "src": "ETtoday"
-  },
-  {
-   "cat": "國際",
-   "title": "川普新關稅最快本週揭曉！歐盟、日韓估15%以下 3國恐遭重課",
-   "url": "https://ettoday.net/news/20261124/3277915.htm",
-   "src": "ETtoday"
-  },
-  {
-   "cat": "國際",
-   "title": "川普又提「台灣偷晶片」 放話兩年後關稅上看200％",
-   "url": "https://www.chinatimes.com/realtimenews/20261124005230-260408",
-   "src": "中國時報"
-  },
-  {
-   "cat": "國際",
-   "title": "Megaspeed遭美列黑名單 涉助中取得輝達AI晶片",
-   "url": "https://news.ebc.net.tw/news/world/582180",
-   "src": "東森新聞"
-  },
-  {
-   "cat": "國際",
-   "title": "台股飆漲拉不動？美元太強壓制 新台幣逆向走貶",
-   "url": "https://www.ctee.com.tw/news/20261124701018-430302",
-   "src": "工商時報"
-  },
-  {
-   "cat": "個股",
-   "title": "台股漲點創紀錄 外資竟仍狂賣超503億元 這檔主動ETF遭大賣11萬張",
-   "url": "https://money.udn.com/money/story/5607/9899212",
+   "cat": "美股",
+   "title": "科技股逢賣壓 美股多收黑",
+   "url": "https://money.udn.com/money/story/123398/9902519",
    "src": "經濟日報"
   },
   {
+   "cat": "ADR",
+   "title": "盤中速報 - 台積電ADR(TSM-US)大跌5.75%，報329.13美元",
+   "url": "https://news.cnyes.com/news/id/6671782",
+   "src": "鉅亨網"
+  },
+  {
+   "cat": "期貨",
+   "title": "台指期夜盤爆殺！大跌逾1300點「失守37K大關」",
+   "url": "https://finance.ettoday.net/news/3278538",
+   "src": "ETtoday財經雲"
+  },
+  {
+   "cat": "期貨",
+   "title": "37K失守！ 台指期夜盤狂殺逾1300點 台積電ADR盤前跌4％",
+   "url": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E6%8C%87%E6%9C%9F%E5%A4%9C%E7%9B%A4%E5%86%8D%E4%B8%8B%E6%AE%BA-%E5%BA%A6%E9%87%8D%E6%8C%AB%E5%8D%83%E9%BB%9E-37k%E5%B2%8C%E5%B2%8C%E5%8F%AF%E5%8D%B1-102537374.html",
+   "src": "Yahoo股市"
+  },
+  {
+   "cat": "國際",
+   "title": "央行棄守！新台幣狂貶1.87角「33元防線失守」 匯市爆大量",
+   "url": "https://udn.com/news/story/7239/9901476",
+   "src": "聯合新聞網"
+  },
+  {
+   "cat": "國際",
+   "title": "張建一：估央行12月考量利差升息半碼 但未必能拉抬匯率",
+   "url": "https://udn.com/news/story/7239/9901525",
+   "src": "聯合新聞網"
+  },
+  {
+   "cat": "國際",
+   "title": "外匯速報 - 美元/台幣(USDTWD) 大漲0.52%，報33.11元",
+   "url": "https://news.cnyes.com/news/id/6671655",
+   "src": "鉅亨網"
+  },
+  {
    "cat": "數據",
-   "title": "11月25日 五件財經大事搶先看",
-   "url": "https://money.udn.com/money/story/5607/9899989",
+   "title": "美上週初領失業金人數降至18.9萬 遠低於預期",
+   "url": "https://www.epochtimes.com/b5/26/11/25/n14895159.htm",
+   "src": "大紀元"
+  },
+  {
+   "cat": "數據",
+   "title": "11月26日重要財經行事曆",
+   "url": "https://money.udn.com/money/story/5607/9902562",
+   "src": "經濟日報"
+  },
+  {
+   "cat": "個股",
+   "title": "11月26日 五件財經大事搶先看",
+   "url": "https://money.udn.com/money/story/5607/9902487",
    "src": "經濟日報"
   }
  ]
