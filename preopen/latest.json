@@ -1,78 +1,78 @@
 {
- "updated": "2026-11-26 06:41",
- "date": "2026-11-26",
- "label": "11/26 06:41",
+ "updated": "2026-11-27 06:41",
+ "date": "2026-11-27",
+ "label": "11/27 06:41",
  "items": [
   {
    "cat": "美股",
-   "title": "美股收盤》逢低買盤進場！道瓊收復千點跌幅上漲 台積電ADR跌近2％",
-   "url": "https://ec.ltn.com.tw/article/breakingnews/5653621",
+   "title": "感恩節前夕奇蹟逆轉，美股急殺後反攻，那指、費半跌0.6%，道瓊漲164點",
+   "url": "https://tw.stock.yahoo.com/news/%E6%84%9F%E6%81%A9%E7%AF%80%E5%89%8D%E5%A4%95%E5%A5%87%E8%B9%9F%E9%80%86%E8%BD%89-%E7%BE%8E%E8%82%A1%E6%80%A5%E6%AE%BA%E5%BE%8C%E5%8F%8D%E6%94%BB-%E9%82%A3%E6%8C%87-%E8%B2%BB%E5%8D%8A%E8%B7%8C0-6-002742976.html",
+   "src": "Yahoo股市"
+  },
+  {
+   "cat": "美股",
+   "title": "投資人注意！美國感恩節今休市1天 黑色星期五提前收盤",
+   "url": "https://stock.ltn.com.tw/article/jre7h9gtgsbd",
    "src": "自由財經"
   },
   {
-   "cat": "美股",
-   "title": "美股收盤漲跌互見！那指跌幅收斂 道瓊逆勢上揚164點",
-   "url": "https://finance.ftvnews.com.tw/news/detail/2026B26W0070",
-   "src": "民視財經網"
+   "cat": "ADR",
+   "title": "感恩節假期前現逢低買盤！美股道瓊收復千點跌幅收漲、台積電ADR跌近2%",
+   "url": "https://newtalk.tw/news/view/2026-11-26/1073773",
+   "src": "新頭殼"
   },
   {
-   "cat": "美股",
-   "title": "科技股逢賣壓 美股多收黑",
-   "url": "https://money.udn.com/money/story/123398/9902519",
+   "cat": "期貨",
+   "title": "11月26日期交所夜盤行情",
+   "url": "https://money.udn.com/money/story/11112/9904852",
    "src": "經濟日報"
   },
   {
-   "cat": "ADR",
-   "title": "盤中速報 - 台積電ADR(TSM-US)大跌5.75%，報329.13美元",
-   "url": "https://news.cnyes.com/news/id/6671782",
-   "src": "鉅亨網"
+   "cat": "期貨",
+   "title": "台指期夜盤暫由紅翻黑 39K多空攻防戰再起",
+   "url": "https://udn.com/news/story/7255/9904466",
+   "src": "聯合新聞網"
   },
   {
    "cat": "期貨",
-   "title": "台指期夜盤爆殺！大跌逾1300點「失守37K大關」",
-   "url": "https://finance.ettoday.net/news/3278538",
-   "src": "ETtoday財經雲"
-  },
-  {
-   "cat": "期貨",
-   "title": "37K失守！ 台指期夜盤狂殺逾1300點 台積電ADR盤前跌4％",
-   "url": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E6%8C%87%E6%9C%9F%E5%A4%9C%E7%9B%A4%E5%86%8D%E4%B8%8B%E6%AE%BA-%E5%BA%A6%E9%87%8D%E6%8C%AB%E5%8D%83%E9%BB%9E-37k%E5%B2%8C%E5%B2%8C%E5%8F%AF%E5%8D%B1-102537374.html",
+   "title": "美股感恩節休市！台指期夜盤開低震盪 一度翻紅轉跌下探39008點",
+   "url": "https://tw.stock.yahoo.com/news/%E7%BE%8E%E8%82%A1%E6%84%9F%E6%81%A9%E7%AF%80%E4%BC%91%E5%B8%82-%E5%8F%B0%E6%8C%87%E6%9C%9F%E5%A4%9C%E7%9B%A4%E9%96%8B%E4%BD%8E%E9%9C%87%E7%9B%AA-%E5%BA%A6%E7%BF%BB%E7%B4%85%E8%BD%89%E8%B7%8C%E4%B8%8B%E6%8E%A239008%E9%BB%9E-145400815.html",
    "src": "Yahoo股市"
   },
   {
    "cat": "國際",
-   "title": "央行棄守！新台幣狂貶1.87角「33元防線失守」 匯市爆大量",
-   "url": "https://udn.com/news/story/7239/9901476",
-   "src": "聯合新聞網"
+   "title": "新台幣強升1.79角 收32.947元",
+   "url": "https://www.cna.com.tw/news/afe/202611260185.aspx",
+   "src": "中央社"
   },
   {
    "cat": "國際",
-   "title": "張建一：估央行12月考量利差升息半碼 但未必能拉抬匯率",
-   "url": "https://udn.com/news/story/7239/9901525",
-   "src": "聯合新聞網"
-  },
-  {
-   "cat": "國際",
-   "title": "外匯速報 - 美元/台幣(USDTWD) 大漲0.52%，報33.11元",
-   "url": "https://news.cnyes.com/news/id/6671655",
-   "src": "鉅亨網"
+   "title": "【歐股盤後】收跌",
+   "url": "https://tw.stock.yahoo.com/news/%E6%AD%90%E8%82%A1%E7%9B%A4%E5%BE%8C-%E6%94%B6%E8%B7%8C-214035776.html",
+   "src": "Yahoo股市"
   },
   {
    "cat": "數據",
-   "title": "美上週初領失業金人數降至18.9萬 遠低於預期",
-   "url": "https://www.epochtimes.com/b5/26/11/25/n14895159.htm",
-   "src": "大紀元"
+   "title": "美國10月核心PCE通脹3.3%　第三季GDP大幅上修",
+   "url": "https://hk.on.cc/hk/bkn/cnt/finance/20261125/bkn-20261125213410083-1125_00842_001.html",
+   "src": "東網"
   },
   {
-   "cat": "數據",
-   "title": "11月26日重要財經行事曆",
-   "url": "https://money.udn.com/money/story/5607/9902562",
+   "cat": "個股",
+   "title": "台股上漲956點收39151點 台積電尾盤爆大量收2145元",
+   "url": "https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E4%B8%8A%E6%BC%B2956%E9%BB%9E%E6%94%B639151%E9%BB%9E-%E5%8F%B0%E7%A9%8D%E9%9B%BB%E5%B0%BE%E7%9B%A4%E7%88%86%E5%A4%A7%E9%87%8F%E6%94%B62145%E5%85%83-055538750.html",
+   "src": "Yahoo新聞"
+  },
+  {
+   "cat": "個股",
+   "title": "今日最夯股／聯茂午盤鎖漲停 上檔仍有月、季線反壓",
+   "url": "https://money.udn.com/money/story/5607/9904532",
    "src": "經濟日報"
   },
   {
    "cat": "個股",
-   "title": "11月26日 五件財經大事搶先看",
-   "url": "https://money.udn.com/money/story/5607/9902487",
+   "title": "遠傳小金雞 數聯資安12月1日登興櫃",
+   "url": "https://money.udn.com/money/story/11074/9904374",
    "src": "經濟日報"
   }
  ]
