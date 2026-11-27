@@ -137,6 +137,62 @@ def guard_index():
     log("guard_index: repaired index.html tail (footer/nav) from HEAD")
 
 
+# 2026-11-27 加：主 repo 的 git 物件庫在磁碟上壞了一處（11/25 下午起 commit 一直報
+# "unable to create temporary file: Invalid argument / Error building trees"），首頁更新全卡在本機。
+# 遇到這類錯誤就從 GitHub 重抓一份乾淨的 .git 換上去：網站檔案完全不動，
+# 壞的 .git 搬到 D:\APP\_wl_main_git_broken_時間 保留（不刪），6 小時最多做一次。
+OBJ_ERR = ("unable to create temporary file", "error building trees", "unable to write",
+           "loose object", "function not implemented", "insufficient permission for adding an object",
+           "is corrupt", "bad object", "object file", "unable to read")
+_HEAL = {"t": 0.0}
+CORE_KEEP = ("core.autocrlf", "core.safecrlf", "core.eol", "core.quotepath", "core.filemode",
+             "core.ignorecase", "core.longpaths", "core.symlinks", "core.precomposeunicode")
+
+
+def heal_main_git():
+    import shutil
+    if time.time() - _HEAL["t"] < 6 * 3600:
+        return False, "healed less than 6 hours ago, skip"
+    _HEAL["t"] = time.time()
+    parent = os.path.dirname(HERE)
+    stamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    fresh = os.path.join(parent, "_wl_main_git_new_" + stamp)
+    broken = os.path.join(parent, "_wl_main_git_broken_" + stamp)
+    rc, url, _ = git(["remote", "get-url", "origin"])
+    url = (url or "").strip() or "https://github.com/wowwow3100-ctrl/daily-report.git"
+    rc, _, err = gitc(["clone", "--no-checkout", "--depth", "50", "--branch", "main", "--single-branch",
+                       url, fresh], parent, timeout=900)
+    if rc != 0:
+        shutil.rmtree(fresh, ignore_errors=True)
+        return False, "clone failed: %s" % err[-300:]
+    keep = []
+    rc, cfg, _ = gitc(["config", "-f", os.path.join(HERE, ".git", "config"), "--get-regexp", r"^core\."], parent)
+    for ln in (cfg or "").splitlines():
+        k, _, v = ln.partition(" ")
+        if k.lower() in CORE_KEEP:
+            keep.append((k, v))
+    try:
+        os.replace(os.path.join(HERE, ".git"), broken)
+    except OSError as e:
+        shutil.rmtree(fresh, ignore_errors=True)
+        return False, "move old .git failed (folder open in another program?): %s" % e
+    try:
+        os.replace(os.path.join(fresh, ".git"), os.path.join(HERE, ".git"))
+    except OSError as e:
+        try:
+            os.replace(broken, os.path.join(HERE, ".git"))
+        except OSError:
+            pass
+        shutil.rmtree(fresh, ignore_errors=True)
+        return False, "move new .git failed: %s" % e
+    shutil.rmtree(fresh, ignore_errors=True)
+    for k, v in keep:
+        git(["config", k, v])
+    rc, _, err = git(["reset", "-q"])
+    log("main .git replaced with fresh clone; old one kept at %s" % broken)
+    return rc == 0, err
+
+
 def do_push():
     global _last_push_ts
     if time.time() - _last_push_ts < RATE_LIMIT_SEC:
@@ -177,6 +233,19 @@ def do_push():
     rc1, o1, e1 = git(["add", "-A"])
     cargs = GIT_AUTHOR + ["commit", "-m", subject] + (["-m", body] if body else [])
     rc2, o2, e2 = git(cargs)
+    if (rc1 != 0 or rc2 != 0) and any(s in (e1 + e2).lower() for s in OBJ_ERR):
+        log("commit failed on object store (%s); healing main .git" % (e1 + e2).strip()[-160:].replace("\n", " | "))
+        hok, herr = heal_main_git()
+        log("heal main .git -> %s %s" % ("ok" if hok else "FAILED", (herr or "")[-200:]))
+        if hok:
+            files, err = changed_files()
+            reason = "git status failed after heal: %s" % err if files is None else safety_check(files, bulk=bulk)
+            if reason:
+                write_result({"status": "rejected", "error": reason, "files": (files or [])[:30]})
+                log("REJECTED after heal: %s" % reason)
+                return
+            rc1, o1, e1 = git(["add", "-A"])
+            rc2, o2, e2 = git(cargs)
     rc3, o3, e3 = git(["push", "origin", "main"])
     rc4, sha, _ = git(["rev-parse", "--short", "HEAD"])
 
