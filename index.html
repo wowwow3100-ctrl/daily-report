@@ -249,7 +249,7 @@
     <h1 class="logo">旺來<small>台股情報站</small></h1>
     <div class="head-right">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div class="stamp" id="updated">2026/11/28（週六）盤後場次</div>
+        <div class="stamp" id="updated">2026/11/28（週六）夜間場次</div>
         <div class="setwrap">
           <button class="setbtn" id="setbtn" title="顯示設定" aria-label="顯示設定"><svg class="wl-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>設定</button>
           <div class="setpanel" id="setpanel">
@@ -294,7 +294,7 @@
   <!-- ===== /WL:FEATURE ===== -->
 
   <!-- ===== DATA:MARKET ===== -->
-  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/28 盤後場．週六休市；加權、成交值、融資餘額、大盤融資維持率、信用風險戶數皆為證交所 11/27 官方值；費城半導體為 11/27 美股收盤）</span></h2>
+  <h2 id="mkt">大盤速覽<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/28 夜間場．週六休市；加權、成交值、融資餘額、大盤融資維持率、信用風險戶數皆為證交所 11/27 官方值；費城半導體為 11/27 美股收盤）</span></h2>
   <div class="mkt">
     <div class="m"><div class="lbl">加權指數</div><div class="val">39,308.08</div><div class="chg up">+156.27（+0.40%）（11/27）</div></div>
     <div class="m"><div class="lbl">成交值（上市）</div><div class="val">6,947 億</div><div class="chg down">較前日 -17.8%（11/27）</div></div>
@@ -391,7 +391,19 @@
   </div>
 <!-- ===== /DATA:PREOPEN ===== -->
   <!-- ===== DATA:FOCUS_NEWS ===== -->
-  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/28 盤後場．週六休市．依時間由新到舊．共 20 則）</span></h2>
+  <h2 id="focus">今日焦點<span class="muted" style="font-size:.75rem;letter-spacing:0;">（11/28 夜間場．週六休市．依時間由新到舊．共 20 則）</span></h2>
+  <div class="card">
+    <div class="news-title"><span class="cat">時事</span><span class="ntime">11/28 21:53</span>九合一縣市長當選名單出爐 六都藍綠各 3 都 雲林、花蓮仍在拉鋸 <a class="ref" href="#src-4660">[4660]</a></div>
+    <div class="news-body">Yahoo新聞：開票中非正式統計，國民黨守住台北、新北、桃園，民進黨拿下台中、台南、高雄；各媒體統計席次略有出入（10:9:1 至 12:9:1），差異在雲林、花蓮是否計入，正式結果以中選會公告為準。選後首個交易日為 11/30（週一），同日 MSCI 季度調整生效。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">時事</span><span class="ntime">11/28 21:15</span>台中、宜蘭、新竹縣政黨輪替 花蓮、雲林票數接近恐驗票 <a class="ref" href="#src-4661">[4661]</a></div>
+    <div class="news-body">Yahoo新聞：台中市何欣純得票逾 75 萬宣布當選，為縣市合併後第三次政黨輪替；雲林縣張嘉郡與劉建國票數非常接近，可能進入驗票程序。</div>
+  </div>
+  <div class="card">
+    <div class="news-title"><span class="cat">時事</span><span class="ntime">11/28</span>8 位現任縣市長爭取連任 全數勝選 <a class="ref" href="#src-4662">[4662]</a></div>
+    <div class="news-body">自由時報：本屆有 8 位現任縣市長尋求連任，開票結果全數勝選。法人先前多指出選後不確定性降低，下週觀察重點仍在外資動向、成交量與 MSCI 調整。</div>
+  </div>
   <div class="card">
     <div class="news-title"><span class="cat">國際</span><span class="ntime">11/28 15:34</span>美半導體股震盪 槓桿 ETF 3 日跌近 26% 南韓散戶逆勢砸約 160 億元搶買 <a class="ref" href="#src-4652">[4652]</a></div>
     <div class="news-body">自由財經：追蹤半導體指數 3 倍報酬的 SOXL 在 11/23～25 累計下跌 25.89%，南韓投資人同期淨買入約 4.86 億美元，為買進最多的美股；報導並提到法國巴黎銀行示警記憶體恐供給過剩，將美光目標價由 1,700 美元下修至 775 美元。</div>
@@ -440,6 +452,7 @@
     <div class="news-title"><span class="cat">台股</span><span class="ntime">11/28 08:35</span>資深分析師張錫：台股已到「甜甜價」 估台積電(2330) 2028 年 EPS 200 元 <a class="ref" href="#src-4645">[4645]</a></div>
     <div class="news-body">工商時報：張錫估上市櫃獲利今年成長約 60%、明年 25%～30%；台積電今明兩年 EPS 市場預估上修至 110、150 元，聯發科(2454) 明年 EPS 法人預估約 150 元；他也提醒聯發科護城河不如台積電。</div>
   </div>
+  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">11/28 07:00</span>台股缺「成交量」東風 下周外資動向成關鍵 低軌衛星股受關注 <a class="ref" href="#src-4646">[4646]</a></div>
     <div class="news-body">中時新聞網：台股本週反彈但成交量萎縮，下周外資是否回流被視為行情關鍵，報導並點名 6 檔低軌衛星概念股。</div>
@@ -452,7 +465,6 @@
     <div class="news-title"><span class="cat">國際</span><span class="ntime">11/28 05:08</span>中東能源設施與油輪遇襲增加 市場交投清淡 油價震盪收低 <a class="ref" href="#src-4626">[4626]</a></div>
     <div class="news-body">中央社：西德州中級原油 1 月期貨跌 0.7% 收每桶 83.08 美元，北海布倫特原油 1 月期貨跌 1.2% 收每桶 95.44 美元；投資人對供應憂慮加深，但節後交投清淡。</div>
   </div>
-  <details class="more"><summary>▾ 更多焦點（再看 5 則）</summary>
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">11/28 04:10</span>選後台股 法人看好續反彈 <a class="ref" href="#src-4627">[4627]</a></div>
     <div class="news-body">工商時報（中時新聞網）：台股本週反彈 3,274 點後仍卡年線，九合一選舉 28 日投票；法人以歷史經驗看選後不確定性降低，外資連 10 賣與聯準會升息預期仍是觀察變數。</div>
@@ -460,18 +472,6 @@
   <div class="card">
     <div class="news-title"><span class="cat">台股</span><span class="ntime">11/28 04:10</span>年底作帳熱身 投信先鎖碼績優股 <a class="ref" href="#src-4628">[4628]</a></div>
     <div class="news-body">工商時報（中時新聞網）：投信 27 日買超 85.19 億元、連 4 買，年底作帳季將至，投信資金集中於獲利表現較佳的個股。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/28 04:10</span>川普找黃仁勳 12 月 4 日一起去台積電(2330) 亞利桑那廠 <a class="ref" href="#src-4647">[4647]</a></div>
-    <div class="news-body">中時新聞網（要聞）：川普預定 12/4 出席台積電亞利桑那廠擴建典禮，報導指將邀輝達執行長黃仁勳同行。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">國際</span><span class="ntime">11/28 04:10</span>七家外資大砍長鑫科技持股 <a class="ref" href="#src-4648">[4648]</a></div>
-    <div class="news-body">工商時報（全球財經）：報導七家外資機構調降對中國記憶體廠長鑫科技的持股。</div>
-  </div>
-  <div class="card">
-    <div class="news-title"><span class="cat">產業</span><span class="ntime">11/28 02:45</span>美畫新紅線 算力不准租給陸企 輝達晶片管制升級牽動鴻海(2317)、廣達(2382)、緯創(3231) <a class="ref" href="#src-4629">[4629]</a></div>
-    <div class="news-body">經濟日報：CNBC 引述知情人士，販售內含輝達晶片產品的業者已告知新興 AI 雲端業者，運算資源若出租給中國大陸企業就不供貨，以因應美國強化遠端存取管制；可能牽動台灣代工大廠訂單。</div>
   </div>
   </details>
 <!-- ===== /DATA:FOCUS_NEWS ===== -->
@@ -544,6 +544,9 @@
   <details class="srcbox">
   <summary>📎 點開查看本日全部引用來源</summary>
   <ol class="srcs">
+    <li id="src-4660"><a href="https://tw.news.yahoo.com/2026%E4%B9%9D%E5%90%88%E4%B8%80%E9%81%B8%E8%88%89-%E5%8F%B0%E5%8C%97%E5%B8%82%E3%80%81%E6%96%B0%E5%8C%97%E5%B8%82%E7%AD%8922%E7%B8%A3%E5%B8%82%E9%95%B7%E7%95%B6%E9%81%B8%E5%90%8D%E5%96%AE-135322259.html" target="_blank" rel="noopener">Yahoo新聞｜2026九合一選舉 台北市、新北市等22縣市長當選名單（11/28 21:53）</a></li>
+    <li id="src-4661"><a href="https://tw.news.yahoo.com/%E5%8F%B0%E4%B8%AD-%E5%AE%9C%E8%98%AD-%E6%96%B0%E7%AB%B9%E7%B8%A3%E8%AE%8A%E5%A4%A9-22%E7%B8%A3%E5%B8%82%E9%95%B7%E6%9C%80%E6%96%B0%E5%90%8D%E5%96%AE-%E6%AC%A1%E7%9C%8B-131500509.html" target="_blank" rel="noopener">Yahoo新聞｜台中、宜蘭、新竹縣變天！22縣市長最新名單一次看 花蓮、雲林恐驗票（11/28 21:15）</a></li>
+    <li id="src-4662"><a href="https://news.ltn.com.tw/news/politics/breakingnews/5656510" target="_blank" rel="noopener">自由時報｜九合一選舉》8位現任縣市長連任保衛戰 全數勝選（11/28）</a></li>
     <li id="src-4652"><a href="https://ec.ltn.com.tw/article/breakingnews/5656367" target="_blank" rel="noopener">自由財經｜股市賭徒來了！美半導體股遭血洗 「他們」竟砸160億抄底槓桿ETF（11/28 15:34）</a></li>
     <li id="src-4641"><a href="https://news.tvbs.com.tw/money/4057458" target="_blank" rel="noopener">TVBS新聞網｜台指期夜盤急殺免驚！專家：下週戰月線41K、關注6族群（11/28 13:21）</a></li>
     <li id="src-4653"><a href="https://ec.ltn.com.tw/article/breakingnews/5656163" target="_blank" rel="noopener">自由財經｜外資2個月狂賣台股逾2兆！謝金河：台灣金融市場歷經嚴厲壓力測試（11/28 12:50）</a></li>
@@ -561,9 +564,6 @@
     <li id="src-4626"><a href="https://www.cna.com.tw/news/afe/202611280007.aspx" target="_blank" rel="noopener">中央社｜市場交投清淡　油價震盪收低（11/28 05:08）</a></li>
     <li id="src-4627"><a href="https://www.chinatimes.com/newspapers/20261128000145-260202" target="_blank" rel="noopener">工商時報（中時新聞網）｜選後台股 法人看好續反彈（11/28 04:10）</a></li>
     <li id="src-4628"><a href="https://www.chinatimes.com/newspapers/20261128000142-260202" target="_blank" rel="noopener">工商時報（中時新聞網）｜作帳熱身 投信先鎖碼績優股（11/28 04:10）</a></li>
-    <li id="src-4647"><a href="https://www.chinatimes.com/newspapers/20261128000354-260120" target="_blank" rel="noopener">中時新聞網（要聞）｜川普找黃仁勳 12月4日一起去台積電（11/28 04:10）</a></li>
-    <li id="src-4648"><a href="https://www.chinatimes.com/newspapers/20261128000185-260203" target="_blank" rel="noopener">工商時報（中時新聞網）｜七外資大砍長鑫科技持股（11/28 04:10）</a></li>
-    <li id="src-4629"><a href="https://money.udn.com/money/story/5612/9906791" target="_blank" rel="noopener">經濟日報｜美畫新紅線 算力不准租給陸企！輝達晶片管制升級衝擊台鏈（11/28 02:45）</a></li>
     <li id="src-4624"><a href="https://news.cnyes.com/news/id/6673758" target="_blank" rel="noopener">鉅亨網｜台積電擬在美布局第二座先進晶圓廠！美銀重申買進、目標價3260、隱含漲幅逾5成（11/27 17:00）</a></li>
     <li id="src-4579"><a href="https://wantrich.chinatimes.com/news/20261127900001-420101" target="_blank" rel="noopener">旺得富理財網｜欣興、南電、景碩、臻鼎... ABF腰斬還能追？外資：最壞已過 它訂單看到2030年（11/27 06:00）</a></li>
     <li id="src-4582"><a href="https://tw.stock.yahoo.com/news/339%E5%85%83%E8%B2%B7%E9%80%B2%E5%9C%8B%E5%B7%A8%E4%B8%8D%E5%86%8D%E6%82%B2%E5%8A%87-ai%E7%87%9F%E6%94%B6%E5%8D%A0%E6%AF%94%E8%A1%9D20-%E5%A4%96%E8%B3%87%E6%9C%80%E6%96%B0%E7%9B%AE%E6%A8%99%E5%83%B9-%E5%90%8C%E6%A5%AD%E6%B0%B4%E6%BA%96-%E9%82%84%E6%9C%89195-223730483.html" target="_blank" rel="noopener">Yahoo股市（旺得富理財網）｜339元買進國巨不再悲劇？AI營收占比衝20％ 外資最新目標價「同業水準」：還有195％上漲空間（11/26 14:37）</a></li>

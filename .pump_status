@@ -1,7 +1,7 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-11-28T14:25:00",
+    "ts": "2026-11-28T20:25:01",
     "fetch": "latest 2026-10 rows 1989 high12 0 changed False\n",
     "status": "nochange"
   },
@@ -19,9 +19,9 @@
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-28T17:15:02",
-    "fetch": "wrote 992 details 3 days 8\n",
-    "status": "pushed"
+    "ts": "2026-11-28T21:15:06",
+    "fetch": "no change 993\n",
+    "status": "nochange"
   },
   "dbupdate": {
     "kind": "dbupdate",
