@@ -1,7 +1,7 @@
 {
   "revenue": {
     "kind": "revenue",
-    "ts": "2026-11-27T20:25:00",
+    "ts": "2026-11-28T08:25:04",
     "fetch": "latest 2026-10 rows 1989 high12 0 changed False\n",
     "status": "nochange"
   },
@@ -19,9 +19,9 @@
   },
   "material": {
     "kind": "material",
-    "ts": "2026-11-27T23:46:02",
-    "fetch": "detail fail 911868 code 406 查無相符資料\ndetail fail 911868 code 406 查無相符資料\nwrote 1123 details 15 days 8\n",
-    "status": "pushed"
+    "ts": "2026-11-28T13:15:02",
+    "fetch": "no change 988\n",
+    "status": "nochange"
   },
   "dbupdate": {
     "kind": "dbupdate",
